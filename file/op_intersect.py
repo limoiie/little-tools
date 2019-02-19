@@ -8,14 +8,20 @@ def str_to_int(string):
     return int(string)
 
 
-def intersect_with_equal(val1, op2, val2):
+def intersect_with_equal(val1, op2, val2, val_type):
     if op2 == '=':
+        if val_type.is_string():
+            return val1.startswith(val2) or val2.startswith(val1)
         return val1 == val2
     if op2 == '!':
+        if val_type.is_string():
+            return not val1.startswith(val2) and not val2.startswith(val1)
         return val1 != val2
     if op2 == '<':
         return val1 < val2
     if op2 == '>':
+        if val_type.is_string():
+            return val1 >= val2
         return val1 > val2
     if op2 == '&':
         return val1 & val2 == val2
@@ -40,7 +46,7 @@ def intersect_with_lt(val1, op2, val2, val_type):
     if op2 == '<':
         return True
     if op2 == '>':
-        if 'double' in val_type or 'float' in val_type or 'string' in val_type:
+        if val_type.is_string() or val_type.is_float():
             return val1 > val2
         val1 = str_to_int(val1)
         val2 = str_to_int(val2)
@@ -79,7 +85,7 @@ def intersect_with_bit_xor(val1, op2, val2):
 
 def are_intersect(test1, test2, val_type):
     if test1.op == '=':
-        return intersect_with_equal(test1.val, test2.op, test2.val)
+        return intersect_with_equal(test1.val, test2.op, test2.val, val_type)
     if test1.op == '!':
         return intersect_with_no_equal(test1.val, test2.op, test2.val)
     if test1.op == '<':
@@ -93,21 +99,21 @@ def are_intersect(test1, test2, val_type):
 
 
 def test_intersect_equal():
-    assert intersect_with_equal(10, '<', 9) is False
-    assert intersect_with_equal(10, '<', 10) is False
-    assert intersect_with_equal(10, '<', 11) is True
+    assert intersect_with_equal(10, '<', 9, 'uint') is False
+    assert intersect_with_equal(10, '<', 10, 'uint') is False
+    assert intersect_with_equal(10, '<', 11, 'uint') is True
 
-    assert intersect_with_equal(10, '!', 9) is True
-    assert intersect_with_equal(10, '!', 10) is False
-    assert intersect_with_equal(10, '!', 11) is True
+    assert intersect_with_equal(10, '!', 9, 'uint') is True
+    assert intersect_with_equal(10, '!', 10, 'uint') is False
+    assert intersect_with_equal(10, '!', 11, 'uint') is True
 
-    assert intersect_with_equal(10, '>', 9) is True
-    assert intersect_with_equal(10, '>', 10) is False
-    assert intersect_with_equal(10, '>', 11) is False
+    assert intersect_with_equal(10, '>', 9, 'uint') is True
+    assert intersect_with_equal(10, '>', 10, 'uint') is False
+    assert intersect_with_equal(10, '>', 11, 'uint') is False
 
-    assert intersect_with_equal(11, '&', 12) is False
-    assert intersect_with_equal(11, '&', 10) is True
-    assert intersect_with_equal(11, '&', 11) is True
+    assert intersect_with_equal(11, '&', 12, 'uint') is False
+    assert intersect_with_equal(11, '&', 10, 'uint') is True
+    assert intersect_with_equal(11, '&', 11, 'uint') is True
 
 
 def test_intersect_lt():
