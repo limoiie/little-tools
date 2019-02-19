@@ -1,4 +1,7 @@
 import re
+from typing import List
+
+from file.op_intersect import are_intersect
 
 
 class Type:
@@ -43,94 +46,6 @@ class Type:
                self.type == 'use'
 
 
-def str_to_int(string: str):
-    if string.startswith('0x'):
-        return int(string, 16)
-    if string.startswith('0'):
-        return int(string, 8)
-    return int(string)
-
-
-def intersect_with_equal(val1, op2, val2):
-    if op2 == '=':
-        return val1 == val2
-    if op2 == '!':
-        return val1 != val2
-    if op2 == '<':
-        return val1 < val2
-    if op2 == '>':
-        return val1 > val2
-    if op2 == '&':
-        return val1 & val2 == val2
-    if op2 == '^':
-        return val1 ^ val2 & val2 == val2
-
-
-def intersect_with_no_equal(val1, op2, val2):
-    if op2 == '!':
-        return True
-    if op2 == '<':
-        return True
-    if op2 == '>':
-        return True
-    if op2 == '&':
-        return True
-    if op2 == '^':
-        return True
-
-
-def intersect_with_lt(val1, op2, val2, val_type):
-    if op2 == '<':
-        return True
-    if op2 == '>':
-        if 'double' in val_type or 'float' in val_type or 'string' in val_type:
-            return val1 > val2
-        return str_to_int(val1) > str_to_int(val2) + 1
-    if op2 == '&':
-        return True
-    if op2 == '^':
-        return True
-
-
-def intersect_with_gt(val1, op2, val2):
-    if op2 == '>':
-        return True
-    if op2 == '&':
-        return True
-    if op2 == '^':
-        return True
-
-
-def intersect_with_bit_and(val1, op2, val2):
-    val1 = str_to_int(val1)
-    val2 = str_to_int(val2)
-
-    if op2 == '&':
-        return True
-    if op2 == '^':
-        return val1 & val2 == 0
-
-
-def intersect_with_bit_xor(val1, op2, val2):
-    if op2 == '^':
-        return True
-
-
-def are_intersect(test1, test2, val_type):
-    if test1.op == '=':
-        return intersect_with_equal(test1.val, test2.op, test2.val)
-    if test1.op == '!':
-        return intersect_with_no_equal(test1.val, test2.op, test2.val)
-    if test1.op == '<':
-        return intersect_with_lt(test1.val, test2.op, test2.val, val_type)
-    if test1.op == '>':
-        return intersect_with_gt(test1.val, test2.op, test2.val)
-    if test1.op == '&':
-        return intersect_with_bit_and(test1.val, test2.op, test2.val)
-    if test1.op == '^':
-        return intersect_with_bit_xor(test1.val, test2.op, test2.val)
-
-
 class Test:
 
     def __init__(self):
@@ -156,7 +71,7 @@ class Test:
         return self
 
     def intersect(self, other, val_type):
-        priory = {'=':5, '!':4, '<':3, '>':2, '&':1, '^':0}
+        priory = {'=': 5, '!': 4, '<': 3, '>': 2, '&': 1, '^': 0}
         if priory[self.op] > priory[other.op]:
             return are_intersect(self, other, val_type)
         return are_intersect(other, self, val_type)
@@ -219,6 +134,10 @@ class TreeNode:
         child.father = self
 
 
+def reduce():
+    pass
+
+
 def dump(node: TreeNode):
     magic = node.val
 
@@ -231,7 +150,7 @@ def dump(node: TreeNode):
         return string[1:]
 
     for sub_test in magic.tests:
-        if not magic.tests.always_true():
+        if not sub_test.always_true():
             return '[%s]' % string
 
     # always true
@@ -296,19 +215,64 @@ class MagicTreeBuilder:
             self.__father_node = self.__father_node.father
 
 
+class SimpleQueue:
+
+    container: List[Magic]
+
+    def __init__(self, max_size=5):
+        self.max_size = max_size
+        self.cursor = 0
+        self.size = 0
+        self.container = [None] * max_size
+
+    def push(self, item):
+        self.container[self.cursor] = item
+        self.cursor = (self.cursor + 1) % self.max_size
+        self.size = min(self.size + 1, self.max_size)
+
+    def snapshot(self):
+        if self.size < self.max_size:
+            return self.container[:self.cursor]
+        return self.container[self.cursor:] + self.container[:self.cursor]
+
+
+class FeatureExtractor:
+
+    def __init__(self):
+        self.magic_queue = SimpleQueue(max_size=5)
+
+    def feed_magic(self, magic):
+        prev_magics = self.magic_queue.snapshot()
+        for i, prev_magic in enumerate(prev_magics):
+            if prev_magic.offset == magic.offset and \
+                    prev_magic.type == magic.type:
+                print(magic, i)
+                break
+        else:
+            print()
+
+        self.magic_queue.push(magic)
+
+    def build(self):
+        return None
+
+
 class Fragment:
 
     magic_tree: MagicTree
 
     def __init__(self):
-        self.magic_tree_builder = MagicTreeBuilder()
+        self.feature_extractor = FeatureExtractor()
+        # self.magic_tree_builder = MagicTreeBuilder()
         self.magic_tree = None
 
     def finish(self):
-        self.magic_tree = self.magic_tree_builder.build()
+        # self.magic_tree = self.magic_tree_builder.build()
+        self.feature_extractor.build()
 
     def handle_magic(self, magic):
-        self.magic_tree_builder.feed_magic(magic)
+        # self.magic_tree_builder.feed_magic(magic)
+        self.feature_extractor.feed_magic(magic)
 
     def print(self):
         self.magic_tree.print()
