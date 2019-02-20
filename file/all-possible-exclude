@@ -1,0 +1,375 @@
+process ./magic/acorn
+process ./magic/adi
+process ./magic/adventure
+process ./magic/algol68
+process ./magic/allegro
+process ./magic/alliant
+process ./magic/alpha
+process ./magic/amanda
+process ./magic/amigaos
+process ./magic/android
+process ./magic/animation
+process ./magic/aout
+process ./magic/apache
+process ./magic/apl
+process ./magic/apple
+process ./magic/application
+process ./magic/applix
+process ./magic/apt
+process ./magic/archive
+process ./magic/assembler
+process ./magic/asterix
+process ./magic/att3b
+process ./magic/audio
+process ./magic/basis
+process ./magic/beetle
+process ./magic/ber
+process ./magic/bflt
+process ./magic/bhl
+process ./magic/bioinformatics
+process ./magic/biosig
+process ./magic/blackberry
+process ./magic/blcr
+process ./magic/blender
+process ./magic/blit
+process ./magic/bout
+process ./magic/bsdi
+process ./magic/bsi
+process ./magic/btsnoop
+process ./magic/c-lang
+process ./magic/c64
+process ./magic/cad
+process ./magic/cafebabe
+process ./magic/cbor
+process ./magic/cddb
+process ./magic/chord
+process ./magic/cisco
+process ./magic/citrus
+process ./magic/clarion
+process ./magic/claris
+process ./magic/clipper
+process ./magic/clojure
+process ./magic/coff
+process ./magic/commands
+process ./magic/communications
+process ./magic/compress
+process ./magic/console
+[>], [0x143], [byte0x80], [!0x80], [] 123
+[>>>], [0x143], [byte0x80], [=0x80], [[SGB+CGB]] 130
+
+process ./magic/convex
+process ./magic/coverage
+process ./magic/cracklib
+process ./magic/ctags
+process ./magic/ctf
+process ./magic/cubemap
+process ./magic/cups
+process ./magic/dact
+process ./magic/database
+process ./magic/dataone
+process ./magic/dbpf
+process ./magic/der
+[>>>>], [&0], [der], [=prt_str=x], [\b, countryName=%s] 12
+[>>], [&0], [der], [=set], [] 13
+
+[>>>>], [&0], [der], [=utf8_str=x], [\b, stateOrProvinceName=%s] 16
+[>>], [&0], [der], [=set], [] 17
+
+[>>>>], [&0], [der], [=utf8_str=x], [\b, organizationName=%s] 20
+[>>], [&0], [der], [=set], [] 21
+
+[>>>>], [&0], [der], [=utf8_str=x], [\b, commonName=%s] 24
+[>>], [&0], [der], [=seq], [] 25
+
+[>>>>>], [&0], [der], [=prt_str=x], [\b, countryName=%s] 88
+[>>>], [&0], [der], [=set], [] 89
+
+[>>>>>], [&0], [der], [=prt_str=x], [\b, stateOrProvinceName=%s] 92
+[>>>], [&0], [der], [=set], [] 93
+
+[>>>>>], [&0], [der], [=prt_str=x], [\b, localityName=%s] 96
+[>>>], [&0], [der], [=set], [] 97
+
+[>>>>>], [&0], [der], [=prt_str=x], [\b, organizationName=%s] 100
+[>>>], [&0], [der], [=set], [] 101
+
+[>>>>>], [&0], [der], [=prt_str=x], [\b, organizationUnitName=%s] 104
+[>>>], [&0], [der], [=set], [] 105
+
+[>>>>>], [&0], [der], [=prt_str=x], [\b, commonName=%s] 108
+[>>>], [&0], [der], [=set], [] 109
+
+[>>>>>], [&0], [der], [=ia5_str=x], [\b, emailAddress=%s] 112
+[>>], [&0], [der], [=seq], [] 113
+
+process ./magic/diamond
+process ./magic/diff
+process ./magic/digital
+process ./magic/dolby
+process ./magic/dump
+process ./magic/dyadic
+process ./magic/ebml
+process ./magic/editors
+process ./magic/efi
+process ./magic/elf
+process ./magic/encore
+process ./magic/epoc
+process ./magic/erlang
+process ./magic/espressif
+process ./magic/esri
+process ./magic/etf
+process ./magic/fcs
+process ./magic/filesystems
+[>>>>], [6], [string], [>\0], [\b, version %s] 486
+[>], [6], [string], [=LILO], [\b, LInux i386 boot LOader] 488
+
+[>>], [&0], [byte], [=0x76], [] 2180
+[>>>>], [&0], [byte], [=0x6e], [] 2182
+
+process ./magic/finger
+process ./magic/flash
+process ./magic/flif
+process ./magic/fonts
+process ./magic/fortran
+process ./magic/frame
+process ./magic/freebsd
+process ./magic/fsav
+process ./magic/fusecompress
+process ./magic/games
+process ./magic/gcc
+process ./magic/gconv
+process ./magic/geo
+process ./magic/geos
+process ./magic/gimp
+process ./magic/glibc
+process ./magic/gnome
+process ./magic/gnu
+process ./magic/gnumeric
+process ./magic/gpt
+process ./magic/gpu
+process ./magic/grace
+process ./magic/graphviz
+process ./magic/gringotts
+process ./magic/guile
+process ./magic/hardware
+process ./magic/hitachi-sh
+process ./magic/hp
+process ./magic/human68k
+process ./magic/ibm370
+process ./magic/ibm6000
+process ./magic/icc
+process ./magic/iff
+process ./magic/images
+[>>], [2], [beshort], [>9], [] 886
+[>>>>], [2], [beshort], [=24], [NOSIG] 891
+
+[>>>>], [16], [string], [!XIMG\0], [NOSIG] 895
+[>>], [16], [string], [=XIMG\0], [XIMG Image data] 896
+
+process ./magic/inform
+process ./magic/intel
+process ./magic/interleaf
+process ./magic/island
+process ./magic/ispell
+process ./magic/isz
+process ./magic/java
+process ./magic/javascript
+process ./magic/jpeg
+process ./magic/karma
+process ./magic/kde
+process ./magic/keepass
+process ./magic/kerberos
+process ./magic/kicad
+process ./magic/kml
+process ./magic/lecter
+process ./magic/lex
+process ./magic/lif
+process ./magic/linux
+process ./magic/lisp
+process ./magic/llvm
+process ./magic/lua
+process ./magic/luks
+process ./magic/m4
+process ./magic/mach
+process ./magic/macintosh
+process ./magic/macos
+process ./magic/magic
+process ./magic/mail.news
+process ./magic/make
+process ./magic/map
+process ./magic/maple
+process ./magic/marc21
+process ./magic/mathcad
+process ./magic/mathematica
+process ./magic/matroska
+process ./magic/mcrypt
+process ./magic/measure
+process ./magic/mercurial
+process ./magic/metastore
+process ./magic/meteorological
+process ./magic/microfocus
+process ./magic/mime
+process ./magic/mips
+process ./magic/mirage
+process ./magic/misctools
+process ./magic/mkid
+process ./magic/mlssa
+process ./magic/mmdf
+process ./magic/modem
+process ./magic/motorola
+process ./magic/mozilla
+process ./magic/msdos
+[>>>], [0x2c], [default], [x], [emoticons or sound] 1169
+[>], [0x2c], [default], [x], [] 1172
+
+process ./magic/msooxml
+[>>>>], [&26], [default], [x], [] 40
+[>>>>>>], [&26], [default], [x], [Microsoft OOXML] 44
+
+process ./magic/msvc
+process ./magic/msx
+[>>>>>], [3], [uleshort], [=0x7FFF], [\b, with sprite patterns] 92
+[>>>], [3], [uleshort], [=0xD3FF], [MSX screen 7-12 raw image] 93
+
+[>], [6], [uleshort], [=0], [] 206
+[>>>], [6], [uleshort], [>0], [\b, devhdl=0x%04x] 209
+
+process ./magic/mup
+process ./magic/music
+process ./magic/nasa
+process ./magic/natinst
+process ./magic/ncr
+process ./magic/neko
+process ./magic/netbsd
+process ./magic/netscape
+process ./magic/netware
+process ./magic/news
+process ./magic/nitpicker
+process ./magic/oasis
+process ./magic/ocaml
+process ./magic/octave
+process ./magic/ole2compounddocs
+process ./magic/olf
+process ./magic/os2
+process ./magic/os400
+process ./magic/os9
+process ./magic/osf1
+process ./magic/palm
+process ./magic/parix
+process ./magic/parrot
+process ./magic/pascal
+process ./magic/pbf
+process ./magic/pbm
+process ./magic/pc88
+process ./magic/pc98
+process ./magic/pdf
+process ./magic/pdp
+process ./magic/perl
+process ./magic/pgf
+process ./magic/pgp
+process ./magic/pkgadd
+process ./magic/plan9
+process ./magic/plus5
+process ./magic/polyml
+process ./magic/printer
+process ./magic/project
+process ./magic/psdbms
+process ./magic/psl
+process ./magic/pulsar
+process ./magic/pwsafe
+process ./magic/pyramid
+process ./magic/python
+process ./magic/qt
+process ./magic/revision
+process ./magic/riff
+process ./magic/rinex
+process ./magic/rpi
+process ./magic/rpm
+process ./magic/rtf
+process ./magic/ruby
+process ./magic/sc
+process ./magic/sccs
+process ./magic/scientific
+process ./magic/securitycerts
+process ./magic/selinux
+process ./magic/sendmail
+process ./magic/sequent
+process ./magic/sereal
+process ./magic/sgi
+process ./magic/sgml
+process ./magic/sharc
+process ./magic/sinclair
+process ./magic/sisu
+process ./magic/sketch
+process ./magic/smalltalk
+process ./magic/smile
+process ./magic/sniffer
+process ./magic/softquad
+process ./magic/spec
+process ./magic/spectrum
+process ./magic/sql
+process ./magic/ssh
+process ./magic/ssl
+process ./magic/sun
+process ./magic/symbos
+process ./magic/sysex
+process ./magic/tcl
+process ./magic/teapot
+process ./magic/terminfo
+process ./magic/tex
+process ./magic/tgif
+process ./magic/ti-8x
+process ./magic/timezone
+process ./magic/tplink
+process ./magic/troff
+process ./magic/tuxedo
+process ./magic/typeset
+process ./magic/unicode
+process ./magic/unknown
+process ./magic/uterus
+process ./magic/uuencode
+process ./magic/vacuum-cleaner
+process ./magic/varied.out
+process ./magic/varied.script
+process ./magic/vax
+process ./magic/vicar
+process ./magic/virtual
+process ./magic/virtutech
+process ./magic/visx
+process ./magic/vms
+process ./magic/vmware
+process ./magic/vorbis
+process ./magic/vxl
+process ./magic/warc
+process ./magic/weak
+process ./magic/webassembly
+process ./magic/windows
+[>>], [&0], [default], [x], [] 429
+[>>>>], [&0], [default], [x], [] 438
+
+[>>], [&3], [lestring16], [=ourceDisksNames]], [Windows setup INFormation] 459
+[>>>>], [&3], [lestring16], [=ersion]], [Windows setup INFormation] 466
+
+process ./magic/wireless
+process ./magic/wordprocessors
+process ./magic/wsdl
+process ./magic/x68000
+process ./magic/xdelta
+process ./magic/xenix
+process ./magic/xilinx
+[>>>>>], [&1], [string], [=b], [] 22
+[>>>>>>>], [&1], [string], [=c], [] 26
+
+[>>>>>>>], [&1], [string], [=c], [] 26
+[>>>>>>>>>], [&1], [string], [=d], [] 30
+
+[>>>>>>>>>], [&1], [string], [=d], [] 30
+[>>>>>>>>>>>], [&1], [string], [=e], [] 34
+
+process ./magic/xo65
+process ./magic/xwindows
+process ./magic/yara
+process ./magic/zfs
+process ./magic/zilog
+process ./magic/zip
+process ./magic/zyxel

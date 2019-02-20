@@ -141,8 +141,8 @@
 !:mime	video/mj2
 >8	string		mjp2		\b, Motion JPEG 2000 [ISO 15444-3] General Profile
 !:mime	video/mj2
->8	string		mmp4		\b, MPEG-4/3GPP Mobile Profile (.MP4 / .3GP) (for NTT)
-!:mime	video/mp4
+# >8	string		mmp4		\b, MPEG-4/3GPP Mobile Profile (.MP4 / .3GP) (for NTT)
+# !:mime	video/mp4
 >8	string		mobi		\b, MPEG-4, MOBI format
 !:mime	video/mp4
 >8	string		mp21		\b, MPEG-21 [ISO/IEC 21000-9]

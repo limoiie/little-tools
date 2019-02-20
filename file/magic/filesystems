@@ -1363,8 +1363,8 @@
 >11		uleshort&0x001f	0
 >>11		uleshort	<32769
 >>>11		uleshort	>31
->>>>21		ubyte&0xf0	0xF0
->>>>>0		ubyte		0xEB		DOS/MBR boot sector
+>>>>21		ubyte&0xf0	0xF0		DOS/MBR boot sector
+>>>>>0		ubyte		0xEB
 >>>>>>1		ubyte		x		\b, code offset 0x%x+2
 >>>>>0		ubyte		0xE9
 >>>>>>1		uleshort	x		\b, code offset 0x%x+3

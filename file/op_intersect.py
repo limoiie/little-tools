@@ -10,19 +10,22 @@ def str_to_int(string):
 
 def intersect_with_equal(val1, op2, val2, val_type):
     if op2 == '=':
-        if val_type.is_string():
-            return val1.startswith(val2) or val2.startswith(val1)
+        # if val_type.is_string():
+        #     return val1.startswith(val2) or val2.startswith(val1)
         return val1 == val2
     if op2 == '!':
-        if val_type.is_string():
-            return not val1.startswith(val2) and not val2.startswith(val1)
+        # if val_type.is_string():
+        #     return not val1.startswith(val2) and not val2.startswith(val1)
         return val1 != val2
     if op2 == '<':
         return val1 < val2
     if op2 == '>':
-        if val_type.is_string():
-            return val1 >= val2
+        # if val_type.is_string():
+        #     return val1 >= val2
         return val1 > val2
+
+    val1 = str_to_int(val1)
+    val2 = str_to_int(val2)
     if op2 == '&':
         return val1 & val2 == val2
     if op2 == '^':
@@ -83,7 +86,7 @@ def intersect_with_bit_xor(val1, op2, val2):
         return True
 
 
-def are_intersect(test1, test2, val_type):
+def __are_intersect(test1, test2, val_type):
     if test1.op == '=':
         return intersect_with_equal(test1.val, test2.op, test2.val, val_type)
     if test1.op == '!':
@@ -96,6 +99,61 @@ def are_intersect(test1, test2, val_type):
         return intersect_with_bit_and(test1.val, test2.op, test2.val)
     if test1.op == '^':
         return intersect_with_bit_xor(test1.val, test2.op, test2.val)
+
+
+def are_intersect(test1, test2, val_type):
+    priory = {'=': 5, '!': 4, '<': 3, '>': 2, '&': 1, '^': 0}
+    if priory[test1.op] > priory[test2.op]:
+        return __are_intersect(test1, test2, val_type)
+    return __are_intersect(test2, test1, val_type)
+
+
+def are_mutex(test1, test2, val_type):
+    return not are_intersect(test1, test2, val_type)
+
+
+def is_lhv_contain_rhv(test1, test2, val_type):
+    if test1.always_true():
+        return True
+
+    if test2.always_true():
+        return False
+
+    if test1.op == '=':
+        return test2.op == '=' and test1.val == test2.val
+    if test1.op == '!':
+        if test2.op == '=':
+            return test1.val != test2.val
+        if test2.op == '!':
+            return test1.val == test2.val
+        if test2.op == '<':
+            return test1.val >= test2.val
+        if test2.op == '>':
+            return test1.val <= test2.val
+        if test2.op == '&':
+            return ~test1.val & test2.val != 0
+        if test2.op == '^':
+            return test1.val & test2.val != 0
+    if test1.op == '<':
+        if test2.op == '=':
+            return test1.val > test2.val
+        if test2.op == '<':
+            return test1.val >= test2.val
+    if test1.op == '>':
+        if test2.op == '=':
+            return test1.val < test2.val
+        if test2.op == '>':
+            return test1.val <= test2.val
+    if test1.op == '&':
+        if test2.op == '&':
+            val1 = str_to_int(test1.val)
+            val2 = str_to_int(test2.val)
+            return val1 & val2 == val2
+    if test1.op == '^':
+        if test2.op == '&':
+            val1 = str_to_int(test1.val)
+            val2 = str_to_int(test2.val)
+            return val1 & val2 == 0
 
 
 def test_intersect_equal():

@@ -1,4 +1,6 @@
-from file.magic import Magic
+from typing import List, Any
+
+from file.magic import Magic, parse_magic
 
 
 class TreeNode:
@@ -150,7 +152,8 @@ class MagicFragmentHandler:
         pass
 
     def __process_magic_line(self, line: str, line_no: int):
-        magic = Magic().parse(line, line_no)
+        magic = parse_magic(line)
+        magic.line_no = line_no
         print(magic)
         print(line)
         print()

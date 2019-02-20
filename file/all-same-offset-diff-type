@@ -1,0 +1,1059 @@
+process ./magic/acorn
+process ./magic/adi
+process ./magic/adventure
+process ./magic/algol68
+process ./magic/allegro
+process ./magic/alliant
+process ./magic/alpha
+[>], [22], [leshort&030000], [!020000], [executable] 8
+[>], [22], [leshort&020000], [!0], [dynamically linked] 11
+
+[>], [22], [leshort&020000], [!0], [dynamically linked] 11
+[>], [22], [leshort&030000], [=020000], [shared library] 14
+
+process ./magic/amanda
+process ./magic/amigaos
+process ./magic/android
+[>], [19], [string], [=none\n], [\b, Not-Encrypted] 60
+[>>], [19], [regex/1l], [=\^([^n\n]|n[^o]|no[^n]|non[^e]|none.+).*], [\b, Encrypted (%s)] 74
+
+process ./magic/animation
+[>>>], [9], [byte], [&0x80], [] 251
+[>>>], [9], [byte&0xF8], [=8], [\b, video] 256
+
+[>>], [4], [byte], [&0x80], [] 320
+[>>], [4], [byte&0xF8], [=8], [\b, video (missing profile header)] 325
+
+[>>>], [17], [byte&0xF0], [=160], [\b@LL] 342
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+
+[>>>], [17], [byte&0xF0], [=128], [\b@ML] 341
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+
+[>>>], [17], [byte&0xF0], [=96], [\b@H-14] 340
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+
+[>>>], [17], [byte&0xF0], [=64], [\b@HL] 339
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+
+[>>>], [17], [byte&0xF0], [=160], [\b@LL] 342
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+
+[>>>], [17], [byte&0xF0], [=128], [\b@ML] 341
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+
+[>>>], [17], [byte&0xF0], [=96], [\b@H-14] 340
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+
+[>>>], [17], [byte&0xF0], [=64], [\b@HL] 339
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+[>>>], [17], [byte&0x06], [=2], [\b Y'CbCr 4:2:0 video] 345
+
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+[>>>], [17], [byte&0x06], [=2], [\b Y'CbCr 4:2:0 video] 345
+
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+[>>>], [17], [byte&0x06], [=4], [\b Y'CbCr 4:2:2 video] 346
+
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+[>>>], [17], [byte&0x06], [=4], [\b Y'CbCr 4:2:2 video] 346
+
+[>>>], [17], [byte], [^0x08], [\b interlaced] 344
+[>>>], [17], [byte&0x06], [=6], [\b Y'CbCr 4:4:4 video] 347
+
+[>>>], [17], [byte], [&0x08], [\b progressive] 343
+[>>>], [17], [byte&0x06], [=6], [\b Y'CbCr 4:4:4 video] 347
+
+[>>>>>], [145], [byte&0xF0], [=160], [\b@LL] 361
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+
+[>>>>>], [145], [byte&0xF0], [=128], [\b@ML] 360
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+
+[>>>>>], [145], [byte&0xF0], [=96], [\b@H-14] 359
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+
+[>>>>>], [145], [byte&0xF0], [=64], [\b@HL] 358
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+
+[>>>>>], [145], [byte&0xF0], [=160], [\b@LL] 361
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+
+[>>>>>], [145], [byte&0xF0], [=128], [\b@ML] 360
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+
+[>>>>>], [145], [byte&0xF0], [=96], [\b@H-14] 359
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+
+[>>>>>], [145], [byte&0xF0], [=64], [\b@HL] 358
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+[>>>>>], [145], [byte&0x06], [=2], [\b Y'CbCr 4:2:0 video] 364
+
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+[>>>>>], [145], [byte&0x06], [=2], [\b Y'CbCr 4:2:0 video] 364
+
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+[>>>>>], [145], [byte&0x06], [=4], [\b Y'CbCr 4:2:2 video] 365
+
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+[>>>>>], [145], [byte&0x06], [=4], [\b Y'CbCr 4:2:2 video] 365
+
+[>>>>>], [145], [byte], [^0x08], [\b interlaced] 363
+[>>>>>], [145], [byte&0x06], [=6], [\b Y'CbCr 4:4:4 video] 366
+
+[>>>>>], [145], [byte], [&0x08], [\b progressive] 362
+[>>>>>], [145], [byte&0x06], [=6], [\b Y'CbCr 4:4:4 video] 366
+
+[>>>], [81], [byte&0xF0], [=160], [\b@LL] 378
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+
+[>>>], [81], [byte&0xF0], [=128], [\b@ML] 377
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+
+[>>>], [81], [byte&0xF0], [=96], [\b@H-14] 376
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+
+[>>>], [81], [byte&0xF0], [=64], [\b@HL] 375
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+
+[>>>], [81], [byte&0xF0], [=160], [\b@LL] 378
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+
+[>>>], [81], [byte&0xF0], [=128], [\b@ML] 377
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+
+[>>>], [81], [byte&0xF0], [=96], [\b@H-14] 376
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+
+[>>>], [81], [byte&0xF0], [=64], [\b@HL] 375
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+[>>>], [81], [byte&0x06], [=2], [\b Y'CbCr 4:2:0 video] 381
+
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+[>>>], [81], [byte&0x06], [=2], [\b Y'CbCr 4:2:0 video] 381
+
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+[>>>], [81], [byte&0x06], [=4], [\b Y'CbCr 4:2:2 video] 382
+
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+[>>>], [81], [byte&0x06], [=4], [\b Y'CbCr 4:2:2 video] 382
+
+[>>>], [81], [byte], [^0x08], [\b interlaced] 380
+[>>>], [81], [byte&0x06], [=6], [\b Y'CbCr 4:4:4 video] 383
+
+[>>>], [81], [byte], [&0x08], [\b progressive] 379
+[>>>], [81], [byte&0x06], [=6], [\b Y'CbCr 4:4:4 video] 383
+
+[>>], [16], [byte&0x1E], [=0x06], [\b, 3 streams] 720
+[>>], [16], [byte], [&0x08], [\b, 4 or more streams] 721
+
+[>>], [16], [byte&0x1E], [=0x04], [\b, 2 streams] 719
+[>>], [16], [byte], [&0x08], [\b, 4 or more streams] 721
+
+[>>], [16], [byte&0x1E], [=0x02], [\b, single stream] 718
+[>>], [16], [byte], [&0x08], [\b, 4 or more streams] 721
+
+[>>], [16], [byte&0x1E], [=0x06], [\b, 3 streams] 720
+[>>], [16], [byte], [&0x10], [\b, 8 or more streams] 722
+
+[>>], [16], [byte&0x1E], [=0x04], [\b, 2 streams] 719
+[>>], [16], [byte], [&0x10], [\b, 8 or more streams] 722
+
+[>>], [16], [byte&0x1E], [=0x02], [\b, single stream] 718
+[>>], [16], [byte], [&0x10], [\b, 8 or more streams] 722
+
+[>>], [7], [byte&0x1E], [=0x06], [\b, 3 streams] 731
+[>>], [7], [byte], [&0x08], [\b, 4 or more streams] 732
+
+[>>], [7], [byte&0x1E], [=0x04], [\b, 2 streams] 730
+[>>], [7], [byte], [&0x08], [\b, 4 or more streams] 732
+
+[>>], [7], [byte&0x1E], [=0x02], [\b, single stream] 729
+[>>], [7], [byte], [&0x08], [\b, 4 or more streams] 732
+
+[>>], [7], [byte&0x1E], [=0x06], [\b, 3 streams] 731
+[>>], [7], [byte], [&0x10], [\b, 8 or more streams] 733
+
+[>>], [7], [byte&0x1E], [=0x04], [\b, 2 streams] 730
+[>>], [7], [byte], [&0x10], [\b, 8 or more streams] 733
+
+[>>], [7], [byte&0x1E], [=0x02], [\b, single stream] 729
+[>>], [7], [byte], [&0x10], [\b, 8 or more streams] 733
+
+[>>], [2], [byte], [&0xC0], [\b LTP] 743
+[>], [2], [byte&0xc0], [=0x00], [\b Main] 744
+
+[>>], [2], [byte], [&0xC0], [\b LTP] 743
+[>], [2], [byte&0xc0], [=0x40], [\b LC] 745
+
+[>>], [2], [byte], [&0xC0], [\b LTP] 743
+[>], [2], [byte&0xc0], [=0x80], [\b SSR] 746
+
+[>>], [2], [byte], [&0xC0], [\b LTP] 743
+[>], [2], [byte&0x3c], [=0x00], [\b, 96 kHz] 748
+
+[>>], [2], [byte], [&0xC0], [\b LTP] 743
+[>], [2], [byte&0x3c], [=0x04], [\b, 88.2 kHz] 749
+
+[>], [2], [beshort&0x01c0], [=0x0180], [\b, surround + LFE] 766
+[>], [2], [beshort], [&0x01C0], [\b, surround + side] 767
+
+[>], [2], [beshort&0x01c0], [=0x0140], [\b, surround] 765
+[>], [2], [beshort], [&0x01C0], [\b, surround + side] 767
+
+[>], [2], [beshort&0x01c0], [=0x0100], [\b, stereo+center+LFE] 764
+[>], [2], [beshort], [&0x01C0], [\b, surround + side] 767
+
+[>], [2], [beshort&0x01c0], [=0x00c0], [\b, stereo + center] 763
+[>], [2], [beshort], [&0x01C0], [\b, surround + side] 767
+
+[>], [2], [beshort&0x01c0], [=0x0080], [\b, stereo] 762
+[>], [2], [beshort], [&0x01C0], [\b, surround + side] 767
+
+[>>], [4], [byte&0x3C], [=0x0C], [\b, 3 streams] 781
+[>>], [4], [byte], [&0x08], [\b, 4 or more streams] 782
+
+[>>], [4], [byte&0x3C], [=0x08], [\b, 2 streams] 780
+[>>], [4], [byte], [&0x08], [\b, 4 or more streams] 782
+
+[>>], [4], [byte&0x3C], [=0x04], [\b, single stream] 779
+[>>], [4], [byte], [&0x08], [\b, 4 or more streams] 782
+
+[>>], [4], [byte&0x3C], [=0x0C], [\b, 3 streams] 781
+[>>], [4], [byte], [&0x20], [\b, 8 or more streams] 783
+
+[>>], [4], [byte&0x3C], [=0x08], [\b, 2 streams] 780
+[>>], [4], [byte], [&0x20], [\b, 8 or more streams] 783
+
+[>>], [4], [byte&0x3C], [=0x04], [\b, single stream] 779
+[>>], [4], [byte], [&0x20], [\b, 8 or more streams] 783
+
+[>>], [4], [byte], [&0x20], [\b, 8 or more streams] 783
+[>>], [4], [byte&0x78], [=0x08], [\b, single stream] 785
+
+[>>], [4], [byte], [&0x08], [\b, 4 or more streams] 782
+[>>], [4], [byte&0x78], [=0x08], [\b, single stream] 785
+
+[>>], [4], [byte], [&0x20], [\b, 8 or more streams] 783
+[>>], [4], [byte&0x78], [=0x10], [\b, 2 streams] 786
+
+[>>], [4], [byte], [&0x08], [\b, 4 or more streams] 782
+[>>], [4], [byte&0x78], [=0x10], [\b, 2 streams] 786
+
+[>>], [4], [byte], [&0x20], [\b, 8 or more streams] 783
+[>>], [4], [byte&0x78], [=0x18], [\b, 3 streams] 787
+
+[>>], [4], [byte], [&0x08], [\b, 4 or more streams] 782
+[>>], [4], [byte&0x78], [=0x18], [\b, 3 streams] 787
+
+[>>], [4], [byte&0x78], [=0x18], [\b, 3 streams] 787
+[>>], [4], [byte], [&0x20], [\b, 4 or more streams] 788
+
+[>>], [4], [byte&0x78], [=0x10], [\b, 2 streams] 786
+[>>], [4], [byte], [&0x20], [\b, 4 or more streams] 788
+
+[>>], [4], [byte&0x78], [=0x08], [\b, single stream] 785
+[>>], [4], [byte], [&0x20], [\b, 4 or more streams] 788
+
+[>>], [4], [byte&0x78], [=0x18], [\b, 3 streams] 787
+[>>], [4], [byte], [&0x40], [\b, 8 or more streams] 789
+
+[>>], [4], [byte&0x78], [=0x10], [\b, 2 streams] 786
+[>>], [4], [byte], [&0x40], [\b, 8 or more streams] 789
+
+[>>], [4], [byte&0x78], [=0x08], [\b, single stream] 785
+[>>], [4], [byte], [&0x40], [\b, 8 or more streams] 789
+
+process ./magic/aout
+process ./magic/apache
+process ./magic/apl
+process ./magic/apple
+process ./magic/application
+process ./magic/applix
+process ./magic/apt
+process ./magic/archive
+[>>>], [38], [regex], [=[!-OQ-~]+], [Zip data (MIME type "%s"?)] 1157
+[>>>>], [38], [search/64], [=.app/], [iOS App] 1168
+
+process ./magic/assembler
+process ./magic/asterix
+process ./magic/att3b
+process ./magic/audio
+process ./magic/basis
+process ./magic/beetle
+process ./magic/ber
+process ./magic/bflt
+process ./magic/bhl
+process ./magic/bioinformatics
+process ./magic/biosig
+process ./magic/blackberry
+process ./magic/blcr
+process ./magic/blender
+process ./magic/blit
+process ./magic/bout
+process ./magic/bsdi
+process ./magic/bsi
+process ./magic/btsnoop
+process ./magic/c-lang
+process ./magic/c64
+process ./magic/cad
+process ./magic/cafebabe
+process ./magic/cbor
+process ./magic/cddb
+process ./magic/chord
+process ./magic/cisco
+process ./magic/citrus
+process ./magic/clarion
+process ./magic/claris
+process ./magic/clipper
+process ./magic/clojure
+process ./magic/coff
+process ./magic/commands
+process ./magic/communications
+process ./magic/compress
+[>], [3], [byte], [&0x04], [\b, extra field] 30
+[>], [3], [byte&0xC], [=0x08], [] 31
+
+[>], [3], [byte], [&0x02], [\b, has CRC] 29
+[>], [3], [byte&0xC], [=0x08], [] 31
+
+[>], [3], [byte], [&0x01], [\b, ASCII] 28
+[>], [3], [byte&0xC], [=0x08], [] 31
+
+[>], [3], [byte&0xC], [=0x08], [] 31
+[>], [3], [byte], [&0x10], [\b, has comment] 33
+
+[>], [3], [byte&0xC], [=0x08], [] 31
+[>], [3], [byte], [&0x20], [\b, encrypted] 34
+
+[>>], [0], [byte&0x03], [=3], [] 229
+[>], [0], [byte], [^0x20], [\b, Dictionary ID:] 232
+
+[>>], [0], [byte&0x03], [=2], [] 227
+[>], [0], [byte], [^0x20], [\b, Dictionary ID:] 232
+
+process ./magic/console
+[>>>], [0x143], [byte&0x80], [!0x80], [[SGB]] 131
+[>>>], [0x143], [byte&0xC0], [=0x80], [[CGB]] 133
+
+[>>>], [0x143], [byte&0x80], [!0x80], [[SGB]] 131
+[>>>], [0x143], [byte&0xC0], [=0xC0], [[CGB ONLY]] 134
+
+[>>], [(0x0118-0x0FF60)], [ulelong&0x80000007], [=0x80000007], [\b, all regions] 520
+[>>>], [(0x0118-0x0FF60)], [ulelong], [>0], [(regions:] 522
+
+[>>], [(0x0118-0x0FF60)], [ulelong&0x80000007], [=0x80000007], [\b, all regions] 520
+[>>>>], [(0x0118-0x0FF60)], [ulelong], [&0x00000001], [NA] 523
+
+[>>], [(0x0118-0x0FF60)], [ulelong&0x80000007], [=0x80000007], [\b, all regions] 520
+[>>>>], [(0x0118-0x0FF60)], [ulelong], [&0x00000002], [Japan] 524
+
+[>>], [(0x0118-0x0FF60)], [ulelong&0x80000007], [=0x80000007], [\b, all regions] 520
+[>>>>], [(0x0118-0x0FF60)], [ulelong], [&0x00000004], [Rest_of_World] 525
+
+process ./magic/convex
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 40
+[>], [88], [belong], [&0x00010000], [c2] 41
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 40
+[>], [88], [belong], [&0x00020000], [c2mp] 42
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 40
+[>], [88], [belong], [&0x00040000], [parallel] 43
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 40
+[>], [88], [belong], [&0x00080000], [intrinsic] 44
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 40
+[>], [88], [belong], [&0x00000001], [demand paged] 45
+
+[>], [84], [belong], [&0x40000000], [object] 51
+[>], [84], [belong&0x20000000], [=0], [not stripped] 52
+
+[>], [84], [belong], [&0x80000000], [executable] 50
+[>], [84], [belong&0x20000000], [=0], [not stripped] 52
+
+[>], [84], [belong], [&0x40000000], [object] 51
+[>], [84], [belong&0x18000000], [=0x00000000], [native fpmode] 53
+
+[>], [84], [belong], [&0x80000000], [executable] 50
+[>], [84], [belong&0x18000000], [=0x00000000], [native fpmode] 53
+
+[>], [84], [belong], [&0x40000000], [object] 51
+[>], [84], [belong&0x18000000], [=0x10000000], [ieee fpmode] 54
+
+[>], [84], [belong], [&0x80000000], [executable] 50
+[>], [84], [belong&0x18000000], [=0x10000000], [ieee fpmode] 54
+
+[>], [84], [belong], [&0x40000000], [object] 51
+[>], [84], [belong&0x18000000], [=0x18000000], [undefined fpmode] 55
+
+[>], [84], [belong], [&0x80000000], [executable] 50
+[>], [84], [belong&0x18000000], [=0x18000000], [undefined fpmode] 55
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 60
+[>], [88], [belong], [&0x00010000], [c2] 61
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 60
+[>], [88], [belong], [&0x00020000], [c2mp] 62
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 60
+[>], [88], [belong], [&0x00040000], [parallel] 63
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 60
+[>], [88], [belong], [&0x00080000], [intrinsic] 64
+
+[>], [88], [belong&0x000f0000], [=0x00000000], [c1] 60
+[>], [88], [belong], [&0x00000008], [POSIX] 65
+
+process ./magic/coverage
+process ./magic/cracklib
+process ./magic/ctags
+process ./magic/ctf
+process ./magic/cubemap
+process ./magic/cups
+process ./magic/dact
+process ./magic/database
+process ./magic/dataone
+process ./magic/dbpf
+process ./magic/der
+process ./magic/diamond
+process ./magic/diff
+process ./magic/digital
+[>>], [22], [leshort&030000], [!020000], [executable] 13
+[>>], [22], [leshort&020000], [!0], [dynamically linked] 14
+
+process ./magic/dolby
+[>], [5], [byte&0x07], [=0x06], [\b, emergency (E)] 25
+[>], [5], [beshort&0x07e0], [>0x0720], [\b, karaoke] 27
+
+[>], [5], [byte&0x07], [=0x05], [\b, commentary (C)] 24
+[>], [5], [beshort&0x07e0], [>0x0720], [\b, karaoke] 27
+
+[>], [5], [byte&0x07], [=0x04], [\b, dialogue (D)] 23
+[>], [5], [beshort&0x07e0], [>0x0720], [\b, karaoke] 27
+
+[>], [5], [byte&0x07], [=0x03], [\b, hearing impaired (HI)] 22
+[>], [5], [beshort&0x07e0], [>0x0720], [\b, karaoke] 27
+
+process ./magic/dump
+process ./magic/dyadic
+process ./magic/ebml
+process ./magic/editors
+process ./magic/efi
+process ./magic/elf
+[>>>], [36], [lelong&0xff000000], [=0x05000000], [EABI5] 125
+[>>>], [36], [lelong], [&0x00800000], [BE8] 126
+
+[>>>], [36], [lelong&0xff000000], [=0x04000000], [EABI4] 124
+[>>>], [36], [lelong], [&0x00800000], [BE8] 126
+
+[>>>], [36], [lelong&0xff000000], [=0x05000000], [EABI5] 125
+[>>>], [36], [lelong], [&0x00400000], [LE8] 127
+
+[>>>], [36], [lelong&0xff000000], [=0x04000000], [EABI4] 124
+[>>>], [36], [lelong], [&0x00400000], [LE8] 127
+
+process ./magic/encore
+process ./magic/epoc
+process ./magic/erlang
+process ./magic/espressif
+process ./magic/esri
+process ./magic/etf
+process ./magic/fcs
+process ./magic/filesystems
+[>>>>>], [0], [ubelong&0xFD000000], [=0xE9000000], [] 543
+[>>>>>>], [0], [string], [!RRaA], [] 550
+
+[>>>>>], [0], [ubelong&0xFD000000], [=0xE9000000], [] 543
+[>>>>>>>], [0], [ubequad], [!0xfa660fb64610668b], [] 553
+
+[>>], [0], [ubyte&0x80], [=0x80], [\b, active] 1118
+[>>], [0], [ubyte], [>0x80], [0x%x] 1119
+
+[>>], [4], [lelong&0x100], [=0x100], [mode 3] 1151
+[>], [4], [lelong&0xFFFFFF00], [!0], [unknown mode] 1152
+
+[>>], [4], [lelong&0x100], [=0x000], [mode 2] 1150
+[>], [4], [lelong&0xFFFFFF00], [!0], [unknown mode] 1152
+
+[>>>>>>>>], [38], [ubyte], [!0x29], [\b, dos < 4.0 BootSector (0x%x)] 1425
+[>>>>>>>>], [38], [ubyte&0xFE], [=0x28], [] 1426
+
+process ./magic/finger
+process ./magic/flash
+[>>], [8], [beshort&0xffe0], [=0x3000], [Macromedia Flash data] 28
+[>>>], [8], [ubyte], [>0x2f], [] 32
+
+[>>], [8], [beshort&0xff87], [=0x2000], [Macromedia Flash data] 25
+[>>>], [8], [ubyte], [>0x2f], [] 32
+
+process ./magic/flif
+process ./magic/fonts
+process ./magic/fortran
+process ./magic/frame
+process ./magic/freebsd
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 79
+[>>], [3], [byte&0x80], [=0x80], [dynamically linked executable] 83
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 79
+[>>], [3], [byte&0x80], [=0x00], [executable] 84
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 89
+[>>], [3], [byte&0x80], [=0x80], [dynamically linked executable] 93
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 89
+[>>], [3], [byte&0x80], [=0x00], [executable] 94
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 99
+[>>], [3], [byte&0x80], [=0x80], [dynamically linked executable] 103
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 99
+[>>], [3], [byte&0x80], [=0x00], [executable] 104
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 109
+[>>], [3], [byte&0x80], [=0x80], [dynamically linked executable] 113
+
+[>>], [3], [byte&0xC0], [&0x80], [shared library] 109
+[>>], [3], [byte&0x80], [=0x00], [executable] 114
+
+process ./magic/fsav
+process ./magic/fusecompress
+process ./magic/games
+process ./magic/gcc
+process ./magic/gconv
+process ./magic/geo
+process ./magic/geos
+process ./magic/gimp
+process ./magic/glibc
+process ./magic/gnome
+process ./magic/gnu
+process ./magic/gnumeric
+process ./magic/gpt
+process ./magic/gpu
+process ./magic/grace
+process ./magic/graphviz
+process ./magic/gringotts
+process ./magic/guile
+process ./magic/hardware
+process ./magic/hitachi-sh
+process ./magic/hp
+process ./magic/human68k
+process ./magic/ibm370
+process ./magic/ibm6000
+process ./magic/icc
+process ./magic/iff
+process ./magic/images
+[>], [2], [ubyte], [<34], [Targa image data] 49
+[>], [2], [ubyte&0xF7], [=1], [- Map] 56
+
+[>], [2], [ubyte], [<34], [Targa image data] 49
+[>], [2], [ubyte&0xF7], [=2], [- RGB] 57
+
+[>], [2], [ubyte], [<34], [Targa image data] 49
+[>], [2], [ubyte&0xF7], [=3], [- Mono] 60
+
+[>], [17], [ubyte&0x0F], [>0], [- %d-bit alpha] 87
+[>], [17], [ubyte], [&0x20], [- top] 89
+
+[>], [17], [ubyte&0x0F], [>0], [- %d-bit alpha] 87
+[>], [17], [ubyte], [&0x10], [- right] 91
+
+[>], [17], [ubyte], [&0x10], [- right] 91
+[>], [17], [ubyte&0xC0], [=0x40], [- interleave] 97
+
+[>], [17], [ubyte], [&0x20], [- top] 89
+[>], [17], [ubyte&0xC0], [=0x40], [- interleave] 97
+
+[>], [17], [ubyte&0x0F], [>0], [- %d-bit alpha] 87
+[>], [17], [ubyte&0xC0], [=0x40], [- interleave] 97
+
+[>], [17], [ubyte], [&0x10], [- right] 91
+[>], [17], [ubyte&0xC0], [=0x80], [- four way interleave] 98
+
+[>], [17], [ubyte], [&0x20], [- top] 89
+[>], [17], [ubyte&0xC0], [=0x80], [- four way interleave] 98
+
+[>], [17], [ubyte&0x0F], [>0], [- %d-bit alpha] 87
+[>], [17], [ubyte&0xC0], [=0x80], [- four way interleave] 98
+
+[>], [17], [ubyte], [&0x10], [- right] 91
+[>], [17], [ubyte&0xC0], [=0xC0], [- reserved] 99
+
+[>], [17], [ubyte], [&0x20], [- top] 89
+[>], [17], [ubyte&0xC0], [=0xC0], [- reserved] 99
+
+[>], [17], [ubyte&0x0F], [>0], [- %d-bit alpha] 87
+[>], [17], [ubyte&0xC0], [=0xC0], [- reserved] 99
+
+process ./magic/inform
+process ./magic/intel
+process ./magic/interleaf
+process ./magic/island
+process ./magic/ispell
+process ./magic/isz
+process ./magic/java
+process ./magic/javascript
+process ./magic/jpeg
+process ./magic/karma
+process ./magic/kde
+process ./magic/keepass
+process ./magic/kerberos
+process ./magic/kicad
+process ./magic/kml
+process ./magic/lecter
+process ./magic/lex
+process ./magic/lif
+process ./magic/linux
+[>], [2], [byte&0x01], [!0], [512 characters,] 62
+[>], [2], [byte&0x02], [=0], [no directory,] 63
+
+[>], [2], [byte&0x01], [!0], [512 characters,] 62
+[>], [2], [byte&0x02], [!0], [Unicode directory,] 64
+
+[>], [2], [byte&0x01], [=0], [256 characters,] 61
+[>], [2], [byte&0x02], [!0], [Unicode directory,] 64
+
+[>], [2], [byte&0x01], [!0], [\b, unmapped zero page] 216
+[>], [2], [byte&0x20], [=0], [\b, impure] 217
+
+[>], [2], [byte&0x01], [!0], [\b, unmapped zero page] 216
+[>], [2], [byte&0x20], [!0], [] 218
+
+[>], [2], [byte&0x20], [=0], [\b, impure] 217
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+
+[>], [2], [byte&0x01], [!0], [\b, unmapped zero page] 216
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+
+[>], [2], [byte&0x20], [!0], [] 218
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+
+[>], [2], [byte&0x20], [=0], [\b, impure] 217
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+
+[>], [2], [byte&0x01], [!0], [\b, unmapped zero page] 216
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+
+[>], [2], [byte&0x20], [!0], [] 218
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+
+[>], [2], [byte&0x20], [=0], [\b, impure] 217
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+
+[>], [2], [byte&0x01], [!0], [\b, unmapped zero page] 216
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+
+[>], [2], [byte&0x20], [!0], [] 218
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+
+[>], [2], [byte&0x20], [=0], [\b, impure] 217
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+[>], [2], [byte&0x40], [!0], [\b, A_PURE] 223
+
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+[>], [2], [byte&0x40], [!0], [\b, A_PURE] 223
+
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+[>], [2], [byte&0x40], [!0], [\b, A_PURE] 223
+
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+[>], [2], [byte&0x40], [!0], [\b, A_PURE] 223
+
+[>], [2], [byte&0x20], [!0], [] 218
+[>], [2], [byte&0x40], [!0], [\b, A_PURE] 223
+
+[>], [2], [byte&0x40], [!0], [\b, A_PURE] 223
+[>], [2], [byte&0x80], [!0], [\b, A_TOVLY] 224
+
+[>], [2], [byte&0x08], [!0], [\b, A_STAND] 222
+[>], [2], [byte&0x80], [!0], [\b, A_TOVLY] 224
+
+[>], [2], [byte&0x04], [!0], [\b, A_NSYM] 221
+[>], [2], [byte&0x80], [!0], [\b, A_TOVLY] 224
+
+[>], [2], [byte&0x02], [!0], [\b, A_PAL] 220
+[>], [2], [byte&0x80], [!0], [\b, A_TOVLY] 224
+
+[>>], [2], [byte&0x10], [!0], [\b, A_EXEC] 219
+[>], [2], [byte&0x80], [!0], [\b, A_TOVLY] 224
+
+process ./magic/lisp
+process ./magic/llvm
+process ./magic/lua
+process ./magic/luks
+process ./magic/m4
+process ./magic/mach
+[>>>>], [4], [belong&0x00fffff0], [>0x50], [pentium_2_m0x%x] 54
+[>>>], [4], [belong&0x0000000f], [=7], [celeron] 55
+
+[>>>>], [4], [belong&0x00fffff0], [>0x70], [\b_m0x%x] 64
+[>>>], [4], [belong&0x0000000f], [=8], [pentium_3] 65
+
+[>>>>], [4], [belong&0x00fffff0], [>0x20], [\b_m0x%x] 69
+[>>>], [4], [belong&0x0000000f], [=9], [pentiumM] 70
+
+[>>>>], [4], [belong&0x00fffff0], [>0x00], [\b_m0x%x] 72
+[>>>], [4], [belong&0x0000000f], [=10], [pentium_4] 73
+
+[>>>>], [4], [belong&0x00fffff0], [>0x20], [\b_m0x%x] 69
+[>>>], [4], [belong&0x0000000f], [=10], [pentium_4] 73
+
+[>>>>], [4], [belong&0x00fffff0], [>0x10], [\b_m0x%x] 76
+[>>>], [4], [belong&0x0000000f], [=11], [itanium] 77
+
+[>>>>], [4], [belong&0x00fffff0], [>0x00], [\b_m0x%x] 72
+[>>>], [4], [belong&0x0000000f], [=11], [itanium] 77
+
+[>>>>], [4], [belong&0x00fffff0], [>0x10], [\b_m0x%x] 80
+[>>>], [4], [belong&0x0000000f], [=12], [xeon] 81
+
+[>>>>], [4], [belong&0x00fffff0], [>0x10], [\b_m0x%x] 76
+[>>>], [4], [belong&0x0000000f], [=12], [xeon] 81
+
+[>>>>], [4], [belong&0x00fffff0], [>0x10], [\b_m0x%x] 84
+[>>>], [4], [belong&0x0000000f], [>12], [ia32 family=%d] 85
+
+[>>>>], [4], [belong&0x00fffff0], [=0x10], [\b_mp] 83
+[>>>], [4], [belong&0x0000000f], [>12], [ia32 family=%d] 85
+
+[>>>>], [4], [belong&0x00fffff0], [=0x00], [] 82
+[>>>], [4], [belong&0x0000000f], [>12], [ia32 family=%d] 85
+
+[>>>>], [4], [belong&0x00fffff0], [>0x10], [\b_m0x%x] 80
+[>>>], [4], [belong&0x0000000f], [>12], [ia32 family=%d] 85
+
+[>>>>], [4], [belong&0x00fffff0], [>0x00], [model=%x] 87
+[>>>], [4], [belong&0x00ffffff], [=1], [R2300] 89
+
+[>>>], [4], [belong&0x0000000f], [>12], [ia32 family=%d] 85
+[>>>], [4], [belong&0x00ffffff], [=1], [R2300] 89
+
+[>>>>], [4], [belong&0x00fffff0], [>0x10], [\b_m0x%x] 84
+[>>>], [4], [belong&0x00ffffff], [=1], [R2300] 89
+
+[>>>>], [4], [belong&0x00fffff0], [>0x00], [model=%x] 87
+[>>>], [4], [belong&0x00ffffff], [=2], [R2600] 90
+
+[>>>], [4], [belong&0x0000000f], [>12], [ia32 family=%d] 85
+[>>>], [4], [belong&0x00ffffff], [=2], [R2600] 90
+
+[>>>>], [4], [belong&0x00fffff0], [>0x00], [model=%x] 87
+[>>>], [4], [belong&0x00ffffff], [=3], [R2800] 91
+
+[>>>>], [4], [belong&0x00fffff0], [>0x00], [model=%x] 87
+[>>>], [4], [belong&0x00ffffff], [=4], [R2000a] 92
+
+[>>], [0], [belong&0x00ffffff], [>18], [architecture=%d] 147
+[>], [0], [belong&0x01000000], [=0x01000000], [] 148
+
+process ./magic/macintosh
+process ./magic/macos
+process ./magic/magic
+process ./magic/mail.news
+process ./magic/make
+process ./magic/map
+process ./magic/maple
+process ./magic/marc21
+process ./magic/mathcad
+process ./magic/mathematica
+process ./magic/matroska
+process ./magic/mcrypt
+process ./magic/measure
+process ./magic/mercurial
+process ./magic/metastore
+process ./magic/meteorological
+process ./magic/microfocus
+process ./magic/mime
+process ./magic/mips
+process ./magic/mirage
+process ./magic/misctools
+process ./magic/mkid
+process ./magic/mlssa
+process ./magic/mmdf
+process ./magic/modem
+[>], [2], [search/9], [=\0\0], [] 18
+[>>>], [2], [beshort], [!0x0008], [] 24
+
+process ./magic/motorola
+process ./magic/mozilla
+process ./magic/msdos
+[>>>], [(0x3c.l+22)], [leshort&0x0200], [>0], [(stripped to external PDB)] 135
+[>>>], [(0x3c.l+22)], [leshort&0x1000], [>0], [system file] 136
+
+[>>>], [(0x3c.l+0x10)], [lelong&0x28000], [=0x8000], [(DLL)] 205
+[>>>], [(0x3c.l+0x10)], [lelong&0x20000], [>0], [(device driver)] 206
+
+[>>>], [(0x3c.l+0x10)], [lelong&0x20000], [>0], [(device driver)] 206
+[>>>], [(0x3c.l+0x10)], [lelong&0x300], [=0x300], [(GUI)] 207
+
+[>>>], [(0x3c.l+0x10)], [lelong&0x300], [=0x300], [(GUI)] 207
+[>>>], [(0x3c.l+0x10)], [lelong&0x28300], [<0x300], [(console)] 208
+
+[>>>], [(0x3c.l+0x10)], [lelong&0x20000], [>0], [(device driver)] 206
+[>>>], [(0x3c.l+0x10)], [lelong&0x28300], [<0x300], [(console)] 208
+
+[>>>], [(0x3c.l+0x10)], [lelong&0x28000], [=0x8000], [(DLL)] 205
+[>>>], [(0x3c.l+0x10)], [lelong&0x28300], [<0x300], [(console)] 208
+
+[>>], [7], [string], [>\0], [\b, author=%-.14s] 362
+[>>], [7], [search/254], [=\xff], [\b, info=] 363
+
+[>>], [4], [uleshort&0x0010], [=0x0010], [\bfast] 392
+[>>], [4], [uleshort&0x0003], [>0], [\bstandard] 394
+
+[>>], [4], [uleshort&0x0008], [=0x0008], [\bclock] 390
+[>>], [4], [uleshort&0x0003], [>0], [\bstandard] 394
+
+[>], [4], [uleshort&0x8000], [=0x0000], [\bblock device driver] 387
+[>>], [4], [uleshort&0x0003], [>0], [\bstandard] 394
+
+[>>], [4], [uleshort&0x0003], [>0], [\bstandard] 394
+[>>], [4], [uleshort&0x8000], [=0x8000], [\bcharacter device driver] 398
+
+[>], [4], [uleshort&0x4000], [=0x4000], [\b,control strings-] 441
+[>>], [4], [uleshort&0x6840], [>0], [\bsupport] 443
+
+[>>], [4], [uleshort&0x2000], [=0x2000], [\b,until busy-] 439
+[>>], [4], [uleshort&0x6840], [>0], [\bsupport] 443
+
+[>], [4], [uleshort&0x8000], [=0x8000], [] 438
+[>>], [4], [uleshort&0x6840], [>0], [\bsupport] 443
+
+[>], [4], [uleshort&0x0800], [=0x0800], [\b,close media-] 436
+[>>], [4], [uleshort&0x6840], [>0], [\bsupport] 443
+
+[>>], [4], [uleshort&0x6840], [>0], [\bsupport] 443
+[>], [4], [uleshort&0x8000], [=0x0000], [] 444
+
+[>>], [4], [uleshort&0x6840], [>0], [\bsupport] 443
+[>>], [4], [uleshort&0x4842], [>0], [\bsupport] 445
+
+[>], [4], [uleshort&0x8000], [=0x8000], [] 442
+[>>], [4], [uleshort&0x4842], [>0], [\bsupport] 445
+
+[>], [4], [uleshort&0x4000], [=0x4000], [\b,control strings-] 441
+[>>], [4], [uleshort&0x4842], [>0], [\bsupport] 445
+
+[>>], [4], [uleshort&0x2000], [=0x2000], [\b,until busy-] 439
+[>>], [4], [uleshort&0x4842], [>0], [\bsupport] 445
+
+process ./magic/msooxml
+process ./magic/msvc
+process ./magic/msx
+[>>>>>>>>>>>>>>>], [0x002D], [ubyte+1], [<3], [\b. version=MSX%d] 137
+[>>>>>>>>>>>>>>>], [0x002D], [ubyte], [=2], [\b, version=MSX2+] 138
+
+[>>>>>>>>>>>>>>>], [0x002D], [ubyte+1], [<3], [\b. version=MSX%d] 137
+[>>>>>>>>>>>>>>>], [0x002D], [ubyte], [=3], [\b, version=MSX Turbo-R] 139
+
+[>>>>>>>>>>>>>>>], [0x002D], [ubyte+1], [<3], [\b. version=MSX%d] 137
+[>>>>>>>>>>>>>>>], [0x002D], [ubyte], [>3], [\b, version=Unknown MSX %d version] 140
+
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0xF], [>2], [\b, charset=Unknown id:%d] 146
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0x70], [=0x00], [\b, date format=Y-M-D] 147
+
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0xF], [>2], [\b, charset=Unknown id:%d] 146
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0x70], [=0x10], [\b, date format=M-D-Y] 148
+
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0xF], [>2], [\b, charset=Unknown id:%d] 146
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0x70], [=0x20], [\b, date format=D-M-Y] 149
+
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0xF], [>2], [\b, charset=Unknown id:%d] 146
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0x80], [=0x00], [\b, vfreq=60Hz] 150
+
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0xF], [>2], [\b, charset=Unknown id:%d] 146
+[>>>>>>>>>>>>>>>], [0x002B], [ubyte&0x80], [=0x80], [\b, vfreq=50Hz] 151
+
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0x0F], [>6], [\b, keyboard=Unknown id:%d] 159
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0xF0], [=0x00], [\b, basic=Japanese] 160
+
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0x0F], [>6], [\b, keyboard=Unknown id:%d] 159
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0xF0], [=0x10], [\b, basic=International] 161
+
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0x0F], [>6], [\b, keyboard=Unknown id:%d] 159
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0xF0], [>0x10], [\b, basic=Unknown id:%d] 162
+
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0x0F], [=6], [\b, keyboard=Spanish] 158
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0xF0], [>0x10], [\b, basic=Unknown id:%d] 162
+
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0x0F], [=5], [\b, keyboard=Unknown id:%d] 157
+[>>>>>>>>>>>>>>>], [0x002C], [ubyte&0xF0], [>0x10], [\b, basic=Unknown id:%d] 162
+
+process ./magic/mup
+process ./magic/music
+process ./magic/nasa
+process ./magic/natinst
+process ./magic/ncr
+process ./magic/neko
+process ./magic/netbsd
+process ./magic/netscape
+process ./magic/netware
+process ./magic/news
+process ./magic/nitpicker
+process ./magic/oasis
+process ./magic/ocaml
+process ./magic/octave
+process ./magic/ole2compounddocs
+process ./magic/olf
+process ./magic/os2
+process ./magic/os400
+process ./magic/os9
+process ./magic/osf1
+process ./magic/palm
+process ./magic/parix
+process ./magic/parrot
+process ./magic/pascal
+process ./magic/pbf
+process ./magic/pbm
+process ./magic/pc88
+process ./magic/pc98
+process ./magic/pdf
+process ./magic/pdp
+process ./magic/perl
+process ./magic/pgf
+process ./magic/pgp
+process ./magic/pkgadd
+process ./magic/plan9
+process ./magic/plus5
+process ./magic/polyml
+process ./magic/printer
+process ./magic/project
+process ./magic/psdbms
+process ./magic/psl
+process ./magic/pulsar
+process ./magic/pwsafe
+process ./magic/pyramid
+process ./magic/python
+process ./magic/qt
+process ./magic/revision
+process ./magic/riff
+process ./magic/rinex
+process ./magic/rpi
+process ./magic/rpm
+process ./magic/rtf
+process ./magic/ruby
+process ./magic/sc
+process ./magic/sccs
+process ./magic/scientific
+process ./magic/securitycerts
+process ./magic/selinux
+process ./magic/sendmail
+process ./magic/sequent
+process ./magic/sereal
+process ./magic/sgi
+process ./magic/sgml
+process ./magic/sharc
+process ./magic/sinclair
+process ./magic/sisu
+process ./magic/sketch
+process ./magic/smalltalk
+process ./magic/smile
+process ./magic/sniffer
+process ./magic/softquad
+process ./magic/spec
+process ./magic/spectrum
+process ./magic/sql
+process ./magic/ssh
+process ./magic/ssl
+process ./magic/sun
+process ./magic/symbos
+process ./magic/sysex
+process ./magic/tcl
+process ./magic/teapot
+process ./magic/terminfo
+process ./magic/tex
+process ./magic/tgif
+process ./magic/ti-8x
+process ./magic/timezone
+process ./magic/tplink
+process ./magic/troff
+process ./magic/tuxedo
+process ./magic/typeset
+process ./magic/unicode
+process ./magic/unknown
+process ./magic/uterus
+process ./magic/uuencode
+process ./magic/vacuum-cleaner
+process ./magic/varied.out
+process ./magic/varied.script
+process ./magic/vax
+process ./magic/vicar
+process ./magic/virtual
+process ./magic/virtutech
+process ./magic/visx
+process ./magic/vms
+process ./magic/vmware
+process ./magic/vorbis
+process ./magic/vxl
+process ./magic/warc
+process ./magic/weak
+process ./magic/webassembly
+process ./magic/windows
+[>>>>], [4], [ulelong&0x00000020], [=0x00000020], [\b, digitally signed] 503
+[>>>>], [4], [ulelong&0x00000001], [!0x00000001], [] 516
+
+[>>>>>], [4], [ulelong&0x00000004], [!0], [\b, compressed] 602
+[>>>>>], [4], [ulelong&0x00000008], [!0], [\b, End Of Medium hit] 604
+
+[>>>>>], [4], [ulelong&0x00000008], [!0], [\b, End Of Medium hit] 604
+[>>>>>], [4], [ulelong&0x00020000], [=0], [] 605
+
+[>>>>>], [4], [ulelong&0x00000004], [!0], [\b, compressed] 602
+[>>>>>], [4], [ulelong&0x00020000], [=0], [] 605
+
+[>>>>>], [4], [ulelong&0x00000008], [!0], [\b, End Of Medium hit] 604
+[>>>>>>], [4], [ulelong&0x00010000], [!0], [\b, with catalog] 607
+
+[>>>>>], [4], [ulelong&0x00000004], [!0], [\b, compressed] 602
+[>>>>>>], [4], [ulelong&0x00010000], [!0], [\b, with catalog] 607
+
+[>>>>>>], [4], [ulelong&0x00010000], [!0], [\b, with catalog] 607
+[>>>>>], [4], [ulelong&0x00020000], [!0], [\b, with file catalog] 609
+
+[>>>>>], [4], [ulelong&0x00000008], [!0], [\b, End Of Medium hit] 604
+[>>>>>], [4], [ulelong&0x00020000], [!0], [\b, with file catalog] 609
+
+[>>>>>], [4], [ulelong&0x00000004], [!0], [\b, compressed] 602
+[>>>>>], [4], [ulelong&0x00020000], [!0], [\b, with file catalog] 609
+
+process ./magic/wireless
+process ./magic/wordprocessors
+process ./magic/wsdl
+process ./magic/x68000
+process ./magic/xdelta
+process ./magic/xenix
+process ./magic/xilinx
+process ./magic/xo65
+process ./magic/xwindows
+process ./magic/yara
+process ./magic/zfs
+process ./magic/zilog
+process ./magic/zip
+process ./magic/zyxel

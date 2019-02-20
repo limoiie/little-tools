@@ -1,7 +1,7 @@
 import sys
 from os import listdir
 
-sys.path.append(r'E:\Project\remote\python\little-tools')
+sys.path.append(r'E:\projects\pycharm\little-tools')
 
 from file.fragment import MagicFragmentHandler
 from file.fragment_test import TestFragmentHandler
@@ -9,8 +9,8 @@ from file.fragment_test import TestFragmentHandler
 
 def parse_magic_fragment_file(magic_fragment_file: str):
     handlers = [
-        MagicFragmentHandler(),
-        # TestFragmentHandler()
+        # MagicFragmentHandler(),
+        TestFragmentHandler()
     ]
 
     with open(magic_fragment_file, 'r') as file:
@@ -27,13 +27,13 @@ def parse_magic_fragment_file(magic_fragment_file: str):
 
 
 def main():
-    file = r'magic\archive'
-    # for file in listdir('./magic'):
-    #     file = './magic/' + file
-    print('process %s' % file)
-    handlers = parse_magic_fragment_file(file)
-    for handler in handlers:
-        handler.print()
+    # file = r'magic\archive'
+    for file in listdir('./magic'):
+        file = './magic/' + file
+        print('process %s' % file)
+        handlers = parse_magic_fragment_file(file)
+        for handler in handlers:
+            handler.print()
 
 
 if __name__ == '__main__':
