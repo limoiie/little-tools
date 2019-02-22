@@ -219,7 +219,7 @@
 # Updated by Adam Buchbinder (adam.buchbinder@gmail.com)
 # Made by reading sources, reading documentation, and doing trial and error
 # on existing QCOW files
-0	string/b	QFI\xFB
+0	string/b	QFI\xFB	QEMU QCOW2 Image
 
 # Uncomment the following line to display Magic (only used for debugging
 # this magic number)
@@ -227,8 +227,7 @@
 
 # There are currently 2 Versions: "1" and "2".
 # http://www.gnome.org/~markmc/qcow-image-format-version-1.html
->4	belong		!1	QEMU QCOW2 Image
->4	belong		1	QEMU QCOW Image (v1)
+>4	belong		1	(v1)
 
 # Using the existence of the Backing File Offset to determine whether
 # to read Backing File Information

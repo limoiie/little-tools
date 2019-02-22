@@ -659,6 +659,8 @@ def trivial_desc(prefix: str, magic: Magic):
     if 0 == prefix_len:
         if desc.startswith(r'\b, ') or desc[0] in r',;':
             return True
+        if desc[0] == r'(' and desc[-1] == r')':
+            return True
     #     if '%' in desc:
     #         return True
 
