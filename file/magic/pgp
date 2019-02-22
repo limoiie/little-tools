@@ -339,7 +339,7 @@
 # we branch into the proper key size
 # signatures defined as x{keysize}
 
->0	name	pgpkey
+0	name	pgpkey
 >0	string	\x01\xd8	1024b
 >>2	use	x1024
 >0	string	\x01\xeb	1024b

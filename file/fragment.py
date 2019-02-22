@@ -28,9 +28,8 @@ def dump(node: TreeNode):
     if empty_desc:
         return string[1:]
 
-    for sub_test in magic.tests:
-        if not sub_test.always_true():
-            return '[%s]' % string
+    if not magic.test.always_true():
+        return '[%s]' % string
 
     # always true
     return string
@@ -84,8 +83,8 @@ class MagicTreeBuilder:
                 self.__father_node.add_child(TreeNode(magic))
 
     def build(self):
-        if self.__father_node is None:
-            return
+        # if self.__father_node is None:
+        #     return
         while self.__father_node.father is not None:
             self.__father_node = self.__father_node.father
         return MagicTree(self.__root_node)

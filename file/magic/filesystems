@@ -1968,7 +1968,7 @@
 # CDROM Filesystems
 # https://en.wikipedia.org/wiki/ISO_9660
 # Modified for UDF by gerardo.cacciari@gmail.com
-32769	string    CD001
+32769	string    CD001  CD image
 # mime line at that position does not work
 # to display CD-ROM (70=81-11) after MBR (113=40+72+1), partition-table (71=50+21) and before Apple Driver Map (51)
 #!:strength -11

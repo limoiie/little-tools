@@ -1,7 +1,8 @@
-from typing import List
+import abc
+from typing import List, Dict, Any
 
 from file.fragment import MagicTree, MagicTreeBuilder, TreeNode, MagicTree
-from file.magic import Magic, parse_magic, have_same_test_method
+from file.magic import Magic, parse_magic, have_same_test_method, join_magic_desc
 from file.op_intersect import are_mutex, is_lhv_contain_rhv
 
 
@@ -58,11 +59,11 @@ class FeatureExtractor:
                     prev_magic.type != magic.type:
                 if magic.type.is_functional() or prev_magic.type.is_functional():
                     continue
-                if magic.tests[0].always_true() or prev_magic.tests[0].always_true():
+                if magic.test.always_true() or prev_magic.test.always_true():
                     continue
                 if magic.type.type == prev_magic.type.type == 'string':
                     continue
-                if magic.tests[0].op == '=' and prev_magic.tests[0].op == '=':
+                if magic.test.op == '=' and prev_magic.test.op == '=':
                     if magic.type.type != 'regex' and prev_magic.type.type != 'regex':
                         continue
 
@@ -89,9 +90,43 @@ class FeatureExtractor:
         return None
 
 
-class TestFragment:
+class Fragment(abc.ABC):
 
     def __init__(self):
+        self.file_name = ''
+
+    @abc.abstractmethod
+    def finish(self):
+        pass
+
+    @abc.abstractmethod
+    def handle_magic(self, magic):
+        pass
+
+    @abc.abstractmethod
+    def is_name_fragment(self):
+        raise NotImplementedError()
+
+    @abc.abstractmethod
+    def get_name(self):
+        raise NotImplementedError()
+
+    @abc.abstractmethod
+    def print(self):
+        pass
+
+    @abc.abstractmethod
+    def root(self):
+        pass
+
+    def set_file_name(self, file_name: str):
+        self.file_name = file_name
+
+
+class TestFragment(Fragment):
+
+    def __init__(self):
+        super().__init__()
         self.feature_extractor = FeatureExtractor()
 
     def finish(self):
@@ -100,16 +135,26 @@ class TestFragment:
     def handle_magic(self, magic):
         self.feature_extractor.feed_magic(magic)
 
+    def is_name_fragment(self):
+        raise NotImplementedError()
+
+    def get_name(self):
+        pass
+
     def print(self):
         pass
 
+    def root(self):
+        return None
 
-class FilterFragment:
+
+class FilterFragment(Fragment):
 
     valid_count = 0
     other_count = 0
 
     def __init__(self):
+        super().__init__()
         self.lines = []
         self.prev_level = -1
         self.peak_num = 0
@@ -117,10 +162,6 @@ class FilterFragment:
     def finish(self):
         if self.peak_num > 2:
             FilterFragment.valid_count += 1
-            for line in self.lines:
-                print(line)
-            print()
-            print()
         else:
             FilterFragment.other_count += 1
 
@@ -134,82 +175,94 @@ class FilterFragment:
         self.lines.append(magic.line)
         self.prev_level = magic.level
 
-    def print(self):
+    def is_name_fragment(self):
+        raise NotImplementedError()
+
+    def get_name(self):
         pass
 
+    def print(self):
+        if self.peak_num > 2:
+            for line in self.lines:
+                print(line)
+            print()
+            print()
+        pass
 
-def can_after(magic, prev):
+    def root(self):
+        return None
+
+
+def magic_mutex(magic: Magic, prev: Magic):
     if magic.type.is_default():
-        return False
+        return True
 
     if prev.type.is_functional() or \
             magic.type.is_functional():
-        return True
+        return False
 
     if not have_same_test_method(magic, prev):
-        return True
+        return False
 
-    for prev_test in prev.tests:
-        if prev_test.always_true():
-            continue
-        for curr_test in magic.tests:
-            if curr_test.always_true():
-                continue
-            if are_mutex(prev_test, curr_test, magic.type):
-                return False
-    return True
+    if prev.test.always_true() or \
+            magic.test.always_true():
+        return False
+
+    return are_mutex(prev.test, magic.test, magic.type)
 
 
-def just_print(string: str, node: TreeNode):
-    print(node.val.line, ' ' * 20, '\t\t', string)
-    for child in node.children:
-        just_print(string, child)
+class PrintNameFragment(Fragment):
+
+    count = 0
+    all_type = set()
+
+    def __init__(self):
+        super().__init__()
+        self.name = ''
+        self.is_name = False
+        self.magic_tree_builder = MagicTreeBuilder()
+        self.magic_tree = None
+        self.lines = []
+        self.prev_level = -1
+        self.peak_num = 0
+
+    def finish(self):
+        self.magic_tree = self.magic_tree_builder.build()
+        reduce_magic_tree(self.magic_tree)
+
+        if self.is_name:
+            PrintNameFragment.count += 1
+
+    def handle_magic(self, magic):
+        if not self.is_name and magic.is_name():
+            self.name = magic.get_name()
+            self.is_name = True
+
+        self.magic_tree_builder.feed_magic(magic)
+
+        has_peak = magic.level < self.prev_level
+        if has_peak:
+            self.peak_num += 1
+        self.lines.append(magic.line)
+        self.prev_level = magic.level
+
+    def is_name_fragment(self):
+        return self.is_name
+
+    def get_name(self):
+        return self.name
+
+    def print(self):
+        print_magic_tree(self)
+        print()
+        print()
+        pass
+
+    def root(self):
+        return self.magic_tree.root
 
 
-def explorer_and_print(prefix: str, node: TreeNode):
-    prefix += ' ' + node.val.desc
-
-    print(node.val.line, ' ' * 20, '\t\t', prefix)
-    is_mutual_exclude = True
-    children_num = len(node.children)
-    for i in range(children_num):
-        j = i + 1
-        while j < children_num:
-            if node.children[i].val.can_after(node.children[j].val):
-                is_mutual_exclude = False
-                break
-            j += 1
-
-    for child in node.children:
-        if is_mutual_exclude or not node.val.desc:
-            explorer_and_print(prefix, child)
-        else:
-            just_print(prefix, child)
-    pass
-
-
-def print_magic_tree(tree_root: MagicTree):
-    reduce_magic_tree(tree_root)
-    explorer_and_print('', tree_root.root)
-
-
-def reduce_node(node: TreeNode):
-    if node.val.tests[0].val == '0x29':
-        x = 10
-    for child in node.children:
-        if have_same_test_method(child.val, node.val):
-            if is_lhv_contain_rhv(node.val.tests[0], child.val.tests[0], node.val.type):
-                child.val.tests[0].op = 'x'
-                child.val.tests[0].val = ''
-
-        reduce_node(child)
-
-
-def reduce_magic_tree(tree_root: MagicTree):
-    reduce_node(tree_root.root)
-
-
-class PrintFragment:
+class PrintFragment(Fragment):
 
     magic_tree: MagicTree
 
@@ -217,6 +270,7 @@ class PrintFragment:
     other_count = 0
 
     def __init__(self):
+        super().__init__()
         self.magic_tree_builder = MagicTreeBuilder()
         self.magic_tree = None
         self.lines = []
@@ -228,13 +282,6 @@ class PrintFragment:
 
         if self.peak_num > 2:
             PrintFragment.valid_count += 1
-
-            if self.magic_tree.root.val.type.is_name():
-                print('name case:', self.magic_tree.root.val)
-            else:
-                print_magic_tree(self.magic_tree)
-                print()
-                print()
         else:
             PrintFragment.other_count += 1
 
@@ -247,8 +294,20 @@ class PrintFragment:
         self.lines.append(magic.line)
         self.prev_level = magic.level
 
+    def is_name_fragment(self):
+        return self.magic_tree.root.val.is_name()
+
+    def get_name(self):
+        return self.magic_tree.root.val.get_name()
+
     def print(self):
-        pass
+        if self.peak_num > 2:
+            if self.magic_tree.root.val.is_name():
+                print('name case:', self.magic_tree.root.val)
+            else:
+                print_magic_tree(self)
+                print()
+                print()
         # if self.peak_num < 3:
         #     return
         # if self.magic_tree.root.val.type.is_name():
@@ -258,15 +317,25 @@ class PrintFragment:
         #     print()
         #     print()
 
+    def root(self):
+        return self.magic_tree.root
+
 
 class TestFragmentHandler:
 
-    fragment: TestFragment
+    fragment: Fragment
+    fragments: List[Fragment]
+    name_fragments: Dict[str, Fragment]
+    normal_fragments: List[Fragment]
 
     def __init__(self):
+        self.file_name = ''
         self.fragment = None
+        self.fragments = []
+        self.name_fragments = dict()
+        self.normal_fragments = []
 
-    def process_line(self, line: str, line_no: int):
+    def process_line(self, file_name, line: str, line_no: int):
         if line.startswith('#'):
             # print()
             pass
@@ -274,25 +343,211 @@ class TestFragmentHandler:
             # print()
             pass
         elif 0 < len(line):
-            self.__process_magic_line(line, line_no)
+            self.__process_magic_line(file_name, line, line_no)
         else:
             # print(line)
             pass
 
+    def __process_magic_line(self, file_name: str, line: str, line_no: int):
+        magic = parse_line_to_magic(line, line_no)
+        if 0 == magic.level:
+            self.__finish_fragment_and_append()
+            self.__create_new_fragment(file_name)
+        self.fragment.handle_magic(magic)
+
+    def __create_new_fragment(self, file_name: str):
+        self.fragment = PrintNameFragment()
+        self.fragment.set_file_name(file_name)
+
     def finish(self):
+        self.__finish_fragment_and_append()
+        self.__pick_out_name_fragments()
+        for fragment in self.fragments:
+            self.__render_node_recursively(fragment.root())
+
+    def __finish_fragment_and_append(self):
         if self.fragment is not None:
             self.fragment.finish()
+            self.fragments.append(self.fragment)
+
+    def __pick_out_name_fragments(self):
+        self.name_fragments.clear()
+        self.normal_fragments.clear()
+
+        for fragment in self.fragments:
+            if fragment.is_name_fragment():
+                self.name_fragments[fragment.get_name()] = fragment
+            else:
+                self.normal_fragments.append(fragment)
+
+    def __render_node_recursively(self, node: TreeNode):
+        magic = node.val
+        if magic.is_use():
+            name_fragment = self.name_fragments[magic.get_name()]
+            node.children.insert(0, name_fragment.root())
+        else:
+            for child in node.children:
+                self.__render_node_recursively(child)
 
     def print(self):
-        if self.fragment is not None:
-            self.fragment.print()
+        for fragment in self.normal_fragments:
+            fragment.print()
 
-    def __process_magic_line(self, line: str, line_no: int):
-        magic = parse_magic(line)
-        magic.line_no = line_no
-        magic.line = line
-        if 0 == magic.level:
-            if self.fragment is not None:
-                self.fragment.finish()
-            self.fragment = PrintFragment()
-        self.fragment.handle_magic(magic)
+        print()
+        PrintNameFragment.all_type = sorted(PrintNameFragment.all_type)
+        print('NUM OF ALL TYPE: ', len(PrintNameFragment.all_type))
+        for candidate_type in PrintNameFragment.all_type:
+            print(candidate_type)
+
+
+def parse_line_to_magic(line: str, line_no):
+    magic = parse_magic(line)
+    magic.line_no = line_no
+    return magic
+
+
+def print_magic_tree(tree_root: Fragment):
+    explorer_and_print('', tree_root.root(), set(), tree_root)
+
+
+def reduce_magic_tree(tree_root: MagicTree):
+    reduce_node(tree_root.root)
+
+
+def reduce_node(node: TreeNode):
+    if len(node.children) > 1:
+        if not node.children[0].val.test.always_true():
+            if does_first_child_contain_remainder(node.children):
+                merge_first_child_with_each_child(node.children)
+
+    for child in node.children:
+        if have_same_test_method(child.val, node.val) and \
+                is_lhv_contain_rhv(child.val.test, node.val.test, node.val.type):
+            child.val.test.set_always_true()
+
+        reduce_node(child)
+
+
+def merge_first_child_with_each_child(children: List[TreeNode]):
+        desc = children[0].val.desc
+        # children[0].val.desc = ''
+        children[0].val.test.set_always_true()
+
+        for child in children[1:]:
+            child.val.desc = join_magic_desc(desc, child.val) + '; @reduced@'
+
+
+def does_first_child_contain_remainder(children: List):
+    first_child = children[0]
+    for child in children[1:]:
+        if child.children:
+            # child should have no child (simplify problem)
+            return False
+        if not have_same_test_method(child.val, first_child.val) or \
+                not is_lhv_contain_rhv(first_child.val.test, child.val.test, child.val.type):
+            return False
+    return True
+
+
+def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: Fragment):
+    is_use, is_already_visited = visit_if_call_use(node, use_history)
+    if is_already_visited:
+        return
+
+    prefix = join_magic_desc(prefix, node.val)
+    # print(node.val.line, ' ' * 20, '\t\t', prefix, 'explorer', always_true_n, len(node.children))
+    print(node.val.line, ' ' * 20, '\t\t', '@%s@' % prefix, '$explorer$')
+
+    PrintNameFragment.all_type.add(prefix + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+
+    children_num = len(node.children)
+    always_true_n = count_always_true_in_front(node.children)
+    is_mutual_exclude = always_true_n != children_num
+    for i in range(always_true_n, children_num):
+        for j in range(i+1, children_num):
+            if not magic_mutex(node.children[j].val, node.children[i].val):
+                is_mutual_exclude = False
+                break
+
+    if is_use:
+        print('[')
+
+    for i, child in enumerate(node.children):
+        if (is_mutual_exclude or not prefix) and not trivial_desc(prefix, child.val):
+            explorer_and_print(prefix, child, use_history, fragment)
+        else:
+            just_print(prefix, child, use_history, fragment)
+
+        # if there is no prefix, take the desc of front always true node as
+        # default prefix
+        if i < always_true_n and not prefix:
+            prefix = join_magic_desc(prefix, node.children[i].val)
+    pass
+
+    if is_use:
+        print(']')
+
+
+def just_print(string: str, node: TreeNode, use_history: set, fragment: Fragment):
+    is_use, is_already_visited = visit_if_call_use(node, use_history)
+    if is_use:
+        print('JUMP OUT USE SINCE WE ARE JUST', node.val.get_name())
+        return
+
+    print(node.val.line, ' ' * 20, '\t\t', '@%s@' % string, '$just$')
+    # print(node.val.line, ' ' * 20, '\t\t', string)
+    PrintNameFragment.all_type.add(string + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+
+    if is_use:
+        print('[')
+    for child in node.children:
+        just_print(string, child, use_history, fragment)
+
+    if is_use:
+        print(']')
+
+
+def visit_if_call_use(node: TreeNode, use_history: set):
+    is_use = False
+    is_already_visited = False
+
+    if node.val.is_use():
+        is_use = True
+        print('USE ', node.val.get_name())
+        if node.val.get_name() in use_history:
+            is_already_visited = True
+        else:
+            is_already_visited = False
+            use_history.add(node.val.get_name())
+    return is_use, is_already_visited
+
+
+def count_always_true_in_front(children: List):
+    for i, child in enumerate(children):
+        if child.val.test.always_true():
+            continue
+        return i
+    return len(children)
+
+
+def trivial_desc(prefix: str, magic: Magic):
+    desc = magic.desc
+
+    desc_source_len = len(desc)
+    prefix_len = len(prefix)
+
+    if desc_source_len + desc_source_len > prefix_len:
+        return False
+
+    desc = desc.lower()
+    desc = desc.replace(r'\b', '')
+    desc = desc.replace(r'%', '')
+    desc = desc.replace(r'.', '')
+    desc = desc.replace(r',', '')
+    desc = desc.replace(r'=', '')
+    desc = desc.replace(r'version %', '')
+    desc = desc.replace(r'from', '')
+    desc = desc.replace(r'size', '')
+
+    desc_reduce_len = len(desc)
+    return desc_reduce_len * 1.5 < desc_source_len
