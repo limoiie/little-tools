@@ -25,8 +25,14 @@ class Type:
     def is_clear(self):
         return self.type == 'clear'
 
-    def is_string(self):
+    def is_text(self):
         return 'string' in self.type or 'byte' in self.type
+
+    def is_string(self):
+        return 'string' in self.type
+
+    def is_byte(self):
+        return 'byte' in self.type
 
     def is_float(self):
         return 'double' in self.type or 'float' in self.type
@@ -163,7 +169,7 @@ class Magic:
 
 def have_same_test_method(lhv: Magic, rhv: Magic):
     same_type = lhv.type == rhv.type or \
-                lhv.type.is_string() and rhv.type.is_string()
+                lhv.type.is_text() and rhv.type.is_text()
 
     return same_type and lhv.offset == rhv.offset
 
@@ -180,7 +186,7 @@ def parse_magic(line: str):
     if magic.is_functional():
         magic.test.set_always_true()
 
-    if magic.type.is_string():
+    if magic.type.is_text():
         format_magic_desc_if_possible(magic)
 
     if magic.is_use():

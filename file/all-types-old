@@ -1370,14 +1370,14 @@ JUMP OUT USE SINCE WE ARE JUST PIT-entry
 >20	search/1000/w	\<!DOCTYPE\ X3D		X3D (Extensible 3D) model xml text                      		 @X3D (Extensible 3D) model xml text@ $explorer$
 
 
-0	string		HVQM4		%s                      		 @%s@ $explorer$
->6	string		>\0		v%s                      		 @%s@ $just$
->0	byte		x		GameCube movie,                      		 @%s@ $just$
->0x34	ubeshort	x		%d x                      		 @%s@ $just$
->0x36	ubeshort	x		%d,                      		 @%s@ $just$
->0x26	ubeshort	x		%dus,                      		 @%s@ $just$
->0x42	ubeshort	0		no audio                      		 @%s@ $just$
->0x42	ubeshort	>0		%dHz audio                      		 @%s@ $just$
+0	string		HVQM4		%s                      		 @HVQM4@ $explorer$
+>6	string		>\0		v%s                      		 @HVQM4@ $just$
+>0	byte		x		GameCube movie,                      		 @HVQM4@ $just$
+>0x34	ubeshort	x		%d x                      		 @HVQM4@ $just$
+>0x36	ubeshort	x		%d,                      		 @HVQM4@ $just$
+>0x26	ubeshort	x		%dus,                      		 @HVQM4@ $just$
+>0x42	ubeshort	0		no audio                      		 @HVQM4@ $just$
+>0x42	ubeshort	>0		%dHz audio                      		 @HVQM4@ $just$
 
 
 0	string		DVDVIDEO-VTS	Video title set,                      		 @Video title set,@ $explorer$
@@ -1679,7 +1679,7 @@ JUMP OUT USE SINCE WE ARE JUST PIT-entry
 >4	belong		x			- %d bytes                      		 @Mac OS X Detached Code Signature@ $just$
 
 
-4	string innotek\ VirtualBox\ Disk\ Image %s                      		 @%s@ $explorer$
+4	string innotek\ VirtualBox\ Disk\ Image %s                      		 @innotek VirtualBox Disk Image@ $explorer$
 
 
 0	beshort	0x4552                      		 @@ $explorer$
@@ -4067,11 +4067,11 @@ JUMP OUT USE SINCE WE ARE JUST lharc-header
 
 
 0	string	SNES-SPC700\ Sound\ File\ Data\ v	SNES SPC700 sound file                      		 @SNES SPC700 sound file@ $explorer$
->&0	string	0.30					\b, version %s                      		 @SNES SPC700 sound file, version %s@ $explorer$
->>0x23	byte	0x1B					\b, without ID666 tag                      		 @SNES SPC700 sound file, version %s, without ID666 tag@ $explorer$
->>0x23	byte	0x1A					\b, with ID666 tag                      		 @SNES SPC700 sound file, version %s, with ID666 tag@ $explorer$
->>>0x2E	string	>\0					\b, song "%.32s"                      		 @SNES SPC700 sound file, version %s, with ID666 tag@ $just$
->>>0x4E	string	>\0					\b, game "%.32s"                      		 @SNES SPC700 sound file, version %s, with ID666 tag@ $just$
+>&0	string	0.30					\b, version %s                      		 @SNES SPC700 sound file, version 0.30@ $explorer$
+>>0x23	byte	0x1B					\b, without ID666 tag                      		 @SNES SPC700 sound file, version 0.30, without ID666 tag@ $explorer$
+>>0x23	byte	0x1A					\b, with ID666 tag                      		 @SNES SPC700 sound file, version 0.30, with ID666 tag@ $explorer$
+>>>0x2E	string	>\0					\b, song "%.32s"                      		 @SNES SPC700 sound file, version 0.30, with ID666 tag@ $just$
+>>>0x4E	string	>\0					\b, game "%.32s"                      		 @SNES SPC700 sound file, version 0.30, with ID666 tag@ $just$
 
 
 0	string		IMPM		Impulse Tracker module sound data -                      		 @Impulse Tracker module sound data -@ $explorer$
@@ -4146,12 +4146,12 @@ JUMP OUT USE SINCE WE ARE JUST lharc-header
 0	string		OKTASONG	Oktalyzer module data                      		 @Oktalyzer module data@ $explorer$
 
 
-0	string		DIGI\ Booster\ module\0	%s                      		 @%s@ $explorer$
->20	byte		>0		%c                      		 @%s@ $just$
->>21	byte		>0		\b%c                      		 @%s@ $just$
->>>22	byte		>0		\b%c                      		 @%s@ $just$
->>>>23	byte		>0		\b%c                      		 @%s@ $just$
->610	string		>\0		\b, "%s"                      		 @%s@ $just$
+0	string		DIGI\ Booster\ module\0	%s                      		 @DIGI Booster module\0@ $explorer$
+>20	byte		>0		%c                      		 @DIGI Booster module\0@ $just$
+>>21	byte		>0		\b%c                      		 @DIGI Booster module\0@ $just$
+>>>22	byte		>0		\b%c                      		 @DIGI Booster module\0@ $just$
+>>>>23	byte		>0		\b%c                      		 @DIGI Booster module\0@ $just$
+>610	string		>\0		\b, "%s"                      		 @DIGI Booster module\0@ $just$
 
 
 0	string		DBM0	   	DIGI Booster Pro Module                      		 @DIGI Booster Pro Module@ $explorer$
@@ -4360,8 +4360,8 @@ JUMP OUT USE SINCE WE ARE JUST lharc-header
 >35	short 		>0		\b, %d kHz                      		 @VQF data@ $just$
 
 
-0	string	Winamp\ EQ\ library\ file	%s                      		 @%s@ $explorer$
->23	string	x	\b%.4s                      		 @%s@ $just$
+0	string	Winamp\ EQ\ library\ file	%s                      		 @Winamp EQ library file@ $explorer$
+>23	string	x	\b%.4s                      		 @Winamp EQ library file@ $just$
 
 
 0	string	[Equalizer\ preset]	XMMS equalizer preset                      		 @XMMS equalizer preset@ $explorer$
@@ -9498,10 +9498,10 @@ JUMP OUT USE SINCE WE ARE JUST cdrom
 >>>>>>>>0x1A	ubyte	0x10		\b, write-protected                      		 @NEC PC-88 disk image, name=%s@ $just$
 
 
-0	pstring	HDD\ Raw\ Copy\ Tool	%s                      		 @%s@ $explorer$
->0x100	pstring	x			%s                      		 @%s@ $just$
->0x200	pstring	x			- HD model: %s                      		 @%s@ $just$
->0x400	pstring	x			serial: %s                      		 @%s@ $just$
+0	pstring	HDD\ Raw\ Copy\ Tool	%s                      		 @HDD Raw Copy Tool@ $explorer$
+>0x100	pstring	x			%s                      		 @HDD Raw Copy Tool@ $just$
+>0x200	pstring	x			- HD model: %s                      		 @HDD Raw Copy Tool@ $just$
+>0x400	pstring	x			serial: %s                      		 @HDD Raw Copy Tool@ $just$
 
 
 0	string	FP1		libfprint fingerprint data V1                      		 @libfprint fingerprint data V1@ $explorer$
@@ -9908,7 +9908,7 @@ JUMP OUT USE SINCE WE ARE JUST woff
 
 
 0	string		\<MakerScreenFont	FrameMaker Font file                      		 @FrameMaker Font file@ $explorer$
->17	string		1.01		 (%s)                      		 @FrameMaker Font file (%s)@ $explorer$
+>17	string		1.01		 (%s)                      		 @FrameMaker Font file (1.01)@ $explorer$
 
 
 0	string		\<MML		FrameMaker MML file                      		 @FrameMaker MML file@ $explorer$
@@ -10349,7 +10349,7 @@ JUMP OUT USE SINCE WE ARE JUST pak-entry
 >12	lelong	x		containing %d files                      		 @Build engine group file@ $just$
 
 
-0	string		Warcraft\ III\ recorded\ game	%s                      		 @%s@ $explorer$
+0	string		Warcraft\ III\ recorded\ game	%s                      		 @Warcraft III recorded game@ $explorer$
 
 
 0	string		HM3W		Warcraft III map file                      		 @Warcraft III map file@ $explorer$
@@ -11700,61 +11700,61 @@ USE  tga-image
 [
 0	name				tga-image                      		 @@ $explorer$
 >2	ubyte		<34		Targa image data                      		 @Targa image data@ $explorer$
->2	ubyte&0xF7	1		- Map                      		 @- Map@ $explorer$
->2	ubyte&0xF7	2		- RGB                      		 @- RGB@ $explorer$
->>17	ubyte&0x0F	>0		\bA                      		 @- RGBA@ $explorer$
->2	ubyte&0xF7	3		- Mono                      		 @- Mono@ $explorer$
->2	ubyte		32		- Color                      		 @- Color@ $explorer$
->2	ubyte		33		- Color                      		 @- Color@ $explorer$
->1	ubyte		1		(                      		 @(@ $explorer$
->>3	uleshort	>0		\b%d-                      		 @(@ $just$
->>5	uleshort	x		\b%d)                      		 @(@ $just$
->2	ubyte&0x08	8		- RLE                      		 @- RLE@ $explorer$
->12	uleshort	>0		%d x                      		 @%d x@ $explorer$
->12	uleshort	=0		65536 x                      		 @65536 x@ $explorer$
->14	uleshort	>0		%d                      		 @%d@ $explorer$
->14	uleshort	=0		65536                      		 @65536@ $explorer$
->16	ubyte		x		x %d                      		 @x %d@ $explorer$
->8	uleshort	>0		+%d                      		 @+%d@ $explorer$
->10	uleshort	>0		+%d                      		 @+%d@ $explorer$
->17	ubyte&0x0F	>0		- %d-bit alpha                      		 @- %d-bit alpha@ $explorer$
->17	ubyte		&0x20		- top                      		 @- top@ $explorer$
->17	ubyte		&0x10		- right                      		 @- right@ $explorer$
->17	ubyte&0xC0	0x40		- interleave                      		 @- interleave@ $explorer$
->17	ubyte&0xC0	0x80		- four way interleave                      		 @- four way interleave@ $explorer$
->17	ubyte&0xC0	0xC0		- reserved                      		 @- reserved@ $explorer$
->0	ubyte		>0                      		 @@ $explorer$
->>18	string		x		"%s"                      		 @"%s"@ $explorer$
->18	search/4261301/s	TRUEVISION-XFILE.\0                      		 @@ $explorer$
->>&-8		ulelong			>0                      		 @@ $explorer$
->>>(&-4.l)	uleshort		0x01EF                      		 @@ $explorer$
->>>>&0		string			>\0		- author "%-.40s"                      		 @- author "%-.40s"@ $explorer$
->>>>&41		string			>\0		- comment "%-.80s"                      		 @- comment "%-.80s"@ $explorer$
->>>>&365	ubequad&0xffffFFFFffff0000	!0                      		 @@ $explorer$
->>>>>&-6		uleshort		x		%d                      		 @%d@ $explorer$
->>>>>&-8		uleshort		x		\b-%d                      		 @%d@ $just$
->>>>>&-4		uleshort		x		\b-%d                      		 @%d@ $just$
->>>>&371	ubequad&0xffffFFFFffff0000	!0                      		 @@ $explorer$
->>>>>&-8		uleshort		x		%d                      		 @%d@ $explorer$
->>>>>&-6		uleshort		x		\b:%.2d                      		 @%d@ $just$
->>>>>&-4		uleshort		x		\b:%.2d                      		 @%d@ $just$
->>>>&377		string			>\0		- job "%-.40s"                      		 @- job "%-.40s"@ $explorer$
->>>>&418	ubequad&0xffffFFFFffff0000	!0                      		 @@ $explorer$
->>>>>&-8		uleshort		x		%d                      		 @%d@ $explorer$
->>>>>&-6		uleshort		x		\b:%.2d                      		 @%d@ $just$
->>>>>&-4		uleshort		x		\b:%.2d                      		 @%d@ $just$
->>>>&424		string			>\0		- %-.40s                      		 @- %-.40s@ $explorer$
->>>>&424	ubyte				>0                      		 @@ $explorer$
->>>>>&40		uleshort/100		x		%d                      		 @%d@ $explorer$
->>>>>&40		uleshort%100		x		\b.%d                      		 @%d.%d@ $explorer$
->>>>>&42		ubyte			>0x20		\b%c                      		 @%d%c@ $explorer$
->>>>&468		ulelong			>0		- keycolor 0x%8.8x                      		 @- keycolor 0x%8.8x@ $explorer$
->>>>&474	uleshort			>0                      		 @@ $explorer$
->>>>>&-4		uleshort		>0		- aspect %d                      		 @- aspect %d@ $explorer$
->>>>>&-2		uleshort		x		\b/%d                      		 @/%d@ $explorer$
->>>>&478	uleshort			>0                      		 @@ $explorer$
->>>>>&-4		uleshort		>0		- gamma %d                      		 @- gamma %d@ $explorer$
->>>>>&-2		uleshort		x		\b/%d                      		 @/%d@ $explorer$
+>>2	ubyte&0xF7	1		- Map                      		 @Targa image data@ $just$
+>>2	ubyte&0xF7	2		- RGB                      		 @Targa image data@ $just$
+>>>17	ubyte&0x0F	>0		\bA                      		 @Targa image data@ $just$
+>>2	ubyte&0xF7	3		- Mono                      		 @Targa image data@ $just$
+>>2	ubyte		32		- Color                      		 @Targa image data@ $just$
+>>2	ubyte		33		- Color                      		 @Targa image data@ $just$
+>>1	ubyte		1		(                      		 @Targa image data@ $just$
+>>>3	uleshort	>0		\b%d-                      		 @Targa image data@ $just$
+>>>5	uleshort	x		\b%d)                      		 @Targa image data@ $just$
+>>2	ubyte&0x08	8		- RLE                      		 @Targa image data@ $just$
+>>12	uleshort	>0		%d x                      		 @Targa image data@ $just$
+>>12	uleshort	=0		65536 x                      		 @Targa image data@ $just$
+>>14	uleshort	>0		%d                      		 @Targa image data@ $just$
+>>14	uleshort	=0		65536                      		 @Targa image data@ $just$
+>>16	ubyte		x		x %d                      		 @Targa image data@ $just$
+>>8	uleshort	>0		+%d                      		 @Targa image data@ $just$
+>>10	uleshort	>0		+%d                      		 @Targa image data@ $just$
+>>17	ubyte&0x0F	>0		- %d-bit alpha                      		 @Targa image data@ $just$
+>>17	ubyte		&0x20		- top                      		 @Targa image data@ $just$
+>>17	ubyte		&0x10		- right                      		 @Targa image data@ $just$
+>>17	ubyte&0xC0	0x40		- interleave                      		 @Targa image data@ $just$
+>>17	ubyte&0xC0	0x80		- four way interleave                      		 @Targa image data@ $just$
+>>17	ubyte&0xC0	0xC0		- reserved                      		 @Targa image data@ $just$
+>>0	ubyte		>0                      		 @Targa image data@ $just$
+>>>18	string		x		"%s"                      		 @Targa image data@ $just$
+>>18	search/4261301/s	TRUEVISION-XFILE.\0                      		 @Targa image data@ $just$
+>>>&-8		ulelong			>0                      		 @Targa image data@ $just$
+>>>>(&-4.l)	uleshort		0x01EF                      		 @Targa image data@ $just$
+>>>>>&0		string			>\0		- author "%-.40s"                      		 @Targa image data@ $just$
+>>>>>&41		string			>\0		- comment "%-.80s"                      		 @Targa image data@ $just$
+>>>>>&365	ubequad&0xffffFFFFffff0000	!0                      		 @Targa image data@ $just$
+>>>>>>&-6		uleshort		x		%d                      		 @Targa image data@ $just$
+>>>>>>&-8		uleshort		x		\b-%d                      		 @Targa image data@ $just$
+>>>>>>&-4		uleshort		x		\b-%d                      		 @Targa image data@ $just$
+>>>>>&371	ubequad&0xffffFFFFffff0000	!0                      		 @Targa image data@ $just$
+>>>>>>&-8		uleshort		x		%d                      		 @Targa image data@ $just$
+>>>>>>&-6		uleshort		x		\b:%.2d                      		 @Targa image data@ $just$
+>>>>>>&-4		uleshort		x		\b:%.2d                      		 @Targa image data@ $just$
+>>>>>&377		string			>\0		- job "%-.40s"                      		 @Targa image data@ $just$
+>>>>>&418	ubequad&0xffffFFFFffff0000	!0                      		 @Targa image data@ $just$
+>>>>>>&-8		uleshort		x		%d                      		 @Targa image data@ $just$
+>>>>>>&-6		uleshort		x		\b:%.2d                      		 @Targa image data@ $just$
+>>>>>>&-4		uleshort		x		\b:%.2d                      		 @Targa image data@ $just$
+>>>>>&424		string			>\0		- %-.40s                      		 @Targa image data@ $just$
+>>>>>&424	ubyte				>0                      		 @Targa image data@ $just$
+>>>>>>&40		uleshort/100		x		%d                      		 @Targa image data@ $just$
+>>>>>>&40		uleshort%100		x		\b.%d                      		 @Targa image data@ $just$
+>>>>>>&42		ubyte			>0x20		\b%c                      		 @Targa image data@ $just$
+>>>>>&468		ulelong			>0		- keycolor 0x%8.8x                      		 @Targa image data@ $just$
+>>>>>&474	uleshort			>0                      		 @Targa image data@ $just$
+>>>>>>&-4		uleshort		>0		- aspect %d                      		 @Targa image data@ $just$
+>>>>>>&-2		uleshort		x		\b/%d                      		 @Targa image data@ $just$
+>>>>>&478	uleshort			>0                      		 @Targa image data@ $just$
+>>>>>>&-4		uleshort		>0		- gamma %d                      		 @Targa image data@ $just$
+>>>>>>&-2		uleshort		x		\b/%d                      		 @Targa image data@ $just$
 ]
 >>>16	ubyte			8                      		 @@ $explorer$
 USE  tga-image
@@ -12386,15 +12386,15 @@ USE  gem_info
 
 
 0		string	PaRtImAgE-VoLuMe	PartImage                      		 @PartImage@ $explorer$
->0x0020		string	0.6.1		file version %s                      		 @PartImage file version %s@ $explorer$
->>0x0060	lelong	>-1		volume %d                      		 @PartImage file version %s@ $just$
->>0x0200	string	>\0		type %s                      		 @PartImage file version %s@ $just$
->>0x1400	string	>\0		device %s,                      		 @PartImage file version %s@ $just$
->>0x1600	string	>\0		original filename %s,                      		 @PartImage file version %s@ $just$
->>0x2744	lelong	0		not compressed                      		 @PartImage file version %s@ $just$
->>0x2744	lelong	1		gzip compressed                      		 @PartImage file version %s@ $just$
->>0x2744	lelong	2		bzip2 compressed                      		 @PartImage file version %s@ $just$
->>0x2744	lelong	>2		compressed with unknown algorithm                      		 @PartImage file version %s@ $just$
+>0x0020		string	0.6.1		file version %s                      		 @PartImage file version 0.6.1@ $explorer$
+>>0x0060	lelong	>-1		volume %d                      		 @PartImage file version 0.6.1@ $just$
+>>0x0200	string	>\0		type %s                      		 @PartImage file version 0.6.1@ $just$
+>>0x1400	string	>\0		device %s,                      		 @PartImage file version 0.6.1@ $just$
+>>0x1600	string	>\0		original filename %s,                      		 @PartImage file version 0.6.1@ $just$
+>>0x2744	lelong	0		not compressed                      		 @PartImage file version 0.6.1@ $just$
+>>0x2744	lelong	1		gzip compressed                      		 @PartImage file version 0.6.1@ $just$
+>>0x2744	lelong	2		bzip2 compressed                      		 @PartImage file version 0.6.1@ $just$
+>>0x2744	lelong	>2		compressed with unknown algorithm                      		 @PartImage file version 0.6.1@ $just$
 >0x0020		string	>0.6.1		file version %s                      		 @PartImage file version %s@ $explorer$
 >0x0020		string	<0.6.1		file version %s                      		 @PartImage file version %s@ $explorer$
 
@@ -12704,82 +12704,7 @@ JUMP OUT USE SINCE WE ARE JUST sega-pvr-image-header
 >0x10	string	PVRT                      		 @@ $explorer$
 >>0x10	string	DDS\040\174\000\000\000 Sega PVR (Xbox) image:                      		 @Sega PVR (Xbox) image:@ $explorer$
 USE  ms-directdraw-surface
->>0x20	use	ms-directdraw-surface                      		 @@ $explorer$
-[
-0	name	ms-directdraw-surface                      		 @@ $explorer$
->0x10	ulelong	x			%u x                      		 @%u x@ $explorer$
->0x0C	ulelong	x			%u                      		 @%u x@ $just$
->0x58	ulelong	>0			\b, %u-bit color                      		 @%u x@ $just$
->0x50	ulelong&0x4	4                      		 @%u x@ $just$
->>0x54	string	x			\b, compressed using %.4s                      		 @%u x@ $just$
->0x50	ulelong&0x2	0x2		\b, alpha only                      		 @%u x@ $just$
->0x50	ulelong&0x200	0x200		\b, YUV                      		 @%u x@ $just$
->0x50	ulelong&0x20000	0x20000		\b, luminance                      		 @%u x@ $just$
->0x50	ulelong&0x40	0x40                      		 @%u x@ $just$
->>0x58		ulelong	16                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000003E000007C00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000000000001F	\b, RGB555                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000003E000001F00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000000000007C	\b, BGR555                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000007E00000F800                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000000000001F	\b, RGB565                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000007E000001F00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x00000000000000F8	\b, BGR565                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000000F000000F00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000F0000000000F	\b, ARGB4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000000F00000000F                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000F00000000F00	\b, ABGR4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00000F000000F000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000F000000F0	\b, RGBA4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00000F00000000F0                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000F0000F000	\b, BGRA4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000000F000000F00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000000000000F	\b, xRGB4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000000F00000000F                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000000000F00	\b, xBGR4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00000F000000F000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x00000000000000F0	\b, RGBx4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00000F00000000F0                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000000000F000	\b, BGRx4444                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000003E000007C00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000080000000001F	\b, ARGB1555                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000003E000001F00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000080000000007C	\b, ABGR1555                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000007C00000F800                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000010000003E	\b, RGBA5551                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000007C00000003E                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000010000F800	\b, BGRA5551                      		 @%u x@ $just$
->>88		ulelong 24                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FF0000FF0000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x00000000000000FF	\b, RGB888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FF00000000FF                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000000FF0000	\b, BGR888                      		 @%u x@ $just$
->>88		ulelong 32                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FF0000FF0000                      		 @%u x@ $just$
->>>>0x64	ulequad 0xFF000000000000FF	\b, ARGB8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FF00000000FF                      		 @%u x@ $just$
->>>>0x64	ulequad 0xFF00000000FF0000	\b, ABGR8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00FF0000FF000000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000FF0000FF00	\b, RGBA8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00FF00000000FF00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000FFFF000000	\b, BGBA8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FF0000FF0000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x00000000000000FF	\b, xRGB8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FF00000000FF                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000000FF0000	\b, xBGR8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00FF0000FF000000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x000000000000FF00	\b, RGBx8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0x00FF00000000FF00                      		 @%u x@ $just$
->>>>0x64	ulequad 0x00000000FF000000	\b, BGBx8888                      		 @%u x@ $just$
->>>0x5C		ulequad	0xFFFF00000000FFFF                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000000000000	\b, G16R16                      		 @%u x@ $just$
->>>0x5C		ulequad	0x0000FFFFFFFF0000                      		 @%u x@ $just$
->>>>0x64	ulequad 0x0000000000000000	\b, R16G16                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000FFC003FF00000                      		 @%u x@ $just$
->>>>0x64	ulequad 0xC0000000000003FF	\b, A2R10G10B10                      		 @%u x@ $just$
->>>0x5C		ulequad	0x000FFC00000003FF                      		 @%u x@ $just$
->>>>0x64	ulequad 0xC00000003FF00000	\b, A2B10G10R10                      		 @%u x@ $just$
-]
+JUMP OUT USE SINCE WE ARE JUST ms-directdraw-surface
 >>0x10	belong	!0x44445320		Sega PVR image:                      		 @Sega PVR image:@ $explorer$
 USE  sega-pvr-image-header
 JUMP OUT USE SINCE WE ARE JUST sega-pvr-image-header
@@ -14435,12 +14360,12 @@ JUMP OUT USE SINCE WE ARE JUST diy-thermocam-parser
 >136 string \x02\x02\x04\x04 Micro Focus Index File (IDX)                      		 @Micro Focus Index File (IDX)@ $explorer$
 
 
-0	string/t		Content-Type:\040                      		 @@ $explorer$
->14	string		>\0		%s                      		 @%s@ $explorer$
+0	string/t		Content-Type:\040  MIME encoded files                      		 @MIME encoded files@ $explorer$
+>14	string		>\0		\b: %s                      		 @MIME encoded files@ $just$
 
 
-0	string/t		Content-Type:                      		 @@ $explorer$
->13	string		>\0		%s                      		 @%s@ $explorer$
+0	string/t		Content-Type:      MIME encoded files                      		 @MIME encoded files@ $explorer$
+>13	string		>\0		\b: %s                      		 @MIME encoded files@ $just$
 
 
 0	beshort	0x0160		MIPSEB ECOFF executable                      		 @MIPSEB ECOFF executable@ $explorer$
@@ -14917,7 +14842,7 @@ JUMP OUT USE SINCE WE ARE JUST diy-thermocam-parser
 >>>>&0		lelong		>0x6000 \b, 32lite compressed                      		 @, COFF@ $just$
 >(8.s*16) string $WdX \b, WDos/X DOS extender                      		 @, WDos/X DOS extender@ $explorer$
 >0x35	string	\x8e\xc0\xb9\x08\x00\xf3\xa5\x4a\x75\xeb\x8e\xc3\x8e\xd8\x33\xff\xbe\x30\x00\x05 \b, aPack compressed                      		 @, aPack compressed@ $explorer$
->0xe7	string	LH/2\ 	Self-Extract \b, %s                      		 @Self-Extract \b, %s@ $explorer$
+>0xe7	string	LH/2\ 	Self-Extract \b, %s                      		 @Self-Extract \b, LH/2 @ $explorer$
 >0x1c	string	UC2X	\b, UCEXE compressed                      		 @, UCEXE compressed@ $explorer$
 >0x1c	string	WWP\ 	\b, WWPACK compressed                      		 @, WWPACK compressed@ $explorer$
 >0x1c	string	RJSX 	\b, ARJ self-extracting archive                      		 @, ARJ self-extracting archive@ $explorer$
@@ -15496,7 +15421,7 @@ USE  msdos-com
 >30	byte	12		(4kB sectors)                      		 @AAF file using MS Structured Storage (4kB sectors)@ $explorer$
 
 
-2080	string	Microsoft\ Word\ 6.0\ Document	%s                      		 @%s@ $explorer$
+2080	string	Microsoft\ Word\ 6.0\ Document	%s                      		 @Microsoft Word 6.0 Document@ $explorer$
 
 
 2080	string	Documento\ Microsoft\ Word\ 6 Spanish Microsoft Word 6 document data                      		 @Spanish Microsoft Word 6 document data@ $explorer$
@@ -15524,13 +15449,13 @@ USE  msdos-com
 0	string/b	\xDB\xA5\x2D\x00		Microsoft WinWord 2.0 Document                      		 @Microsoft WinWord 2.0 Document@ $explorer$
 
 
-2080	string	Microsoft\ Excel\ 5.0\ Worksheet	%s                      		 @%s@ $explorer$
+2080	string	Microsoft\ Excel\ 5.0\ Worksheet	%s                      		 @Microsoft Excel 5.0 Worksheet@ $explorer$
 
 
 0	string/b	\xDB\xA5\x2D\x00		Microsoft WinWord 2.0 Document                      		 @Microsoft WinWord 2.0 Document@ $explorer$
 
 
-2080	string	Foglio\ di\ lavoro\ Microsoft\ Exce	%s                      		 @%s@ $explorer$
+2080	string	Foglio\ di\ lavoro\ Microsoft\ Exce	%s                      		 @Foglio di lavoro Microsoft Exce@ $explorer$
 
 
 2114	string	Biff5		Microsoft Excel 5.0 Worksheet                      		 @Microsoft Excel 5.0 Worksheet@ $explorer$
@@ -15925,7 +15850,7 @@ JUMP OUT USE SINCE WE ARE JUST cab-folder
 
 
 0	string/b $RBU                      		 @@ $explorer$
->23	string Dell			%s system BIOS                      		 @%s system BIOS@ $explorer$
+>23	string Dell			%s system BIOS                      		 @Dell system BIOS@ $explorer$
 >5	byte   2                      		 @@ $explorer$
 >>48	byte   x			version %d.                      		 @version %d.@ $explorer$
 >>49	byte   x			\b%d.                      		 @version %d.@ $just$
@@ -17448,41 +17373,41 @@ JUMP OUT USE SINCE WE ARE JUST aportisdoc
 
 
 0 string PGF Progressive Graphics image data,                      		 @Progressive Graphics image data,@ $explorer$
->3	string	2	version %s,                      		 @Progressive Graphics image data, version %s,@ $explorer$
->3	string	4	version %s,                      		 @Progressive Graphics image data, version %s,@ $explorer$
->3	string	5	version %s,                      		 @Progressive Graphics image data, version %s,@ $explorer$
->3	string	6	version %s,                      		 @Progressive Graphics image data, version %s,@ $explorer$
->>8	lelong	x	%d x                      		 @Progressive Graphics image data, version %s,@ $just$
->>12	lelong	x	%d,                      		 @Progressive Graphics image data, version %s,@ $just$
->>16	byte	x	%d levels,                      		 @Progressive Graphics image data, version %s,@ $just$
->>17	byte	x	compression level %d,                      		 @Progressive Graphics image data, version %s,@ $just$
->>18	byte	x	%d bpp,                      		 @Progressive Graphics image data, version %s,@ $just$
->>19	byte	x	%d channels,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	clear	x                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	0	bitmap,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	1	gray scale,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	2	indexed color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	3	RGB color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	4	CYMK color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	5	HSL color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	6	HSB color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	7	multi-channel,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	8	duo tone,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	9	LAB color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	10	gray scale 16,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	11	RGB color 48,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	12	LAB color 48,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	13	CYMK color 64,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	14	deep multi-channel,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	15	duo tone 16,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	17	RGBA color,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	18	gray scale 32,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	19	RGB color 12,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	20	RGB color 16,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	byte	255	unknown format,                      		 @Progressive Graphics image data, version %s,@ $just$
->>20	default	x	format                      		 @Progressive Graphics image data, version %s,@ $just$
->>>20	byte	x	\b %d,                      		 @Progressive Graphics image data, version %s,@ $just$
->>21	byte	x	%d bpc                      		 @Progressive Graphics image data, version %s,@ $just$
+>3	string	2	version %s,                      		 @Progressive Graphics image data, version 2,@ $explorer$
+>3	string	4	version %s,                      		 @Progressive Graphics image data, version 4,@ $explorer$
+>3	string	5	version %s,                      		 @Progressive Graphics image data, version 5,@ $explorer$
+>3	string	6	version %s,                      		 @Progressive Graphics image data, version 6,@ $explorer$
+>>8	lelong	x	%d x                      		 @Progressive Graphics image data, version 6,@ $just$
+>>12	lelong	x	%d,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>16	byte	x	%d levels,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>17	byte	x	compression level %d,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>18	byte	x	%d bpp,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>19	byte	x	%d channels,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	clear	x                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	0	bitmap,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	1	gray scale,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	2	indexed color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	3	RGB color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	4	CYMK color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	5	HSL color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	6	HSB color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	7	multi-channel,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	8	duo tone,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	9	LAB color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	10	gray scale 16,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	11	RGB color 48,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	12	LAB color 48,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	13	CYMK color 64,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	14	deep multi-channel,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	15	duo tone 16,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	17	RGBA color,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	18	gray scale 32,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	19	RGB color 12,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	20	RGB color 16,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	byte	255	unknown format,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>20	default	x	format                      		 @Progressive Graphics image data, version 6,@ $just$
+>>>20	byte	x	\b %d,                      		 @Progressive Graphics image data, version 6,@ $just$
+>>21	byte	x	%d bpc                      		 @Progressive Graphics image data, version 6,@ $just$
 
 
 0		byte	0x99                      		 @@ $explorer$
@@ -21868,7 +21793,7 @@ JUMP OUT USE SINCE WE ARE JUST zipcompression
 
 
 
-NUM OF ALL TYPE:  13455
+NUM OF ALL TYPE:  12157
  DBF `./magic/database`: 185
  DBF `./magic/database`: 186
  DBF `./magic/database`: 187
@@ -21890,1246 +21815,7 @@ NUM OF ALL TYPE:  13455
  MDX `./magic/database`: 229
  MDX `./magic/database`: 231
  MDX `./magic/database`: 233
- `./magic/acorn`: 59
- `./magic/acorn`: 75
- `./magic/acorn`: 77
- `./magic/adventure`: 102
- `./magic/adventure`: 115
- `./magic/adventure`: 35
- `./magic/adventure`: 36
- `./magic/adventure`: 37
- `./magic/adventure`: 38
- `./magic/adventure`: 39
- `./magic/adventure`: 40
- `./magic/adventure`: 98
- `./magic/android`: 101
- `./magic/android`: 11
- `./magic/android`: 14
- `./magic/android`: 99
- `./magic/animation`: 1025
- `./magic/animation`: 1064
- `./magic/animation`: 1066
- `./magic/animation`: 228
- `./magic/animation`: 234
- `./magic/animation`: 448
- `./magic/animation`: 797
- `./magic/animation`: 799
- `./magic/animation`: 800
- `./magic/animation`: 810
- `./magic/animation`: 856
- `./magic/animation`: 900
- `./magic/apache`: 23
- `./magic/apache`: 26
- `./magic/apple`: 143
- `./magic/apple`: 214
- `./magic/apple`: 293
- `./magic/apple`: 362
- `./magic/apple`: 365
- `./magic/apple`: 370
- `./magic/apple`: 407
- `./magic/apple`: 408
- `./magic/apple`: 417
- `./magic/apple`: 420
- `./magic/apple`: 427
- `./magic/apple`: 428
- `./magic/apple`: 429
- `./magic/apple`: 430
- `./magic/apple`: 431
- `./magic/apple`: 432
- `./magic/apple`: 441
- `./magic/apple`: 442
- `./magic/apple`: 76
- `./magic/apple`: 78
- `./magic/apt`: 28
- `./magic/apt`: 33
- `./magic/apt`: 38
- `./magic/apt`: 46
- `./magic/archive`: 1045
- `./magic/archive`: 1051
- `./magic/archive`: 106
- `./magic/archive`: 1148
- `./magic/archive`: 1149
- `./magic/archive`: 1150
- `./magic/archive`: 1151
- `./magic/archive`: 1155
- `./magic/archive`: 1156
- `./magic/archive`: 1165
- `./magic/archive`: 1166
- `./magic/archive`: 1167
- `./magic/archive`: 1174
- `./magic/archive`: 1215
- `./magic/archive`: 1216
- `./magic/archive`: 1218
- `./magic/archive`: 1219
- `./magic/archive`: 1221
- `./magic/archive`: 1222
- `./magic/archive`: 129
- `./magic/archive`: 13
- `./magic/archive`: 135
- `./magic/archive`: 137
- `./magic/archive`: 142
- `./magic/archive`: 143
- `./magic/archive`: 146
- `./magic/archive`: 1482
- `./magic/archive`: 16
- `./magic/archive`: 17
- `./magic/archive`: 20
- `./magic/archive`: 22
- `./magic/archive`: 229
- `./magic/archive`: 23
- `./magic/archive`: 234
- `./magic/archive`: 25
- `./magic/archive`: 27
- `./magic/archive`: 28
- `./magic/archive`: 31
- `./magic/archive`: 32
- `./magic/archive`: 34
- `./magic/archive`: 409
- `./magic/archive`: 411
- `./magic/archive`: 436
- `./magic/archive`: 535
- `./magic/archive`: 56
- `./magic/archive`: 709
- `./magic/archive`: 747
- `./magic/archive`: 80
- `./magic/archive`: 827
- `./magic/archive`: 829
- `./magic/archive`: 831
- `./magic/archive`: 833
- `./magic/archive`: 835
- `./magic/archive`: 840
- `./magic/archive`: 848
- `./magic/archive`: 869
- `./magic/archive`: 913
- `./magic/archive`: 914
- `./magic/archive`: 917
- `./magic/archive`: 918
- `./magic/archive`: 920
- `./magic/archive`: 921
- `./magic/archive`: 922
- `./magic/archive`: 923
- `./magic/archive`: 924
- `./magic/archive`: 925
- `./magic/archive`: 926
- `./magic/archive`: 927
- `./magic/archive`: 928
- `./magic/archive`: 929
- `./magic/archive`: 930
- `./magic/archive`: 931
- `./magic/archive`: 934
- `./magic/archive`: 935
- `./magic/archive`: 939
- `./magic/archive`: 940
- `./magic/archive`: 942
- `./magic/archive`: 943
- `./magic/archive`: 945
- `./magic/archive`: 946
- `./magic/archive`: 948
- `./magic/archive`: 949
- `./magic/archive`: 951
- `./magic/archive`: 952
- `./magic/archive`: 954
- `./magic/archive`: 955
- `./magic/archive`: 957
- `./magic/archive`: 960
- `./magic/archive`: 962
- `./magic/archive`: 963
- `./magic/archive`: 964
- `./magic/archive`: 965
- `./magic/archive`: 966
- `./magic/archive`: 967
- `./magic/archive`: 968
- `./magic/archive`: 969
- `./magic/archive`: 970
- `./magic/archive`: 971
- `./magic/archive`: 972
- `./magic/archive`: 973
- `./magic/archive`: 974
- `./magic/archive`: 975
- `./magic/audio`: 163
- `./magic/audio`: 688
- `./magic/audio`: 741
- `./magic/audio`: 745
- `./magic/audio`: 753
- `./magic/audio`: 806
- `./magic/audio`: 824
- `./magic/audio`: 829
- `./magic/audio`: 841
- `./magic/audio`: 844
- `./magic/audio`: 849
- `./magic/audio`: 850
- `./magic/audio`: 851
- `./magic/audio`: 852
- `./magic/audio`: 906
- `./magic/audio`: 923
- `./magic/ber`: 24
- `./magic/ber`: 26
- `./magic/ber`: 28
- `./magic/ber`: 30
- `./magic/ber`: 34
- `./magic/ber`: 36
- `./magic/ber`: 38
- `./magic/ber`: 44
- `./magic/ber`: 46
- `./magic/ber`: 52
- `./magic/ber`: 54
- `./magic/ber`: 56
- `./magic/ber`: 58
- `./magic/ber`: 63
- `./magic/bioinformatics`: 10
- `./magic/bioinformatics`: 11
- `./magic/bioinformatics`: 12
- `./magic/bioinformatics`: 149
- `./magic/bioinformatics`: 156
- `./magic/bioinformatics`: 158
- `./magic/bioinformatics`: 160
- `./magic/bioinformatics`: 162
- `./magic/bioinformatics`: 164
- `./magic/bioinformatics`: 166
- `./magic/bioinformatics`: 168
- `./magic/bioinformatics`: 170
- `./magic/bioinformatics`: 172
- `./magic/bioinformatics`: 174
- `./magic/bioinformatics`: 72
- `./magic/bioinformatics`: 74
- `./magic/biosig`: 125
- `./magic/biosig`: 126
- `./magic/biosig`: 141
- `./magic/biosig`: 150
- `./magic/biosig`: 151
- `./magic/blackberry`: 6
- `./magic/c-lang`: 23
- `./magic/c-lang`: 26
- `./magic/c-lang`: 41
- `./magic/cad`: 113
- `./magic/cad`: 151
- `./magic/cad`: 152
- `./magic/cad`: 153
- `./magic/cad`: 172
- `./magic/cad`: 173
- `./magic/cad`: 174
- `./magic/cafebabe`: 18
- `./magic/cafebabe`: 53
- `./magic/cafebabe`: 57
- `./magic/cafebabe`: 61
- `./magic/cafebabe`: 63
- `./magic/cafebabe`: 65
- `./magic/cafebabe`: 67
- `./magic/cafebabe`: 69
- `./magic/claris`: 14
- `./magic/claris`: 16
- `./magic/commands`: 101
- `./magic/commands`: 102
- `./magic/commands`: 117
- `./magic/compress`: 186
- `./magic/compress`: 217
- `./magic/compress`: 218
- `./magic/compress`: 304
- `./magic/compress`: 305
- `./magic/compress`: 306
- `./magic/compress`: 311
- `./magic/console`: 229
- `./magic/console`: 233
- `./magic/console`: 237
- `./magic/console`: 256
- `./magic/console`: 262
- `./magic/console`: 277
- `./magic/console`: 309
- `./magic/console`: 311
- `./magic/console`: 327
- `./magic/console`: 328
- `./magic/console`: 329
- `./magic/console`: 330
- `./magic/console`: 331
- `./magic/console`: 332
- `./magic/console`: 539
- `./magic/console`: 66
- `./magic/console`: 680
- `./magic/console`: 681
- `./magic/console`: 695
- `./magic/console`: 703
- `./magic/console`: 708
- `./magic/console`: 709
- `./magic/console`: 719
- `./magic/console`: 727
- `./magic/console`: 728
- `./magic/console`: 736
- `./magic/console`: 758
- `./magic/console`: 759
- `./magic/console`: 760
- `./magic/console`: 773
- `./magic/console`: 85
- `./magic/console`: 879
- `./magic/console`: 880
- `./magic/console`: 905
- `./magic/console`: 906
- `./magic/console`: 907
- `./magic/console`: 908
- `./magic/console`: 909
- `./magic/console`: 910
- `./magic/console`: 911
- `./magic/coverage`: 53
- `./magic/coverage`: 59
- `./magic/coverage`: 60
- `./magic/cups`: 42
- `./magic/cups`: 47
- `./magic/cups`: 51
- `./magic/cups`: 56
- `./magic/cups`: 9
- `./magic/database`: 154
- `./magic/database`: 156
- `./magic/database`: 158
- `./magic/database`: 159
- `./magic/database`: 161
- `./magic/database`: 163
- `./magic/database`: 167
- `./magic/database`: 169
- `./magic/database`: 171
- `./magic/database`: 173
- `./magic/database`: 175
- `./magic/database`: 176
- `./magic/database`: 178
- `./magic/database`: 180
- `./magic/database`: 183
- `./magic/database`: 211
- `./magic/database`: 213
- `./magic/database`: 215
- `./magic/database`: 217
- `./magic/database`: 218
- `./magic/database`: 219
- `./magic/database`: 220
- `./magic/database`: 240
- `./magic/database`: 241
- `./magic/database`: 243
- `./magic/database`: 336
- `./magic/database`: 337
- `./magic/database`: 338
- `./magic/database`: 340
- `./magic/database`: 342
- `./magic/database`: 344
- `./magic/database`: 346
- `./magic/database`: 348
- `./magic/database`: 350
- `./magic/database`: 352
- `./magic/database`: 354
- `./magic/database`: 355
- `./magic/database`: 357
- `./magic/database`: 358
- `./magic/database`: 360
- `./magic/database`: 362
- `./magic/database`: 364
- `./magic/database`: 366
- `./magic/database`: 367
- `./magic/database`: 371
- `./magic/database`: 373
- `./magic/database`: 375
- `./magic/database`: 376
- `./magic/database`: 379
- `./magic/database`: 382
- `./magic/database`: 383
- `./magic/database`: 386
- `./magic/database`: 399
- `./magic/database`: 437
- `./magic/database`: 470
- `./magic/database`: 500
- `./magic/database`: 501
- `./magic/database`: 604
- `./magic/database`: 606
- `./magic/dataone`: 12
- `./magic/dataone`: 26
- `./magic/dataone`: 38
- `./magic/dataone`: 39
- `./magic/dataone`: 45
- `./magic/der`: 10
- `./magic/der`: 101
- `./magic/der`: 102
- `./magic/der`: 103
- `./magic/der`: 105
- `./magic/der`: 106
- `./magic/der`: 107
- `./magic/der`: 109
- `./magic/der`: 11
- `./magic/der`: 110
- `./magic/der`: 111
- `./magic/der`: 113
- `./magic/der`: 116
- `./magic/der`: 13
- `./magic/der`: 14
- `./magic/der`: 15
- `./magic/der`: 17
- `./magic/der`: 18
- `./magic/der`: 19
- `./magic/der`: 21
- `./magic/der`: 22
- `./magic/der`: 23
- `./magic/der`: 25
- `./magic/der`: 28
- `./magic/der`: 29
- `./magic/der`: 31
- `./magic/der`: 34
- `./magic/der`: 35
- `./magic/der`: 36
- `./magic/der`: 39
- `./magic/der`: 40
- `./magic/der`: 41
- `./magic/der`: 44
- `./magic/der`: 45
- `./magic/der`: 46
- `./magic/der`: 49
- `./magic/der`: 50
- `./magic/der`: 51
- `./magic/der`: 54
- `./magic/der`: 55
- `./magic/der`: 56
- `./magic/der`: 59
- `./magic/der`: 60
- `./magic/der`: 61
- `./magic/der`: 64
- `./magic/der`: 65
- `./magic/der`: 66
- `./magic/der`: 7
- `./magic/der`: 70
- `./magic/der`: 71
- `./magic/der`: 8
- `./magic/der`: 80
- `./magic/der`: 83
- `./magic/der`: 84
- `./magic/der`: 85
- `./magic/der`: 86
- `./magic/der`: 87
- `./magic/der`: 89
- `./magic/der`: 9
- `./magic/der`: 90
- `./magic/der`: 91
- `./magic/der`: 93
- `./magic/der`: 94
- `./magic/der`: 95
- `./magic/der`: 97
- `./magic/der`: 98
- `./magic/der`: 99
- `./magic/diff`: 23
- `./magic/diff`: 24
- `./magic/diff`: 25
- `./magic/diff`: 26
- `./magic/digital`: 10
- `./magic/dyadic`: 13
- `./magic/dyadic`: 15
- `./magic/efi`: 6
- `./magic/erlang`: 12
- `./magic/espressif`: 10
- `./magic/etf`: 6
- `./magic/etf`: 7
- `./magic/filesystems`: 1160
- `./magic/filesystems`: 1177
- `./magic/filesystems`: 1179
- `./magic/filesystems`: 1183
- `./magic/filesystems`: 1187
- `./magic/filesystems`: 1190
- `./magic/filesystems`: 1193
- `./magic/filesystems`: 1194
- `./magic/filesystems`: 1210
- `./magic/filesystems`: 1213
- `./magic/filesystems`: 1244
- `./magic/filesystems`: 1246
- `./magic/filesystems`: 1248
- `./magic/filesystems`: 1249
- `./magic/filesystems`: 1256
- `./magic/filesystems`: 1258
- `./magic/filesystems`: 1300
- `./magic/filesystems`: 1302
- `./magic/filesystems`: 1304
- `./magic/filesystems`: 1305
- `./magic/filesystems`: 1358
- `./magic/filesystems`: 1363
- `./magic/filesystems`: 1364
- `./magic/filesystems`: 1365
- `./magic/filesystems`: 1547
- `./magic/filesystems`: 1549
- `./magic/filesystems`: 1746
- `./magic/filesystems`: 1748
- `./magic/filesystems`: 1751
- `./magic/filesystems`: 1753
- `./magic/filesystems`: 1756
- `./magic/filesystems`: 1758
- `./magic/filesystems`: 1761
- `./magic/filesystems`: 1763
- `./magic/filesystems`: 190
- `./magic/filesystems`: 1995
- `./magic/filesystems`: 2002
- `./magic/filesystems`: 2003
- `./magic/filesystems`: 2004
- `./magic/filesystems`: 2198
- `./magic/filesystems`: 2199
- `./magic/filesystems`: 2264
- `./magic/filesystems`: 2295
- `./magic/filesystems`: 231
- `./magic/filesystems`: 2314
- `./magic/filesystems`: 232
- `./magic/filesystems`: 2325
- `./magic/filesystems`: 234
- `./magic/filesystems`: 2387
- `./magic/filesystems`: 2393
- `./magic/filesystems`: 2394
- `./magic/filesystems`: 2395
- `./magic/filesystems`: 2396
- `./magic/filesystems`: 2401
- `./magic/filesystems`: 2402
- `./magic/filesystems`: 2403
- `./magic/filesystems`: 2404
- `./magic/filesystems`: 2405
- `./magic/filesystems`: 2406
- `./magic/filesystems`: 2407
- `./magic/filesystems`: 254
- `./magic/filesystems`: 259
- `./magic/flash`: 13
- `./magic/flash`: 15
- `./magic/flash`: 31
- `./magic/flash`: 32
- `./magic/flash`: 37
- `./magic/flash`: 42
- `./magic/flash`: 48
- `./magic/flash`: 49
- `./magic/flash`: 50
- `./magic/flash`: 51
- `./magic/fonts`: 144
- `./magic/fonts`: 145
- `./magic/fonts`: 146
- `./magic/fonts`: 148
- `./magic/fonts`: 149
- `./magic/fonts`: 150
- `./magic/fonts`: 153
- `./magic/fonts`: 154
- `./magic/fonts`: 155
- `./magic/fonts`: 157
- `./magic/fonts`: 163
- `./magic/fonts`: 167
- `./magic/fonts`: 193
- `./magic/fonts`: 195
- `./magic/fonts`: 198
- `./magic/fonts`: 202
- `./magic/fonts`: 203
- `./magic/fonts`: 205
- `./magic/fonts`: 24
- `./magic/fonts`: 261
- `./magic/fonts`: 263
- `./magic/fonts`: 28
- `./magic/fonts`: 282
- `./magic/fonts`: 288
- `./magic/fonts`: 300
- `./magic/fonts`: 75
- `./magic/fonts`: 87
- `./magic/fonts`: 89
- `./magic/fonts`: 91
- `./magic/fortran`: 6
- `./magic/fsav`: 106
- `./magic/games`: 279
- `./magic/games`: 42
- `./magic/games`: 45
- `./magic/gnu`: 136
- `./magic/gnu`: 137
- `./magic/gnu`: 153
- `./magic/gnu`: 154
- `./magic/gnu`: 175
- `./magic/gpt`: 100
- `./magic/gpt`: 105
- `./magic/gpt`: 110
- `./magic/gpt`: 115
- `./magic/gpt`: 121
- `./magic/gpt`: 122
- `./magic/gpt`: 123
- `./magic/gpt`: 124
- `./magic/gpt`: 130
- `./magic/gpt`: 135
- `./magic/gpt`: 140
- `./magic/gpt`: 145
- `./magic/gpt`: 18
- `./magic/gpt`: 19
- `./magic/gpt`: 20
- `./magic/gpt`: 21
- `./magic/gpt`: 22
- `./magic/gpt`: 23
- `./magic/gpt`: 25
- `./magic/gpt`: 27
- `./magic/gpt`: 29
- `./magic/gpt`: 31
- `./magic/gpt`: 32
- `./magic/gpt`: 33
- `./magic/gpt`: 34
- `./magic/gpt`: 40
- `./magic/gpt`: 45
- `./magic/gpt`: 50
- `./magic/gpt`: 55
- `./magic/gpt`: 61
- `./magic/gpt`: 62
- `./magic/gpt`: 63
- `./magic/gpt`: 64
- `./magic/gpt`: 70
- `./magic/gpt`: 75
- `./magic/gpt`: 80
- `./magic/gpt`: 85
- `./magic/gpt`: 91
- `./magic/gpt`: 92
- `./magic/gpt`: 93
- `./magic/gpt`: 94
- `./magic/hardware`: 8
- `./magic/hardware`: 9
- `./magic/hitachi-sh`: 15
- `./magic/hitachi-sh`: 16
- `./magic/hitachi-sh`: 17
- `./magic/hitachi-sh`: 18
- `./magic/hitachi-sh`: 19
- `./magic/hitachi-sh`: 20
- `./magic/hitachi-sh`: 23
- `./magic/hitachi-sh`: 25
- `./magic/hitachi-sh`: 28
- `./magic/hitachi-sh`: 35
- `./magic/hp`: 247
- `./magic/hp`: 266
- `./magic/hp`: 305
- `./magic/hp`: 306
- `./magic/hp`: 307
- `./magic/hp`: 308
- `./magic/hp`: 309
- `./magic/hp`: 310
- `./magic/hp`: 311
- `./magic/hp`: 312
- `./magic/hp`: 327
- `./magic/hp`: 328
- `./magic/hp`: 329
- `./magic/hp`: 330
- `./magic/hp`: 331
- `./magic/hp`: 346
- `./magic/hp`: 347
- `./magic/hp`: 348
- `./magic/hp`: 349
- `./magic/hp`: 350
- `./magic/hp`: 351
- `./magic/hp`: 352
- `./magic/hp`: 353
- `./magic/hp`: 368
- `./magic/hp`: 369
- `./magic/hp`: 370
- `./magic/hp`: 371
- `./magic/hp`: 372
- `./magic/hp`: 373
- `./magic/hp`: 374
- `./magic/hp`: 375
- `./magic/hp`: 390
- `./magic/hp`: 391
- `./magic/hp`: 392
- `./magic/hp`: 393
- `./magic/hp`: 394
- `./magic/hp`: 395
- `./magic/hp`: 396
- `./magic/hp`: 397
- `./magic/hp`: 412
- `./magic/hp`: 413
- `./magic/hp`: 414
- `./magic/hp`: 415
- `./magic/hp`: 416
- `./magic/hp`: 417
- `./magic/hp`: 418
- `./magic/ibm6000`: 24
- `./magic/icc`: 110
- `./magic/icc`: 184
- `./magic/icc`: 187
- `./magic/icc`: 198
- `./magic/icc`: 200
- `./magic/icc`: 203
- `./magic/icc`: 204
- `./magic/icc`: 211
- `./magic/icc`: 212
- `./magic/icc`: 23
- `./magic/icc`: 24
- `./magic/icc`: 26
- `./magic/icc`: 56
- `./magic/icc`: 92
- `./magic/icc`: 94
- `./magic/images`: 101
- `./magic/images`: 1028
- `./magic/images`: 1029
- `./magic/images`: 104
- `./magic/images`: 1046
- `./magic/images`: 106
- `./magic/images`: 108
- `./magic/images`: 114
- `./magic/images`: 122
- `./magic/images`: 132
- `./magic/images`: 139
- `./magic/images`: 1408
- `./magic/images`: 147
- `./magic/images`: 152
- `./magic/images`: 1549
- `./magic/images`: 1556
- `./magic/images`: 1557
- `./magic/images`: 1559
- `./magic/images`: 1585
- `./magic/images`: 1591
- `./magic/images`: 1600
- `./magic/images`: 1601
- `./magic/images`: 1612
- `./magic/images`: 169
- `./magic/images`: 174
- `./magic/images`: 175
- `./magic/images`: 176
- `./magic/images`: 1805
- `./magic/images`: 1806
- `./magic/images`: 1807
- `./magic/images`: 1808
- `./magic/images`: 1809
- `./magic/images`: 181
- `./magic/images`: 1810
- `./magic/images`: 1814
- `./magic/images`: 1815
- `./magic/images`: 1816
- `./magic/images`: 1817
- `./magic/images`: 182
- `./magic/images`: 183
- `./magic/images`: 188
- `./magic/images`: 189
- `./magic/images`: 190
- `./magic/images`: 195
- `./magic/images`: 196
- `./magic/images`: 197
- `./magic/images`: 202
- `./magic/images`: 203
- `./magic/images`: 204
- `./magic/images`: 209
- `./magic/images`: 210
- `./magic/images`: 211
- `./magic/images`: 29
- `./magic/images`: 31
- `./magic/images`: 33
- `./magic/images`: 35
- `./magic/images`: 36
- `./magic/images`: 37
- `./magic/images`: 39
- `./magic/images`: 41
- `./magic/images`: 43
- `./magic/images`: 446
- `./magic/images`: 45
- `./magic/images`: 48
- `./magic/images`: 553
- `./magic/images`: 573
- `./magic/images`: 723
- `./magic/images`: 724
- `./magic/images`: 725
- `./magic/images`: 791
- `./magic/images`: 793
- `./magic/images`: 795
- `./magic/images`: 859
- `./magic/images`: 861
- `./magic/images`: 862
- `./magic/images`: 863
- `./magic/images`: 866
- `./magic/images`: 869
- `./magic/images`: 871
- `./magic/images`: 872
- `./magic/images`: 874
- `./magic/images`: 875
- `./magic/images`: 877
- `./magic/images`: 878
- `./magic/images`: 880
- `./magic/intel`: 16
- `./magic/intel`: 18
- `./magic/intel`: 19
- `./magic/intel`: 35
- `./magic/intel`: 39
- `./magic/intel`: 41
- `./magic/intel`: 45
- `./magic/intel`: 46
- `./magic/intel`: 47
- `./magic/intel`: 48
- `./magic/java`: 24
- `./magic/java`: 25
- `./magic/jpeg`: 119
- `./magic/jpeg`: 122
- `./magic/jpeg`: 123
- `./magic/kicad`: 12
- `./magic/kicad`: 13
- `./magic/kicad`: 14
- `./magic/kicad`: 22
- `./magic/kicad`: 30
- `./magic/kicad`: 38
- `./magic/kicad`: 46
- `./magic/kicad`: 55
- `./magic/kicad`: 60
- `./magic/kicad`: 66
- `./magic/kml`: 10
- `./magic/kml`: 31
- `./magic/kml`: 32
- `./magic/kml`: 9
- `./magic/linux`: 368
- `./magic/linux`: 370
- `./magic/linux`: 372
- `./magic/linux`: 373
- `./magic/linux`: 374
- `./magic/linux`: 375
- `./magic/linux`: 376
- `./magic/linux`: 389
- `./magic/linux`: 413
- `./magic/linux`: 415
- `./magic/linux`: 416
- `./magic/lisp`: 33
- `./magic/lisp`: 54
- `./magic/macintosh`: 384
- `./magic/macintosh`: 387
- `./magic/macintosh`: 465
- `./magic/macintosh`: 466
- `./magic/macintosh`: 72
- `./magic/macintosh`: 74
- `./magic/macintosh`: 76
- `./magic/macintosh`: 79
- `./magic/macintosh`: 81
- `./magic/macintosh`: 83
- `./magic/macintosh`: 85
- `./magic/macintosh`: 90
- `./magic/macintosh`: 92
- `./magic/macintosh`: 95
- `./magic/macintosh`: 99
- `./magic/map`: 183
- `./magic/map`: 184
- `./magic/map`: 185
- `./magic/map`: 35
- `./magic/map`: 37
- `./magic/map`: 38
- `./magic/map`: 39
- `./magic/marc21`: 13
- `./magic/marc21`: 14
- `./magic/matroska`: 10
- `./magic/matroska`: 12
- `./magic/measure`: 21
- `./magic/measure`: 22
- `./magic/measure`: 23
- `./magic/measure`: 24
- `./magic/measure`: 25
- `./magic/measure`: 29
- `./magic/measure`: 30
- `./magic/measure`: 35
- `./magic/measure`: 36
- `./magic/meteorological`: 47
- `./magic/meteorological`: 8
- `./magic/microfocus`: 11
- `./magic/microfocus`: 15
- `./magic/microfocus`: 19
- `./magic/mime`: 6
- `./magic/mime`: 8
- `./magic/modem`: 16
- `./magic/modem`: 18
- `./magic/modem`: 20
- `./magic/modem`: 22
- `./magic/modem`: 24
- `./magic/modem`: 26
- `./magic/modem`: 28
- `./magic/modem`: 30
- `./magic/modem`: 31
- `./magic/modem`: 33
- `./magic/modem`: 42
- `./magic/modem`: 44
- `./magic/modem`: 79
- `./magic/msdos`: 1010
- `./magic/msdos`: 1013
- `./magic/msdos`: 1033
- `./magic/msdos`: 1042
- `./magic/msdos`: 1098
- `./magic/msdos`: 1392
- `./magic/msdos`: 1406
- `./magic/msdos`: 1408
- `./magic/msdos`: 1412
- `./magic/msdos`: 1450
- `./magic/msdos`: 1451
- `./magic/msdos`: 1452
- `./magic/msdos`: 1454
- `./magic/msdos`: 1463
- `./magic/msdos`: 1467
- `./magic/msdos`: 1469
- `./magic/msdos`: 1471
- `./magic/msdos`: 1473
- `./magic/msdos`: 1479
- `./magic/msdos`: 1500
- `./magic/msdos`: 1502
- `./magic/msdos`: 251
- `./magic/msdos`: 256
- `./magic/msdos`: 257
- `./magic/msdos`: 258
- `./magic/msdos`: 26
- `./magic/msdos`: 260
- `./magic/msdos`: 268
- `./magic/msdos`: 28
- `./magic/msdos`: 309
- `./magic/msdos`: 331
- `./magic/msdos`: 332
- `./magic/msdos`: 373
- `./magic/msdos`: 378
- `./magic/msdos`: 379
- `./magic/msdos`: 448
- `./magic/msdos`: 449
- `./magic/msdos`: 451
- `./magic/msdos`: 452
- `./magic/msdos`: 453
- `./magic/msdos`: 454
- `./magic/msdos`: 455
- `./magic/msdos`: 456
- `./magic/msdos`: 458
- `./magic/msdos`: 459
- `./magic/msdos`: 460
- `./magic/msdos`: 461
- `./magic/msdos`: 467
- `./magic/msdos`: 469
- `./magic/msdos`: 471
- `./magic/msdos`: 491
- `./magic/msdos`: 494
- `./magic/msdos`: 506
- `./magic/msdos`: 508
- `./magic/msdos`: 510
- `./magic/msdos`: 511
- `./magic/msdos`: 514
- `./magic/msdos`: 516
- `./magic/msdos`: 518
- `./magic/msdos`: 519
- `./magic/msdos`: 52
- `./magic/msdos`: 521
- `./magic/msdos`: 523
- `./magic/msdos`: 528
- `./magic/msdos`: 530
- `./magic/msdos`: 561
- `./magic/msdos`: 562
- `./magic/msdos`: 593
- `./magic/msdos`: 598
- `./magic/msdos`: 66
- `./magic/msdos`: 664
- `./magic/msdos`: 712
- `./magic/msdos`: 716
- `./magic/msdos`: 780
- `./magic/msdos`: 785
- `./magic/msdos`: 869
- `./magic/msdos`: 9
- `./magic/msdos`: 912
- `./magic/msdos`: 913
- `./magic/msdos`: 914
- `./magic/msdos`: 915
- `./magic/msdos`: 916
- `./magic/msdos`: 917
- `./magic/msdos`: 920
- `./magic/msdos`: 923
- `./magic/msdos`: 986
- `./magic/msdos`: 987
- `./magic/msdos`: 988
- `./magic/msdos`: 989
- `./magic/msooxml`: 15
- `./magic/msooxml`: 24
- `./magic/msooxml`: 27
- `./magic/msooxml`: 28
- `./magic/msooxml`: 32
- `./magic/msooxml`: 35
- `./magic/msooxml`: 40
- `./magic/msooxml`: 42
- `./magic/msvc`: 36
- `./magic/msx`: 103
- `./magic/msx`: 104
- `./magic/msx`: 105
- `./magic/msx`: 122
- `./magic/msx`: 123
- `./magic/msx`: 124
- `./magic/msx`: 125
- `./magic/msx`: 126
- `./magic/msx`: 127
- `./magic/msx`: 128
- `./magic/msx`: 129
- `./magic/msx`: 130
- `./magic/msx`: 131
- `./magic/msx`: 132
- `./magic/msx`: 133
- `./magic/msx`: 134
- `./magic/msx`: 135
- `./magic/msx`: 166
- `./magic/msx`: 167
- `./magic/msx`: 168
- `./magic/msx`: 169
- `./magic/msx`: 170
- `./magic/msx`: 171
- `./magic/msx`: 172
- `./magic/msx`: 173
- `./magic/msx`: 174
- `./magic/msx`: 175
- `./magic/msx`: 178
- `./magic/msx`: 179
- `./magic/msx`: 180
- `./magic/msx`: 181
- `./magic/msx`: 182
- `./magic/msx`: 183
- `./magic/msx`: 189
- `./magic/msx`: 205
- `./magic/msx`: 206
- `./magic/msx`: 214
- `./magic/msx`: 219
- `./magic/msx`: 223
- `./magic/msx`: 224
- `./magic/msx`: 225
- `./magic/msx`: 240
- `./magic/msx`: 241
- `./magic/msx`: 242
- `./magic/msx`: 245
- `./magic/msx`: 246
- `./magic/msx`: 253
- `./magic/msx`: 254
- `./magic/msx`: 262
- `./magic/msx`: 276
- `./magic/msx`: 277
- `./magic/msx`: 284
- `./magic/msx`: 285
- `./magic/msx`: 286
- `./magic/msx`: 296
- `./magic/msx`: 297
- `./magic/msx`: 298
- `./magic/msx`: 299
- `./magic/msx`: 300
- `./magic/msx`: 301
- `./magic/msx`: 302
- `./magic/msx`: 45
- `./magic/msx`: 63
- `./magic/msx`: 64
- `./magic/msx`: 65
- `./magic/msx`: 73
- `./magic/msx`: 78
- `./magic/msx`: 85
- `./magic/msx`: 86
- `./magic/msx`: 87
- `./magic/msx`: 90
- `./magic/msx`: 97
- `./magic/msx`: 98
- `./magic/msx`: 99
- `./magic/netbsd`: 237
- `./magic/netbsd`: 238
- `./magic/netbsd`: 244
- `./magic/netbsd`: 245
- `./magic/netbsd`: 246
- `./magic/netbsd`: 247
- `./magic/netbsd`: 248
- `./magic/netbsd`: 249
- `./magic/netbsd`: 250
- `./magic/netbsd`: 251
- `./magic/palm`: 144
- `./magic/palm`: 148
- `./magic/pbf`: 10
- `./magic/pbf`: 9
- `./magic/pc88`: 10
- `./magic/pc88`: 11
- `./magic/pc88`: 12
- `./magic/pc88`: 13
- `./magic/pc88`: 7
- `./magic/pc88`: 8
- `./magic/pc88`: 9
- `./magic/pc98`: 61
- `./magic/pc98`: 62
- `./magic/pc98`: 63
- `./magic/pdp`: 17
- `./magic/perl`: 30
- `./magic/perl`: 36
- `./magic/perl`: 40
- `./magic/perl`: 41
- `./magic/pgp`: 10
- `./magic/pgp`: 17
- `./magic/pgp`: 22
- `./magic/pgp`: 524
- `./magic/pgp`: 528
- `./magic/pgp`: 533
- `./magic/printer`: 128
- `./magic/printer`: 130
- `./magic/printer`: 137
- `./magic/printer`: 138
- `./magic/printer`: 68
- `./magic/psdbms`: 9
- `./magic/psl`: 11
- `./magic/python`: 53
- `./magic/python`: 59
- `./magic/python`: 81
- `./magic/python`: 94
- `./magic/qt`: 18
- `./magic/revision`: 25
- `./magic/revision`: 28
- `./magic/revision`: 31
- `./magic/rinex`: 8
- `./magic/rpi`: 10
- `./magic/rpi`: 11
- `./magic/rpi`: 12
- `./magic/rpi`: 13
- `./magic/rpi`: 14
- `./magic/rpi`: 5
- `./magic/rpi`: 6
- `./magic/rpi`: 7
- `./magic/rpi`: 8
- `./magic/rpi`: 9
- `./magic/ruby`: 25
- `./magic/ruby`: 26
- `./magic/ruby`: 30
- `./magic/ruby`: 31
- `./magic/ruby`: 36
- `./magic/ruby`: 43
- `./magic/scientific`: 93
- `./magic/scientific`: 94
- `./magic/scientific`: 95
- `./magic/scientific`: 96
- `./magic/sendmail`: 14
- `./magic/sendmail`: 24
- `./magic/sequent`: 36
- `./magic/sequent`: 38
- `./magic/sgml`: 142
- `./magic/sgml`: 143
- `./magic/sgml`: 16
- `./magic/sgml`: 17
- `./magic/sgml`: 24
- `./magic/sgml`: 25
- `./magic/sgml`: 29
- `./magic/sgml`: 33
- `./magic/sgml`: 37
- `./magic/sgml`: 6
- `./magic/sgml`: 7
- `./magic/sinclair`: 16
- `./magic/sinclair`: 17
- `./magic/sinclair`: 18
- `./magic/sinclair`: 19
- `./magic/sniffer`: 221
- `./magic/sniffer`: 225
- `./magic/spectrum`: 26
- `./magic/spectrum`: 27
- `./magic/sql`: 60
- `./magic/symbos`: 38
- `./magic/tcl`: 25
- `./magic/tcl`: 28
- `./magic/terminfo`: 13
- `./magic/terminfo`: 15
- `./magic/terminfo`: 26
- `./magic/terminfo`: 28
- `./magic/terminfo`: 48
- `./magic/terminfo`: 49
- `./magic/terminfo`: 50
- `./magic/terminfo`: 51
- `./magic/terminfo`: 52
- `./magic/terminfo`: 53
- `./magic/terminfo`: 54
- `./magic/tplink`: 10
- `./magic/tplink`: 11
- `./magic/tplink`: 13
- `./magic/tplink`: 15
- `./magic/tplink`: 16
- `./magic/tplink`: 18
- `./magic/vacuum-cleaner`: 38
- `./magic/vacuum-cleaner`: 39
- `./magic/vacuum-cleaner`: 40
- `./magic/vacuum-cleaner`: 41
- `./magic/vacuum-cleaner`: 42
- `./magic/vacuum-cleaner`: 43
- `./magic/vacuum-cleaner`: 44
- `./magic/vacuum-cleaner`: 45
- `./magic/vacuum-cleaner`: 46
- `./magic/vacuum-cleaner`: 47
- `./magic/virtual`: 222
- `./magic/virtual`: 82
- `./magic/vms`: 28
- `./magic/windows`: 107
- `./magic/windows`: 194
- `./magic/windows`: 196
- `./magic/windows`: 197
- `./magic/windows`: 199
- `./magic/windows`: 200
- `./magic/windows`: 202
- `./magic/windows`: 206
- `./magic/windows`: 208
- `./magic/windows`: 224
- `./magic/windows`: 309
- `./magic/windows`: 318
- `./magic/windows`: 32
- `./magic/windows`: 323
- `./magic/windows`: 345
- `./magic/windows`: 346
- `./magic/windows`: 348
- `./magic/windows`: 349
- `./magic/windows`: 351
- `./magic/windows`: 352
- `./magic/windows`: 354
- `./magic/windows`: 356
- `./magic/windows`: 362
- `./magic/windows`: 429
- `./magic/windows`: 432
- `./magic/windows`: 438
- `./magic/windows`: 439
- `./magic/windows`: 449
- `./magic/windows`: 451
- `./magic/windows`: 463
- `./magic/windows`: 465
- `./magic/windows`: 473
- `./magic/windows`: 476
- `./magic/windows`: 478
- `./magic/windows`: 577
- `./magic/windows`: 579
- `./magic/windows`: 581
- `./magic/windows`: 583
- `./magic/windows`: 65
- `./magic/wordprocessors`: 108
- `./magic/wordprocessors`: 111
- `./magic/wordprocessors`: 119
- `./magic/wordprocessors`: 122
- `./magic/wordprocessors`: 124
- `./magic/wordprocessors`: 127
- `./magic/wordprocessors`: 131
- `./magic/wordprocessors`: 134
- `./magic/wordprocessors`: 138
- `./magic/wordprocessors`: 141
- `./magic/wordprocessors`: 142
- `./magic/wordprocessors`: 145
- `./magic/wordprocessors`: 146
- `./magic/wordprocessors`: 149
- `./magic/wordprocessors`: 153
- `./magic/wordprocessors`: 156
- `./magic/wordprocessors`: 16
- `./magic/wordprocessors`: 164
- `./magic/wordprocessors`: 169
- `./magic/wordprocessors`: 174
- `./magic/wordprocessors`: 177
- `./magic/wordprocessors`: 18
- `./magic/wordprocessors`: 182
- `./magic/wordprocessors`: 185
- `./magic/wordprocessors`: 187
- `./magic/wordprocessors`: 190
- `./magic/wordprocessors`: 231
- `./magic/wordprocessors`: 236
- `./magic/wordprocessors`: 240
- `./magic/wordprocessors`: 46
- `./magic/wordprocessors`: 49
- `./magic/wordprocessors`: 52
- `./magic/wordprocessors`: 55
- `./magic/wordprocessors`: 60
- `./magic/wordprocessors`: 63
- `./magic/wordprocessors`: 65
- `./magic/wordprocessors`: 68
- `./magic/wordprocessors`: 69
- `./magic/wordprocessors`: 72
- `./magic/wordprocessors`: 75
- `./magic/wordprocessors`: 78
- `./magic/wordprocessors`: 83
- `./magic/wordprocessors`: 86
- `./magic/wordprocessors`: 90
- `./magic/wordprocessors`: 93
- `./magic/wordprocessors`: 94
- `./magic/wordprocessors`: 97
- `./magic/x68000`: 7
- `./magic/x68000`: 8
- `./magic/x68000`: 9
- `./magic/xenix`: 19
- `./magic/xenix`: 22
- `./magic/xenix`: 24
- `./magic/xenix`: 26
- `./magic/xilinx`: 13
- `./magic/xilinx`: 14
- `./magic/xilinx`: 15
- `./magic/xilinx`: 16
- `./magic/xilinx`: 17
- `./magic/xilinx`: 39
- `./magic/yara`: 8
- `./magic/yara`: 9
 "%s" `./magic/icc`: 201
-"%s" `./magic/images`: 102
 "compact bitmap" format (Poskanzer) `./magic/pbm`: 8
 %-.60s `./magic/archive`: 98
 %.1s `./magic/icc`: 84
@@ -23141,130 +21827,13 @@ NUM OF ALL TYPE:  13455
 %c `./magic/pc98`: 74
 %c, `./magic/pc98`: 68
 %c, `./magic/pc98`: 75
-%d `./magic/images`: 116
-%d `./magic/images`: 118
-%d `./magic/images`: 120
-%d `./magic/images`: 124
-%d `./magic/images`: 126
-%d `./magic/images`: 128
-%d `./magic/images`: 133
-%d `./magic/images`: 134
-%d `./magic/images`: 135
-%d `./magic/images`: 140
-%d `./magic/images`: 78
 %d `./magic/pc98`: 70
 %d `./magic/pc98`: 77
 %d `./magic/wordprocessors`: 195
-%d x `./magic/images`: 75
-%d%c `./magic/images`: 143
-%d.%d `./magic/images`: 141
 %dx `./magic/pc98`: 69
 %dx `./magic/pc98`: 76
-%s `./magic/animation`: 909
-%s `./magic/animation`: 910
-%s `./magic/animation`: 911
-%s `./magic/animation`: 912
-%s `./magic/animation`: 913
-%s `./magic/animation`: 914
-%s `./magic/animation`: 915
-%s `./magic/animation`: 916
-%s `./magic/apple`: 286
-%s `./magic/audio`: 408
-%s `./magic/audio`: 409
-%s `./magic/audio`: 410
-%s `./magic/audio`: 411
-%s `./magic/audio`: 412
-%s `./magic/audio`: 413
-%s `./magic/audio`: 595
-%s `./magic/audio`: 598
-%s `./magic/filesystems`: 2418
-%s `./magic/filesystems`: 2419
-%s `./magic/filesystems`: 2420
-%s `./magic/filesystems`: 2422
-%s `./magic/games`: 203
-%s `./magic/mime`: 7
-%s `./magic/mime`: 9
-%s `./magic/msdos`: 650
-%s `./magic/msdos`: 689
-%s `./magic/msdos`: 695
-%s system BIOS `./magic/msdos`: 1407
 %u `./magic/icc`: 72
-%u x `./magic/images`: 1409
-%u x `./magic/images`: 1410
-%u x `./magic/images`: 1412
-%u x `./magic/images`: 1414
-%u x `./magic/images`: 1416
-%u x `./magic/images`: 1417
-%u x `./magic/images`: 1418
-%u x `./magic/images`: 1419
-%u x `./magic/images`: 1421
-%u x `./magic/images`: 1426
-%u x `./magic/images`: 1429
-%u x `./magic/images`: 1430
-%u x `./magic/images`: 1431
-%u x `./magic/images`: 1432
-%u x `./magic/images`: 1434
-%u x `./magic/images`: 1435
-%u x `./magic/images`: 1436
-%u x `./magic/images`: 1437
-%u x `./magic/images`: 1439
-%u x `./magic/images`: 1440
-%u x `./magic/images`: 1441
-%u x `./magic/images`: 1442
-%u x `./magic/images`: 1444
-%u x `./magic/images`: 1445
-%u x `./magic/images`: 1446
-%u x `./magic/images`: 1447
-%u x `./magic/images`: 1449
-%u x `./magic/images`: 1450
-%u x `./magic/images`: 1451
-%u x `./magic/images`: 1452
-%u x `./magic/images`: 1454
-%u x `./magic/images`: 1455
-%u x `./magic/images`: 1456
-%u x `./magic/images`: 1457
-%u x `./magic/images`: 1459
-%u x `./magic/images`: 1460
-%u x `./magic/images`: 1461
-%u x `./magic/images`: 1462
-%u x `./magic/images`: 1463
-%u x `./magic/images`: 1464
-%u x `./magic/images`: 1465
-%u x `./magic/images`: 1466
-%u x `./magic/images`: 1468
-%u x `./magic/images`: 1469
-%u x `./magic/images`: 1470
-%u x `./magic/images`: 1471
-%u x `./magic/images`: 1472
-%u x `./magic/images`: 1474
-%u x `./magic/images`: 1475
-%u x `./magic/images`: 1476
-%u x `./magic/images`: 1477
-%u x `./magic/images`: 1478
-%u x `./magic/images`: 1480
-%u x `./magic/images`: 1481
-%u x `./magic/images`: 1482
-%u x `./magic/images`: 1483
-%u x `./magic/images`: 1485
-%u x `./magic/images`: 1486
-%u x `./magic/images`: 1487
-%u x `./magic/images`: 1488
-%u x `./magic/images`: 1490
-%u x `./magic/images`: 1491
-%u x `./magic/images`: 1492
-%u x `./magic/images`: 1493
-%u x `./magic/images`: 1496
-%u x `./magic/images`: 1497
-%u x `./magic/images`: 1498
-%u x `./magic/images`: 1499
-%u x `./magic/images`: 1501
-%u x `./magic/images`: 1502
-%u x `./magic/images`: 1503
-%u x `./magic/images`: 1504
 '%s' `./magic/icc`: 205
-( `./magic/images`: 67
-( `./magic/images`: 69
-( `./magic/images`: 71
 (%u side) `./magic/console`: 89
 (%u sides) `./magic/console`: 90
 (1 MB) `./magic/console`: 324
@@ -23317,8 +21886,6 @@ NUM OF ALL TYPE:  13455
 (v3) `./magic/virtual`: 282
 (wildcard) `./magic/hp`: 262
 (wildcard) `./magic/hp`: 281
-+%d `./magic/images`: 83
-+%d `./magic/images`: 85
 , %.2s `./magic/icc`: 100
 , %.2s `./magic/icc`: 101
 , %.2s `./magic/icc`: 102
@@ -23620,34 +22187,12 @@ NUM OF ALL TYPE:  13455
 , version %d `./magic/apple`: 422
 , version %d `./magic/images`: 1603
 , volume `./magic/archive`: 92
-- %-.40s `./magic/images`: 137
-- %d-bit alpha `./magic/images`: 87
-- Color `./magic/images`: 63
-- Color `./magic/images`: 65
-- Map `./magic/images`: 56
-- Mono `./magic/images`: 60
-- RGB `./magic/images`: 57
-- RGBA `./magic/images`: 59
-- RLE `./magic/images`: 73
-- aspect %d `./magic/images`: 149
-- author "%-.40s" `./magic/images`: 110
-- comment "%-.80s" `./magic/images`: 112
-- four way interleave `./magic/images`: 98
-- gamma %d `./magic/images`: 154
-- interleave `./magic/images`: 97
-- job "%-.40s" `./magic/images`: 130
-- keycolor 0x%8.8x `./magic/images`: 145
-- reserved `./magic/images`: 99
-- right `./magic/images`: 91
-- top `./magic/images`: 89
 -%.4s device `./magic/icc`: 90
 .%u `./magic/icc`: 73
 .%u `./magic/icc`: 75
 .%u.%u `./magic/icc`: 76
 /%.3s `./magic/icc`: 87
 /%.3s%.1s `./magic/icc`: 88
-/%d `./magic/images`: 150
-/%d `./magic/images`: 155
 0420 Alliant virtual executable `./magic/alliant`: 13
 0420 Alliant virtual executable `./magic/alliant`: 14
 0420 Alliant virtual executable `./magic/alliant`: 15
@@ -23708,8 +22253,6 @@ NUM OF ALL TYPE:  13455
 6-channel Fasttracker module sound data `./magic/audio`: 201
 64-bit XCOFF executable or object module `./magic/ibm6000`: 21
 64-bit XCOFF executable or object module not stripped `./magic/ibm6000`: 22
-65536 `./magic/images`: 79
-65536 x `./magic/images`: 76
 68K BCS executable `./magic/motorola`: 24
 68k Blit mpx/mux executable `./magic/blit`: 15
 7 `./magic/console`: 299
@@ -25247,6 +23790,12 @@ DIGI Booster Pro Module `./magic/audio`: 415
 DIGI Booster Pro Module `./magic/audio`: 416
 DIGI Booster Pro Module `./magic/audio`: 417
 DIGI Booster Pro Module `./magic/audio`: 418
+DIGI Booster module\0 `./magic/audio`: 408
+DIGI Booster module\0 `./magic/audio`: 409
+DIGI Booster module\0 `./magic/audio`: 410
+DIGI Booster module\0 `./magic/audio`: 411
+DIGI Booster module\0 `./magic/audio`: 412
+DIGI Booster module\0 `./magic/audio`: 413
 DIY-Thermocam raw data `./magic/measure`: 26
 DMS archive data `./magic/archive`: 669
 DMX OP2 instrument data `./magic/audio`: 893
@@ -26033,6 +24582,7 @@ Dalvik dex file (optimized for host) `./magic/android`: 15
 Dalvik dex file `./magic/android`: 12
 Debian binary package `./magic/archive`: 232
 DeepFreezer archive data `./magic/archive`: 651
+Dell system BIOS `./magic/msdos`: 1407
 Delphi compiled form '%s' `./magic/msdos`: 1034
 Delta ISO data `./magic/filesystems`: 2192
 Delta ISO data `./magic/filesystems`: 2194
@@ -26456,6 +25006,7 @@ Flagship `./magic/database`: 289
 Flow Cytometry Standard (FCS) data, version 1.0 `./magic/fcs`: 6
 Flow Cytometry Standard (FCS) data, version 2.0 `./magic/fcs`: 7
 Flow Cytometry Standard (FCS) data, version 3.0 `./magic/fcs`: 8
+Foglio di lavoro Microsoft Exce `./magic/msdos`: 695
 Font data `./magic/fonts`: 180
 Foveon X3F raw image data `./magic/images`: 1273
 Foveon X3F raw image data `./magic/images`: 1275
@@ -26483,7 +25034,7 @@ FrameMaker Dictionary text (1.x) `./magic/frame`: 31
 FrameMaker Dictionary text (2.0) `./magic/frame`: 30
 FrameMaker Dictionary text (3.0) `./magic/frame`: 29
 FrameMaker Dictionary text `./magic/frame`: 27
-FrameMaker Font file (%s) `./magic/frame`: 34
+FrameMaker Font file (1.01) `./magic/frame`: 34
 FrameMaker Font file `./magic/frame`: 32
 FrameMaker IPL file `./magic/frame`: 49
 FrameMaker MIF (ASCII) file (1.x) `./magic/frame`: 26
@@ -27089,6 +25640,10 @@ HAMMER filesystem (little-endian), `./magic/filesystems`: 1685
 HAMMER filesystem (little-endian), `./magic/filesystems`: 1686
 HAMMER filesystem (little-endian), `./magic/filesystems`: 1687
 HAP archive data `./magic/archive`: 350
+HDD Raw Copy Tool `./magic/filesystems`: 2418
+HDD Raw Copy Tool `./magic/filesystems`: 2419
+HDD Raw Copy Tool `./magic/filesystems`: 2420
+HDD Raw Copy Tool `./magic/filesystems`: 2422
 HIT archive data `./magic/archive`: 605
 HP 38 `./magic/hp`: 248
 HP 38 `./magic/hp`: 267
@@ -27231,6 +25786,14 @@ HTML document text `./magic/sgml`: 84
 HTML document text `./magic/sgml`: 87
 HTML document text `./magic/sgml`: 90
 HTML document text `./magic/sgml`: 94
+HVQM4 `./magic/animation`: 909
+HVQM4 `./magic/animation`: 910
+HVQM4 `./magic/animation`: 911
+HVQM4 `./magic/animation`: 912
+HVQM4 `./magic/animation`: 913
+HVQM4 `./magic/animation`: 914
+HVQM4 `./magic/animation`: 915
+HVQM4 `./magic/animation`: 916
 HYP archive data `./magic/archive`: 324
 HanDBase PalmOS document "%s" `./magic/palm`: 87
 HanDBase PalmOS document `./magic/palm`: 86
@@ -28361,6 +26924,10 @@ MGR bitmap, modern format, squeezed `./magic/images`: 529
 MGR bitmap, old format, 1-bit deep, 16-bit aligned `./magic/images`: 527
 MGR bitmap, old format, 1-bit deep, 32-bit aligned `./magic/images`: 528
 MIFF image data `./magic/images`: 499
+MIME encoded files `./magic/mime`: 6
+MIME encoded files `./magic/mime`: 7
+MIME encoded files `./magic/mime`: 8
+MIME encoded files `./magic/mime`: 9
 MIME entity text `./magic/mail.news`: 32
 MIPS archive `./magic/archive`: 251
 MIPS archive `./magic/archive`: 253
@@ -29538,6 +28105,7 @@ Microsoft Disk Image, Virtual Server or Virtual PC `./magic/virtual`: 60
 Microsoft Disk Image, Virtual Server or Virtual PC `./magic/virtual`: 62
 Microsoft Disk Image, Virtual Server or Virtual PC `./magic/virtual`: 69
 Microsoft Excel 2007+ `./magic/msooxml`: 20
+Microsoft Excel 5.0 Worksheet `./magic/msdos`: 689
 Microsoft Excel 5.0 Worksheet `./magic/msdos`: 699
 Microsoft Excel 5.0 Worksheet `./magic/msdos`: 702
 Microsoft Excel Worksheet `./magic/msdos`: 704
@@ -29581,6 +28149,7 @@ Microsoft Windows XP/VISTA bootloader %-5.5s `./magic/filesystems`: 1552
 Microsoft Windows XP/VISTA bootloader %-5.5s `./magic/filesystems`: 1553
 Microsoft Word 2.0 Document `./magic/msdos`: 678
 Microsoft Word 2007+ `./magic/msooxml`: 16
+Microsoft Word 6.0 Document `./magic/msdos`: 650
 Microsoft Word 6.0 Document `./magic/msdos`: 661
 Microsoft Word Document `./magic/msdos`: 1397
 Microsoft Word Document `./magic/msdos`: 1400
@@ -31053,17 +29622,17 @@ Parrot bytecode `./magic/parrot`: 22
 Parrot bytecode `./magic/parrot`: 8
 Parrot bytecode `./magic/parrot`: 9
 PartImage `./magic/images`: 993
-PartImage file version %s `./magic/images`: 1000
-PartImage file version %s `./magic/images`: 1002
-PartImage file version %s `./magic/images`: 1003
-PartImage file version %s `./magic/images`: 1004
-PartImage file version %s `./magic/images`: 1005
 PartImage file version %s `./magic/images`: 1006
 PartImage file version %s `./magic/images`: 1007
-PartImage file version %s `./magic/images`: 994
-PartImage file version %s `./magic/images`: 995
-PartImage file version %s `./magic/images`: 998
-PartImage file version %s `./magic/images`: 999
+PartImage file version 0.6.1 `./magic/images`: 1000
+PartImage file version 0.6.1 `./magic/images`: 1002
+PartImage file version 0.6.1 `./magic/images`: 1003
+PartImage file version 0.6.1 `./magic/images`: 1004
+PartImage file version 0.6.1 `./magic/images`: 1005
+PartImage file version 0.6.1 `./magic/images`: 994
+PartImage file version 0.6.1 `./magic/images`: 995
+PartImage file version 0.6.1 `./magic/images`: 998
+PartImage file version 0.6.1 `./magic/images`: 999
 Partition Information Table for Samsung smartphone `./magic/android`: 103
 Partition Information Table for Samsung smartphone `./magic/android`: 104
 Partition Information Table for Samsung smartphone `./magic/android`: 106
@@ -31233,41 +29802,41 @@ Printer Font Metrics `./magic/fonts`: 64
 Printer Font Metrics `./magic/fonts`: 65
 Printer Font Metrics `./magic/fonts`: 66
 Progressive Graphics image data, `./magic/pgf`: 8
-Progressive Graphics image data, version %s, `./magic/pgf`: 10
-Progressive Graphics image data, version %s, `./magic/pgf`: 11
-Progressive Graphics image data, version %s, `./magic/pgf`: 12
-Progressive Graphics image data, version %s, `./magic/pgf`: 13
-Progressive Graphics image data, version %s, `./magic/pgf`: 17
-Progressive Graphics image data, version %s, `./magic/pgf`: 18
-Progressive Graphics image data, version %s, `./magic/pgf`: 19
-Progressive Graphics image data, version %s, `./magic/pgf`: 20
-Progressive Graphics image data, version %s, `./magic/pgf`: 21
-Progressive Graphics image data, version %s, `./magic/pgf`: 22
-Progressive Graphics image data, version %s, `./magic/pgf`: 23
-Progressive Graphics image data, version %s, `./magic/pgf`: 24
-Progressive Graphics image data, version %s, `./magic/pgf`: 25
-Progressive Graphics image data, version %s, `./magic/pgf`: 26
-Progressive Graphics image data, version %s, `./magic/pgf`: 27
-Progressive Graphics image data, version %s, `./magic/pgf`: 28
-Progressive Graphics image data, version %s, `./magic/pgf`: 29
-Progressive Graphics image data, version %s, `./magic/pgf`: 30
-Progressive Graphics image data, version %s, `./magic/pgf`: 31
-Progressive Graphics image data, version %s, `./magic/pgf`: 32
-Progressive Graphics image data, version %s, `./magic/pgf`: 33
-Progressive Graphics image data, version %s, `./magic/pgf`: 34
-Progressive Graphics image data, version %s, `./magic/pgf`: 35
-Progressive Graphics image data, version %s, `./magic/pgf`: 36
-Progressive Graphics image data, version %s, `./magic/pgf`: 37
-Progressive Graphics image data, version %s, `./magic/pgf`: 38
-Progressive Graphics image data, version %s, `./magic/pgf`: 39
-Progressive Graphics image data, version %s, `./magic/pgf`: 40
-Progressive Graphics image data, version %s, `./magic/pgf`: 41
-Progressive Graphics image data, version %s, `./magic/pgf`: 42
-Progressive Graphics image data, version %s, `./magic/pgf`: 43
-Progressive Graphics image data, version %s, `./magic/pgf`: 44
-Progressive Graphics image data, version %s, `./magic/pgf`: 45
-Progressive Graphics image data, version %s, `./magic/pgf`: 46
-Progressive Graphics image data, version %s, `./magic/pgf`: 47
+Progressive Graphics image data, version 2, `./magic/pgf`: 10
+Progressive Graphics image data, version 4, `./magic/pgf`: 11
+Progressive Graphics image data, version 5, `./magic/pgf`: 12
+Progressive Graphics image data, version 6, `./magic/pgf`: 13
+Progressive Graphics image data, version 6, `./magic/pgf`: 17
+Progressive Graphics image data, version 6, `./magic/pgf`: 18
+Progressive Graphics image data, version 6, `./magic/pgf`: 19
+Progressive Graphics image data, version 6, `./magic/pgf`: 20
+Progressive Graphics image data, version 6, `./magic/pgf`: 21
+Progressive Graphics image data, version 6, `./magic/pgf`: 22
+Progressive Graphics image data, version 6, `./magic/pgf`: 23
+Progressive Graphics image data, version 6, `./magic/pgf`: 24
+Progressive Graphics image data, version 6, `./magic/pgf`: 25
+Progressive Graphics image data, version 6, `./magic/pgf`: 26
+Progressive Graphics image data, version 6, `./magic/pgf`: 27
+Progressive Graphics image data, version 6, `./magic/pgf`: 28
+Progressive Graphics image data, version 6, `./magic/pgf`: 29
+Progressive Graphics image data, version 6, `./magic/pgf`: 30
+Progressive Graphics image data, version 6, `./magic/pgf`: 31
+Progressive Graphics image data, version 6, `./magic/pgf`: 32
+Progressive Graphics image data, version 6, `./magic/pgf`: 33
+Progressive Graphics image data, version 6, `./magic/pgf`: 34
+Progressive Graphics image data, version 6, `./magic/pgf`: 35
+Progressive Graphics image data, version 6, `./magic/pgf`: 36
+Progressive Graphics image data, version 6, `./magic/pgf`: 37
+Progressive Graphics image data, version 6, `./magic/pgf`: 38
+Progressive Graphics image data, version 6, `./magic/pgf`: 39
+Progressive Graphics image data, version 6, `./magic/pgf`: 40
+Progressive Graphics image data, version 6, `./magic/pgf`: 41
+Progressive Graphics image data, version 6, `./magic/pgf`: 42
+Progressive Graphics image data, version 6, `./magic/pgf`: 43
+Progressive Graphics image data, version 6, `./magic/pgf`: 44
+Progressive Graphics image data, version 6, `./magic/pgf`: 45
+Progressive Graphics image data, version 6, `./magic/pgf`: 46
+Progressive Graphics image data, version 6, `./magic/pgf`: 47
 Protein Data Bank data, ID Code %s `./magic/scientific`: 97
 Protracker Studio PSM Module `./magic/audio`: 433
 Psion Series 5 Comms names `./magic/epoc`: 34
@@ -31982,11 +30551,11 @@ SMTP mail text `./magic/mail.news`: 17
 SMTP mail text `./magic/mail.news`: 19
 SNDH Atari ST music `./magic/audio`: 609
 SNES SPC700 sound file `./magic/audio`: 333
-SNES SPC700 sound file, version %s `./magic/audio`: 334
-SNES SPC700 sound file, version %s, with ID666 tag `./magic/audio`: 336
-SNES SPC700 sound file, version %s, with ID666 tag `./magic/audio`: 337
-SNES SPC700 sound file, version %s, with ID666 tag `./magic/audio`: 338
-SNES SPC700 sound file, version %s, without ID666 tag `./magic/audio`: 335
+SNES SPC700 sound file, version 0.30 `./magic/audio`: 334
+SNES SPC700 sound file, version 0.30, with ID666 tag `./magic/audio`: 336
+SNES SPC700 sound file, version 0.30, with ID666 tag `./magic/audio`: 337
+SNES SPC700 sound file, version 0.30, with ID666 tag `./magic/audio`: 338
+SNES SPC700 sound file, version 0.30, without ID666 tag `./magic/audio`: 335
 SNES9x input recording `./magic/console`: 594
 SNES9x input recording `./magic/console`: 597
 SNES9x input recording `./magic/console`: 598
@@ -32204,7 +30773,7 @@ Sega Saturn disc image `./magic/console`: 349
 Sega Saturn disc image `./magic/console`: 352
 Sega Saturn disc image `./magic/console`: 354
 Sega Saturn disc image `./magic/console`: 357
-Self-Extract \b, %s `./magic/msdos`: 294
+Self-Extract \b, LH/2  `./magic/msdos`: 294
 Self-extracting PKZIP archive `./magic/msdos`: 302
 Self-extracting PKZIP archive `./magic/msdos`: 305
 SemOne archive data `./magic/archive`: 643
@@ -33202,7 +31771,62 @@ TTCN Abstract Test Suite `./magic/communications`: 15
 TTCN Abstract Test Suite `./magic/communications`: 9
 TTComp archive, binary, 4K dictionary `./magic/archive`: 413
 Taligent `./magic/icc`: 49
+Targa image data `./magic/images`: 101
+Targa image data `./magic/images`: 102
+Targa image data `./magic/images`: 104
+Targa image data `./magic/images`: 106
+Targa image data `./magic/images`: 108
+Targa image data `./magic/images`: 110
+Targa image data `./magic/images`: 112
+Targa image data `./magic/images`: 114
+Targa image data `./magic/images`: 116
+Targa image data `./magic/images`: 118
+Targa image data `./magic/images`: 120
+Targa image data `./magic/images`: 122
+Targa image data `./magic/images`: 124
+Targa image data `./magic/images`: 126
+Targa image data `./magic/images`: 128
+Targa image data `./magic/images`: 130
+Targa image data `./magic/images`: 132
+Targa image data `./magic/images`: 133
+Targa image data `./magic/images`: 134
+Targa image data `./magic/images`: 135
+Targa image data `./magic/images`: 137
+Targa image data `./magic/images`: 139
+Targa image data `./magic/images`: 140
+Targa image data `./magic/images`: 141
+Targa image data `./magic/images`: 143
+Targa image data `./magic/images`: 145
+Targa image data `./magic/images`: 147
+Targa image data `./magic/images`: 149
+Targa image data `./magic/images`: 150
+Targa image data `./magic/images`: 152
+Targa image data `./magic/images`: 154
+Targa image data `./magic/images`: 155
 Targa image data `./magic/images`: 49
+Targa image data `./magic/images`: 56
+Targa image data `./magic/images`: 57
+Targa image data `./magic/images`: 59
+Targa image data `./magic/images`: 60
+Targa image data `./magic/images`: 63
+Targa image data `./magic/images`: 65
+Targa image data `./magic/images`: 67
+Targa image data `./magic/images`: 69
+Targa image data `./magic/images`: 71
+Targa image data `./magic/images`: 73
+Targa image data `./magic/images`: 75
+Targa image data `./magic/images`: 76
+Targa image data `./magic/images`: 78
+Targa image data `./magic/images`: 79
+Targa image data `./magic/images`: 81
+Targa image data `./magic/images`: 83
+Targa image data `./magic/images`: 85
+Targa image data `./magic/images`: 87
+Targa image data `./magic/images`: 89
+Targa image data `./magic/images`: 91
+Targa image data `./magic/images`: 97
+Targa image data `./magic/images`: 98
+Targa image data `./magic/images`: 99
 Tcl script `./magic/tcl`: 26
 Tcl script `./magic/tcl`: 29
 Tcl script text executable `./magic/tcl`: 11
@@ -33702,6 +32326,7 @@ WOPL instrument bank `./magic/audio`: 888
 WRAptor packer (c64) `./magic/c64`: 28
 WWPack archive data `./magic/archive`: 691
 Warcraft III map file `./magic/games`: 209
+Warcraft III recorded game `./magic/games`: 203
 WavPack Lossless Audio `./magic/audio`: 684
 Wavelet Scalar Quantization image data `./magic/images`: 1174
 Web Open Font Format (Version 2) `./magic/fonts`: 326
@@ -33718,6 +32343,8 @@ WebM `./magic/matroska`: 14
 Webshots Desktop .wbz file `./magic/images`: 968
 WinHKI archive data `./magic/archive`: 689
 WinImage archive data `./magic/archive`: 683
+Winamp EQ library file `./magic/audio`: 595
+Winamp EQ library file `./magic/audio`: 598
 Winamp plug in `./magic/msdos`: 874
 Windows 3.x .GRP file `./magic/msdos`: 1038
 Windows CONTROL.INI `./magic/windows`: 391
@@ -34746,6 +33373,7 @@ icrosoft Paint image data (version 1.x) `./magic/images`: 1794
 icrosoft Paint image data (version 1.x) `./magic/images`: 1795
 iff image data `./magic/images`: 629
 iff image data `./magic/images`: 631
+innotek VirtualBox Disk Image `./magic/apple`: 286
 interLaced eXtensible Trace (LXT) file (Version %u) `./magic/scientific`: 111
 interLaced eXtensible Trace (LXT) file `./magic/scientific`: 110
 iproute2 addresses dump `./magic/linux`: 469
@@ -35277,7 +33905,6 @@ very old 16-bit-int big-endian archive `./magic/archive`: 191
 very old 16-bit-int little-endian archive `./magic/archive`: 190
 very old 32-bit-int big-endian archive `./magic/archive`: 193
 very old 32-bit-int little-endian archive `./magic/archive`: 192
-x %d `./magic/images`: 81
 x%d `./magic/apple`: 424
 x.out `./magic/xenix`: 35
 x.out `./magic/xenix`: 36

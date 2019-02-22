@@ -1,9 +1,10 @@
 import abc
+import re
 from typing import List, Dict, Any
 
 from file.fragment import MagicTree, MagicTreeBuilder, TreeNode, MagicTree
-from file.magic import Magic, parse_magic, have_same_test_method, join_magic_desc
-from file.op_intersect import are_mutex, is_lhv_contain_rhv
+from file.magic import Magic, parse_magic, have_same_test_method, join_magic_desc, Test
+from file.op_intersect import are_mutex, is_lhv_contain_rhv, str_to_int
 
 
 class SimpleQueue:
@@ -194,6 +195,7 @@ class FilterFragment(Fragment):
 
 
 def magic_mutex(magic: Magic, prev: Magic):
+    # print('test mutex', magic, prev)
     if magic.type.is_default():
         return True
 
@@ -201,14 +203,40 @@ def magic_mutex(magic: Magic, prev: Magic):
             magic.type.is_functional():
         return False
 
-    if not have_same_test_method(magic, prev):
-        return False
-
     if prev.test.always_true() or \
             magic.test.always_true():
         return False
 
+    if not have_same_test_method(magic, prev):
+        return False
+
+    if magic.type.is_text() and prev.type.is_text():
+        return down_cast_to_byte(magic.test, magic.type, prev.test, prev.type, are_mutex)
+
     return are_mutex(prev.test, magic.test, magic.type)
+
+
+def down_cast_to_byte(test1, type1, test2, type2, func):
+    if (type1.is_string() and type2.is_string()) or \
+            (type1.is_byte() and type2.is_byte()):
+        return func(test1, test2, type1)
+
+    if type1.is_string() and type2.is_byte():
+        magic_type_c = test1.val[0]
+        prev_type_c = chr(str_to_int(test2.val))
+    else:
+        magic_type_c = chr(str_to_int(test1.val))
+        prev_type_c = test2.val[0]
+
+    magic_byte_test = Test()
+    magic_byte_test.op = test1.op
+    magic_byte_test.val = magic_type_c
+
+    prev_byte_test = Test()
+    prev_byte_test.op = test2.op
+    prev_byte_test.val = prev_type_c
+
+    return func(magic_byte_test, prev_byte_test, type1)
 
 
 class PrintNameFragment(Fragment):
@@ -439,12 +467,27 @@ def merge_first_child_with_each_child(children: List[TreeNode]):
 
 def does_first_child_contain_remainder(children: List):
     first_child = children[0]
+
+    if first_child.val.test.always_true():
+        return True
+
     for child in children[1:]:
         if child.children:
             # child should have no child (simplify problem)
             return False
-        if not have_same_test_method(child.val, first_child.val) or \
-                not is_lhv_contain_rhv(first_child.val.test, child.val.test, child.val.type):
+
+        if child.val.test.always_true():
+            return False
+
+        if not have_same_test_method(child.val, first_child.val):
+            return False
+
+        if first_child.val.type.is_text() and child.val.type.is_text():
+            if not down_cast_to_byte(first_child.val.test, first_child.val.type,
+                                     child.val.test, child.val.type,
+                                     is_lhv_contain_rhv):
+                return False
+        elif not is_lhv_contain_rhv(first_child.val.test, child.val.test, child.val.type):
             return False
     return True
 
@@ -458,30 +501,50 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
     # print(node.val.line, ' ' * 20, '\t\t', prefix, 'explorer', always_true_n, len(node.children))
     print(node.val.line, ' ' * 20, '\t\t', '@%s@' % prefix, '$explorer$')
 
-    PrintNameFragment.all_type.add(prefix + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+    if prefix:
+        PrintNameFragment.all_type.add(prefix + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
 
-    children_num = len(node.children)
     always_true_n = count_always_true_in_front(node.children)
-    is_mutual_exclude = always_true_n != children_num
-    for i in range(always_true_n, children_num):
-        for j in range(i+1, children_num):
-            if not magic_mutex(node.children[j].val, node.children[i].val):
-                is_mutual_exclude = False
-                break
+    is_mutual_exclude, idx_block_end = \
+        find_max_mutual_exclusion_block(node.children, always_true_n)
+
+    mutual_exclude_switch_string = ''
+    if is_mutual_exclude:
+        for i in range(always_true_n, idx_block_end):
+            mutual_exclude_switch_string += node.children[i].val.desc
+    mutual_exclude_switch_string = '&%s&' % mutual_exclude_switch_string
+
+    # if no switch in curr level, and if the first child looks like a title
+    # use it as the prefix
+    if node.children and not is_mutual_exclude and not prefix:
+        possible_type = node.children[0].val.desc
+        if most_like_a_type(possible_type):
+            prefix = possible_type
 
     if is_use:
         print('[')
 
     for i, child in enumerate(node.children):
-        if (is_mutual_exclude or not prefix) and not trivial_desc(prefix, child.val):
-            explorer_and_print(prefix, child, use_history, fragment)
+        if not trivial_desc(prefix, child.val):
+            printed = False
+            if (is_mutual_exclude and i < idx_block_end) or not prefix:
+                # print('explorer caused: ', i, idx_block_end, prefix)
+                explorer_and_print(prefix, child, use_history, fragment)
+                printed = True
+
+            # if there is no prefix, take the desc of front always true node as
+            # default prefix
+            if i < always_true_n and not prefix:
+                prefix = join_magic_desc(prefix, node.children[i].val)
+
+            if printed:
+                continue
+
+        # print('just caused: ', prefix, is_mutual_exclude, i, idx_block_end)
+        if not prefix and is_mutual_exclude and i >= idx_block_end:
+            just_print(mutual_exclude_switch_string, child, use_history, fragment)
         else:
             just_print(prefix, child, use_history, fragment)
-
-        # if there is no prefix, take the desc of front always true node as
-        # default prefix
-        if i < always_true_n and not prefix:
-            prefix = join_magic_desc(prefix, node.children[i].val)
     pass
 
     if is_use:
@@ -530,24 +593,72 @@ def count_always_true_in_front(children: List):
     return len(children)
 
 
+def find_max_mutual_exclusion_block(children: List, start: int):
+    children_num = len(children)
+
+    if children_num == 1:
+        return True, 1
+
+    end = start-1
+    for i in range(start + 1, children_num):
+        for j in range(start, i):
+            if not magic_mutex(children[i].val, children[j].val):
+                break
+        else:
+            end = i
+            continue
+        break
+
+    end += 1
+
+    if children_num == 2:
+        is_mutual_exclude = (end == start + 2)
+    else:
+        is_mutual_exclude = end >= start + 2
+    return is_mutual_exclude, end
+
+
 def trivial_desc(prefix: str, magic: Magic):
     desc = magic.desc
 
     desc_source_len = len(desc)
     prefix_len = len(prefix)
 
-    if desc_source_len + desc_source_len > prefix_len:
-        return False
+    # if prefix_len > 8:
+    #     if '%' in desc:
+    #         return True
+
+    # if desc_source_len > prefix_len:
+    #     return False
 
     desc = desc.lower()
-    desc = desc.replace(r'\b', '')
-    desc = desc.replace(r'%', '')
     desc = desc.replace(r'.', '')
     desc = desc.replace(r',', '')
     desc = desc.replace(r'=', '')
-    desc = desc.replace(r'version %', '')
+    desc = desc.replace(r'version', '')
     desc = desc.replace(r'from', '')
     desc = desc.replace(r'size', '')
+    desc = desc.replace(r'name', '')
+    desc = desc.replace(r'byte', '')
+    # desc = desc.replace(r'%s', '')
+    # desc = desc.replace(r'%d', '')
+    # desc = desc.replace(r'%c', '')
+    # desc = desc.replace(r'%u', '')
+    # desc = desc.replace(r'%', '')
+
+    matched = re.search(r'(%[\d]*\.*[\d]*\w)', desc)
+    if matched:
+        desc = desc.replace(matched.group(1), '')
+
+    # print('desc: ', desc)
 
     desc_reduce_len = len(desc)
     return desc_reduce_len * 1.5 < desc_source_len
+
+
+def most_like_a_type(string: str):
+    if not string or not string[0].isalpha():
+        return False
+    if r'%' not in string:
+        return len(string) > 5
+    return len(string) > 10

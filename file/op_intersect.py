@@ -49,7 +49,7 @@ def intersect_with_lt(val1, op2, val2, val_type):
     if op2 == '<':
         return True
     if op2 == '>':
-        if val_type.is_string() or val_type.is_float():
+        if val_type.is_text() or val_type.is_float():
             return val1 > val2
         val1 = str_to_int(val1)
         val2 = str_to_int(val2)
@@ -113,12 +113,6 @@ def are_mutex(test1, test2, val_type):
 
 
 def is_lhv_contain_rhv(test1, test2, val_type):
-    if test1.always_true():
-        return True
-
-    if test2.always_true():
-        return False
-
     if test1.op == '=':
         return test2.op == '=' and test1.val == test2.val
     if test1.op == '!':

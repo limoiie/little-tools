@@ -840,10 +840,10 @@
 >>>>>2	string		-lz		\b 
 !:ext	lzs
 # already known  -lzs- -lz4- -lz5- with old names
->>>>>>2	string	-lzs		LHa/LZS archive data
 >>>>>>3	regex	\^lz[45]	LHarc 1.x archive data
 # missing -lz?- with wikipedia names
 >>>>>>3	regex	\^lz[2378]	LArc archive
+>>>>>>2	string	-lzs		LHa/LZS archive data
 # display archive type name like "LHa (2.x) archive data"
 >>>>>2	string		-lh		\b
 # already known -lh0- -lh1- -lh2- -lh3-  -lh4- -lh5- -lh6- -lh7- -lhd- variants with old names
