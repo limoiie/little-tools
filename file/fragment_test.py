@@ -512,10 +512,12 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
     mutual_exclude_switch_string = ''
     if is_mutual_exclude:
         if idx_block_end + 1 < len(node.children):
-            last_magic_in_block: Magic = node.children[idx_block_end-1].val
+            # last_magic_in_block: Magic = node.children[idx_block_end-1].val
             magic_next_block: Magic = node.children[idx_block_end].val
-            if last_magic_in_block.type.is_default() and magic_next_block.test.always_true():
-                if not trivial_desc(prefix, magic_next_block):
+            if magic_next_block.test.always_true():
+                if can_desc_follow_behind_mutual_block(prefix, magic_next_block):
+                    # if not prefix:
+                    #     prefix = '&ignored&'
                     merge_always_true_tail_into_prev_mutual_block(
                         node.children[always_true_n:idx_block_end], magic_next_block)
 
@@ -533,10 +535,13 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
     if is_use:
         print('[')
 
+    followed_trivial = False
     for i, child in enumerate(node.children):
-        if not trivial_desc(prefix, child.val):
+        is_trivial = followed_trivial or trivial_desc(prefix, child.val)
+        if not is_trivial:
             use_fragment_most_likely_be_addition = \
-                child.val.is_use() and len(prefix) > 15
+                child.val.is_use() and (len(prefix) > 15 or (is_mutual_exclude and i >= idx_block_end))
+
             if not use_fragment_most_likely_be_addition:
                 printed = False
                 if (is_mutual_exclude and i < idx_block_end) or not prefix:
@@ -556,8 +561,11 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
 
                 if printed:
                     continue
+        else:
+            if i >= idx_block_end:
+                followed_trivial = True
 
-        # print('just caused: ', prefix, is_mutual_exclude, i, idx_block_end)
+        # print('just caused: ', prefix, is_mutual_exclude, i, idx_block_end, is_trivial, followed_trivial)
         if not prefix and is_mutual_exclude and i >= idx_block_end:
             just_print(mutual_exclude_switch_string, child, use_history, fragment)
         else:
@@ -647,6 +655,16 @@ def merge_always_true_tail_into_prev_mutual_block(mutual_block, always_true_tail
     pass
 
 
+def can_desc_follow_behind_mutual_block(prefix, magic_next_block):
+    desc = magic_next_block.desc
+    is_trivial = trivial_desc(prefix, magic_next_block)
+    if not is_trivial:
+        if '%' in desc and ':' in desc:
+            return False
+        return True
+    return False
+
+
 def trivial_desc(prefix: str, magic: Magic):
     desc = magic.desc
 
@@ -668,13 +686,11 @@ def trivial_desc(prefix: str, magic: Magic):
     #     return False
 
     desc = desc.lower()
-    desc = desc.replace(r'.', '')
-    desc = desc.replace(r',', '')
-    desc = desc.replace(r'=', '')
 
     if '%' in desc:
         if desc.startswith(r'\b, ') or desc[0] in r',;':
             return True
+
         desc = desc.replace(r'version', '')
         desc = desc.replace(r'level', '')
         desc = desc.replace(r'from', '')
@@ -686,12 +702,22 @@ def trivial_desc(prefix: str, magic: Magic):
         desc = desc.replace(r'for', '')
         desc = desc.replace(r'length', '')
         desc = desc.replace(r'format', '')
+        desc = desc.replace(r'bit', '')
+        desc = desc.replace(r'dpi', '')
+        desc = desc.replace(r'inodes', '')
+        desc = desc.replace(r'blocks', '')
+        desc = desc.replace(r'pixels', '')
+
+    desc = desc.replace(r': ', '')
+    desc = desc.replace(r'.', '')
+    desc = desc.replace(r',', '')
+    desc = desc.replace(r'=', '')
 
     matched = re.search(r'(%-?[\d]*\.*[\d]*\w)', desc)
     if matched:
         desc = desc.replace(matched.group(1), '')
 
-    # print('desc: ', desc)
+    # print(magic, 'desc: ', desc)
 
     desc_reduce_len = len(desc)
     return desc_reduce_len * 1.5 < desc_source_len
