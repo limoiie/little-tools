@@ -462,7 +462,7 @@ def merge_first_child_with_each_child(children: List[TreeNode]):
         children[0].val.test.set_always_true()
 
         for child in children[1:]:
-            child.val.desc = join_magic_desc(desc, child.val) + '; @reduced@'
+            child.val.desc = join_magic_desc(desc, child.val.desc) + '; @reduced@'
 
 
 def does_first_child_contain_remainder(children: List):
@@ -497,12 +497,13 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
     if is_already_visited:
         return
 
-    prefix = join_magic_desc(prefix, node.val)
+    prefix = join_magic_desc(prefix, node.val.desc)
     # print(node.val.line, ' ' * 20, '\t\t', prefix, 'explorer', always_true_n, len(node.children))
     print(node.val.line, ' ' * 20, '\t\t', '@%s@' % prefix, '$explorer$')
 
-    if prefix:
-        PrintNameFragment.all_type.add(prefix + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+    if len(prefix) > 1:
+        # PrintNameFragment.all_type.add(prefix + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+        PrintNameFragment.all_type.add(prefix)
 
     always_true_n = count_always_true_in_front(node.children)
     is_mutual_exclude, idx_block_end = \
@@ -510,6 +511,14 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
 
     mutual_exclude_switch_string = ''
     if is_mutual_exclude:
+        if idx_block_end + 1 < len(node.children):
+            last_magic_in_block: Magic = node.children[idx_block_end-1].val
+            magic_next_block: Magic = node.children[idx_block_end].val
+            if last_magic_in_block.type.is_default() and magic_next_block.test.always_true():
+                if not trivial_desc(prefix, magic_next_block):
+                    merge_always_true_tail_into_prev_mutual_block(
+                        node.children[always_true_n:idx_block_end], magic_next_block)
+
         for i in range(always_true_n, idx_block_end):
             mutual_exclude_switch_string += node.children[i].val.desc
     mutual_exclude_switch_string = '&%s&' % 'ignored'
@@ -526,7 +535,9 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
 
     for i, child in enumerate(node.children):
         if not trivial_desc(prefix, child.val):
-            if not child.val.is_use() or len(prefix) < 15:
+            use_fragment_most_likely_be_addition = \
+                child.val.is_use() and len(prefix) > 15
+            if not use_fragment_most_likely_be_addition:
                 printed = False
                 if (is_mutual_exclude and i < idx_block_end) or not prefix:
                     # print('explorer caused: ', i, idx_block_end, prefix)
@@ -537,9 +548,11 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
                 # default prefix
                 if not prefix:
                     if i < always_true_n:
-                        prefix = join_magic_desc(prefix, node.children[i].val)
-                    # elif i + 1 == idx_block_end:
-                    #     prefix = '&ignored&'
+                        prefix = join_magic_desc(prefix, node.children[i].val.desc)
+                    elif i + 1 == idx_block_end:
+                        last_magic: Magic = node.children[i].val
+                        if last_magic.is_default():
+                            prefix = '&ignored&'
 
                 if printed:
                     continue
@@ -563,7 +576,10 @@ def just_print(string: str, node: TreeNode, use_history: set, fragment: Fragment
 
     print(node.val.line, ' ' * 20, '\t\t', '@%s@' % string, '$just$')
     # print(node.val.line, ' ' * 20, '\t\t', string)
-    PrintNameFragment.all_type.add(string + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+
+    if len(string) > 1:
+        # PrintNameFragment.all_type.add(string + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
+        PrintNameFragment.all_type.add(string)
 
     if is_use:
         print('[')
@@ -622,6 +638,15 @@ def find_max_mutual_exclusion_block(children: List, start: int):
     return is_mutual_exclude, end
 
 
+def merge_always_true_tail_into_prev_mutual_block(mutual_block, always_true_tail):
+    desc = always_true_tail.desc
+    for node in mutual_block:
+        magic = node.val
+        magic.desc = join_magic_desc(magic.desc, desc)
+    always_true_tail.desc = ''
+    pass
+
+
 def trivial_desc(prefix: str, magic: Magic):
     desc = magic.desc
 
@@ -646,12 +671,19 @@ def trivial_desc(prefix: str, magic: Magic):
     desc = desc.replace(r'=', '')
 
     if '%' in desc:
+        if desc.startswith(r'\b, ') or desc[0] in r',;':
+            return True
         desc = desc.replace(r'version', '')
         desc = desc.replace(r'level', '')
         desc = desc.replace(r'from', '')
         desc = desc.replace(r'size', '')
         desc = desc.replace(r'name', '')
         desc = desc.replace(r'byte', '')
+        desc = desc.replace(r'title', '')
+        desc = desc.replace(r'theme', '')
+        desc = desc.replace(r'for', '')
+        desc = desc.replace(r'length', '')
+        desc = desc.replace(r'format', '')
 
     matched = re.search(r'(%-?[\d]*\.*[\d]*\w)', desc)
     if matched:

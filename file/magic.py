@@ -254,16 +254,16 @@ def extract_desc(line: str, start: int):
     return get_remainder(line, start)
 
 
-def join_magic_desc(prefix: str, magic: Magic):
-    if not magic.desc:
+def join_magic_desc(prefix: str, magic_desc: str):
+    if not magic_desc:
         return prefix
 
-    if magic.desc.startswith(r'\b'):
-        return prefix + magic.desc[2:]
+    if magic_desc.startswith(r'\b'):
+        return prefix + magic_desc[2:]
 
     if not prefix:
-        return magic.desc
-    return prefix + ' ' + magic.desc
+        return magic_desc
+    return prefix + ' ' + magic_desc
 
 
 def format_magic_desc_if_possible(magic: Magic):

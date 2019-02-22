@@ -1982,7 +1982,7 @@ USE  tar-file
 >8	string		debian-split	part of multipart Debian package                      		 @part of multipart Debian package@ $explorer$
 >8	string		debian-binary	Debian binary package                      		 @Debian binary package@ $explorer$
 >8	string		!debian                      		 @@ $explorer$
->68	string		>\0		(format %s)                      		 @(format %s)@ $explorer$
+>68	string		>\0		(format %s)                      		 @&ignored&@ $just$
 
 
 0	string	=!<arch>\n__________E	MIPS archive                      		 @MIPS archive@ $explorer$
@@ -5428,11 +5428,11 @@ JUMP OUT USE SINCE WE ARE JUST mach-o
 
 
 0	belong&0xffffff00	0x85011400  cisco IOS microcode                      		 @cisco IOS microcode@ $explorer$
->7	string		>\0		    for '%s'                      		 @cisco IOS microcode for '%s'@ $explorer$
+>7	string		>\0		    for '%s'                      		 @cisco IOS microcode@ $just$
 
 
 0	belong&0xffffff00	0x8501cb00  cisco IOS experimental microcode                      		 @cisco IOS experimental microcode@ $explorer$
->7	string		>\0		    for '%s'                      		 @cisco IOS experimental microcode for '%s'@ $explorer$
+>7	string		>\0		    for '%s'                      		 @cisco IOS experimental microcode@ $just$
 
 
 0	string		RuneCT		Citrus locale declaration for LC_CTYPE                      		 @Citrus locale declaration for LC_CTYPE@ $explorer$
@@ -6117,36 +6117,36 @@ USE  sega-master-system-rom-header
 >0x0F	byte&0xF0	0x60	Sega Game Gear                      		 @Sega Game Gear@ $explorer$
 >0x0F	byte&0xF0	0x70	Sega Game Gear                      		 @Sega Game Gear@ $explorer$
 >0x0F	default		x	Sega Master System / Game Gear                      		 @Sega Master System / Game Gear@ $explorer$
->0	byte		x	ROM image:                      		 @ROM image:@ $explorer$
->0x0E	byte&0xF0	0x10	1                      		 @1@ $explorer$
->0x0E	byte&0xF0	0x20	2                      		 @2@ $explorer$
->0x0E	byte&0xF0	0x30	3                      		 @3@ $explorer$
->0x0E	byte&0xF0	0x40	4                      		 @4@ $explorer$
->0x0E	byte&0xF0	0x50	5                      		 @5@ $explorer$
->0x0E	byte&0xF0	0x60	6                      		 @6@ $explorer$
->0x0E	byte&0xF0	0x70	7                      		 @7@ $explorer$
->0x0E	byte&0xF0	0x80	8                      		 @8@ $explorer$
->0x0E	byte&0xF0	0x90	9                      		 @9@ $explorer$
->0x0E	byte&0xF0	0xA0	10                      		 @10@ $explorer$
->0x0E	byte&0xF0	0xB0	11                      		 @11@ $explorer$
->0x0E	byte&0xF0	0xC0	12                      		 @12@ $explorer$
->0x0E	byte&0xF0	0xD0	13                      		 @13@ $explorer$
->0x0E	byte&0xF0	0xE0	14                      		 @14@ $explorer$
->0x0E	byte&0xF0	0xF0	15                      		 @15@ $explorer$
->0x0E	byte&0xF0	!0                      		 @@ $explorer$
->>0x0C	leshort		x	\b%04x                      		 @@ $just$
->0x0E	byte&0xF0	0                      		 @@ $explorer$
->>0x0C	leshort		x	%04x                      		 @@ $just$
+>0	byte		x	ROM image:                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x10	1                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x20	2                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x30	3                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x40	4                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x50	5                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x60	6                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x70	7                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x80	8                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x90	9                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xA0	10                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xB0	11                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xC0	12                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xD0	13                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xE0	14                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xF0	15                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	!0                      		 @&ignored&@ $just$
+>>0x0C	leshort		x	\b%04x                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0                      		 @&ignored&@ $just$
+>>0x0C	leshort		x	%04x                      		 @&ignored&@ $just$
 >0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&ignored&@ $just$
->0x0F	byte&0x0F	0x0A	(8 KB)                      		 @(8 KB)@ $explorer$
->0x0F	byte&0x0F	0x0B	(16 KB)                      		 @(16 KB)@ $explorer$
->0x0F	byte&0x0F	0x0C	(32 KB)                      		 @(32 KB)@ $explorer$
->0x0F	byte&0x0F	0x0D	(48 KB)                      		 @(48 KB)@ $explorer$
->0x0F	byte&0x0F	0x0E	(64 KB)                      		 @(64 KB)@ $explorer$
->0x0F	byte&0x0F	0x0F	(128 KB)                      		 @(128 KB)@ $explorer$
->0x0F	byte&0x0F	0x00	(256 KB)                      		 @(256 KB)@ $explorer$
->0x0F	byte&0x0F	0x01	(512 KB)                      		 @(512 KB)@ $explorer$
->0x0F	byte&0x0F	0x02	(1 MB)                      		 @(1 MB)@ $explorer$
+>0x0F	byte&0x0F	0x0A	(8 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0B	(16 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0C	(32 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0D	(48 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0E	(64 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0F	(128 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x00	(256 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x01	(512 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x02	(1 MB)                      		 @&ignored&@ $just$
 ]
 
 
@@ -6161,36 +6161,36 @@ USE  sega-master-system-rom-header
 >0x0F	byte&0xF0	0x60	Sega Game Gear                      		 @Sega Game Gear@ $explorer$
 >0x0F	byte&0xF0	0x70	Sega Game Gear                      		 @Sega Game Gear@ $explorer$
 >0x0F	default		x	Sega Master System / Game Gear                      		 @Sega Master System / Game Gear@ $explorer$
->0	byte		x	ROM image:                      		 @ROM image:@ $explorer$
->0x0E	byte&0xF0	0x10	1                      		 @1@ $explorer$
->0x0E	byte&0xF0	0x20	2                      		 @2@ $explorer$
->0x0E	byte&0xF0	0x30	3                      		 @3@ $explorer$
->0x0E	byte&0xF0	0x40	4                      		 @4@ $explorer$
->0x0E	byte&0xF0	0x50	5                      		 @5@ $explorer$
->0x0E	byte&0xF0	0x60	6                      		 @6@ $explorer$
->0x0E	byte&0xF0	0x70	7                      		 @7@ $explorer$
->0x0E	byte&0xF0	0x80	8                      		 @8@ $explorer$
->0x0E	byte&0xF0	0x90	9                      		 @9@ $explorer$
->0x0E	byte&0xF0	0xA0	10                      		 @10@ $explorer$
->0x0E	byte&0xF0	0xB0	11                      		 @11@ $explorer$
->0x0E	byte&0xF0	0xC0	12                      		 @12@ $explorer$
->0x0E	byte&0xF0	0xD0	13                      		 @13@ $explorer$
->0x0E	byte&0xF0	0xE0	14                      		 @14@ $explorer$
->0x0E	byte&0xF0	0xF0	15                      		 @15@ $explorer$
->0x0E	byte&0xF0	!0                      		 @@ $explorer$
->>0x0C	leshort		x	\b%04x                      		 @@ $just$
->0x0E	byte&0xF0	0                      		 @@ $explorer$
->>0x0C	leshort		x	%04x                      		 @@ $just$
+>0	byte		x	ROM image:                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x10	1                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x20	2                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x30	3                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x40	4                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x50	5                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x60	6                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x70	7                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x80	8                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x90	9                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xA0	10                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xB0	11                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xC0	12                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xD0	13                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xE0	14                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xF0	15                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	!0                      		 @&ignored&@ $just$
+>>0x0C	leshort		x	\b%04x                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0                      		 @&ignored&@ $just$
+>>0x0C	leshort		x	%04x                      		 @&ignored&@ $just$
 >0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&ignored&@ $just$
->0x0F	byte&0x0F	0x0A	(8 KB)                      		 @(8 KB)@ $explorer$
->0x0F	byte&0x0F	0x0B	(16 KB)                      		 @(16 KB)@ $explorer$
->0x0F	byte&0x0F	0x0C	(32 KB)                      		 @(32 KB)@ $explorer$
->0x0F	byte&0x0F	0x0D	(48 KB)                      		 @(48 KB)@ $explorer$
->0x0F	byte&0x0F	0x0E	(64 KB)                      		 @(64 KB)@ $explorer$
->0x0F	byte&0x0F	0x0F	(128 KB)                      		 @(128 KB)@ $explorer$
->0x0F	byte&0x0F	0x00	(256 KB)                      		 @(256 KB)@ $explorer$
->0x0F	byte&0x0F	0x01	(512 KB)                      		 @(512 KB)@ $explorer$
->0x0F	byte&0x0F	0x02	(1 MB)                      		 @(1 MB)@ $explorer$
+>0x0F	byte&0x0F	0x0A	(8 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0B	(16 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0C	(32 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0D	(48 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0E	(64 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0F	(128 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x00	(256 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x01	(512 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x02	(1 MB)                      		 @&ignored&@ $just$
 ]
 
 
@@ -6205,36 +6205,36 @@ USE  sega-master-system-rom-header
 >0x0F	byte&0xF0	0x60	Sega Game Gear                      		 @Sega Game Gear@ $explorer$
 >0x0F	byte&0xF0	0x70	Sega Game Gear                      		 @Sega Game Gear@ $explorer$
 >0x0F	default		x	Sega Master System / Game Gear                      		 @Sega Master System / Game Gear@ $explorer$
->0	byte		x	ROM image:                      		 @ROM image:@ $explorer$
->0x0E	byte&0xF0	0x10	1                      		 @1@ $explorer$
->0x0E	byte&0xF0	0x20	2                      		 @2@ $explorer$
->0x0E	byte&0xF0	0x30	3                      		 @3@ $explorer$
->0x0E	byte&0xF0	0x40	4                      		 @4@ $explorer$
->0x0E	byte&0xF0	0x50	5                      		 @5@ $explorer$
->0x0E	byte&0xF0	0x60	6                      		 @6@ $explorer$
->0x0E	byte&0xF0	0x70	7                      		 @7@ $explorer$
->0x0E	byte&0xF0	0x80	8                      		 @8@ $explorer$
->0x0E	byte&0xF0	0x90	9                      		 @9@ $explorer$
->0x0E	byte&0xF0	0xA0	10                      		 @10@ $explorer$
->0x0E	byte&0xF0	0xB0	11                      		 @11@ $explorer$
->0x0E	byte&0xF0	0xC0	12                      		 @12@ $explorer$
->0x0E	byte&0xF0	0xD0	13                      		 @13@ $explorer$
->0x0E	byte&0xF0	0xE0	14                      		 @14@ $explorer$
->0x0E	byte&0xF0	0xF0	15                      		 @15@ $explorer$
->0x0E	byte&0xF0	!0                      		 @@ $explorer$
->>0x0C	leshort		x	\b%04x                      		 @@ $just$
->0x0E	byte&0xF0	0                      		 @@ $explorer$
->>0x0C	leshort		x	%04x                      		 @@ $just$
+>0	byte		x	ROM image:                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x10	1                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x20	2                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x30	3                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x40	4                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x50	5                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x60	6                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x70	7                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x80	8                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0x90	9                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xA0	10                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xB0	11                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xC0	12                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xD0	13                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xE0	14                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0xF0	15                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	!0                      		 @&ignored&@ $just$
+>>0x0C	leshort		x	\b%04x                      		 @&ignored&@ $just$
+>0x0E	byte&0xF0	0                      		 @&ignored&@ $just$
+>>0x0C	leshort		x	%04x                      		 @&ignored&@ $just$
 >0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&ignored&@ $just$
->0x0F	byte&0x0F	0x0A	(8 KB)                      		 @(8 KB)@ $explorer$
->0x0F	byte&0x0F	0x0B	(16 KB)                      		 @(16 KB)@ $explorer$
->0x0F	byte&0x0F	0x0C	(32 KB)                      		 @(32 KB)@ $explorer$
->0x0F	byte&0x0F	0x0D	(48 KB)                      		 @(48 KB)@ $explorer$
->0x0F	byte&0x0F	0x0E	(64 KB)                      		 @(64 KB)@ $explorer$
->0x0F	byte&0x0F	0x0F	(128 KB)                      		 @(128 KB)@ $explorer$
->0x0F	byte&0x0F	0x00	(256 KB)                      		 @(256 KB)@ $explorer$
->0x0F	byte&0x0F	0x01	(512 KB)                      		 @(512 KB)@ $explorer$
->0x0F	byte&0x0F	0x02	(1 MB)                      		 @(1 MB)@ $explorer$
+>0x0F	byte&0x0F	0x0A	(8 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0B	(16 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0C	(32 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0D	(48 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0E	(64 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x0F	(128 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x00	(256 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x01	(512 KB)                      		 @&ignored&@ $just$
+>0x0F	byte&0x0F	0x02	(1 MB)                      		 @&ignored&@ $just$
 ]
 
 
@@ -10676,7 +10676,7 @@ JUMP OUT USE SINCE WE ARE JUST pak-entry
 
 
 0	string	\0LOCATE	GNU findutils locate database data                      		 @GNU findutils locate database data@ $explorer$
->7	string	>\0		\b, format %s                      		 @GNU findutils locate database data, format %s@ $explorer$
+>7	string	>\0		\b, format %s                      		 @GNU findutils locate database data@ $just$
 >7	string	02		\b (frcode)                      		 @GNU findutils locate database data (frcode)@ $explorer$
 
 
@@ -10965,9 +10965,9 @@ USE  display-coff
 >>0	uleshort	0x8664		Intel amd64                      		 @Intel amd64@ $explorer$
 >>0	default		x                      		 @@ $explorer$
 >>>0	uleshort	x		type 0x%04x                      		 @type 0x%04x@ $just$
->>0	uleshort	x		COFF                      		 @COFF@ $explorer$
->>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
->>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
+>>0	uleshort	x		COFF                      		 @&ignored&@ $just$
+>>18	leshort		^0x0002		object file                      		 @&ignored&@ $just$
+>>18	leshort		&0x0002		executable                      		 @&ignored&@ $just$
 >>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
@@ -10995,9 +10995,9 @@ USE  display-coff
 >>0	uleshort	0x8664		Intel amd64                      		 @Intel amd64@ $explorer$
 >>0	default		x                      		 @@ $explorer$
 >>>0	uleshort	x		type 0x%04x                      		 @type 0x%04x@ $just$
->>0	uleshort	x		COFF                      		 @COFF@ $explorer$
->>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
->>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
+>>0	uleshort	x		COFF                      		 @&ignored&@ $just$
+>>18	leshort		^0x0002		object file                      		 @&ignored&@ $just$
+>>18	leshort		&0x0002		executable                      		 @&ignored&@ $just$
 >>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
@@ -12176,17 +12176,17 @@ USE  gem_info
 [
 0   name        gem_info                      		 @@ $explorer$
 >0	beshort		<0x0003		GEM                      		 @GEM@ $explorer$
->>2	beshort		>9                      		 @GEM@ $just$
->>>16	string		STTT\0\x10	STTT                      		 @GEM@ $just$
->>>16	string		TIMG\0		TIMG                      		 @GEM@ $just$
->>>16	string		\0\x80                      		 @GEM@ $just$
->>>>2	beshort		=24		NOSIG                      		 @GEM@ $just$
->>>>2	beshort		!24		HYPERPAINT                      		 @GEM@ $just$
->>>16	default		x                      		 @GEM@ $just$
->>>>16	string		!XIMG\0		NOSIG                      		 @GEM@ $just$
+>>2	beshort		>9                      		 @GEM@ $explorer$
+>>>16	string		STTT\0\x10	STTT                      		 @GEM STTT@ $explorer$
+>>>16	string		TIMG\0		TIMG                      		 @GEM TIMG@ $explorer$
+>>>16	string		\0\x80                      		 @GEM@ $explorer$
+>>>>2	beshort		=24		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>>>2	beshort		!24		HYPERPAINT                      		 @GEM HYPERPAINT@ $explorer$
+>>>16	default		x                      		 @GEM@ $explorer$
+>>>>16	string		!XIMG\0		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>2	beshort		9		(Ventura)                      		 @GEM (Ventura)@ $explorer$
 >>16	string		=XIMG\0		XIMG Image data                      		 @GEM@ $just$
 >>16	string		!XIMG\0		Image data                      		 @GEM@ $just$
->>2	beshort		9		(Ventura)                      		 @GEM@ $just$
 >>12	beshort		x		%d x                      		 @GEM@ $just$
 >>14	beshort		x		%d,                      		 @GEM@ $just$
 >>4	beshort		x		%d planes,                      		 @GEM@ $just$
@@ -12208,17 +12208,17 @@ USE  gem_info
 [
 0   name        gem_info                      		 @@ $explorer$
 >0	beshort		<0x0003		GEM                      		 @GEM@ $explorer$
->>2	beshort		>9                      		 @GEM@ $just$
->>>16	string		STTT\0\x10	STTT                      		 @GEM@ $just$
->>>16	string		TIMG\0		TIMG                      		 @GEM@ $just$
->>>16	string		\0\x80                      		 @GEM@ $just$
->>>>2	beshort		=24		NOSIG                      		 @GEM@ $just$
->>>>2	beshort		!24		HYPERPAINT                      		 @GEM@ $just$
->>>16	default		x                      		 @GEM@ $just$
->>>>16	string		!XIMG\0		NOSIG                      		 @GEM@ $just$
+>>2	beshort		>9                      		 @GEM@ $explorer$
+>>>16	string		STTT\0\x10	STTT                      		 @GEM STTT@ $explorer$
+>>>16	string		TIMG\0		TIMG                      		 @GEM TIMG@ $explorer$
+>>>16	string		\0\x80                      		 @GEM@ $explorer$
+>>>>2	beshort		=24		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>>>2	beshort		!24		HYPERPAINT                      		 @GEM HYPERPAINT@ $explorer$
+>>>16	default		x                      		 @GEM@ $explorer$
+>>>>16	string		!XIMG\0		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>2	beshort		9		(Ventura)                      		 @GEM (Ventura)@ $explorer$
 >>16	string		=XIMG\0		XIMG Image data                      		 @GEM@ $just$
 >>16	string		!XIMG\0		Image data                      		 @GEM@ $just$
->>2	beshort		9		(Ventura)                      		 @GEM@ $just$
 >>12	beshort		x		%d x                      		 @GEM@ $just$
 >>14	beshort		x		%d,                      		 @GEM@ $just$
 >>4	beshort		x		%d planes,                      		 @GEM@ $just$
@@ -12234,17 +12234,17 @@ USE  gem_info
 [
 0   name        gem_info                      		 @@ $explorer$
 >0	beshort		<0x0003		GEM                      		 @GEM@ $explorer$
->>2	beshort		>9                      		 @GEM@ $just$
->>>16	string		STTT\0\x10	STTT                      		 @GEM@ $just$
->>>16	string		TIMG\0		TIMG                      		 @GEM@ $just$
->>>16	string		\0\x80                      		 @GEM@ $just$
->>>>2	beshort		=24		NOSIG                      		 @GEM@ $just$
->>>>2	beshort		!24		HYPERPAINT                      		 @GEM@ $just$
->>>16	default		x                      		 @GEM@ $just$
->>>>16	string		!XIMG\0		NOSIG                      		 @GEM@ $just$
+>>2	beshort		>9                      		 @GEM@ $explorer$
+>>>16	string		STTT\0\x10	STTT                      		 @GEM STTT@ $explorer$
+>>>16	string		TIMG\0		TIMG                      		 @GEM TIMG@ $explorer$
+>>>16	string		\0\x80                      		 @GEM@ $explorer$
+>>>>2	beshort		=24		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>>>2	beshort		!24		HYPERPAINT                      		 @GEM HYPERPAINT@ $explorer$
+>>>16	default		x                      		 @GEM@ $explorer$
+>>>>16	string		!XIMG\0		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>2	beshort		9		(Ventura)                      		 @GEM (Ventura)@ $explorer$
 >>16	string		=XIMG\0		XIMG Image data                      		 @GEM@ $just$
 >>16	string		!XIMG\0		Image data                      		 @GEM@ $just$
->>2	beshort		9		(Ventura)                      		 @GEM@ $just$
 >>12	beshort		x		%d x                      		 @GEM@ $just$
 >>14	beshort		x		%d,                      		 @GEM@ $just$
 >>4	beshort		x		%d planes,                      		 @GEM@ $just$
@@ -12260,17 +12260,17 @@ USE  gem_info
 [
 0   name        gem_info                      		 @@ $explorer$
 >0	beshort		<0x0003		GEM                      		 @GEM@ $explorer$
->>2	beshort		>9                      		 @GEM@ $just$
->>>16	string		STTT\0\x10	STTT                      		 @GEM@ $just$
->>>16	string		TIMG\0		TIMG                      		 @GEM@ $just$
->>>16	string		\0\x80                      		 @GEM@ $just$
->>>>2	beshort		=24		NOSIG                      		 @GEM@ $just$
->>>>2	beshort		!24		HYPERPAINT                      		 @GEM@ $just$
->>>16	default		x                      		 @GEM@ $just$
->>>>16	string		!XIMG\0		NOSIG                      		 @GEM@ $just$
+>>2	beshort		>9                      		 @GEM@ $explorer$
+>>>16	string		STTT\0\x10	STTT                      		 @GEM STTT@ $explorer$
+>>>16	string		TIMG\0		TIMG                      		 @GEM TIMG@ $explorer$
+>>>16	string		\0\x80                      		 @GEM@ $explorer$
+>>>>2	beshort		=24		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>>>2	beshort		!24		HYPERPAINT                      		 @GEM HYPERPAINT@ $explorer$
+>>>16	default		x                      		 @GEM@ $explorer$
+>>>>16	string		!XIMG\0		NOSIG                      		 @GEM NOSIG@ $explorer$
+>>2	beshort		9		(Ventura)                      		 @GEM (Ventura)@ $explorer$
 >>16	string		=XIMG\0		XIMG Image data                      		 @GEM@ $just$
 >>16	string		!XIMG\0		Image data                      		 @GEM@ $just$
->>2	beshort		9		(Ventura)                      		 @GEM@ $just$
 >>12	beshort		x		%d x                      		 @GEM@ $just$
 >>14	beshort		x		%d,                      		 @GEM@ $just$
 >>4	beshort		x		%d planes,                      		 @GEM@ $just$
@@ -12834,9 +12834,9 @@ USE  display-coff
 >>0	uleshort	0x8664		Intel amd64                      		 @Intel amd64@ $explorer$
 >>0	default		x                      		 @@ $explorer$
 >>>0	uleshort	x		type 0x%04x                      		 @type 0x%04x@ $just$
->>0	uleshort	x		COFF                      		 @COFF@ $explorer$
->>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
->>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
+>>0	uleshort	x		COFF                      		 @&ignored&@ $just$
+>>18	leshort		^0x0002		object file                      		 @&ignored&@ $just$
+>>18	leshort		&0x0002		executable                      		 @&ignored&@ $just$
 >>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
@@ -12863,9 +12863,9 @@ USE  display-coff
 >>0	uleshort	0x8664		Intel amd64                      		 @Intel amd64@ $explorer$
 >>0	default		x                      		 @@ $explorer$
 >>>0	uleshort	x		type 0x%04x                      		 @type 0x%04x@ $just$
->>0	uleshort	x		COFF                      		 @COFF@ $explorer$
->>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
->>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
+>>0	uleshort	x		COFF                      		 @&ignored&@ $just$
+>>18	leshort		^0x0002		object file                      		 @&ignored&@ $just$
+>>18	leshort		&0x0002		executable                      		 @&ignored&@ $just$
 >>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
@@ -12892,9 +12892,9 @@ USE  display-coff
 >>0	uleshort	0x8664		Intel amd64                      		 @Intel amd64@ $explorer$
 >>0	default		x                      		 @@ $explorer$
 >>>0	uleshort	x		type 0x%04x                      		 @type 0x%04x@ $just$
->>0	uleshort	x		COFF                      		 @COFF@ $explorer$
->>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
->>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
+>>0	uleshort	x		COFF                      		 @&ignored&@ $just$
+>>18	leshort		^0x0002		object file                      		 @&ignored&@ $just$
+>>18	leshort		&0x0002		executable                      		 @&ignored&@ $just$
 >>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
 >>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
@@ -13179,7 +13179,7 @@ JUMP OUT USE SINCE WE ARE JUST keytab_entry
 
 
 0	search/100	yyprevious	C program text (from lex)                      		 @C program text (from lex)@ $explorer$
->3	search/1	>\0		 for %s                      		 @C program text (from lex) for %s@ $explorer$
+>3	search/1	>\0		 for %s                      		 @C program text (from lex)@ $just$
 
 
 0	search/100	generated\ by\ flex	C program text (from flex)                      		 @C program text (from flex)@ $explorer$
@@ -15677,11 +15677,11 @@ USE  cur-ico-dir
 
 0	belong		0xC5D0D3C6	DOS EPS Binary File                      		 @DOS EPS Binary File@ $explorer$
 >4	long		>0		Postscript starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $explorer$
->>8	long		>0		length %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $explorer$
->>>12	long		>0		Metafile starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
->>>>16	long		>0		length %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
->>>20	long		>0		TIFF starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
->>>>24	long		>0		length %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
+>>8	long		>0		length %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>12	long		>0		Metafile starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>>16	long		>0		length %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>20	long		>0		TIFF starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>>24	long		>0		length %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
 
 
 0	lelong		0x223e9f78	TNEF                      		 @TNEF@ $explorer$
@@ -17628,11 +17628,11 @@ JUMP OUT USE SINCE WE ARE JUST keyend
 
 0       belong          0xC5D0D3C6      DOS EPS Binary File                      		 @DOS EPS Binary File@ $explorer$
 >4      long            >0              Postscript starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $explorer$
->>8     long            >0              length %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $explorer$
->>>12   long            >0              Metafile starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
->>>>16  long            >0              length %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
->>>20   long            >0              TIFF starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
->>>>24  long            >0              length %d                      		 @DOS EPS Binary File Postscript starts at byte %d length %d@ $just$
+>>8     long            >0              length %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>12   long            >0              Metafile starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>>16  long            >0              length %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>20   long            >0              TIFF starts at byte %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
+>>>>24  long            >0              length %d                      		 @DOS EPS Binary File Postscript starts at byte %d@ $just$
 
 
 0	string		*PPD-Adobe:\x20	PPD file                      		 @PPD file@ $explorer$
@@ -20453,7 +20453,7 @@ USE  firmware-tplink
 
 
 0	string/t		#!\ 			script text executable                      		 @script text executable@ $explorer$
->3	string		>\0			for %s                      		 @script text executable for %s@ $explorer$
+>3	string		>\0			for %s                      		 @script text executable@ $just$
 
 
 0	string/b		#!\ 			script executable                      		 @script executable@ $explorer$
@@ -20885,7 +20885,7 @@ USE  cnt-name
 
 
 0	string		tfMR			MS Windows help Full Text Search index                      		 @MS Windows help Full Text Search index@ $explorer$
->16	string		>\0			for "%s"                      		 @MS Windows help Full Text Search index for "%s"@ $explorer$
+>16	string		>\0			for "%s"                      		 @MS Windows help Full Text Search index@ $just$
 
 
 0	string		HyperTerminal\040                      		 @@ $explorer$
@@ -21711,7 +21711,7 @@ JUMP OUT USE SINCE WE ARE JUST zipcd
 
 
 
-NUM OF ALL TYPE:  4773
+NUM OF ALL TYPE:  4751
  DBF
  DBF, %d record
  DBF, %d records
@@ -21719,15 +21719,6 @@ NUM OF ALL TYPE:  4773
  MDX
 "compact bitmap" format (Poskanzer)
 &ignored&
-(1 MB)
-(128 KB)
-(16 KB)
-(256 KB)
-(32 KB)
-(48 KB)
-(512 KB)
-(64 KB)
-(8 KB)
 (ASCII Vector specification)
 (Directory List)
 (Lepton 2.x),
@@ -21740,7 +21731,6 @@ NUM OF ALL TYPE:  4773
 (Target List)
 (Variable)
 (Zaplet)
-(format %s)
 (non-conforming)
 (unknown version)
 (v2)
@@ -21749,12 +21739,6 @@ NUM OF ALL TYPE:  4773
 -%.4s device
 0420 Alliant virtual executable
 0421 Alliant compact executable
-10
-11
-12
-13
-14
-15
 16-channel Taketracker module sound data
 32-channel Taketracker module sound data
 370 XA sysV executable
@@ -22189,7 +22173,6 @@ Brooktrout 301 fax image,, normal resolution
 Build engine group file
 C program text (from flex)
 C program text (from lex)
-C program text (from lex) for %s
 C shell script text executable
 C source text
 C++ source text
@@ -22228,7 +22211,6 @@ CMP archive data
 CMU window manager raster image data
 CNS ASCII electron density map
 COBALT boot rom data (Flat boot rom or file system)
-COFF
 COFF DSP21k
 COFF DSP21k executable,
 COFF DSP21k relocatable object,
@@ -22467,7 +22449,6 @@ DOS 2.0-3.2 backed up
 DOS 3.3 backup control file, sequence %d
 DOS EPS Binary File
 DOS EPS Binary File Postscript starts at byte %d
-DOS EPS Binary File Postscript starts at byte %d length %d
 DOS Emulator image
 DOS batch file text
 DOS code page font data
@@ -22799,7 +22780,12 @@ GEDCOM data
 GEDCOM genealogy text
 GEDCOM genealogy text version
 GEM
+GEM (Ventura)
+GEM HYPERPAINT
 GEM Metafile data
+GEM NOSIG
+GEM STTT
+GEM TIMG
 GEOS
 GEOS VMFile
 GEOS binary
@@ -22845,7 +22831,6 @@ GNU dbm 1.x or ndbm database, little endian, old
 GNU dbm 2.x database
 GNU findutils locate database data
 GNU findutils locate database data (frcode)
-GNU findutils locate database data, format %s
 GNU gettext message catalogue text
 GNU message catalog (big endian),
 GNU message catalog (big endian), revision %d.
@@ -23845,7 +23830,6 @@ MS Windows Vista Event Log, %d chunks
 MS Windows Vista Event Log, empty
 MS Windows Vista Event Log, next record no. %d
 MS Windows help Full Text Search index
-MS Windows help Full Text Search index for "%s"
 MS Windows help Global Index
 MS Windows help annotation
 MS Windows help cache
@@ -24927,7 +24911,6 @@ RISC OS archive (ArcFS format)
 RISC OS music file
 RISC OS outline font data,
 RLE image data,
-ROM image:
 ROOT file
 RPM
 RPM bin
@@ -26094,9 +26077,7 @@ bzip compressed data
 bzip2 compressed data
 catalog translation
 cisco IOS experimental microcode
-cisco IOS experimental microcode for '%s'
 cisco IOS microcode
-cisco IOS microcode for '%s'
 clear text Computer Graphics Metafile
 color profi
 compacted data
@@ -26155,7 +26136,6 @@ eXtra Simple Music
 elog journal entry
 eml://ecoinformatics.org/%s
 encrypted scalable OpenFont binary
-executable
 executable (RISC System/6000 V3.1) or obj module
 executable (RISC System/6000 V3.1) or obj module not stripped
 exported SGML document text
@@ -26311,7 +26291,6 @@ ntfsclone image,
 o65
 o65 executable,
 o65 object,
-object file
 object file (z8000 a.out)
 old 16-bit-int big-endian archive
 old 16-bit-int big-endian archive random library
@@ -26395,7 +26374,6 @@ scalable OpenFont binary
 script executable
 script executable for %s (binary data)
 script text executable
-script text executable for %s
 scrshot(1) screenshot,
 sendmail m4 text file
 separate object file (z8000 a.out)

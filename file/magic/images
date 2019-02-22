@@ -893,14 +893,14 @@
 # NOSIG or XIMG variant
 >>>16	default		x
 >>>>16	string		!XIMG\0		NOSIG
+# header_size is 9 for Ventura files and 8 for other GEM Paint files
+>>2	beshort		9		(Ventura)
+#>>2	beshort		8		(Paint)
 >>16	string		=XIMG\0		XIMG Image data
 !:ext	img/ximg
 # to avoid Warning: Current entry does not yet have a description for adding a EXTENSION type
 >>16	string		!XIMG\0		Image data
 !:ext	img
-# header_size is 9 for Ventura files and 8 for other GEM Paint files
->>2	beshort		9		(Ventura)
-#>>2	beshort		8		(Paint)
 >>12	beshort		x		%d x
 >>14	beshort		x		%d,
 # 1 4 8
