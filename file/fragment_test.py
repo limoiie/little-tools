@@ -512,7 +512,7 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
     if is_mutual_exclude:
         for i in range(always_true_n, idx_block_end):
             mutual_exclude_switch_string += node.children[i].val.desc
-    mutual_exclude_switch_string = '&%s&' % mutual_exclude_switch_string
+    mutual_exclude_switch_string = '&%s&' % 'ignored'
 
     # if no switch in curr level, and if the first child looks like a title
     # use it as the prefix
@@ -526,19 +526,23 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
 
     for i, child in enumerate(node.children):
         if not trivial_desc(prefix, child.val):
-            printed = False
-            if (is_mutual_exclude and i < idx_block_end) or not prefix:
-                # print('explorer caused: ', i, idx_block_end, prefix)
-                explorer_and_print(prefix, child, use_history, fragment)
-                printed = True
+            if not child.val.is_use() or len(prefix) < 15:
+                printed = False
+                if (is_mutual_exclude and i < idx_block_end) or not prefix:
+                    # print('explorer caused: ', i, idx_block_end, prefix)
+                    explorer_and_print(prefix, child, use_history, fragment)
+                    printed = True
 
-            # if there is no prefix, take the desc of front always true node as
-            # default prefix
-            if i < always_true_n and not prefix:
-                prefix = join_magic_desc(prefix, node.children[i].val)
+                # if there is no prefix, take the desc of front always true node as
+                # default prefix
+                if not prefix:
+                    if i < always_true_n:
+                        prefix = join_magic_desc(prefix, node.children[i].val)
+                    # elif i + 1 == idx_block_end:
+                    #     prefix = '&ignored&'
 
-            if printed:
-                continue
+                if printed:
+                    continue
 
         # print('just caused: ', prefix, is_mutual_exclude, i, idx_block_end)
         if not prefix and is_mutual_exclude and i >= idx_block_end:
@@ -596,7 +600,7 @@ def count_always_true_in_front(children: List):
 def find_max_mutual_exclusion_block(children: List, start: int):
     children_num = len(children)
 
-    if children_num == 1:
+    if children_num - start == 1:
         return True, 1
 
     end = start-1
@@ -611,7 +615,7 @@ def find_max_mutual_exclusion_block(children: List, start: int):
 
     end += 1
 
-    if children_num == 2:
+    if children_num - start == 2:
         is_mutual_exclude = (end == start + 2)
     else:
         is_mutual_exclude = end >= start + 2
@@ -621,10 +625,15 @@ def find_max_mutual_exclusion_block(children: List, start: int):
 def trivial_desc(prefix: str, magic: Magic):
     desc = magic.desc
 
+    if not desc:
+        return False
+
     desc_source_len = len(desc)
     prefix_len = len(prefix)
 
-    # if prefix_len > 8:
+    if 0 == prefix_len:
+        if desc.startswith(r'\b, ') or desc[0] in r',;':
+            return True
     #     if '%' in desc:
     #         return True
 
@@ -635,18 +644,16 @@ def trivial_desc(prefix: str, magic: Magic):
     desc = desc.replace(r'.', '')
     desc = desc.replace(r',', '')
     desc = desc.replace(r'=', '')
-    desc = desc.replace(r'version', '')
-    desc = desc.replace(r'from', '')
-    desc = desc.replace(r'size', '')
-    desc = desc.replace(r'name', '')
-    desc = desc.replace(r'byte', '')
-    # desc = desc.replace(r'%s', '')
-    # desc = desc.replace(r'%d', '')
-    # desc = desc.replace(r'%c', '')
-    # desc = desc.replace(r'%u', '')
-    # desc = desc.replace(r'%', '')
 
-    matched = re.search(r'(%[\d]*\.*[\d]*\w)', desc)
+    if '%' in desc:
+        desc = desc.replace(r'version', '')
+        desc = desc.replace(r'level', '')
+        desc = desc.replace(r'from', '')
+        desc = desc.replace(r'size', '')
+        desc = desc.replace(r'name', '')
+        desc = desc.replace(r'byte', '')
+
+    matched = re.search(r'(%-?[\d]*\.*[\d]*\w)', desc)
     if matched:
         desc = desc.replace(matched.group(1), '')
 

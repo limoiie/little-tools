@@ -1117,13 +1117,13 @@ JUMP OUT USE SINCE WE ARE JUST PIT-entry
 >2      byte&0xF0       0xC0           MPEG ADTS, layer III, v1, 224 kbps                      		 @MPEG ADTS, layer III, v1, 224 kbps@ $explorer$
 >2      byte&0xF0       0xD0           MPEG ADTS, layer III, v1, 256 kbps                      		 @MPEG ADTS, layer III, v1, 256 kbps@ $explorer$
 >2      byte&0xF0       0xE0           MPEG ADTS, layer III, v1, 320 kbps                      		 @MPEG ADTS, layer III, v1, 320 kbps@ $explorer$
->2      byte&0x0C       0x00           \b, 44.1 kHz                      		 @, 44.1 kHz@ $explorer$
->2      byte&0x0C       0x04           \b, 48 kHz                      		 @, 48 kHz@ $explorer$
->2      byte&0x0C       0x08           \b, 32 kHz                      		 @, 32 kHz@ $explorer$
->3      byte&0xC0       0x00           \b, Stereo                      		 @, Stereo@ $explorer$
->3      byte&0xC0       0x40           \b, JntStereo                      		 @, JntStereo@ $explorer$
->3      byte&0xC0       0x80           \b, 2x Monaural                      		 @, 2x Monaural@ $explorer$
->3      byte&0xC0       0xC0           \b, Monaural                      		 @, Monaural@ $explorer$
+>2      byte&0x0C       0x00           \b, 44.1 kHz                      		 @@ $just$
+>2      byte&0x0C       0x04           \b, 48 kHz                      		 @@ $just$
+>2      byte&0x0C       0x08           \b, 32 kHz                      		 @@ $just$
+>3      byte&0xC0       0x00           \b, Stereo                      		 @&ignored&@ $just$
+>3      byte&0xC0       0x40           \b, JntStereo                      		 @&ignored&@ $just$
+>3      byte&0xC0       0x80           \b, 2x Monaural                      		 @&ignored&@ $just$
+>3      byte&0xC0       0xC0           \b, Monaural                      		 @&ignored&@ $just$
 
 
 0       beshort&0xFFFE  0xFFFC         MPEG ADTS, layer II, v1                      		 @MPEG ADTS, layer II, v1@ $explorer$
@@ -1768,9 +1768,9 @@ USE  appleworks
 >0	belong&0x00ffffff	0x008803	ClarisWorks CWK Document                      		 @ClarisWorks CWK Document@ $explorer$
 >0	default			x                      		 @@ $explorer$
 >>0	belong			x		AppleWorks/ClarisWorks CWK Document                      		 @AppleWorks/ClarisWorks CWK Document@ $just$
->0	byte			x		\b, version %d                      		 @&AppleWorks CWK DocumentClarisWorks CWK Document&@ $just$
->30	beshort			x		\b, %d                      		 @&AppleWorks CWK DocumentClarisWorks CWK Document&@ $just$
->32	beshort			x		\bx%d                      		 @&AppleWorks CWK DocumentClarisWorks CWK Document&@ $just$
+>0	byte			x		\b, version %d                      		 @&ignored&@ $just$
+>30	beshort			x		\b, %d                      		 @&ignored&@ $just$
+>32	beshort			x		\bx%d                      		 @&ignored&@ $just$
 ]
 >0	belong	0x0481ad00                      		 @@ $explorer$
 USE  appleworks
@@ -1866,56 +1866,56 @@ USE  tar-file
 >>261	ubelong		0x72000000	tar archive (ustar)                      		 @tar archive (ustar)@ $explorer$
 >>261	default		x		tar archive (unknown ustar)                      		 @tar archive (unknown ustar)@ $explorer$
 >156	ubyte		x		                      		 @@ $explorer$
->>156	ubyte		0		\b, file                      		 @, file@ $explorer$
->>156	ubyte		0x30		\b, file                      		 @, file@ $explorer$
->>156	ubyte		0x31		\b, hard link                      		 @, hard link@ $explorer$
->>156	ubyte		0x32		\b, symlink                      		 @, symlink@ $explorer$
->>156	ubyte		0x33		\b, char device                      		 @, char device@ $explorer$
->>156	ubyte		0x34		\b, block device                      		 @, block device@ $explorer$
->>156	ubyte		0x35		\b, directory                      		 @, directory@ $explorer$
->>156	ubyte		0x36		\b, fifo                      		 @, fifo@ $explorer$
->>156	ubyte		0x37		\b, reserved                      		 @, reserved@ $explorer$
->>156	ubyte		0x4c		\b, long path                      		 @, long path@ $explorer$
->>156	ubyte		0x4d		\b, multi volume                      		 @, multi volume@ $explorer$
->>156	ubyte		0x56		\b, volume                      		 @, volume@ $explorer$
->>156	ubyte		0x67		\b, global                      		 @, global@ $explorer$
->>156	ubyte		0x78		\b, extension                      		 @, extension@ $explorer$
->>156	default		x		\b, type                      		 @, type@ $explorer$
->>>156	ubyte		x		'%c'                      		 @, type@ $just$
->0	string		>\0		%-.60s                      		 @%-.60s@ $explorer$
->100	string		>\0		\b, mode %-.7s                      		 @, mode %-.7s@ $explorer$
->108	string		>\0		\b, uid %-.7s                      		 @, uid %-.7s@ $explorer$
->116	string		>\0		\b, gid %-.7s                      		 @, gid %-.7s@ $explorer$
+>>156	ubyte		0		\b, file                      		 @@ $just$
+>>156	ubyte		0x30		\b, file                      		 @@ $just$
+>>156	ubyte		0x31		\b, hard link                      		 @@ $just$
+>>156	ubyte		0x32		\b, symlink                      		 @@ $just$
+>>156	ubyte		0x33		\b, char device                      		 @@ $just$
+>>156	ubyte		0x34		\b, block device                      		 @@ $just$
+>>156	ubyte		0x35		\b, directory                      		 @@ $just$
+>>156	ubyte		0x36		\b, fifo                      		 @@ $just$
+>>156	ubyte		0x37		\b, reserved                      		 @@ $just$
+>>156	ubyte		0x4c		\b, long path                      		 @@ $just$
+>>156	ubyte		0x4d		\b, multi volume                      		 @@ $just$
+>>156	ubyte		0x56		\b, volume                      		 @@ $just$
+>>156	ubyte		0x67		\b, global                      		 @@ $just$
+>>156	ubyte		0x78		\b, extension                      		 @@ $just$
+>>156	default		x		\b, type                      		 @@ $just$
+>>>156	ubyte		x		'%c'                      		 @@ $just$
+>0	string		>\0		%-.60s                      		 @&ignored&@ $just$
+>100	string		>\0		\b, mode %-.7s                      		 @&ignored&@ $just$
+>108	string		>\0		\b, uid %-.7s                      		 @&ignored&@ $just$
+>116	string		>\0		\b, gid %-.7s                      		 @&ignored&@ $just$
 >124	ubyte		<0x38		                      		 @@ $explorer$
 >>124	string		>\0		\b, size %-.12s                      		 @@ $just$
->124	ubyte		>0xEF		\b, size 0x                      		 @, size 0x@ $explorer$
->>124	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>125	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>126	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>127	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>128	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>129	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>130	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>131	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>132	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>133	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>134	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->>135	ubyte		!0xff		\b%2.2x                      		 @, size 0x@ $just$
->136	string		>\0		\b, seconds %-.11s                      		 @, seconds %-.11s@ $explorer$
->157	string		>\0		\b, linkname %-.40s                      		 @, linkname %-.40s@ $explorer$
+>124	ubyte		>0xEF		\b, size 0x                      		 @&ignored&@ $just$
+>>124	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>125	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>126	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>127	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>128	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>129	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>130	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>131	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>132	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>133	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>134	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>>135	ubyte		!0xff		\b%2.2x                      		 @&ignored&@ $just$
+>136	string		>\0		\b, seconds %-.11s                      		 @&ignored&@ $just$
+>157	string		>\0		\b, linkname %-.40s                      		 @&ignored&@ $just$
 >257	string		=ustar		                      		 @@ $explorer$
->>265	string		>\0		\b, user %-.32s                      		 @, user %-.32s@ $explorer$
->>297	string		>\0		\b, group %-.32s                      		 @, group %-.32s@ $explorer$
+>>265	string		>\0		\b, user %-.32s                      		 @@ $just$
+>>297	string		>\0		\b, group %-.32s                      		 @@ $just$
 >>329	ubequad&0xCFCFCFCFcFcFcFdf	!0                      		 @@ $explorer$
->>>329	string		x		\b, devmaj %-.7s                      		 @, devmaj %-.7s@ $explorer$
+>>>329	string		x		\b, devmaj %-.7s                      		 @@ $just$
 >>337	ubequad&0xCFCFCFCFcFcFcFdf	!0                      		 @@ $explorer$
->>>337	string		x		\b, devmin %-.7s                      		 @, devmin %-.7s@ $explorer$
->>345	string		>\0		\b, prefix %-.155s                      		 @, prefix %-.155s@ $explorer$
+>>>337	string		x		\b, devmin %-.7s                      		 @@ $just$
+>>345	string		>\0		\b, prefix %-.155s                      		 @@ $just$
 >257	string		!ustar		                      		 @@ $explorer$
 >>508	string		=tar\0		                      		 @@ $explorer$
->>>257	string		>\0		\b, padding: %-.40s                      		 @, padding: %-.40s@ $explorer$
+>>>257	string		>\0		\b, padding: %-.40s                      		 @@ $just$
 >>508	default		x		                      		 @@ $explorer$
->>>257	string		>\0		\b, comment: %-.40s                      		 @, comment: %-.40s@ $explorer$
+>>>257	string		>\0		\b, comment: %-.40s                      		 @@ $just$
 ]
 
 
@@ -2612,7 +2612,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2643,7 +2643,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2674,7 +2674,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2705,7 +2705,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2736,7 +2736,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2767,7 +2767,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2798,7 +2798,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2829,7 +2829,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2860,7 +2860,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2891,7 +2891,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2922,7 +2922,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2953,7 +2953,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -2984,7 +2984,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3015,7 +3015,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3046,7 +3046,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3077,7 +3077,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3108,7 +3108,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3139,7 +3139,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3170,7 +3170,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3201,7 +3201,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3232,7 +3232,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3263,7 +3263,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3294,7 +3294,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3459,7 +3459,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3490,7 +3490,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -3521,7 +3521,7 @@ USE  lharc-file
 >>>>>>3	regex		!\^(lh1|lh5)	\b                       		 @@ $explorer$
 >>>>>>2	default		x		LHa (unknown) archive                      		 @LHa (unknown) archive@ $explorer$
 >>>>>3	regex		\^pm[012]	PMarc archive data                      		 @PMarc archive data@ $explorer$
->>>>>3	string		x		[%3.3s]                      		 @&\b\b&@ $just$
+>>>>>3	string		x		[%3.3s]                      		 @&ignored&@ $just$
 USE  lharc-header
 JUMP OUT USE SINCE WE ARE JUST lharc-header
 ]
@@ -6137,7 +6137,7 @@ USE  sega-master-system-rom-header
 >>0x0C	leshort		x	\b%04x                      		 @@ $just$
 >0x0E	byte&0xF0	0                      		 @@ $explorer$
 >>0x0C	leshort		x	%04x                      		 @@ $just$
->0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&Sega Master SystemSega Master SystemSega Game GearSega Game GearSega Game GearSega Master System / Game Gear&@ $just$
+>0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&ignored&@ $just$
 >0x0F	byte&0x0F	0x0A	(8 KB)                      		 @(8 KB)@ $explorer$
 >0x0F	byte&0x0F	0x0B	(16 KB)                      		 @(16 KB)@ $explorer$
 >0x0F	byte&0x0F	0x0C	(32 KB)                      		 @(32 KB)@ $explorer$
@@ -6181,7 +6181,7 @@ USE  sega-master-system-rom-header
 >>0x0C	leshort		x	\b%04x                      		 @@ $just$
 >0x0E	byte&0xF0	0                      		 @@ $explorer$
 >>0x0C	leshort		x	%04x                      		 @@ $just$
->0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&Sega Master SystemSega Master SystemSega Game GearSega Game GearSega Game GearSega Master System / Game Gear&@ $just$
+>0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&ignored&@ $just$
 >0x0F	byte&0x0F	0x0A	(8 KB)                      		 @(8 KB)@ $explorer$
 >0x0F	byte&0x0F	0x0B	(16 KB)                      		 @(16 KB)@ $explorer$
 >0x0F	byte&0x0F	0x0C	(32 KB)                      		 @(32 KB)@ $explorer$
@@ -6225,7 +6225,7 @@ USE  sega-master-system-rom-header
 >>0x0C	leshort		x	\b%04x                      		 @@ $just$
 >0x0E	byte&0xF0	0                      		 @@ $explorer$
 >>0x0C	leshort		x	%04x                      		 @@ $just$
->0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&Sega Master SystemSega Master SystemSega Game GearSega Game GearSega Game GearSega Master System / Game Gear&@ $just$
+>0x0E	byte&0x0F	x	(Rev.%02d)                      		 @&ignored&@ $just$
 >0x0F	byte&0x0F	0x0A	(8 KB)                      		 @(8 KB)@ $explorer$
 >0x0F	byte&0x0F	0x0B	(16 KB)                      		 @(16 KB)@ $explorer$
 >0x0F	byte&0x0F	0x0C	(32 KB)                      		 @(32 KB)@ $explorer$
@@ -7056,7 +7056,7 @@ JUMP OUT USE SINCE WE ARE JUST xbase-date
 >>>>>>>>>>>>>>28	uleshort	x		\b, %d                      		 @ MDX@ $just$
 >>>>>>>>>>>>>>25	ubyte		x		\b/%d tags                      		 @ MDX@ $just$
 >>>>>>>>>>>>>>26	ubyte		x		* %d                      		 @ MDX@ $just$
->>>>>>>>>>>>>548	string		x		\b, 1st tag "%.11s"                      		 @, 1st tag "%.11s"@ $explorer$
+>>>>>>>>>>>>>548	string		x		\b, 1st tag "%.11s"                      		 @@ $just$
 
 
 16		ubyte		<4                      		 @@ $explorer$
@@ -7372,8 +7372,8 @@ JUMP OUT USE SINCE WE ARE JUST certinfo
 >>&0	der	int2=0e04	DER Encoded Certificate, 32k bits                      		 @DER Encoded Certificate, 32k bits@ $explorer$
 >>&0	der	int2=x		DER Encoded Certificate, ? bits (%s)                      		 @DER Encoded Certificate, ? bits (%s)@ $explorer$
 >>&0	der	seq                      		 @@ $explorer$
->>>&0	der	obj_id9=2a864886f70d010105	\b, sha1WithRSAEncryption                      		 @, sha1WithRSAEncryption@ $explorer$
->>>&0	der	obj_id9=x			\b, ? Encryption (%s)                      		 @, ? Encryption (%s)@ $explorer$
+>>>&0	der	obj_id9=2a864886f70d010105	\b, sha1WithRSAEncryption                      		 @@ $just$
+>>>&0	der	obj_id9=x			\b, ? Encryption (%s)                      		 @@ $just$
 >>>&0	der	null                      		 @@ $explorer$
 >>&0	der	seq                      		 @@ $explorer$
 >>>&0	der	set                      		 @@ $explorer$
@@ -7383,7 +7383,7 @@ JUMP OUT USE SINCE WE ARE JUST certinfo
 >>>&0	der	set                      		 @@ $explorer$
 >>>>&0	der	seq                      		 @@ $explorer$
 >>>>>&0	der	obj_id3=550408                      		 @@ $explorer$
->>>>>&0	der	prt_str=x	\b, stateOrProvinceName=%s                      		 @, stateOrProvinceName=%s@ $explorer$
+>>>>>&0	der	prt_str=x	\b, stateOrProvinceName=%s                      		 @@ $just$
 >>>&0	der	set                      		 @@ $explorer$
 >>>>&0	der	seq                      		 @@ $explorer$
 >>>>>&0	der	obj_id3=550407                      		 @@ $explorer$
@@ -7395,7 +7395,7 @@ JUMP OUT USE SINCE WE ARE JUST certinfo
 >>>&0	der	set                      		 @@ $explorer$
 >>>>&0	der	seq                      		 @@ $explorer$
 >>>>>&0	der	obj_id3=55040b                      		 @@ $explorer$
->>>>>&0	der	prt_str=x	\b, organizationUnitName=%s                      		 @, organizationUnitName=%s@ $explorer$
+>>>>>&0	der	prt_str=x	\b, organizationUnitName=%s                      		 @@ $just$
 >>>&0	der	set                      		 @@ $explorer$
 >>>>&0	der	seq                      		 @@ $explorer$
 >>>>>&0	der	obj_id3=550403                      		 @@ $explorer$
@@ -7403,10 +7403,10 @@ JUMP OUT USE SINCE WE ARE JUST certinfo
 >>>&0	der	set                      		 @@ $explorer$
 >>>>&0	der	seq                      		 @@ $explorer$
 >>>>>&0	der	obj_id9=2a864886f70d010901                      		 @@ $explorer$
->>>>>&0	der	ia5_str=x	\b, emailAddress=%s                      		 @, emailAddress=%s@ $explorer$
+>>>>>&0	der	ia5_str=x	\b, emailAddress=%s                      		 @@ $just$
 >>&0	der	seq                      		 @@ $explorer$
->>>&0	der	utc_time=x	\b, utcTime=%s                      		 @, utcTime=%s@ $explorer$
->>>&0	der	utc_time=x	\b, utcTime=%s                      		 @, utcTime=%s@ $just$
+>>>&0	der	utc_time=x	\b, utcTime=%s                      		 @@ $just$
+>>>&0	der	utc_time=x	\b, utcTime=%s                      		 @&ignored&@ $just$
 USE  certinfo
 >>&0	use	certinfo                      		 @@ $explorer$
 [
@@ -7419,7 +7419,7 @@ USE  certinfo
 >>&0	der	set                      		 @@ $explorer$
 >>>&0	der	seq                      		 @@ $explorer$
 >>>>&0	der	obj_id3=550408                      		 @@ $explorer$
->>>>&0	der	utf8_str=x	\b, stateOrProvinceName=%s                      		 @, stateOrProvinceName=%s@ $explorer$
+>>>>&0	der	utf8_str=x	\b, stateOrProvinceName=%s                      		 @@ $just$
 >>&0	der	set                      		 @@ $explorer$
 >>>&0	der	seq                      		 @@ $explorer$
 >>>>&0	der	obj_id3=55040a                      		 @@ $explorer$
@@ -8982,25 +8982,25 @@ JUMP OUT USE SINCE WE ARE JUST partition-table
 0x410	leshort		0x137f                      		 @@ $explorer$
 >0x402	beshort		< 100                      		 @@ $explorer$
 >0x402	beshort		> -1		Minix filesystem, V1, 14 char names, %d zones                      		 @Minix filesystem, V1, 14 char names, %d zones@ $explorer$
->0x1e	string		minix		\b, bootable                      		 @, bootable@ $explorer$
+>0x1e	string		minix		\b, bootable                      		 @@ $just$
 
 
 0x410	beshort		0x137f                      		 @@ $explorer$
 >0x402	beshort		< 100                      		 @@ $explorer$
 >0x402	beshort		> -1		Minix filesystem, V1 (big endian), %d zones                      		 @Minix filesystem, V1 (big endian), %d zones@ $explorer$
->0x1e	string		minix		\b, bootable                      		 @, bootable@ $explorer$
+>0x1e	string		minix		\b, bootable                      		 @@ $just$
 
 
 0x410	leshort		0x138f                      		 @@ $explorer$
 >0x402	beshort		< 100                      		 @@ $explorer$
 >0x402	beshort		> -1		Minix filesystem, V1, 30 char names, %d zones                      		 @Minix filesystem, V1, 30 char names, %d zones@ $explorer$
->0x1e	string		minix		\b, bootable                      		 @, bootable@ $explorer$
+>0x1e	string		minix		\b, bootable                      		 @@ $just$
 
 
 0x410	beshort		0x138f                      		 @@ $explorer$
 >0x402	beshort		< 100                      		 @@ $explorer$
 >0x402	beshort		> -1		Minix filesystem, V1, 30 char names (big endian), %d zones                      		 @Minix filesystem, V1, 30 char names (big endian), %d zones@ $explorer$
->0x1e	string		minix		\b, bootable                      		 @, bootable@ $explorer$
+>0x1e	string		minix		\b, bootable                      		 @@ $just$
 
 
 0	belong		0x0BE5A941	SGI disk label (volume header)                      		 @SGI disk label (volume header)@ $explorer$
@@ -9612,7 +9612,7 @@ USE  swf-details
 >>4			ubelong		4                      		 @@ $explorer$
 >>>12			string		NAME		GRUB2 font                      		 @GRUB2 font@ $explorer$
 >>>>16			ubelong		>0                      		 @GRUB2 font@ $explorer$
->>>>>20			string		>\0		"%-s"                      		 @GRUB2 font "%-s"@ $explorer$
+>>>>>20			string		>\0		"%-s"                      		 @GRUB2 font@ $just$
 
 
 0	string		\001fcp			X11 Portable Compiled Font data,                      		 @X11 Portable Compiled Font data,@ $explorer$
@@ -9669,9 +9669,9 @@ USE  sfnt-font
 >>>0	ubelong	!0x4f54544f	TrueType                      		 @TrueType@ $explorer$
 >>>0	ubelong	=0x4f54544f	OpenType                      		 @OpenType@ $explorer$
 >>>0	ubelong	x		Font data                      		 @Font data@ $explorer$
->>>12	search/432	DSIG		\b, digitally signed                      		 @, digitally signed@ $explorer$
->>>4	ubeshort	x		\b, %d tables                      		 @, %d tables@ $explorer$
->>>12	string		x		\b, 1st "%4.4s"                      		 @&TrueTypeOpenType&@ $just$
+>>>12	search/432	DSIG		\b, digitally signed                      		 @&ignored&@ $just$
+>>>4	ubeshort	x		\b, %d tables                      		 @&ignored&@ $just$
+>>>12	string		x		\b, 1st "%4.4s"                      		 @&ignored&@ $just$
 ]
 USE  sfnt-names
 >0	use		sfnt-names                      		 @@ $explorer$
@@ -9684,20 +9684,20 @@ USE  sfnt-names
 >>>&-16	ubelong		x		                      		 @@ $explorer$
 >>>>(&8.L)	ubequad	x		                      		 @@ $explorer$
 >>>>>&-6	ubeshort	x	\b, %d names                      		 @@ $just$
->>>>>&-2	ubeshort	0	\b, Unicode                      		 @, Unicode@ $explorer$
->>>>>&-2	ubeshort	1	\b, Macintosh                      		 @, Macintosh@ $explorer$
->>>>>&-2	ubeshort	3	\b, Microsoft                      		 @, Microsoft@ $explorer$
->>>>>&2		ubeshort	>0	\b, language 0x%x                      		 @, language 0x%x@ $explorer$
->>>>>&4		ubeshort	>0	\b, type %d string                      		 @, type %d string@ $explorer$
+>>>>>&-2	ubeshort	0	\b, Unicode                      		 @@ $just$
+>>>>>&-2	ubeshort	1	\b, Macintosh                      		 @@ $just$
+>>>>>&-2	ubeshort	3	\b, Microsoft                      		 @@ $just$
+>>>>>&2		ubeshort	>0	\b, language 0x%x                      		 @&ignored&@ $just$
+>>>>>&4		ubeshort	>0	\b, type %d string                      		 @&ignored&@ $just$
 >>>>>&0		ubeshort	0	                      		 @@ $explorer$
 >>>>>>&6		ubeshort	0	                      		 @@ $explorer$
 >>>>>>>&(&-14.S-18)	ubyte		!0	                      		 @@ $explorer$
->>>>>>>>&-1		string		x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>>&-1		string		x	\b, %-11.96s                      		 @@ $just$
 >>>>>>>&(&-14.S-18)	ubyte		0	                      		 @@ $explorer$
->>>>>>>>&0		lestring16	x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>>&0		lestring16	x	\b, %-11.96s                      		 @@ $just$
 >>>>>&0		ubeshort	>0	                      		 @@ $explorer$
 >>>>>>&6		ubeshort	0	                      		 @@ $explorer$
->>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s                      		 @@ $just$
 ]
 
 
@@ -9711,9 +9711,9 @@ USE  sfnt-font
 >>>0	ubelong	!0x4f54544f	TrueType                      		 @TrueType@ $explorer$
 >>>0	ubelong	=0x4f54544f	OpenType                      		 @OpenType@ $explorer$
 >>>0	ubelong	x		Font data                      		 @Font data@ $explorer$
->>>12	search/432	DSIG		\b, digitally signed                      		 @, digitally signed@ $explorer$
->>>4	ubeshort	x		\b, %d tables                      		 @, %d tables@ $explorer$
->>>12	string		x		\b, 1st "%4.4s"                      		 @&TrueTypeOpenType&@ $just$
+>>>12	search/432	DSIG		\b, digitally signed                      		 @&ignored&@ $just$
+>>>4	ubeshort	x		\b, %d tables                      		 @&ignored&@ $just$
+>>>12	string		x		\b, 1st "%4.4s"                      		 @&ignored&@ $just$
 ]
 USE  sfnt-names
 >0	use		sfnt-names                      		 @@ $explorer$
@@ -9726,20 +9726,20 @@ USE  sfnt-names
 >>>&-16	ubelong		x		                      		 @@ $explorer$
 >>>>(&8.L)	ubequad	x		                      		 @@ $explorer$
 >>>>>&-6	ubeshort	x	\b, %d names                      		 @@ $just$
->>>>>&-2	ubeshort	0	\b, Unicode                      		 @, Unicode@ $explorer$
->>>>>&-2	ubeshort	1	\b, Macintosh                      		 @, Macintosh@ $explorer$
->>>>>&-2	ubeshort	3	\b, Microsoft                      		 @, Microsoft@ $explorer$
->>>>>&2		ubeshort	>0	\b, language 0x%x                      		 @, language 0x%x@ $explorer$
->>>>>&4		ubeshort	>0	\b, type %d string                      		 @, type %d string@ $explorer$
+>>>>>&-2	ubeshort	0	\b, Unicode                      		 @@ $just$
+>>>>>&-2	ubeshort	1	\b, Macintosh                      		 @@ $just$
+>>>>>&-2	ubeshort	3	\b, Microsoft                      		 @@ $just$
+>>>>>&2		ubeshort	>0	\b, language 0x%x                      		 @&ignored&@ $just$
+>>>>>&4		ubeshort	>0	\b, type %d string                      		 @&ignored&@ $just$
 >>>>>&0		ubeshort	0	                      		 @@ $explorer$
 >>>>>>&6		ubeshort	0	                      		 @@ $explorer$
 >>>>>>>&(&-14.S-18)	ubyte		!0	                      		 @@ $explorer$
->>>>>>>>&-1		string		x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>>&-1		string		x	\b, %-11.96s                      		 @@ $just$
 >>>>>>>&(&-14.S-18)	ubyte		0	                      		 @@ $explorer$
->>>>>>>>&0		lestring16	x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>>&0		lestring16	x	\b, %-11.96s                      		 @@ $just$
 >>>>>&0		ubeshort	>0	                      		 @@ $explorer$
 >>>>>>&6		ubeshort	0	                      		 @@ $explorer$
->>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s                      		 @@ $just$
 ]
 
 
@@ -9753,9 +9753,9 @@ USE  sfnt-font
 >>>0	ubelong	!0x4f54544f	TrueType                      		 @TrueType@ $explorer$
 >>>0	ubelong	=0x4f54544f	OpenType                      		 @OpenType@ $explorer$
 >>>0	ubelong	x		Font data                      		 @Font data@ $explorer$
->>>12	search/432	DSIG		\b, digitally signed                      		 @, digitally signed@ $explorer$
->>>4	ubeshort	x		\b, %d tables                      		 @, %d tables@ $explorer$
->>>12	string		x		\b, 1st "%4.4s"                      		 @&TrueTypeOpenType&@ $just$
+>>>12	search/432	DSIG		\b, digitally signed                      		 @&ignored&@ $just$
+>>>4	ubeshort	x		\b, %d tables                      		 @&ignored&@ $just$
+>>>12	string		x		\b, 1st "%4.4s"                      		 @&ignored&@ $just$
 ]
 USE  sfnt-names
 >0	use		sfnt-names                      		 @@ $explorer$
@@ -9768,20 +9768,20 @@ USE  sfnt-names
 >>>&-16	ubelong		x		                      		 @@ $explorer$
 >>>>(&8.L)	ubequad	x		                      		 @@ $explorer$
 >>>>>&-6	ubeshort	x	\b, %d names                      		 @@ $just$
->>>>>&-2	ubeshort	0	\b, Unicode                      		 @, Unicode@ $explorer$
->>>>>&-2	ubeshort	1	\b, Macintosh                      		 @, Macintosh@ $explorer$
->>>>>&-2	ubeshort	3	\b, Microsoft                      		 @, Microsoft@ $explorer$
->>>>>&2		ubeshort	>0	\b, language 0x%x                      		 @, language 0x%x@ $explorer$
->>>>>&4		ubeshort	>0	\b, type %d string                      		 @, type %d string@ $explorer$
+>>>>>&-2	ubeshort	0	\b, Unicode                      		 @@ $just$
+>>>>>&-2	ubeshort	1	\b, Macintosh                      		 @@ $just$
+>>>>>&-2	ubeshort	3	\b, Microsoft                      		 @@ $just$
+>>>>>&2		ubeshort	>0	\b, language 0x%x                      		 @&ignored&@ $just$
+>>>>>&4		ubeshort	>0	\b, type %d string                      		 @&ignored&@ $just$
 >>>>>&0		ubeshort	0	                      		 @@ $explorer$
 >>>>>>&6		ubeshort	0	                      		 @@ $explorer$
 >>>>>>>&(&-14.S-18)	ubyte		!0	                      		 @@ $explorer$
->>>>>>>>&-1		string		x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>>&-1		string		x	\b, %-11.96s                      		 @@ $just$
 >>>>>>>&(&-14.S-18)	ubyte		0	                      		 @@ $explorer$
->>>>>>>>&0		lestring16	x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>>&0		lestring16	x	\b, %-11.96s                      		 @@ $just$
 >>>>>&0		ubeshort	>0	                      		 @@ $explorer$
 >>>>>>&6		ubeshort	0	                      		 @@ $explorer$
->>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s                      		 @, %-11.96s@ $explorer$
+>>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s                      		 @@ $just$
 ]
 
 
@@ -9796,12 +9796,12 @@ USE  sfnt-names
 >>(12.L)	ubelong	!0x4f54544f	TrueType                      		 @TrueType@ $explorer$
 >>(12.L)	ubelong	=0x4f54544f	OpenType                      		 @OpenType@ $explorer$
 >>4	ubyte		x		font collection data                      		 @font collection data@ $explorer$
->>4	belong		0x00010000	\b, 1.0                      		 @, 1.0@ $explorer$
->>4	belong		0x00020000	\b, 2.0                      		 @, 2.0@ $explorer$
->>8	ubelong		>0		\b, %d fonts                      		 @, %d fonts@ $explorer$
+>>4	belong		0x00010000	\b, 1.0                      		 @&ignored&@ $just$
+>>4	belong		0x00020000	\b, 2.0                      		 @&ignored&@ $just$
+>>8	ubelong		>0		\b, %d fonts                      		 @&ignored&@ $just$
 >>(8.L*4) ubequad	x		                      		 @@ $explorer$
->>>&4	belong		0x44534947	\b, digitally signed                      		 @, digitally signed@ $explorer$
->>12	ubelong		x		\b, at 0x%x                      		 @, at 0x%x@ $explorer$
+>>>&4	belong		0x44534947	\b, digitally signed                      		 @@ $just$
+>>12	ubelong		x		\b, at 0x%x                      		 @&ignored&@ $just$
 USE  sfnt-font
 >>(12.L) use		sfnt-font                      		 @@ $explorer$
 [
@@ -9811,9 +9811,9 @@ USE  sfnt-font
 >>>0	ubelong	!0x4f54544f	TrueType                      		 @TrueType@ $explorer$
 >>>0	ubelong	=0x4f54544f	OpenType                      		 @OpenType@ $explorer$
 >>>0	ubelong	x		Font data                      		 @Font data@ $explorer$
->>>12	search/432	DSIG		\b, digitally signed                      		 @, digitally signed@ $explorer$
->>>4	ubeshort	x		\b, %d tables                      		 @, %d tables@ $explorer$
->>>12	string		x		\b, 1st "%4.4s"                      		 @&TrueTypeOpenType&@ $just$
+>>>12	search/432	DSIG		\b, digitally signed                      		 @&ignored&@ $just$
+>>>4	ubeshort	x		\b, %d tables                      		 @&ignored&@ $just$
+>>>12	string		x		\b, 1st "%4.4s"                      		 @&ignored&@ $just$
 ]
 
 
@@ -10968,15 +10968,15 @@ USE  display-coff
 >>0	uleshort	x		COFF                      		 @COFF@ $explorer$
 >>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
 >>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
->>18	leshort		&0x0001		\b, no relocation info                      		 @, no relocation info@ $explorer$
->>18	leshort		&0x0004		\b, no line number info                      		 @, no line number info@ $explorer$
->>18	leshort		&0x0008		\b, stripped                      		 @, stripped@ $explorer$
->>18	leshort		^0x0008		\b, not stripped                      		 @, not stripped@ $explorer$
->>2	uleshort	<2		\b, %d section                      		 @, %d section@ $explorer$
->>2	uleshort	>1		\b, %d sections                      		 @, %d sections@ $explorer$
->>8	ulelong		>0		\b, symbol offset=0x%x                      		 @, symbol offset=0x%x@ $explorer$
->>12	ulelong		>0		\b, %d symbols                      		 @, %d symbols@ $explorer$
->>16	uleshort	>0		\b, optional header size %d                      		 @, optional header size %d@ $explorer$
+>>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
+>>18	leshort		^0x0008		\b, not stripped                      		 @&ignored&@ $just$
+>>2	uleshort	<2		\b, %d section                      		 @&ignored&@ $just$
+>>2	uleshort	>1		\b, %d sections                      		 @&ignored&@ $just$
+>>8	ulelong		>0		\b, symbol offset=0x%x                      		 @&ignored&@ $just$
+>>12	ulelong		>0		\b, %d symbols                      		 @&ignored&@ $just$
+>>16	uleshort	>0		\b, optional header size %d                      		 @&ignored&@ $just$
 ]
 
 
@@ -10998,15 +10998,15 @@ USE  display-coff
 >>0	uleshort	x		COFF                      		 @COFF@ $explorer$
 >>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
 >>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
->>18	leshort		&0x0001		\b, no relocation info                      		 @, no relocation info@ $explorer$
->>18	leshort		&0x0004		\b, no line number info                      		 @, no line number info@ $explorer$
->>18	leshort		&0x0008		\b, stripped                      		 @, stripped@ $explorer$
->>18	leshort		^0x0008		\b, not stripped                      		 @, not stripped@ $explorer$
->>2	uleshort	<2		\b, %d section                      		 @, %d section@ $explorer$
->>2	uleshort	>1		\b, %d sections                      		 @, %d sections@ $explorer$
->>8	ulelong		>0		\b, symbol offset=0x%x                      		 @, symbol offset=0x%x@ $explorer$
->>12	ulelong		>0		\b, %d symbols                      		 @, %d symbols@ $explorer$
->>16	uleshort	>0		\b, optional header size %d                      		 @, optional header size %d@ $explorer$
+>>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
+>>18	leshort		^0x0008		\b, not stripped                      		 @&ignored&@ $just$
+>>2	uleshort	<2		\b, %d section                      		 @&ignored&@ $just$
+>>2	uleshort	>1		\b, %d sections                      		 @&ignored&@ $just$
+>>8	ulelong		>0		\b, symbol offset=0x%x                      		 @&ignored&@ $just$
+>>12	ulelong		>0		\b, %d symbols                      		 @&ignored&@ $just$
+>>16	uleshort	>0		\b, optional header size %d                      		 @&ignored&@ $just$
 ]
 
 
@@ -11542,17 +11542,17 @@ USE  color-profile
 >>>>>4	string		=KCMS		\be                      		 @le@ $explorer$
 >>>>>4	string		!KCMS		\be                      		 @le@ $explorer$
 >>>8	ubyte		!2		\ble                      		 @le@ $explorer$
->>>8	ubyte		x		%u                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>9	ubyte/16	x		\b.%u                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>10	ubyte		>0		\b.%u                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>>11	ubyte		>0		\b.%u                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>4	string		>\ 		\b, type %.2s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>>6	string		>\  		\b%.1s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>>>7	string		>\  		\b%.1s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>16	string		x		\b, %.3s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>19	string		>\  		\b%.1s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>20	string		>\0		\b/%.3s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>>23	string		>\ 		\b%.1s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
+>>>8	ubyte		x		%u                      		 @&ignored&@ $just$
+>>>9	ubyte/16	x		\b.%u                      		 @&ignored&@ $just$
+>>>10	ubyte		>0		\b.%u                      		 @&ignored&@ $just$
+>>>>11	ubyte		>0		\b.%u                      		 @&ignored&@ $just$
+>>>4	string		>\ 		\b, type %.2s                      		 @&ignored&@ $just$
+>>>>6	string		>\  		\b%.1s                      		 @&ignored&@ $just$
+>>>>>7	string		>\  		\b%.1s                      		 @&ignored&@ $just$
+>>>16	string		x		\b, %.3s                      		 @&ignored&@ $just$
+>>>19	string		>\  		\b%.1s                      		 @&ignored&@ $just$
+>>>20	string		>\0		\b/%.3s                      		 @&ignored&@ $just$
+>>>>23	string		>\ 		\b%.1s                      		 @&ignored&@ $just$
 >>>12	string		x		\b-%.4s device                      		 @-%.4s device@ $explorer$
 >>>52	string		>\040                      		 @@ $explorer$
 >>>>52	ubelong		!0x6e6f6e65                      		 @@ $explorer$
@@ -11562,43 +11562,43 @@ USE  color-profile
 >>>>>52	string		>\ \  		\b/%.3s                      		 @@ $just$
 >>>>>>55 string		>\  		\b%.1s                      		 @@ $just$
 >>>>>52	string		x		model                      		 @model@ $explorer$
->>>80	string		>\0		by %.2s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>>82	string		>\  		\b%.1s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>>>83	string		>\  		\b%.1s                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
->>>0	ubelong		x		\b, %u bytes                      		 @&ColorSyncMicrosoftSGISun KCMSTaligent&@ $just$
+>>>80	string		>\0		by %.2s                      		 @&ignored&@ $just$
+>>>>82	string		>\  		\b%.1s                      		 @&ignored&@ $just$
+>>>>>83	string		>\  		\b%.1s                      		 @&ignored&@ $just$
+>>>0	ubelong		x		\b, %u bytes                      		 @&ignored&@ $just$
 >>>24	ubequad		!0                      		 @@ $explorer$
 >>>>28	ubeshort	x		\b, %u                      		 @@ $just$
->>>>26	ubeshort	x		\b-%u                      		 @&&@ $just$
->>>>24	ubeshort	x		\b-%u                      		 @&&@ $just$
+>>>>26	ubeshort	x		\b-%u                      		 @&ignored&@ $just$
+>>>>24	ubeshort	x		\b-%u                      		 @&ignored&@ $just$
 >>>>30	ubequad&0xFFffFFffFFff0000	!0                      		 @@ $explorer$
 >>>>>30	ubeshort	x		%u                      		 @@ $just$
 >>>>>32	ubeshort	x		\b:%.2u                      		 @@ $just$
 >>>>>34	ubeshort	x		\b:%.2u                      		 @@ $just$
->>>44	ubeshort	>0		\b, 0x%x vendor flags                      		 @, 0x%x vendor flags@ $explorer$
->>>44	ubelong		&1		\b, embedded                      		 @, embedded@ $explorer$
->>>44	ubelong		&2		\b, dependently                      		 @, dependently@ $explorer$
->>>44	ubelong		&4		\b, MCS                      		 @, MCS@ $explorer$
->>>56	ubelong		>0		\b, 0x%x vendor attribute                      		 @, 0x%x vendor attribute@ $explorer$
->>>60	ubelong		&0x01		\b, transparent                      		 @, transparent@ $explorer$
->>>60	ubelong		&0x02		\b, matte                      		 @, matte@ $explorer$
->>>60	ubelong		&0x04		\b, negative                      		 @, negative@ $explorer$
->>>60	ubelong		&0x08		\b, black&white                      		 @, black&white@ $explorer$
->>>60	ubelong		&0x10		\b, non-paper                      		 @, non-paper@ $explorer$
->>>60	ubelong		&0x20		\b, non-textured                      		 @, non-textured@ $explorer$
->>>60	ubelong		&0x40		\b, non-isotropic                      		 @, non-isotropic@ $explorer$
->>>60	ubelong		&0x80		\b, self-luminous                      		 @, self-luminous@ $explorer$
->>>64	ubelong		>3		\b, 0x%x rendering intent                      		 @, 0x%x rendering intent@ $explorer$
->>>64	ubelong		=1		\b, relative colorimetric                      		 @, relative colorimetric@ $explorer$
->>>64	ubelong		=2		\b, saturation                      		 @, saturation@ $explorer$
->>>64	ubelong		=3		\b, absolute colorimetric                      		 @, absolute colorimetric@ $explorer$
->>>71	ubequad		!0xd6000100000000d3	\b, PCS                      		 @, PCS@ $explorer$
->>>>68	ubelong			!0x0000f6d5	X=0x%x                      		 @, PCS@ $just$
->>>>72	ubelong			!0x00010000	Y=0x%x                      		 @, PCS@ $just$
->>>>76	ubelong			!0x0000d32d	Z=0x%x                      		 @, PCS@ $just$
->>>84	ubequad		>0		\b, 0x%llx MD5                      		 @, 0x%llx MD5@ $explorer$
+>>>44	ubeshort	>0		\b, 0x%x vendor flags                      		 @&ignored&@ $just$
+>>>44	ubelong		&1		\b, embedded                      		 @&ignored&@ $just$
+>>>44	ubelong		&2		\b, dependently                      		 @&ignored&@ $just$
+>>>44	ubelong		&4		\b, MCS                      		 @&ignored&@ $just$
+>>>56	ubelong		>0		\b, 0x%x vendor attribute                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x01		\b, transparent                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x02		\b, matte                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x04		\b, negative                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x08		\b, black&white                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x10		\b, non-paper                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x20		\b, non-textured                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x40		\b, non-isotropic                      		 @&ignored&@ $just$
+>>>60	ubelong		&0x80		\b, self-luminous                      		 @&ignored&@ $just$
+>>>64	ubelong		>3		\b, 0x%x rendering intent                      		 @&ignored&@ $just$
+>>>64	ubelong		=1		\b, relative colorimetric                      		 @&ignored&@ $just$
+>>>64	ubelong		=2		\b, saturation                      		 @&ignored&@ $just$
+>>>64	ubelong		=3		\b, absolute colorimetric                      		 @&ignored&@ $just$
+>>>71	ubequad		!0xd6000100000000d3	\b, PCS                      		 @&ignored&@ $just$
+>>>>68	ubelong			!0x0000f6d5	X=0x%x                      		 @&ignored&@ $just$
+>>>>72	ubelong			!0x00010000	Y=0x%x                      		 @&ignored&@ $just$
+>>>>76	ubelong			!0x0000d32d	Z=0x%x                      		 @&ignored&@ $just$
+>>>84	ubequad		>0		\b, 0x%llx MD5                      		 @&ignored&@ $just$
 >>>128	ubelong		x                      		 @@ $explorer$
 >>>>132	search/508	cprt                      		 @@ $explorer$
->>>>132	default		x		\b, no copyright tag                      		 @, no copyright tag@ $explorer$
+>>>>132	default		x		\b, no copyright tag                      		 @@ $just$
 >>>132	search/508	desc                      		 @@ $explorer$
 >>>>(&0.L)	string		=desc                      		 @@ $explorer$
 >>>>>&4		pstring/l	x	"%s"                      		 @@ $just$
@@ -11742,7 +11742,7 @@ USE  netpbm
 >>&0	regex		=[0-9]{1,50} 			\b, size = %s x                      		 @Netpbm image data@ $just$
 >>>&0	regex		=[0-9]{1,50}			\b %s                      		 @Netpbm image data@ $just$
 ]
->>0	string		x	\b, bitmap                      		 @, bitmap@ $explorer$
+>>0	string		x	\b, bitmap                      		 @@ $just$
 
 
 0	search/1	P2                      		 @@ $explorer$
@@ -11755,7 +11755,7 @@ USE  netpbm
 >>&0	regex		=[0-9]{1,50} 			\b, size = %s x                      		 @Netpbm image data@ $just$
 >>>&0	regex		=[0-9]{1,50}			\b %s                      		 @Netpbm image data@ $just$
 ]
->>0	string		x	\b, greymap                      		 @, greymap@ $explorer$
+>>0	string		x	\b, greymap                      		 @@ $just$
 
 
 0	search/1	P3                      		 @@ $explorer$
@@ -11768,7 +11768,7 @@ USE  netpbm
 >>&0	regex		=[0-9]{1,50} 			\b, size = %s x                      		 @Netpbm image data@ $just$
 >>>&0	regex		=[0-9]{1,50}			\b %s                      		 @Netpbm image data@ $just$
 ]
->>0	string		x	\b, pixmap                      		 @, pixmap@ $explorer$
+>>0	string		x	\b, pixmap                      		 @@ $just$
 
 
 0	string		P4                      		 @@ $explorer$
@@ -11781,7 +11781,7 @@ USE  netpbm
 >>&0	regex		=[0-9]{1,50} 			\b, size = %s x                      		 @Netpbm image data@ $just$
 >>>&0	regex		=[0-9]{1,50}			\b %s                      		 @Netpbm image data@ $just$
 ]
->>0	string		x	\b, rawbits, bitmap                      		 @, rawbits, bitmap@ $explorer$
+>>0	string		x	\b, rawbits, bitmap                      		 @@ $just$
 
 
 0	string		P5                      		 @@ $explorer$
@@ -11794,7 +11794,7 @@ USE  netpbm
 >>&0	regex		=[0-9]{1,50} 			\b, size = %s x                      		 @Netpbm image data@ $just$
 >>>&0	regex		=[0-9]{1,50}			\b %s                      		 @Netpbm image data@ $just$
 ]
->>0	string		x	\b, rawbits, greymap                      		 @, rawbits, greymap@ $explorer$
+>>0	string		x	\b, rawbits, greymap                      		 @@ $just$
 
 
 0	string		P6                      		 @@ $explorer$
@@ -11807,7 +11807,7 @@ USE  netpbm
 >>&0	regex		=[0-9]{1,50} 			\b, size = %s x                      		 @Netpbm image data@ $just$
 >>>&0	regex		=[0-9]{1,50}			\b %s                      		 @Netpbm image data@ $just$
 ]
->>0	string		x	\b, rawbits, pixmap                      		 @, rawbits, pixmap@ $explorer$
+>>0	string		x	\b, rawbits, pixmap                      		 @@ $just$
 
 
 0	string		P7		Netpbm PAM image file                      		 @Netpbm PAM image file@ $explorer$
@@ -12837,15 +12837,15 @@ USE  display-coff
 >>0	uleshort	x		COFF                      		 @COFF@ $explorer$
 >>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
 >>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
->>18	leshort		&0x0001		\b, no relocation info                      		 @, no relocation info@ $explorer$
->>18	leshort		&0x0004		\b, no line number info                      		 @, no line number info@ $explorer$
->>18	leshort		&0x0008		\b, stripped                      		 @, stripped@ $explorer$
->>18	leshort		^0x0008		\b, not stripped                      		 @, not stripped@ $explorer$
->>2	uleshort	<2		\b, %d section                      		 @, %d section@ $explorer$
->>2	uleshort	>1		\b, %d sections                      		 @, %d sections@ $explorer$
->>8	ulelong		>0		\b, symbol offset=0x%x                      		 @, symbol offset=0x%x@ $explorer$
->>12	ulelong		>0		\b, %d symbols                      		 @, %d symbols@ $explorer$
->>16	uleshort	>0		\b, optional header size %d                      		 @, optional header size %d@ $explorer$
+>>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
+>>18	leshort		^0x0008		\b, not stripped                      		 @&ignored&@ $just$
+>>2	uleshort	<2		\b, %d section                      		 @&ignored&@ $just$
+>>2	uleshort	>1		\b, %d sections                      		 @&ignored&@ $just$
+>>8	ulelong		>0		\b, symbol offset=0x%x                      		 @&ignored&@ $just$
+>>12	ulelong		>0		\b, %d symbols                      		 @&ignored&@ $just$
+>>16	uleshort	>0		\b, optional header size %d                      		 @&ignored&@ $just$
 ]
 
 
@@ -12866,15 +12866,15 @@ USE  display-coff
 >>0	uleshort	x		COFF                      		 @COFF@ $explorer$
 >>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
 >>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
->>18	leshort		&0x0001		\b, no relocation info                      		 @, no relocation info@ $explorer$
->>18	leshort		&0x0004		\b, no line number info                      		 @, no line number info@ $explorer$
->>18	leshort		&0x0008		\b, stripped                      		 @, stripped@ $explorer$
->>18	leshort		^0x0008		\b, not stripped                      		 @, not stripped@ $explorer$
->>2	uleshort	<2		\b, %d section                      		 @, %d section@ $explorer$
->>2	uleshort	>1		\b, %d sections                      		 @, %d sections@ $explorer$
->>8	ulelong		>0		\b, symbol offset=0x%x                      		 @, symbol offset=0x%x@ $explorer$
->>12	ulelong		>0		\b, %d symbols                      		 @, %d symbols@ $explorer$
->>16	uleshort	>0		\b, optional header size %d                      		 @, optional header size %d@ $explorer$
+>>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
+>>18	leshort		^0x0008		\b, not stripped                      		 @&ignored&@ $just$
+>>2	uleshort	<2		\b, %d section                      		 @&ignored&@ $just$
+>>2	uleshort	>1		\b, %d sections                      		 @&ignored&@ $just$
+>>8	ulelong		>0		\b, symbol offset=0x%x                      		 @&ignored&@ $just$
+>>12	ulelong		>0		\b, %d symbols                      		 @&ignored&@ $just$
+>>16	uleshort	>0		\b, optional header size %d                      		 @&ignored&@ $just$
 ]
 
 
@@ -12895,15 +12895,15 @@ USE  display-coff
 >>0	uleshort	x		COFF                      		 @COFF@ $explorer$
 >>18	leshort		^0x0002		object file                      		 @object file@ $explorer$
 >>18	leshort		&0x0002		executable                      		 @executable@ $explorer$
->>18	leshort		&0x0001		\b, no relocation info                      		 @, no relocation info@ $explorer$
->>18	leshort		&0x0004		\b, no line number info                      		 @, no line number info@ $explorer$
->>18	leshort		&0x0008		\b, stripped                      		 @, stripped@ $explorer$
->>18	leshort		^0x0008		\b, not stripped                      		 @, not stripped@ $explorer$
->>2	uleshort	<2		\b, %d section                      		 @, %d section@ $explorer$
->>2	uleshort	>1		\b, %d sections                      		 @, %d sections@ $explorer$
->>8	ulelong		>0		\b, symbol offset=0x%x                      		 @, symbol offset=0x%x@ $explorer$
->>12	ulelong		>0		\b, %d symbols                      		 @, %d symbols@ $explorer$
->>16	uleshort	>0		\b, optional header size %d                      		 @, optional header size %d@ $explorer$
+>>18	leshort		&0x0001		\b, no relocation info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0004		\b, no line number info                      		 @&ignored&@ $just$
+>>18	leshort		&0x0008		\b, stripped                      		 @&ignored&@ $just$
+>>18	leshort		^0x0008		\b, not stripped                      		 @&ignored&@ $just$
+>>2	uleshort	<2		\b, %d section                      		 @&ignored&@ $just$
+>>2	uleshort	>1		\b, %d sections                      		 @&ignored&@ $just$
+>>8	ulelong		>0		\b, symbol offset=0x%x                      		 @&ignored&@ $just$
+>>12	ulelong		>0		\b, %d symbols                      		 @&ignored&@ $just$
+>>16	uleshort	>0		\b, optional header size %d                      		 @&ignored&@ $just$
 ]
 
 
@@ -14736,117 +14736,117 @@ JUMP OUT USE SINCE WE ARE JUST diy-thermocam-parser
 >>>&(0x3c.l+0xf8)	search/0x100	SharedD \b, Microsoft Installer self-extracting archive                      		 @PE@ $just$
 >>>0x30			string		Inno \b, InnoSetup self-extracting archive                      		 @PE@ $just$
 >>(0x3c.l) string !PE\0\0 MS-DOS executable                      		 @MS-DOS executable@ $explorer$
->>(0x3c.l)		string		NE \b, NE                      		 @, NE@ $explorer$
->>>(0x3c.l+0x36)	byte		1 for OS/2 1.x                      		 @, NE for OS/2 1.x@ $explorer$
->>>(0x3c.l+0x36)	byte		2 for MS Windows 3.x                      		 @, NE for MS Windows 3.x@ $explorer$
->>>(0x3c.l+0x36)	byte		3 for MS-DOS                      		 @, NE for MS-DOS@ $explorer$
->>>(0x3c.l+0x36)	byte		4 for Windows 386                      		 @, NE for Windows 386@ $explorer$
->>>(0x3c.l+0x36)	byte		5 for Borland Operating System Services                      		 @, NE for Borland Operating System Services@ $explorer$
->>>(0x3c.l+0x36)	default		x                      		 @, NE@ $explorer$
->>>>(0x3c.l+0x36)	byte		x (unknown OS %x)                      		 @, NE@ $just$
->>>(0x3c.l+0x36)	byte		0x81 for MS-DOS, Phar Lap DOS extender                      		 @, NE@ $just$
->>>(0x3c.l+0x0c)	leshort&0x8000	0x8000 (DLL or font)                      		 @, NE@ $just$
->>>(0x3c.l+0x0c)	leshort&0x8000	0 (EXE)                      		 @, NE@ $just$
->>>&(&0x24.s-1)		string		ARJSFX \b, ARJ self-extracting archive                      		 @, NE@ $just$
->>>(0x3c.l+0x70)	search/0x80	WinZip(R)\ Self-Extractor \b, ZIP self-extracting archive (WinZip)                      		 @, NE@ $just$
->>(0x3c.l)		string		LX\0\0 \b, LX                      		 @, LX@ $explorer$
->>>(0x3c.l+0x0a)	leshort		<1 (unknown OS)                      		 @, LX (unknown OS)@ $explorer$
->>>(0x3c.l+0x0a)	leshort		1 for OS/2                      		 @, LX for OS/2@ $explorer$
->>>(0x3c.l+0x0a)	leshort		2 for MS Windows                      		 @, LX for MS Windows@ $explorer$
->>>(0x3c.l+0x0a)	leshort		3 for DOS                      		 @, LX for DOS@ $explorer$
->>>(0x3c.l+0x0a)	leshort		>3 (unknown OS)                      		 @, LX (unknown OS)@ $explorer$
->>>(0x3c.l+0x10)	lelong&0x28000	=0x8000 (DLL)                      		 @, LX@ $just$
->>>(0x3c.l+0x10)	lelong&0x20000	>0 (device driver)                      		 @, LX@ $just$
->>>(0x3c.l+0x10)	lelong&0x300	0x300 (GUI)                      		 @, LX@ $just$
->>>(0x3c.l+0x10)	lelong&0x28300	<0x300 (console)                      		 @, LX@ $just$
->>>(0x3c.l+0x08)	leshort		1 i80286                      		 @, LX@ $just$
->>>(0x3c.l+0x08)	leshort		2 i80386                      		 @, LX@ $just$
->>>(0x3c.l+0x08)	leshort		3 i80486                      		 @, LX@ $just$
->>>(8.s*16)		string		emx \b, emx                      		 @, LX@ $just$
->>>>&1			string		x %s                      		 @, LX@ $just$
->>>&(&0x54.l-3)		string		arjsfx \b, ARJ self-extracting archive                      		 @, LX@ $just$
->>(0x3c.l)		string		W3 \b, W3 for MS Windows                      		 @, W3 for MS Windows@ $explorer$
->>(0x3c.l)		string		LE\0\0 \b, LE executable                      		 @, LE executable@ $explorer$
->>>(0x3c.l+0x0a)	leshort		1                      		 @, LE executable@ $explorer$
->>>>0x240		search/0x100	DOS/4G for MS-DOS, DOS4GW DOS extender                      		 @, LE executable for MS-DOS, DOS4GW DOS extender@ $explorer$
->>>>0x240		search/0x200	WATCOM\ C/C++ for MS-DOS, DOS4GW DOS extender                      		 @, LE executable for MS-DOS, DOS4GW DOS extender@ $explorer$
->>>>0x440		search/0x100	CauseWay\ DOS\ Extender for MS-DOS, CauseWay DOS extender                      		 @, LE executable@ $just$
->>>>0x40		search/0x40	PMODE/W for MS-DOS, PMODE/W DOS extender                      		 @, LE executable@ $just$
->>>>0x40		search/0x40	STUB/32A for MS-DOS, DOS/32A DOS extender (stub)                      		 @, LE executable@ $just$
->>>>0x40		search/0x80	STUB/32C for MS-DOS, DOS/32A DOS extender (configurable stub)                      		 @, LE executable@ $just$
->>>>0x40		search/0x80	DOS/32A for MS-DOS, DOS/32A DOS extender (embedded)                      		 @, LE executable@ $just$
->>>>&0x24		lelong		<0x50                      		 @, LE executable@ $just$
->>>>>(&0x4c.l)		string		\xfc\xb8WATCOM                      		 @, LE executable@ $just$
->>>>>>&0		search/8	3\xdbf\xb9 \b, 32Lite compressed                      		 @, LE executable@ $just$
->>>(0x3c.l+0x0a)	leshort		2 for MS Windows                      		 @, LE executable for MS Windows@ $explorer$
->>>(0x3c.l+0x0a)	leshort		3 for DOS                      		 @, LE executable for DOS@ $explorer$
->>>(0x3c.l+0x0a)	leshort		4 for MS Windows (VxD)                      		 @, LE executable for MS Windows (VxD)@ $explorer$
->>>(&0x7c.l+0x26)	string		UPX \b, UPX compressed                      		 @, LE executable@ $just$
->>>&(&0x54.l-3)		string		UNACE \b, ACE self-extracting archive                      		 @, LE executable@ $just$
+>>(0x3c.l)		string		NE \b, NE                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	byte		1 for OS/2 1.x                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	byte		2 for MS Windows 3.x                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	byte		3 for MS-DOS                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	byte		4 for Windows 386                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	byte		5 for Borland Operating System Services                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	default		x                      		 @&ignored&@ $just$
+>>>>(0x3c.l+0x36)	byte		x (unknown OS %x)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x36)	byte		0x81 for MS-DOS, Phar Lap DOS extender                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0c)	leshort&0x8000	0x8000 (DLL or font)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0c)	leshort&0x8000	0 (EXE)                      		 @&ignored&@ $just$
+>>>&(&0x24.s-1)		string		ARJSFX \b, ARJ self-extracting archive                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x70)	search/0x80	WinZip(R)\ Self-Extractor \b, ZIP self-extracting archive (WinZip)                      		 @&ignored&@ $just$
+>>(0x3c.l)		string		LX\0\0 \b, LX                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		<1 (unknown OS)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		1 for OS/2                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		2 for MS Windows                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		3 for DOS                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		>3 (unknown OS)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x10)	lelong&0x28000	=0x8000 (DLL)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x10)	lelong&0x20000	>0 (device driver)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x10)	lelong&0x300	0x300 (GUI)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x10)	lelong&0x28300	<0x300 (console)                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x08)	leshort		1 i80286                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x08)	leshort		2 i80386                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x08)	leshort		3 i80486                      		 @&ignored&@ $just$
+>>>(8.s*16)		string		emx \b, emx                      		 @&ignored&@ $just$
+>>>>&1			string		x %s                      		 @&ignored&@ $just$
+>>>&(&0x54.l-3)		string		arjsfx \b, ARJ self-extracting archive                      		 @&ignored&@ $just$
+>>(0x3c.l)		string		W3 \b, W3 for MS Windows                      		 @&ignored&@ $just$
+>>(0x3c.l)		string		LE\0\0 \b, LE executable                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		1                      		 @&ignored&@ $just$
+>>>>0x240		search/0x100	DOS/4G for MS-DOS, DOS4GW DOS extender                      		 @&ignored&@ $just$
+>>>>0x240		search/0x200	WATCOM\ C/C++ for MS-DOS, DOS4GW DOS extender                      		 @&ignored&@ $just$
+>>>>0x440		search/0x100	CauseWay\ DOS\ Extender for MS-DOS, CauseWay DOS extender                      		 @&ignored&@ $just$
+>>>>0x40		search/0x40	PMODE/W for MS-DOS, PMODE/W DOS extender                      		 @&ignored&@ $just$
+>>>>0x40		search/0x40	STUB/32A for MS-DOS, DOS/32A DOS extender (stub)                      		 @&ignored&@ $just$
+>>>>0x40		search/0x80	STUB/32C for MS-DOS, DOS/32A DOS extender (configurable stub)                      		 @&ignored&@ $just$
+>>>>0x40		search/0x80	DOS/32A for MS-DOS, DOS/32A DOS extender (embedded)                      		 @&ignored&@ $just$
+>>>>&0x24		lelong		<0x50                      		 @&ignored&@ $just$
+>>>>>(&0x4c.l)		string		\xfc\xb8WATCOM                      		 @&ignored&@ $just$
+>>>>>>&0		search/8	3\xdbf\xb9 \b, 32Lite compressed                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		2 for MS Windows                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		3 for DOS                      		 @&ignored&@ $just$
+>>>(0x3c.l+0x0a)	leshort		4 for MS Windows (VxD)                      		 @&ignored&@ $just$
+>>>(&0x7c.l+0x26)	string		UPX \b, UPX compressed                      		 @&ignored&@ $just$
+>>>&(&0x54.l-3)		string		UNACE \b, ACE self-extracting archive                      		 @&ignored&@ $just$
 >>0x3c		lelong	>0x20000000                      		 @@ $explorer$
->>>(4.s*512)	leshort !0x014c \b, MZ for MS-DOS                      		 @, MZ for MS-DOS@ $explorer$
+>>>(4.s*512)	leshort !0x014c \b, MZ for MS-DOS                      		 @@ $just$
 >2		long	!0                      		 @@ $explorer$
 >>0x18		leshort <0x40                      		 @@ $explorer$
 >>>(4.s*512)	leshort !0x014c                      		 @@ $explorer$
 >>>>&(2.s-514)	string	!LE                      		 @@ $explorer$
->>>>>&-2	string	!BW \b, MZ for MS-DOS                      		 @, MZ for MS-DOS@ $explorer$
->>>>&(2.s-514)	string	LE \b, LE                      		 @, LE@ $explorer$
->>>>>0x240	search/0x100	DOS/4G for MS-DOS, DOS4GW DOS extender                      		 @, LE for MS-DOS, DOS4GW DOS extender@ $explorer$
+>>>>>&-2	string	!BW \b, MZ for MS-DOS                      		 @@ $just$
+>>>>&(2.s-514)	string	LE \b, LE                      		 @@ $just$
+>>>>>0x240	search/0x100	DOS/4G for MS-DOS, DOS4GW DOS extender                      		 @@ $just$
 >>>>&(2.s-514)	string	BW                      		 @@ $explorer$
->>>>>0x240	search/0x100	DOS/4G	\b, LE for MS-DOS, DOS4GW DOS extender (embedded)                      		 @, LE for MS-DOS, DOS4GW DOS extender (embedded)@ $explorer$
->>>>>0x240	search/0x100	!DOS/4G	\b, BW collection for MS-DOS                      		 @, BW collection for MS-DOS@ $explorer$
->(4.s*512)	leshort		0x014c \b, COFF                      		 @, COFF@ $explorer$
->>(8.s*16)	string		go32stub for MS-DOS, DJGPP go32 DOS extender                      		 @, COFF for MS-DOS, DJGPP go32 DOS extender@ $explorer$
->>(8.s*16)	string		emx                      		 @, COFF@ $explorer$
->>>&1		string		x for DOS, Win or OS/2, emx %s                      		 @, COFF@ $just$
->>&(&0x42.l-3)	byte		x                      		 @, COFF@ $just$
->>>&0x26	string		UPX \b, UPX compressed                      		 @, COFF@ $just$
->>&0x2c		search/0xa0	.text                      		 @, COFF@ $just$
->>>&0x0b	lelong		<0x2000                      		 @, COFF@ $just$
->>>>&0		lelong		>0x6000 \b, 32lite compressed                      		 @, COFF@ $just$
->(8.s*16) string $WdX \b, WDos/X DOS extender                      		 @, WDos/X DOS extender@ $explorer$
->0x35	string	\x8e\xc0\xb9\x08\x00\xf3\xa5\x4a\x75\xeb\x8e\xc3\x8e\xd8\x33\xff\xbe\x30\x00\x05 \b, aPack compressed                      		 @, aPack compressed@ $explorer$
+>>>>>0x240	search/0x100	DOS/4G	\b, LE for MS-DOS, DOS4GW DOS extender (embedded)                      		 @@ $just$
+>>>>>0x240	search/0x100	!DOS/4G	\b, BW collection for MS-DOS                      		 @@ $just$
+>(4.s*512)	leshort		0x014c \b, COFF                      		 @&ignored&@ $just$
+>>(8.s*16)	string		go32stub for MS-DOS, DJGPP go32 DOS extender                      		 @&ignored&@ $just$
+>>(8.s*16)	string		emx                      		 @&ignored&@ $just$
+>>>&1		string		x for DOS, Win or OS/2, emx %s                      		 @&ignored&@ $just$
+>>&(&0x42.l-3)	byte		x                      		 @&ignored&@ $just$
+>>>&0x26	string		UPX \b, UPX compressed                      		 @&ignored&@ $just$
+>>&0x2c		search/0xa0	.text                      		 @&ignored&@ $just$
+>>>&0x0b	lelong		<0x2000                      		 @&ignored&@ $just$
+>>>>&0		lelong		>0x6000 \b, 32lite compressed                      		 @&ignored&@ $just$
+>(8.s*16) string $WdX \b, WDos/X DOS extender                      		 @&ignored&@ $just$
+>0x35	string	\x8e\xc0\xb9\x08\x00\xf3\xa5\x4a\x75\xeb\x8e\xc3\x8e\xd8\x33\xff\xbe\x30\x00\x05 \b, aPack compressed                      		 @&ignored&@ $just$
 >0xe7	string	LH/2\ 	Self-Extract \b, %s                      		 @Self-Extract \b, LH/2 @ $explorer$
->0x1c	string	UC2X	\b, UCEXE compressed                      		 @, UCEXE compressed@ $explorer$
->0x1c	string	WWP\ 	\b, WWPACK compressed                      		 @, WWPACK compressed@ $explorer$
->0x1c	string	RJSX 	\b, ARJ self-extracting archive                      		 @, ARJ self-extracting archive@ $explorer$
->0x1c	string	diet 	\b, diet compressed                      		 @, diet compressed@ $explorer$
->0x1c	string	LZ09 	\b, LZEXE v0.90 compressed                      		 @, LZEXE v0.90 compressed@ $explorer$
->0x1c	string	LZ91 	\b, LZEXE v0.91 compressed                      		 @, LZEXE v0.91 compressed@ $explorer$
->0x1c	string	tz 	\b, TinyProg compressed                      		 @, TinyProg compressed@ $explorer$
+>0x1c	string	UC2X	\b, UCEXE compressed                      		 @&ignored&@ $just$
+>0x1c	string	WWP\ 	\b, WWPACK compressed                      		 @&ignored&@ $just$
+>0x1c	string	RJSX 	\b, ARJ self-extracting archive                      		 @&ignored&@ $just$
+>0x1c	string	diet 	\b, diet compressed                      		 @&ignored&@ $just$
+>0x1c	string	LZ09 	\b, LZEXE v0.90 compressed                      		 @&ignored&@ $just$
+>0x1c	string	LZ91 	\b, LZEXE v0.91 compressed                      		 @&ignored&@ $just$
+>0x1c	string	tz 	\b, TinyProg compressed                      		 @&ignored&@ $just$
 >0x1e	string	Copyright\ 1989-1990\ PKWARE\ Inc.	Self-extracting PKZIP archive                      		 @Self-extracting PKZIP archive@ $explorer$
 >0x1e	string	PKLITE\ Copr.	Self-extracting PKZIP archive                      		 @Self-extracting PKZIP archive@ $explorer$
->0x20	search/0xe0	aRJsfX \b, ARJ self-extracting archive                      		 @, ARJ self-extracting archive@ $explorer$
+>0x20	search/0xe0	aRJsfX \b, ARJ self-extracting archive                      		 @&ignored&@ $just$
 >0x20	string AIN                      		 @@ $explorer$
->>0x23	string 2	\b, AIN 2.x compressed                      		 @, AIN 2.x compressed@ $explorer$
->>0x23	string <2	\b, AIN 1.x compressed                      		 @, AIN 1.x compressed@ $explorer$
->>0x23	string >2	\b, AIN 1.x compressed                      		 @, AIN 1.x compressed@ $explorer$
->0x24	string	LHa's\ SFX \b, LHa self-extracting archive                      		 @, LHa self-extracting archive@ $explorer$
->0x24	string	LHA's\ SFX \b, LHa self-extracting archive                      		 @, LHa self-extracting archive@ $explorer$
->0x24	string	\ $ARX \b, ARX self-extracting archive                      		 @, ARX self-extracting archive@ $explorer$
->0x24	string	\ $LHarc \b, LHarc self-extracting archive                      		 @, LHarc self-extracting archive@ $explorer$
->0x20	string	SFX\ by\ LARC \b, LARC self-extracting archive                      		 @, LARC self-extracting archive@ $explorer$
->0x40	string aPKG \b, aPackage self-extracting archive                      		 @, aPackage self-extracting archive@ $explorer$
->0x64	string	W\ Collis\0\0 \b, Compack compressed                      		 @, Compack compressed@ $explorer$
->0x7a	string		Windows\ self-extracting\ ZIP	\b, ZIP self-extracting archive                      		 @, ZIP self-extracting archive@ $explorer$
->>&0xf4 search/0x140 \x0\x40\x1\x0                      		 @, ZIP self-extracting archive@ $explorer$
->>>(&0.l+(4)) string MSCF \b, WinHKI CAB self-extracting archive                      		 @, ZIP self-extracting archive, WinHKI CAB self-extracting archive@ $explorer$
->1638	string	-lh5- \b, LHa self-extracting archive v2.13S                      		 @, LHa self-extracting archive v2.13S@ $explorer$
->0x17888 string Rar! \b, RAR self-extracting archive                      		 @, RAR self-extracting archive@ $explorer$
+>>0x23	string 2	\b, AIN 2.x compressed                      		 @@ $just$
+>>0x23	string <2	\b, AIN 1.x compressed                      		 @@ $just$
+>>0x23	string >2	\b, AIN 1.x compressed                      		 @@ $just$
+>0x24	string	LHa's\ SFX \b, LHa self-extracting archive                      		 @&ignored&@ $just$
+>0x24	string	LHA's\ SFX \b, LHa self-extracting archive                      		 @&ignored&@ $just$
+>0x24	string	\ $ARX \b, ARX self-extracting archive                      		 @&ignored&@ $just$
+>0x24	string	\ $LHarc \b, LHarc self-extracting archive                      		 @&ignored&@ $just$
+>0x20	string	SFX\ by\ LARC \b, LARC self-extracting archive                      		 @&ignored&@ $just$
+>0x40	string aPKG \b, aPackage self-extracting archive                      		 @&ignored&@ $just$
+>0x64	string	W\ Collis\0\0 \b, Compack compressed                      		 @&ignored&@ $just$
+>0x7a	string		Windows\ self-extracting\ ZIP	\b, ZIP self-extracting archive                      		 @&ignored&@ $just$
+>>&0xf4 search/0x140 \x0\x40\x1\x0                      		 @&ignored&@ $just$
+>>>(&0.l+(4)) string MSCF \b, WinHKI CAB self-extracting archive                      		 @&ignored&@ $just$
+>1638	string	-lh5- \b, LHa self-extracting archive v2.13S                      		 @&ignored&@ $just$
+>0x17888 string Rar! \b, RAR self-extracting archive                      		 @&ignored&@ $just$
 >(4.s*512)	long	x                      		 @@ $explorer$
 >>&(2.s-517)	byte	x                      		 @@ $explorer$
->>>&0	string		PK\3\4 \b, ZIP self-extracting archive                      		 @, ZIP self-extracting archive@ $explorer$
->>>&0	string		Rar! \b, RAR self-extracting archive                      		 @, RAR self-extracting archive@ $explorer$
->>>&0	string		=!\x11 \b, AIN 2.x self-extracting archive                      		 @, AIN 2.x self-extracting archive@ $explorer$
->>>&0	string		=!\x12 \b, AIN 2.x self-extracting archive                      		 @, AIN 2.x self-extracting archive@ $explorer$
->>>&0	string		=!\x17 \b, AIN 1.x self-extracting archive                      		 @, AIN 1.x self-extracting archive@ $explorer$
->>>&0	string		=!\x18 \b, AIN 1.x self-extracting archive                      		 @, AIN 1.x self-extracting archive@ $explorer$
->>>&7	search/400	**ACE** \b, ACE self-extracting archive                      		 @, ACE self-extracting archive@ $explorer$
->>>&0	search/0x480	UC2SFX\ Header \b, UC2 self-extracting archive                      		 @, UC2 self-extracting archive@ $explorer$
->(8.s*16)	search/0x20	PKSFX \b, ZIP self-extracting archive (PKZIP)                      		 @, ZIP self-extracting archive (PKZIP)@ $explorer$
->49801	string	\x79\xff\x80\xff\x76\xff	\b, CODEC archive v3.21                      		 @, CODEC archive v3.21@ $explorer$
->>49824 leshort		=1			\b, 1 file                      		 @, CODEC archive v3.21, 1 file@ $explorer$
->>49824 leshort		>1			\b, %u files                      		 @, CODEC archive v3.21, %u files@ $explorer$
+>>>&0	string		PK\3\4 \b, ZIP self-extracting archive                      		 @@ $just$
+>>>&0	string		Rar! \b, RAR self-extracting archive                      		 @@ $just$
+>>>&0	string		=!\x11 \b, AIN 2.x self-extracting archive                      		 @@ $just$
+>>>&0	string		=!\x12 \b, AIN 2.x self-extracting archive                      		 @@ $just$
+>>>&0	string		=!\x17 \b, AIN 1.x self-extracting archive                      		 @@ $just$
+>>>&0	string		=!\x18 \b, AIN 1.x self-extracting archive                      		 @@ $just$
+>>>&7	search/400	**ACE** \b, ACE self-extracting archive                      		 @&ignored&@ $just$
+>>>&0	search/0x480	UC2SFX\ Header \b, UC2 self-extracting archive                      		 @&ignored&@ $just$
+>(8.s*16)	search/0x20	PKSFX \b, ZIP self-extracting archive (PKZIP)                      		 @&ignored&@ $just$
+>49801	string	\x79\xff\x80\xff\x76\xff	\b, CODEC archive v3.21                      		 @&ignored&@ $just$
+>>49824 leshort		=1			\b, 1 file                      		 @&ignored&@ $just$
+>>49824 leshort		>1			\b, %u files                      		 @&ignored&@ $just$
 
 
 0	string/b	KCF		FreeDOS KEYBoard Layout collection                      		 @FreeDOS KEYBoard Layout collection@ $explorer$
@@ -21319,8 +21319,8 @@ USE  ini-file
 >>9	byte	16	Corel compressed file                      		 @Corel compressed file@ $explorer$
 >>9	default	x                      		 @@ $explorer$
 >>>9	byte	x	Corel loadable file: Unknown filetype %d                      		 @Corel loadable file: Unknown filetype %d@ $just$
->>15	byte	0	\b, optimized for Intel                      		 @, optimized for Intel@ $explorer$
->>15	byte	1	\b, optimized for Non-Intel                      		 @, optimized for Non-Intel@ $explorer$
+>>15	byte	0	\b, optimized for Intel                      		 @&ignored&@ $just$
+>>15	byte	1	\b, optimized for Non-Intel                      		 @&ignored&@ $just$
 >8	byte	20                      		 @@ $explorer$
 >>9	byte	10	Corel Network service msg file                      		 @Corel Network service msg file@ $explorer$
 >>9	byte	11	Corel Network service msg file                      		 @Corel Network service msg file@ $explorer$
@@ -21342,9 +21342,9 @@ USE  ini-file
 >8	default x                      		 @@ $explorer$
 >>8	byte	x	Unknown Corel/Wordperfect product %d,                      		 @Unknown Corel/Wordperfect product %d,@ $just$
 >>>9	byte	x	file type %d                      		 @Unknown Corel/Wordperfect product %d,@ $just$
->10	byte	0	\b, v5.                      		 @, v5.@ $explorer$
->10	byte	!0	\b, v%d.                      		 @&&@ $just$
->11	byte	x	\b%d                      		 @&&@ $just$
+>10	byte	0	\b, v5.                      		 @&ignored&@ $just$
+>10	byte	!0	\b, v%d.                      		 @&ignored&@ $just$
+>11	byte	x	\b%d                      		 @&ignored&@ $just$
 
 
 0	string	HWP\ Document\ File	Hangul (Korean) Word Processor File 3.0                      		 @Hangul (Korean) Word Processor File 3.0@ $explorer$
@@ -21733,65 +21733,290 @@ NUM OF ALL TYPE:  12110
  MDX `./magic/database`: 229
  MDX `./magic/database`: 231
  MDX `./magic/database`: 233
+ `./magic/animation`: 479
+ `./magic/animation`: 480
+ `./magic/animation`: 481
  `./magic/apt`: 29
  `./magic/apt`: 30
  `./magic/apt`: 34
  `./magic/apt`: 35
  `./magic/archive`: 107
+ `./magic/archive`: 131
+ `./magic/archive`: 133
+ `./magic/archive`: 136
+ `./magic/archive`: 138
+ `./magic/archive`: 140
+ `./magic/archive`: 145
+ `./magic/archive`: 148
+ `./magic/archive`: 81
+ `./magic/archive`: 82
+ `./magic/archive`: 83
+ `./magic/archive`: 84
+ `./magic/archive`: 85
+ `./magic/archive`: 86
+ `./magic/archive`: 87
+ `./magic/archive`: 88
+ `./magic/archive`: 89
+ `./magic/archive`: 90
+ `./magic/archive`: 91
+ `./magic/archive`: 92
+ `./magic/archive`: 93
+ `./magic/archive`: 94
+ `./magic/archive`: 95
+ `./magic/archive`: 96
  `./magic/ber`: 60
  `./magic/commands`: 118
  `./magic/console`: 310
  `./magic/console`: 312
  `./magic/cups`: 10
+ `./magic/database`: 235
  `./magic/der`: 100
+ `./magic/der`: 104
  `./magic/der`: 108
+ `./magic/der`: 112
+ `./magic/der`: 114
  `./magic/der`: 12
+ `./magic/der`: 16
  `./magic/der`: 20
  `./magic/der`: 24
+ `./magic/der`: 81
+ `./magic/der`: 82
  `./magic/der`: 88
+ `./magic/der`: 92
  `./magic/der`: 96
+ `./magic/filesystems`: 1750
+ `./magic/filesystems`: 1755
+ `./magic/filesystems`: 1760
+ `./magic/filesystems`: 1765
  `./magic/filesystems`: 2397
  `./magic/fonts`: 200
  `./magic/fonts`: 212
+ `./magic/fonts`: 227
+ `./magic/fonts`: 228
+ `./magic/fonts`: 229
+ `./magic/fonts`: 244
+ `./magic/fonts`: 247
+ `./magic/fonts`: 251
+ `./magic/fonts`: 284
  `./magic/icc`: 100
  `./magic/icc`: 101
  `./magic/icc`: 112
  `./magic/icc`: 120
  `./magic/icc`: 122
  `./magic/icc`: 124
+ `./magic/icc`: 191
  `./magic/icc`: 201
  `./magic/icc`: 205
  `./magic/icc`: 96
  `./magic/icc`: 97
  `./magic/icc`: 98
  `./magic/images`: 1603
+ `./magic/images`: 177
+ `./magic/images`: 184
+ `./magic/images`: 191
+ `./magic/images`: 198
+ `./magic/images`: 205
+ `./magic/images`: 212
+ `./magic/msdos`: 252
+ `./magic/msdos`: 261
+ `./magic/msdos`: 263
+ `./magic/msdos`: 264
+ `./magic/msdos`: 269
+ `./magic/msdos`: 270
+ `./magic/msdos`: 310
+ `./magic/msdos`: 311
+ `./magic/msdos`: 312
+ `./magic/msdos`: 333
+ `./magic/msdos`: 334
+ `./magic/msdos`: 335
+ `./magic/msdos`: 336
+ `./magic/msdos`: 337
+ `./magic/msdos`: 338
 "compact bitmap" format (Poskanzer) `./magic/pbm`: 8
-%-.60s `./magic/archive`: 98
-&& `./magic/icc`: 114
-&& `./magic/icc`: 116
-&& `./magic/wordprocessors`: 194
-&& `./magic/wordprocessors`: 195
-&AppleWorks CWK DocumentClarisWorks CWK Document& `./magic/apple`: 422
-&AppleWorks CWK DocumentClarisWorks CWK Document& `./magic/apple`: 423
-&AppleWorks CWK DocumentClarisWorks CWK Document& `./magic/apple`: 424
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 104
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 105
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 106
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 108
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 72
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 73
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 75
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 76
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 79
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 80
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 81
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 83
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 84
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 87
-&ColorSyncMicrosoftSGISun KCMSTaligent& `./magic/icc`: 88
-&Sega Master SystemSega Master SystemSega Game GearSega Game GearSega Game GearSega Master System / Game Gear& `./magic/console`: 314
-&TrueTypeOpenType& `./magic/fonts`: 189
-&\b\b& `./magic/archive`: 878
+&ignored& `./magic/animation`: 483
+&ignored& `./magic/animation`: 484
+&ignored& `./magic/animation`: 485
+&ignored& `./magic/animation`: 486
+&ignored& `./magic/apple`: 422
+&ignored& `./magic/apple`: 423
+&ignored& `./magic/apple`: 424
+&ignored& `./magic/archive`: 100
+&ignored& `./magic/archive`: 102
+&ignored& `./magic/archive`: 104
+&ignored& `./magic/archive`: 109
+&ignored& `./magic/archive`: 110
+&ignored& `./magic/archive`: 111
+&ignored& `./magic/archive`: 112
+&ignored& `./magic/archive`: 113
+&ignored& `./magic/archive`: 114
+&ignored& `./magic/archive`: 115
+&ignored& `./magic/archive`: 116
+&ignored& `./magic/archive`: 117
+&ignored& `./magic/archive`: 118
+&ignored& `./magic/archive`: 119
+&ignored& `./magic/archive`: 120
+&ignored& `./magic/archive`: 121
+&ignored& `./magic/archive`: 123
+&ignored& `./magic/archive`: 127
+&ignored& `./magic/archive`: 878
+&ignored& `./magic/archive`: 98
+&ignored& `./magic/console`: 314
+&ignored& `./magic/der`: 115
+&ignored& `./magic/fonts`: 183
+&ignored& `./magic/fonts`: 184
+&ignored& `./magic/fonts`: 189
+&ignored& `./magic/fonts`: 231
+&ignored& `./magic/fonts`: 234
+&ignored& `./magic/fonts`: 278
+&ignored& `./magic/fonts`: 279
+&ignored& `./magic/fonts`: 280
+&ignored& `./magic/fonts`: 286
+&ignored& `./magic/hitachi-sh`: 45
+&ignored& `./magic/hitachi-sh`: 47
+&ignored& `./magic/hitachi-sh`: 49
+&ignored& `./magic/hitachi-sh`: 50
+&ignored& `./magic/hitachi-sh`: 61
+&ignored& `./magic/hitachi-sh`: 62
+&ignored& `./magic/hitachi-sh`: 66
+&ignored& `./magic/hitachi-sh`: 68
+&ignored& `./magic/hitachi-sh`: 70
+&ignored& `./magic/icc`: 104
+&ignored& `./magic/icc`: 105
+&ignored& `./magic/icc`: 106
+&ignored& `./magic/icc`: 108
+&ignored& `./magic/icc`: 114
+&ignored& `./magic/icc`: 116
+&ignored& `./magic/icc`: 126
+&ignored& `./magic/icc`: 130
+&ignored& `./magic/icc`: 134
+&ignored& `./magic/icc`: 137
+&ignored& `./magic/icc`: 141
+&ignored& `./magic/icc`: 145
+&ignored& `./magic/icc`: 147
+&ignored& `./magic/icc`: 149
+&ignored& `./magic/icc`: 151
+&ignored& `./magic/icc`: 153
+&ignored& `./magic/icc`: 155
+&ignored& `./magic/icc`: 157
+&ignored& `./magic/icc`: 159
+&ignored& `./magic/icc`: 162
+&ignored& `./magic/icc`: 164
+&ignored& `./magic/icc`: 165
+&ignored& `./magic/icc`: 166
+&ignored& `./magic/icc`: 168
+&ignored& `./magic/icc`: 171
+&ignored& `./magic/icc`: 173
+&ignored& `./magic/icc`: 176
+&ignored& `./magic/icc`: 178
+&ignored& `./magic/icc`: 72
+&ignored& `./magic/icc`: 73
+&ignored& `./magic/icc`: 75
+&ignored& `./magic/icc`: 76
+&ignored& `./magic/icc`: 79
+&ignored& `./magic/icc`: 80
+&ignored& `./magic/icc`: 81
+&ignored& `./magic/icc`: 83
+&ignored& `./magic/icc`: 84
+&ignored& `./magic/icc`: 87
+&ignored& `./magic/icc`: 88
+&ignored& `./magic/intel`: 45
+&ignored& `./magic/intel`: 47
+&ignored& `./magic/intel`: 49
+&ignored& `./magic/intel`: 50
+&ignored& `./magic/intel`: 61
+&ignored& `./magic/intel`: 62
+&ignored& `./magic/intel`: 66
+&ignored& `./magic/intel`: 68
+&ignored& `./magic/intel`: 70
+&ignored& `./magic/msdos`: 175
+&ignored& `./magic/msdos`: 177
+&ignored& `./magic/msdos`: 178
+&ignored& `./magic/msdos`: 179
+&ignored& `./magic/msdos`: 180
+&ignored& `./magic/msdos`: 181
+&ignored& `./magic/msdos`: 182
+&ignored& `./magic/msdos`: 183
+&ignored& `./magic/msdos`: 184
+&ignored& `./magic/msdos`: 185
+&ignored& `./magic/msdos`: 193
+&ignored& `./magic/msdos`: 195
+&ignored& `./magic/msdos`: 196
+&ignored& `./magic/msdos`: 198
+&ignored& `./magic/msdos`: 200
+&ignored& `./magic/msdos`: 201
+&ignored& `./magic/msdos`: 202
+&ignored& `./magic/msdos`: 203
+&ignored& `./magic/msdos`: 204
+&ignored& `./magic/msdos`: 205
+&ignored& `./magic/msdos`: 206
+&ignored& `./magic/msdos`: 207
+&ignored& `./magic/msdos`: 208
+&ignored& `./magic/msdos`: 209
+&ignored& `./magic/msdos`: 210
+&ignored& `./magic/msdos`: 211
+&ignored& `./magic/msdos`: 212
+&ignored& `./magic/msdos`: 213
+&ignored& `./magic/msdos`: 214
+&ignored& `./magic/msdos`: 217
+&ignored& `./magic/msdos`: 220
+&ignored& `./magic/msdos`: 222
+&ignored& `./magic/msdos`: 224
+&ignored& `./magic/msdos`: 225
+&ignored& `./magic/msdos`: 226
+&ignored& `./magic/msdos`: 227
+&ignored& `./magic/msdos`: 228
+&ignored& `./magic/msdos`: 229
+&ignored& `./magic/msdos`: 230
+&ignored& `./magic/msdos`: 232
+&ignored& `./magic/msdos`: 233
+&ignored& `./magic/msdos`: 234
+&ignored& `./magic/msdos`: 238
+&ignored& `./magic/msdos`: 239
+&ignored& `./magic/msdos`: 240
+&ignored& `./magic/msdos`: 246
+&ignored& `./magic/msdos`: 247
+&ignored& `./magic/msdos`: 273
+&ignored& `./magic/msdos`: 275
+&ignored& `./magic/msdos`: 276
+&ignored& `./magic/msdos`: 277
+&ignored& `./magic/msdos`: 278
+&ignored& `./magic/msdos`: 279
+&ignored& `./magic/msdos`: 281
+&ignored& `./magic/msdos`: 282
+&ignored& `./magic/msdos`: 283
+&ignored& `./magic/msdos`: 285
+&ignored& `./magic/msdos`: 293
+&ignored& `./magic/msdos`: 295
+&ignored& `./magic/msdos`: 296
+&ignored& `./magic/msdos`: 297
+&ignored& `./magic/msdos`: 298
+&ignored& `./magic/msdos`: 299
+&ignored& `./magic/msdos`: 300
+&ignored& `./magic/msdos`: 301
+&ignored& `./magic/msdos`: 308
+&ignored& `./magic/msdos`: 313
+&ignored& `./magic/msdos`: 315
+&ignored& `./magic/msdos`: 317
+&ignored& `./magic/msdos`: 318
+&ignored& `./magic/msdos`: 319
+&ignored& `./magic/msdos`: 320
+&ignored& `./magic/msdos`: 321
+&ignored& `./magic/msdos`: 322
+&ignored& `./magic/msdos`: 323
+&ignored& `./magic/msdos`: 324
+&ignored& `./magic/msdos`: 325
+&ignored& `./magic/msdos`: 326
+&ignored& `./magic/msdos`: 339
+&ignored& `./magic/msdos`: 340
+&ignored& `./magic/msdos`: 344
+&ignored& `./magic/msdos`: 349
+&ignored& `./magic/msdos`: 350
+&ignored& `./magic/msdos`: 351
+&ignored& `./magic/wordprocessors`: 166
+&ignored& `./magic/wordprocessors`: 167
+&ignored& `./magic/wordprocessors`: 193
+&ignored& `./magic/wordprocessors`: 194
+&ignored& `./magic/wordprocessors`: 195
 (1 MB) `./magic/console`: 324
 (128 KB) `./magic/console`: 321
 (16 KB) `./magic/console`: 317
@@ -21838,231 +22063,6 @@ NUM OF ALL TYPE:  12110
 (v3) `./magic/virtual`: 282
 (wildcard) `./magic/hp`: 262
 (wildcard) `./magic/hp`: 281
-, %-11.96s `./magic/fonts`: 244
-, %-11.96s `./magic/fonts`: 247
-, %-11.96s `./magic/fonts`: 251
-, %d fonts `./magic/fonts`: 280
-, %d section `./magic/hitachi-sh`: 61
-, %d section `./magic/intel`: 61
-, %d sections `./magic/hitachi-sh`: 62
-, %d sections `./magic/intel`: 62
-, %d symbols `./magic/hitachi-sh`: 68
-, %d symbols `./magic/intel`: 68
-, %d tables `./magic/fonts`: 184
-, 0x%llx MD5 `./magic/icc`: 178
-, 0x%x rendering intent `./magic/icc`: 162
-, 0x%x vendor attribute `./magic/icc`: 141
-, 0x%x vendor flags `./magic/icc`: 126
-, 1.0 `./magic/fonts`: 278
-, 1st tag "%.11s" `./magic/database`: 235
-, 2.0 `./magic/fonts`: 279
-, 2x Monaural `./magic/animation`: 485
-, 32 kHz `./magic/animation`: 481
-, 44.1 kHz `./magic/animation`: 479
-, 48 kHz `./magic/animation`: 480
-, ? Encryption (%s) `./magic/der`: 82
-, ACE self-extracting archive `./magic/msdos`: 339
-, AIN 1.x compressed `./magic/msdos`: 311
-, AIN 1.x compressed `./magic/msdos`: 312
-, AIN 1.x self-extracting archive `./magic/msdos`: 337
-, AIN 1.x self-extracting archive `./magic/msdos`: 338
-, AIN 2.x compressed `./magic/msdos`: 310
-, AIN 2.x self-extracting archive `./magic/msdos`: 335
-, AIN 2.x self-extracting archive `./magic/msdos`: 336
-, ARJ self-extracting archive `./magic/msdos`: 297
-, ARJ self-extracting archive `./magic/msdos`: 308
-, ARX self-extracting archive `./magic/msdos`: 317
-, BW collection for MS-DOS `./magic/msdos`: 270
-, CODEC archive v3.21 `./magic/msdos`: 349
-, CODEC archive v3.21, %u files `./magic/msdos`: 351
-, CODEC archive v3.21, 1 file `./magic/msdos`: 350
-, COFF `./magic/msdos`: 273
-, COFF `./magic/msdos`: 276
-, COFF `./magic/msdos`: 277
-, COFF `./magic/msdos`: 278
-, COFF `./magic/msdos`: 279
-, COFF `./magic/msdos`: 281
-, COFF `./magic/msdos`: 282
-, COFF `./magic/msdos`: 283
-, COFF for MS-DOS, DJGPP go32 DOS extender `./magic/msdos`: 275
-, Compack compressed `./magic/msdos`: 321
-, JntStereo `./magic/animation`: 484
-, LARC self-extracting archive `./magic/msdos`: 319
-, LE `./magic/msdos`: 263
-, LE executable `./magic/msdos`: 220
-, LE executable `./magic/msdos`: 222
-, LE executable `./magic/msdos`: 226
-, LE executable `./magic/msdos`: 227
-, LE executable `./magic/msdos`: 228
-, LE executable `./magic/msdos`: 229
-, LE executable `./magic/msdos`: 230
-, LE executable `./magic/msdos`: 232
-, LE executable `./magic/msdos`: 233
-, LE executable `./magic/msdos`: 234
-, LE executable `./magic/msdos`: 246
-, LE executable `./magic/msdos`: 247
-, LE executable for DOS `./magic/msdos`: 239
-, LE executable for MS Windows (VxD) `./magic/msdos`: 240
-, LE executable for MS Windows `./magic/msdos`: 238
-, LE executable for MS-DOS, DOS4GW DOS extender `./magic/msdos`: 224
-, LE executable for MS-DOS, DOS4GW DOS extender `./magic/msdos`: 225
-, LE for MS-DOS, DOS4GW DOS extender (embedded) `./magic/msdos`: 269
-, LE for MS-DOS, DOS4GW DOS extender `./magic/msdos`: 264
-, LHa self-extracting archive `./magic/msdos`: 313
-, LHa self-extracting archive `./magic/msdos`: 315
-, LHa self-extracting archive v2.13S `./magic/msdos`: 325
-, LHarc self-extracting archive `./magic/msdos`: 318
-, LX (unknown OS) `./magic/msdos`: 200
-, LX (unknown OS) `./magic/msdos`: 204
-, LX `./magic/msdos`: 198
-, LX `./magic/msdos`: 205
-, LX `./magic/msdos`: 206
-, LX `./magic/msdos`: 207
-, LX `./magic/msdos`: 208
-, LX `./magic/msdos`: 209
-, LX `./magic/msdos`: 210
-, LX `./magic/msdos`: 211
-, LX `./magic/msdos`: 212
-, LX `./magic/msdos`: 213
-, LX `./magic/msdos`: 214
-, LX for DOS `./magic/msdos`: 203
-, LX for MS Windows `./magic/msdos`: 202
-, LX for OS/2 `./magic/msdos`: 201
-, LZEXE v0.90 compressed `./magic/msdos`: 299
-, LZEXE v0.91 compressed `./magic/msdos`: 300
-, MCS `./magic/icc`: 137
-, MZ for MS-DOS `./magic/msdos`: 252
-, MZ for MS-DOS `./magic/msdos`: 261
-, Macintosh `./magic/fonts`: 228
-, Microsoft `./magic/fonts`: 229
-, Monaural `./magic/animation`: 486
-, NE `./magic/msdos`: 175
-, NE `./magic/msdos`: 182
-, NE `./magic/msdos`: 183
-, NE `./magic/msdos`: 184
-, NE `./magic/msdos`: 185
-, NE `./magic/msdos`: 193
-, NE `./magic/msdos`: 195
-, NE `./magic/msdos`: 196
-, NE for Borland Operating System Services `./magic/msdos`: 181
-, NE for MS Windows 3.x `./magic/msdos`: 178
-, NE for MS-DOS `./magic/msdos`: 179
-, NE for OS/2 1.x `./magic/msdos`: 177
-, NE for Windows 386 `./magic/msdos`: 180
-, PCS `./magic/icc`: 168
-, PCS `./magic/icc`: 171
-, PCS `./magic/icc`: 173
-, PCS `./magic/icc`: 176
-, RAR self-extracting archive `./magic/msdos`: 326
-, RAR self-extracting archive `./magic/msdos`: 334
-, Stereo `./magic/animation`: 483
-, TinyProg compressed `./magic/msdos`: 301
-, UC2 self-extracting archive `./magic/msdos`: 340
-, UCEXE compressed `./magic/msdos`: 295
-, Unicode `./magic/fonts`: 227
-, W3 for MS Windows `./magic/msdos`: 217
-, WDos/X DOS extender `./magic/msdos`: 285
-, WWPACK compressed `./magic/msdos`: 296
-, ZIP self-extracting archive (PKZIP) `./magic/msdos`: 344
-, ZIP self-extracting archive `./magic/msdos`: 322
-, ZIP self-extracting archive `./magic/msdos`: 323
-, ZIP self-extracting archive `./magic/msdos`: 333
-, ZIP self-extracting archive, WinHKI CAB self-extracting archive `./magic/msdos`: 324
-, aPack compressed `./magic/msdos`: 293
-, aPackage self-extracting archive `./magic/msdos`: 320
-, absolute colorimetric `./magic/icc`: 166
-, at 0x%x `./magic/fonts`: 286
-, bitmap `./magic/images`: 177
-, black&white `./magic/icc`: 151
-, block device `./magic/archive`: 86
-, bootable `./magic/filesystems`: 1750
-, bootable `./magic/filesystems`: 1755
-, bootable `./magic/filesystems`: 1760
-, bootable `./magic/filesystems`: 1765
-, char device `./magic/archive`: 85
-, comment: %-.40s `./magic/archive`: 148
-, dependently `./magic/icc`: 134
-, devmaj %-.7s `./magic/archive`: 136
-, devmin %-.7s `./magic/archive`: 138
-, diet compressed `./magic/msdos`: 298
-, digitally signed `./magic/fonts`: 183
-, digitally signed `./magic/fonts`: 284
-, directory `./magic/archive`: 87
-, emailAddress=%s `./magic/der`: 112
-, embedded `./magic/icc`: 130
-, extension `./magic/archive`: 94
-, fifo `./magic/archive`: 88
-, file `./magic/archive`: 81
-, file `./magic/archive`: 82
-, gid %-.7s `./magic/archive`: 104
-, global `./magic/archive`: 93
-, greymap `./magic/images`: 184
-, group %-.32s `./magic/archive`: 133
-, hard link `./magic/archive`: 83
-, language 0x%x `./magic/fonts`: 231
-, linkname %-.40s `./magic/archive`: 127
-, long path `./magic/archive`: 90
-, matte `./magic/icc`: 147
-, mode %-.7s `./magic/archive`: 100
-, multi volume `./magic/archive`: 91
-, negative `./magic/icc`: 149
-, no copyright tag `./magic/icc`: 191
-, no line number info `./magic/hitachi-sh`: 47
-, no line number info `./magic/intel`: 47
-, no relocation info `./magic/hitachi-sh`: 45
-, no relocation info `./magic/intel`: 45
-, non-isotropic `./magic/icc`: 157
-, non-paper `./magic/icc`: 153
-, non-textured `./magic/icc`: 155
-, not stripped `./magic/hitachi-sh`: 50
-, not stripped `./magic/intel`: 50
-, optimized for Intel `./magic/wordprocessors`: 166
-, optimized for Non-Intel `./magic/wordprocessors`: 167
-, optional header size %d `./magic/hitachi-sh`: 70
-, optional header size %d `./magic/intel`: 70
-, organizationUnitName=%s `./magic/der`: 104
-, padding: %-.40s `./magic/archive`: 145
-, pixmap `./magic/images`: 191
-, prefix %-.155s `./magic/archive`: 140
-, rawbits, bitmap `./magic/images`: 198
-, rawbits, greymap `./magic/images`: 205
-, rawbits, pixmap `./magic/images`: 212
-, relative colorimetric `./magic/icc`: 164
-, reserved `./magic/archive`: 89
-, saturation `./magic/icc`: 165
-, seconds %-.11s `./magic/archive`: 123
-, self-luminous `./magic/icc`: 159
-, sha1WithRSAEncryption `./magic/der`: 81
-, size 0x `./magic/archive`: 109
-, size 0x `./magic/archive`: 110
-, size 0x `./magic/archive`: 111
-, size 0x `./magic/archive`: 112
-, size 0x `./magic/archive`: 113
-, size 0x `./magic/archive`: 114
-, size 0x `./magic/archive`: 115
-, size 0x `./magic/archive`: 116
-, size 0x `./magic/archive`: 117
-, size 0x `./magic/archive`: 118
-, size 0x `./magic/archive`: 119
-, size 0x `./magic/archive`: 120
-, size 0x `./magic/archive`: 121
-, stateOrProvinceName=%s `./magic/der`: 16
-, stateOrProvinceName=%s `./magic/der`: 92
-, stripped `./magic/hitachi-sh`: 49
-, stripped `./magic/intel`: 49
-, symbol offset=0x%x `./magic/hitachi-sh`: 66
-, symbol offset=0x%x `./magic/intel`: 66
-, symlink `./magic/archive`: 84
-, transparent `./magic/icc`: 145
-, type %d string `./magic/fonts`: 234
-, type `./magic/archive`: 95
-, type `./magic/archive`: 96
-, uid %-.7s `./magic/archive`: 102
-, user %-.32s `./magic/archive`: 131
-, utcTime=%s `./magic/der`: 114
-, utcTime=%s `./magic/der`: 115
-, v5. `./magic/wordprocessors`: 193
-, volume `./magic/archive`: 92
 -%.4s device `./magic/icc`: 90
 0420 Alliant virtual executable `./magic/alliant`: 13
 0420 Alliant virtual executable `./magic/alliant`: 14
@@ -25225,9 +25225,9 @@ GPT partition table `./magic/gpt`: 86
 GPT partition table `./magic/gpt`: 89
 GPT partition table `./magic/gpt`: 96
 GPT partition table `./magic/gpt`: 99
-GRUB2 font "%-s" `./magic/fonts`: 99
 GRUB2 font `./magic/fonts`: 93
 GRUB2 font `./magic/fonts`: 97
+GRUB2 font `./magic/fonts`: 99
 GRand Unified Bootloader `./magic/filesystems`: 1308
 GRand Unified Bootloader `./magic/filesystems`: 1312
 GRand Unified Bootloader `./magic/filesystems`: 1313

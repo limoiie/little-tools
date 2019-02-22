@@ -839,12 +839,12 @@
 # ftp://ftp.modland.com/pub/documents/format_documentation/\
 # Art%20Of%20Noise%20(.aon).txt
 0		string		AON
->4		string		"ArtOfNoise by Bastian Spiegel(twice/lego)"
->0x2e		string		NAME	Art of Noise Tracker Song
->3		string		<9
->3		string		4	(4 voices)
->3		string		8	(8 voices)
->>0x36		string		>\0	Title: "%s"
+>4		string		ArtOfNoise\ by\ Bastian\ Spiegel(twice/lego)
+>>0x2e		string		NAME	Art of Noise Tracker Song
+>>3		string		<9
+>>3		string		4	(4 voices)
+>>3		string		8	(8 voices)
+>>>0x36		string		>\0	Title: "%s"
 
 0		string		FAR
 >0x2c		byte		0x0d
