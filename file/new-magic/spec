@@ -1,0 +1,21 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# spec:  file(1) magic for SPEC raw results (*.raw, *.rsf)
+#
+# Cloyce D. Spradling <cloyce@headgear.org>
+
+0	string	spec			SPEC|3880
+>4	string	.cpu			CPU|3881
+>>8	string	<:			\b%.4s|3881
+>>12	string	.			raw result text|3881
+
+17	string	version=SPECjbb		SPECjbb|3882
+>32	string	<:			\b%.4s|3882
+>>37	string	<:			v%.4s raw result text|3882
+
+0	string	BEGIN\040SPECWEB	SPECweb|3883
+>13	string	<:			\b%.2s|3883
+>>15	string	_SSL			\b_SSL|3883
+>>>20	string	<:			v%.4s raw result text|3883
+>>16	string	<:			v%.4s raw result text|3883

@@ -1,0 +1,42 @@
+
+#------------------------------------------------------------------------------
+# msx:  file(1) magic for the SymbOS operating system
+# http://www.symbos.de
+# Fabio R. Schmidlin <frs@pop.com.br>
+
+# SymbOS EXE file
+0x30	string		SymExe		SymbOS executable|4008
+>0x36	ubyte		x		v%c|4008
+>0x37	ubyte		x		\b.%c|4008
+>0xF	string		x		\b, name: %s|4008
+
+# SymbOS DOX document
+0	string		INFOq\0		SymbOS DOX document|4009
+
+# Symbos driver
+0	string		SMD1		SymbOS driver|4010
+>19	byte		x		\b, name: %c|4010
+>20	byte		x		\b%c|4010
+>21	byte		x		\b%c|4010
+>22	byte		x		\b%c|4010
+>23	byte		x		\b%c|4010
+>24	byte		x		\b%c|4010
+>25	byte		x		\b%c|4010
+>26	byte		x		\b%c|4010
+>27	byte		x		\b%c|4010
+>28	byte		x		\b%c|4010
+>29	byte		x		\b%c|4010
+>30	byte		x		\b%c|4010
+>31	byte		x		\b%c|4010
+
+# Symbos video
+0	string		SymVid		SymbOS video|4011
+>6	ubyte		x		v%c|4011
+>7	ubyte		x		\b.%c|4011
+
+# Soundtrakker 128 ST2 music
+0	byte		0
+>0xC	string		\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x40\x00	Soundtrakker 128 ST2 music,|4012
+>>1	string		x		name: %s|4012
+
+

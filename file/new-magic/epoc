@@ -1,0 +1,62 @@
+
+#------------------------------------------------------------------------------
+# $File: epoc,v 1.8 2012/06/16 14:43:36 christos Exp $
+# EPOC : file(1) magic for EPOC documents [Psion Series 5/Osaris/Geofox 1]
+# Stefan Praszalowicz <hpicollo@worldnet.fr> and Peter Breitenlohner <peb@mppmu.mpg.de>
+# Useful information for improving this file can be found at:
+# http://software.frodo.looijaard.name/psiconv/formats/Index.html
+#------------------------------------------------------------------------------
+0	lelong		0x10000037	Psion Series 5|1629
+>4	lelong		0x10000039	font file|1630
+>4	lelong		0x1000003A	printer driver|1631
+>4	lelong		0x1000003B	clipboard|1632
+>4	lelong		0x10000042	multi-bitmap image|1633
+!:mime image/x-epoc-mbm
+>4	lelong		0x1000006A	application information file|1634
+>4	lelong		0x1000006D
+>>8	lelong		0x1000007D	Sketch image|1635
+!:mime image/x-epoc-sketch
+>>8	lelong		0x1000007E	voice note|1636
+>>8	lelong		0x1000007F	Word file|1637
+!:mime application/x-epoc-word
+>>8	lelong		0x10000085	OPL program (TextEd)|1638
+!:mime application/x-epoc-opl
+>>8	lelong		0x10000087	Comms settings|1639
+>>8	lelong		0x10000088	Sheet file|1640
+!:mime application/x-epoc-sheet
+>>8	lelong		0x100001C4	EasyFax initialisation file|1641
+>4	lelong		0x10000073	OPO module|1642
+!:mime application/x-epoc-opo
+>4	lelong		0x10000074	OPL application|1643
+!:mime application/x-epoc-app
+>4	lelong		0x1000008A	exported multi-bitmap image|1644
+>4	lelong		0x1000016D
+>>8	lelong		0x10000087	Comms names|1645
+
+0	lelong		0x10000041	Psion Series 5 ROM multi-bitmap image|1646
+
+0	lelong		0x10000050	Psion Series 5|1629
+>4	lelong		0x1000006D	database|1647
+>>8	lelong		0x10000084	Agenda file|1648
+!:mime application/x-epoc-agenda
+>>8	lelong		0x10000086	Data file|1649
+!:mime application/x-epoc-data
+>>8	lelong		0x10000CEA	Jotter file|1650
+!:mime application/x-epoc-jotter
+>4	lelong		0x100000E4	ini file|1651
+
+0	lelong		0x10000079	Psion Series 5 binary:|1652
+>4	lelong		0x00000000	DLL|1653
+>4	lelong		0x10000049	comms hardware library|1654
+>4	lelong		0x1000004A	comms protocol library|1655
+>4	lelong		0x1000005D	OPX|1656
+>4	lelong		0x1000006C	application|1657
+>4	lelong		0x1000008D	DLL|1653
+>4	lelong		0x100000AC	logical device driver|1658
+>4	lelong		0x100000AD	physical device driver|1659
+>4	lelong		0x100000E5	file transfer protocol|1660
+>4	lelong		0x100000E5	file transfer protocol
+>4	lelong		0x10000140	printer definition
+>4	lelong		0x10000141	printer definition
+
+0	lelong		0x1000007A	Psion Series 5 executable|1661

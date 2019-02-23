@@ -115,6 +115,7 @@ class Magic:
     type: Type
     test: Test
     desc: str
+    file_name: str
 
     def __init__(self):
         self.level = None
@@ -124,6 +125,7 @@ class Magic:
         self.desc = None
         self.line_no = 0
         self.line = None
+        self.file_name = None
 
     def __str__(self):
         def print_list(objs):

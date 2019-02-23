@@ -1,0 +1,8 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# typeset:  file(1) magic for other typesetting
+#
+0	string		Interpress/Xerox	Xerox InterPress data|4306
+>16	string		/			(version|4307
+>>17	string		>\0			%s)|4307

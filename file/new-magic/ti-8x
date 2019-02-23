@@ -1,0 +1,239 @@
+
+#------------------------------------------------------------------------------
+# $File: ti-8x,v 1.6 2009/09/19 16:28:12 christos Exp $
+# ti-8x: file(1) magic for the TI-8x and TI-9x Graphing Calculators.
+#
+# From: Ryan McGuire (rmcguire@freenet.columbus.oh.us).
+#
+# Update: Romain Lievin (roms@lpg.ticalc.org).
+#
+# NOTE: This list is not complete.
+# Files for the TI-80 and TI-81 are pretty rare. I'm not going to put the
+# program/group magic numbers in here because I cannot find any.
+0		string		**TI80**	TI-80 Graphing Calculator File.|4130
+0		string		**TI81**	TI-81 Graphing Calculator File.|4131
+#
+# Magic Numbers for the TI-73
+#
+0		string		**TI73**	TI-73 Graphing Calculator|4132
+>0x00003B	byte		0x00		(real number)|4133
+>0x00003B	byte		0x01		(list)|4134
+>0x00003B	byte		0x02		(matrix)|4135
+>0x00003B	byte		0x03		(equation)|4136
+>0x00003B	byte		0x04		(string)|4137
+>0x00003B	byte		0x05		(program)|4138
+>0x00003B	byte		0x06		(assembly program)|4139
+>0x00003B	byte		0x07		(picture)|4140
+>0x00003B	byte		0x08		(gdb)|4141
+>0x00003B	byte		0x0C		(complex number)|4142
+>0x00003B	byte		0x0F		(window settings)|4143
+>0x00003B	byte		0x10		(zoom)|4144
+>0x00003B	byte		0x11		(table setup)|4145
+>0x00003B	byte		0x13		(backup)|4146
+
+# Magic Numbers for the TI-82
+#
+0		string		**TI82**	TI-82 Graphing Calculator|4147
+>0x00003B	byte		0x00		(real)|4148
+>0x00003B	byte		0x01		(list)|4149
+>0x00003B	byte		0x02		(matrix)|4150
+>0x00003B	byte		0x03		(Y-variable)|4151
+>0x00003B	byte		0x05		(program)|4152
+>0x00003B	byte		0x06		(protected prgm)|4153
+>0x00003B	byte		0x07		(picture)|4154
+>0x00003B	byte		0x08		(gdb)|4155
+>0x00003B	byte		0x0B		(window settings)|4156
+>0x00003B	byte		0x0C		(window settings)|4156
+>0x00003B	byte		0x0D		(table setup)|4157
+>0x00003B	byte		0x0E		(screenshot)|4158
+>0x00003B	byte		0x0F		(backup)|4159
+#
+# Magic Numbers for the TI-83
+#
+0		string		**TI83**	TI-83 Graphing Calculator|4160
+>0x00003B	byte		0x00		(real)|4161
+>0x00003B	byte		0x01		(list)|4162
+>0x00003B	byte		0x02		(matrix)|4163
+>0x00003B	byte		0x03		(Y-variable)|4164
+>0x00003B	byte		0x04		(string)|4165
+>0x00003B	byte		0x05		(program)|4166
+>0x00003B	byte		0x06		(protected prgm)|4167
+>0x00003B	byte		0x07		(picture)|4168
+>0x00003B	byte		0x08		(gdb)|4169
+>0x00003B	byte		0x0B		(window settings)|4170
+>0x00003B	byte		0x0C		(window settings)|4170
+>0x00003B	byte		0x0D		(table setup)|4171
+>0x00003B	byte		0x0E		(screenshot)|4172
+>0x00003B	byte		0x13		(backup)|4173
+#
+# Magic Numbers for the TI-83+
+#
+0		string		**TI83F*	TI-83+ Graphing Calculator|4174
+>0x00003B	byte		0x00		(real number)|4175
+>0x00003B	byte		0x01		(list)|4176
+>0x00003B	byte		0x02		(matrix)|4177
+>0x00003B	byte		0x03		(equation)|4178
+>0x00003B	byte		0x04		(string)|4179
+>0x00003B	byte		0x05		(program)|4180
+>0x00003B	byte		0x06		(assembly program)|4181
+>0x00003B	byte		0x07		(picture)|4182
+>0x00003B	byte		0x08		(gdb)|4183
+>0x00003B	byte		0x0C		(complex number)|4184
+>0x00003B	byte		0x0F		(window settings)|4185
+>0x00003B	byte		0x10		(zoom)|4186
+>0x00003B	byte		0x11		(table setup)|4187
+>0x00003B	byte		0x13		(backup)|4188
+>0x00003B	byte		0x15		(application variable)|4189
+>0x00003B	byte		0x17		(group of variable)|4190
+
+#
+# Magic Numbers for the TI-85
+#
+0		string		**TI85**	TI-85 Graphing Calculator|4191
+>0x00003B	byte		0x00		(real number)|4192
+>0x00003B	byte		0x01		(complex number)|4193
+>0x00003B	byte		0x02		(real vector)|4194
+>0x00003B	byte		0x03		(complex vector)|4195
+>0x00003B	byte		0x04		(real list)|4196
+>0x00003B	byte		0x05		(complex list)|4197
+>0x00003B	byte		0x06		(real matrix)|4198
+>0x00003B	byte		0x07		(complex matrix)|4199
+>0x00003B	byte		0x08		(real constant)|4200
+>0x00003B	byte		0x09		(complex constant)|4201
+>0x00003B	byte		0x0A		(equation)|4202
+>0x00003B	byte		0x0C		(string)|4203
+>0x00003B	byte		0x0D		(function GDB)|4204
+>0x00003B	byte		0x0E		(polar GDB)|4205
+>0x00003B	byte		0x0F		(parametric GDB)|4206
+>0x00003B	byte		0x10		(diffeq GDB)|4207
+>0x00003B	byte		0x11		(picture)|4208
+>0x00003B	byte		0x12		(program)|4209
+>0x00003B	byte		0x13		(range)|4210
+>0x00003B	byte		0x17		(window settings)|4211
+>0x00003B	byte		0x18		(window settings)|4211
+>0x00003B	byte		0x19		(window settings)|4211
+>0x00003B	byte		0x1A		(window settings)|4211
+>0x00003B	byte		0x1B		(zoom)|4212
+>0x00003B	byte		0x1D		(backup)|4213
+>0x00003B	byte		0x1E		(unknown)|4214
+>0x00003B	byte		0x2A		(equation)|4202
+>0x000032	string		ZS4		- ZShell Version 4 File.
+>0x000032	string		ZS3		- ZShell Version 3 File.
+#
+# Magic Numbers for the TI-86
+#
+0		string		**TI86**	TI-86 Graphing Calculator|4215
+>0x00003B	byte		0x00		(real number)|4216
+>0x00003B	byte		0x01		(complex number)|4217
+>0x00003B	byte		0x02		(real vector)|4218
+>0x00003B	byte		0x03		(complex vector)|4219
+>0x00003B	byte		0x04		(real list)|4220
+>0x00003B	byte		0x05		(complex list)|4221
+>0x00003B	byte		0x06		(real matrix)|4222
+>0x00003B	byte		0x07		(complex matrix)|4223
+>0x00003B	byte		0x08		(real constant)|4224
+>0x00003B	byte		0x09		(complex constant)|4225
+>0x00003B	byte		0x0A		(equation)|4226
+>0x00003B	byte		0x0C		(string)|4227
+>0x00003B	byte		0x0D		(function GDB)|4228
+>0x00003B	byte		0x0E		(polar GDB)|4229
+>0x00003B	byte		0x0F		(parametric GDB)|4230
+>0x00003B	byte		0x10		(diffeq GDB)|4231
+>0x00003B	byte		0x11		(picture)|4232
+>0x00003B	byte		0x12		(program)|4233
+>0x00003B	byte		0x13		(range)|4234
+>0x00003B	byte		0x17		(window settings)|4235
+>0x00003B	byte		0x18		(window settings)|4235
+>0x00003B	byte		0x19		(window settings)|4235
+>0x00003B	byte		0x1A		(window settings)|4235
+>0x00003B	byte		0x1B		(zoom)|4236
+>0x00003B	byte		0x1D		(backup)|4237
+>0x00003B	byte		0x1E		(unknown)|4238
+>0x00003B	byte		0x2A		(equation)|4226
+#
+# Magic Numbers for the TI-89
+#
+0		string		**TI89**	TI-89 Graphing Calculator|4239
+>0x000048	byte		0x00		(expression)|4240
+>0x000048	byte		0x04		(list)|4241
+>0x000048	byte		0x06		(matrix)|4242
+>0x000048	byte		0x0A		(data)|4243
+>0x000048	byte		0x0B		(text)|4244
+>0x000048	byte		0x0C		(string)|4245
+>0x000048	byte		0x0D		(graphic data base)|4246
+>0x000048	byte		0x0E		(figure)|4247
+>0x000048	byte		0x10		(picture)|4248
+>0x000048	byte		0x12		(program)|4249
+>0x000048	byte		0x13		(function)|4250
+>0x000048	byte		0x14		(macro)|4251
+>0x000048	byte		0x1C		(zipped)|4252
+>0x000048	byte		0x21		(assembler)|4253
+#
+# Magic Numbers for the TI-92
+#
+0		string		**TI92**	TI-92 Graphing Calculator|4254
+>0x000048	byte		0x00		(expression)|4255
+>0x000048	byte		0x04		(list)|4256
+>0x000048	byte		0x06		(matrix)|4257
+>0x000048	byte		0x0A		(data)|4258
+>0x000048	byte		0x0B		(text)|4259
+>0x000048	byte		0x0C		(string)|4260
+>0x000048	byte		0x0D		(graphic data base)|4261
+>0x000048	byte		0x0E		(figure)|4262
+>0x000048	byte		0x10		(picture)|4263
+>0x000048	byte		0x12		(program)|4264
+>0x000048	byte		0x13		(function)|4265
+>0x000048	byte		0x14		(macro)|4266
+>0x000048	byte		0x1D		(backup)|4267
+#
+# Magic Numbers for the TI-92+/V200
+#
+0		string		**TI92P*	TI-92+/V200 Graphing Calculator|4268
+>0x000048	byte		0x00		(expression)|4269
+>0x000048	byte		0x04		(list)|4270
+>0x000048	byte		0x06		(matrix)|4271
+>0x000048	byte		0x0A		(data)|4272
+>0x000048	byte		0x0B		(text)|4273
+>0x000048	byte		0x0C		(string)|4274
+>0x000048	byte		0x0D		(graphic data base)|4275
+>0x000048	byte		0x0E		(figure)|4276
+>0x000048	byte		0x10		(picture)|4277
+>0x000048	byte		0x12		(program)|4278
+>0x000048	byte		0x13		(function)|4279
+>0x000048	byte		0x14		(macro)|4280
+>0x000048	byte		0x1C		(zipped)|4281
+>0x000048	byte		0x21		(assembler)|4282
+#
+# Magic Numbers for the TI-73/83+/89/92+/V200 FLASH upgrades
+#
+0x0000016	string		Advanced	TI-XX Graphing Calculator (FLASH)|4283
+0		string		**TIFL**	TI-XX Graphing Calculator (FLASH)|4283
+>8		byte		>0		- Revision %d|4283
+>>9 		byte		x		\b.%d,|4283
+>12		byte		>0		Revision date %02x|4283
+>>13		byte		x		\b/%02x|4283
+>>14		beshort		x		\b/%04x,|4283
+>17		string		>/0		name: '%s',|4283
+>48		byte		0x74		device: TI-73,|4283
+>48		byte		0x73		device: TI-83+,|4283
+>48		byte		0x98		device: TI-89,|4283
+>48		byte		0x88		device: TI-92+,|4283
+>49		byte		0x23		type: OS upgrade,|4283
+>49		byte		0x24		type: application,|4283
+>49		byte		0x25		type: certificate,|4283
+>49		byte		0x3e		type: license,|4283
+>74		lelong		>0		size: %d bytes|4283
+
+# VTi & TiEmu skins (TI Graphing Calculators).
+# From: Romain Lievin (roms@lpg.ticalc.org).
+# Magic Numbers for the VTi skins
+0               string          VTI		Virtual TI skin|4284
+>3		string		v		- Version|4285
+>>4		byte		>0		\b %c|4285
+>>6		byte		x		\b.%c|4285
+# Magic Numbers for the TiEmu skins
+0		string		TiEmu		TiEmu skin|4286
+>6              string          v               - Version|4287
+>>7             byte            >0              \b %c|4287
+>>9             byte            x               \b.%c|4287
+>>10		byte		x		\b%c|4287

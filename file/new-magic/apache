@@ -1,0 +1,28 @@
+
+#------------------------------------------------------------------------------
+# $File: apache,v 1.1 2017/04/11 14:52:15 christos Exp $
+# apache: file(1) magic for Apache Big Data formats
+
+# Avro files
+0	string		Obj		Apache Avro|409
+>3	byte		x		version %d|409
+
+# ORC files
+# Important information is in file footer, which we can't index to :(
+0	string		ORC		Apache ORC|410
+
+# Parquet files
+0	string		PAR1		Apache Parquet|411
+
+# Hive RC files
+0	string		RCF		Apache Hive RC file|412
+>3	byte		x		version %d|412
+
+# Sequence files (and the careless first version of RC file)
+
+0	string		SEQ
+>3	byte		<6		Apache Hadoop Sequence file version %d|413
+>3	byte		>6		Apache Hadoop Sequence file version %d|413
+>3	byte		=6
+>>5	string		org.apache.hadoop.hive.ql.io.RCFile$KeyBuffer  Apache Hive RC file version 0|414
+>>3	default		x		Apache Hadoop Sequence file version 6|415

@@ -1,0 +1,22 @@
+#------------------------------------------------------------------------------
+# $File$
+# parrot: file(1) magic for Parrot Virtual Machine
+# URL:	http://www.lua.org/
+# From: Lubomir Rintel <lkundrak@v3.sk>
+
+# Compiled Parrot byte code
+0	string	\376PBC\r\n\032\n	Parrot bytecode|3440
+>64	byte	x			%d.|3440
+>72	byte	x			\b%d,|3440
+>8	byte	>0			%d byte words,|3440
+>16	byte	0			little-endian,|3440
+>16	byte	1			big-endian,|3440
+>32	byte	0			IEEE-754 8 byte double floats,|3440
+>32	byte	1			x86 12 byte long double floats,|3440
+>32	byte	2			IEEE-754 16 byte long double floats,|3440
+>32	byte	3			MIPS 16 byte long double floats,|3440
+>32	byte	4			AIX 16 byte long double floats,|3440
+>32	byte	5			4-byte floats,|3440
+>40	byte	x			Parrot %d.|3440
+>48	byte	x			\b%d.|3440
+>56	byte	x			\b%d|3440

@@ -1,0 +1,21 @@
+
+#------------------------------------------------------------------------------
+# $File: glibc,v 1.1 2018/10/11 15:35:43 christos Exp $
+# glibc locale files
+#
+# https://sourceware.org/git/?p=glibc.git;f=locale/localeinfo.h;h=68822a63#l32
+
+0	belong	0x20070920	glibc locale file LC_CTYPE|2174
+0	belong	0x14110320	glibc locale file LC_NUMERIC|2175
+0	belong	0x17110320	glibc locale file LC_TIME|2176
+0	belong	0x17100520	glibc locale file LC_COLLATE|2177
+0	belong	0x11110320	glibc locale file LC_MONETARY|2178
+0	belong	0x10110320	glibc locale file LC_MESSAGES|2179
+0	belong	0x13110320	glibc locale file LC_ALL|2180
+0	belong	0x12110320	glibc locale file LC_PAPER|2181
+0	belong	0x1d110320	glibc locale file LC_NAME|2182
+0	belong	0x1c110320	glibc locale file LC_ADDRESS|2183
+0	belong	0x1f110320	glibc locale file LC_TELEPHONE|2184
+0	belong	0x1e110320	glibc locale file LC_MEASUREMENT|2185
+0	belong	0x19110320	glibc locale file LC_IDENTIFICATION|2186
+

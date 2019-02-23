@@ -1,0 +1,13 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# luks:  file(1) magic for Linux Unified Key Setup
+# URL:	http://luks.endorphin.org/spec
+# From:	Anthon van der Neut <anthon@mnt.org>
+
+0	string		LUKS\xba\xbe	LUKS encrypted file,|2763
+>6	beshort		x		ver %d|2763
+>8	string		x		[%s,|2763
+>40	string		x		%s,|2763
+>72	string		x		%s]|2763
+>168	string		x		UUID: %s|2763

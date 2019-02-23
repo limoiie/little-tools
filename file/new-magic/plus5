@@ -1,0 +1,18 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# plus5:  file(1) magic for Plus Five's UNIX MUMPS
+#
+# XXX - byte order?  Paging Hokey....
+#
+0	short		0x259		mumps avl global|3538
+>2	byte		>0		(V%d)|3538
+>6	byte		>0		with %d byte name|3538
+>7	byte		>0		and %d byte data cells|3538
+0	short		0x25a		mumps blt global|3539
+>2	byte		>0		(V%d)|3539
+>8	short		>0		- %d byte blocks|3539
+>15	byte		0x00		- P/D format|3539
+>15	byte		0x01		- P/K/D format|3539
+>15	byte		0x02		- K/D format|3539
+>15	byte		>0x02		- Bad Flags|3539

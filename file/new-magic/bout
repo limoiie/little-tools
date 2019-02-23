@@ -1,0 +1,11 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# i80960 b.out objects and archives
+#
+0	long		0x10d		i960 b.out relocatable object|1090
+>16	long		>0		not stripped|1091
+#
+# b.out archive (hp-rt on i960)
+0	string		=!<bout>	b.out archive|1092
+>8	string		__.SYMDEF	random library|1093

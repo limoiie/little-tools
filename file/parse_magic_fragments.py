@@ -1,6 +1,9 @@
+import logging
 import sys
 from os import listdir
 from typing import List
+
+from file.init_logging import init_log
 
 sys.path.append(r'..')
 
@@ -18,6 +21,8 @@ def parse_magic_fragment_file(magic_fragment_file: str, handlers: List):
 
 
 def main():
+    init_log()
+
     handlers = [
         # MagicFragmentHandler(),
         TestFragmentHandler()

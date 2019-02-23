@@ -1,0 +1,16 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# rtf:	file(1) magic for Rich Text Format (RTF)
+#
+# Duncan P. Simpson, D.P.Simpson@dcs.warwick.ac.uk
+#
+0	string		{\\rtf		Rich Text Format data,|3698
+!:mime	text/rtf
+>5	string		1		version 1,|3699
+>>6	string		\\ansi		ANSI|3700
+>>6	string		\\mac		Apple Macintosh|3701
+>>6	string		\\pc		IBM PC, code page 437|3702
+>>6	string		\\pca		IBM PS/2, code page 850|3703
+>>6	default		x		unknown character set|3704
+>5	default		x		unknown version|3705

@@ -1,0 +1,33 @@
+
+#------------------------------------------------------------------------------
+# $File: bsdi,v 1.6 2013/01/09 22:37:24 christos Exp $
+# bsdi:  file(1) magic for BSD/OS (from BSDI) objects
+# Some object/executable formats use the same magic numbers as are used
+# in other OSes; those are handled by entries in aout.
+#
+
+0	lelong		0314		386 compact demand paged pure executable|1094
+>16	lelong		>0		not stripped|1094
+>32	byte		0x6a		(uses shared libs)|1094
+
+# same as in SunOS 4.x, except for static shared libraries
+0	belong&077777777	0600413		SPARC demand paged|1095
+>0	byte		&0x80
+>>20	belong		<4096		shared library|1096
+>>20	belong		=4096		dynamically linked executable|1097
+>>20	belong		>4096		dynamically linked executable|1097
+>0	byte		^0x80		executable|1098
+>16	belong		>0		not stripped
+>36	belong		0xb4100001	(uses shared libs)
+
+0	belong&077777777	0600410		SPARC pure|1099
+>0	byte		&0x80		dynamically linked executable|1100
+>0	byte		^0x80		executable|1101
+>16	belong		>0		not stripped
+>36	belong		0xb4100001	(uses shared libs)
+
+0	belong&077777777	0600407		SPARC|1102
+>0	byte		&0x80		dynamically linked executable|1103
+>0	byte		^0x80		executable|1104
+>16	belong		>0		not stripped
+>36	belong		0xb4100001	(uses shared libs)

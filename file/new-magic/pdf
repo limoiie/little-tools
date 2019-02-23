@@ -1,0 +1,31 @@
+
+#------------------------------------------------------------------------------
+# $File: pdf,v 1.10 2018/05/23 22:21:01 christos Exp $
+# pdf:  file(1) magic for Portable Document Format
+#
+
+0	string		%PDF-		PDF document|3449
+!:mime	application/pdf
+!:strength +60
+>5	byte		x		\b, version %c|3449
+>7	byte		x		\b.%c|3449
+
+0	string		\012%PDF-	PDF document|3449
+!:mime	application/pdf
+!:strength +60
+>6	byte		x		\b, version %c|3449
+>8	byte		x		\b.%c|3449
+
+# From: Nick Schmalenberger <nick@schmalenberger.us>
+# Forms Data Format
+0       string          %FDF-           FDF document|3450
+!:mime application/vnd.fdf
+!:strength +60
+>5      byte            x               \b, version %c|3450
+>7      byte            x               \b.%c|3450
+
+0	search/256	%PDF-		PDF document|3449
+!:mime	application/pdf
+!:strength +60
+>&0	byte		x		\b, version %c|3449
+>&2	byte		x		\b.%c|3449

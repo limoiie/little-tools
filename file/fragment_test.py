@@ -1,10 +1,11 @@
 import abc
 import re
-from typing import List, Dict, Any
+from typing import List, Dict
 
-from file.fragment import MagicTree, MagicTreeBuilder, TreeNode, MagicTree
+from file.fragment import MagicTreeBuilder, TreeNode, MagicTree
 from file.magic import Magic, parse_magic, have_same_test_method, join_magic_desc, Test
 from file.op_intersect import are_mutex, is_lhv_contain_rhv, str_to_int
+from file.type_record import TypeDatabase, print_all_info
 
 
 class SimpleQueue:
@@ -87,7 +88,8 @@ class FeatureExtractor:
 
         self.magic_queue.push(magic)
 
-    def build(self):
+    @staticmethod
+    def build():
         return None
 
 
@@ -122,6 +124,9 @@ class Fragment(abc.ABC):
 
     def set_file_name(self, file_name: str):
         self.file_name = file_name
+
+    def get_file_name(self):
+        return self.file_name
 
 
 class TestFragment(Fragment):
@@ -281,7 +286,7 @@ class PrintNameFragment(Fragment):
         return self.name
 
     def print(self):
-        print_magic_tree(self)
+        print_magic_tree(self.root())
         print()
         print()
         pass
@@ -333,7 +338,7 @@ class PrintFragment(Fragment):
             if self.magic_tree.root.val.is_name():
                 print('name case:', self.magic_tree.root.val)
             else:
-                print_magic_tree(self)
+                print_magic_tree(self.root())
                 print()
                 print()
         # if self.peak_num < 3:
@@ -381,6 +386,7 @@ class TestFragmentHandler:
         if 0 == magic.level:
             self.__finish_fragment_and_append()
             self.__create_new_fragment(file_name)
+        magic.file_name = self.fragment.get_file_name()
         self.fragment.handle_magic(magic)
 
     def __create_new_fragment(self, file_name: str):
@@ -427,6 +433,9 @@ class TestFragmentHandler:
         for candidate_type in PrintNameFragment.all_type:
             print(candidate_type)
 
+        print_all_info()
+        TypeDatabase.instance.dump()
+
 
 def parse_line_to_magic(line: str, line_no):
     magic = parse_magic(line)
@@ -434,8 +443,8 @@ def parse_line_to_magic(line: str, line_no):
     return magic
 
 
-def print_magic_tree(tree_root: Fragment):
-    explorer_and_print('', tree_root.root(), set(), tree_root)
+def print_magic_tree(tree_root: TreeNode):
+    explorer_and_print('', tree_root, set())
 
 
 def reduce_magic_tree(tree_root: MagicTree):
@@ -492,7 +501,7 @@ def does_first_child_contain_remainder(children: List):
     return True
 
 
-def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: Fragment):
+def explorer_and_print(prefix: str, node: TreeNode, use_history: set):
     is_use, is_already_visited = visit_if_call_use(node, use_history)
     if is_already_visited:
         return
@@ -501,9 +510,12 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
     # print(node.val.line, ' ' * 20, '\t\t', prefix, 'explorer', always_true_n, len(node.children))
     print(node.val.line, ' ' * 20, '\t\t', '@%s@' % prefix, '$explorer$')
 
-    if len(prefix) > 1:
+    if len(prefix) > 1 and prefix != '&&':
         # PrintNameFragment.all_type.add(prefix + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
         PrintNameFragment.all_type.add(prefix)
+        record = TypeDatabase.new_record(
+            node.val.file_name, node.val.line_no, prefix)
+        TypeDatabase.instance.put_record(record)
 
     always_true_n = count_always_true_in_front(node.children)
     is_mutual_exclude, idx_block_end = \
@@ -523,11 +535,11 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
 
         for i in range(always_true_n, idx_block_end):
             mutual_exclude_switch_string += node.children[i].val.desc
-    mutual_exclude_switch_string = '&%s&' % 'ignored'
+    mutual_exclude_switch_string = '&%s&' % ''
 
     # if no switch in curr level, and if the first child looks like a title
     # use it as the prefix
-    if node.children and not is_mutual_exclude and not prefix:
+    if len(node.children) > 1 and not is_mutual_exclude and not prefix:
         possible_type = node.children[0].val.desc
         if most_like_a_type(possible_type):
             prefix = possible_type
@@ -546,7 +558,7 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
                 printed = False
                 if (is_mutual_exclude and i < idx_block_end) or not prefix:
                     # print('explorer caused: ', i, idx_block_end, prefix)
-                    explorer_and_print(prefix, child, use_history, fragment)
+                    explorer_and_print(prefix, child, use_history)
                     printed = True
 
                 # if there is no prefix, take the desc of front always true node as
@@ -557,7 +569,7 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
                     elif i + 1 == idx_block_end:
                         last_magic: Magic = node.children[i].val
                         if last_magic.is_default():
-                            prefix = '&ignored&'
+                            prefix = '&&'
 
                 if printed:
                     continue
@@ -565,18 +577,18 @@ def explorer_and_print(prefix: str, node: TreeNode, use_history: set, fragment: 
             if i >= idx_block_end:
                 followed_trivial = True
 
-        # print('just caused: ', prefix, is_mutual_exclude, i, idx_block_end, is_trivial, followed_trivial)
-        if not prefix and is_mutual_exclude and i >= idx_block_end:
-            just_print(mutual_exclude_switch_string, child, use_history, fragment)
+        # print('just caused: ', prefix, is_mutual_exclude, i, idx_block_end, is_trivial)
+        if is_mutual_exclude and i >= idx_block_end:
+            just_print(mutual_exclude_switch_string, child, use_history)
         else:
-            just_print(prefix, child, use_history, fragment)
+            just_print(prefix, child, use_history)
     pass
 
     if is_use:
         print(']')
 
 
-def just_print(string: str, node: TreeNode, use_history: set, fragment: Fragment):
+def just_print(string: str, node: TreeNode, use_history: set):
     is_use, is_already_visited = visit_if_call_use(node, use_history)
     if is_use:
         print('JUMP OUT USE SINCE WE ARE JUST', node.val.get_name())
@@ -585,14 +597,17 @@ def just_print(string: str, node: TreeNode, use_history: set, fragment: Fragment
     print(node.val.line, ' ' * 20, '\t\t', '@%s@' % string, '$just$')
     # print(node.val.line, ' ' * 20, '\t\t', string)
 
-    if len(string) > 1:
+    if len(string) > 1 and string != '&&':
         # PrintNameFragment.all_type.add(string + ' `%s`: %d' % (fragment.file_name, node.val.line_no))
         PrintNameFragment.all_type.add(string)
+        record = TypeDatabase.new_record(
+            node.val.file_name, node.val.line_no, string)
+        TypeDatabase.instance.put_record(record)
 
     if is_use:
         print('[')
     for child in node.children:
-        just_print(string, child, use_history, fragment)
+        just_print(string, child, use_history)
 
     if is_use:
         print(']')
@@ -701,12 +716,14 @@ def trivial_desc(prefix: str, magic: Magic):
         desc = desc.replace(r'theme', '')
         desc = desc.replace(r'for', '')
         desc = desc.replace(r'length', '')
-        desc = desc.replace(r'format', '')
+        # desc = desc.replace(r'format', '')
         desc = desc.replace(r'bit', '')
         desc = desc.replace(r'dpi', '')
         desc = desc.replace(r'inodes', '')
         desc = desc.replace(r'blocks', '')
         desc = desc.replace(r'pixels', '')
+        desc = desc.replace(r'date', '')
+        desc = desc.replace(r'unused', '')
 
     desc = desc.replace(r': ', '')
     desc = desc.replace(r'.', '')

@@ -1,0 +1,12 @@
+
+#------------------------------------------------------------------------------
+# $File$
+# Virtutech Compressed Random Access File Format
+#
+# From <gustav@virtutech.com>
+0      string          \211\277\036\203        Virtutech CRAFF|4375
+>4     belong          x               v%d|4375
+>20    belong          0               uncompressed|4376
+>20    belong          1               bzipp2ed|4377
+>20    belong          2               gzipped|4378
+>24    belong          0               not clean
