@@ -19,4 +19,4 @@
 # is a checksum that could (presumably) have any leading digit,
 # and we don't have regular expression matching yet.
 # Hence the following official kludge:
-8	string		\001s\ 			SCCS archive data|3709
+8	string		\001s\ 			SCCS archive data|3699

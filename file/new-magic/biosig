@@ -11,144 +11,144 @@
 #
 ##############################################################################
 #
-0	string  ABF\x20					Biosig/Axon Binary format|1028
+0	string  ABF\x20					Biosig/Axon Binary format|1026
 !:mime biosig/abf2
-0	string  ABF2\0\0				Biosig/Axon Binary format|1028
+0	string  ABF2\0\0				Biosig/Axon Binary format|1026
 !:mime biosig/abf2
 #
-0	string  ATES\x20MEDICA\x20SOFT.\x20EEG\x20for\x20Windows	Biosig/ATES MEDICA SOFT. EEG for Windows|1029
+0	string  ATES\x20MEDICA\x20SOFT.\x20EEG\x20for\x20Windows	Biosig/ATES MEDICA SOFT. EEG for Windows|1027
 !:mime biosig/ates
 #
-0	string  ATF\x09					Biosig/Axon Text fomrat|1030
+0	string  ATF\x09					Biosig/Axon Text fomrat|1028
 !:mime biosig/atf
 #
-0	string  ADU1					Biosig/Axona file format|1031
+0	string  ADU1					Biosig/Axona file format|1029
 !:mime biosig/axona
-0	string  ADU2					Biosig/Axona file format|1031
+0	string  ADU2					Biosig/Axona file format|1029
 !:mime biosig/axona
 #
-0	string  ALPHA-TRACE-MEDICAL			Biosig/alpha trace|1032
+0	string  ALPHA-TRACE-MEDICAL			Biosig/alpha trace|1030
 !:mime biosig/alpha
 #
-0       string  AxGr					Biosig/AXG|1033
-0       string  axgx					Biosig/AXG|1033
+0       string  AxGr					Biosig/AXG|1031
+0       string  axgx					Biosig/AXG|1031
 !:mime biosig/axg
 #
-0	string  HeaderLen=				Biosig/BCI2000|1034
-0	string  BCI2000V				Biosig/BCI2000|1034
+0	string  HeaderLen=				Biosig/BCI2000|1032
+0	string  BCI2000V				Biosig/BCI2000|1032
 !:mime biosig/bci2000
 #
 ### Specification: https://www.biosemi.com/faq/file_format.htm
-0	string  \xffBIOSEMI				Biosig/Biosemi data format|1035
+0	string  \xffBIOSEMI				Biosig/Biosemi data format|1033
 !:mime biosig/bdf
 #
-0	string  Brain\x20Vision\x20Data\x20Exchange\x20Header\x20File			Biosig/Brainvision data file|1036
-0	string  Brain\x20Vision\x20V-Amp\x20Data\x20Header\x20File\x20Version		Biosig/Brainvision V-Amp file|1037
-0	string  Brain\x20Vision\x20Data\x20Exchange\x20Marker\x20File,\x20Version	Biosig/Brainvision Marker file|1038
+0	string  Brain\x20Vision\x20Data\x20Exchange\x20Header\x20File			Biosig/Brainvision data file|1034
+0	string  Brain\x20Vision\x20V-Amp\x20Data\x20Header\x20File\x20Version		Biosig/Brainvision V-Amp file|1035
+0	string  Brain\x20Vision\x20Data\x20Exchange\x20Marker\x20File,\x20Version	Biosig/Brainvision Marker file|1036
 !:mime biosig/brainvision
 #
-0	string  CEDFILE					Biosig/CFS: Cambridge Electronic devices File format|1039
+0	string  CEDFILE					Biosig/CFS: Cambridge Electronic devices File format|1037
 !:mime biosig/ced
 #
 ### Specification: https://www.edfplus.info/specs/index.html
-0	string	0\x20\x20\x20\x20\x20\x20\x20		Biosig/EDF: European Data format|1040
+0	string	0\x20\x20\x20\x20\x20\x20\x20		Biosig/EDF: European Data format|1038
 !:mime biosig/edf
 #
 ### Specifications: https://arxiv.org/abs/cs/0608052
-0	string  GDF					Biosig/GDF: General data format for biosignals|1041
+0	string  GDF					Biosig/GDF: General data format for biosignals|1039
 !:mime biosig/gdf
 #
-0	string  DATA\0\0\0\0				Biosig/Heka Patchmaster|1042
-0	string  DAT1\0\0\0\0				Biosig/Heka Patchmaster|1042
-0	string  DAT2\0\0\0\0				Biosig/Heka Patchmaster|1042
+0	string  DATA\0\0\0\0				Biosig/Heka Patchmaster|1040
+0	string  DAT1\0\0\0\0				Biosig/Heka Patchmaster|1040
+0	string  DAT2\0\0\0\0				Biosig/Heka Patchmaster|1040
 !:mime biosig/heka
 #
-0	string  (C)\x20CED\x2087			Biosig/CED SMR|1043
+0	string  (C)\x20CED\x2087			Biosig/CED SMR|1041
 !:mime biosig/ced-smr
 #
-0	string  CFWB\1\0\0\0				Biosig/CFWB|1044
+0	string  CFWB\1\0\0\0				Biosig/CFWB|1042
 !:mime biosig/cfwb
 #
-0	string  DEMG					Biosig/DEMG|1045
+0	string  DEMG					Biosig/DEMG|1043
 !:mime biosig/demg
 #
-0	string  EBS\x94\x0a\x13\x1a\x0d			Biosig/EBS|1046
+0	string  EBS\x94\x0a\x13\x1a\x0d			Biosig/EBS|1044
 !:mime biosig/ebs
 #
-0	string  Embla\x20data\x20file			Biosig/Embla|1047
+0	string  Embla\x20data\x20file			Biosig/Embla|1045
 !:mime biosig/embla
 #
-0	string  Header\r\nFile Version			Biosig/ETG4000|1048
+0	string  Header\r\nFile Version			Biosig/ETG4000|1046
 !:mime biosig/etg4000
 #
-0	string  GALILEO\x20EEG\x20TRACE\x20FILE		Biosig/Galileo|1049
+0	string  GALILEO\x20EEG\x20TRACE\x20FILE		Biosig/Galileo|1047
 !:mime biosig/galileo
 #
-0	string  IGOR					Biosig/IgorPro ITX file|1050
+0	string  IGOR					Biosig/IgorPro ITX file|1048
 !:mime biosig/igorpro
 #
 #	Specification: http://www.ampsmedical.com/uploads/2017-12-7/The_ISHNE_Format.pdf
-0	string  ISHNE1.0				Biosig/ISHNE|1051
+0	string  ISHNE1.0				Biosig/ISHNE|1049
 !:mime biosig/ishne
 #
 # 	CEN/ISO 11073/22077 series, http://www.mfer.org/en/document.htm
-0	string  @\x20\x20MFER\x20			Biosig/MFER|1052
-0	string  @\x20MFR\x20				Biosig/MFER|1052
+0	string  @\x20\x20MFER\x20			Biosig/MFER|1050
+0	string  @\x20MFR\x20				Biosig/MFER|1050
 !:mime biosig/mfer
 #
-0	string  NEURALEV				Biosig/NEV|1053
-0	string  N.EV.\0					Biosig/NEV|1053
+0	string  NEURALEV				Biosig/NEV|1051
+0	string  N.EV.\0					Biosig/NEV|1051
 !:mime biosig/nev
 #
-0	string  NEX1					Biosig/NEX|1054
+0	string  NEX1					Biosig/NEX|1052
 !:mime biosig/nex1
 #
-0	string  PLEX 					Biosig/Plexon v1.0|1055
-10	string  PLEXON 					Biosig/Plexon v2.0|1056
+0	string  PLEX 					Biosig/Plexon v1.0|1053
+10	string  PLEXON 					Biosig/Plexon v2.0|1054
 !:mime biosig/plexon
 #
-0	string  \x02\x27\x91\xC6			Biosig/RHD2000: Intan RHD2000 format|1057
+0	string  \x02\x27\x91\xC6			Biosig/RHD2000: Intan RHD2000 format|1055
 #
 #	Specification: CEN 1064:2005/ISO 11073:91064
-16	string  SCPECG\0\0 				Biosig/SCP-ECG format CEN 1064:2005/ISO 11073:91064|1058
+16	string  SCPECG\0\0 				Biosig/SCP-ECG format CEN 1064:2005/ISO 11073:91064|1056
 !:mime biosig/scpecg
 #
-0	string  IAvSFo									Biosig/SIGIF|1059
+0	string  IAvSFo									Biosig/SIGIF|1057
 !:mime biosig/sigif
 #
-0	string  POLY\x20SAMPLE\x20FILEversion\x20					Biosig/TMS32|1060
+0	string  POLY\x20SAMPLE\x20FILEversion\x20					Biosig/TMS32|1058
 !:mime biosig/tms32
 #
-0	string  FileId=TMSi\x20PortiLab\x20sample\x20log\x20file\x0a\x0dVersion=	Biosig/TMSiLOG|1061
+0	string  FileId=TMSi\x20PortiLab\x20sample\x20log\x20file\x0a\x0dVersion=	Biosig/TMSiLOG|1059
 !:mime biosig/tmsilog
 #
 4	string	Synergy\0\48\49\50\46\48\48\51\46\48\48\48\46\48\48\48\0\28\0\0\0\2\0\0\0
 >63	string	CRawDataElement
->>85	string	CRawDataBuffer								Biosig/SYNERGY|1062
+>>85	string	CRawDataBuffer								Biosig/SYNERGY|1060
 !:mime biosig/synergy
 #
-4	string	\40\0\4\1\44\1\102\2\146\3\44\0\190\3					Biosig/UNIPRO|1063
+4	string	\40\0\4\1\44\1\102\2\146\3\44\0\190\3					Biosig/UNIPRO|1061
 !:mime biosig/unipro
 #
-0	string	VER=9\r\nCTIME=								Biosig/WCP|1064
+0	string	VER=9\r\nCTIME=								Biosig/WCP|1062
 !:mime biosig/wcp
 #
-0	string	\xAF\xFE\xDA\xDA							Biosig/Walter Graphtek|1065
-0	string	\xDA\xDA\xFE\xAF							Biosig/Walter Graphtek|1065
-0	string	\x55\x55\xFE\xAF							Biosig/Walter Graphtek|1065
+0	string	\xAF\xFE\xDA\xDA							Biosig/Walter Graphtek|1063
+0	string	\xDA\xDA\xFE\xAF							Biosig/Walter Graphtek|1063
+0	string	\x55\x55\xFE\xAF							Biosig/Walter Graphtek|1063
 !:mime biosig/walter-graphtek
 #
 0	string  V3.0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
->32	string  [PatInfo]								Biosig/Sigma|1066
+>32	string  [PatInfo]								Biosig/Sigma|1064
 !:mime biosig/sigma
 #
-0	string  \067\069\078\013\010\0x1a\04\0x84					Biosig/File exchange format (FEF)|1067
+0	string  \067\069\078\013\010\0x1a\04\0x84					Biosig/File exchange format (FEF)|1065
 !:mime biosig/fef
-0	string  \67\69\78\0x13\0x10\0x1a\4\0x84						Biosig/File exchange format (FEF)|1067
+0	string  \67\69\78\0x13\0x10\0x1a\4\0x84						Biosig/File exchange format (FEF)|1065
 !:mime biosig/fef
 #
 0	string  \0\0\0\x64\0\0\0\x1f\0\0\0\x14\0\0\0\0\0\1
 >36  	string  \0\0\0\x65\0\0\0\3\0\0\0\4\0\0
->>56	string  \0\0\0\x6a\0\0\0\3\0\0\0\4\0\0\0\0\xff\xff\xff\xff\0\0			Biosig/FIFF|1068
+>>56	string  \0\0\0\x6a\0\0\0\3\0\0\0\4\0\0\0\0\xff\xff\xff\xff\0\0			Biosig/FIFF|1066
 !:mime biosig/fiff
 #

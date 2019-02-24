@@ -10,55 +10,55 @@
 # IFF files begin with an 8 byte FORM header, followed by a 4 character
 # FORM type, which is followed by the first chunk in the FORM.
 
-0	string		FORM		IFF data|2360
+0	string		FORM		IFF data|2354
 #>4	belong		x		\b, FORM is %d bytes long
 # audio formats
->8	string		AIFF		\b, AIFF audio|2361
+>8	string		AIFF		\b, AIFF audio|2355
 !:mime	audio/x-aiff
->8	string		AIFC		\b, AIFF-C compressed audio|2362
+>8	string		AIFC		\b, AIFF-C compressed audio|2356
 !:mime	audio/x-aiff
->8	string		8SVX		\b, 8SVX 8-bit sampled sound voice|2363
+>8	string		8SVX		\b, 8SVX 8-bit sampled sound voice|2357
 !:mime	audio/x-aiff
->8	string		16SV		\b, 16SV 16-bit sampled sound voice|2364
->8	string		SAMP		\b, SAMP sampled audio|2365
->8	string		MAUD		\b, MAUD MacroSystem audio|2366
->8	string		SMUS		\b, SMUS simple music|2367
->8	string		CMUS		\b, CMUS complex music|2368
+>8	string		16SV		\b, 16SV 16-bit sampled sound voice|2358
+>8	string		SAMP		\b, SAMP sampled audio|2359
+>8	string		MAUD		\b, MAUD MacroSystem audio|2360
+>8	string		SMUS		\b, SMUS simple music|2361
+>8	string		CMUS		\b, CMUS complex music|2362
 # image formats
->8	string		ILBMBMHD	\b, ILBM interleaved image|2369
->>20	beshort		x		\b, %d x|2369
->>22	beshort		x		%d|2369
->8	string		RGBN		\b, RGBN 12-bit RGB image|2370
->8	string		RGB8		\b, RGB8 24-bit RGB image|2371
->8	string		DEEP		\b, DEEP TVPaint/XiPaint image|2372
->8	string		DR2D		\b, DR2D 2-D object|2373
->8	string		TDDD		\b, TDDD 3-D rendering|2374
->8	string		LWOB		\b, LWOB 3-D object|2375
->8	string		LWO2		\b, LWO2 3-D object, v2|2376
->8	string		LWLO		\b, LWLO 3-D layered object|2377
->8	string		REAL		\b, REAL Real3D rendering|2378
->8	string		MC4D		\b, MC4D MaxonCinema4D rendering|2379
->8	string		ANIM		\b, ANIM animation|2380
->8	string		YAFA		\b, YAFA animation|2381
->8	string		SSA\ 		\b, SSA super smooth animation|2382
->8	string		ACBM		\b, ACBM continuous image|2383
->8	string		FAXX		\b, FAXX fax image|2384
+>8	string		ILBMBMHD	\b, ILBM interleaved image|2363
+>>20	beshort		x		\b, %d x|2363
+>>22	beshort		x		%d|2363
+>8	string		RGBN		\b, RGBN 12-bit RGB image|2364
+>8	string		RGB8		\b, RGB8 24-bit RGB image|2365
+>8	string		DEEP		\b, DEEP TVPaint/XiPaint image|2366
+>8	string		DR2D		\b, DR2D 2-D object|2367
+>8	string		TDDD		\b, TDDD 3-D rendering|2368
+>8	string		LWOB		\b, LWOB 3-D object|2369
+>8	string		LWO2		\b, LWO2 3-D object, v2|2370
+>8	string		LWLO		\b, LWLO 3-D layered object|2371
+>8	string		REAL		\b, REAL Real3D rendering|2372
+>8	string		MC4D		\b, MC4D MaxonCinema4D rendering|2373
+>8	string		ANIM		\b, ANIM animation|2374
+>8	string		YAFA		\b, YAFA animation|2375
+>8	string		SSA\ 		\b, SSA super smooth animation|2376
+>8	string		ACBM		\b, ACBM continuous image|2377
+>8	string		FAXX		\b, FAXX fax image|2378
 # other formats
->8	string		FTXT		\b, FTXT formatted text|2385
->8	string		CTLG		\b, CTLG message catalog|2386
->8	string		PREF		\b, PREF preferences|2387
->8	string		DTYP		\b, DTYP datatype description|2388
->8	string		PTCH		\b, PTCH binary patch|2389
->8	string		AMFF		\b, AMFF AmigaMetaFile format|2390
->8	string		WZRD		\b, WZRD StormWIZARD resource|2391
->8	string		DOC\ 		\b, DOC desktop publishing document|2392
->8	string		WVQA 		\b, Westwood Studios VQA Multimedia,|2393
->>24	leshort		x		%d video frames,|2393
->>26	leshort		x		%d x|2393
->>28	leshort		x		%d|2393
->8	string		MOVE		\b, Wing Commander III Video|2394
->>12	string		_PC_		\b, PC version|2395
->>12	string		3DO_		\b, 3DO version|2396
+>8	string		FTXT		\b, FTXT formatted text|2379
+>8	string		CTLG		\b, CTLG message catalog|2380
+>8	string		PREF		\b, PREF preferences|2381
+>8	string		DTYP		\b, DTYP datatype description|2382
+>8	string		PTCH		\b, PTCH binary patch|2383
+>8	string		AMFF		\b, AMFF AmigaMetaFile format|2384
+>8	string		WZRD		\b, WZRD StormWIZARD resource|2385
+>8	string		DOC\ 		\b, DOC desktop publishing document|2386
+>8	string		WVQA 		\b, Westwood Studios VQA Multimedia,|2387
+>>24	leshort		x		%d video frames,|2387
+>>26	leshort		x		%d x|2387
+>>28	leshort		x		%d|2387
+>8	string		MOVE		\b, Wing Commander III Video|2388
+>>12	string		_PC_		\b, PC version|2389
+>>12	string		3DO_		\b, 3DO version|2390
 
 # These go at the end of the iff rules
 #
@@ -67,7 +67,7 @@
 #
 # Interactive Fiction related formats
 #
->8	string		IFRS		\b, Blorb Interactive Fiction|2397
->>24	string		Exec		with executable chunk|2398
->8	string          IFZS		\b, Z-machine or Glulx saved game file (Quetzal)|2399
+>8	string		IFRS		\b, Blorb Interactive Fiction|2391
+>>24	string		Exec		with executable chunk|2392
+>8	string          IFZS		\b, Z-machine or Glulx saved game file (Quetzal)|2393
 !:mime	application/x-blorb

@@ -5,68 +5,68 @@
 # The `eval' lines recognizes an outrageously clever hack.
 # Keith Waclena <keith@cerberus.uchicago.edu>
 # Send additions to <perl5-porters@perl.org>
-0	search/1024	eval\ "exec\ perl		Perl script text|3465
+0	search/1024	eval\ "exec\ perl		Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ "exec\ /bin/perl		Perl script text|3465
+0	search/1024	eval\ "exec\ /bin/perl		Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ "exec\ /usr/bin/perl	Perl script text|3465
+0	search/1024	eval\ "exec\ /usr/bin/perl	Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ "exec\ /usr/local/bin/perl	Perl script text|3465
+0	search/1024	eval\ "exec\ /usr/local/bin/perl	Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ 'exec\ perl		Perl script text|3465
+0	search/1024	eval\ 'exec\ perl		Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ 'exec\ /bin/perl		Perl script text|3465
+0	search/1024	eval\ 'exec\ /bin/perl		Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ 'exec\ /usr/bin/perl	Perl script text|3465
+0	search/1024	eval\ 'exec\ /usr/bin/perl	Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ 'exec\ /usr/local/bin/perl	Perl script text|3465
+0	search/1024	eval\ 'exec\ /usr/local/bin/perl	Perl script text|3456
 !:mime	text/x-perl
-0	search/1024	eval\ '(exit\ $?0)'\ &&\ eval\ 'exec	Perl script text|3465
+0	search/1024	eval\ '(exit\ $?0)'\ &&\ eval\ 'exec	Perl script text|3456
 !:mime	text/x-perl
-0	string	#!/usr/bin/env\ perl	Perl script text executable|3466
+0	string	#!/usr/bin/env\ perl	Perl script text executable|3457
 !:mime	text/x-perl
-0	string	#!\ /usr/bin/env\ perl	Perl script text executable|3466
+0	string	#!\ /usr/bin/env\ perl	Perl script text executable|3457
 !:mime	text/x-perl
 0	string	#!
->0	regex	\^#!.*/bin/perl([[:space:]].*)*$	Perl script text executable|3466
+>0	regex	\^#!.*/bin/perl([[:space:]].*)*$	Perl script text executable|3457
 !:mime	text/x-perl
 
 # by Dmitry V. Levin and Alexey Tourbin
 # check the first line
 0	search/8192	package
->0	regex		\^package[\ \t]+[0-9A-Za-z_:]+\ *;	Perl5 module source text|3467
+>0	regex		\^package[\ \t]+[0-9A-Za-z_:]+\ *;	Perl5 module source text|3458
 !:strength + 40
 # not 'p', check other lines
 0	search/8192	!p
 >0	regex		\^package[\ \t]+[0-9A-Za-z_:]+\ *;
->>0	regex		\^1\ *;|\^(use|sub|my)\ .*[(;{=]	Perl5 module source text|3467
+>>0	regex		\^1\ *;|\^(use|sub|my)\ .*[(;{=]	Perl5 module source text|3458
 !:strength + 75
 
 # Perl POD documents
 # From: Tom Hukins <tom@eborcom.com>
-0	search/1024/W	\=pod\n		Perl POD document text|3468
-0	search/1024/W	\n\=pod\n	Perl POD document text|3468
-0	search/1024/W	\=head1\ 	Perl POD document text|3468
-0	search/1024/W	\n\=head1\ 	Perl POD document text|3468
-0	search/1024/W	\=head2\ 	Perl POD document text|3468
-0	search/1024/W	\n\=head2\ 	Perl POD document text|3468
-0	search/1024/W	\=encoding\ 	Perl POD document text|3468
-0	search/1024/W	\n\=encoding\ 	Perl POD document text|3468
+0	search/1024/W	\=pod\n		Perl POD document text|3459
+0	search/1024/W	\n\=pod\n	Perl POD document text|3459
+0	search/1024/W	\=head1\ 	Perl POD document text|3459
+0	search/1024/W	\n\=head1\ 	Perl POD document text|3459
+0	search/1024/W	\=head2\ 	Perl POD document text|3459
+0	search/1024/W	\n\=head2\ 	Perl POD document text|3459
+0	search/1024/W	\=encoding\ 	Perl POD document text|3459
+0	search/1024/W	\n\=encoding\ 	Perl POD document text|3459
 
 
 # Perl Storable data files.
-0	string	perl-store	perl Storable (v0.6) data|3469
->4	byte	>0	(net-order %d)|3470
->>4	byte	&01	(network-ordered)|3470
->>4	byte	=3	(major 1)|3470
->>4	byte	=2	(major 1)|3470
+0	string	perl-store	perl Storable (v0.6) data|3460
+>4	byte	>0	(net-order %d)|3461
+>>4	byte	&01	(network-ordered)|3461
+>>4	byte	=3	(major 1)|3461
+>>4	byte	=2	(major 1)|3461
 
-0	string	pst0	perl Storable (v0.7) data|3471
+0	string	pst0	perl Storable (v0.7) data|3462
 >4	byte	>0
->>4	byte	&01	(network-ordered)|3471
->>4	byte	=5	(major 2)|3471
->>4	byte	=4	(major 2)|3471
->>5	byte	>0	(minor %d)|3471
+>>4	byte	&01	(network-ordered)|3462
+>>4	byte	=5	(major 2)|3462
+>>4	byte	=4	(major 2)|3462
+>>5	byte	>0	(minor %d)|3462
 
 # This is Debian #742949 by Zefram <zefram@fysh.org>:
 # -----------------------------------------------------------
@@ -74,27 +74,27 @@
 # <https://metacpan.org/release/Hash-SharedMem> defines a file format
 # for a key/value store.  Details of the file format are in the "DESIGN"
 # file in the module distribution.  Magic:
-0	bequad	=0xa58afd185cbf5af7	Hash::SharedMem master file, big-endian|3472
+0	bequad	=0xa58afd185cbf5af7	Hash::SharedMem master file, big-endian|3463
 >8	bequad	<0x1000000
->>15	byte	>2	\b, line size 2^%d byte|3472
->>14	byte	>2	\b, page size 2^%d byte|3472
+>>15	byte	>2	\b, line size 2^%d byte|3463
+>>14	byte	>2	\b, page size 2^%d byte|3463
 >>13	byte	&1
->>>13	byte	>1	\b, max fanout %d|3472
-0	lequad	=0xa58afd185cbf5af7	Hash::SharedMem master file, little-endian|3473
+>>>13	byte	>1	\b, max fanout %d|3463
+0	lequad	=0xa58afd185cbf5af7	Hash::SharedMem master file, little-endian|3464
 >8	lequad	<0x1000000
->>8	byte	>2	\b, line size 2^%d byte|3473
->>9	byte	>2	\b, page size 2^%d byte|3473
+>>8	byte	>2	\b, line size 2^%d byte|3464
+>>9	byte	>2	\b, page size 2^%d byte|3464
 >>10	byte	&1
->>>10	byte	>1	\b, max fanout %d|3473
-0	bequad	=0xc693dac5ed5e47c2	Hash::SharedMem data file, big-endian|3474
+>>>10	byte	>1	\b, max fanout %d|3464
+0	bequad	=0xc693dac5ed5e47c2	Hash::SharedMem data file, big-endian|3465
 >8	bequad	<0x1000000
->>15	byte	>2	\b, line size 2^%d byte|3474
->>14	byte	>2	\b, page size 2^%d byte|3474
+>>15	byte	>2	\b, line size 2^%d byte|3465
+>>14	byte	>2	\b, page size 2^%d byte|3465
 >>13	byte	&1
->>>13	byte	>1	\b, max fanout %d|3474
-0	lequad	=0xc693dac5ed5e47c2	Hash::SharedMem data file, little-endian|3475
+>>>13	byte	>1	\b, max fanout %d|3465
+0	lequad	=0xc693dac5ed5e47c2	Hash::SharedMem data file, little-endian|3466
 >8	lequad	<0x1000000
->>8	byte	>2	\b, line size 2^%d byte|3475
->>9	byte	>2	\b, page size 2^%d byte|3475
+>>8	byte	>2	\b, line size 2^%d byte|3466
+>>9	byte	>2	\b, page size 2^%d byte|3466
 >>10	byte	&1
->>>10	byte	>1	\b, max fanout %d|3475
+>>>10	byte	>1	\b, max fanout %d|3466

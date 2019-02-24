@@ -15,26 +15,26 @@
 >>&0	belong  =0x0ff00ff0
 >>>&0	byte    =0x00
 >>>&1   beshort =0x0001
->>>&3	string	a	Xilinx BIT data|4649
+>>>&3	string	a	Xilinx BIT data|4639
 # Next is a Pascal-style string with the NCD name. We want to capture that.
->>>>&0	   pstring/H	x	- from %s|4649
+>>>>&0	   pstring/H	x	- from %s|4639
 # And then 'b'
 >>>>>&1    string b
 # Then the model / part number:
->>>>>>&0   pstring/H    x       - for %s|4649
+>>>>>>&0   pstring/H    x       - for %s|4639
 # Then 'c'
 >>>>>>>&1 string c
 # Then the build-date
->>>>>>>>&0 pstring/H    x       - built %s|4649
+>>>>>>>>&0 pstring/H    x       - built %s|4639
 # Then 'd'
 >>>>>>>>>&1   string d
 # Then the build-time
->>>>>>>>>>&0  pstring/H x        \b(%s)|4649
+>>>>>>>>>>&0  pstring/H x        \b(%s)|4639
 # Then 'e'
 >>>>>>>>>>>&1  string e
 # And length of data
->>>>>>>>>>>>&0 belong x          - data length 0x%x|4649
+>>>>>>>>>>>>&0 belong x          - data length 0x%x|4639
 
 # Raw bitstream files
 0      long    0xffffffff
->&0    belong  0xaa995566      Xilinx RAW bitstream (.BIN)|4650
+>&0    belong  0xaa995566      Xilinx RAW bitstream (.BIN)|4640

@@ -4,9 +4,9 @@
 # modem:  file(1) magic for modem programs
 #
 # From: Florian La Roche <florian@knorke.saar.de>
-1	string		PC\ Research,\ Inc	Digifax-G3-File|2996
->29	byte		1			\b, fine resolution|2997
->29	byte		0			\b, normal resolution|2998
+1	string		PC\ Research,\ Inc	Digifax-G3-File|2988
+>29	byte		1			\b, fine resolution|2989
+>29	byte		0			\b, normal resolution|2990
 
 # Summary: CCITT Group 3 Facsimile in "raw" form (i.e. no header).
 # Modified by: Joerg Jenderek
@@ -32,7 +32,7 @@
 # skip MouseTrap/Mt.Defaults with file size 16 found on Golden Orchard Apple II CD Rom
 >>>>>>8		ubequad		!0x2e01010454010203
 # skip PICTUREH.SML found on Golden Orchard Apple II CD Rom
->>>>>>>8	ubequad		!0x5dee74ad1aa56394	raw G3 (Group 3) FAX, byte-padded|2999
+>>>>>>>8	ubequad		!0x5dee74ad1aa56394	raw G3 (Group 3) FAX, byte-padded|2991
 # version 5.25 labeled the entry above "raw G3 data, byte-padded"
 !:mime	image/g3fax
 #!:apple	????TIFF
@@ -43,7 +43,7 @@
 # 16 0-bits near beginning like PicturePuzzler found on Golden Orchard Apple CD Rom
 >2	search/9	\0\0
 # maximal 7 0-bits for pixel sequences or 11 0-bits for EOL in G3
->2	default		x		raw G3 (Group 3) FAX|3000
+>2	default		x		raw G3 (Group 3) FAX|2992
 # version 5.25 labeled the above entry as "raw G3 data"
 !:mime	image/g3fax
 !:ext	g3
@@ -57,30 +57,30 @@
 #
 # raw modem data version 1
 #
-0    string    RMD1      raw modem data|3001
->4   string    >\0       (%s /|3001
->20  short     >0        compression type 0x%04x)|3001
+0    string    RMD1      raw modem data|2993
+>4   string    >\0       (%s /|2993
+>20  short     >0        compression type 0x%04x)|2993
 
 #
 # portable voice format 1
 #
-0    string    PVF1\n         portable voice format|3002
->5   string    >\0       (binary %s)|3003
+0    string    PVF1\n         portable voice format|2994
+>5   string    >\0       (binary %s)|2995
 
 #
 # portable voice format 2
 #
-0    string    PVF2\n         portable voice format|3002
->5   string >\0          (ascii %s)|3004
+0    string    PVF2\n         portable voice format|2994
+>5   string >\0          (ascii %s)|2996
 
 # From: Bernd Nuernberger <bernd.nuernberger@web.de>
 # Brooktrout G3 fax data incl. 128 byte header
 # Common suffixes: 3??, BRK, BRT, BTR
 0	leshort		0x01bb
->2	leshort		0x0100		Brooktrout 301 fax image,|3005
->>9	leshort		x		%d x|3005
->>0x2d	leshort		x		%d|3005
->>6	leshort		200		\b, fine resolution|3006
->>6	leshort		100		\b, normal resolution|3007
+>2	leshort		0x0100		Brooktrout 301 fax image,|2997
+>>9	leshort		x		%d x|2997
+>>0x2d	leshort		x		%d|2997
+>>6	leshort		200		\b, fine resolution|2998
+>>6	leshort		100		\b, normal resolution|2999
 >>11	byte		1		\b, G3 compression
 >>11	byte		2		\b, G32D compression

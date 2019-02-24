@@ -7,12 +7,12 @@
 0	string		PIC
 >3	search/0x200	\x1A
 >>&0	search/0x200	\x0
->>>&0	ubyte		0		Yanagisawa PIC image file,|4629
->>>>&0	ubyte&15	0		model: X68000,|4630
->>>>&0	ubyte&15	1		model: PC-88VA,|4631
->>>>&0	ubyte&15	2		model: FM-TOWNS,|4632
->>>>&0	ubyte&15	3		model: MAC,|4633
->>>>&0	ubyte&15	15		model: Generic,|4634
+>>>&0	ubyte		0		Yanagisawa PIC image file,|4619
+>>>>&0	ubyte&15	0		model: X68000,|4620
+>>>>&0	ubyte&15	1		model: PC-88VA,|4621
+>>>>&0	ubyte&15	2		model: FM-TOWNS,|4622
+>>>>&0	ubyte&15	3		model: MAC,|4623
+>>>>&0	ubyte&15	15		model: Generic,|4624
 >>>>&3	ubeshort	x		%dx
 >>>>&5	ubeshort	x		\b%d,
 >>>>&1	ubeshort	4		colors: 16

@@ -23,13 +23,13 @@
 >4	byte&0xF0	0x20		compressed with incremental Snappy)
 >4	byte&0xF0	>0x20		unknown subformat, flag: %d>>4)
 
-0	string/b	\=srl		Sereal data packet|3747
+0	string/b	\=srl		Sereal data packet|3737
 !:mime application/sereal
 >&0	use		sereal
-0	string/b	\=\xF3rl	Sereal data packet|3747
+0	string/b	\=\xF3rl	Sereal data packet|3737
 !:mime application/sereal
 >&0	use		sereal
-0	string/b	\=\xC3\xB3rl	Sereal data packet, UTF-8 encoded|3748
+0	string/b	\=\xC3\xB3rl	Sereal data packet, UTF-8 encoded|3738
 !:mime application/sereal
 >&0	use		sereal
 

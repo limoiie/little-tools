@@ -7,5 +7,5 @@
 #
 # XXX - byte order?
 #
-0	string		\311\304	ID tags data|2993
->2	short		>0		version %d|2993
+0	string		\311\304	ID tags data|2985
+>2	short		>0		version %d|2985

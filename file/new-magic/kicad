@@ -12,58 +12,58 @@
 0	    string  EESchema
 >8	    byte    0x20
 >>9	    string  Schematic
->>>18	    byte    0x20		KiCad Schematic Document|2670
+>>>18	    byte    0x20		KiCad Schematic Document|2662
 !:ext sch/bak
 >>>>24	    string  Version
 >>>>>31	    byte    0x20
->>>>>>32    string  x			(Version %s)|2670
+>>>>>>32    string  x			(Version %s)|2662
 
 # KiCad Symbol Library
 0	    string  EESchema-LIBRARY
->16	    byte    0x20		KiCad Symbol Library|2671
+>16	    byte    0x20		KiCad Symbol Library|2663
 !:ext lib
 >>17	    string  Version
 >>>24	    byte    0x20
->>>>25	    string  x			(Version %s)|2671
+>>>>25	    string  x			(Version %s)|2663
 
 # KiCad Symbol Library Documentation
 0	    string  EESchema-DOCLIB
->15	    byte    0x20		KiCad Symbol Library Documentation|2672
+>15	    byte    0x20		KiCad Symbol Library Documentation|2664
 !:ext dcm
 >>17	    string  Version
 >>>24	    byte    0x20
->>>>25	    string  x			(Version %s)|2672
+>>>>25	    string  x			(Version %s)|2664
 
 # KiCad Board Layout
 0	    string  (kicad_pcb
->10	    byte    0x20		KiCad Board Layout|2673
+>10	    byte    0x20		KiCad Board Layout|2665
 !:ext kicad_pcb/kicad_pcb-bak
 >>11	    string  (version
 >>>19	    byte    0x20
->>>>20	    byte    x			(Version %c)|2673
+>>>>20	    byte    x			(Version %c)|2665
 
 # KiCad Footprint
 0	    string  (module
->7	    byte    0x20		KiCad Footprint|2674
+>7	    byte    0x20		KiCad Footprint|2666
 !:ext kicad_mod
 
 # KiCad Footprint (Legacy)
-0	    string  PCBNEW-LibModule-V1	    KiCad Footprint (Legacy)|2675
+0	    string  PCBNEW-LibModule-V1	    KiCad Footprint (Legacy)|2667
 !:ext mod
 
 # KiCad Netlist
 0	    string  (export
->7	    byte    0x20		KiCad Netlist|2676
+>7	    byte    0x20		KiCad Netlist|2668
 !:ext net
 
 # KiCad Symbol Library Table
 0	    string  (sym_lib_table
->14	    byte    0xA			KiCad Symbol Library Table|2677
->14	    byte    0xD			KiCad Symbol Library Table|2677
->14	    byte    0x20		KiCad Symbol Library Table|2677
+>14	    byte    0xA			KiCad Symbol Library Table|2669
+>14	    byte    0xD			KiCad Symbol Library Table|2669
+>14	    byte    0x20		KiCad Symbol Library Table|2669
 
 # KiCad Footprint Library Table
 0	    string  (fp_lib_table
->13	    byte    0xA			KiCad Footprint Library Table|2678
->13	    byte    0xD			KiCad Footprint Library Table|2678
->13	    byte    0x20		KiCad Footprint Library Table|2678
+>13	    byte    0xA			KiCad Footprint Library Table|2670
+>13	    byte    0xD			KiCad Footprint Library Table|2670
+>13	    byte    0x20		KiCad Footprint Library Table|2670

@@ -3,6 +3,6 @@
 # $File$
 # mlssa: file(1) magic for MLSSA datafiles
 #
-0		lelong		0xffffabcd	MLSSA datafile,|2994
->4		leshort		x		algorithm %d,|2994
->10		lelong		x		%d samples|2994
+0		lelong		0xffffabcd	MLSSA datafile,|2986
+>4		leshort		x		algorithm %d,|2986
+>10		lelong		x		%d samples|2986

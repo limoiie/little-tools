@@ -7,51 +7,51 @@
 #
 
 # maple library .lib
-0	string	\000MVR4\nI	MapleVr4 library|2864
+0	string	\000MVR4\nI	MapleVr4 library|2856
 
 # .ind
 # no magic for these :-(
 # they are compiled indexes for maple files
 
 # .hdb
-0	string	\000\004\000\000	Maple help database|2865
+0	string	\000\004\000\000	Maple help database|2857
 
 # .mhp
 # this has the form <PACKAGE=name>
-0	string	\<PACKAGE=	Maple help file|2866
-0	string	\<HELP\ NAME=	Maple help file|2866
-0	string	\n\<HELP\ NAME=	Maple help file with extra carriage return at start (yuck)|2867
+0	string	\<PACKAGE=	Maple help file|2858
+0	string	\<HELP\ NAME=	Maple help file|2858
+0	string	\n\<HELP\ NAME=	Maple help file with extra carriage return at start (yuck)|2859
 #0	string	#\ Newton	Maple help file, old style
-0	string	#\ daub	Maple help file, old style|2868
+0	string	#\ daub	Maple help file, old style|2860
 #0	string	#===========	Maple help file, old style
 
 # .mws
-0	string	\000\000\001\044\000\221	Maple worksheet|2869
+0	string	\000\000\001\044\000\221	Maple worksheet|2861
 #this is anomalous
-0	string	WriteNow\000\002\000\001\000\000\000\000\100\000\000\000\000\000	Maple worksheet, but weird|2870
+0	string	WriteNow\000\002\000\001\000\000\000\000\100\000\000\000\000\000	Maple worksheet, but weird|2862
 # this has the form {VERSION 2 3 "IBM INTEL NT" "2.3" }\n
 # that is {VERSION major_version miunor_version computer_type version_string}
-0	string	{VERSION\ 	Maple worksheet|2869
->9	string	>\0	version %.1s.|2869
->>11	string	>\0	%.1s|2869
+0	string	{VERSION\ 	Maple worksheet|2861
+>9	string	>\0	version %.1s.|2861
+>>11	string	>\0	%.1s|2861
 
 # .mps
-0	string	\0\0\001$	Maple something|2871
+0	string	\0\0\001$	Maple something|2863
 # from byte 4 it is either 'nul E' or 'soh R'
 # I think 'nul E' means a file that was saved as  a different name
 # a sort of revision marking
 # 'soh R' means new
->4	string	\000\105	An old revision|2872
->4	string	\001\122	The latest save|2873
+>4	string	\000\105	An old revision|2864
+>4	string	\001\122	The latest save|2865
 
 # .mpl
 # some of these are the same as .mps above
 #0000000 000 000 001 044 000 105 same as .mps
 #0000000 000 000 001 044 001 122 same as .mps
 
-0	string	#\n##\ <SHAREFILE=	Maple something|2871
-0	string	\n#\n##\ <SHAREFILE=	Maple something|2871
-0	string	##\ <SHAREFILE=	Maple something|2871
-0	string	#\r##\ <SHAREFILE=	Maple something|2871
-0	string	\r#\r##\ <SHAREFILE=	Maple something|2871
-0	string	#\ \r##\ <DESCRIBE>	Maple something anomalous.|2874
+0	string	#\n##\ <SHAREFILE=	Maple something|2863
+0	string	\n#\n##\ <SHAREFILE=	Maple something|2863
+0	string	##\ <SHAREFILE=	Maple something|2863
+0	string	#\r##\ <SHAREFILE=	Maple something|2863
+0	string	\r#\r##\ <SHAREFILE=	Maple something|2863
+0	string	#\ \r##\ <DESCRIBE>	Maple something anomalous.|2866

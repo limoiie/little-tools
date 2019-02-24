@@ -5,10 +5,10 @@
 # Anthon van der Neut (anthon@mnt.org)
 
 # ftp://ftp.f-prot.com/pub/{macrdef2.zip,nomacro.def}
-0	beshort		0x1575		fsav macro virus signatures|1965
->8	leshort		>0		(%d-|1965
->11	byte		>0		\b%02d-|1965
->10	byte		>0		\b%02d)|1965
+0	beshort		0x1575		fsav macro virus signatures|1960
+>8	leshort		>0		(%d-|1960
+>11	byte		>0		\b%02d-|1960
+>10	byte		>0		\b%02d)|1960
 # ftp://ftp.f-prot.com/pub/sign.zip
 #10	ubyte		<12
 #>9	ubyte		<32
@@ -46,23 +46,23 @@
 # ClamAV-VDB:buildDate:version:signaturesNumbers:functionalityLevelRequired:MD5:Signature:builder:buildTime
 # + gzipped (optional) tarball files
 # output can often be verified by `sigtool --info=FILE`
-0	string		ClamAV-VDB:	Clam AntiVirus|1966
+0	string		ClamAV-VDB:	Clam AntiVirus|1961
 # padding spaces implies database
->511	ubyte		=0x20		database|1967
+>511	ubyte		=0x20		database|1962
 !:mime	application/x-clamav-database
 # empty build time
->>10	string		=::		(unsigned)|1968
+>>10	string		=::		(unsigned)|1963
 # sigtool(1) man page
 !:ext	cud
 # display some text to avoid error like:
 # Magdir/fsav, 78: Warning: Current entry does not yet have a description for adding a EXTENSION type
 # file: could not find any valid magic files! (No error)
->>10	default		x		(with buildtime)|1969
+>>10	default		x		(with buildtime)|1964
 #>>10	default		x
 # clamtmp is used for temporily database like update process
 # for pure tar database only cld extension found
 !:ext	cld/cvd/clamtmp/cud
->511	default		x		file|1970
+>511	default		x		file|1965
 !:mime	application/x-clamav
 !:ext	info
 >11	string		>\0
@@ -101,25 +101,25 @@
 
 # Type: Grisoft AVG AntiVirus
 # From: David Newgas <david@newgas.net>
-0	string	AVG7_ANTIVIRUS_VAULT_FILE	AVG 7 Antivirus vault file data|1971
+0	string	AVG7_ANTIVIRUS_VAULT_FILE	AVG 7 Antivirus vault file data|1966
 
 0	string	X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR
->33	string	-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*	EICAR virus test files|1972
+>33	string	-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*	EICAR virus test files|1967
 
 # From: Joerg Jenderek
 # URL: http://www.avira.com/
 # Note: found in directory %ProgramData%\Avira\Antivirus\INFECTED (Windows)
 # tested with version 15.0.43.23 at November 2019
-0	string		AntiVir\ Qua	Avira AntiVir quarantined|1973
+0	string		AntiVir\ Qua	Avira AntiVir quarantined|1968
 !:mime	application/x-avira-qua
 #!:mime	application/octet-stream
 !:ext	qua
 >156	string		SUSPICIOUS_FILE
 # file path of suspicious file
->>220	lestring16	x		%s|1973
+>>220	lestring16	x		%s|1968
 >156	string		!SUSPICIOUS_FILE
 # file path of virus file
->>228	lestring16	x		%s|1973
+>>228	lestring16	x		%s|1968
 # quarantined date
 >60	ldate		x		at %s
 # virus/danger name

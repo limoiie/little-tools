@@ -5,19 +5,19 @@
 # http://devel.pluto.linux.it/projects/Gringotts/
 # author: Germano Rizzo <mano@pluto.linux.it>
 #GRG3????Y
-0	string	GRG		Gringotts data file|2225
+0	string	GRG		Gringotts data file|2220
 #file format 1
->3	string		1		v.1, MCRYPT S2K, SERPENT crypt, SHA-256 hash, ZLib lvl.9|2226
+>3	string		1		v.1, MCRYPT S2K, SERPENT crypt, SHA-256 hash, ZLib lvl.9|2221
 #file format 2
->3	string		2		v.2, MCRYPT S2K,|2227
->>8	byte&0x70	0x00		RIJNDAEL-128 crypt,|2228
->>8	byte&0x70	0x10		SERPENT crypt,|2229
->>8	byte&0x70	0x20		TWOFISH crypt,|2230
->>8	byte&0x70	0x30		CAST-256 crypt,|2231
->>8	byte&0x70	0x40		SAFER+ crypt,|2232
->>8	byte&0x70	0x50		LOKI97 crypt,|2233
->>8	byte&0x70	0x60		3DES crypt,|2234
->>8	byte&0x70	0x70		RIJNDAEL-256 crypt,|2235
+>3	string		2		v.2, MCRYPT S2K,|2222
+>>8	byte&0x70	0x00		RIJNDAEL-128 crypt,|2223
+>>8	byte&0x70	0x10		SERPENT crypt,|2224
+>>8	byte&0x70	0x20		TWOFISH crypt,|2225
+>>8	byte&0x70	0x30		CAST-256 crypt,|2226
+>>8	byte&0x70	0x40		SAFER+ crypt,|2227
+>>8	byte&0x70	0x50		LOKI97 crypt,|2228
+>>8	byte&0x70	0x60		3DES crypt,|2229
+>>8	byte&0x70	0x70		RIJNDAEL-256 crypt,|2230
 >>8	byte&0x08	0x00		SHA1 hash,
 >>8	byte&0x08	0x08		RIPEMD-160 hash,
 >>8	byte&0x04	0x00		ZLib
@@ -27,15 +27,15 @@
 >>8	byte&0x03	0x02		lvl.6
 >>8	byte&0x03	0x03		lvl.9
 #file format 3
->3	string		3		v.3, OpenPGP S2K,|2236
->>8	byte&0x70	0x00		RIJNDAEL-128 crypt,|2237
->>8	byte&0x70	0x10		SERPENT crypt,|2238
->>8	byte&0x70	0x20		TWOFISH crypt,|2239
->>8	byte&0x70	0x30		CAST-256 crypt,|2240
->>8	byte&0x70	0x40		SAFER+ crypt,|2241
->>8	byte&0x70	0x50		LOKI97 crypt,|2242
->>8	byte&0x70	0x60		3DES crypt,|2243
->>8	byte&0x70	0x70		RIJNDAEL-256 crypt,|2244
+>3	string		3		v.3, OpenPGP S2K,|2231
+>>8	byte&0x70	0x00		RIJNDAEL-128 crypt,|2232
+>>8	byte&0x70	0x10		SERPENT crypt,|2233
+>>8	byte&0x70	0x20		TWOFISH crypt,|2234
+>>8	byte&0x70	0x30		CAST-256 crypt,|2235
+>>8	byte&0x70	0x40		SAFER+ crypt,|2236
+>>8	byte&0x70	0x50		LOKI97 crypt,|2237
+>>8	byte&0x70	0x60		3DES crypt,|2238
+>>8	byte&0x70	0x70		RIJNDAEL-256 crypt,|2239
 >>8	byte&0x08	0x00		SHA1 hash,
 >>8	byte&0x08	0x08		RIPEMD-160 hash,
 >>8	byte&0x04	0x00		ZLib
@@ -45,4 +45,4 @@
 >>8	byte&0x03	0x02		lvl.6
 >>8	byte&0x03	0x03		lvl.9
 #file format >3
->3	string		>3		v.%.1s (unknown details)|2245
+>3	string		>3		v.%.1s (unknown details)|2240

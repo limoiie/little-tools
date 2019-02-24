@@ -5,8 +5,8 @@
 #
 # From Philippe De Muyter <phdm@macqel.be>
 #
-0	string		bFLT		BFLT executable|1015
->4	belong		x		- version %d|1015
+0	string		bFLT		BFLT executable|1013
+>4	belong		x		- version %d|1013
 >4	belong		4
 >>36	belong&0x1	0x1		ram
 >>36	belong&0x2	0x2		gotpic

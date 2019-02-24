@@ -9,15 +9,15 @@
 #  * Below are the magic numbers and tests added for Convex.
 #  * Added at beginning, because they are expected to be used most.
 # \*/
-0	belong	0507	Convex old-style object|1393
+0	belong	0507	Convex old-style object|1391
+>16	belong	>0	not stripped|1392
+0	belong	0513	Convex old-style demand paged executable|1393
 >16	belong	>0	not stripped|1394
-0	belong	0513	Convex old-style demand paged executable|1395
+0	belong	0515	Convex old-style pre-paged executable|1395
 >16	belong	>0	not stripped|1396
-0	belong	0515	Convex old-style pre-paged executable|1397
+0	belong	0517	Convex old-style pre-paged, non-swapped executable|1397
 >16	belong	>0	not stripped|1398
-0	belong	0517	Convex old-style pre-paged, non-swapped executable|1399
->16	belong	>0	not stripped|1400
-0	belong	0x011257	Core file|1401
+0	belong	0x011257	Core file|1399
 #
 # The following are a series of dump format magic numbers.  Each one
 # corresponds to a drastically different dump format.  The first on is
@@ -30,15 +30,15 @@
 # The restore program uses these number to determine how the data is
 # to be extracted.
 #
-24	belong	=60013	dump format, 4.2 or 4.3 BSD (IDC compatible)|1402
-24	belong	=60014	dump format, Convex Storage Manager by-reference dump|1403
+24	belong	=60013	dump format, 4.2 or 4.3 BSD (IDC compatible)|1400
+24	belong	=60014	dump format, Convex Storage Manager by-reference dump|1401
 #
 # what follows is a bunch of bit-mask checks on the flags field of the opthdr.
 # If there is no `=' sign, assume just checking for whether the bit is set?
 #
-0	belong	0601		Convex SOFF|1404
->88	belong&0x000f0000	=0x00000000	c1|1405
->88	belong			&0x00010000	c2|1406
+0	belong	0601		Convex SOFF|1402
+>88	belong&0x000f0000	=0x00000000	c1|1403
+>88	belong			&0x00010000	c2|1404
 >88	belong			&0x00020000	c2mp
 >88	belong			&0x00040000	parallel
 >88	belong			&0x00080000	intrinsic
@@ -54,11 +54,11 @@
 >84	belong&0x18000000	=0x10000000	ieee fpmode
 >84	belong&0x18000000	=0x18000000	undefined fpmode
 #
-0	belong			0605		Convex SOFF core|1407
+0	belong			0605		Convex SOFF core|1405
 #
-0	belong			0607		Convex SOFF checkpoint|1408
->88	belong&0x000f0000	=0x00000000	c1|1409
->88	belong			&0x00010000	c2|1410
+0	belong			0607		Convex SOFF checkpoint|1406
+>88	belong&0x000f0000	=0x00000000	c1|1407
+>88	belong			&0x00010000	c2|1408
 >88	belong			&0x00020000	c2mp
 >88	belong			&0x00040000	parallel
 >88	belong			&0x00080000	intrinsic

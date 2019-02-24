@@ -7,13 +7,13 @@
 # Documentation: https://www.khronos.org/spir
 # Typical file extension: .spv
 
-0	belong	0x07230203	Khronos SPIR-V binary, big-endian|2216
->4	belong	x		\b, version 0x%08x|2216
->8	belong	x		\b, generator 0x%08x|2216
+0	belong	0x07230203	Khronos SPIR-V binary, big-endian|2211
+>4	belong	x		\b, version 0x%08x|2211
+>8	belong	x		\b, generator 0x%08x|2211
 
-0	lelong	0x07230203      Khronos SPIR-V binary, little-endian|2217
->4	lelong	x		\b, version 0x%08x|2217
->8	lelong	x		\b, generator 0x%08x|2217
+0	lelong	0x07230203      Khronos SPIR-V binary, little-endian|2212
+>4	lelong	x		\b, version 0x%08x|2212
+>8	lelong	x		\b, generator 0x%08x|2212
 
 # Vulkan Trace file
 # Documentation:
@@ -21,8 +21,8 @@
 # vktrace_trace_packet_identifiers.h
 # Typical file extension: .vktrace
 
-8	lequad  0xABADD068ADEAFD0C	Vulkan trace file, little-endian|2218
->0	leshort	x			\b, version %d|2218
+8	lequad  0xABADD068ADEAFD0C	Vulkan trace file, little-endian|2213
+>0	leshort	x			\b, version %d|2213
 
-8	bequad  0xABADD068ADEAFD0C	Vulkan trace file, big-endian|2219
->0	beshort	x			\b, version %d|2219
+8	bequad  0xABADD068ADEAFD0C	Vulkan trace file, big-endian|2214
+>0	beshort	x			\b, version %d|2214

@@ -14,15 +14,15 @@
 >0	search/2048	\x1e
 
 # leader starts with 5 digits, followed by codes specific to MARC format
->>0	regex/1l	(^[0-9]{5})[acdnp][^bhlnqsu-z]	MARC21 Bibliographic|2875
+>>0	regex/1l	(^[0-9]{5})[acdnp][^bhlnqsu-z]	MARC21 Bibliographic|2867
 !:mime	application/marc
->>0	regex/1l	(^[0-9]{5})[acdnosx][z]	MARC21 Authority|2876
+>>0	regex/1l	(^[0-9]{5})[acdnosx][z]	MARC21 Authority|2868
 !:mime	application/marc
->>0	regex/1l	(^[0-9]{5})[cdn][uvxy]	MARC21 Holdings|2877
+>>0	regex/1l	(^[0-9]{5})[cdn][uvxy]	MARC21 Holdings|2869
 !:mime	application/marc
->>0	regex/1l	(^[0-9]{5})[acdn][w]	MARC21 Classification|2878
+>>0	regex/1l	(^[0-9]{5})[acdn][w]	MARC21 Classification|2870
 !:mime	application/marc
->>0	regex/1l	(^[0-9]{5})[cdn][q]	MARC21 Community|2879
+>>0	regex/1l	(^[0-9]{5})[cdn][q]	MARC21 Community|2871
 !:mime	application/marc
 
 # leader position 22-23, should be "00" but is it?

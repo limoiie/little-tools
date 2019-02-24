@@ -4,10 +4,10 @@
 # BTSnoop:  file(1) magic for BTSnoop files
 #
 # From <marcel@holtmann.org>
-0	string		btsnoop\0		BTSnoop|1107
->8	belong		x			version %d,|1107
->12	belong		1001			Unencapsulated HCI|1108
->12	belong		1002			HCI UART (H4)|1109
->12	belong		1003			HCI BCSP|1110
->12	belong		1004			HCI Serial (H5)|1111
->>12	belong		x			type %d|1111
+0	string		btsnoop\0		BTSnoop|1105
+>8	belong		x			version %d,|1105
+>12	belong		1001			Unencapsulated HCI|1106
+>12	belong		1002			HCI UART (H4)|1107
+>12	belong		1003			HCI BCSP|1108
+>12	belong		1004			HCI Serial (H5)|1109
+>>12	belong		x			type %d|1109

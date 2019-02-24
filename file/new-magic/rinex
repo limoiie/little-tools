@@ -6,39 +6,39 @@
 # ftp://cddis.gsfc.nasa.gov/pub/reports/formats/rinex300.pdf
 # data for testing: ftp://cddis.gsfc.nasa.gov/pub/gps/data
 60	string		RINEX
->80	search/256	XXRINEXB	RINEX Data, GEO SBAS Broadcast|2921
+>80	search/256	XXRINEXB	RINEX Data, GEO SBAS Broadcast|2913
+>>&32	string		x		\b, date %15.15s|2913
+>>5	string		x		\b, version %6.6s|2913
+!:mime	rinex/broadcast
+>80	search/256	XXRINEXD	RINEX Data, Observation (Hatanaka comp)|2914
+>>&32	string		x		\b, date %15.15s|2914
+>>5	string		x		\b, version %6.6s|2914
+!:mime	rinex/observation
+>80	search/256	XXRINEXC	RINEX Data, Clock|2915
+>>&32	string		x		\b, date %15.15s|2915
+>>5	string		x		\b, version %6.6s|2915
+!:mime	rinex/clock
+>80	search/256	XXRINEXH	RINEX Data, GEO SBAS Navigation|2916
+>>&32	string		x		\b, date %15.15s|2916
+>>5	string		x		\b, version %6.6s|2916
+!:mime	rinex/navigation
+>80	search/256	XXRINEXG	RINEX Data, GLONASS Navigation|2917
+>>&32	string		x		\b, date %15.15s|2917
+>>5	string		x		\b, version %6.6s|2917
+!:mime	rinex/navigation
+>80	search/256	XXRINEXL	RINEX Data, Galileo Navigation|2918
+>>&32	string		x		\b, date %15.15s|2918
+>>5	string		x		\b, version %6.6s|2918
+!:mime	rinex/navigation
+>80	search/256	XXRINEXM	RINEX Data, Meteorological|2919
+>>&32	string		x		\b, date %15.15s|2919
+>>5	string		x		\b, version %6.6s|2919
+!:mime	rinex/meteorological
+>80	search/256	XXRINEXN	RINEX Data, Navigation|2920
+>>&32	string		x		\b, date %15.15s|2920
+>>5	string		x		\b, version %6.6s|2920
+!:mime	rinex/navigation
+>80	search/256	XXRINEXO	RINEX Data, Observation|2921
 >>&32	string		x		\b, date %15.15s|2921
 >>5	string		x		\b, version %6.6s|2921
-!:mime	rinex/broadcast
->80	search/256	XXRINEXD	RINEX Data, Observation (Hatanaka comp)|2922
->>&32	string		x		\b, date %15.15s|2922
->>5	string		x		\b, version %6.6s|2922
-!:mime	rinex/observation
->80	search/256	XXRINEXC	RINEX Data, Clock|2923
->>&32	string		x		\b, date %15.15s|2923
->>5	string		x		\b, version %6.6s|2923
-!:mime	rinex/clock
->80	search/256	XXRINEXH	RINEX Data, GEO SBAS Navigation|2924
->>&32	string		x		\b, date %15.15s|2924
->>5	string		x		\b, version %6.6s|2924
-!:mime	rinex/navigation
->80	search/256	XXRINEXG	RINEX Data, GLONASS Navigation|2925
->>&32	string		x		\b, date %15.15s|2925
->>5	string		x		\b, version %6.6s|2925
-!:mime	rinex/navigation
->80	search/256	XXRINEXL	RINEX Data, Galileo Navigation|2926
->>&32	string		x		\b, date %15.15s|2926
->>5	string		x		\b, version %6.6s|2926
-!:mime	rinex/navigation
->80	search/256	XXRINEXM	RINEX Data, Meteorological|2927
->>&32	string		x		\b, date %15.15s|2927
->>5	string		x		\b, version %6.6s|2927
-!:mime	rinex/meteorological
->80	search/256	XXRINEXN	RINEX Data, Navigation|2928
->>&32	string		x		\b, date %15.15s|2928
->>5	string		x		\b, version %6.6s|2928
-!:mime	rinex/navigation
->80	search/256	XXRINEXO	RINEX Data, Observation|2929
->>&32	string		x		\b, date %15.15s|2929
->>5	string		x		\b, version %6.6s|2929
 !:mime	rinex/observation

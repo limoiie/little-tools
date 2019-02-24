@@ -3,12 +3,12 @@
 # $File$
 # cracklib:  file (1) magic for cracklib v2.7
 
-0	lelong	0x70775631	Cracklib password index, little endian|1417
->4	long	>0		(%i words)|1418
->4	long	0		("64-bit")|1419
->>8	long	>-1		(%i words)|1420
-0	belong	0x70775631	Cracklib password index, big endian|1421
->4	belong	>-1		(%i words)|1422
+0	lelong	0x70775631	Cracklib password index, little endian|1415
+>4	long	>0		(%i words)|1416
+>4	long	0		("64-bit")|1417
+>>8	long	>-1		(%i words)|1418
+0	belong	0x70775631	Cracklib password index, big endian|1419
+>4	belong	>-1		(%i words)|1420
 # really bellong 0x0000000070775631
-0	search/1	\0\0\0\0pwV1	Cracklib password index, big endian ("64-bit")|1423
->12	belong	>0		(%i words)|1424
+0	search/1	\0\0\0\0pwV1	Cracklib password index, big endian ("64-bit")|1421
+>12	belong	>0		(%i words)|1422

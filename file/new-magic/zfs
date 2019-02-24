@@ -36,15 +36,15 @@
 # full 64-bit values.
 
 # Big-endian values
-8	string	\000\000\000\002\365\272\313\254 ZFS shapshot (big-endian machine),|4672
->20	belong	x	version %u,|4672
->32	belong	0	type: NONE,|4673
->32	belong	1	type: META,|4674
->32	belong	2	type: ZFS,|4675
->32	belong	3	type: ZVOL,|4676
->32	belong	4	type: OTHER,|4677
->32	belong	5	type: ANY,|4678
->32	belong	>5	type: UNKNOWN (%u),|4679
+8	string	\000\000\000\002\365\272\313\254 ZFS shapshot (big-endian machine),|4662
+>20	belong	x	version %u,|4662
+>32	belong	0	type: NONE,|4663
+>32	belong	1	type: META,|4664
+>32	belong	2	type: ZFS,|4665
+>32	belong	3	type: ZVOL,|4666
+>32	belong	4	type: OTHER,|4667
+>32	belong	5	type: ANY,|4668
+>32	belong	>5	type: UNKNOWN (%u),|4669
 >40	byte	x	destination GUID: %02X
 >41	byte	x	%02X
 >42	byte	x	%02X
@@ -66,15 +66,15 @@
 >56	string	>\0	name: '%s'
 
 # Little-endian values
-8	string	\254\313\272\365\002\000\000\000	ZFS shapshot (little-endian machine),|4680
->16	lelong	x	version %u,|4680
->32	lelong	0	type: NONE,|4681
->32	lelong	1	type: META,|4682
->32	lelong	2	type: ZFS,|4683
->32	lelong	3	type: ZVOL,|4684
->32	lelong	4	type: OTHER,|4685
->32	lelong	5	type: ANY,|4686
->32	lelong	>5	type: UNKNOWN (%u),|4687
+8	string	\254\313\272\365\002\000\000\000	ZFS shapshot (little-endian machine),|4670
+>16	lelong	x	version %u,|4670
+>32	lelong	0	type: NONE,|4671
+>32	lelong	1	type: META,|4672
+>32	lelong	2	type: ZFS,|4673
+>32	lelong	3	type: ZVOL,|4674
+>32	lelong	4	type: OTHER,|4675
+>32	lelong	5	type: ANY,|4676
+>32	lelong	>5	type: UNKNOWN (%u),|4677
 >47	byte	x	destination GUID: %02X
 >46	byte	x	%02X
 >45	byte	x	%02X

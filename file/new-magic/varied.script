@@ -3,49 +3,49 @@
 # varied.script:  file(1) magic for various interpreter scripts
 
 0	string/t		#!\ /			a
->3	string		>\0			%s script text executable|4337
+>3	string		>\0			%s script text executable|4327
 
 0	string/b		#!\ /			a
->3	string		>\0			%s script executable (binary data)|4338
+>3	string		>\0			%s script executable (binary data)|4328
 
 0	string/t		#!\t/			a
->3	string		>\0			%s script text executable|4337
+>3	string		>\0			%s script text executable|4327
 
 0	string/b		#!\t/			a
->3	string		>\0			%s script executable (binary data)|4338
+>3	string		>\0			%s script executable (binary data)|4328
 
 0	string/t		#!/			a
->2	string		>\0			%s script text executable|4337
+>2	string		>\0			%s script text executable|4327
 
 0	string/b		#!/			a
->2	string		>\0			%s script executable (binary data)|4338
+>2	string		>\0			%s script executable (binary data)|4328
 
-0	string/t		#!\ 			script text executable|4339
->3	string		>\0			for %s|4339
+0	string/t		#!\ 			script text executable|4329
+>3	string		>\0			for %s|4329
 
-0	string/b		#!\ 			script executable|4340
->3	string		>\0			for %s (binary data)|4341
+0	string/b		#!\ 			script executable|4330
+>3	string		>\0			for %s (binary data)|4331
 
 # using env
 0	string/t	#!/usr/bin/env		a
->15	string/t	>\0			%s script text executable|4337
+>15	string/t	>\0			%s script text executable|4327
 !:strength / 10
 
 0	string/b	#!/usr/bin/env		a
->15	string/b	>\0			%s script executable (binary data)|4338
+>15	string/b	>\0			%s script executable (binary data)|4328
 !:strength / 10
 
 0	string/t	#!\ /usr/bin/env	a
->16	string/t	>\0			%s script text executable|4337
+>16	string/t	>\0			%s script text executable|4327
 !:strength / 10
 
 0	string/b	#!\ /usr/bin/env	a
->16	string/b	>\0			%s script executable (binary data)|4338
+>16	string/b	>\0			%s script executable (binary data)|4328
 !:strength / 10
 
 # From: arno <arenevier@fdn.fr>
 # mozilla xpconnect typelib
 # see http://www.mozilla.org/scriptable/typelib_file.html
-0	string 		XPCOM\nTypeLib\r\n\032		XPConnect Typelib|4342
->0x10  byte        x       version %d|4342
->>0x11 byte        x      \b.%d|4342
+0	string 		XPCOM\nTypeLib\r\n\032		XPConnect Typelib|4332
+>0x10  byte        x       version %d|4332
+>>0x11 byte        x      \b.%d|4332

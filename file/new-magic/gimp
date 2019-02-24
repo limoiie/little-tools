@@ -4,22 +4,22 @@
 # GIMP Gradient: file(1) magic for the GIMP's gradient data files (.ggr)
 # by Federico Mena <federico@nuclecu.unam.mx>
 
-0       string/t        GIMP\ Gradient  GIMP gradient data|2166
+0       string/t        GIMP\ Gradient  GIMP gradient data|2161
 
 # GIMP palette (.gpl)
 # From: Markus Heidelberg <markus.heidelberg@web.de>
-0       string/t        GIMP\ Palette   GIMP palette data|2167
+0       string/t        GIMP\ Palette   GIMP palette data|2162
 
 #------------------------------------------------------------------------------
 # XCF:  file(1) magic for the XCF image format used in the GIMP (.xcf) developed
 #       by Spencer Kimball and Peter Mattis
 #       ('Bucky' LaDieu, nega@vt.edu)
 
-0	string		gimp\ xcf	GIMP XCF image data,|2168
+0	string		gimp\ xcf	GIMP XCF image data,|2163
 !:mime	image/x-xcf
->9	string		file		version 0,|2169
->9	string		v		version|2170
->>10	string		>\0		%s,|2170
+>9	string		file		version 0,|2164
+>9	string		v		version|2165
+>>10	string		>\0		%s,|2165
 >14	belong		x		%u x
 >18	belong		x		%u,
 >22     belong          0               RGB Color
@@ -32,16 +32,16 @@
 #       by Spencer Kimball and Peter Mattis
 #       ('Bucky' LaDieu, nega@vt.edu)
 
-20      string          GPAT            GIMP pattern data,|2171
->24     string          x               %s|2171
+20      string          GPAT            GIMP pattern data,|2166
+>24     string          x               %s|2166
 
 #------------------------------------------------------------------------------
 # XCF:  file(1) magic for the brushes used in the GIMP (.gbr), developed
 #       by Spencer Kimball and Peter Mattis
 #       ('Bucky' LaDieu, nega@vt.edu)
 
-20      string          GIMP            GIMP brush data|2172
+20      string          GIMP            GIMP brush data|2167
 
 # GIMP Curves File
 # From: "Nelson A. de Oliveira" <naoliv@gmail.com>
-0	string	#\040GIMP\040Curves\040File	GIMP curve file|2173
+0	string	#\040GIMP\040Curves\040File	GIMP curve file|2168

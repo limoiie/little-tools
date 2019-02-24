@@ -7,7 +7,7 @@
 # mailto:rok.papez@lugos.si
 #
 
-0	belong	0x1ee7f11e	Pulsar POP3 daemon mailbox cache file.|3588
->4	ubelong	x		Version: %d.|3588
->8	ubelong	x		\b%d|3588
+0	belong	0x1ee7f11e	Pulsar POP3 daemon mailbox cache file.|3578
+>4	ubelong	x		Version: %d.|3578
+>8	ubelong	x		\b%d|3578
 

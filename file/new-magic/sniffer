@@ -9,53 +9,53 @@
 #
 # Microsoft Network Monitor 1.x capture files.
 #
-0	string		RTSS		NetMon capture file|3836
->5	byte		x		- version %d|3836
->4	byte		x		\b.%d|3836
->6	leshort		0		(Unknown)|3837
->6	leshort		1		(Ethernet)|3838
->6	leshort		2		(Token Ring)|3839
->6	leshort		3		(FDDI)|3840
->6	leshort		4		(ATM)|3841
->6	leshort		>4		(type %d)|3842
+0	string		RTSS		NetMon capture file|3826
+>5	byte		x		- version %d|3826
+>4	byte		x		\b.%d|3826
+>6	leshort		0		(Unknown)|3827
+>6	leshort		1		(Ethernet)|3828
+>6	leshort		2		(Token Ring)|3829
+>6	leshort		3		(FDDI)|3830
+>6	leshort		4		(ATM)|3831
+>6	leshort		>4		(type %d)|3832
 
 #
 # Microsoft Network Monitor 2.x capture files.
 #
-0	string		GMBU		NetMon capture file|3836
->5	byte		x		- version %d|3836
->4	byte		x		\b.%d|3836
->6	leshort		0		(Unknown)|3837
->6	leshort		1		(Ethernet)|3838
->6	leshort		2		(Token Ring)|3839
->6	leshort		3		(FDDI)|3840
->6	leshort		4		(ATM)|3841
->6	leshort		5		(IP-over-IEEE 1394)|3843
->6	leshort		6		(802.11)|3844
->6	leshort		7		(Raw IP)|3845
->6	leshort		8		(Raw IP)|3845
->6	leshort		9		(Raw IP)|3845
->6	leshort		>9		(type %d)|3842
+0	string		GMBU		NetMon capture file|3826
+>5	byte		x		- version %d|3826
+>4	byte		x		\b.%d|3826
+>6	leshort		0		(Unknown)|3827
+>6	leshort		1		(Ethernet)|3828
+>6	leshort		2		(Token Ring)|3829
+>6	leshort		3		(FDDI)|3830
+>6	leshort		4		(ATM)|3831
+>6	leshort		5		(IP-over-IEEE 1394)|3833
+>6	leshort		6		(802.11)|3834
+>6	leshort		7		(Raw IP)|3835
+>6	leshort		8		(Raw IP)|3835
+>6	leshort		9		(Raw IP)|3835
+>6	leshort		>9		(type %d)|3832
 
 #
 # Network General Sniffer capture files.
 # Sorry, make that "Network Associates Sniffer capture files."
 # Sorry, make that "Network General old DOS Sniffer capture files."
 #
-0	string		TRSNIFF\040data\040\040\040\040\032	Sniffer capture file|3846
->33	byte		2		(compressed)|3846
->23	leshort		x		- version %d|3846
->25	leshort		x		\b.%d|3846
->32	byte		0		(Token Ring)|3846
->32	byte		1		(Ethernet)|3846
->32	byte		2		(ARCNET)|3846
->32	byte		3		(StarLAN)|3846
->32	byte		4		(PC Network broadband)|3846
->32	byte		5		(LocalTalk)|3846
->32	byte		6		(Znet)|3846
->32	byte		7		(Internetwork Analyzer)|3846
->32	byte		9		(FDDI)|3846
->32	byte		10		(ATM)|3846
+0	string		TRSNIFF\040data\040\040\040\040\032	Sniffer capture file|3836
+>33	byte		2		(compressed)|3836
+>23	leshort		x		- version %d|3836
+>25	leshort		x		\b.%d|3836
+>32	byte		0		(Token Ring)|3836
+>32	byte		1		(Ethernet)|3836
+>32	byte		2		(ARCNET)|3836
+>32	byte		3		(StarLAN)|3836
+>32	byte		4		(PC Network broadband)|3836
+>32	byte		5		(LocalTalk)|3836
+>32	byte		6		(Znet)|3836
+>32	byte		7		(Internetwork Analyzer)|3836
+>32	byte		9		(FDDI)|3836
+>32	byte		10		(ATM)|3836
 
 #
 # Cinco Networks NetXRay capture files.
@@ -66,14 +66,14 @@
 # Sorry, make that "Network General Sniffer capture files."
 # Sorry, make that "NetScout Sniffer capture files."
 #
-0	string		XCP\0		NetXRay capture file|3847
->4	string		>\0		- version %s|3847
->44	leshort		0		(Ethernet)|3847
->44	leshort		1		(Token Ring)|3847
->44	leshort		2		(FDDI)|3847
->44	leshort		3		(WAN)|3847
->44	leshort		8		(ATM)|3847
->44	leshort		9		(802.11)|3847
+0	string		XCP\0		NetXRay capture file|3837
+>4	string		>\0		- version %s|3837
+>44	leshort		0		(Ethernet)|3837
+>44	leshort		1		(Token Ring)|3837
+>44	leshort		2		(FDDI)|3837
+>44	leshort		3		(WAN)|3837
+>44	leshort		8		(ATM)|3837
+>44	leshort		9		(802.11)|3837
 
 #
 # "libpcap" capture files.
@@ -189,27 +189,27 @@
 >16	belong		x		\b, capture length %d)
 
 # packets time stamps in seconds and microseconds.
-0	ubelong		0xa1b2c3d4	pcap capture file, microseconds ts (big-endian)|3848
+0	ubelong		0xa1b2c3d4	pcap capture file, microseconds ts (big-endian)|3838
 !:mime	application/vnd.tcpdump.pcap
 >0	use	pcap-be
-0	ulelong		0xa1b2c3d4	pcap capture file, microsecond ts (little-endian)|3849
+0	ulelong		0xa1b2c3d4	pcap capture file, microsecond ts (little-endian)|3839
 !:mime	application/vnd.tcpdump.pcap
 >0	use	\^pcap-be
 
 # packets time stamps in seconds and nanoseconds.
-0	ubelong		0xa1b23c4d	pcap capture file, nanosecond ts (big-endian)|3850
+0	ubelong		0xa1b23c4d	pcap capture file, nanosecond ts (big-endian)|3840
 !:mime	application/vnd.tcpdump.pcap
 >0	use	pcap-be
-0	ulelong		0xa1b23c4d	pcap capture file, nanosecond ts (little-endian)|3851
+0	ulelong		0xa1b23c4d	pcap capture file, nanosecond ts (little-endian)|3841
 !:mime	application/vnd.tcpdump.pcap
 >0	use	\^pcap-be
 
 #
 # "libpcap"-with-Alexey-Kuznetsov's-patches capture files.
 #
-0	ubelong		0xa1b2cd34	pcap capture file, microsecond ts, extensions (big-endian)|3852
+0	ubelong		0xa1b2cd34	pcap capture file, microsecond ts, extensions (big-endian)|3842
 >0	use	pcap-be
-0	ulelong		0xa1b2cd34	pcap capture file, microsecond ts, extensions (little-endian)|3853
+0	ulelong		0xa1b2cd34	pcap capture file, microsecond ts, extensions (little-endian)|3843
 >0	use	\^pcap-be
 
 #
@@ -219,60 +219,60 @@
 # snaplen, or other information from the first SHB may be misleading.
 #
 0	ubelong		0x0a0d0d0a
->8	ubelong		0x1a2b3c4d	pcapng capture file|3854
->>12	beshort		x		- version %d|3854
->>14	beshort		x		\b.%d|3854
+>8	ubelong		0x1a2b3c4d	pcapng capture file|3844
+>>12	beshort		x		- version %d|3844
+>>14	beshort		x		\b.%d|3844
 0	ulelong		0x0a0d0d0a
->8	ulelong		0x1a2b3c4d	pcapng capture file|3854
->>12	leshort		x		- version %d|3854
->>14	leshort		x		\b.%d|3854
+>8	ulelong		0x1a2b3c4d	pcapng capture file|3844
+>>12	leshort		x		- version %d|3844
+>>14	leshort		x		\b.%d|3844
 
 #
 # AIX "iptrace" capture files.
 #
-0	string		iptrace\0401.0	AIX iptrace capture file|3855
-0	string		iptrace\0402.0	AIX iptrace capture file|3855
+0	string		iptrace\0401.0	AIX iptrace capture file|3845
+0	string		iptrace\0402.0	AIX iptrace capture file|3845
 
 #
 # Novell LANalyzer capture files.
 #
-0	leshort		0x1001		Novell LANalyzer capture file|3856
-0	leshort		0x1007		Novell LANalyzer capture file|3856
+0	leshort		0x1001		Novell LANalyzer capture file|3846
+0	leshort		0x1007		Novell LANalyzer capture file|3846
 
 #
 # HP-UX "nettl" capture files.
 #
-0	string		\x54\x52\x00\x64\x00	HP/UX nettl capture file|3857
+0	string		\x54\x52\x00\x64\x00	HP/UX nettl capture file|3847
 
 #
 # RADCOM WAN/LAN Analyzer capture files.
 #
-0	string		\x42\xd2\x00\x34\x12\x66\x22\x88	RADCOM WAN/LAN Analyzer capture file|3858
+0	string		\x42\xd2\x00\x34\x12\x66\x22\x88	RADCOM WAN/LAN Analyzer capture file|3848
 
 #
 # NetStumbler log files.  Not really packets, per se, but about as
 # close as you can get.  These are log files from NetStumbler, a
 # Windows program, that scans for 802.11b networks.
 #
-0	string		NetS		NetStumbler log file|3859
->8	lelong		x		\b, %d stations found|3859
+0	string		NetS		NetStumbler log file|3849
+>8	lelong		x		\b, %d stations found|3849
 
 #
 # *Peek tagged capture files.
 #
-0	string		\177ver		EtherPeek/AiroPeek/OmniPeek capture file|3860
+0	string		\177ver		EtherPeek/AiroPeek/OmniPeek capture file|3850
 
 #
 # Visual Networks traffic capture files.
 #
-0	string		\x05VNF		Visual Networks traffic capture file|3861
+0	string		\x05VNF		Visual Networks traffic capture file|3851
 
 #
 # Network Instruments Observer capture files.
 #
-0	string		ObserverPktBuffe	Network Instruments Observer capture file|3862
+0	string		ObserverPktBuffe	Network Instruments Observer capture file|3852
 
 #
 # Files from Accellent Group's 5View products.
 #
-0	string		\xaa\xaa\xaa\xaa	5View capture file|3863
+0	string		\xaa\xaa\xaa\xaa	5View capture file|3853

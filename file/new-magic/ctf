@@ -6,18 +6,18 @@
 #--------------------------------------------------------------
 
 # CTF trace data
-0	lelong	0xc1fc1fc1	Common Trace Format (CTF) trace data (LE)|1426
-0	belong	0xc1fc1fc1	Common Trace Format (CTF) trace data (BE)|1427
+0	lelong	0xc1fc1fc1	Common Trace Format (CTF) trace data (LE)|1424
+0	belong	0xc1fc1fc1	Common Trace Format (CTF) trace data (BE)|1425
 
 # CTF metadata (packetized)
-0	lelong	0x75d11d57	Common Trace Format (CTF) packetized metadata (LE)|1428
->35	byte	x		\b, v%d|1428
->36	byte	x		\b.%d|1428
-0	belong	0x75d11d57	Common Trace Format (CTF) packetized metadata (BE)|1429
->35	byte	x		\b, v%d|1429
->36	byte	x		\b.%d|1429
+0	lelong	0x75d11d57	Common Trace Format (CTF) packetized metadata (LE)|1426
+>35	byte	x		\b, v%d|1426
+>36	byte	x		\b.%d|1426
+0	belong	0x75d11d57	Common Trace Format (CTF) packetized metadata (BE)|1427
+>35	byte	x		\b, v%d|1427
+>36	byte	x		\b.%d|1427
 
 # CTF metadata (plain text)
-0	string	/*\x20CTF\x20   Common Trace Format (CTF) plain text metadata|1430
+0	string	/*\x20CTF\x20   Common Trace Format (CTF) plain text metadata|1428
 !:strength + 5			# this is to make sure we beat C
->&0	regex	[0-9]+\.[0-9]+	\b, v%s|1430
+>&0	regex	[0-9]+\.[0-9]+	\b, v%s|1428

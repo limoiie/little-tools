@@ -4,5 +4,5 @@
 # blackberry:  file(1) magic for BlackBerry file formats
 #
 5	belong	0
->8	belong  010010010	BlackBerry RIM ETP file|1069
->>22	string	x		\b for %s|1069
+>8	belong  010010010	BlackBerry RIM ETP file|1067
+>>22	string	x		\b for %s|1067

@@ -3,17 +3,17 @@
 # $File: fonts,v 1.39 2018/12/10 20:58:34 christos Exp $
 # fonts:  file(1) magic for font data
 #
-0	search/1	FONT		ASCII vfont text|1878
-0	short		0436		Berkeley vfont data|1879
-0	short		017001		byte-swapped Berkeley vfont data|1880
+0	search/1	FONT		ASCII vfont text|1875
+0	short		0436		Berkeley vfont data|1876
+0	short		017001		byte-swapped Berkeley vfont data|1877
 
 # PostScript fonts (must precede "printer" entries), quinlan@yggdrasil.com
-0	string		%!PS-AdobeFont-1.	PostScript Type 1 font text|1881
->20	string		>\0			(%s)|1881
-6	string		%!PS-AdobeFont-1.	PostScript Type 1 font program data|1882
-0	string		%!FontType1	PostScript Type 1 font program data|1882
-6	string		%!FontType1	PostScript Type 1 font program data|1882
-0	string		%!PS-Adobe-3.0\ Resource-Font	PostScript Type 1 font text|1881
+0	string		%!PS-AdobeFont-1.	PostScript Type 1 font text|1878
+>20	string		>\0			(%s)|1878
+6	string		%!PS-AdobeFont-1.	PostScript Type 1 font program data|1879
+0	string		%!FontType1	PostScript Type 1 font program data|1879
+6	string		%!FontType1	PostScript Type 1 font program data|1879
+0	string		%!PS-Adobe-3.0\ Resource-Font	PostScript Type 1 font text|1878
 
 # Summary:	PostScript Type 1 Printer Font Metrics
 # URL:		https://en.wikipedia.org/wiki/PostScript_fonts
@@ -31,7 +31,7 @@
 # dfHorizRes 300=012Ch
 #>>>72		uleshort	0x012c
 # dfDriverInfo points to postscript information section
->>(101.l)	string/c	Postscript	Printer Font Metrics|1883
+>>(101.l)	string/c	Postscript	Printer Font Metrics|1880
 # above labeled "PFM data" by ./msdos (version 5.28) or "Adobe Printer Font Metrics" by TrID
 !:mime	application/x-font-pfm
 # AppleShare Print Server
@@ -42,42 +42,42 @@
 # dfDriverInfo
 >>>139		ulelong		>0
 # often abbreviated and same as filename
->>>>(139.l)	string		x		%s|1883
+>>>>(139.l)	string		x		%s|1880
 # dfSize
->>>2		ulelong		x		\b, %d bytes|1883
+>>>2		ulelong		x		\b, %d bytes|1880
 # dfFace 210=D2h 9Eh
 >>>105		ulelong		>0
 # Windows font name
->>>>(105.l)	string		x		\b, %s|1883
+>>>>(105.l)	string		x		\b, %s|1880
 # dfItalic
->>>80		ubyte		1		italic|1883
+>>>80		ubyte		1		italic|1880
 # dfUnderline
->>>81		ubyte		1		underline|1883
+>>>81		ubyte		1		underline|1880
 # dfStrikeOut
->>>82		ubyte		1		strikeout|1883
+>>>82		ubyte		1		strikeout|1880
 # dfWeight 400=0x0190 300=0x012c 500=0x01f4 600=0x0258 700=0x02bc
->>>83		uleshort	>699		bold|1883
+>>>83		uleshort	>699		bold|1880
 # dfPitchAndFamily 16 17 48 49 64 65
->>>90		ubyte		16		serif|1883
->>>90		ubyte		17		serif proportional|1883
+>>>90		ubyte		16		serif|1880
+>>>90		ubyte		17		serif proportional|1880
 #>>>90		ubyte		48		other
->>>90		ubyte		49		proportional|1883
->>>90		ubyte		64		script|1883
->>>90		ubyte		65		script proportional|1883
+>>>90		ubyte		49		proportional|1880
+>>>90		ubyte		64		script|1880
+>>>90		ubyte		65		script proportional|1880
 
 # X11 font files in SNF (Server Natural Format) format
 # updated by Joerg Jenderek at Feb 2013
 # http://computer-programming-forum.com/51-perl/8f22fb96d2e34bab.htm
-0	belong		00000004		X11 SNF font data, MSB first|1884
+0	belong		00000004		X11 SNF font data, MSB first|1881
 #>104	belong		00000004		X11 SNF font data, MSB first
 !:mime	application/x-font-sfn
 # GRR: line below too general as it catches also Xbase index file t3-CHAR.NDX
 0	lelong		00000004
->104	lelong		00000004		X11 SNF font data, LSB first|1885
+>104	lelong		00000004		X11 SNF font data, LSB first|1882
 !:mime	application/x-font-sfn
 
 # X11 Bitmap Distribution Format, from Daniel Quinlan (quinlan@yggdrasil.com)
-0	search/1	STARTFONT\ 		X11 BDF font text|1886
+0	search/1	STARTFONT\ 		X11 BDF font text|1883
 
 # From: Joerg Jenderek
 # URL: http://grub.gibibit.com/New_font_format
@@ -90,50 +90,50 @@
 # leng 4 only at the moment
 >>4			ubelong		4
 # FONT_FORMAT_SECTION_NAMES_FONT_NAME
->>>12			string		NAME		GRUB2 font|1887
+>>>12			string		NAME		GRUB2 font|1884
 !:mime			application/x-font-pf2
 !:ext			pf2
 # length of font_name
 >>>>16			ubelong		>0
 # font_name
->>>>>20			string		>\0		"%-s"|1887
+>>>>>20			string		>\0		"%-s"|1884
 
 # X11 fonts, from Daniel Quinlan (quinlan@yggdrasil.com)
 # PCF must come before SGI additions ("MIPSEL MIPS-II COFF" collides)
-0	string		\001fcp			X11 Portable Compiled Font data,|1888
->12	lelong		^0x08			bit: LSB,|1889
->12	lelong		&0x08			bit: MSB,|1890
+0	string		\001fcp			X11 Portable Compiled Font data,|1885
+>12	lelong		^0x08			bit: LSB,|1886
+>12	lelong		&0x08			bit: MSB,|1887
 >12	lelong		^0x04			byte: LSB first
 >12	lelong		&0x04			byte: MSB first
-0	string		D1.0\015		X11 Speedo font data|1891
+0	string		D1.0\015		X11 Speedo font data|1888
 
 #------------------------------------------------------------------------------
 # FIGlet fonts and controlfiles
 # From figmagic supplied with Figlet version 2.2
 # "David E. O'Brien" <obrien@FreeBSD.ORG>
-0	string		flf		FIGlet font|1892
->3	string		>2a		version %-2.2s|1892
-0	string		flc		FIGlet controlfile|1893
->3	string		>2a		version %-2.2s|1893
+0	string		flf		FIGlet font|1889
+>3	string		>2a		version %-2.2s|1889
+0	string		flc		FIGlet controlfile|1890
+>3	string		>2a		version %-2.2s|1890
 
 # libGrx graphics lib fonts, from Albert Cahalan (acahalan@cs.uml.edu)
 # Used with djgpp (DOS Gnu C++), sometimes Linux or Turbo C++
-0	belong		0x14025919	libGrx font data,|1894
->8	leshort		x		%dx|1894
->10	leshort		x		\b%d|1894
->40	string		x		%s|1894
+0	belong		0x14025919	libGrx font data,|1891
+>8	leshort		x		%dx|1891
+>10	leshort		x		\b%d|1891
+>40	string		x		%s|1891
 # Misc. DOS VGA fonts, from Albert Cahalan (acahalan@cs.uml.edu)
-0	belong		0xff464f4e	DOS code page font data collection|1895
-7	belong		0x00454741	DOS code page font data|1896
-7	belong		0x00564944	DOS code page font data (from Linux?)|1897
-4098	string		DOSFONT		DOSFONT2 encrypted font data|1898
+0	belong		0xff464f4e	DOS code page font data collection|1892
+7	belong		0x00454741	DOS code page font data|1893
+7	belong		0x00564944	DOS code page font data (from Linux?)|1894
+4098	string		DOSFONT		DOSFONT2 encrypted font data|1895
 
 # downloadable fonts for browser (prints type) anthon@mnt.org
 # https://tools.ietf.org/html/rfc3073
-0	string		PFR1		Portable Font Resource font data (new)|1899
->102	string		>0		\b: %s|1899
-0	string		PFR0		Portable Font Resource font data (old)|1900
->4	beshort		>0		version %d|1900
+0	string		PFR1		Portable Font Resource font data (new)|1896
+>102	string		>0		\b: %s|1896
+0	string		PFR0		Portable Font Resource font data (old)|1897
+>4	beshort		>0		version %d|1897
 
 # True Type fonts
 # Modified by: Joerg Jenderek
@@ -166,14 +166,14 @@
 # BASE DSIG OS/2 Zapf acnt glyf cvt vmtx xref ...
 >>12	regex/4l	\^[A-Za-z][A-Za-z][A-Za-z/][A-Za-z2\ ]	
 #>>>0	ubelong	x	\b, sfnt version 0x%x
->>>0	ubelong	!0x4f54544f	TrueType|1901
+>>>0	ubelong	!0x4f54544f	TrueType|1898
 !:mime	font/sfnt
 !:apple	????tfil
 # .ttf for TrueType font
 # EUDC.tte created by privat character editor %WINDIR%\system32\eudcedit.exe
 !:ext	ttf/tte
 # sfnt version 4F54544Fh~OTTO
->>>0	ubelong	=0x4f54544f	OpenType|1902
+>>>0	ubelong	=0x4f54544f	OpenType|1899
 !:mime	font/otf
 !:apple	????OTTO
 !:ext	otf
@@ -250,8 +250,8 @@
 >>>>>>&6		ubeshort	0	
 >>>>>>>&(&-14.S-17)	lestring16	x	\b, %-11.96s
 
-0	string		\007\001\001\000Copyright\ (c)\ 199	Adobe Multiple Master font|1903
-0	string		\012\001\001\000Copyright\ (c)\ 199	Adobe Multiple Master font|1903
+0	string		\007\001\001\000Copyright\ (c)\ 199	Adobe Multiple Master font|1900
+0	string		\012\001\001\000Copyright\ (c)\ 199	Adobe Multiple Master font|1900
 
 # TrueType/OpenType font collections (.ttc)
 # URL: https://en.wikipedia.org/wiki/OpenType
@@ -262,12 +262,12 @@
 # skip ASCII text
 >4	ubyte		0		
 # sfnt version often 0x00010000 of 1st table is TrueType
->>(12.L)	ubelong	!0x4f54544f	TrueType|1904
+>>(12.L)	ubelong	!0x4f54544f	TrueType|1901
 !:mime	font/ttf
 !:apple	????tfil
 !:ext	ttc
 # sfnt version 4F54544Fh~OTTO of 1st table is OpenType font 
->>(12.L)	ubelong	=0x4f54544f	OpenType|1905
+>>(12.L)	ubelong	=0x4f54544f	OpenType|1902
 !:mime	font/otf
 !:apple	????OTTO
 # no example found for otc
@@ -288,21 +288,21 @@
 >>(12.L) use		sfnt-font
 
 # Opentype font data from Avi Bercovich
-0	string		OTTO		OpenType font data|1906
+0	string		OTTO		OpenType font data|1899
 !:mime application/vnd.ms-opentype
 
 # From: Alex Myczko <alex@aiei.ch>
-0	string		SplineFontDB:	Spline Font Database|1907
+0	string		SplineFontDB:	Spline Font Database|1903
 !:mime application/vnd.font-fontforge-sfd
->14	string		x		version %s|1907
+>14	string		x		version %s|1903
 
 # EOT
 0x40	string		\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
->0x22	string		LP		Embedded OpenType (EOT)|1908
+>0x22	string		LP		Embedded OpenType (EOT)|1904
 # workaround until there's lepstring16
 # >>0x52	lepstring16/h	>\0		\b, %s family
 >>0x52	short	!0
->>>0x54	lestring16	x		\b, %s family|1908
+>>>0x54	lestring16	x		\b, %s family|1904
 !:mime application/vnd.ms-fontobject
 
 # Web Open Font Format (.woff)
@@ -318,13 +318,13 @@
 #>16	belong		x		\b, totalSfntSize %d
 
 # http://www.w3.org/TR/WOFF/
-0	string		wOFF	Web Open Font Format|1909
+0	string		wOFF	Web Open Font Format|1905
 >0	use		woff
->20	beshort		x	\b, version %d|1909
->22	beshort		x	\b.%d|1909
+>20	beshort		x	\b, version %d|1905
+>22	beshort		x	\b.%d|1905
 # http://www.w3.org/TR/WOFF2/
-0	string		wOF2	Web Open Font Format (Version 2)|1910
+0	string		wOF2	Web Open Font Format (Version 2)|1906
 >0	use		woff
 #>20	belong		x	\b, totalCompressedSize %d
->24	beshort		x	\b, version %d|1910
->26	beshort		x	\b.%d|1910
+>24	beshort		x	\b, version %d|1906
+>26	beshort		x	\b.%d|1906

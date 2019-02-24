@@ -5,31 +5,31 @@
 #
 # Sequent information updated by Don Dwiggins <atsun!dwiggins>.
 # For Sequent's multiprocessor systems (incomplete).
-0	lelong	0x00ea        	BALANCE NS32000 .o|3739
->16	lelong	>0		not stripped|3739
->124	lelong	>0		version %d|3739
-0	lelong	0x10ea        	BALANCE NS32000 executable (0 @ 0)|3740
->16	lelong  >0            	not stripped|3740
->124	lelong	>0		version %d|3740
-0	lelong	0x20ea        	BALANCE NS32000 executable (invalid @ 0)|3741
->16	lelong  >0            	not stripped|3741
->124	lelong	>0		version %d|3741
-0	lelong	0x30ea        	BALANCE NS32000 standalone executable|3742
->16	lelong  >0          	not stripped|3742
->124	lelong	>0		version %d|3742
+0	lelong	0x00ea        	BALANCE NS32000 .o|3729
+>16	lelong	>0		not stripped|3729
+>124	lelong	>0		version %d|3729
+0	lelong	0x10ea        	BALANCE NS32000 executable (0 @ 0)|3730
+>16	lelong  >0            	not stripped|3730
+>124	lelong	>0		version %d|3730
+0	lelong	0x20ea        	BALANCE NS32000 executable (invalid @ 0)|3731
+>16	lelong  >0            	not stripped|3731
+>124	lelong	>0		version %d|3731
+0	lelong	0x30ea        	BALANCE NS32000 standalone executable|3732
+>16	lelong  >0          	not stripped|3732
+>124	lelong	>0		version %d|3732
 #
 # Symmetry information added by Jason Merrill <jason@jarthur.claremont.edu>.
 # Symmetry magic nums will not be reached if DOS COM comes before them;
 # byte 0xeb is matched before these get a chance.
-0	leshort	0x12eb		SYMMETRY i386 .o|3743
->16	lelong	>0		not stripped|3743
->124	lelong	>0		version %d|3743
-0	leshort	0x22eb		SYMMETRY i386 executable (0 @ 0)|3744
->16	lelong	>0		not stripped|3744
->124	lelong	>0		version %d|3744
-0	leshort	0x32eb		SYMMETRY i386 executable (invalid @ 0)|3745
->16	lelong	>0		not stripped|3745
->124	lelong	>0		version %d|3745
+0	leshort	0x12eb		SYMMETRY i386 .o|3733
+>16	lelong	>0		not stripped|3733
+>124	lelong	>0		version %d|3733
+0	leshort	0x22eb		SYMMETRY i386 executable (0 @ 0)|3734
+>16	lelong	>0		not stripped|3734
+>124	lelong	>0		version %d|3734
+0	leshort	0x32eb		SYMMETRY i386 executable (invalid @ 0)|3735
+>16	lelong	>0		not stripped|3735
+>124	lelong	>0		version %d|3735
 # http://en.wikipedia.org/wiki/Sequent_Computer_Systems
 # below test line conflicts with MS-DOS 2.11 floppies and Acronis loader
 #0	leshort	0x42eb		SYMMETRY i386 standalone executable
@@ -37,6 +37,6 @@
 # skip unlike negative version
 >124	lelong	>-1
 # assuming version 28867614 is very low probable
->>124	lelong	!28867614	SYMMETRY i386 standalone executable|3746
->>>16	lelong	>0		not stripped|3746
->>>124	lelong	>0		version %d|3746
+>>124	lelong	!28867614	SYMMETRY i386 standalone executable|3736
+>>>16	lelong	>0		not stripped|3736
+>>>124	lelong	>0		version %d|3736

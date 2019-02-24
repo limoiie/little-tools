@@ -6,17 +6,17 @@
 # XXX - needs to have the byte order specified (NS32K was little-endian,
 # dunno whether they run the 88K in little-endian mode or not).
 #
-0	short		0x154		Encore|1624
->20	short		0x107		executable|1625
->20	short		0x108		pure executable|1626
->20	short		0x10b		demand-paged executable|1627
->20	short		0x10f		unsupported executable|1628
+0	short		0x154		Encore|1622
+>20	short		0x107		executable|1623
+>20	short		0x108		pure executable|1624
+>20	short		0x10b		demand-paged executable|1625
+>20	short		0x10f		unsupported executable|1626
 >12	long		>0		not stripped
 >22	short		>0		- version %d
 >22	short		0		-
 #>4	date		x		stamp %s
-0	short		0x155		Encore unsupported executable|1628
->12	long		>0		not stripped|1628
->22	short		>0		- version %d|1628
->22	short		0		-|1628
+0	short		0x155		Encore unsupported executable|1626
+>12	long		>0		not stripped|1626
+>22	short		>0		- version %d|1626
+>22	short		0		-|1626
 #>4	date		x		stamp %s

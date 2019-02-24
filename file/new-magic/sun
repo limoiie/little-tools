@@ -9,7 +9,25 @@
 # are in aout, as they're indistinguishable from other big-endian
 # 32-bit a.out files.
 #
-0	belong&077777777	0600413		a.out SunOS SPARC demand paged|3969
+0	belong&077777777	0600413		a.out SunOS SPARC demand paged|3959
+>0	byte		&0x80
+>>20	belong		<4096		shared library|3960
+>>20	belong		=4096		dynamically linked executable|3961
+>>20	belong		>4096		dynamically linked executable|3961
+>0	byte		^0x80		executable|3962
+>16	belong		>0		not stripped
+
+0	belong&077777777	0600410		a.out SunOS SPARC pure|3963
+>0	byte		&0x80		dynamically linked executable|3964
+>0	byte		^0x80		executable|3965
+>16	belong		>0		not stripped
+
+0	belong&077777777	0600407		a.out SunOS SPARC|3966
+>0	byte		&0x80		dynamically linked executable|3967
+>0	byte		^0x80		executable|3968
+>16	belong		>0		not stripped
+
+0	belong&077777777	0400413		a.out SunOS mc68020 demand paged|3969
 >0	byte		&0x80
 >>20	belong		<4096		shared library|3970
 >>20	belong		=4096		dynamically linked executable|3971
@@ -17,17 +35,17 @@
 >0	byte		^0x80		executable|3972
 >16	belong		>0		not stripped
 
-0	belong&077777777	0600410		a.out SunOS SPARC pure|3973
+0	belong&077777777	0400410		a.out SunOS mc68020 pure|3973
 >0	byte		&0x80		dynamically linked executable|3974
 >0	byte		^0x80		executable|3975
 >16	belong		>0		not stripped
 
-0	belong&077777777	0600407		a.out SunOS SPARC|3976
+0	belong&077777777	0400407		a.out SunOS mc68020|3976
 >0	byte		&0x80		dynamically linked executable|3977
 >0	byte		^0x80		executable|3978
 >16	belong		>0		not stripped
 
-0	belong&077777777	0400413		a.out SunOS mc68020 demand paged|3979
+0	belong&077777777	0200413		a.out SunOS mc68010 demand paged|3979
 >0	byte		&0x80
 >>20	belong		<4096		shared library|3980
 >>20	belong		=4096		dynamically linked executable|3981
@@ -35,97 +53,79 @@
 >0	byte		^0x80		executable|3982
 >16	belong		>0		not stripped
 
-0	belong&077777777	0400410		a.out SunOS mc68020 pure|3983
+0	belong&077777777	0200410		a.out SunOS mc68010 pure|3983
 >0	byte		&0x80		dynamically linked executable|3984
 >0	byte		^0x80		executable|3985
 >16	belong		>0		not stripped
 
-0	belong&077777777	0400407		a.out SunOS mc68020|3986
+0	belong&077777777	0200407		a.out SunOS mc68010|3986
 >0	byte		&0x80		dynamically linked executable|3987
 >0	byte		^0x80		executable|3988
->16	belong		>0		not stripped
-
-0	belong&077777777	0200413		a.out SunOS mc68010 demand paged|3989
->0	byte		&0x80
->>20	belong		<4096		shared library|3990
->>20	belong		=4096		dynamically linked executable|3991
->>20	belong		>4096		dynamically linked executable|3991
->0	byte		^0x80		executable|3992
->16	belong		>0		not stripped
-
-0	belong&077777777	0200410		a.out SunOS mc68010 pure|3993
->0	byte		&0x80		dynamically linked executable|3994
->0	byte		^0x80		executable|3995
->16	belong		>0		not stripped
-
-0	belong&077777777	0200407		a.out SunOS mc68010|3996
->0	byte		&0x80		dynamically linked executable|3997
->0	byte		^0x80		executable|3998
 >16	belong		>0		not stripped
 
 #
 # Core files.  "SPARC 4.x BCP" means "core file from a SunOS 4.x SPARC
 # binary executed in compatibility mode under SunOS 5.x".
 #
-0	belong		0x080456	SunOS core file|3999
->4	belong		432		(SPARC)|4000
->>132	string		>\0		from '%s'|4000
->>116	belong		=3		(quit)|4000
->>116	belong		=4		(illegal instruction)|4000
->>116	belong		=5		(trace trap)|4000
->>116	belong		=6		(abort)|4000
->>116	belong		=7		(emulator trap)|4000
->>116	belong		=8		(arithmetic exception)|4000
->>116	belong		=9		(kill)|4000
->>116	belong		=10		(bus error)|4000
->>116	belong		=11		(segmentation violation)|4000
->>116	belong		=12		(bad argument to system call)|4000
->>116	belong		=29		(resource lost)|4000
->>120	belong		x		(T=%dK,|4000
->>124	belong		x		D=%dK,|4000
->>128	belong		x		S=%dK)|4000
->4	belong		826		(68K)|4001
->>128	string		>\0		from '%s'|4001
->4	belong		456		(SPARC 4.x BCP)|4002
->>152	string		>\0		from '%s'|4002
+0	belong		0x080456	SunOS core file|3989
+>4	belong		432		(SPARC)|3990
+>>132	string		>\0		from '%s'|3990
+>>116	belong		=3		(quit)|3990
+>>116	belong		=4		(illegal instruction)|3990
+>>116	belong		=5		(trace trap)|3990
+>>116	belong		=6		(abort)|3990
+>>116	belong		=7		(emulator trap)|3990
+>>116	belong		=8		(arithmetic exception)|3990
+>>116	belong		=9		(kill)|3990
+>>116	belong		=10		(bus error)|3990
+>>116	belong		=11		(segmentation violation)|3990
+>>116	belong		=12		(bad argument to system call)|3990
+>>116	belong		=29		(resource lost)|3990
+>>120	belong		x		(T=%dK,|3990
+>>124	belong		x		D=%dK,|3990
+>>128	belong		x		S=%dK)|3990
+>4	belong		826		(68K)|3991
+>>128	string		>\0		from '%s'|3991
+>4	belong		456		(SPARC 4.x BCP)|3992
+>>152	string		>\0		from '%s'|3992
 # Sun SunPC
-0	long		0xfa33c08e	SunPC 4.0 Hard Disk|4003
-0	string		#SUNPC_CONFIG	SunPC 4.0 Properties Values|4004
+0	long		0xfa33c08e	SunPC 4.0 Hard Disk|3993
+0	string		#SUNPC_CONFIG	SunPC 4.0 Properties Values|3994
 # Sun snoop (see RFC 1761, which describes the capture file format,
 # RFC 3827, which describes some additional datalink types, and
 # http://www.iana.org/assignments/snoop-datalink-types/snoop-datalink-types.xml,
 # which is the IANA registry of Snoop datalink types)
 #
-0	string		snoop		Snoop capture file|4005
->8	belong		>0		- version %d|4005
->12	belong		0		(IEEE 802.3)|4005
->12	belong		1		(IEEE 802.4)|4005
->12	belong		2		(IEEE 802.5)|4005
->12	belong		3		(IEEE 802.6)|4005
->12	belong		4		(Ethernet)|4005
->12	belong		5		(HDLC)|4005
->12	belong		6		(Character synchronous)|4005
->12	belong		7		(IBM channel-to-channel adapter)|4005
->12	belong		8		(FDDI)|4005
->12	belong		9		(Other)|4005
->12	belong		10		(type %d)|4005
->12	belong		11		(type %d)|4005
->12	belong		12		(type %d)|4005
->12	belong		13		(type %d)|4005
->12	belong		14		(type %d)|4005
->12	belong		15		(type %d)|4005
->12	belong		16		(Fibre Channel)|4005
->12	belong		17		(ATM)|4005
->12	belong		18		(ATM Classical IP)|4005
->12	belong		19		(type %d)|4005
->12	belong		20		(type %d)|4005
->12	belong		21		(type %d)|4005
->12	belong		22		(type %d)|4005
->12	belong		23		(type %d)|4005
->12	belong		24		(type %d)|4005
->12	belong		25		(type %d)|4005
->12	belong		26		(IP over Infiniband)|4005
->12	belong		>26		(type %d)|4005
+0	string		snoop		Snoop capture file|3995
+>8	belong		>0		- version %d|3995
+>12	belong		0		(IEEE 802.3)|3995
+>12	belong		1		(IEEE 802.4)|3995
+>12	belong		2		(IEEE 802.5)|3995
+>12	belong		3		(IEEE 802.6)|3995
+>12	belong		4		(Ethernet)|3995
+>12	belong		5		(HDLC)|3995
+>12	belong		6		(Character synchronous)|3995
+>12	belong		7		(IBM channel-to-channel adapter)|3995
+>12	belong		8		(FDDI)|3995
+>12	belong		9		(Other)|3995
+>12	belong		10		(type %d)|3995
+>12	belong		11		(type %d)|3995
+>12	belong		12		(type %d)|3995
+>12	belong		13		(type %d)|3995
+>12	belong		14		(type %d)|3995
+>12	belong		15		(type %d)|3995
+>12	belong		16		(Fibre Channel)|3995
+>12	belong		17		(ATM)|3995
+>12	belong		18		(ATM Classical IP)|3995
+>12	belong		19		(type %d)|3995
+>12	belong		20		(type %d)|3995
+>12	belong		21		(type %d)|3995
+>12	belong		22		(type %d)|3995
+>12	belong		23		(type %d)|3995
+>12	belong		24		(type %d)|3995
+>12	belong		25		(type %d)|3995
+>12	belong		26		(IP over Infiniband)|3995
+>12	belong		>26		(type %d)|3995
 
 #---------------------------------------------------------------------------
 # The following entries have been tested by Duncan Laurie <duncan@sun.com> (a
@@ -133,9 +133,9 @@
 # inclusion.
 
 # Boot ROM images for Sun/Cobalt Linux server appliances
-0       string  Cobalt\ Networks\ Inc.\nFirmware\ v     Paged COBALT boot rom|4006
->38     string x        V%.4s|4006
+0       string  Cobalt\ Networks\ Inc.\nFirmware\ v     Paged COBALT boot rom|3996
+>38     string x        V%.4s|3996
 
 # New format for Sun/Cobalt boot ROMs is annoying, it stores the version code
 # at the very end where file(1) can't get it.
-0       string CRfs     COBALT boot rom data (Flat boot rom or file system)|4007
+0       string CRfs     COBALT boot rom data (Flat boot rom or file system)|3997

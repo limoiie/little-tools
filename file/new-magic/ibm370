@@ -18,31 +18,31 @@
 #
 # instead of the "USS/370" versions of the same magic numbers.
 #
-0	beshort		0537		370 XA sysV executable|2330
+0	beshort		0537		370 XA sysV executable|2324
+>12	belong		>0		not stripped|2324
+>22	beshort		>0		- version %d|2324
+>30	belong		>0		- 5.2 format|2324
+0	beshort		0532		370 XA sysV pure executable|2325
+>12	belong		>0		not stripped|2325
+>22	beshort		>0		- version %d|2325
+>30	belong		>0		- 5.2 format|2325
+0	beshort		054001		370 sysV pure executable|2326
+>12	belong		>0		not stripped|2327
+0	beshort		055001		370 XA sysV pure executable|2325
+>12	belong		>0		not stripped|2328
+0	beshort		056401		370 sysV executable|2329
 >12	belong		>0		not stripped|2330
->22	beshort		>0		- version %d|2330
->30	belong		>0		- 5.2 format|2330
-0	beshort		0532		370 XA sysV pure executable|2331
+0	beshort		057401		370 XA sysV executable|2324
 >12	belong		>0		not stripped|2331
->22	beshort		>0		- version %d|2331
->30	belong		>0		- 5.2 format|2331
-0	beshort		054001		370 sysV pure executable|2332
+0       beshort		0531		SVR2 executable (Amdahl-UTS)|2332
+>12	belong		>0		not stripped|2332
+>24     belong		>0		- version %d|2332
+0	beshort		0534		SVR2 pure executable (Amdahl-UTS)|2333
 >12	belong		>0		not stripped|2333
-0	beshort		055001		370 XA sysV pure executable|2331
+>24	belong		>0		- version %d|2333
+0	beshort		0530		SVR2 pure executable (USS/370)|2334
 >12	belong		>0		not stripped|2334
-0	beshort		056401		370 sysV executable|2335
->12	belong		>0		not stripped|2336
-0	beshort		057401		370 XA sysV executable|2330
->12	belong		>0		not stripped|2337
-0       beshort		0531		SVR2 executable (Amdahl-UTS)|2338
->12	belong		>0		not stripped|2338
->24     belong		>0		- version %d|2338
-0	beshort		0534		SVR2 pure executable (Amdahl-UTS)|2339
->12	belong		>0		not stripped|2339
->24	belong		>0		- version %d|2339
-0	beshort		0530		SVR2 pure executable (USS/370)|2340
->12	belong		>0		not stripped|2340
->24	belong		>0		- version %d|2340
-0	beshort		0535		SVR2 executable (USS/370)|2341
->12	belong		>0		not stripped|2341
->24	belong		>0		- version %d|2341
+>24	belong		>0		- version %d|2334
+0	beshort		0535		SVR2 executable (USS/370)|2335
+>12	belong		>0		not stripped|2335
+>24	belong		>0		- version %d|2335

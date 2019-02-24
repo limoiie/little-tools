@@ -11,7 +11,7 @@
 # DocType id:
 >4		search/4096 	\x42\x82
 # DocType contents:
->>&1		string		webm		WebM|2891
+>>&1		string		webm		WebM|2883
 !:mime  video/webm
->>&1		string		matroska	Matroska data|2892
+>>&1		string		matroska	Matroska data|2884
 !:mime  video/x-matroska

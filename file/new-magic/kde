@@ -3,9 +3,9 @@
 # $File: kde,v 1.4 2009/09/19 16:28:10 christos Exp $
 # kde:  file(1) magic for KDE
 
-0		string/t	[KDE\ Desktop\ Entry]	KDE desktop entry|2663
+0		string/t	[KDE\ Desktop\ Entry]	KDE desktop entry|2655
 !:mime	application/x-kdelnk
-0		string/t	#\ KDE\ Config\ File	KDE config file|2664
+0		string/t	#\ KDE\ Config\ File	KDE config file|2656
 !:mime	application/x-kdelnk
-0		string/t	#\ xmcd	xmcd database file for kscd|2665
+0		string/t	#\ xmcd	xmcd database file for kscd|2657
 !:mime	text/x-xmcd

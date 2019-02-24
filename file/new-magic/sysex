@@ -6,91 +6,91 @@
 # GRR: original 1 byte test at offset was too general as it catches also many FATs of DOS filesystems
 # where real SYStem EXclusive messages at offset 1 are limited to seven bits
 # http://en.wikipedia.org/wiki/MIDI
-0	ubeshort&0xFF80		0xF000		SysEx File -|4013
+0	ubeshort&0xFF80		0xF000		SysEx File -|4003
 
 # North American Group
->1	byte			0x01		Sequential|4014
->1	byte			0x02		IDP|4015
->1	byte			0x03		OctavePlateau|4016
->1	byte			0x04		Moog|4017
->1	byte			0x05		Passport|4018
->1	byte			0x06		Lexicon|4019
->1	byte			0x07		Kurzweil/Future Retro|4020
->>3	byte			0x77		777|4020
->>4	byte			0x00		Bank|4020
->>4	byte			0x01		Song|4020
->>5	byte			0x0f		16|4020
->>5	byte			0x0e		15|4020
->>5	byte			0x0d		14|4020
->>5	byte			0x0c		13|4020
->>5	byte			0x0b		12|4020
->>5	byte			0x0a		11|4020
->>5	byte			0x09		10|4020
->>5	byte			0x08		9|4020
->>5	byte			0x07		8|4020
->>5	byte			0x06		7|4020
->>5	byte			0x05		6|4020
->>5	byte			0x04		5|4020
->>5	byte			0x03		4|4020
->>5	byte			0x02		3|4020
->>5	byte			0x01		2|4020
->>5	byte			0x00		1|4020
->>5	byte			0x10		(ALL)|4020
->>2	byte			x			\b, Channel %d|4020
->1	byte			0x08		Fender|4021
->1	byte			0x09		Gulbransen|4022
->1	byte			0x0a		AKG|4023
->1	byte			0x0b		Voyce|4024
->1	byte			0x0c		Waveframe|4025
->1	byte			0x0d		ADA|4026
->1	byte			0x0e		Garfield|4027
->1	byte			0x0f		Ensoniq|4028
->1	byte			0x10		Oberheim|4029
->>2	byte			0x06		Matrix 6 series|4029
->>3	byte			0x0A		Dump (All)|4029
->>3	byte			0x01		Dump (Bank)|4029
->>4 belong			0x0002040E		Matrix 1000|4029
->>>11 byte			<2			User bank %d|4029
->>>11 byte			>1			Preset bank %d|4029
->1	byte			0x11		Apple|4030
->1	byte			0x12		GreyMatter|4031
->1	byte			0x14		PalmTree|4032
->1	byte			0x15		JLCooper|4033
->1	byte			0x16		Lowrey|4034
->1	byte			0x17		AdamsSmith|4035
->1	byte			0x18		E-mu|4036
->1	byte			0x19		Harmony|4037
->1	byte			0x1a		ART|4038
->1	byte			0x1b		Baldwin|4039
->1	byte			0x1c		Eventide|4040
->1	byte			0x1d		Inventronics|4041
->1	byte			0x1f		Clarity|4042
+>1	byte			0x01		Sequential|4004
+>1	byte			0x02		IDP|4005
+>1	byte			0x03		OctavePlateau|4006
+>1	byte			0x04		Moog|4007
+>1	byte			0x05		Passport|4008
+>1	byte			0x06		Lexicon|4009
+>1	byte			0x07		Kurzweil/Future Retro|4010
+>>3	byte			0x77		777|4010
+>>4	byte			0x00		Bank|4010
+>>4	byte			0x01		Song|4010
+>>5	byte			0x0f		16|4010
+>>5	byte			0x0e		15|4010
+>>5	byte			0x0d		14|4010
+>>5	byte			0x0c		13|4010
+>>5	byte			0x0b		12|4010
+>>5	byte			0x0a		11|4010
+>>5	byte			0x09		10|4010
+>>5	byte			0x08		9|4010
+>>5	byte			0x07		8|4010
+>>5	byte			0x06		7|4010
+>>5	byte			0x05		6|4010
+>>5	byte			0x04		5|4010
+>>5	byte			0x03		4|4010
+>>5	byte			0x02		3|4010
+>>5	byte			0x01		2|4010
+>>5	byte			0x00		1|4010
+>>5	byte			0x10		(ALL)|4010
+>>2	byte			x			\b, Channel %d|4010
+>1	byte			0x08		Fender|4011
+>1	byte			0x09		Gulbransen|4012
+>1	byte			0x0a		AKG|4013
+>1	byte			0x0b		Voyce|4014
+>1	byte			0x0c		Waveframe|4015
+>1	byte			0x0d		ADA|4016
+>1	byte			0x0e		Garfield|4017
+>1	byte			0x0f		Ensoniq|4018
+>1	byte			0x10		Oberheim|4019
+>>2	byte			0x06		Matrix 6 series|4019
+>>3	byte			0x0A		Dump (All)|4019
+>>3	byte			0x01		Dump (Bank)|4019
+>>4 belong			0x0002040E		Matrix 1000|4019
+>>>11 byte			<2			User bank %d|4019
+>>>11 byte			>1			Preset bank %d|4019
+>1	byte			0x11		Apple|4020
+>1	byte			0x12		GreyMatter|4021
+>1	byte			0x14		PalmTree|4022
+>1	byte			0x15		JLCooper|4023
+>1	byte			0x16		Lowrey|4024
+>1	byte			0x17		AdamsSmith|4025
+>1	byte			0x18		E-mu|4026
+>1	byte			0x19		Harmony|4027
+>1	byte			0x1a		ART|4028
+>1	byte			0x1b		Baldwin|4029
+>1	byte			0x1c		Eventide|4030
+>1	byte			0x1d		Inventronics|4031
+>1	byte			0x1f		Clarity|4032
 
 # European Group
->1	byte			0x21		SIEL|4043
->1	byte			0x22		Synthaxe|4044
->1	byte			0x24		Hohner|4045
->1	byte			0x25		Twister|4046
->1	byte			0x26		Solton|4047
->1	byte			0x27		Jellinghaus|4048
->1	byte			0x28		Southworth|4049
->1	byte			0x29		PPG|4050
->1	byte			0x2a		JEN|4051
->1	byte			0x2b		SSL|4052
->1	byte			0x2c		AudioVertrieb|4053
+>1	byte			0x21		SIEL|4033
+>1	byte			0x22		Synthaxe|4034
+>1	byte			0x24		Hohner|4035
+>1	byte			0x25		Twister|4036
+>1	byte			0x26		Solton|4037
+>1	byte			0x27		Jellinghaus|4038
+>1	byte			0x28		Southworth|4039
+>1	byte			0x29		PPG|4040
+>1	byte			0x2a		JEN|4041
+>1	byte			0x2b		SSL|4042
+>1	byte			0x2c		AudioVertrieb|4043
 
->1	byte			0x2f		ELKA|4054
->>3	byte			0x09		EK-44|4055
+>1	byte			0x2f		ELKA|4044
+>>3	byte			0x09		EK-44|4045
 
->1	byte			0x30		Dynacord|4056
->1	byte			0x31		Jomox|4057
->1	byte			0x33		Clavia|4058
->1	byte			0x39		Soundcraft|4059
+>1	byte			0x30		Dynacord|4046
+>1	byte			0x31		Jomox|4047
+>1	byte			0x33		Clavia|4048
+>1	byte			0x39		Soundcraft|4049
 # Some Waldorf info from http://Stromeko.Synth.net/Downloads#WaldorfDocs
->1	byte			0x3e		Waldorf|4060
->>2	byte			0x00		microWave|4061
->>2	byte			0x0E		microwave2 / XT|4062
->>2	byte			0x0F		Q / Q+|4063
+>1	byte			0x3e		Waldorf|4050
+>>2	byte			0x00		microWave|4051
+>>2	byte			0x0E		microwave2 / XT|4052
+>>2	byte			0x0F		Q / Q+|4053
 >>3	byte			=0			(default id)
 >>3 byte			>0			(
 >>>3 byte			<0x7F		\bdevice %d)
@@ -186,32 +186,32 @@
 >>>4	byte			0x0F		SBULK (Bulk Switch on/off)
 
 # Japanese Group
->1	byte			0x40		Kawai|4064
->>3	byte			0x20		K1|4065
->>3	byte			0x22		K4|4066
+>1	byte			0x40		Kawai|4054
+>>3	byte			0x20		K1|4055
+>>3	byte			0x22		K4|4056
 
->1	byte			0x41		Roland|4067
->>3	byte			0x14		D-50|4068
->>3	byte			0x2b		U-220|4069
->>3	byte			0x02		TR-707|4070
+>1	byte			0x41		Roland|4057
+>>3	byte			0x14		D-50|4058
+>>3	byte			0x2b		U-220|4059
+>>3	byte			0x02		TR-707|4060
 
->1	byte			0x42		Korg|4071
->>3	byte			0x19		M1|4072
+>1	byte			0x42		Korg|4061
+>>3	byte			0x19		M1|4062
 
->1	byte			0x43		Yamaha|4073
->1	byte			0x44		Casio|4074
->1	byte			0x46		Kamiya|4075
->1	byte			0x47		Akai|4076
->1	byte			0x48		Victor|4077
->1	byte			0x49		Mesosha|4078
->1	byte			0x4b		Fujitsu|4079
->1	byte			0x4c		Sony|4080
->1	byte			0x4e		Teac|4081
->1	byte			0x50		Matsushita|4082
->1	byte			0x51		Fostex|4083
->1	byte			0x52		Zoom|4084
->1	byte			0x54		Matsushita|4082
->1	byte			0x57		Acoustic tech. lab.|4085
+>1	byte			0x43		Yamaha|4063
+>1	byte			0x44		Casio|4064
+>1	byte			0x46		Kamiya|4065
+>1	byte			0x47		Akai|4066
+>1	byte			0x48		Victor|4067
+>1	byte			0x49		Mesosha|4068
+>1	byte			0x4b		Fujitsu|4069
+>1	byte			0x4c		Sony|4070
+>1	byte			0x4e		Teac|4071
+>1	byte			0x50		Matsushita|4072
+>1	byte			0x51		Fostex|4073
+>1	byte			0x52		Zoom|4074
+>1	byte			0x54		Matsushita|4072
+>1	byte			0x57		Acoustic tech. lab.|4075
 # http://www.midi.org/techspecs/manid.php
 >1	belong&0xffffff00	0x00007400	Ta Horng
 >1	belong&0xffffff00	0x00007500	e-Tek
@@ -317,4 +317,4 @@
 >1	belong&0xffffff00	0x00204700	Klavis Tech.
 >1	belong&0xffffff00	0x00204800	Noteheads AB
 
-0	string			T707		Roland TR-707 Data|4086
+0	string			T707		Roland TR-707 Data|4076

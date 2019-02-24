@@ -29,6 +29,6 @@
 #0	short		0x10b		unknown pure executable
 #>8	short		>0		not stripped
 #>15	byte		>0		- version %ld
-0	long		0x10c		unknown demand paged pure executable|4313
->16	long		>0		not stripped|4314
-0	long		0x10e		unknown readable demand paged pure executable|4315
+0	long		0x10c		unknown demand paged pure executable|4303
+>16	long		>0		not stripped|4304
+0	long		0x10e		unknown readable demand paged pure executable|4305

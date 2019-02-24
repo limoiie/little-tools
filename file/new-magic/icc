@@ -32,21 +32,21 @@
 # to be for "ColorSync ICC Color Profile" rather than "Kodak Color
 # Management System, ICC Profile".
 # Yes, it's "APPL", not "AAPL"; see the spec.
->>>40	string		APPL		ColorSync|2354
+>>>40	string		APPL		ColorSync|2348
 
 # Microsoft ICM color profile
->>>40	string		MSFT		Microsoft|2355
+>>>40	string		MSFT		Microsoft|2349
 
 # Yes, that's a blank after "SGI".
->>>40	string		SGI\ 		SGI|2356
+>>>40	string		SGI\ 		SGI|2350
 
 # XXX - is this what's used for the Sun KCMS or not?  The standard file
 # uses just "acsp" for that, but Apple's file uses it for "ColorSync",
 # and there *is* an identified "primary platform" value of SUNW.
->>>40	string		SUNW		Sun KCMS|2357
+>>>40	string		SUNW		Sun KCMS|2351
 
 # 5th platform
->>>40	string		TGNT		Taligent|2358
+>>>40	string		TGNT		Taligent|2352
 
 # remaining "l" "e" of "color profile" printed later to avoid error
 >>>40	string		x 		color profi
@@ -57,16 +57,16 @@
 # do not use empty message text to a avoid error like
 # icc, 82: Warning: Current entry does not yet have a description for adding a EXTENSION type
 # file.exe: could not find any valid magic files!
->>>>9	ubyte		!0		\ble|2359
+>>>>9	ubyte		!0		\ble|2353
 !:ext	icc/icm
 # minor version
 >>>>9	ubyte		=0		\bl
 # Kodak colour management system
->>>>>4	string		=KCMS		\be|2359
+>>>>>4	string		=KCMS		\be|2353
 !:ext	icc/icm/cc
->>>>>4	string		!KCMS		\be|2359
+>>>>>4	string		!KCMS		\be|2353
 !:ext	icc/icm
->>>8	ubyte		!2		\ble|2359
+>>>8	ubyte		!2		\ble|2353
 !:ext	icc
 # Profile version major.4bit-minor.sub1.sub2 like 4.3.0.0 (04300000h)
 >>>8	ubyte		x		%u

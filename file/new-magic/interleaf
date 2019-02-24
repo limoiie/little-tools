@@ -3,7 +3,7 @@
 # $File$
 # interleaf:  file(1) magic for InterLeaf TPS:
 #
-0	string		=\210OPS	Interleaf saved data|2627
-0	string		=<!OPS		Interleaf document text|2628
->5	string		,\ Version\ =	\b, version|2629
->>17	string		>\0		%.3s|2629
+0	string		=\210OPS	Interleaf saved data|2619
+0	string		=<!OPS		Interleaf document text|2620
+>5	string		,\ Version\ =	\b, version|2621
+>>17	string		>\0		%.3s|2621

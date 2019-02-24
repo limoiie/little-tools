@@ -808,15 +808,15 @@
 >4	byte&0x0f	=0x0f		first is type SPECIAL
 
 # HPACK archiver (Peter Gutmann, pgut1@cs.aukuni.ac.nz)
-0	string		HPAK		HPACK archive data|643
+0	string		HPAK		HPACK archive data|520
 
 # JAM Archive volume format, by Dmitry.Kohmanyuk@UA.net
-0	string		\351,\001JAM\ 		JAM archive,|644
->7	string		>\0			version %.4s|644
->0x26	byte		=0x27			-|644
->>0x2b	string          >\0			label %.11s,|644
->>0x27	lelong		x			serial %08x,|644
->>0x36	string		>\0			fstype %.8s|644
+0	string		\351,\001JAM\ 		JAM archive,|643
+>7	string		>\0			version %.4s|643
+>0x26	byte		=0x27			-|643
+>>0x2b	string          >\0			label %.11s,|643
+>>0x27	lelong		x			serial %08x,|643
+>>0x36	string		>\0			fstype %.8s|643
 
 # LHARC/LHA archiver (Greg Roelofs, newt@uchicago.edu)
 # Update: Joerg Jenderek
@@ -840,39 +840,39 @@
 >>>>>2	string		-lz		\b 
 !:ext	lzs
 # already known  -lzs- -lz4- -lz5- with old names
->>>>>>3	regex	\^lz[45]	LHarc 1.x archive data|645
+>>>>>>3	regex	\^lz[45]	LHarc 1.x archive data|644
 # missing -lz?- with wikipedia names
->>>>>>3	regex	\^lz[2378]	LArc archive|646
->>>>>>2	string	-lzs		LHa/LZS archive data|647
+>>>>>>3	regex	\^lz[2378]	LArc archive|645
+>>>>>>2	string	-lzs		LHa/LZS archive data|646
 # display archive type name like "LHa (2.x) archive data"
 >>>>>2	string		-lh		\b
 # already known -lh0- -lh1- -lh2- -lh3-  -lh4- -lh5- -lh6- -lh7- -lhd- variants with old names
->>>>>>3	regex		\^lh[01]	LHarc 1.x/ARX archive data|648
+>>>>>>3	regex		\^lh[01]	LHarc 1.x/ARX archive data|647
 # LHice archiver use ".ICE" as name extension instead usual one ".lzh"
 # FOOBAR archiver use ".foo" as name extension instead usual one
 # "Florain Orjanov's and Olga Bachetska's ARchiver" not found at the moment
->>>>>>>2	string	-lh1		\b|648
+>>>>>>>2	string	-lh1		\b|647
 !:ext lha/lzh/ice
->>>>>>3	regex		\^lh[23d]	LHa 2.x? archive data|649
->>>>>>3	regex		\^lh[7]		LHa (2.x)/LHark archive data|650
->>>>>>3	regex		\^lh[456]	LHa (2.x) archive data|651
->>>>>>>2	string	-lh5		\b|651
+>>>>>>3	regex		\^lh[23d]	LHa 2.x? archive data|648
+>>>>>>3	regex		\^lh[7]		LHa (2.x)/LHark archive data|649
+>>>>>>3	regex		\^lh[456]	LHa (2.x) archive data|648
+>>>>>>>2	string	-lh5		\b|648
 # https://en.wikipedia.org/wiki/BIOS
 # Some mainboard BIOS like Award use LHa compression. So archives with unusal extension are found like
 # bios.rom , kd7_v14.bin, 1010.004, ...
 !:ext lha/lzh/rom/bin
 # missing -lh?- variants (Joe Jared)
->>>>>>3	regex		\^lh[89a-ce]	LHa (Joe Jared) archive|652
+>>>>>>3	regex		\^lh[89a-ce]	LHa (Joe Jared) archive|650
 # UNLHA32 2.67a
->>>>>>2	string		-lhx		LHa (UNLHA32) archive|653
+>>>>>>2	string		-lhx		LHa (UNLHA32) archive|651
 # lha archives with standard file name extensions ".lha" ".lzh"
 >>>>>>3	regex		!\^(lh1|lh5)	\b 
 !:ext lha/lzh
 # this should not happen if all -lh variants are described
->>>>>>2	default		x		LHa (unknown) archive|654
+>>>>>>2	default		x		LHa (unknown) archive|652
 #!:ext	lha
 # PMarc
->>>>>3	regex		\^pm[012]	PMarc archive data|655
+>>>>>3	regex		\^pm[012]	PMarc archive data|653
 !:ext pma
 # append method id without leading and trailing minus character
 >>>>>3	string		x		[%3.3s]
@@ -974,11 +974,11 @@
 2	string		-lhx-
 >0	use	lharc-file
 # taken from idarc [JW]
-2   string      -lZ         PUT archive data|656
+2   string      -lZ         PUT archive data|654
 # already done by LHarc magics
 # this should never happen if all sub types of LZS archive are identified
 #2   string      -lz         LZS archive data
-2   string      -sw1-       Swag archive data|657
+2   string      -sw1-       Swag archive data|655
 
 0	name		rar-file-header
 >24	byte		15		\b, v1.5
@@ -1004,7 +1004,7 @@
 >>3	leshort		&0x100		FirstVolume
 
 # RAR (Roshal Archive) archive
-0	string		Rar!\x1a\7\0		RAR archive data|658
+0	string		Rar!\x1a\7\0		RAR archive data|656
 !:mime	application/x-rar
 !:ext	rar/cbr
 # file header
@@ -1016,30 +1016,30 @@
 >9		byte	0x73
 >>7		use	rar-archive-header
 
-0	string		Rar!\x1a\7\1\0		RAR archive data, v5|659
+0	string		Rar!\x1a\7\1\0		RAR archive data, v5|657
 !:mime	application/x-rar
 !:ext	rar
 
 # Very old RAR archive
 # http://jasonblanks.com/wp-includes/images/papers/KnowyourarchiveRAR.pdf
-0	string		RE\x7e\x5e  RAR archive data (<v1.5)|660
+0	string		RE\x7e\x5e  RAR archive data (<v1.5)|658
 !:mime	application/x-rar
 !:ext	rar/cbr
 
 # SQUISH archiver (Greg Roelofs, newt@uchicago.edu)
-0	string		SQSH		squished archive data (Acorn RISCOS)|661
+0	string		SQSH		squished archive data (Acorn RISCOS)|659
 
 # UC2 archiver (Greg Roelofs, newt@uchicago.edu)
 # [JW] see exe section for self-extracting version
-0	string		UC2\x1a		UC2 archive data|662
+0	string		UC2\x1a		UC2 archive data|660
 
 # PKZIP multi-volume archive
-0	string		PK\x07\x08PK\x03\x04	Zip multi-volume archive data, at least PKZIP v2.50 to extract|663
+0	string		PK\x07\x08PK\x03\x04	Zip multi-volume archive data, at least PKZIP v2.50 to extract|661
 !:mime	application/zip
 !:ext zip/cbz
 
 # Zip archives (Greg Roelofs, c/o zip-bugs@wkuvx1.wku.edu)
-0	string		PK\005\006	Zip archive data (empty)|664
+0	string		PK\005\006	Zip archive data (empty)|662
 !:mime application/zip
 !:ext zip/cbz
 0	string		PK\003\004
@@ -1055,88 +1055,88 @@
 
 #   KOffice (1.2 or above) formats
 #    (mimetype contains "application/vnd.kde.<SUBTYPE>")
->>50	string	vnd.kde.		KOffice (>=1.2)|665
->>>58	string	karbon			Karbon document|666
->>>58	string	kchart			KChart document|667
->>>58	string	kformula		KFormula document|668
->>>58	string	kivio			Kivio document|669
->>>58	string	kontour			Kontour document|670
->>>58	string	kpresenter		KPresenter document|671
->>>58	string	kspread			KSpread document|672
->>>58	string	kword			KWord document|673
+>>50	string	vnd.kde.		KOffice (>=1.2)|663
+>>>58	string	karbon			Karbon document|664
+>>>58	string	kchart			KChart document|665
+>>>58	string	kformula		KFormula document|666
+>>>58	string	kivio			Kivio document|667
+>>>58	string	kontour			Kontour document|668
+>>>58	string	kpresenter		KPresenter document|669
+>>>58	string	kspread			KSpread document|670
+>>>58	string	kword			KWord document|671
 
 #   OpenOffice formats (for OpenOffice 1.x / StarOffice 6/7)
 #    (mimetype contains "application/vnd.sun.xml.<SUBTYPE>")
->>50	string	vnd.sun.xml.		OpenOffice.org 1.x|674
->>>62	string	writer			Writer|675
->>>>68	byte	!0x2e			document|676
->>>>68	string	.template		template|677
->>>>68	string	.global			global document|678
->>>62	string	calc			Calc|679
->>>>66	byte	!0x2e			spreadsheet|680
->>>>66	string	.template		template|681
->>>62	string	draw			Draw|682
->>>>66	byte	!0x2e			document|683
->>>>66	string	.template		template|684
->>>62	string	impress			Impress|685
->>>>69	byte	!0x2e			presentation|686
->>>>69	string	.template		template|687
->>>62	string	math			Math document|688
->>>62	string	base			Database file|689
+>>50	string	vnd.sun.xml.		OpenOffice.org 1.x|672
+>>>62	string	writer			Writer|673
+>>>>68	byte	!0x2e			document|674
+>>>>68	string	.template		template|675
+>>>>68	string	.global			global document|676
+>>>62	string	calc			Calc|677
+>>>>66	byte	!0x2e			spreadsheet|678
+>>>>66	string	.template		template|679
+>>>62	string	draw			Draw|680
+>>>>66	byte	!0x2e			document|681
+>>>>66	string	.template		template|682
+>>>62	string	impress			Impress|683
+>>>>69	byte	!0x2e			presentation|684
+>>>>69	string	.template		template|685
+>>>62	string	math			Math document|686
+>>>62	string	base			Database file|687
 
 #   OpenDocument formats (for OpenOffice 2.x / StarOffice >= 8)
 #    http://lists.oasis-open.org/archives/office/200505/msg00006.html
 #    (mimetype contains "application/vnd.oasis.opendocument.<SUBTYPE>")
->>50	string	vnd.oasis.opendocument.	OpenDocument|690
+>>50	string	vnd.oasis.opendocument.	OpenDocument|688
 >>>73	string	text
->>>>77	byte	!0x2d			Text|691
+>>>>77	byte	!0x2d			Text|689
 !:mime	application/vnd.oasis.opendocument.text
->>>>77	string	-template		Text Template|692
+>>>>77	string	-template		Text Template|690
 !:mime	application/vnd.oasis.opendocument.text-template
->>>>77	string	-web			HTML Document Template|693
+>>>>77	string	-web			HTML Document Template|691
 !:mime	application/vnd.oasis.opendocument.text-web
->>>>77	string	-master			Master Document|694
+>>>>77	string	-master			Master Document|692
 !:mime	application/vnd.oasis.opendocument.text-master
 >>>73	string	graphics
->>>>81	byte	!0x2d			Drawing|695
+>>>>81	byte	!0x2d			Drawing|693
 !:mime	application/vnd.oasis.opendocument.graphics
->>>>81	string	-template		Template|696
+>>>>81	string	-template		Template|694
 !:mime	application/vnd.oasis.opendocument.graphics-template
 >>>73	string	presentation
->>>>85	byte	!0x2d			Presentation|697
+>>>>85	byte	!0x2d			Presentation|695
 !:mime	application/vnd.oasis.opendocument.presentation
->>>>85	string	-template		Template|696
+>>>>85	string	-template		Template|694
 !:mime	application/vnd.oasis.opendocument.presentation-template
 >>>73	string	spreadsheet
->>>>84	byte	!0x2d			Spreadsheet|698
+>>>>84	byte	!0x2d			Spreadsheet|696
 !:mime	application/vnd.oasis.opendocument.spreadsheet
->>>>84	string	-template		Template|696
+>>>>84	string	-template		Template|694
 !:mime	application/vnd.oasis.opendocument.spreadsheet-template
 >>>73	string	chart
->>>>78	byte	!0x2d			Chart|699
+>>>>78	byte	!0x2d			Chart|697
 !:mime	application/vnd.oasis.opendocument.chart
->>>>78	string	-template		Template|696
+>>>>78	string	-template		Template|694
 !:mime	application/vnd.oasis.opendocument.chart-template
 >>>73	string	formula
->>>>80	byte	!0x2d			Formula|700
+>>>>80	byte	!0x2d			Formula|698
 !:mime	application/vnd.oasis.opendocument.formula
->>>>80	string	-template		Template|696
+>>>>80	string	-template		Template|694
 !:mime	application/vnd.oasis.opendocument.formula-template
->>>73	string	database		Database|701
+>>>73	string	database		Database|699
 !:mime	application/vnd.oasis.opendocument.database
 # Valid for LibreOffice Base 6.0.1.1 at least
->>>73	string	base 			Database|701
+>>>73	string	base 			Database|699
 !:mime	application/vnd.oasis.opendocument.base
 >>>73	string	image
->>>>78	byte	!0x2d			Image|702
+>>>>78	byte	!0x2d			Image|700
 !:mime	application/vnd.oasis.opendocument.image
->>>>78	string	-template		Template|696
+>>>>78	string	-template		Template|694
 !:mime	application/vnd.oasis.opendocument.image-template
 
 #  EPUB (OEBPS) books using OCF (OEBPS Container Format)
 #    http://www.idpf.org/ocf/ocf1.0/download/ocf10.htm, section 4.
 #    From: Ralf Brown <ralf.brown@gmail.com>
->>50	string	epub+zip	EPUB document|703
+>>50	string	epub+zip	EPUB document|701
 !:mime application/epub+zip
 
 #  Catch other ZIP-with-mimetype formats
@@ -1149,63 +1149,63 @@
 >>>50		string	!vnd.oasis.opendocument.
 >>>>50		string	!vnd.sun.xml.
 >>>>>50		string	!vnd.kde.
->>>>>>38	regex	[!-OQ-~]+		Zip data (MIME type "%s"?)|704
+>>>>>>38	regex	[!-OQ-~]+		Zip data (MIME type "%s"?)|702
 !:mime	application/zip
 #    (mimetype contents other than "application/*")
 >26		string	\x8\0\0\0mimetype
 >>38		string	!application/
->>>38		regex	[!-OQ-~]+		Zip data (MIME type "%s"?)|704
+>>>38		regex	[!-OQ-~]+		Zip data (MIME type "%s"?)|702
 !:mime	application/zip
 
 # Java Jar files
->(26.s+30)	leshort	0xcafe		Java archive data (JAR)|705
+>(26.s+30)	leshort	0xcafe		Java archive data (JAR)|703
 !:mime	application/java-archive
 
 # iOS App
 >(26.s+30)	leshort	!0xcafe
 >>26		string	!\x8\0\0\0mimetype
 >>>30		string	Payload/
->>>>38		search/64       .app/   iOS App|706
+>>>>38		search/64       .app/   iOS App|704
 !:mime application/x-ios-app
 
 
 # Generic zip archives (Greg Roelofs, c/o zip-bugs@wkuvx1.wku.edu)
 #   Next line excludes specialized formats:
 >(26.s+30)	leshort	!0xcafe
->>26    string          !\x8\0\0\0mimetype	Zip archive data|707
+>>26    string          !\x8\0\0\0mimetype	Zip archive data|705
 !:mime	application/zip
->>>4	beshort		x			\b, at least|708
+>>>4	beshort		x			\b, at least|706
 >>>4	use		zipversion
 >>>4	beshort		x			to extract
 >>>0x161	string		WINZIP		\b, WinZIP self-extracting
 
 # StarView Metafile
 # From Pierre Ducroquet <pinaraf@pinaraf.info>
-0	string	VCLMTF	StarView MetaFile|709
->6	beshort	x	\b, version %d|709
->8	belong	x	\b, size %d|709
+0	string	VCLMTF	StarView MetaFile|707
+>6	beshort	x	\b, version %d|707
+>8	belong	x	\b, size %d|707
 
 # Zoo archiver
-20	lelong		0xfdc4a7dc	Zoo archive data|710
+20	lelong		0xfdc4a7dc	Zoo archive data|708
 !:mime	application/x-zoo
->4	byte		>48		\b, v%c.|710
->>6	byte		>47		\b%c|710
->>>7	byte		>47		\b%c|710
->32	byte		>0		\b, modify: v%d|710
->>33	byte		x		\b.%d+|710
->42	lelong		0xfdc4a7dc	\b,|710
->>70	byte		>0		extract: v%d|710
->>>71	byte		x		\b.%d+|710
+>4	byte		>48		\b, v%c.|708
+>>6	byte		>47		\b%c|708
+>>>7	byte		>47		\b%c|708
+>32	byte		>0		\b, modify: v%d|708
+>>33	byte		x		\b.%d+|708
+>42	lelong		0xfdc4a7dc	\b,|708
+>>70	byte		>0		extract: v%d|708
+>>>71	byte		x		\b.%d+|708
 
 # Shell archives
-10	string		#\ This\ is\ a\ shell\ archive	shell archive text|711
+10	string		#\ This\ is\ a\ shell\ archive	shell archive text|709
 !:mime	application/octet-stream
 
 #
 # LBR. NB: May conflict with the questionable
 #          "binary Computer Graphics Metafile" format.
 #
-0       string  \0\ \ \ \ \ \ \ \ \ \ \ \0\0    LBR archive data|712
+0       string  \0\ \ \ \ \ \ \ \ \ \ \ \0\0    LBR archive data|710
 #
 # PMA (CP/M derivative of LHA)
 # Update: Joerg Jenderek
@@ -1220,10 +1220,10 @@
 #2       string          -pm2-           PMarc archive data [pm2]
 2	string		-pm2-
 >0	use	lharc-file
-2       string          -pms-           PMarc SFX archive (CP/M, DOS)|713
+2       string          -pms-           PMarc SFX archive (CP/M, DOS)|711
 #!:mime	application/x-foobar-exec
 !:ext com
-5       string          -pc1-           PopCom compressed executable (CP/M)|714
+5       string          -pc1-           PopCom compressed executable (CP/M)|712
 #!:mime	application/x-
 #!:ext com
 
@@ -1231,7 +1231,7 @@
 # The Project Revision Control System (see
 # http://prcs.sourceforge.net) generates a packaged project
 # file which is recognized by the following entry:
-0	leshort		0xeb81	PRCS packaged project|715
+0	leshort		0xeb81	PRCS packaged project|713
 
 # Microsoft cabinets
 # by David Necas (Yeti) <yeti@physics.muni.cz>
@@ -1243,140 +1243,140 @@
 
 # GTKtalog catalogs
 # by David Necas (Yeti) <yeti@physics.muni.cz>
-4	string	gtktalog\ 	GTKtalog catalog data,|716
->13	string	3		version 3|717
->>14	beshort	0x677a		(gzipped)|718
->>14	beshort	!0x677a		(not gzipped)|719
->13	string	>3		version %s|716
+4	string	gtktalog\ 	GTKtalog catalog data,|714
+>13	string	3		version 3|715
+>>14	beshort	0x677a		(gzipped)|716
+>>14	beshort	!0x677a		(not gzipped)|717
+>13	string	>3		version %s|714
 
 ############################################################################
 # Parity archive reconstruction file, the 'par' file format now used on Usenet.
-0       string          PAR\0	PARity archive data|720
->48	leshort		=0	- Index file|721
->48	leshort		>0	- file number %d|722
+0       string          PAR\0	PARity archive data|718
+>48	leshort		=0	- Index file|719
+>48	leshort		>0	- file number %d|720
 
 # Felix von Leitner <felix-file@fefe.de>
-0	string	d8:announce	BitTorrent file|723
+0	string	d8:announce	BitTorrent file|721
 !:mime	application/x-bittorrent
 # Durval Menezes, <jmgthbfile at durval dot com>
-0	string	d13:announce-list	BitTorrent file|723
+0	string	d13:announce-list	BitTorrent file|721
 !:mime	application/x-bittorrent
 
 # Atari MSA archive - Teemu Hukkanen <tjhukkan@iki.fi>
-0	beshort 0x0e0f		Atari MSA archive data|724
->2	beshort x		\b, %d sectors per track|724
->4	beshort 0		\b, 1 sided|725
->4	beshort 1		\b, 2 sided|726
+0	beshort 0x0e0f		Atari MSA archive data|722
+>2	beshort x		\b, %d sectors per track|722
+>4	beshort 0		\b, 1 sided|723
+>4	beshort 1		\b, 2 sided|724
 >6	beshort x		\b, starting track: %d
 >8	beshort x		\b, ending track: %d
 
 # Alternate ZIP string (amc@arwen.cs.berkeley.edu)
-0	string	PK00PK\003\004	Zip archive data|707
+0	string	PK00PK\003\004	Zip archive data|705
 !:mime	application/zip
 !:ext zip/cbz
 
 # ACE archive (from http://www.wotsit.org/download.asp?f=ace)
 # by Stefan `Sec` Zehl <sec@42.org>
-7	string		**ACE**		ACE archive data|727
->15	byte	>0		version %d|727
->16	byte	=0x00		\b, from MS-DOS|727
->16	byte	=0x01		\b, from OS/2|727
->16	byte	=0x02		\b, from Win/32|727
->16	byte	=0x03		\b, from Unix|727
->16	byte	=0x04		\b, from MacOS|727
->16	byte	=0x05		\b, from WinNT|727
->16	byte	=0x06		\b, from Primos|727
->16	byte	=0x07		\b, from AppleGS|727
->16	byte	=0x08		\b, from Atari|727
->16	byte	=0x09		\b, from Vax/VMS|727
->16	byte	=0x0A		\b, from Amiga|727
->16	byte	=0x0B		\b, from Next|727
->14	byte	x		\b, version %d to extract|727
->5	leshort &0x0080		\b, multiple volumes,|727
->>17	byte	x		\b (part %d),|727
->5	leshort &0x0002		\b, contains comment|727
->5	leshort	&0x0200		\b, sfx|727
->5	leshort	&0x0400		\b, small dictionary|727
->5	leshort	&0x0800		\b, multi-volume|727
->5	leshort	&0x1000		\b, contains AV-String|727
->>30	string	\x16*UNREGISTERED\x20VERSION*	(unregistered)|727
->5	leshort &0x2000		\b, with recovery record|727
->5	leshort &0x4000		\b, locked|727
->5	leshort &0x8000		\b, solid|727
+7	string		**ACE**		ACE archive data|725
+>15	byte	>0		version %d|725
+>16	byte	=0x00		\b, from MS-DOS|725
+>16	byte	=0x01		\b, from OS/2|725
+>16	byte	=0x02		\b, from Win/32|725
+>16	byte	=0x03		\b, from Unix|725
+>16	byte	=0x04		\b, from MacOS|725
+>16	byte	=0x05		\b, from WinNT|725
+>16	byte	=0x06		\b, from Primos|725
+>16	byte	=0x07		\b, from AppleGS|725
+>16	byte	=0x08		\b, from Atari|725
+>16	byte	=0x09		\b, from Vax/VMS|725
+>16	byte	=0x0A		\b, from Amiga|725
+>16	byte	=0x0B		\b, from Next|725
+>14	byte	x		\b, version %d to extract|725
+>5	leshort &0x0080		\b, multiple volumes,|725
+>>17	byte	x		\b (part %d),|725
+>5	leshort &0x0002		\b, contains comment|725
+>5	leshort	&0x0200		\b, sfx|725
+>5	leshort	&0x0400		\b, small dictionary|725
+>5	leshort	&0x0800		\b, multi-volume|725
+>5	leshort	&0x1000		\b, contains AV-String|725
+>>30	string	\x16*UNREGISTERED\x20VERSION*	(unregistered)|725
+>5	leshort &0x2000		\b, with recovery record|725
+>5	leshort &0x4000		\b, locked|725
+>5	leshort &0x8000		\b, solid|725
 # Date in MS-DOS format (whatever that is)
 #>18	lelong	x		Created on
 
 # sfArk : compression program for Soundfonts (sf2) by Dirk Jagdmann
 # <doj@cubic.org>
-0x1A	string	sfArk		sfArk compressed Soundfont|728
+0x1A	string	sfArk		sfArk compressed Soundfont|726
 >0x15	string	2
->>0x1	string	>\0		Version %s|728
->>0x2A	string	>\0		: %s|728
+>>0x1	string	>\0		Version %s|726
+>>0x2A	string	>\0		: %s|726
 
 # DR-DOS 7.03 Packed File *.??_
-0	string	Packed\ File\ 	Personal NetWare Packed File|729
->12	string	x		\b, was "%.12s"|729
+0	string	Packed\ File\ 	Personal NetWare Packed File|727
+>12	string	x		\b, was "%.12s"|727
 
 # EET archive
 # From: Tilman Sauerbeck <tilman@code-monkey.de>
-0	belong	0x1ee7ff00	EET archive|730
+0	belong	0x1ee7ff00	EET archive|728
 !:mime	application/x-eet
 
 # rzip archives
-0	string	RZIP		rzip compressed data|731
->4	byte	x		- version %d|731
->5	byte	x		\b.%d|731
->6	belong	x		(%d bytes)|731
+0	string	RZIP		rzip compressed data|729
+>4	byte	x		- version %d|729
+>5	byte	x		\b.%d|729
+>6	belong	x		(%d bytes)|729
 
 # From: "Robert Dale" <robdale@gmail.com>
-0	belong	123		dar archive,|732
->4	belong	x		label "%.8x|732
->>8	belong	x		%.8x|732
->>>12	beshort	x		%.4x"|732
->14	byte	0x54		end slice|732
->14	beshort	0x4e4e		multi-part|732
->14	beshort	0x4e53		multi-part, with -S|732
+0	belong	123		dar archive,|730
+>4	belong	x		label "%.8x|730
+>>8	belong	x		%.8x|730
+>>>12	beshort	x		%.4x"|730
+>14	byte	0x54		end slice|730
+>14	beshort	0x4e4e		multi-part|730
+>14	beshort	0x4e53		multi-part, with -S|730
 
 # Symbian installation files
 #  http://www.thouky.co.uk/software/psifs/sis.html
 #  http://developer.symbian.com/main/downloads/papers/SymbianOSv91/softwareinstallsis.pdf
-8	lelong	0x10000419	Symbian installation file|733
+8	lelong	0x10000419	Symbian installation file|731
 !:mime	application/vnd.symbian.install
->4	lelong	0x1000006D	(EPOC release 3/4/5)|734
->4	lelong	0x10003A12	(EPOC release 6)|735
-0	lelong	0x10201A7A	Symbian installation file (Symbian OS 9.x)|736
+>4	lelong	0x1000006D	(EPOC release 3/4/5)|732
+>4	lelong	0x10003A12	(EPOC release 6)|733
+0	lelong	0x10201A7A	Symbian installation file (Symbian OS 9.x)|734
 !:mime	x-epoc/x-sisx-app
 
 # From "Nelson A. de Oliveira" <naoliv@gmail.com>
-0	string	MPQ\032		MoPaQ (MPQ) archive|737
+0	string	MPQ\032		MoPaQ (MPQ) archive|735
 
 # From: "Nelson A. de Oliveira" <naoliv@gmail.com>
 # .kgb
-0	string KGB_arch		KGB Archiver file|738
->10	string x		with compression level %.1s|738
+0	string KGB_arch		KGB Archiver file|736
+>10	string x		with compression level %.1s|736
 
 # xar (eXtensible ARchiver) archive
 # xar archive format: http://code.google.com/p/xar/
 # From: "David Remahl" <dremahl@apple.com>
-0	string	xar!		xar archive|739
+0	string	xar!		xar archive|737
 !:mime	application/x-xar
 #>4	beshort	x		header size %d
->6	beshort	x		version %d,|739
+>6	beshort	x		version %d,|737
 #>8	quad	x		compressed TOC: %d,
 #>16	quad	x		uncompressed TOC: %d,
->24	belong	0		no checksum|740
->24	belong	1		SHA-1 checksum|741
->24	belong	2		MD5 checksum|742
+>24	belong	0		no checksum|738
+>24	belong	1		SHA-1 checksum|739
+>24	belong	2		MD5 checksum|740
 
 # Type: Parity Archive
 # From: Daniel van Eeden <daniel_e@dds.nl>
-0	string	PAR2		Parity Archive Volume Set|743
+0	string	PAR2		Parity Archive Volume Set|741
 
 # Bacula volume format. (Volumes always start with a block header.)
 # URL: http://bacula.org/3.0.x-manuals/en/developers/developers/Block_Header.html
 # From: Adam Buchbinder <adam.buchbinder@gmail.com>
-12	string	BB02		Bacula volume|744
->20	bedate	x		\b, started %s|744
+12	string	BB02		Bacula volume|742
+>20	bedate	x		\b, started %s|742
 
 # ePub is XHTML + XML inside a ZIP archive.  The first member of the
 #   archive must be an uncompressed file called 'mimetype' with contents
@@ -1385,32 +1385,32 @@
 
 # From: "Michael Gorny" <mgorny@gentoo.org>
 # ZPAQ: http://mattmahoney.net/dc/zpaq.html
-0	string	zPQ	ZPAQ stream|745
->3	byte	x	\b, level %d|745
+0	string	zPQ	ZPAQ stream|743
+>3	byte	x	\b, level %d|743
 # From: Barry Carter <carter.barry@gmail.com>
 # http://encode.ru/threads/456-zpaq-updates/page32
-0	string	7kSt	ZPAQ file|746
+0	string	7kSt	ZPAQ file|744
 
 # BBeB ebook, unencrypted (LRF format)
 # URL: http://www.sven.de/librie/Librie/LrfFormat
 # From: Adam Buchbinder <adam.buchbinder@gmail.com>
-0	string	L\0R\0F\0\0\0	BBeB ebook data, unencrypted|747
->8	beshort	x		\b, version %d|747
->36	byte	1		\b, front-to-back|748
->36	byte	16		\b, back-to-front|749
+0	string	L\0R\0F\0\0\0	BBeB ebook data, unencrypted|745
+>8	beshort	x		\b, version %d|745
+>36	byte	1		\b, front-to-back|746
+>36	byte	16		\b, back-to-front|747
 >42	beshort	x		\b, (%dx,
 >44	beshort	x		%d)
 
 # Symantec GHOST image by Joerg Jenderek at May 2014
 # http://us.norton.com/ghost/
 # http://www.garykessler.net/library/file_sigs.html
-0		ubelong&0xFFFFf7f0	0xFEEF0100	Norton GHost image|750
+0		ubelong&0xFFFFf7f0	0xFEEF0100	Norton GHost image|748
 # *.GHO
->2		ubyte&0x08		0x00		\b, first file|751
+>2		ubyte&0x08		0x00		\b, first file|749
 # *.GHS or *.[0-9] with cns program option
->2		ubyte&0x08		0x08		\b, split file|752
+>2		ubyte&0x08		0x08		\b, split file|750
 # part of split index interesting for *.ghs
->>4		ubyte			x		id=0x%x|752
+>>4		ubyte			x		id=0x%x|750
 # compression tag minus one equals numeric compression command line switch z[1-9]
 >3		ubyte			0		\b, no compression
 >3		ubyte			2		\b, fast compression (Z1)
@@ -1436,25 +1436,25 @@
 # Google Chrome extensions
 # https://developer.chrome.com/extensions/crx
 # https://developer.chrome.com/extensions/hosting
-0	string	Cr24	Google Chrome extension|753
+0	string	Cr24	Google Chrome extension|751
 !:mime	application/x-chrome-extension
->4	ulong	x	\b, version %u|753
+>4	ulong	x	\b, version %u|751
 
 # SeqBox - Sequenced container
 # ext: sbx, seqbox
 # Marco Pontello marcopon@gmail.com
 # reference: https://github.com/MarcoPon/SeqBox
-0	string	SBx	SeqBox,|754
->3	byte	x	version %d|754
+0	string	SBx	SeqBox,|752
+>3	byte	x	version %d|752
 
 # LyNX archive
-56	string	USE\040LYNX\040TO\040DISSOLVE\040THIS\040FILE	 LyNX archive|755
+56	string	USE\040LYNX\040TO\040DISSOLVE\040THIS\040FILE	 LyNX archive|753
 
 # From: Joerg Jenderek
 # URL: http://www.acronis.com/
 # Reference: http://en.wikipedia.org/wiki/TIB_(file_format)
 # Note: only tested with True Image 2013 Build 5962 and 2019 Build 14110
-0	ubequad		0xce24b9a220000000	Acronis True Image backup|756
+0	ubequad		0xce24b9a220000000	Acronis True Image backup|754
 !:mime	application/x-acronis-tib
 !:ext	tib
 # 01000000
@@ -1480,4 +1480,4 @@
 # by Michal Gorny <mgorny@gentoo.org>
 # https://gitweb.gentoo.org/proj/portage.git/tree/man/xpak.5
 -4	string	STOP
->-16	string	XPAKSTOP	Gentoo binary package (XPAK)|757
+>-16	string	XPAKSTOP	Gentoo binary package (XPAK)|755

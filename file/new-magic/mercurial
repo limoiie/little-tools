@@ -7,7 +7,7 @@
 # Jesse Glick (jesse.glick@sun.com)
 #
 
-0	string		HG10		Mercurial changeset bundle|2916
->4	string		UN		(uncompressed)|2917
->4	string		GZ		(gzip compressed)|2918
->4	string		BZ		(bzip2 compressed)|2919
+0	string		HG10		Mercurial changeset bundle|2908
+>4	string		UN		(uncompressed)|2909
+>4	string		GZ		(gzip compressed)|2910
+>4	string		BZ		(bzip2 compressed)|2911

@@ -6,7 +6,7 @@
 # Most cisco file-formats are covered by the generic elf code
 #
 # Microcode files are non-ELF, 0x8501 conflicts with NetBSD/alpha.
-0	belong&0xffffff00	0x85011400  cisco IOS microcode|1211
->7	string		>\0		    for '%s'|1211
-0	belong&0xffffff00	0x8501cb00  cisco IOS experimental microcode|1212
->7	string		>\0		    for '%s'|1212
+0	belong&0xffffff00	0x85011400  cisco IOS microcode|1209
+>7	string		>\0		    for '%s'|1209
+0	belong&0xffffff00	0x8501cb00  cisco IOS experimental microcode|1210
+>7	string		>\0		    for '%s'|1210

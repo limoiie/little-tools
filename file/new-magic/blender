@@ -7,33 +7,33 @@
 # http://lists.blender.org/mailman/listinfo/bf-committers
 # GLOB chunk was moved near start and provides subversion info since 2.42
 
-0		string	=BLENDER	Blender3D,|1080
->7		string	=_		saved as 32-bits|1081
->>8		string	=v		little endian|1082
->>>9		byte	x		with version %c.|1082
+0		string	=BLENDER	Blender3D,|1078
+>7		string	=_		saved as 32-bits|1079
+>>8		string	=v		little endian|1080
+>>>9		byte	x		with version %c.|1080
 >>>10		byte	x		\b%c
 >>>11		byte	x		\b%c
 >>>0x40		string	=GLOB		\b.
 >>>>0x58	leshort	x		\b%.4d
->>8		string	=V		big endian|1083
->>>9		byte	x		with version %c.|1083
+>>8		string	=V		big endian|1081
+>>>9		byte	x		with version %c.|1081
 >>>10		byte	x		\b%c
 >>>11		byte	x		\b%c
 >>>0x40		string	=GLOB		\b.
 >>>>0x58	beshort	x		\b%.4d
->7		string	=-		saved as 64-bits|1084
->>8		string	=v		little endian|1084
->>9		byte	x		with version %c.|1084
->>10		byte	x		\b%c|1084
->>11		byte	x		\b%c|1084
->>0x44		string	=GLOB		\b.|1084
->>>0x60		leshort	x		\b%.4d|1084
->>8		string	=V		big endian|1084
->>>9		byte	x		with version %c.|1084
->>>10		byte	x		\b%c|1084
->>>11		byte	x		\b%c|1084
->>>0x44		string	=GLOB		\b.|1084
->>>>0x60	beshort	x		\b%.4d|1084
+>7		string	=-		saved as 64-bits|1082
+>>8		string	=v		little endian|1082
+>>9		byte	x		with version %c.|1082
+>>10		byte	x		\b%c|1082
+>>11		byte	x		\b%c|1082
+>>0x44		string	=GLOB		\b.|1082
+>>>0x60		leshort	x		\b%.4d|1082
+>>8		string	=V		big endian|1082
+>>>9		byte	x		with version %c.|1082
+>>>10		byte	x		\b%c|1082
+>>>11		byte	x		\b%c|1082
+>>>0x44		string	=GLOB		\b.|1082
+>>>>0x60	beshort	x		\b%.4d|1082
 
 # Scripts that run in the embedded Python interpreter
-0		string	#!BPY		Blender3D BPython script|1085
+0		string	#!BPY		Blender3D BPython script|1083

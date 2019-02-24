@@ -28,34 +28,34 @@
 #
 # OS9/6809 module descriptions:
 #
-0	beshort		0x87CD	OS9/6809 module:|3388
+0	beshort		0x87CD	OS9/6809 module:|3379
 #
->6	byte&0x0f	0x00	non-executable|3389
->6	byte&0x0f	0x01	machine language|3390
->6	byte&0x0f	0x02	BASIC I-code|3391
->6	byte&0x0f	0x03	Pascal P-code|3392
->6	byte&0x0f	0x04	C I-code|3393
->6	byte&0x0f	0x05	COBOL I-code|3394
->6	byte&0x0f	0x06	Fortran I-code|3395
+>6	byte&0x0f	0x00	non-executable|3380
+>6	byte&0x0f	0x01	machine language|3381
+>6	byte&0x0f	0x02	BASIC I-code|3382
+>6	byte&0x0f	0x03	Pascal P-code|3383
+>6	byte&0x0f	0x04	C I-code|3384
+>6	byte&0x0f	0x05	COBOL I-code|3385
+>6	byte&0x0f	0x06	Fortran I-code|3386
 #
->6	byte&0xf0	0x10	program executable|3396
->6	byte&0xf0	0x20	subroutine|3397
->6	byte&0xf0	0x30	multi-module|3398
->6	byte&0xf0	0x40	data module|3399
+>6	byte&0xf0	0x10	program executable|3387
+>6	byte&0xf0	0x20	subroutine|3388
+>6	byte&0xf0	0x30	multi-module|3389
+>6	byte&0xf0	0x40	data module|3390
 #
->6	byte&0xf0	0xC0	system module|3400
->6	byte&0xf0	0xD0	file manager|3401
->6	byte&0xf0	0xE0	device driver|3402
->6	byte&0xf0	0xF0	device descriptor|3403
+>6	byte&0xf0	0xC0	system module|3391
+>6	byte&0xf0	0xD0	file manager|3392
+>6	byte&0xf0	0xE0	device driver|3393
+>6	byte&0xf0	0xF0	device descriptor|3394
 #
 # OS9/m68k stuff (to be continued)
 #
-0	beshort		0x4AFC	OS9/68K module:|3404
+0	beshort		0x4AFC	OS9/68K module:|3395
 #
 # attr
->0x14	byte&0x80	0x80	re-entrant|3405
->0x14	byte&0x40	0x40	ghost|3406
->0x14	byte&0x20	0x20	system-state|3407
+>0x14	byte&0x80	0x80	re-entrant|3396
+>0x14	byte&0x40	0x40	ghost|3397
+>0x14	byte&0x20	0x20	system-state|3398
 #
 # lang:
 #

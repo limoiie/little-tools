@@ -10,5 +10,5 @@
 # http://www.isbe.man.ac.uk/public_vxl_doc/books/vxl/book.html
 # http:/vxl.sf.net
 
-2	lelong	0x472b2c4e	VXL data file,|4429
->0	leshort	>0		schema version no %d|4429
+2	lelong	0x472b2c4e	VXL data file,|4419
+>0	leshort	>0		schema version no %d|4419

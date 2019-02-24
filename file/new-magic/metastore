@@ -4,5 +4,5 @@
 # metastore:  file(1) magic for metastore files
 # From: Thomas Wissen
 # see http://david.hardeman.nu/software.php#metastore
-0	string		MeTaSt00r3	Metastore data file,|2920
->10	bequad		x		version %0llx|2920
+0	string		MeTaSt00r3	Metastore data file,|2912
+>10	bequad		x		version %0llx|2912

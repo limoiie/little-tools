@@ -2,11 +2,11 @@
 #------------------------------------------------------------------------------
 # $File: mcrypt,v 1.5 2009/09/19 16:28:10 christos Exp $
 # fusecompress:   file(1) magic for fusecompress
-0	string	\037\135\211	FuseCompress(ed) data|1974
->3	byte	0x00	(none format)|1975
->3	byte	0x01	(bz2 format)|1976
->3	byte	0x02	(gz format)|1977
->3	byte	0x03	(lzo format)|1978
->3	byte	0x04	(xor format)|1979
->3	byte	>0x04	(unknown format)|1980
+0	string	\037\135\211	FuseCompress(ed) data|1969
+>3	byte	0x00	(none format)|1970
+>3	byte	0x01	(bz2 format)|1971
+>3	byte	0x02	(gz format)|1972
+>3	byte	0x03	(lzo format)|1973
+>3	byte	0x04	(xor format)|1974
+>3	byte	>0x04	(unknown format)|1975
 >4	long	x	uncompressed size: %d

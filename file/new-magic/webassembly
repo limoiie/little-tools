@@ -10,6 +10,6 @@
 # document describing the binary format.
 # From: Pip Cet <pipcet@gmail.com> and Joel Martin
 
-0	string	\0asm	WebAssembly (wasm) binary module|4432
->4	lelong	=1	version %#x (MVP)|4432
->4	lelong	>1	version %#x|4432
+0	string	\0asm	WebAssembly (wasm) binary module|4422
+>4	lelong	=1	version %#x (MVP)|4422
+>4	lelong	>1	version %#x|4422

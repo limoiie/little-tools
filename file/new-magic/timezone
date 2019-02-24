@@ -6,9 +6,9 @@
 # from Daniel Quinlan (quinlan@yggdrasil.com)
 # this should work on Linux, SunOS, and maybe others
 # Added new official magic number for recent versions of the Olson code
-0	string	TZif	timezone data|4288
->4	byte	0	\b, old version|4289
->4	byte	>0	\b, version %c|4288
+0	string	TZif	timezone data|4278
+>4	byte	0	\b, old version|4279
+>4	byte	>0	\b, version %c|4278
 >20	belong	0	\b, no gmt time flags
 >20	belong	1	\b, 1 gmt time flag
 >20	belong	>1	\b, %d gmt time flags
@@ -24,9 +24,9 @@
 >36	belong	0	\b, no abbreviation chars
 >36	belong	1	\b, 1 abbreviation char
 >36	belong	>1	\b, %d abbreviation chars
-0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\0	old timezone data|4290
-0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\2\0	old timezone data|4290
-0	string  \0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0	old timezone data|4290
-0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\4\0	old timezone data|4290
-0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\5\0	old timezone data|4290
-0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0	old timezone data|4290
+0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\0	old timezone data|4280
+0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\2\0	old timezone data|4280
+0	string  \0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0	old timezone data|4280
+0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\4\0	old timezone data|4280
+0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\5\0	old timezone data|4280
+0	string	\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0	old timezone data|4280

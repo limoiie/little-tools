@@ -28,19 +28,19 @@
 # implemented (at least not after I blew off the bogus code to turn
 # old-style "&"s into new-style "&"s, which just didn't work at all).
 #
-0	short		0575		CLIPPER COFF executable (VAX #)|1220
->20	short		0407		(impure)|1221
->20	short		0410		(5.2 compatible)|1222
->20	short		0411		(pure)|1223
->20	short		0413		(demand paged)|1224
->20	short		0443		(target shared library)|1225
+0	short		0575		CLIPPER COFF executable (VAX #)|1218
+>20	short		0407		(impure)|1219
+>20	short		0410		(5.2 compatible)|1220
+>20	short		0411		(pure)|1221
+>20	short		0413		(demand paged)|1222
+>20	short		0443		(target shared library)|1223
 >12	long		>0		not stripped
 >22	short		>0		- version %d
-0	short		0577		CLIPPER COFF executable|1226
->18	short&074000	000000		C1 R1|1227
->18	short&074000	004000		C2 R1|1228
->18	short&074000	010000		C3 R1|1229
->18	short&074000	074000		TEST|1230
+0	short		0577		CLIPPER COFF executable|1224
+>18	short&074000	000000		C1 R1|1225
+>18	short&074000	004000		C2 R1|1226
+>18	short&074000	010000		C3 R1|1227
+>18	short&074000	074000		TEST|1228
 >20	short		0407		(impure)
 >20	short		0410		(pure)
 >20	short		0411		(separate I&D)
@@ -61,5 +61,5 @@
 >54	byte		2		-Cssw
 >54	byte		3		-Cspw
 >54	byte		4		-Cscb
-4	string		pipe		CLIPPER instruction trace|1231
-4	string		prof		CLIPPER instruction profile|1232
+4	string		pipe		CLIPPER instruction trace|1229
+4	string		prof		CLIPPER instruction profile|1230

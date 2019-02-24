@@ -12,8 +12,8 @@
 #   00000  b0 00 30 00 44 00 60 00  00 00 00 00 30 32 30 35  ..0.D.`.....0205
 #   00010  01 01 00 00 ff ff ff ff  ff ff ff ff 00 00 00 00  ................
 #
-0	string	\xb0\0\x30\0	VMS VAX executable|4405
->44032	string	PK\003\004	\b, Info-ZIP SFX archive v5.12 w/decryption|4406
+0	string	\xb0\0\x30\0	VMS VAX executable|4395
+>44032	string	PK\003\004	\b, Info-ZIP SFX archive v5.12 w/decryption|4396
 #
 # The AXP files all looked like this, except that the byte at offset 0x22
 # was 06 in some of them and 07 in others:
@@ -26,5 +26,5 @@
 #
 # GRR this test is still too general as it catches example adressen.dbt
 0	belong	0x03000000
->8	ubelong	0xec020000	VMS Alpha executable|4407
->>75264	string	PK\003\004	\b, Info-ZIP SFX archive v5.12 w/decryption|4408
+>8	ubelong	0xec020000	VMS Alpha executable|4397
+>>75264	string	PK\003\004	\b, Info-ZIP SFX archive v5.12 w/decryption|4398

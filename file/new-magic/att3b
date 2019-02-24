@@ -18,9 +18,9 @@
 #
 # WE32K
 #
-0	beshort		0560		WE32000 COFF|769
->18	beshort		^00000020	object|770
->18	beshort		&00000020	executable|771
+0	beshort		0560		WE32000 COFF|767
+>18	beshort		^00000020	object|768
+>18	beshort		&00000020	executable|769
 >12	belong		>0		not stripped
 >18	beshort		^00010000	N/A on 3b2/300 w/paging
 >18	beshort		&00020000	32100 required
@@ -30,12 +30,12 @@
 >20	beshort		0413		(demand paged)
 >20	beshort		0443		(target shared library)
 >22	beshort		>0		- version %d
-0	beshort		0561		WE32000 COFF executable (TV)|772
->12	belong		>0		not stripped|773
+0	beshort		0561		WE32000 COFF executable (TV)|770
+>12	belong		>0		not stripped|771
 #>18	beshort		&00020000	- 32100 required
 #>18	beshort		&00040000	and MAU hardware required
 #>22	beshort		>0		- version %d
 #
 # core file for 3b2
-0	string		\000\004\036\212\200	3b2 core file|774
->364	string		>\0		of '%s'|775
+0	string		\000\004\036\212\200	3b2 core file|772
+>364	string		>\0		of '%s'|773

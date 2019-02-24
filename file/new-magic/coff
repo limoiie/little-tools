@@ -19,21 +19,21 @@
 >>0	clear		x
 # f_magic - magic number
 # DJGPP, 80386 COFF executable, MS Windows COFF Intel 80386 object file (./intel)
->>0	uleshort	0x014C		Intel 80386|2250
+>>0	uleshort	0x014C		Intel 80386|2245
 # Hitachi SH big-endian COFF (./hitachi-sh)
->>0	uleshort	0x0500		Hitachi SH big-endian|2251
+>>0	uleshort	0x0500		Hitachi SH big-endian|2246
 # Hitachi SH little-endian COFF (./hitachi-sh)
->>0	uleshort	0x0550		Hitachi SH little-endian|2252
+>>0	uleshort	0x0550		Hitachi SH little-endian|2247
 # executable (RISC System/6000 V3.1) or obj module (./ibm6000)
 #>>0	uleshort	0x01DF
 # MS Windows COFF Intel Itanium, AMD64
 # https://msdn.microsoft.com/en-us/library/windows/desktop/ms680313(v=vs.85).aspx
->>0	uleshort	0x0200		Intel ia64|2253
->>0	uleshort	0x8664		Intel amd64|2254
+>>0	uleshort	0x0200		Intel ia64|2248
+>>0	uleshort	0x8664		Intel amd64|2249
 # TODO for other COFFs
 #>>0	uleshort	0xABCD		COFF_TEMPLATE
 >>0	default		x
->>>0	uleshort	x		type 0x%04x|2255
+>>>0	uleshort	x		type 0x%04x|2250
 >>0	uleshort	x		COFF
 # F_EXEC flag bit
 >>18	leshort		^0x0002		object file

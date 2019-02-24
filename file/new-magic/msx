@@ -7,50 +7,50 @@
 ############## MSX Music file formats ##############
 
 # Gigamix MGSDRV music file
-0	string/b		MGS	MSX Gigamix MGSDRV3 music file,|3186
+0	string/b		MGS	MSX Gigamix MGSDRV3 music file,|3178
 >6	ubeshort	0x0D0A
->>3	byte		x	\bv%c|3186
+>>3	byte		x	\bv%c|3178
 >>4	byte		x	\b.%c
 >>5	byte		x	\b%c
 >>8	string		>\0	\b, title: %s
 
-1	string/b		mgs2\ 	MSX Gigamix MGSDRV2 music file|3187
+1	string/b		mgs2\ 	MSX Gigamix MGSDRV2 music file|3179
 >6	uleshort	0x80
 >>0x2E	uleshort	0
->>>0x30	string		>\0	\b, title: %s|3187
+>>>0x30	string		>\0	\b, title: %s|3179
 
 # KSS music file
-0	string/b		KSCC	KSS music file v1.03|3188
+0	string/b		KSCC	KSS music file v1.03|3180
 >0xE	byte		0
->>0xF	byte&0x02	0	\b, soundchips: AY-3-8910, SCC(+)|3189
->>0xF	byte&0x02	2	\b, soundchip(s): SN76489|3190
->>>0xF	byte&0x04	4	stereo|3191
->>0xF	byte&0x01	1	\b, YM2413|3192
->>0xF	byte&0x08	8	\b, Y8950|3193
+>>0xF	byte&0x02	0	\b, soundchips: AY-3-8910, SCC(+)|3181
+>>0xF	byte&0x02	2	\b, soundchip(s): SN76489|3182
+>>>0xF	byte&0x04	4	stereo|3183
+>>0xF	byte&0x01	1	\b, YM2413|3184
+>>0xF	byte&0x08	8	\b, Y8950|3185
 
-0	string/b		KSSX	KSS music file v1.20|3194
+0	string/b		KSSX	KSS music file v1.20|3186
 >0xE	byte&0xEF	0
->>0xF	byte&0x40	0x00	\b, 60Hz|3195
->>0xF	byte&0x40	0x40	\b, 50Hz|3196
->>0xF	byte&0x02	0	\b, soundchips: AY-3-8910, SCC(+)|3197
->>0xF	byte&0x02	0x02	\b, soundchips: SN76489|3198
->>>0xF	byte&0x04	0x04	stereo|3199
->>0xF	byte&0x01	0x01	\b,|3200
->>>0xF	byte&0x18	0x00	\bYM2413|3201
->>>0xF	byte&0x18	0x08	\bYM2413, Y8950|3202
->>>0xF	byte&0x18	0x18	\bYM2413+Y8950 pseudostereo|3203
->>0xF	byte&0x18	0x10	\b, Majyutsushi DAC|3204
+>>0xF	byte&0x40	0x00	\b, 60Hz|3187
+>>0xF	byte&0x40	0x40	\b, 50Hz|3188
+>>0xF	byte&0x02	0	\b, soundchips: AY-3-8910, SCC(+)|3189
+>>0xF	byte&0x02	0x02	\b, soundchips: SN76489|3190
+>>>0xF	byte&0x04	0x04	stereo|3191
+>>0xF	byte&0x01	0x01	\b,|3186
+>>>0xF	byte&0x18	0x00	\bYM2413|3192
+>>>0xF	byte&0x18	0x08	\bYM2413, Y8950|3193
+>>>0xF	byte&0x18	0x18	\bYM2413+Y8950 pseudostereo|3194
+>>0xF	byte&0x18	0x10	\b, Majyutsushi DAC|3195
 
 # Moonblaster for Moonsound
 0	string/b		MBMS
->4	byte		0x10	MSX Moonblaster for MoonSound music|3205
+>4	byte		0x10	MSX Moonblaster for MoonSound music|3196
 
 # Music Player K-kaz
-0	string/b		MPK	MSX Music Player K-kaz song|3206
+0	string/b		MPK	MSX Music Player K-kaz song|3197
 >6	ubeshort	0x0D0A
->>3	byte		x	v%c|3206
->>4	byte		x	\b.%c|3206
->>5	byte		x	\b%c|3206
+>>3	byte		x	v%c|3197
+>>4	byte		x	\b.%c|3197
+>>5	byte		x	\b%c|3197
 
 # I don't know why these don't work
 #0	search/0xFFFF	\r\n.FM9
@@ -63,20 +63,20 @@
 0x35	beshort		0x0d0a
 >0x7B	beshort		0x0d0a
 >>0x7D	byte		0x1a
->>>0x87	uleshort	0		MSX OPX Music file|3207
->>>>0x86	byte		0		v1.5|3208
->>>>>0	string		>\32		\b, title: %s|3208
->>>>0x86	byte		1		v2.4|3209
->>>>>0	string		>\32		\b, title: %s|3209
+>>>0x87	uleshort	0		MSX OPX Music file|3198
+>>>>0x86	byte		0		v1.5|3199
+>>>>>0	string		>\32		\b, title: %s|3199
+>>>>0x86	byte		1		v2.4|3200
+>>>>>0	string		>\32		\b, title: %s|3200
 
 # SCMD music file
 0x8B	string/b		SCMD
->0xCE	uleshort	0	MSX SCMD Music file|3210
+>0xCE	uleshort	0	MSX SCMD Music file|3201
 #>>-2	uleshort	0x6a71	; The file must end with this value. How to code this here?
->>0x8F	string		>\0		\b, title: %s|3210
+>>0x8F	string		>\0		\b, title: %s|3201
 
 0	search/0xFFFF	\r\n@title
->&0	search/0xFFFF	\r\n@m=[	MSX SCMD source MML file|3211
+>&0	search/0xFFFF	\r\n@m=[	MSX SCMD source MML file|3202
 
 
 ############## MSX image file formats ##############
@@ -85,36 +85,36 @@
 0	ubyte		0xFE
 >1	uleshort	0
 >>5	uleshort	0
->>>3	uleshort	0x37FF		MSX SC2/GRP raw image|3212
->>>3	uleshort	0x6A00		MSX Graph Saurus SR5 raw image|3213
+>>>3	uleshort	0x37FF		MSX SC2/GRP raw image|3203
+>>>3	uleshort	0x6A00		MSX Graph Saurus SR5 raw image|3204
 >>>3	uleshort	>0x769E
->>>>3	uleshort	<0x8000		MSX GE5/GE6 raw image|3214
->>>>>3	uleshort	0x7FFF		\b, with sprite patterns|3215
->>>3	uleshort	0xD3FF		MSX screen 7-12 raw image|3216
->>>3	uleshort	0xD400		MSX Graph Saurus SR7/SR8/SRS raw image|3217
+>>>>3	uleshort	<0x8000		MSX GE5/GE6 raw image|3205
+>>>>>3	uleshort	0x7FFF		\b, with sprite patterns|3206
+>>>3	uleshort	0xD3FF		MSX screen 7-12 raw image|3207
+>>>3	uleshort	0xD400		MSX Graph Saurus SR7/SR8/SRS raw image|3208
 
 # Graph Saurus compressed images
 0	ubyte		0xFD
 >1	uleshort	0
 >>5	uleshort	0
->>>3	uleshort	>0x013D		MSX Graph Saurus compressed image|3218
+>>>3	uleshort	>0x013D		MSX Graph Saurus compressed image|3209
 
 # MSX G9B image file
 0	string/b		G9B
 >1	uleshort	11
 >>3	uleshort	>10
->>>5	ubyte		>0		MSX G9B image, depth=%d|3219
->>>>8	uleshort	x		\b, %dx|3219
->>>>10	uleshort	x		\b%d|3219
+>>>5	ubyte		>0		MSX G9B image, depth=%d|3210
+>>>>8	uleshort	x		\b, %dx|3210
+>>>>10	uleshort	x		\b%d|3210
 >>>>5	ubyte		<9
 >>>>>6	ubyte		0
->>>>>>7	ubyte		x		\b, codec=%d RGB color palettes|3219
->>>>>6	ubyte		64		\b, codec=RGB fixed color|3219
->>>>>6	ubyte		128		\b, codec=YJK|3219
->>>>>6	ubyte		192		\b, codec=YUV|3219
->>>>5	ubyte		>8		codec=RGB fixed color|3219
->>>>12	ubyte		0		\b, raw|3219
->>>>12	ubyte		1		\b, bitbuster compression|3219
+>>>>>>7	ubyte		x		\b, codec=%d RGB color palettes|3210
+>>>>>6	ubyte		64		\b, codec=RGB fixed color|3210
+>>>>>6	ubyte		128		\b, codec=YJK|3210
+>>>>>6	ubyte		192		\b, codec=YUV|3210
+>>>>5	ubyte		>8		codec=RGB fixed color|3210
+>>>>12	ubyte		0		\b, raw|3210
+>>>>12	ubyte		1		\b, bitbuster compression|3210
 
 ############## Other MSX file formats ##############
 
@@ -133,34 +133,34 @@
 >>>>>>>>>>>0x51	uleshort	<0x4000
 >>>>>>>>>>>>(9.s)	ubyte	0xC3
 >>>>>>>>>>>>>&0	uleshort	>0x4000
->>>>>>>>>>>>>>&0	ubyte	0xC3		MSX BIOS+BASIC|3220
->>>>>>>>>>>>>>>0x002D	ubyte+1	<3		\b. version=MSX%d|3220
->>>>>>>>>>>>>>>0x002D	ubyte	2		\b, version=MSX2+|3220
->>>>>>>>>>>>>>>0x002D	ubyte	3		\b, version=MSX Turbo-R|3220
->>>>>>>>>>>>>>>0x002D	ubyte	>3		\b, version=Unknown MSX %d version|3220
->>>>>>>>>>>>>>>0x0006	ubyte	x		\b, VDP.DR=0x%2x|3220
->>>>>>>>>>>>>>>0x0007	ubyte	x		\b, VDP.DW=0x%2x|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0xF	0		\b, charset=Japanese|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0xF	1		\b, charset=International|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0xF	2		\b, charset=Korean|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0xF	>2		\b, charset=Unknown id:%d|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0x70	0x00		\b, date format=Y-M-D|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0x70	0x10		\b, date format=M-D-Y|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0x70	0x20		\b, date format=D-M-Y|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0x80	0x00		\b, vfreq=60Hz|3220
->>>>>>>>>>>>>>>0x002B	ubyte&0x80	0x80		\b, vfreq=50Hz|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	0		\b, keyboard=Japanese|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	1		\b, keyboard=International|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	2		\b, keyboard=French|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	3		\b, keyboard=UK|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	4		\b, keyboard=German|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	5		\b, keyboard=Unknown id:%d|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	6		\b, keyboard=Spanish|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0x0F	>6		\b, keyboard=Unknown id:%d|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0xF0	0x00		\b, basic=Japanese|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0xF0	0x10		\b, basic=International|3220
->>>>>>>>>>>>>>>0x002C	ubyte&0xF0	>0x10		\b, basic=Unknown id:%d|3220
->>>>>>>>>>>>>>>0x002E	ubyte&1		1		\b, built-in MIDI|3220
+>>>>>>>>>>>>>>&0	ubyte	0xC3		MSX BIOS+BASIC|3211
+>>>>>>>>>>>>>>>0x002D	ubyte+1	<3		\b. version=MSX%d|3211
+>>>>>>>>>>>>>>>0x002D	ubyte	2		\b, version=MSX2+|3211
+>>>>>>>>>>>>>>>0x002D	ubyte	3		\b, version=MSX Turbo-R|3211
+>>>>>>>>>>>>>>>0x002D	ubyte	>3		\b, version=Unknown MSX %d version|3211
+>>>>>>>>>>>>>>>0x0006	ubyte	x		\b, VDP.DR=0x%2x|3211
+>>>>>>>>>>>>>>>0x0007	ubyte	x		\b, VDP.DW=0x%2x|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0xF	0		\b, charset=Japanese|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0xF	1		\b, charset=International|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0xF	2		\b, charset=Korean|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0xF	>2		\b, charset=Unknown id:%d|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0x70	0x00		\b, date format=Y-M-D|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0x70	0x10		\b, date format=M-D-Y|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0x70	0x20		\b, date format=D-M-Y|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0x80	0x00		\b, vfreq=60Hz|3211
+>>>>>>>>>>>>>>>0x002B	ubyte&0x80	0x80		\b, vfreq=50Hz|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	0		\b, keyboard=Japanese|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	1		\b, keyboard=International|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	2		\b, keyboard=French|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	3		\b, keyboard=UK|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	4		\b, keyboard=German|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	5		\b, keyboard=Unknown id:%d|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	6		\b, keyboard=Spanish|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0x0F	>6		\b, keyboard=Unknown id:%d|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0xF0	0x00		\b, basic=Japanese|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0xF0	0x10		\b, basic=International|3211
+>>>>>>>>>>>>>>>0x002C	ubyte&0xF0	>0x10		\b, basic=Unknown id:%d|3211
+>>>>>>>>>>>>>>>0x002E	ubyte&1		1		\b, built-in MIDI|3211
 
 
 0		string/b		CD
@@ -173,7 +173,7 @@
 >>>>>>>0x10	ubyte		0xC3
 >>>>>>>>0x11	uleshort	<0x4000
 >>>>>>>>>0x14	ubyte		0xC3
->>>>>>>>>>0x15	uleshort	<0x4000		MSX2/2+/TR SubROM|3221
+>>>>>>>>>>0x15	uleshort	<0x4000		MSX2/2+/TR SubROM|3212
 
 0		string		\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
 >0x5F0		ubequad		0x8282828244380000
@@ -181,39 +181,39 @@
 >>>0x170	string		\20\20\20
 >>>>0x1E32	string		())
 >>>>>0x2130	ubequad		0xA5A5594924231807
->>>>>0x2138	ubequad		0x4A4A3424488830C0	MSX Kanji Font|3222
+>>>>>0x2138	ubequad		0x4A4A3424488830C0	MSX Kanji Font|3213
 
 
 
 # MSX extension ROMs
 0	string/b		AB
->2	uleshort	0x0010			MSX ROM|3223
->>2	uleshort	x			\b, init=0x%4x|3223
->>4	uleshort	>0			\b, stahdl=0x%4x|3223
->>6	uleshort	>0			\b, devhdl=0x%4x|3223
->>8	uleshort	>0			\b, bas=0x%4x|3223
->2	uleshort	0x4010			MSX ROM|3223
->>2	uleshort	x			\b, init=0x%04x|3223
->>4	uleshort	>0			\b, stahdl=0x%04x|3223
->>6	uleshort	>0			\b, devhdl=0x%04x|3223
->>8	uleshort	>0			\b, bas=0x%04x|3223
->2	uleshort	0x8010			MSX ROM|3223
->>2	uleshort	x			\b, init=0x%04x|3223
->>4	uleshort	>0			\b, stahdl=0x%04x|3223
->>6	uleshort	>0			\b, devhdl=0x%04x|3223
->>8	uleshort	>0			\b, bas=0x%04x|3223
+>2	uleshort	0x0010			MSX ROM|3214
+>>2	uleshort	x			\b, init=0x%4x|3214
+>>4	uleshort	>0			\b, stahdl=0x%4x|3214
+>>6	uleshort	>0			\b, devhdl=0x%4x|3214
+>>8	uleshort	>0			\b, bas=0x%4x|3214
+>2	uleshort	0x4010			MSX ROM|3214
+>>2	uleshort	x			\b, init=0x%04x|3214
+>>4	uleshort	>0			\b, stahdl=0x%04x|3214
+>>6	uleshort	>0			\b, devhdl=0x%04x|3214
+>>8	uleshort	>0			\b, bas=0x%04x|3214
+>2	uleshort	0x8010			MSX ROM|3214
+>>2	uleshort	x			\b, init=0x%04x|3214
+>>4	uleshort	>0			\b, stahdl=0x%04x|3214
+>>6	uleshort	>0			\b, devhdl=0x%04x|3214
+>>8	uleshort	>0			\b, bas=0x%04x|3214
 0	string/b		AB\0\0
 >6	uleshort	0
->>4	uleshort	>0x400F			MSX-BASIC extension ROM|3224
->>>4	uleshort	>0			\b, stahdl=0x%04x|3224
->>>6	uleshort	>0			\b, devhdl=0x%04x|3224
->>>0x1C		string		OPLL			\b, MSX-Music|3224
->>>>0x18	string		PAC2			\b (external)|3224
->>>>0x18	string		APRL			\b (internal)|3224
+>>4	uleshort	>0x400F			MSX-BASIC extension ROM|3215
+>>>4	uleshort	>0			\b, stahdl=0x%04x|3215
+>>>6	uleshort	>0			\b, devhdl=0x%04x|3215
+>>>0x1C		string		OPLL			\b, MSX-Music|3215
+>>>>0x18	string		PAC2			\b (external)|3215
+>>>>0x18	string		APRL			\b (internal)|3215
 
 0	string/b		AB\0\0\0\0
->6	uleshort	>0x400F			MSX device BIOS|3225
->>6	uleshort	>0			\b, devhdl=0x%04x|3225
+>6	uleshort	>0x400F			MSX device BIOS|3216
+>>6	uleshort	>0			\b, devhdl=0x%04x|3216
 
 
 0	string/b		AB
@@ -223,16 +223,16 @@
 >2	uleshort	>15
 >>2	uleshort	<0xC000
 >>>8	string		\0\0\0\0\0\0\0\0
->>>>(2.s&0x3FFF)	uleshort	>0		MSX ROM|3223
->>>>>0x10	string		YZ\0\0\0\0		Konami Game Master 2 MSX ROM|3226
->>>>>0x10	string		CD			\b, Konami RC-|3227
->>>>>>0x12	ubyte		x			\b%d|3227
->>>>>>0x13	ubyte/16	x			\b%d|3227
->>>>>>0x13	ubyte&0xF	x			\b%d|3227
->>>>>0x10	string		EF			\b, Konami RC-|3227
->>>>>>0x12	ubyte		x			\b%d|3227
->>>>>>0x13	ubyte/16	x			\b%d|3227
->>>>>>0x13	ubyte&0xF	x			\b%d|3227
+>>>>(2.s&0x3FFF)	uleshort	>0		MSX ROM|3214
+>>>>>0x10	string		YZ\0\0\0\0		Konami Game Master 2 MSX ROM|3217
+>>>>>0x10	string		CD			\b, Konami RC-|3218
+>>>>>>0x12	ubyte		x			\b%d|3218
+>>>>>>0x13	ubyte/16	x			\b%d|3218
+>>>>>>0x13	ubyte&0xF	x			\b%d|3218
+>>>>>0x10	string		EF			\b, Konami RC-|3218
+>>>>>>0x12	ubyte		x			\b%d|3218
+>>>>>>0x13	ubyte/16	x			\b%d|3218
+>>>>>>0x13	ubyte&0xF	x			\b%d|3218
 >>>>>2	uleshort	x			\b, init=0x%04x
 >>>>>4	uleshort	>0			\b, stahdl=0x%04x
 >>>>>6	uleshort	>0			\b, devhdl=0x%04x
@@ -240,31 +240,31 @@
 >>>2	uleshort	0
 >>>>4	uleshort	0
 >>>>>6	uleshort	0
->>>>>>8	uleshort	>0			MSX BASIC program in ROM, bas=0x%04x|3228
+>>>>>>8	uleshort	>0			MSX BASIC program in ROM, bas=0x%04x|3219
 
 0x4000	string/b		AB
 >0x4002	uleshort	>0x400F
->>0x400A	string		\0\0\0\0\0\0	MSX ROM with nonstandard page order|3229
->>>0x4002	uleshort	x			\b, init=0x%04x|3229
->>>0x4004	uleshort	>0			\b, stahdl=0x%04x|3229
->>>0x4006	uleshort	>0			\b, devhdl=0x%04x|3229
->>>0x4008	uleshort	>0			\b, bas=0x%04x|3229
+>>0x400A	string		\0\0\0\0\0\0	MSX ROM with nonstandard page order|3220
+>>>0x4002	uleshort	x			\b, init=0x%04x|3220
+>>>0x4004	uleshort	>0			\b, stahdl=0x%04x|3220
+>>>0x4006	uleshort	>0			\b, devhdl=0x%04x|3220
+>>>0x4008	uleshort	>0			\b, bas=0x%04x|3220
 
 0x8000	string/b		AB
 >0x8002	uleshort	>0x400F
->>0x800A	string		\0\0\0\0\0\0	MSX ROM with nonstandard page order|3229
->>>0x8002	uleshort	x			\b, init=0x%04x|3229
->>>0x8004	uleshort	>0			\b, stahdl=0x%04x|3229
->>>0x8006	uleshort	>0			\b, devhdl=0x%04x|3229
->>>0x8008	uleshort	>0			\b, bas=0x%04x|3229
+>>0x800A	string		\0\0\0\0\0\0	MSX ROM with nonstandard page order|3220
+>>>0x8002	uleshort	x			\b, init=0x%04x|3220
+>>>0x8004	uleshort	>0			\b, stahdl=0x%04x|3220
+>>>0x8006	uleshort	>0			\b, devhdl=0x%04x|3220
+>>>0x8008	uleshort	>0			\b, bas=0x%04x|3220
 
 
 0x3C000	string/b		AB
->0x3C008	string		\0\0\0\0\0\0\0\0	MSX MegaROM with nonstandard page order|3230
->>0x3C002	uleshort	x			\b, init=0x%04x|3230
->>0x3C004	uleshort	>0			\b, stahdl=0x%04x|3230
->>0x3C006	uleshort	>0			\b, devhdl=0x%04x|3230
->>0x3C008	uleshort	>0			\b, bas=0x%04x|3230
+>0x3C008	string		\0\0\0\0\0\0\0\0	MSX MegaROM with nonstandard page order|3221
+>>0x3C002	uleshort	x			\b, init=0x%04x|3221
+>>0x3C004	uleshort	>0			\b, stahdl=0x%04x|3221
+>>0x3C006	uleshort	>0			\b, devhdl=0x%04x|3221
+>>0x3C008	uleshort	>0			\b, bas=0x%04x|3221
 
 # MSX BIN file
 #0	byte		0xFE
@@ -275,22 +275,22 @@
 # MSX-BASIC file
 0	byte		0xFF
 >3	uleshort	0x000A
->>1	uleshort	>0x8000			MSX-BASIC program|3231
+>>1	uleshort	>0x8000			MSX-BASIC program|3222
 
 # MSX .CAS file
-0	string/b	\x1F\xA6\xDE\xBA\xCC\x13\x7D\x74	MSX cassette archive|3232
+0	string/b	\x1F\xA6\xDE\xBA\xCC\x13\x7D\x74	MSX cassette archive|3223
 
 # Mega-Assembler file
 0	byte		0xFE
 >1	uleshort	0x0001
 >>5	uleshort	0xffff
->>>6	byte		0x0A		MSX Mega-Assembler source|3233
+>>>6	byte		0x0A		MSX Mega-Assembler source|3224
 
 # Execrom Patchfile
-0	string		ExecROM\ patchfile\x1A	MSX ExecROM patchfile|3234
->0x12	ubyte/16	x		v%d|3234
->0x12	ubyte&0xF	x		\b.%d|3234
->0x13	ubyte		x		\b, contains %d patches|3234
+0	string		ExecROM\ patchfile\x1A	MSX ExecROM patchfile|3225
+>0x12	ubyte/16	x		v%d|3225
+>0x12	ubyte&0xF	x		\b.%d|3225
+>0x13	ubyte		x		\b, contains %d patches|3225
 
 # Konami's King's Valley-2 custom stage (ELG file)
 4	uleshort	0x0900
@@ -300,8 +300,8 @@
 >>>>0x23	byte	1
 >>>>>0x25	byte	0
 >>>>>>0x15	string	>\x30
->>>>>>>0x15	string	<\x5A		Konami King's Valley-2 custom stage, title: "%-8.8s"|3235
->>>>>>>>0x1D	byte	<32	\b, theme: %d|3235
+>>>>>>>0x15	string	<\x5A		Konami King's Valley-2 custom stage, title: "%-8.8s"|3226
+>>>>>>>>0x1D	byte	<32	\b, theme: %d|3226
 
 # Metal Gear 1 savegame
 #0x4F	string	\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF

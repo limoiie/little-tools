@@ -5,45 +5,45 @@
 #
 # <http://www.libpgf.org/uploads/media/PGF_Details_01.pdf>
 # 2013 by Philipp Hahn <pmhahn debian org>
-0 string PGF Progressive Graphics image data,|3476
+0 string PGF Progressive Graphics image data,|3467
 !:mime image/x-pgf
->3	string	2	version %s,|3477
->3	string	4	version %s,|3478
->3	string	5	version %s,|3479
->3	string	6	version %s,|3480
+>3	string	2	version %s,|3468
+>3	string	4	version %s,|3469
+>3	string	5	version %s,|3470
+>3	string	6	version %s,|3471
 #	PGFPreHeader
 #>>4	lelong	x	header size %d,
 #	PGFHeader
->>8	lelong	x	%d x|3480
->>12	lelong	x	%d,|3480
->>16	byte	x	%d levels,|3480
->>17	byte	x	compression level %d,|3480
->>18	byte	x	%d bpp,|3480
->>19	byte	x	%d channels,|3481
+>>8	lelong	x	%d x|3471
+>>12	lelong	x	%d,|3471
+>>16	byte	x	%d levels,|3471
+>>17	byte	x	compression level %d,|3471
+>>18	byte	x	%d bpp,|3471
+>>19	byte	x	%d channels,|3472
 >>20	clear	x
->>20	byte	0	bitmap,|3482
->>20	byte	1	gray scale,|3483
->>20	byte	2	indexed color,|3484
->>20	byte	3	RGB color,|3485
->>20	byte	4	CYMK color,|3486
->>20	byte	5	HSL color,|3487
->>20	byte	6	HSB color,|3488
->>20	byte	7	multi-channel,|3489
->>20	byte	8	duo tone,|3490
->>20	byte	9	LAB color,|3491
->>20	byte	10	gray scale 16,|3492
->>20	byte	11	RGB color 48,|3493
->>20	byte	12	LAB color 48,|3494
->>20	byte	13	CYMK color 64,|3495
->>20	byte	14	deep multi-channel,|3496
->>20	byte	15	duo tone 16,|3497
->>20	byte	17	RGBA color,|3498
->>20	byte	18	gray scale 32,|3499
->>20	byte	19	RGB color 12,|3500
->>20	byte	20	RGB color 16,|3501
->>20	byte	255	unknown format,|3502
->>20	default	x	format|3503
->>>20	byte	x	\b %d,|3503
+>>20	byte	0	bitmap,|3473
+>>20	byte	1	gray scale,|3474
+>>20	byte	2	indexed color,|3475
+>>20	byte	3	RGB color,|3476
+>>20	byte	4	CYMK color,|3477
+>>20	byte	5	HSL color,|3478
+>>20	byte	6	HSB color,|3479
+>>20	byte	7	multi-channel,|3480
+>>20	byte	8	duo tone,|3481
+>>20	byte	9	LAB color,|3482
+>>20	byte	10	gray scale 16,|3483
+>>20	byte	11	RGB color 48,|3484
+>>20	byte	12	LAB color 48,|3485
+>>20	byte	13	CYMK color 64,|3486
+>>20	byte	14	deep multi-channel,|3487
+>>20	byte	15	duo tone 16,|3488
+>>20	byte	17	RGBA color,|3489
+>>20	byte	18	gray scale 32,|3490
+>>20	byte	19	RGB color 12,|3491
+>>20	byte	20	RGB color 16,|3492
+>>20	byte	255	unknown format,|3493
+>>20	default	x	format|3494
+>>>20	byte	x	\b %d,|3494
 >>21	byte	x	%d bpc
 #	PGFPostHeader
 #	Level-Sizes

@@ -49,12 +49,12 @@
 #>0		string		>\0		"%s"
 
 # iSiloX e-book
-60		string		SDocSilX	iSiloX E-book|3410
->0		string		>\0		"%s"|3410
+60		string		SDocSilX	iSiloX E-book|3401
+>0		string		>\0		"%s"|3401
 
 # Mobipocket (www.mobipocket.com), donated by Carl Witty
 # expanded by Ralf Brown
-60		string	 	BOOKMOBI	Mobipocket E-book|3411
+60		string	 	BOOKMOBI	Mobipocket E-book|3402
 # MobiPocket stores a full title, pointed at by the belong at offset
 # 0x54 in its header at (78.L), with length given by the belong at
 # offset 0x58.
@@ -63,82 +63,82 @@
 # field is not at the start of the string; in practice, the data
 # following the string always seems to start with a zero byte
 >(78.L)		belong		x
->>&(&0x50.L-4)	string		>\0		"%s"|3411
+>>&(&0x50.L-4)	string		>\0		"%s"|3402
 >0		use		aportisdoc
 >>(78.L+0x68)	belong		>0		\b, version %d
 >>(78.L+0x1C)	belong		!0		\b, codepage %d
 >>(78.L+0x0C)	beshort	 	>0		\b, encrypted (type %d)
 
 # AportisDoc/PalmDOC
-60		string		TEXtREAd	AportisDoc/PalmDOC E-book|3412
->0		string		>\0		"%s"|3412
+60		string		TEXtREAd	AportisDoc/PalmDOC E-book|3403
+>0		string		>\0		"%s"|3403
 >0		use		aportisdoc
 
 # Variety of PalmOS document types
 # Michael-John Turner <mj@debian.org>
 # Thanks to Hasan Umit Ezerce <humit@tr-net.net.tr> for his DocType
-60	string			BVokBDIC	BDicty PalmOS document|3413
+60	string			BVokBDIC	BDicty PalmOS document|3404
+>0	string			>\0		"%s"|3404
+60	string			DB99DBOS	DB PalmOS document|3405
+>0	string			>\0		"%s"|3405
+60	string			vIMGView	FireViewer/ImageViewer PalmOS document|3406
+>0	string			>\0		"%s"|3406
+60	string			PmDBPmDB	HanDBase PalmOS document|3407
+>0	string			>\0		"%s"|3407
+60	string			InfoINDB	InfoView PalmOS document|3408
+>0	string			>\0		"%s"|3408
+60	string			ToGoToGo	iSilo PalmOS document|3409
+>0	string			>\0		"%s"|3409
+60	string			JfDbJBas	JFile PalmOS document|3410
+>0	string			>\0		"%s"|3410
+60	string			JfDbJFil	JFile Pro PalmOS document|3411
+>0	string			>\0		"%s"|3411
+60	string			DATALSdb	List PalmOS document|3412
+>0	string			>\0		"%s"|3412
+60	string			Mdb1Mdb1	MobileDB PalmOS document|3413
 >0	string			>\0		"%s"|3413
-60	string			DB99DBOS	DB PalmOS document|3414
+60	string			PNRdPPrs	PeanutPress PalmOS document|3414
 >0	string			>\0		"%s"|3414
-60	string			vIMGView	FireViewer/ImageViewer PalmOS document|3415
+60	string			DataPlkr	Plucker PalmOS document|3415
 >0	string			>\0		"%s"|3415
-60	string			PmDBPmDB	HanDBase PalmOS document|3416
+60	string			DataSprd	QuickSheet PalmOS document|3416
 >0	string			>\0		"%s"|3416
-60	string			InfoINDB	InfoView PalmOS document|3417
+60	string			SM01SMem	SuperMemo PalmOS document|3417
 >0	string			>\0		"%s"|3417
-60	string			ToGoToGo	iSilo PalmOS document|3418
+60	string			TEXtTlDc	TealDoc PalmOS document|3418
 >0	string			>\0		"%s"|3418
-60	string			JfDbJBas	JFile PalmOS document|3419
+60	string			InfoTlIf	TealInfo PalmOS document|3419
 >0	string			>\0		"%s"|3419
-60	string			JfDbJFil	JFile Pro PalmOS document|3420
+60	string			DataTlMl	TealMeal PalmOS document|3420
 >0	string			>\0		"%s"|3420
-60	string			DATALSdb	List PalmOS document|3421
+60	string			DataTlPt	TealPaint PalmOS document|3421
 >0	string			>\0		"%s"|3421
-60	string			Mdb1Mdb1	MobileDB PalmOS document|3422
+60	string			dataTDBP	ThinkDB PalmOS document|3422
 >0	string			>\0		"%s"|3422
-60	string			PNRdPPrs	PeanutPress PalmOS document|3423
+60	string			TdatTide	Tides PalmOS document|3423
 >0	string			>\0		"%s"|3423
-60	string			DataPlkr	Plucker PalmOS document|3424
+60	string			ToRaTRPW	TomeRaider PalmOS document|3424
 >0	string			>\0		"%s"|3424
-60	string			DataSprd	QuickSheet PalmOS document|3425
->0	string			>\0		"%s"|3425
-60	string			SM01SMem	SuperMemo PalmOS document|3426
->0	string			>\0		"%s"|3426
-60	string			TEXtTlDc	TealDoc PalmOS document|3427
->0	string			>\0		"%s"|3427
-60	string			InfoTlIf	TealInfo PalmOS document|3428
->0	string			>\0		"%s"|3428
-60	string			DataTlMl	TealMeal PalmOS document|3429
->0	string			>\0		"%s"|3429
-60	string			DataTlPt	TealPaint PalmOS document|3430
->0	string			>\0		"%s"|3430
-60	string			dataTDBP	ThinkDB PalmOS document|3431
->0	string			>\0		"%s"|3431
-60	string			TdatTide	Tides PalmOS document|3432
->0	string			>\0		"%s"|3432
-60	string			ToRaTRPW	TomeRaider PalmOS document|3433
->0	string			>\0		"%s"|3433
 
 # A GutenPalm zTXT etext for use on Palm Pilots (http://gutenpalm.sf.net)
 # For version 1.xx zTXTs, outputs version and numbers of bookmarks and
 #   annotations.
 # For other versions, just outputs version.
 #
-60		string		zTXT		A GutenPalm zTXT e-book|3434
->0		string		>\0		"%s"|3434
+60		string		zTXT		A GutenPalm zTXT e-book|3425
+>0		string		>\0		"%s"|3425
 >(0x4E.L)	byte		0
->>(0x4E.L+1)	byte		x		(v0.%02d)|3434
+>>(0x4E.L+1)	byte		x		(v0.%02d)|3425
 >(0x4E.L)	byte		1
->>(0x4E.L+1)	byte		x		(v1.%02d)|3434
+>>(0x4E.L+1)	byte		x		(v1.%02d)|3425
 >>>(0x4E.L+10)	beshort		>0
->>>>(0x4E.L+10) beshort		<2		- 1 bookmark|3434
->>>>(0x4E.L+10) beshort		>1		- %d bookmarks|3434
+>>>>(0x4E.L+10) beshort		<2		- 1 bookmark|3425
+>>>>(0x4E.L+10) beshort		>1		- %d bookmarks|3425
 >>>(0x4E.L+14)	beshort		>0
->>>>(0x4E.L+14) beshort		<2		- 1 annotation|3434
->>>>(0x4E.L+14) beshort		>1		- %d annotations|3434
->(0x4E.L)	byte		>1		(v%d.|3434
->>(0x4E.L+1)	byte		x		%02d)|3434
+>>>>(0x4E.L+14) beshort		<2		- 1 annotation|3425
+>>>>(0x4E.L+14) beshort		>1		- %d annotations|3425
+>(0x4E.L)	byte		>1		(v%d.|3425
+>>(0x4E.L+1)	byte		x		%02d)|3425
 
 # Palm OS .prc file types
 60		string		libr
@@ -146,10 +146,10 @@
 # http://en.wikipedia.org/wiki/PRC_%28Palm_OS%29
 # http://web.mit.edu/tytso/www/pilot/prc-format.html
 >0x20		beshort&0xffbe	0
->>0		string		>\0		Palm OS dynamic library data "%s"|3435
-60		string		ptch		Palm OS operating system patch data|3436
->0		string		>\0		"%s"|3436
+>>0		string		>\0		Palm OS dynamic library data "%s"|3426
+60		string		ptch		Palm OS operating system patch data|3427
+>0		string		>\0		"%s"|3427
 
 # Mobipocket (www.mobipocket.com), donated by Carl Witty
-60	string			BOOKMOBI	Mobipocket E-book|3411
->0	string			>\0		"%s"|3411
+60	string			BOOKMOBI	Mobipocket E-book|3402
+>0	string			>\0		"%s"|3402

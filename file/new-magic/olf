@@ -11,10 +11,10 @@
 #
 # Created by Erik Theisen <etheisen@openbsd.org>
 # Based on elf from Daniel Quinlan <quinlan@yggdrasil.com>
-0	string		\177OLF		OLF|3371
->4	byte		0		invalid class|3372
->4	byte		1		32-bit|3373
->4	byte		2		64-bit|3374
+0	string		\177OLF		OLF|3362
+>4	byte		0		invalid class|3363
+>4	byte		1		32-bit|3364
+>4	byte		2		64-bit|3365
 >7	byte		0		invalid os
 >7	byte		1		OpenBSD
 >7	byte		2		NetBSD

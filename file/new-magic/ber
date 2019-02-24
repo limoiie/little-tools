@@ -28,7 +28,7 @@
 >>&1	search/b8	\x5f\x81\x44
 # <SpecificationVersionNumber>3</><ReleaseVersionNumber> block
 >>>&64	search/b64	\x5f\x81\x49\x01\x03\x5f\x81\x3d\x01
->>>>&0	byte	x	TAP 3.%d Batch (TD.57, Transferred Account)|1010
+>>>>&0	byte	x	TAP 3.%d Batch (TD.57, Transferred Account)|1008
 
 # Notification short tag
 0	byte	0x62
@@ -36,7 +36,7 @@
 >2	search/b8	\x5f\x81\x44
 # <SpecificationVersionNumber>3</><ReleaseVersionNumber> block
 >>&64	search/b64	\x5f\x81\x49\x01\x03\x5f\x81\x3d\x01
->>>&0	byte	x	TAP 3.%d Notification (TD.57, Transferred Account)|1011
+>>>&0	byte	x	TAP 3.%d Notification (TD.57, Transferred Account)|1009
 
 
 # NRT Files
@@ -44,7 +44,7 @@
 0	byte	0x61
 # <SpecificationVersionNumber>2</><ReleaseVersionNumber> block
 >&1	search/b8 \x5f\x29\x01\x02\x5f\x25\x01
->>&0	byte	x	NRT 2.%d (TD.35, Near Real Time Roaming Data Exchange)|1012
+>>&0	byte	x	NRT 2.%d (TD.35, Near Real Time Roaming Data Exchange)|1010
 
 # RAP Files
 # cf. http://www.gsma.com/newsroom/wp-content/uploads/TD.32-v6.11.pdf
@@ -56,10 +56,10 @@
 >>&64	search/b64	\x5f\x81\x49\x01\x03\x5f\x81\x3d\x01
 # <RapSpecificationVersionNumber>1</><RapReleaseVersionNumber> block
 >>>&1	string/b	\x5f\x84\x20\x01\x01\x5f\x84\x1f\x01
->>>>&0	byte	x	RAP 1.%d Batch (TD.32, Returned Account Procedure),|1013
+>>>>&0	byte	x	RAP 1.%d Batch (TD.32, Returned Account Procedure),|1011
 >>>&0	byte	x	TAP 3.%d
 
 # Long Acknowledgement tag
 0	string \x7f\x84\x17
 # Long Sender tag
->&1	search/b5	\x5f\x81\x44	RAP Acknowledgement (TD.32, Returned Account Procedure)|1014
+>&1	search/b5	\x5f\x81\x44	RAP Acknowledgement (TD.32, Returned Account Procedure)|1012

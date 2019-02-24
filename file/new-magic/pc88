@@ -11,12 +11,12 @@
 >>>>0x1B	ubyte&0x8F	0
 >>>>>0x1B	ubyte&70	<0x40
 >>>>>>0x1C	ulelong	>0x21
->>>>>>>0		regex	[[:print:]]*	NEC PC-88 disk image, name=%s|1857
->>>>>>>>0x1B	ubyte	0	\b, media=2D|1858
->>>>>>>>0x1B	ubyte	0x10	\b, media=2DD|1859
->>>>>>>>0x1B	ubyte	0x20	\b, media=2HD|1860
->>>>>>>>0x1B	ubyte	0x30	\b, media=1D|1861
->>>>>>>>0x1B	ubyte	0x40	\b, media=1DD|1862
+>>>>>>>0		regex	[[:print:]]*	NEC PC-88 disk image, name=%s|1854
+>>>>>>>>0x1B	ubyte	0	\b, media=2D|1855
+>>>>>>>>0x1B	ubyte	0x10	\b, media=2DD|1856
+>>>>>>>>0x1B	ubyte	0x20	\b, media=2HD|1857
+>>>>>>>>0x1B	ubyte	0x30	\b, media=1D|1858
+>>>>>>>>0x1B	ubyte	0x40	\b, media=1DD|1859
 >>>>>>>>0x1A	ubyte	0x10	\b, write-protected
 
 

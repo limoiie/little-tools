@@ -5,23 +5,23 @@
 #
 # BinHex is the Macintosh ASCII-encoded file format (see also "apple")
 # Daniel Quinlan, quinlan@yggdrasil.com
-11	string	must\ be\ converted\ with\ BinHex	BinHex binary text|2807
+11	string	must\ be\ converted\ with\ BinHex	BinHex binary text|2799
 !:mime	application/mac-binhex40
->41	string	x					\b, version %.3s|2807
+>41	string	x					\b, version %.3s|2799
 
 # Stuffit archives are the de facto standard of compression for Macintosh
 # files obtained from most archives. (franklsm@tuns.ca)
-0	string		SIT!			StuffIt Archive (data)|2808
+0	string		SIT!			StuffIt Archive (data)|2800
 !:mime	application/x-stuffit
 !:apple	SIT!SIT!
->2	string		x			: %s|2808
-0	string		SITD			StuffIt Deluxe (data)|2809
->2	string		x			: %s|2809
-0	string		Seg			StuffIt Deluxe Segment (data)|2810
->2	string		x			: %s|2810
+>2	string		x			: %s|2800
+0	string		SITD			StuffIt Deluxe (data)|2801
+>2	string		x			: %s|2801
+0	string		Seg			StuffIt Deluxe Segment (data)|2802
+>2	string		x			: %s|2802
 
 # Newer StuffIt archives (grant@netbsd.org)
-0	string		StuffIt			StuffIt Archive|2811
+0	string		StuffIt			StuffIt Archive|2803
 !:mime	application/x-stuffit
 !:apple	SIT!SIT!
 #>162	string		>0			: %s
@@ -97,12 +97,12 @@
 
 #	display information of MacBinary file
 0	name		mac-bin
->122	ubyte	x	MacBinary|2812
+>122	ubyte	x	MacBinary|2804
 # versions for MacBinary II/III
->122	ubyte	129		II|2813
->122	ubyte	130		III|2814
+>122	ubyte	129		II|2805
+>122	ubyte	130		III|2806
 # only in MacBinary III
->>102	string	!mBIN		with surprising version|2815
+>>102	string	!mBIN		with surprising version|2807
 !:mime	application/x-macbinary
 !:apple	PSPTBINA
 !:ext	bin/macbin
@@ -331,30 +331,30 @@
 #
 #0	string		SAS		SAS
 #>8	string		x		%s
-0	string		SAS		SAS|2816
->24	string		DATA		data file|2817
->24	string		CATALOG		catalog|2818
->24	string		INDEX		data file index|2819
->24	string		VIEW		data view|2820
+0	string		SAS		SAS|2808
+>24	string		DATA		data file|2809
+>24	string		CATALOG		catalog|2810
+>24	string		INDEX		data file index|2811
+>24	string		VIEW		data view|2812
 # sas 7+ magic from Reinhold Koch (reinhold.koch@roche.com)
 #
-0x54    string          SAS             SAS 7+|2821
->0x9C   string          DATA            data file|2822
->0x9C   string          CATALOG         catalog|2823
->0x9C   string          INDEX           data file index|2824
->0x9C   string          VIEW            data view|2825
+0x54    string          SAS             SAS 7+|2813
+>0x9C   string          DATA            data file|2814
+>0x9C   string          CATALOG         catalog|2815
+>0x9C   string          INDEX           data file index|2816
+>0x9C   string          VIEW            data view|2817
 
 # spss magic for SPSS system and portable files,
 #	 from Bruce Foster (bef@nwu.edu).
 
-0	long		0xc1e2c3c9	SPSS Portable File|2826
->40	string 		x		%s|2826
+0	long		0xc1e2c3c9	SPSS Portable File|2818
+>40	string 		x		%s|2818
 
-0	string		$FL2		SPSS System File|2827
->24	string		x		%s|2827
+0	string		$FL2		SPSS System File|2819
+>24	string		x		%s|2819
 
-0	string		$FL3		SPSS System File|2827
->24	string		x		%s|2827
+0	string		$FL3		SPSS System File|2819
+>24	string		x		%s|2819
 
 # Macintosh filesystem data
 # From "Tom N Harris" <telliamed@mac.com>
@@ -369,14 +369,14 @@
 # Alternatively, the boot block is supposed to be zeroed if it's
 # unused, so a simply >0 should suffice.
 
-0x400	beshort			0xD2D7		Macintosh MFS data|2828
->0	beshort			0x4C4B		(bootable)|2828
->0x40a	beshort			&0x8000		(locked)|2828
->0x402	beldate-0x7C25B080	x		created: %s,|2828
->0x406	beldate-0x7C25B080	>0		last backup: %s,|2828
->0x414	belong			x		block size: %d,|2828
->0x412	beshort			x		number of blocks: %d,|2828
->0x424	pstring			x		volume name: %s|2828
+0x400	beshort			0xD2D7		Macintosh MFS data|2820
+>0	beshort			0x4C4B		(bootable)|2820
+>0x40a	beshort			&0x8000		(locked)|2820
+>0x402	beldate-0x7C25B080	x		created: %s,|2820
+>0x406	beldate-0x7C25B080	>0		last backup: %s,|2820
+>0x414	belong			x		block size: %d,|2820
+>0x412	beshort			x		number of blocks: %d,|2820
+>0x424	pstring			x		volume name: %s|2820
 
 # *.hfs updated by Joerg Jenderek
 # http://en.wikipedia.org/wiki/Hierarchical_File_System
@@ -386,7 +386,7 @@
 # first block of volume bit map (always 3)
 >0x40e	ubeshort		0x0003
 # maximal length of volume name is 27
->>0x424		ubyte			<28	Macintosh HFS data|2829
+>>0x424		ubyte			<28	Macintosh HFS data|2821
 !:mime	application/x-apple-diskimage
 #!:apple	hfsdINIT
 #!:apple	MACSdisk
@@ -395,13 +395,13 @@
 !:apple	????devi
 # https://en.wikipedia.org/wiki/Apple_Disk_Image
 !:ext hfs/dmg
->>>0		beshort			0x4C4B	(bootable)|2829
+>>>0		beshort			0x4C4B	(bootable)|2821
 #>>>0		beshort			0x0000	(not bootable)
->>>0x40a	beshort			&0x8000	(locked)|2829
->>>0x40a	beshort			^0x0100	(mounted)|2829
->>>0x40a	beshort			&0x0200	(spared blocks)|2829
->>>0x40a	beshort			&0x0800	(unclean)|2829
->>>0x47C	beshort			0x482B	(Embedded HFS+ Volume)|2829
+>>>0x40a	beshort			&0x8000	(locked)|2821
+>>>0x40a	beshort			^0x0100	(mounted)|2821
+>>>0x40a	beshort			&0x0200	(spared blocks)|2821
+>>>0x40a	beshort			&0x0800	(unclean)|2821
+>>>0x47C	beshort			0x482B	(Embedded HFS+ Volume)|2821
 # http://www.epochconverter.com/
 # 0x7C245F00 seconds	~ 2082758400	~ 01 Jan 2036 00:00:00	~ 66 years to 1970
 # 0x7C25B080 seconds	~ 2082844800	~ 02 Jan 2036 00:00:00
@@ -410,28 +410,28 @@
 #>>>0x406	beldate-0x7C25B080	x	last modified: %s,
 #>>>0x440	beldate-0x7C25B080	>0	last backup: %s,
 # found block sizes 200h,1200h,2800h
->>>0x414	belong			x	block size: %d,|2829
->>>0x412	beshort			x	number of blocks: %d,|2829
->>>0x424	pstring			x	volume name: %s|2829
+>>>0x414	belong			x	block size: %d,|2821
+>>>0x412	beshort			x	number of blocks: %d,|2821
+>>>0x424	pstring			x	volume name: %s|2821
 
-0x400	beshort			0x482B		Macintosh HFS Extended|2830
->&0	beshort			x		version %d data|2830
->0	beshort			0x4C4B		(bootable)|2830
->0x404	belong			^0x00000100	(mounted)|2830
->&2	belong			&0x00000200	(spared blocks)|2830
->&2	belong			&0x00000800	(unclean)|2830
->&2	belong			&0x00008000	(locked)|2830
->&6	string			x		last mounted by: '%.4s',|2830
+0x400	beshort			0x482B		Macintosh HFS Extended|2822
+>&0	beshort			x		version %d data|2822
+>0	beshort			0x4C4B		(bootable)|2822
+>0x404	belong			^0x00000100	(mounted)|2822
+>&2	belong			&0x00000200	(spared blocks)|2822
+>&2	belong			&0x00000800	(unclean)|2822
+>&2	belong			&0x00008000	(locked)|2822
+>&6	string			x		last mounted by: '%.4s',|2822
 # really, that should be treated as a belong and we print a string
 # based on the value. TN1150 only mentions '8.10' for "MacOS 8.1"
->&14	beldate-0x7C25B080	x		created: %s,|2830
+>&14	beldate-0x7C25B080	x		created: %s,|2822
 # only the creation date is local time, all other timestamps in HFS+ are UTC.
->&18	bedate-0x7C25B080	x		last modified: %s,|2830
->&22	bedate-0x7C25B080	>0		last backup: %s,|2830
->&26	bedate-0x7C25B080	>0		last checked: %s,|2830
->&38	belong			x		block size: %d,|2830
->&42	belong			x		number of blocks: %d,|2830
->&46	belong			x		free blocks: %d|2830
+>&18	bedate-0x7C25B080	x		last modified: %s,|2822
+>&22	bedate-0x7C25B080	>0		last backup: %s,|2822
+>&26	bedate-0x7C25B080	>0		last checked: %s,|2822
+>&38	belong			x		block size: %d,|2822
+>&42	belong			x		number of blocks: %d,|2822
+>&46	belong			x		free blocks: %d|2822
 
 ## AFAIK, only the signature is different
 # same as Apple Partition Map
@@ -455,7 +455,7 @@
 #>>>>0xa54	belong		x		number of blocks: %d
 
 # From: Remi Mommsen <mommsen@slac.stanford.edu>
-0		string		BOMStore	Mac OS X bill of materials (BOM) file|2831
+0		string		BOMStore	Mac OS X bill of materials (BOM) file|2823
 
 # From: Adam Buchbinder <adam.buchbinder@gmail.com>
 # URL: http://en.wikipedia.org/wiki/Datafork_TrueType
@@ -464,7 +464,7 @@
 # don't know what they mean.
 0	belong	0x100
 >(0x4.L+24)	beshort	x
->>&4	belong	0x73666e74	Mac OSX datafork font, TrueType|2832
->>&4	belong	0x464f4e54	Mac OSX datafork font, 'FONT'|2833
->>&4	belong	0x4e464e54	Mac OSX datafork font, 'NFNT'|2834
->>&4	belong	0x504f5354	Mac OSX datafork font, PostScript|2835
+>>&4	belong	0x73666e74	Mac OSX datafork font, TrueType|2824
+>>&4	belong	0x464f4e54	Mac OSX datafork font, 'FONT'|2825
+>>&4	belong	0x4e464e54	Mac OSX datafork font, 'NFNT'|2826
+>>&4	belong	0x504f5354	Mac OSX datafork font, PostScript|2827

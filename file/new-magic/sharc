@@ -15,9 +15,9 @@
 
 #0	string			=!		Assembler source
 #0	string			Analog		ADi asm listing file
-0	string			.SYSTEM		SHARC architecture file|3813
-0	string			.system		SHARC architecture file|3813
+0	string			.SYSTEM		SHARC architecture file|3803
+0	string			.system		SHARC architecture file|3803
 
-0	leshort			0x521C		SHARC COFF binary|3814
->2	leshort			>1		, %d sections|3814
->>12	lelong			>0		, not stripped|3814
+0	leshort			0x521C		SHARC COFF binary|3804
+>2	leshort			>1		, %d sections|3804
+>>12	lelong			>0		, not stripped|3804

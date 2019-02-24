@@ -9,19 +9,19 @@
 # GDBM magic numbers
 #  Will be maintained as part of the GDBM distribution in the future.
 #  <downsj@teeny.org>
-0	belong	0x13579acd	GNU dbm 1.x or ndbm database, big endian, 32-bit|1440
+0	belong	0x13579acd	GNU dbm 1.x or ndbm database, big endian, 32-bit|1438
 !:mime	application/x-gdbm
-0	belong	0x13579ace	GNU dbm 1.x or ndbm database, big endian, old|1441
+0	belong	0x13579ace	GNU dbm 1.x or ndbm database, big endian, old|1439
 !:mime	application/x-gdbm
-0	belong	0x13579acf	GNU dbm 1.x or ndbm database, big endian, 64-bit|1442
+0	belong	0x13579acf	GNU dbm 1.x or ndbm database, big endian, 64-bit|1440
 !:mime	application/x-gdbm
-0	lelong	0x13579acd	GNU dbm 1.x or ndbm database, little endian, 32-bit|1443
+0	lelong	0x13579acd	GNU dbm 1.x or ndbm database, little endian, 32-bit|1441
 !:mime	application/x-gdbm
-0	lelong	0x13579ace	GNU dbm 1.x or ndbm database, little endian, old|1444
+0	lelong	0x13579ace	GNU dbm 1.x or ndbm database, little endian, old|1442
 !:mime	application/x-gdbm
-0	lelong	0x13579acf	GNU dbm 1.x or ndbm database, little endian, 64-bit|1445
+0	lelong	0x13579acf	GNU dbm 1.x or ndbm database, little endian, 64-bit|1443
 !:mime	application/x-gdbm
-0	string	GDBM		GNU dbm 2.x database|1446
+0	string	GDBM		GNU dbm 2.x database|1444
 !:mime	application/x-gdbm
 #
 # Berkeley DB
@@ -32,98 +32,98 @@
 # Btree 1.85/1.86 databases store the metadata in host byte order.
 # Hash and Btree 2.X and later databases store the metadata in host byte order.
 
-0	long	0x00061561	Berkeley DB|1447
+0	long	0x00061561	Berkeley DB|1445
 !:mime	application/x-dbm
 >8	belong	4321
->>4	belong	>2		1.86|1448
->>4	belong	<3		1.85|1449
+>>4	belong	>2		1.86|1446
+>>4	belong	<3		1.85|1447
 >>4	belong	>0		(Hash, version %d, native byte-order)
 >8	belong	1234
->>4	belong	>2		1.86|1448
->>4	belong	<3		1.85|1449
+>>4	belong	>2		1.86|1446
+>>4	belong	<3		1.85|1447
 >>4	belong	>0		(Hash, version %d, little-endian)
 
-0	belong	0x00061561	Berkeley DB|1447
+0	belong	0x00061561	Berkeley DB|1445
 >8	belong	4321
->>4	belong	>2		1.86|1448
->>4	belong	<3		1.85|1449
+>>4	belong	>2		1.86|1446
+>>4	belong	<3		1.85|1447
 >>4	belong	>0		(Hash, version %d, big-endian)
 >8	belong	1234
->>4	belong	>2		1.86|1448
->>4	belong	<3		1.85|1449
+>>4	belong	>2		1.86|1446
+>>4	belong	<3		1.85|1447
 >>4	belong	>0		(Hash, version %d, native byte-order)
 
-0	long	0x00053162	Berkeley DB 1.85/1.86|1450
->4	long	>0		(Btree, version %d, native byte-order)|1450
-0	belong	0x00053162	Berkeley DB 1.85/1.86|1450
->4	belong	>0		(Btree, version %d, big-endian)|1450
-0	lelong	0x00053162	Berkeley DB 1.85/1.86|1450
->4	lelong	>0		(Btree, version %d, little-endian)|1451
+0	long	0x00053162	Berkeley DB 1.85/1.86|1448
+>4	long	>0		(Btree, version %d, native byte-order)|1448
+0	belong	0x00053162	Berkeley DB 1.85/1.86|1448
+>4	belong	>0		(Btree, version %d, big-endian)|1448
+0	lelong	0x00053162	Berkeley DB 1.85/1.86|1448
+>4	lelong	>0		(Btree, version %d, little-endian)|1449
 
-12	long	0x00061561	Berkeley DB|1447
->16	long	>0		(Hash, version %d, native byte-order)|1447
-12	belong	0x00061561	Berkeley DB|1447
->16	belong	>0		(Hash, version %d, big-endian)|1447
-12	lelong	0x00061561	Berkeley DB|1447
->16	lelong	>0		(Hash, version %d, little-endian)|1452
+12	long	0x00061561	Berkeley DB|1445
+>16	long	>0		(Hash, version %d, native byte-order)|1445
+12	belong	0x00061561	Berkeley DB|1445
+>16	belong	>0		(Hash, version %d, big-endian)|1445
+12	lelong	0x00061561	Berkeley DB|1445
+>16	lelong	>0		(Hash, version %d, little-endian)|1450
 
-12	long	0x00053162	Berkeley DB|1447
->16	long	>0		(Btree, version %d, native byte-order)|1447
-12	belong	0x00053162	Berkeley DB|1447
->16	belong	>0		(Btree, version %d, big-endian)|1447
-12	lelong	0x00053162	Berkeley DB|1447
->16	lelong	>0		(Btree, version %d, little-endian)|1453
+12	long	0x00053162	Berkeley DB|1445
+>16	long	>0		(Btree, version %d, native byte-order)|1445
+12	belong	0x00053162	Berkeley DB|1445
+>16	belong	>0		(Btree, version %d, big-endian)|1445
+12	lelong	0x00053162	Berkeley DB|1445
+>16	lelong	>0		(Btree, version %d, little-endian)|1451
 
-12	long	0x00042253	Berkeley DB|1447
->16	long	>0		(Queue, version %d, native byte-order)|1447
-12	belong	0x00042253	Berkeley DB|1447
->16	belong	>0		(Queue, version %d, big-endian)|1447
-12	lelong	0x00042253	Berkeley DB|1447
->16	lelong	>0		(Queue, version %d, little-endian)|1454
+12	long	0x00042253	Berkeley DB|1445
+>16	long	>0		(Queue, version %d, native byte-order)|1445
+12	belong	0x00042253	Berkeley DB|1445
+>16	belong	>0		(Queue, version %d, big-endian)|1445
+12	lelong	0x00042253	Berkeley DB|1445
+>16	lelong	>0		(Queue, version %d, little-endian)|1452
 
 # From Max Bowsher.
-12	long	0x00040988	Berkeley DB|1447
->16	long	>0		(Log, version %d, native byte-order)|1447
-12	belong	0x00040988	Berkeley DB|1447
->16	belong	>0		(Log, version %d, big-endian)|1447
-12	lelong	0x00040988	Berkeley DB|1447
->16	lelong	>0		(Log, version %d, little-endian)|1447
+12	long	0x00040988	Berkeley DB|1445
+>16	long	>0		(Log, version %d, native byte-order)|1445
+12	belong	0x00040988	Berkeley DB|1445
+>16	belong	>0		(Log, version %d, big-endian)|1445
+12	lelong	0x00040988	Berkeley DB|1445
+>16	lelong	>0		(Log, version %d, little-endian)|1445
 
 #
 #
 # Round Robin Database Tool by Tobias Oetiker <oetiker@ee.ethz.ch>
-0	string/b	RRD\0		RRDTool DB|1455
->4	string/b	x		version %s|1455
+0	string/b	RRD\0		RRDTool DB|1453
+>4	string/b	x		version %s|1453
 
->>10	short		!0		16bit aligned|1455
->>>10	bedouble	8.642135e+130	big-endian|1455
->>>>18	short		x		32bit long (m68k)|1455
+>>10	short		!0		16bit aligned|1453
+>>>10	bedouble	8.642135e+130	big-endian|1453
+>>>>18	short		x		32bit long (m68k)|1453
 
 >>10	short		0
->>>12	long		!0		32bit aligned|1455
->>>>12	bedouble	8.642135e+130	big-endian|1455
->>>>>20 long		0		64bit long|1455
->>>>>20 long		!0		32bit long|1455
->>>>12	ledouble	8.642135e+130	little-endian|1455
->>>>>24 long		0		64bit long|1455
->>>>>24 long		!0		32bit long (i386)|1455
->>>>12	string		\x43\x2b\x1f\x5b\x2f\x25\xc0\xc7	middle-endian|1455
->>>>>24 short		!0		32bit long (arm)|1455
+>>>12	long		!0		32bit aligned|1453
+>>>>12	bedouble	8.642135e+130	big-endian|1453
+>>>>>20 long		0		64bit long|1453
+>>>>>20 long		!0		32bit long|1453
+>>>>12	ledouble	8.642135e+130	little-endian|1453
+>>>>>24 long		0		64bit long|1453
+>>>>>24 long		!0		32bit long (i386)|1453
+>>>>12	string		\x43\x2b\x1f\x5b\x2f\x25\xc0\xc7	middle-endian|1453
+>>>>>24 short		!0		32bit long (arm)|1453
 
->>8	quad		0		64bit aligned|1455
->>>16	bedouble	8.642135e+130	big-endian|1455
->>>>24	long		0		64bit long (s390x)|1455
->>>>24	long		!0		32bit long (hppa/mips/ppc/s390/SPARC)|1455
->>>16	ledouble	8.642135e+130	little-endian|1455
->>>>28	long		0		64bit long (alpha/amd64/ia64)|1455
->>>>28	long		!0		32bit long (armel/mipsel)|1455
+>>8	quad		0		64bit aligned|1453
+>>>16	bedouble	8.642135e+130	big-endian|1453
+>>>>24	long		0		64bit long (s390x)|1453
+>>>>24	long		!0		32bit long (hppa/mips/ppc/s390/SPARC)|1453
+>>>16	ledouble	8.642135e+130	little-endian|1453
+>>>>28	long		0		64bit long (alpha/amd64/ia64)|1453
+>>>>28	long		!0		32bit long (armel/mipsel)|1453
 
 #----------------------------------------------------------------------
 # ROOT: file(1) magic for ROOT databases
 #
-0       string  root\0  ROOT file|1456
->4      belong  x       Version %d|1456
->33     belong  x       (Compression: %d)|1456
+0       string  root\0  ROOT file|1454
+>4      belong  x       Version %d|1454
+>33     belong  x       (Compression: %d)|1454
 
 # XXX: Weak magic.
 # Alex Ott <ott@jet.msk.su>
@@ -182,11 +182,11 @@
 #!:mime	application/x-dbase
 >>>>>>>>>>>>0	use			xbase-type
 # database file
->>>>>>>>>>>>0	ubyte			x		\b DBF|1474
->>>>>>>>>>>>4	lelong			0		\b, no records|1475
->>>>>>>>>>>>4	lelong			>0		\b, %d record|1474
+>>>>>>>>>>>>0	ubyte			x		\b DBF|1472
+>>>>>>>>>>>>4	lelong			0		\b, no records|1473
+>>>>>>>>>>>>4	lelong			>0		\b, %d record|1472
 # plural s appended
->>>>>>>>>>>>>4	lelong			>1		\bs|1474
+>>>>>>>>>>>>>4	lelong			>1		\bs|1472
 # http://www.clicketyclick.dk/databases/xbase/format/dbf_check.html#CHECK_DBF
 # 1 <= record size <= 4000 (dBase 3,4) or 32 * KB (=0x8000)
 >>>>>>>>>>>>10	uleshort		x		* %d
@@ -220,17 +220,17 @@
 >>>>>>>>>>>>>46	ubyte			>0
 #!:mime	application/x-mdx
 >>>>>>>>>>>>>>0		use		xbase-type
->>>>>>>>>>>>>>0		ubyte		x		\b MDX|1476
->>>>>>>>>>>>>>1		ubyte		x		\b, creation-date|1476
+>>>>>>>>>>>>>>0		ubyte		x		\b MDX|1474
+>>>>>>>>>>>>>>1		ubyte		x		\b, creation-date|1474
 >>>>>>>>>>>>>>1		use		xbase-date
->>>>>>>>>>>>>>44	ubyte		x		\b, update-date|1476
+>>>>>>>>>>>>>>44	ubyte		x		\b, update-date|1474
 >>>>>>>>>>>>>>44	use		xbase-date
 # No.of tags in use (1,2,5,12)
->>>>>>>>>>>>>>28	uleshort	x		\b, %d|1476
+>>>>>>>>>>>>>>28	uleshort	x		\b, %d|1474
 # No. of entries in tag (0x30)
->>>>>>>>>>>>>>25	ubyte		x		\b/%d tags|1476
+>>>>>>>>>>>>>>25	ubyte		x		\b/%d tags|1474
 #  Length of tag
->>>>>>>>>>>>>>26	ubyte		x		* %d|1476
+>>>>>>>>>>>>>>26	ubyte		x		* %d|1474
 # 1st tag name_
 >>>>>>>>>>>>>548	string		x		\b, 1st tag "%.11s"
 # 2nd tag name
@@ -241,73 +241,73 @@
 >0	ubyte		<2
 # 1 < version
 >0	ubyte		>1
->>0	ubyte		0x02		FoxBase|1457
+>>0	ubyte		0x02		FoxBase|1455
 # FoxBase+/dBaseIII+, no memo
->>0	ubyte		0x03		FoxBase+/dBase III|1458
+>>0	ubyte		0x03		FoxBase+/dBase III|1456
 !:mime	application/x-dbf
 # dBASE IV no memo file
->>0	ubyte		0x04		dBase IV|1459
+>>0	ubyte		0x04		dBase IV|1457
 !:mime	application/x-dbf
 # dBASE V no memo file
->>0	ubyte		0x05		dBase V|1460
+>>0	ubyte		0x05		dBase V|1458
 !:mime	application/x-dbf
->>0	ubyte		0x30		Visual FoxPro|1461
+>>0	ubyte		0x30		Visual FoxPro|1459
 !:mime	application/x-dbf
->>0	ubyte		0x31		Visual FoxPro, autoincrement|1462
+>>0	ubyte		0x31		Visual FoxPro, autoincrement|1460
 !:mime	application/x-dbf
 # Visual FoxPro, with field type Varchar or Varbinary
->>0	ubyte		0x32		Visual FoxPro, with field type Varchar|1463
+>>0	ubyte		0x32		Visual FoxPro, with field type Varchar|1461
 !:mime	application/x-dbf
 # dBASE IV SQL, no memo;dbv memo var size (Flagship)
->>0	ubyte		0x43		dBase IV, with SQL table|1464
+>>0	ubyte		0x43		dBase IV, with SQL table|1462
 !:mime	application/x-dbf
 # http://msdn.microsoft.com/en-US/library/st4a0s68(v=vs.80).aspx
 #>>0	ubyte		0x62		dBase IV, with SQL table
 #!:mime	application/x-dbf
 # dBASE IV, with memo!!
->>0	ubyte		0x7b		dBase IV, with memo|1465
+>>0	ubyte		0x7b		dBase IV, with memo|1463
 !:mime	application/x-dbf
 # http://msdn.microsoft.com/en-US/library/st4a0s68(v=vs.80).aspx
 #>>0	ubyte		0x82		dBase IV, with SQL system
 #!:mime	application/x-dbf
 # FoxBase+/dBaseIII+ with memo .DBT!
->>0	ubyte		0x83		FoxBase+/dBase III, with memo .DBT|1466
+>>0	ubyte		0x83		FoxBase+/dBase III, with memo .DBT|1464
 !:mime	application/x-dbf
 # VISUAL OBJECTS (first 1.0 versions) for the Dbase III files (NTX clipper driver); memo file
->>0	ubyte		0x87		VISUAL OBJECTS, with memo file|1467
+>>0	ubyte		0x87		VISUAL OBJECTS, with memo file|1465
 !:mime	application/x-dbf
 # http://msdn.microsoft.com/en-US/library/st4a0s68(v=vs.80).aspx
 #>>0	ubyte		0x8A		FoxBase+/dBase III, with memo .DBT
 #!:mime	application/x-dbf
 # dBASE IV with memo!
->>0	ubyte		0x8B		dBase IV, with memo .DBT|1468
+>>0	ubyte		0x8B		dBase IV, with memo .DBT|1466
 !:mime	application/x-dbf
 # dBase IV with SQL Table,no memo?
->>0	ubyte		0x8E		dBase IV, with SQL table|1464
+>>0	ubyte		0x8E		dBase IV, with SQL table|1462
 !:mime	application/x-dbf
 # .dbv and .dbt memo (Flagship)?
->>0	ubyte		0xB3		Flagship|1469
+>>0	ubyte		0xB3		Flagship|1467
 # http://msdn.microsoft.com/en-US/library/st4a0s68(v=vs.80).aspx
 #>>0	ubyte		0xCA		dBase IV with memo .DBT
 #!:mime	application/x-dbf
 # dBASE IV with SQL table, with memo .DBT
->>0	ubyte		0xCB		dBase IV with SQL table, with memo .DBT|1470
+>>0	ubyte		0xCB		dBase IV with SQL table, with memo .DBT|1468
 !:mime	application/x-dbf
 # HiPer-Six format;Clipper SIX, with SMT memo file
->>0	ubyte		0xE5		Clipper SIX with memo|1471
+>>0	ubyte		0xE5		Clipper SIX with memo|1469
 !:mime	application/x-dbf
 # http://msdn.microsoft.com/en-US/library/st4a0s68(v=vs.80).aspx
 #>>0	ubyte		0xF4		dBase IV, with SQL table, with memo
 #!:mime	application/x-dbf
->>0	ubyte		0xF5		FoxPro with memo|1472
+>>0	ubyte		0xF5		FoxPro with memo|1470
 !:mime	application/x-dbf
 # http://msdn.microsoft.com/en-US/library/st4a0s68(v=vs.80).aspx
 #>>0	ubyte		0xFA		FoxPro 2.x, with memo
 #!:mime	application/x-dbf
 # unknown version (should not happen)
->>0	default		x		xBase|1473
+>>0	default		x		xBase|1471
 !:mime	application/x-dbf
->>>0	ubyte		x		(0x%x)|1473
+>>>0	ubyte		x		(0x%x)|1471
 # flags in version byte
 # DBT flag (with dBASE III memo .DBT)!!
 # >>0	ubyte&0x80	>0		DBT_FLAG=%x
@@ -384,37 +384,37 @@
 
 #		Print the information of dBase III DBT memo file
 0	name				dbase3-memo-print
->0	ubyte			x		dBase III DBT|1477
+>0	ubyte			x		dBase III DBT|1475
 # instead 3 as version number 0 for unusual examples like biblio.dbt
->16	ubyte			!3		\b, version number %u|1477
+>16	ubyte			!3		\b, version number %u|1475
 # Number of next available block for appending data
 #>0	lelong			=0		\b, next free block index %u
->0	lelong			!0		\b, next free block index %u|1477
+>0	lelong			!0		\b, next free block index %u|1475
 # no positiv block length
 #>20	uleshort		=0		\b, block length %u
->20	uleshort		!0		\b, block length %u|1477
+>20	uleshort		!0		\b, block length %u|1475
 # dBase III memo field terminated by \032\032
->512	string			>\0		\b, 1st item "%s"|1477
+>512	string			>\0		\b, 1st item "%s"|1475
 #		Print the information of dBase IV DBT memo file
 0	name				dbase4-memo-print
->0		lelong		x		dBase IV DBT|1479
+>0		lelong		x		dBase IV DBT|1477
 !:mime	application/x-dbt
 !:ext dbt
 # 8 character shorted main name of coresponding dBASE IV DBF file
 >8		ubelong		>0x20000000
 # skip unusual like for angest.dbt
 >>20		uleshort	>0
->>>8		string		>\0		\b of %-.8s.DBF|1479
+>>>8		string		>\0		\b of %-.8s.DBF|1477
 # value 0 implies 512 as size
 #>4		ulelong		=0		\b, blocks size %u
 # size of blocks not reliable like 0x2020204C in angest.dbt
 >4		ulelong		!0
->>4		ulelong&0x0000003f	0	\b, blocks size %u|1479
+>>4		ulelong&0x0000003f	0	\b, blocks size %u|1477
 # dBase IV DBT with positive block length (found 512 , 1024)
->20		uleshort	>0		\b, block length %u|1479
+>20		uleshort	>0		\b, block length %u|1477
 # next available block
 #>0		lelong		=0		\b, next free block index %u
->0		lelong		!0		\b, next free block index %u|1479
+>0		lelong		!0		\b, next free block index %u|1477
 >20		uleshort	>0
 >>(20.s)	ubelong		x
 >>>&-4		use		dbase4-memofield-print
@@ -435,18 +435,18 @@
 >>>8		string		>\0		\b, 1st used item "%s"
 #		Print the information of FoxPro FPT memo file
 0	name				foxpro-memo-print
->0		belong		x		FoxPro FPT|1478
+>0		belong		x		FoxPro FPT|1476
 # Size of blocks for FoxPro ( 64,256 )
->6		ubeshort	x		\b, blocks size %u|1478
+>6		ubeshort	x		\b, blocks size %u|1476
 # next available block
 #>0		belong		=0		\b, next free block index %u
->0		belong		!0		\b, next free block index %u|1478
+>0		belong		!0		\b, next free block index %u|1476
 # field type ( 0~picture, 1~memo, 2~object )
->512		ubelong		<3		\b, field type %u|1478
+>512		ubelong		<3		\b, field type %u|1476
 # length of memo field
 >512		ubelong		1
->>516		belong		>0		\b, field length %d|1478
->>>520		string		>\0		\b, 1st item "%s"|1478
+>>516		belong		>0		\b, field length %d|1476
+>>>520		string		>\0		\b, 1st item "%s"|1476
 
 # TODO:
 # DBASE index file *.NDX
@@ -455,9 +455,9 @@
 ## End of XBase database stuff
 
 # MS Access database
-4	string	Standard\ Jet\ DB	Microsoft Access Database|1480
+4	string	Standard\ Jet\ DB	Microsoft Access Database|1478
 !:mime	application/x-msaccess
-4	string	Standard\ ACE\ DB	Microsoft Access Database|1480
+4	string	Standard\ ACE\ DB	Microsoft Access Database|1478
 !:mime	application/x-msaccess
 
 # From: Joerg Jenderek
@@ -469,13 +469,13 @@
 # Windows Search, Mail, Exchange and Active Directory.
 4	ubelong		0xefcdab89
 # unknown1
->132	ubelong		0		Extensible storage engine|1481
+>132	ubelong		0		Extensible storage engine|1479
 !:mime	application/x-ms-ese
 # file_type 0~database 1~stream
->>12	ulelong		0		DataBase|1482
+>>12	ulelong		0		DataBase|1480
 # Security DataBase (sdb)
 !:ext	edb/sdb
->>12	ulelong		1		STreaMing|1483
+>>12	ulelong		1		STreaMing|1481
 !:ext	stm
 # format_version 620h
 >>8	uleshort	x		\b, version 0x%x
@@ -500,63 +500,63 @@
 8	string		sdbf
 >7	ubyte		0
 # TAG_TYPE_LIST+TAG_INDEXES
->>12	uleshort	0x7802		Windows application compatibility Shim DataBase|1484
+>>12	uleshort	0x7802		Windows application compatibility Shim DataBase|1482
 # version? 2 3
 #>>>0	ulelong		x		\b, version %d
 !:mime	application/x-ms-sdb
 !:ext	sdb
 
 # TDB database from Samba et al - Martin Pool <mbp@samba.org>
-0	string	TDB\ file		TDB database|1485
->32	lelong	0x2601196D		version 6, little-endian|1486
->>36	lelong	x			hash size %d bytes|1486
+0	string	TDB\ file		TDB database|1483
+>32	lelong	0x2601196D		version 6, little-endian|1484
+>>36	lelong	x			hash size %d bytes|1484
 
 # SE Linux policy database
-0       lelong  0xf97cff8c      SE Linux policy|1487
->16     lelong  x               v%d|1487
->20     lelong  1      MLS|1487
->24     lelong  x       %d symbols|1487
->28     lelong  x       %d ocons|1487
+0       lelong  0xf97cff8c      SE Linux policy|1485
+>16     lelong  x               v%d|1485
+>20     lelong  1      MLS|1485
+>24     lelong  x       %d symbols|1485
+>28     lelong  x       %d ocons|1485
 
 # ICE authority file data (Wolfram Kleff)
-2	string		ICE		ICE authority data|1488
+2	string		ICE		ICE authority data|1486
 
 # X11 Xauthority file (Wolfram Kleff)
-10	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-11	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-12	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-13	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-14	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-15	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-16	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-17	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
-18	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1489
+10	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+11	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+12	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+13	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+14	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+15	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+16	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+17	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
+18	string		MIT-MAGIC-COOKIE-1	X11 Xauthority data|1487
 
 # From: Maxime Henrion <mux@FreeBSD.org>
 # PostgreSQL's custom dump format, Maxime Henrion <mux@FreeBSD.org>
-0	string		PGDMP		PostgreSQL custom database dump|1490
->5	byte		x		- v%d|1490
->6	byte		x		\b.%d|1490
->5	beshort		<0x101		\b-0|1491
+0	string		PGDMP		PostgreSQL custom database dump|1488
+>5	byte		x		- v%d|1488
+>6	byte		x		\b.%d|1488
+>5	beshort		<0x101		\b-0|1489
 >5	beshort		>0x100
->>7	byte		x		\b-%d|1490
+>>7	byte		x		\b-%d|1488
 
 # Type: Advanced Data Format (ADF) database
 # URL:  http://www.grc.nasa.gov/WWW/cgns/adf/
 # From: Nicolas Chauvat <nicolas.chauvat@logilab.fr>
-0	string	@(#)ADF\ Database	CGNS Advanced Data Format|1492
+0	string	@(#)ADF\ Database	CGNS Advanced Data Format|1490
 
 # Tokyo Cabinet magic data
 # http://tokyocabinet.sourceforge.net/index.html
-0	string		ToKyO\ CaBiNeT\n	Tokyo Cabinet|1493
->14	string		x			\b (%s)|1494
->32	byte		0			\b, Hash|1495
+0	string		ToKyO\ CaBiNeT\n	Tokyo Cabinet|1491
+>14	string		x			\b (%s)|1492
+>32	byte		0			\b, Hash|1493
 !:mime	application/x-tokyocabinet-hash
->32	byte		1			\b, B+ tree|1496
+>32	byte		1			\b, B+ tree|1494
 !:mime	application/x-tokyocabinet-btree
->32	byte		2			\b, Fixed-length|1497
+>32	byte		2			\b, Fixed-length|1495
 !:mime	application/x-tokyocabinet-fixed
->32	byte		3			\b, Table|1498
+>32	byte		3			\b, Table|1496
 !:mime	application/x-tokyocabinet-table
 >33	byte		&1			\b, [open]
 >33	byte		&2			\b, [fatal]
@@ -573,28 +573,28 @@
 
 # Type:	QDBM Quick Database Manager
 # From:	Benoit Sibaud <bsibaud@april.org>
-0	string		\\[depot\\]\n\f		Quick Database Manager, little endian|1499
-0	string		\\[DEPOT\\]\n\f		Quick Database Manager, big endian|1500
+0	string		\\[depot\\]\n\f		Quick Database Manager, little endian|1497
+0	string		\\[DEPOT\\]\n\f		Quick Database Manager, big endian|1498
 
 # Type:	TokyoCabinet database
 # URL:	http://tokyocabinet.sourceforge.net/
 # From:	Benoit Sibaud <bsibaud@april.org>
-0	string		ToKyO\ CaBiNeT\n	TokyoCabinet database|1501
->14	string		x			(version %s)|1501
+0	string		ToKyO\ CaBiNeT\n	TokyoCabinet database|1499
+>14	string		x			(version %s)|1499
 
 # From:  Stephane Blondon http://www.yaal.fr
 # Database file for Zope (done by FileStorage)
-0	string	FS21	Zope Object Database File Storage v3 (data)|1502
-0	string	FS30	Zope Object Database File Storage v4 (data)|1503
+0	string	FS21	Zope Object Database File Storage v3 (data)|1500
+0	string	FS30	Zope Object Database File Storage v4 (data)|1501
 
 # Cache file for the database of Zope (done by ClientStorage)
-0	string		ZEC3	Zope Object Database Client Cache File (data)|1504
+0	string		ZEC3	Zope Object Database Client Cache File (data)|1502
 
 # IDA (Interactive Disassembler) database
-0	string		IDA1	IDA (Interactive Disassembler) database|1505
+0	string		IDA1	IDA (Interactive Disassembler) database|1503
 
 # Hopper (reverse engineering tool) http://www.hopperapp.com/
-0	string		hopperdb	Hopper database|1506
+0	string		hopperdb	Hopper database|1504
 
 # URL: https://en.wikipedia.org/wiki/Panorama_(database_engine)
 # Reference: http://www.provue.com/Panorama/
@@ -605,42 +605,42 @@
 # look after database name for "some" null bits
 >(5.B+7)	ubelong&0xF3ffF000	0
 # look for first keyword
->>&1		search/2		DESIGN		Panorama database|1507
+>>&1		search/2		DESIGN		Panorama database|1505
 #!:mime	application/x-panorama-database
 !:apple	KASXZEPD
 !:ext	pan
 # database name
->>>5	pstring				x		\b, "%s"|1507
+>>>5	pstring				x		\b, "%s"|1505
 
 #
 #
 # askSam Database by Stefan A. Haubenthal <polluks@web.de>
-0	string	askw40\0	askSam DB|1508
+0	string	askw40\0	askSam DB|1506
 
 #
 #
 # MUIbase Database Tool by Stefan A. Haubenthal <polluks@web.de>
-0	string	MBSTV\040	MUIbase DB|1509
->6	string	x		version %s|1509
+0	string	MBSTV\040	MUIbase DB|1507
+>6	string	x		version %s|1507
 
 #
 # CDB database
-0	string	NBCDB\012	NetBSD Constant Database|1510
->7	byte	x		\b, version %d|1510
->8	string	x		\b, for '%s'|1510
->24	lelong	x		\b, datasize %d|1510
->28	lelong	x		\b, entries %d|1510
->32	lelong	x		\b, index %d|1510
->36	lelong	x		\b, seed %#x|1510
+0	string	NBCDB\012	NetBSD Constant Database|1508
+>7	byte	x		\b, version %d|1508
+>8	string	x		\b, for '%s'|1508
+>24	lelong	x		\b, datasize %d|1508
+>28	lelong	x		\b, entries %d|1508
+>32	lelong	x		\b, index %d|1508
+>36	lelong	x		\b, seed %#x|1508
 
 #
 # Redis RDB - https://redis.io/topics/persistence
-0	string	REDIS			Redis RDB file,|1511
->5	regex	[0-9][0-9][0-9][0-9]	version %s|1511
+0	string	REDIS			Redis RDB file,|1509
+>5	regex	[0-9][0-9][0-9][0-9]	version %s|1509
 
 # Mork database.
 # Used by older versions of Mozilla Suite and Firefox,
 # and current versions of Thunderbird.
 # From: David Korth <gerbilsoft@gerbilsoft.com>
-0	string	//\ <!--\ <mdb:mork:z\ v="	Mozilla Mork database|1512
->23	string	x		\b, version %.3s|1512
+0	string	//\ <!--\ <mdb:mork:z\ v="	Mozilla Mork database|1510
+>23	string	x		\b, version %.3s|1510

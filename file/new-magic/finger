@@ -7,10 +7,10 @@
 
 # http://cgit.freedesktop.org/libfprint/libfprint/tree/libfprint/data.c
 
-0	string	FP1		libfprint fingerprint data V1|1864
->3	beshort	x		\b, driver_id %x|1864
->5	belong	x		\b, devtype %x|1864
+0	string	FP1		libfprint fingerprint data V1|1861
+>3	beshort	x		\b, driver_id %x|1861
+>5	belong	x		\b, devtype %x|1861
 
-0	string	FP2		libfprint fingerprint data V2|1865
->3	beshort	x		\b, driver_id %x|1865
->5	belong	x		\b, devtype %x|1865
+0	string	FP2		libfprint fingerprint data V2|1862
+>3	beshort	x		\b, driver_id %x|1862
+>5	belong	x		\b, devtype %x|1862

@@ -9,13 +9,13 @@
 # https://github.com/miracle2k/mfcobol-export
 
 0 string \x30\x00\x00\x7C
->36 string \x00\x3E Micro Focus File with Header (DAT)|2932
+>36 string \x00\x3E Micro Focus File with Header (DAT)|2924
 !:mime application/octet-stream
 
 0 string \x30\x7E\x00\x00
->36 string \x00\x3E Micro Focus File with Header (DAT)|2932
+>36 string \x00\x3E Micro Focus File with Header (DAT)|2924
 !:mime application/octet-stream
 
 39 string \x02
->136 string \x02\x02\x04\x04 Micro Focus Index File (IDX)|2933
+>136 string \x02\x02\x04\x04 Micro Focus Index File (IDX)|2925
 !:mime application/octet-stream

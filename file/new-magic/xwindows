@@ -5,31 +5,31 @@
 
 # Compiled X Keymap
 # XKM (compiled X keymap) files (including version and byte ordering)
-1	string	mkx				Compiled XKB Keymap: lsb,|4658
->0	byte	>0				version %d|4658
->0	byte	=0				obsolete|4659
-0	string	xkm				Compiled XKB Keymap: msb,|4660
->3	byte	>0				version %d|4660
->3	byte	=0				obsolete|4661
+1	string	mkx				Compiled XKB Keymap: lsb,|4648
+>0	byte	>0				version %d|4648
+>0	byte	=0				obsolete|4649
+0	string	xkm				Compiled XKB Keymap: msb,|4650
+>3	byte	>0				version %d|4650
+>3	byte	=0				obsolete|4651
 
 # xfsdump archive
-0	string	xFSdump0			xfsdump archive|4662
->8	belong	x	(version %d)|4662
+0	string	xFSdump0			xfsdump archive|4652
+>8	belong	x	(version %d)|4652
 
 # Jaleo XFS files
-0	long	395726				Jaleo XFS file|4663
->4	long	x				- version %d|4663
->8	long	x				- [%d -|4664
->20	long	x				\b%dx|4663
->24	long	x				\b%dx|4663
->28	long	1008				\bYUV422]|4665
->28	long	1000				\bRGB24]|4666
+0	long	395726				Jaleo XFS file|4653
+>4	long	x				- version %d|4653
+>8	long	x				- [%d -|4654
+>20	long	x				\b%dx|4653
+>24	long	x				\b%dx|4653
+>28	long	1008				\bYUV422]|4655
+>28	long	1000				\bRGB24]|4656
 
 # Xcursor data
 # X11 mouse cursor format defined in libXcursor, see
 # http://www.x.org/archive/X11R6.8.1/doc/Xcursor.3.html
 # http://cgit.freedesktop.org/xorg/lib/libXcursor/tree/include/X11/Xcursor/Xcursor.h
-0	string		Xcur		Xcursor data|4667
+0	string		Xcur		Xcursor data|4657
 !:mime	image/x-xcursor
->10	leshort		x		version %d|4667
->>8	leshort		x		\b.%d|4667
+>10	leshort		x		version %d|4657
+>>8	leshort		x		\b.%d|4657

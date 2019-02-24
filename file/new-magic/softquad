@@ -7,31 +7,31 @@
 #
 # XXX - byte order?
 #
-0	string		\<!SQ\ DTD>	Compiled SGML rules file|3864
->9	string		>\0		 Type %s|3865
-0	string		\<!SQ\ A/E>	A/E SGML Document binary|3866
->9	string		>\0		 Type %s|3867
-0	string		\<!SQ\ STS>	A/E SGML binary styles file|3868
->9	string		>\0		 Type %s|3869
-0	short		0xc0de		Compiled PSI (v1) data|3870
-0	short		0xc0da		Compiled PSI (v2) data|3871
->3	string		>\0		(%s)|3871
+0	string		\<!SQ\ DTD>	Compiled SGML rules file|3854
+>9	string		>\0		 Type %s|3855
+0	string		\<!SQ\ A/E>	A/E SGML Document binary|3856
+>9	string		>\0		 Type %s|3857
+0	string		\<!SQ\ STS>	A/E SGML binary styles file|3858
+>9	string		>\0		 Type %s|3859
+0	short		0xc0de		Compiled PSI (v1) data|3860
+0	short		0xc0da		Compiled PSI (v2) data|3861
+>3	string		>\0		(%s)|3861
 # Binary sqtroff font/desc files...
-0	short		0125252		SoftQuad DESC or font file binary|3872
->2	short		>0		- version %d|3872
+0	short		0125252		SoftQuad DESC or font file binary|3862
+>2	short		>0		- version %d|3862
 # Bitmaps...
-0	search/1	SQ\ BITMAP1	SoftQuad Raster Format text|3873
+0	search/1	SQ\ BITMAP1	SoftQuad Raster Format text|3863
 #0	string		SQ\ BITMAP2	SoftQuad Raster Format data
 # sqtroff intermediate language (replacement for ditroff int. lang.)
-0	string		X\ 		SoftQuad troff Context intermediate|3874
->2	string		495		for AT&T 495 laser printer|3875
->2	string		hp		for Hewlett-Packard LaserJet|3876
->2	string		impr		for IMAGEN imPRESS|3877
->2	string		ps		for PostScript|3878
+0	string		X\ 		SoftQuad troff Context intermediate|3864
+>2	string		495		for AT&T 495 laser printer|3865
+>2	string		hp		for Hewlett-Packard LaserJet|3866
+>2	string		impr		for IMAGEN imPRESS|3867
+>2	string		ps		for PostScript|3868
 
 # From: Michael Piefel <piefel@debian.org>
 # sqtroff intermediate language (replacement for ditroff int. lang.)
-0	string		X\ 495		SoftQuad troff Context intermediate for AT&T 495 laser printer|3875
-0	string		X\ hp		SoftQuad troff Context intermediate for HP LaserJet|3879
-0	string		X\ impr		SoftQuad troff Context intermediate for IMAGEN imPRESS|3877
-0	string		X\ ps		SoftQuad troff Context intermediate for PostScript|3878
+0	string		X\ 495		SoftQuad troff Context intermediate for AT&T 495 laser printer|3865
+0	string		X\ hp		SoftQuad troff Context intermediate for HP LaserJet|3869
+0	string		X\ impr		SoftQuad troff Context intermediate for IMAGEN imPRESS|3867
+0	string		X\ ps		SoftQuad troff Context intermediate for PostScript|3868

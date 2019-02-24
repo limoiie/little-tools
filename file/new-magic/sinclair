@@ -6,10 +6,10 @@
 # additions to /etc/magic by Thomas M. Ott (ThMO)
 
 # Sinclair QL floppy disk formats (ThMO)
-0	string	=QL5		QL disk dump data,|3815
->3	string	=A		720 KB,|3816
->3	string	=B		1.44 MB,|3817
->3	string	=C		3.2 MB,|3818
+0	string	=QL5		QL disk dump data,|3805
+>3	string	=A		720 KB,|3806
+>3	string	=B		1.44 MB,|3807
+>3	string	=C		3.2 MB,|3808
 >4	string	>\0		label:%.10s
 
 # Sinclair QL OS dump (ThMO)
@@ -17,22 +17,22 @@
 >49124		belong	<47104
 >>49128		belong	<47104
 >>>49132	belong	<47104
->>>>49136	belong	<47104	QL OS dump data,|3819
->>>>>49148	string	>\0	type %.3s,|3819
->>>>>49142	string	>\0	version %.4s|3819
+>>>>49136	belong	<47104	QL OS dump data,|3809
+>>>>>49148	string	>\0	type %.3s,|3809
+>>>>>49142	string	>\0	version %.4s|3809
 
 # Sinclair QL firmware executables (ThMO)
-0	string	NqNqNq`\004	QL firmware executable (BCPL)|3820
+0	string	NqNqNq`\004	QL firmware executable (BCPL)|3810
 
 # Sinclair QL libraries (was ThMO)
-0	beshort	0xFB01		QDOS object|3821
->2	pstring	x		'%s'|3821
+0	beshort	0xFB01		QDOS object|3811
+>2	pstring	x		'%s'|3811
 
 # Sinclair QL executables (was ThMO)
-4	belong	0x4AFB		QDOS executable|3822
->9	pstring	x		'%s'|3822
+4	belong	0x4AFB		QDOS executable|3812
+>9	pstring	x		'%s'|3812
 
 # Sinclair QL ROM (ThMO)
-0	belong	=0x4AFB0001	QL plugin-ROM data,|3823
->9	pstring	=\0		un-named|3824
->9	pstring	>\0		named: %s|3823
+0	belong	=0x4AFB0001	QL plugin-ROM data,|3813
+>9	pstring	=\0		un-named|3814
+>9	pstring	>\0		named: %s|3813

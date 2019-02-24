@@ -6,9 +6,9 @@
 
 # Provided 1998/08/22 by
 # David Mediavilla <davidme.news@REMOVEIFNOTSPAMusa.net>
-1	search/100	InternetShortcut	MS Windows 95 Internet shortcut text|3375
->17	search/100	URL= 			(URL=<|3376
->>&0	string		x			\b%s>)|3376
+1	search/100	InternetShortcut	MS Windows 95 Internet shortcut text|3366
+>17	search/100	URL= 			(URL=<|3367
+>>&0	string		x			\b%s>)|3367
 
 # OS/2 URL objects
 # Provided 1998/08/22 by
@@ -40,10 +40,10 @@
 #  int16 hdrsize;      // total size of header
 #  int16 unknown2;     // unknown purpose
 #
-0   string  HSP\x01\x9b\x00 OS/2 INF|3377
->107 string >0                      (%s)|3377
-0   string  HSP\x10\x9b\x00     OS/2 HLP|3378
->107 string >0                      (%s)|3378
+0   string  HSP\x01\x9b\x00 OS/2 INF|3368
+>107 string >0                      (%s)|3368
+0   string  HSP\x10\x9b\x00     OS/2 HLP|3369
+>107 string >0                      (%s)|3369
 
 # OS/2 INI (this is a guess)
-0  string   \xff\xff\xff\xff\x14\0\0\0  OS/2 INI|3379
+0  string   \xff\xff\xff\xff\x14\0\0\0  OS/2 INI|3370

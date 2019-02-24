@@ -4,19 +4,19 @@
 # xo65 object files
 # From: "Ullrich von Bassewitz" <uz@cc65.org>
 #
-0	string		\x55\x7A\x6E\x61	xo65 object,|4651
->4	leshort		x			version %d,|4651
->6	leshort&0x0001 =0x0001			with debug info|4652
->6	leshort&0x0001 =0x0000			no debug info|4653
+0	string		\x55\x7A\x6E\x61	xo65 object,|4641
+>4	leshort		x			version %d,|4641
+>6	leshort&0x0001 =0x0001			with debug info|4642
+>6	leshort&0x0001 =0x0000			no debug info|4643
 
 # xo65 library files
-0	string		\x6E\x61\x55\x7A	xo65 library,|4654
->4	leshort		x			version %d|4654
+0	string		\x6E\x61\x55\x7A	xo65 library,|4644
+>4	leshort		x			version %d|4644
 
 # o65 object files
-0	string		\x01\x00\x6F\x36\x35	o65|4655
->6	leshort&0x1000	=0x0000			executable,|4656
->6	leshort&0x1000	=0x1000			object,|4657
+0	string		\x01\x00\x6F\x36\x35	o65|4645
+>6	leshort&0x1000	=0x0000			executable,|4646
+>6	leshort&0x1000	=0x1000			object,|4647
 >5	byte		x			version %d,
 >6	leshort&0x8000	=0x8000			65816,
 >6	leshort&0x8000	=0x0000			6502,

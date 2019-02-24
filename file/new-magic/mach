@@ -240,12 +240,12 @@
 >>24	belong		x		\b>
 
 #
-0	lelong&0xfffffffe	0xfeedface	Mach-O|2806
+0	lelong&0xfffffffe	0xfeedface	Mach-O|2798
 !:strength +1
 !:mime application/x-mach-binary
 >0	use	\^mach-o-be
 
-0	belong&0xfffffffe	0xfeedface	Mach-O|2806
+0	belong&0xfffffffe	0xfeedface	Mach-O|2798
 !:strength +1
 !:mime application/x-mach-binary
 >0	use	mach-o-be

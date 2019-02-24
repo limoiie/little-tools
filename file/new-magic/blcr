@@ -1,22 +1,22 @@
 # Berkeley Lab Checkpoint Restart (BLCR) checkpoint context files
 # http://ftg.lbl.gov/checkpoint
-0	string	C\0\0\0R\0\0\0	BLCR|1070
->16	lelong	1	x86|1071
->16	lelong	3	alpha|1072
->16	lelong	5	x86-64|1073
->16	lelong	7	ARM|1074
+0	string	C\0\0\0R\0\0\0	BLCR|1068
+>16	lelong	1	x86|1069
+>16	lelong	3	alpha|1070
+>16	lelong	5	x86-64|1071
+>16	lelong	7	ARM|1072
 >8	lelong	x	context data (little endian, version %d)
 # Uncomment the following only of your "file" program supports "search"
 #>0	search/1024	VMA\06	for kernel
 #>>&1	byte	x	%d.
 #>>&2	byte	x	%d.
 #>>&3	byte	x	%d
-0	string	\0\0\0C\0\0\0R	BLCR|1070
->16	belong	2	SPARC|1075
->16	belong	4	ppc|1076
->16	belong	6	ppc64|1077
->16	belong	7	ARMEB|1078
->16	belong	8	SPARC64|1079
+0	string	\0\0\0C\0\0\0R	BLCR|1068
+>16	belong	2	SPARC|1073
+>16	belong	4	ppc|1074
+>16	belong	6	ppc64|1075
+>16	belong	7	ARMEB|1076
+>16	belong	8	SPARC64|1077
 >8	belong	x	context data (big endian, version %d)
 # Uncomment the following only of your "file" program supports "search"
 #>0	search/1024	VMA\06	for kernel

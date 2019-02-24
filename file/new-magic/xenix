@@ -11,7 +11,7 @@
 #
 # XXX - "x.out" collides with PDP-11 archives
 #
-0	string		core		core file (Xenix)|4642
+0	string		core		core file (Xenix)|4632
 # URL: http://www.polarhome.com/service/man/?qf=86rel&tf=2&of=Xenix
 # Reference: http://www.azillionmonkeys.com/qed/Omfg.pdf
 # Update: Joerg Jenderek
@@ -25,68 +25,68 @@
 # skip examples like Xtable.Data FRACTAL.GEN SHR.VIEW by looking for positiv string length
 >>>3	ubyte		>0
 # skip examples like OMBRE.6 with "UUUUUU" by looking for filename like "hello.c"
->>>>4	regex	[a-zA-Z_/]{1,8}[.]	8086 relocatable (Microsoft)|4643
+>>>>4	regex	[a-zA-Z_/]{1,8}[.]	8086 relocatable (Microsoft)|4633
 #!:mime	application/octet-stream
 !:mime	application/x-object
 !:ext	o/a
->>>>>3	pstring		x		\b, "%s"|4643
+>>>>>3	pstring		x		\b, "%s"|4633
 # checksum
 #>>>>>(3.b+4)	ubyte	x		\b, checksum 0x%2.2x
-0	leshort		0xff65		x.out|4644
->2	string		__.SYMDEF	 randomized|4644
->0	byte		x		archive|4644
-0	leshort		0x206		Microsoft a.out|4645
->8	leshort		1		Middle model|4645
->0x1e	leshort		&0x10		overlay|4645
->0x1e	leshort		&0x2		separate|4645
->0x1e	leshort		&0x4		pure|4645
->0x1e	leshort		&0x800		segmented|4645
->0x1e	leshort		&0x400		standalone|4645
->0x1e	leshort		&0x8		fixed-stack|4645
->0x1c	byte		&0x80		byte-swapped|4645
->0x1c	byte		&0x40		word-swapped|4645
->0x10	lelong		>0		not-stripped|4645
->0x1e	leshort		^0xc000		pre-SysV|4645
->0x1e	leshort		&0x4000		V2.3|4645
->0x1e	leshort		&0x8000		V3.0|4645
->0x1c	byte		&0x4		86|4645
->0x1c	byte		&0xb		186|4645
->0x1c	byte		&0x9		286|4645
->0x1c	byte		&0xa		386|4645
->0x1f	byte		<0x040		small model|4645
->0x1f	byte		=0x048		large model|4645
->0x1f	byte		=0x049		huge model|4645
->0x1e	leshort		&0x1		executable|4645
->0x1e	leshort		^0x1		object file|4645
->0x1e	leshort		&0x40		Large Text|4645
->0x1e	leshort		&0x20		Large Data|4645
->0x1e	leshort		&0x120		Huge Objects Enabled|4645
->0x10	lelong		>0		not stripped|4645
+0	leshort		0xff65		x.out|4634
+>2	string		__.SYMDEF	 randomized|4634
+>0	byte		x		archive|4634
+0	leshort		0x206		Microsoft a.out|4635
+>8	leshort		1		Middle model|4635
+>0x1e	leshort		&0x10		overlay|4635
+>0x1e	leshort		&0x2		separate|4635
+>0x1e	leshort		&0x4		pure|4635
+>0x1e	leshort		&0x800		segmented|4635
+>0x1e	leshort		&0x400		standalone|4635
+>0x1e	leshort		&0x8		fixed-stack|4635
+>0x1c	byte		&0x80		byte-swapped|4635
+>0x1c	byte		&0x40		word-swapped|4635
+>0x10	lelong		>0		not-stripped|4635
+>0x1e	leshort		^0xc000		pre-SysV|4635
+>0x1e	leshort		&0x4000		V2.3|4635
+>0x1e	leshort		&0x8000		V3.0|4635
+>0x1c	byte		&0x4		86|4635
+>0x1c	byte		&0xb		186|4635
+>0x1c	byte		&0x9		286|4635
+>0x1c	byte		&0xa		386|4635
+>0x1f	byte		<0x040		small model|4635
+>0x1f	byte		=0x048		large model|4635
+>0x1f	byte		=0x049		huge model|4635
+>0x1e	leshort		&0x1		executable|4635
+>0x1e	leshort		^0x1		object file|4635
+>0x1e	leshort		&0x40		Large Text|4635
+>0x1e	leshort		&0x20		Large Data|4635
+>0x1e	leshort		&0x120		Huge Objects Enabled|4635
+>0x10	lelong		>0		not stripped|4635
 
-0	leshort		0x140		old Microsoft 8086 x.out|4646
->0x3	byte		&0x4		separate|4646
->0x3	byte		&0x2		pure|4646
->0	byte		&0x1		executable|4646
->0	byte		^0x1		relocatable|4646
->0x14	lelong		>0		not stripped|4646
+0	leshort		0x140		old Microsoft 8086 x.out|4636
+>0x3	byte		&0x4		separate|4636
+>0x3	byte		&0x2		pure|4636
+>0	byte		&0x1		executable|4636
+>0	byte		^0x1		relocatable|4636
+>0x14	lelong		>0		not stripped|4636
 
-0	lelong		0x206		b.out|4647
->0x1e	leshort		&0x10		overlay|4647
->0x1e	leshort		&0x2		separate|4647
->0x1e	leshort		&0x4		pure|4647
->0x1e	leshort		&0x800		segmented|4647
->0x1e	leshort		&0x400		standalone|4647
->0x1e	leshort		&0x1		executable|4647
->0x1e	leshort		^0x1		object file|4647
->0x1e	leshort		&0x4000		V2.3|4647
->0x1e	leshort		&0x8000		V3.0|4647
->0x1c	byte		&0x4		86|4647
->0x1c	byte		&0xb		186|4647
->0x1c	byte		&0x9		286|4647
->0x1c	byte		&0x29		286|4647
->0x1c	byte		&0xa		386|4647
->0x1e	leshort		&0x4		Large Text|4647
->0x1e	leshort		&0x2		Large Data|4647
->0x1e	leshort		&0x102		Huge Objects Enabled|4647
+0	lelong		0x206		b.out|4637
+>0x1e	leshort		&0x10		overlay|4637
+>0x1e	leshort		&0x2		separate|4637
+>0x1e	leshort		&0x4		pure|4637
+>0x1e	leshort		&0x800		segmented|4637
+>0x1e	leshort		&0x400		standalone|4637
+>0x1e	leshort		&0x1		executable|4637
+>0x1e	leshort		^0x1		object file|4637
+>0x1e	leshort		&0x4000		V2.3|4637
+>0x1e	leshort		&0x8000		V3.0|4637
+>0x1c	byte		&0x4		86|4637
+>0x1c	byte		&0xb		186|4637
+>0x1c	byte		&0x9		286|4637
+>0x1c	byte		&0x29		286|4637
+>0x1c	byte		&0xa		386|4637
+>0x1e	leshort		&0x4		Large Text|4637
+>0x1e	leshort		&0x2		Large Data|4637
+>0x1e	leshort		&0x102		Huge Objects Enabled|4637
 
-0	leshort		0x580		XENIX 8086 relocatable or 80286 small model|4648
+0	leshort		0x580		XENIX 8086 relocatable or 80286 small model|4638

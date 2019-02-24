@@ -2,13 +2,13 @@
 #------------------------------------------------------------------------------
 # $File: ocaml,v 1.4 2009/09/19 16:28:11 christos Exp $
 # ocaml: file(1) magic for Objective Caml files.
-0	string	Caml1999	OCaml|3357
->8	string	X		exec file|3358
->8	string	I		interface file (.cmi)|3359
->8	string	O		object file (.cmo)|3360
->8	string	A		library file (.cma)|3361
->8	string	Y		native object file (.cmx)|3362
->8	string	Z		native library file (.cmxa)|3363
->8	string	M		abstract syntax tree implementation file|3364
->8	string	N		abstract syntax tree interface file|3365
+0	string	Caml1999	OCaml|3348
+>8	string	X		exec file|3349
+>8	string	I		interface file (.cmi)|3350
+>8	string	O		object file (.cmo)|3351
+>8	string	A		library file (.cma)|3352
+>8	string	Y		native object file (.cmx)|3353
+>8	string	Z		native library file (.cmxa)|3354
+>8	string	M		abstract syntax tree implementation file|3355
+>8	string	N		abstract syntax tree interface file|3356
 >9	string	>\0		(Version %3.3s)

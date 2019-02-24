@@ -5,14 +5,14 @@
 # strings as "long" - we assume they're just strings:
 # From: guy@netapp.com (Guy Harris)
 #
-0	string		*STA		Aster*x|759
->7	string		WORD			Words Document|760
->7	string		GRAP			Graphic|761
->7	string		SPRE			Spreadsheet|762
->7	string		MACR			Macro|763
-0	string		2278		Aster*x Version 2|764
->29	byte		0x36			Words Document|765
->29	byte		0x35			Graphic|766
->29	byte		0x32			Spreadsheet|767
->29	byte		0x38			Macro|768
+0	string		*STA		Aster*x|757
+>7	string		WORD			Words Document|758
+>7	string		GRAP			Graphic|759
+>7	string		SPRE			Spreadsheet|760
+>7	string		MACR			Macro|761
+0	string		2278		Aster*x Version 2|762
+>29	byte		0x36			Words Document|763
+>29	byte		0x35			Graphic|764
+>29	byte		0x32			Spreadsheet|765
+>29	byte		0x38			Macro|766
 

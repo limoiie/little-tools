@@ -45,10 +45,10 @@
 >>>>>>>28        lelong =1000
 >>>>>>>>36       lelong =10
 >>>>>>>>>40      lelong =100
->>>>>>>>>>32     lelong x       LG robot VR6[234]xx %dm^2 navigation|4321
->>>>>>>>>>136040 lelong =-1     reuse map data|4322
->>>>>>>>>>136040 lelong =0      map data|4323
->>>>>>>>>>136040 lelong >0      spurious map data|4324
->>>>>>>>>>136040 lelong <-1     spurious map data|4324
+>>>>>>>>>>32     lelong x       LG robot VR6[234]xx %dm^2 navigation|4311
+>>>>>>>>>>136040 lelong =-1     reuse map data|4312
+>>>>>>>>>>136040 lelong =0      map data|4313
+>>>>>>>>>>136040 lelong >0      spurious map data|4314
+>>>>>>>>>>136040 lelong <-1     spurious map data|4314
 
 

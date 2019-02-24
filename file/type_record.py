@@ -5,6 +5,7 @@ import sys
 from typing import Dict, Any
 
 from file.init_logging import init_log
+from file.utils import convert_desc_to_var_name
 
 
 class TypeRecord:
@@ -104,7 +105,8 @@ class TypeDatabase:
 
     @staticmethod
     def new_record(file_name, line_number, desc):
-        generated_unique_id = TypeDatabase.__generate_unique_id(desc)
+        var_name = convert_desc_to_var_name(desc)
+        generated_unique_id = TypeDatabase.__generate_unique_id(var_name)
         record = TypeRecord(generated_unique_id, file_name, line_number, desc)
         return record
 
@@ -227,14 +229,12 @@ def print_all_info():
     print(f'there is {len(all_data.keys())} files in total,')
 
     records_list = []
-    types_set = set()
     for file_container in all_data.values():
         for record in file_container.values():
             records_list.append(record)
-            types_set.add(record.type_desc)
 
     print(f'\tand {len(records_list)} records in total')
-    print(f'\tand {len(types_set)} types in total')
+    print(f'\tand {len(TypeDatabase.type_id_map)} types in total')
     print()
     pass
 

@@ -22,52 +22,52 @@
 #
 # --- Ogg Framing ---
 #0		search/1000	OggS		Ogg data
-0		string	OggS		Ogg data|4410
->4		byte		!0		UNKNOWN REVISION %u|4411
+0		string	OggS		Ogg data|4400
+>4		byte		!0		UNKNOWN REVISION %u|4401
 ##>4		byte		0		revision 0
 >4		byte		0
 ##>>14		lelong		x		(Serial %lX)
 # non-Vorbis content: FLAC (Free Lossless Audio Codec, http://flac.sourceforge.net)
->>28		string		\x7fFLAC	\b, FLAC audio|4412
+>>28		string		\x7fFLAC	\b, FLAC audio|4402
 # non-Vorbis content: Theora
 !:mime		audio/ogg
->>28		string		\x80theora	\b, Theora video|4413
+>>28		string		\x80theora	\b, Theora video|4403
 !:mime		video/ogg
 # non-Vorbis content: Kate
->>28		string		\x80kate\0\0\0\0	\b, Kate (Karaoke and Text)|4414
+>>28		string		\x80kate\0\0\0\0	\b, Kate (Karaoke and Text)|4404
 !:mime		application/ogg
->>>37		ubyte		x		v%u|4414
->>>38		ubyte		x		\b.%u,|4414
->>>40		byte		0		utf8 encoding,|4415
->>>40		byte		!0		unknown character encoding,|4416
+>>>37		ubyte		x		v%u|4404
+>>>38		ubyte		x		\b.%u,|4404
+>>>40		byte		0		utf8 encoding,|4405
+>>>40		byte		!0		unknown character encoding,|4406
 >>>60		string		>\0		language %s,
 >>>60		string		\0		no language set,
 >>>76		string		>\0		category %s
 >>>76		string		\0		no category set
 # non-Vorbis content: Skeleton
->>28		string		fishead\0	\b, Skeleton|4417
+>>28		string		fishead\0	\b, Skeleton|4407
 !:mime		video/ogg
->>>36		leshort		x		v%u|4417
->>>40		leshort		x		\b.%u|4417
+>>>36		leshort		x		v%u|4407
+>>>40		leshort		x		\b.%u|4407
 # non-Vorbis content: Speex
->>28		string		Speex\ \ \ 	\b, Speex audio|4418
+>>28		string		Speex\ \ \ 	\b, Speex audio|4408
 !:mime		audio/ogg
 # non-Vorbis content: OGM
->>28		string		\x01video\0\0\0	\b, OGM video|4419
+>>28		string		\x01video\0\0\0	\b, OGM video|4409
 !:mime		video/ogg
->>>37		string/c	div3		(DivX 3)|4420
->>>37		string/c	divx		(DivX 4)|4421
->>>37		string/c	dx50		(DivX 5)|4422
->>>37		string/c	xvid		(XviD)|4423
+>>>37		string/c	div3		(DivX 3)|4410
+>>>37		string/c	divx		(DivX 4)|4411
+>>>37		string/c	dx50		(DivX 5)|4412
+>>>37		string/c	xvid		(XviD)|4413
 # --- First vorbis packet - general header ---
->>28		string		\x01vorbis	\b, Vorbis audio,|4424
+>>28		string		\x01vorbis	\b, Vorbis audio,|4414
 !:mime		audio/ogg
->>>35		lelong		!0		UNKNOWN VERSION %u,|4424
+>>>35		lelong		!0		UNKNOWN VERSION %u,|4414
 ##>>>35		lelong		0		version 0,
 >>>35		lelong		0
->>>>39		ubyte		1		mono,|4425
->>>>39		ubyte		2		stereo,|4426
->>>>39		ubyte		>2		%u channels,|4427
+>>>>39		ubyte		1		mono,|4415
+>>>>39		ubyte		2		stereo,|4416
+>>>>39		ubyte		>2		%u channels,|4417
 >>>>40		lelong		x		%u Hz
 # Minimal, nominal and maximal bitrates specified when encoding
 >>>>48		string		<\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff	\b,
@@ -133,23 +133,23 @@
 >>>>>>(84.b+117)	string		20150105	(1.3.5)
 
 # non-Vorbis content: Opus https://tools.ietf.org/html/draft-ietf-codec-oggopus-06#section-5
->>28		string		OpusHead	\b, Opus audio,|4428
+>>28		string		OpusHead	\b, Opus audio,|4418
 !:mime		audio/ogg
->>>36		ubyte		>0x0F		UNKNOWN VERSION %u,|4428
->>>36		ubyte		&0x0F		version 0.%d|4428
+>>>36		ubyte		>0x0F		UNKNOWN VERSION %u,|4418
+>>>36		ubyte		&0x0F		version 0.%d|4418
 >>>>46		ubyte		>1
->>>>>46		ubyte		!255		unknown channel mapping family %u,|4428
->>>>>37		ubyte		x		%u channels|4428
+>>>>>46		ubyte		!255		unknown channel mapping family %u,|4418
+>>>>>37		ubyte		x		%u channels|4418
 >>>>46		ubyte		0
->>>>>37		ubyte		1		mono|4428
->>>>>37		ubyte		2		stereo|4428
+>>>>>37		ubyte		1		mono|4418
+>>>>>37		ubyte		2		stereo|4418
 >>>>46		ubyte		1
->>>>>37		ubyte		1		mono|4428
->>>>>37		ubyte		2		stereo|4428
->>>>>37		ubyte		3		linear surround|4428
->>>>>37		ubyte		4		quadraphonic|4428
->>>>>37		ubyte		5		5.0 surround|4428
->>>>>37		ubyte		6		5.1 surround|4428
->>>>>37		ubyte		7		6.1 surround|4428
->>>>>37		ubyte		8		7.1 surround|4428
->>>>40		lelong		!0		\b, %u Hz|4428
+>>>>>37		ubyte		1		mono|4418
+>>>>>37		ubyte		2		stereo|4418
+>>>>>37		ubyte		3		linear surround|4418
+>>>>>37		ubyte		4		quadraphonic|4418
+>>>>>37		ubyte		5		5.0 surround|4418
+>>>>>37		ubyte		6		5.1 surround|4418
+>>>>>37		ubyte		7		6.1 surround|4418
+>>>>>37		ubyte		8		7.1 surround|4418
+>>>>40		lelong		!0		\b, %u Hz|4418

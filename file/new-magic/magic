@@ -3,8 +3,8 @@
 # $File: magic,v 1.9 2009/09/19 16:28:10 christos Exp $
 # magic:  file(1) magic for magic files
 #
-0	string/t		#\ Magic	magic text file for file(1) cmd|2837
-0	lelong		0xF11E041C	magic binary file for file(1) cmd|2838
->4	lelong		x		(version %d) (little endian)|2838
-0	belong		0xF11E041C	magic binary file for file(1) cmd|2838
->4	belong		x		(version %d) (big endian)|2838
+0	string/t		#\ Magic	magic text file for file(1) cmd|2829
+0	lelong		0xF11E041C	magic binary file for file(1) cmd|2830
+>4	lelong		x		(version %d) (little endian)|2830
+0	belong		0xF11E041C	magic binary file for file(1) cmd|2830
+>4	belong		x		(version %d) (big endian)|2830

@@ -4,7 +4,7 @@
 #
 # Mach magic number info
 #
-0	long		0xefbe	OSF/Rose object|3408
+0	long		0xefbe	OSF/Rose object|3399
 # I386 magic number info
 #
-0	short		0565	i386 COFF object|3409
+0	short		0565	i386 COFF object|3400

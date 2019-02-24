@@ -7,70 +7,70 @@
 
 ########################################################
 # CCP4 data and plot files:
-0	string		MTZ\040		MTZ reflection file|3710
+0	string		MTZ\040		MTZ reflection file|3700
 
-92	string		PLOT%%84	Plot84 plotting file|3711
->52	byte		1		, Little-endian|3711
->55	byte		1		, Big-endian|3711
+92	string		PLOT%%84	Plot84 plotting file|3701
+>52	byte		1		, Little-endian|3701
+>55	byte		1		, Big-endian|3701
 
 ########################################################
 # Electron density MAP/MASK formats
 
-0	string		EZD_MAP	NEWEZD Electron Density Map|3712
-109	string		MAP\040(  Old EZD Electron Density Map|3713
+0	string		EZD_MAP	NEWEZD Electron Density Map|3702
+109	string		MAP\040(  Old EZD Electron Density Map|3703
 
-0	string/c	:-)\040Origin	BRIX Electron Density Map|3714
->170	string		>0	, Sigma:%.12s|3714
+0	string/c	:-)\040Origin	BRIX Electron Density Map|3704
+>170	string		>0	, Sigma:%.12s|3704
 #>4	string		>0	%.178s
 #>4	addr		x	%.178s
 
-7	string		18\040!NTITLE	XPLOR ASCII Electron Density Map|3715
-9	string		\040!NTITLE\012\040REMARK	CNS ASCII electron density map|3716
+7	string		18\040!NTITLE	XPLOR ASCII Electron Density Map|3705
+9	string		\040!NTITLE\012\040REMARK	CNS ASCII electron density map|3706
 
-208	string		MAP\040	CCP4 Electron Density Map|3717
+208	string		MAP\040	CCP4 Electron Density Map|3707
 # Assumes same stamp for float and double (normal case)
->212	byte		17	\b, Big-endian|3718
->212	byte		34	\b, VAX format|3719
->212	byte		68	\b, Little-endian|3720
->212	byte		85	\b, Convex native|3721
+>212	byte		17	\b, Big-endian|3708
+>212	byte		34	\b, VAX format|3709
+>212	byte		68	\b, Little-endian|3710
+>212	byte		85	\b, Convex native|3711
 
 ############################################################
 # X-Ray Area Detector images
-0	string	R-AXIS4\ \ \ 	R-Axis Area Detector Image:|3722
->796	lelong	<20		Little-endian, IP #%d,|3722
->>768	lelong	>0		Size=%dx|3722
->>772	lelong	>0		\b%d|3722
->796	belong	<20		Big-endian, IP #%d,|3722
->>768	belong	>0		Size=%dx|3722
->>772	belong	>0		\b%d|3722
+0	string	R-AXIS4\ \ \ 	R-Axis Area Detector Image:|3712
+>796	lelong	<20		Little-endian, IP #%d,|3712
+>>768	lelong	>0		Size=%dx|3712
+>>772	lelong	>0		\b%d|3712
+>796	belong	<20		Big-endian, IP #%d,|3712
+>>768	belong	>0		Size=%dx|3712
+>>772	belong	>0		\b%d|3712
 
-0	string	RAXIS\ \ \ \ \ 	R-Axis Area Detector Image, Win32:|3723
->796	lelong	<20		Little-endian, IP #%d,|3723
->>768	lelong	>0		Size=%dx|3723
->>772	lelong	>0		\b%d|3723
->796	belong	<20		Big-endian, IP #%d,|3723
->>768	belong	>0		Size=%dx|3723
->>772	belong	>0		\b%d|3723
+0	string	RAXIS\ \ \ \ \ 	R-Axis Area Detector Image, Win32:|3713
+>796	lelong	<20		Little-endian, IP #%d,|3713
+>>768	lelong	>0		Size=%dx|3713
+>>772	lelong	>0		\b%d|3713
+>796	belong	<20		Big-endian, IP #%d,|3713
+>>768	belong	>0		Size=%dx|3713
+>>772	belong	>0		\b%d|3713
 
 
-1028	string	MMX\000\000\000\000\000\000\000\000\000\000\000\000\000	MAR Area Detector Image,|3724
->1072	ulong	>1		Compressed(%d),|3724
->1100	ulong	>1		%d headers,|3724
->1104	ulong	>0		%d x|3724
->1108	ulong	>0		%d,|3724
->1120	ulong	>0		%d bits/pixel|3724
+1028	string	MMX\000\000\000\000\000\000\000\000\000\000\000\000\000	MAR Area Detector Image,|3714
+>1072	ulong	>1		Compressed(%d),|3714
+>1100	ulong	>1		%d headers,|3714
+>1104	ulong	>0		%d x|3714
+>1108	ulong	>0		%d,|3714
+>1120	ulong	>0		%d bits/pixel|3714
 
 # Type: GEDCOM genealogical (family history) data
 # From: Giuseppe Bilotta
-0       search/1/c	0\ HEAD         GEDCOM genealogy text|3725
+0       search/1/c	0\ HEAD         GEDCOM genealogy text|3715
 >&0     search		1\ GEDC
->>&0    search		2\ VERS         version|3726
->>>&1   string		>\0		%s|3726
+>>&0    search		2\ VERS         version|3716
+>>>&1   string		>\0		%s|3716
 # From: Phil Endecott <phil05@chezphil.org>
-0	string	\000\060\000\040\000\110\000\105\000\101\000\104		GEDCOM data|3727
-0	string	\060\000\040\000\110\000\105\000\101\000\104\000		GEDCOM data|3727
-0	string	\376\377\000\060\000\040\000\110\000\105\000\101\000\104	GEDCOM data|3727
-0	string	\377\376\060\000\040\000\110\000\105\000\101\000\104\000	GEDCOM data|3727
+0	string	\000\060\000\040\000\110\000\105\000\101\000\104		GEDCOM data|3717
+0	string	\060\000\040\000\110\000\105\000\101\000\104\000		GEDCOM data|3717
+0	string	\376\377\000\060\000\040\000\110\000\105\000\101\000\104	GEDCOM data|3717
+0	string	\377\376\060\000\040\000\110\000\105\000\101\000\104\000	GEDCOM data|3717
 
 # PDB: Protein Data Bank files
 # Adam Buchbinder <adam.buchbinder@gmail.com>
@@ -94,18 +94,18 @@
 >&0	regex/1l	\^.{40}
 >>&0	regex/1l	[0-9]{2}-[A-Z]{3}-[0-9]{2}\ {3}
 >>>&0	regex/1ls	[A-Z0-9]{4}.{14}$
->>>>&0	regex/1l	[A-Z0-9]{4}	Protein Data Bank data, ID Code %s|3728
+>>>>&0	regex/1l	[A-Z0-9]{4}	Protein Data Bank data, ID Code %s|3718
 !:mime	chemical/x-pdb
->>>>0	regex/1l	[0-9]{2}-[A-Z]{3}-[0-9]{2}	\b, %s|3728
+>>>>0	regex/1l	[0-9]{2}-[A-Z]{3}-[0-9]{2}	\b, %s|3718
 
 # Type:	GDSII Stream file
-0	belong	0x00060002	GDSII Stream file|3729
+0	belong	0x00060002	GDSII Stream file|3719
 >4	byte	0x00
->>5	byte	x		version %d.0|3729
->4	byte	>0x00		version %d|3729
->>5	byte	x		\b.%d|3729
+>>5	byte	x		version %d.0|3719
+>4	byte	>0x00		version %d|3719
+>>5	byte	x		\b.%d|3719
 
 # Type: LXT (interLaced eXtensible Trace)
 # chrysn <chrysn@fsfe.org>
-0	beshort	0x0138	interLaced eXtensible Trace (LXT) file|3730
->2	beshort	>0	(Version %u)|3730
+0	beshort	0x0138	interLaced eXtensible Trace (LXT) file|3720
+>2	beshort	>0	(Version %u)|3720

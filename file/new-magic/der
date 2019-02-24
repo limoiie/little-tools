@@ -27,56 +27,56 @@
 # Certificate requests
 0	der	seq
 >&0	der	seq
->>&0	der	int1=00		DER Encoded Certificate request|1523
+>>&0	der	int1=00		DER Encoded Certificate request|1521
 >>&0	use	certinfo
 
 # Key Pairs
 0	der	seq
 >&0	der	int1=00
 >&0	der	int65=x
->&0	der	int3=010001	DER Encoded Key Pair, 512 bits|1524
+>&0	der	int3=010001	DER Encoded Key Pair, 512 bits|1522
 
 0	der	seq
 >&0	der	int1=00
 >&0	der	int129=x
->&0	der	int3=010001	DER Encoded Key Pair, 1024 bits|1525
+>&0	der	int3=010001	DER Encoded Key Pair, 1024 bits|1523
 
 0	der	seq
 >&0	der	int1=00
 >&0	der	int257=x
->&0	der	int3=010001	DER Encoded Key Pair, 2048 bits|1526
+>&0	der	int3=010001	DER Encoded Key Pair, 2048 bits|1524
 
 0	der	seq
 >&0	der	int1=00
 >&0	der	int513=x
->&0	der	int3=010001	DER Encoded Key Pair, 4096 bits|1527
+>&0	der	int3=010001	DER Encoded Key Pair, 4096 bits|1525
 
 0	der	seq
 >&0	der	int1=00
 >&0	der	int1025=x
->&0	der	int3=010001	DER Encoded Key Pair, 8192 bits|1528
+>&0	der	int3=010001	DER Encoded Key Pair, 8192 bits|1526
 
 0	der	seq
 >&0	der	int1=00
 >&0	der	int2049=x
->&0	der	int3=010001	DER Encoded Key Pair, 16k bits|1529
+>&0	der	int3=010001	DER Encoded Key Pair, 16k bits|1527
 
 0	der	seq
 >&0	der	int1=00
 >&0	der	int4097=x
->&0	der	int3=010001	DER Encoded Key Pair, 32k bits|1530
+>&0	der	int3=010001	DER Encoded Key Pair, 32k bits|1528
 
 # Certificates
 0	der	seq
 >&0	der	seq
->>&0	der	int2=0dfa	DER Encoded Certificate, 512 bits|1531
->>&0	der	int2=0dfb	DER Encoded Certificate, 1024 bits|1532
->>&0	der	int2=0dfc	DER Encoded Certificate, 2048 bits|1533
->>&0	der	int2=0dfd	DER Encoded Certificate, 4096 bits|1534
->>&0	der	int2=0dfe	DER Encoded Certificate, 8192 bits|1535
->>&0	der	int2=0dff	DER Encoded Certificate, 16k bits|1536
->>&0	der	int2=0e04	DER Encoded Certificate, 32k bits|1537
->>&0	der	int2=x		DER Encoded Certificate, ? bits (%s)|1538
+>>&0	der	int2=0dfa	DER Encoded Certificate, 512 bits|1529
+>>&0	der	int2=0dfb	DER Encoded Certificate, 1024 bits|1530
+>>&0	der	int2=0dfc	DER Encoded Certificate, 2048 bits|1531
+>>&0	der	int2=0dfd	DER Encoded Certificate, 4096 bits|1532
+>>&0	der	int2=0dfe	DER Encoded Certificate, 8192 bits|1533
+>>&0	der	int2=0dff	DER Encoded Certificate, 16k bits|1534
+>>&0	der	int2=0e04	DER Encoded Certificate, 32k bits|1535
+>>&0	der	int2=x		DER Encoded Certificate, ? bits (%s)|1536
 >>&0	der	seq
 >>>&0	der	obj_id9=2a864886f70d010105	\b, sha1WithRSAEncryption
 >>>&0	der	obj_id9=x			\b, ? Encryption (%s)

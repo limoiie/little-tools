@@ -8,11 +8,11 @@
 # From: Asbjoern Sloth Toennesen <asbjorn@lila.io>
 0 string/t    \<?xml
 >20  search/400 \ xmlns=
->>&0 regex ['"]http://earth.google.com/kml Google KML document|2679
+>>&0 regex ['"]http://earth.google.com/kml Google KML document|2671
 !:mime application/vnd.google-earth.kml+xml
->>>&1 string 2.0' \b, version 2.0|2680
->>>&1 string 2.1' \b, version 2.1|2681
->>>&1 string 2.2' \b, version 2.2|2682
+>>>&1 string 2.0' \b, version 2.0|2672
+>>>&1 string 2.1' \b, version 2.1|2673
+>>>&1 string 2.2' \b, version 2.2|2674
 
 #------------------------------------------------------------------------------
 # Type: OpenGIS KML, formerly Keyhole Markup Language
@@ -20,9 +20,9 @@
 # Open Geospatial Consortium.
 # http://www.opengeospatial.org/standards/kml/
 # From: Asbjoern Sloth Toennesen <asbjorn@lila.io>
->>&0 regex ['"]http://www.opengis.net/kml OpenGIS KML document|2683
+>>&0 regex ['"]http://www.opengis.net/kml OpenGIS KML document|2675
 !:mime application/vnd.google-earth.kml+xml
->>>&1 string/t 2.2 \b, version 2.2|2684
+>>>&1 string/t 2.2 \b, version 2.2|2676
 
 #------------------------------------------------------------------------------
 # Type: Google KML Archive (ZIP based)
@@ -30,5 +30,5 @@
 # From: Asbjoern Sloth Toennesen <asbjorn@lila.io>
 0 string    PK\003\004
 >4  byte    0x14
->>30  string doc.kml Compressed Google KML Document, including resources.|2685
+>>30  string doc.kml Compressed Google KML Document, including resources.|2677
 !:mime application/vnd.google-earth.kmz

@@ -12,34 +12,34 @@
 # Reference: ftp://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz/
 #	gettext-0.19.8.1/gettext-runtime/intl/gmo.h
 # Note: maybe call it like "GNU translation gettext machine object"
-0	string		\336\22\4\225	GNU message catalog (little endian),|2193
+0	string		\336\22\4\225	GNU message catalog (little endian),|2188
 #0	ulelong	0x950412DE		GNU-format message catalog data
 # TODO: write lines in such a way that code can also be called for big endian variant
 #>0	use		gettext-object
 #0	name		gettext-object
->4	ulelong		x		revision|2194
+>4	ulelong		x		revision|2189
 !:mime	application/x-gettext-translation
 # mo extension is also used for Easeus Partition Master PE32 executable module
 # like ConvertFatToNTFS.mo
 !:ext	gmo/mo
 # only found three revision combinations 0.0 0.1 1.1 as unsigned 32-bit
 # major revision
->4	ulelong/0xFFff	x		%u.|2193
+>4	ulelong/0xFFff	x		%u.|2188
 # minor revision
->4	ulelong&0x0000FFff	x	\b%u|2193
->>8	ulelong		x		\b, %u message|2193
+>4	ulelong&0x0000FFff	x	\b%u|2188
+>>8	ulelong		x		\b, %u message|2188
 # plural s
->>8	ulelong		>1		\bs|2193
+>>8	ulelong		>1		\bs|2188
 # size of hashing table
 #>20	ulelong		x		\b, %u hash
 #>20	ulelong		>1		\bes
 #>24	ulelong		x		at 0x%x
 # for revsion x.0 offset of table with originals is 1Ch if directly after header
 >4	ulelong&0x0000FFff	=0
->>12	ulelong		!0x1C		\b, at 0x%x string table|2193
+>>12	ulelong		!0x1C		\b, at 0x%x string table|2188
 # but for x.1 table offset i found is 30h. That means directly after bigger header
 >4	ulelong&0x0000FFff	>0
->>12	ulelong		!0x30		\b, at 0x%x string table|2193
+>>12	ulelong		!0x30		\b, at 0x%x string table|2188
 # The following variables are only used in .mo files with minor revision >= 1
 # number of system dependent segments
 #>>28	ulelong		x		\b, %u segment
@@ -47,8 +47,8 @@
 # offset of table describing system dependent segments
 #>>32	ulelong		x		at 0x%x
 # number of system dependent strings pairs
->>36	ulelong		x		\b, %u sysdep message|2193
->>36	ulelong		>1		\bs|2193
+>>36	ulelong		x		\b, %u sysdep message|2188
+>>36	ulelong		>1		\bs|2188
 # offset of table with start offsets of original sysdep strings
 #>>40	ulelong		x		\b, at 0x%x sysdep strings
 # offset of table with start offsets of translated sysdep strings
@@ -93,7 +93,7 @@
 >>>>&0		ubyte	=0x0A
 >>>>>&0		string	x		'%s'
 
-0	string		\225\4\22\336	GNU message catalog (big endian),|2195
+0	string		\225\4\22\336	GNU message catalog (big endian),|2190
 #0	ubelong	0x950412DE		GNU-format message catalog data
 !:mime	application/x-gettext-translation
 !:ext	gmo/mo
@@ -106,20 +106,20 @@
 # unexpected value HERE!
 #>>>(&-4)	ubequad	x		0x%llx
 #
->4	beshort		x		revision %d.|2196
->6	beshort		>0		\b%d,|2195
->>8	belong		x		%d messages,|2195
->>36	belong		x		%d sysdep messages|2195
->6	beshort		=0		\b%d,|2195
->>8	belong		x		%d messages|2195
+>4	beshort		x		revision %d.|2191
+>6	beshort		>0		\b%d,|2190
+>>8	belong		x		%d messages,|2190
+>>36	belong		x		%d sysdep messages|2190
+>6	beshort		=0		\b%d,|2190
+>>8	belong		x		%d messages|2190
 
 
 # GnuPG
 # The format is very similar to pgp
-0	string          \001gpg                 GPG key trust database|2197
->4	byte            x                       version %d|2197
+0	string          \001gpg                 GPG key trust database|2192
+>4	byte            x                       version %d|2192
 # Note: magic.mime had 0x8501 for the next line instead of 0x8502
-0	beshort		0x8502			GPG encrypted data|2198
+0	beshort		0x8502			GPG encrypted data|2193
 !:mime	text/PGP # encoding: data
 
 # Update: Joerg Jenderek
@@ -135,16 +135,16 @@
 # Symmetric encryption
 0	leshort		0x0d8c
 >4	leshort		0x0203
->>2	leshort		0x0204		GPG symmetrically encrypted data (3DES cipher)|2199
->>2	leshort		0x0304		GPG symmetrically encrypted data (CAST5 cipher)|2200
->>2	leshort		0x0404		GPG symmetrically encrypted data (BLOWFISH cipher)|2201
->>2	leshort		0x0704		GPG symmetrically encrypted data (AES cipher)|2202
->>2	leshort		0x0804		GPG symmetrically encrypted data (AES192 cipher)|2203
->>2	leshort		0x0904		GPG symmetrically encrypted data (AES256 cipher)|2204
->>2	leshort		0x0a04		GPG symmetrically encrypted data (TWOFISH cipher)|2205
->>2	leshort		0x0b04		GPG symmetrically encrypted data (CAMELLIA128 cipher)|2206
->>2	leshort		0x0c04		GPG symmetrically encrypted data (CAMELLIA192 cipher)|2207
->>2	leshort		0x0d04		GPG symmetrically encrypted data (CAMELLIA256 cipher)|2208
+>>2	leshort		0x0204		GPG symmetrically encrypted data (3DES cipher)|2194
+>>2	leshort		0x0304		GPG symmetrically encrypted data (CAST5 cipher)|2195
+>>2	leshort		0x0404		GPG symmetrically encrypted data (BLOWFISH cipher)|2196
+>>2	leshort		0x0704		GPG symmetrically encrypted data (AES cipher)|2197
+>>2	leshort		0x0804		GPG symmetrically encrypted data (AES192 cipher)|2198
+>>2	leshort		0x0904		GPG symmetrically encrypted data (AES256 cipher)|2199
+>>2	leshort		0x0a04		GPG symmetrically encrypted data (TWOFISH cipher)|2200
+>>2	leshort		0x0b04		GPG symmetrically encrypted data (CAMELLIA128 cipher)|2201
+>>2	leshort		0x0c04		GPG symmetrically encrypted data (CAMELLIA192 cipher)|2202
+>>2	leshort		0x0d04		GPG symmetrically encrypted data (CAMELLIA256 cipher)|2203
 
 
 # GnuPG Keybox file
@@ -152,27 +152,27 @@
 # From: Philipp Hahn <hahn@univention.de>
 0	belong	32
 >4	byte	1
->>8	string	KBXf	GPG keybox database|2209
->>>5	byte	1	version %d|2209
->>>16	bedate	x	\b, created-at %s|2209
->>>20	bedate	x	\b, last-maintained %s|2209
+>>8	string	KBXf	GPG keybox database|2204
+>>>5	byte	1	version %d|2204
+>>>16	bedate	x	\b, created-at %s|2204
+>>>20	bedate	x	\b, last-maintained %s|2204
 
 
 # Gnumeric spreadsheet
 # This entry is only semi-helpful, as Gnumeric compresses its files, so
 # they will ordinarily reported as "compressed", but at least -z helps
-39      string          =<gmr:Workbook           Gnumeric spreadsheet|2210
+39      string          =<gmr:Workbook           Gnumeric spreadsheet|2205
 
 # From: James Youngman <jay@gnu.org>
 # gnu find magic
-0	string	\0LOCATE	GNU findutils locate database data|2211
->7	string	>\0		\b, format %s|2211
->7	string	02		\b (frcode)|2212
+0	string	\0LOCATE	GNU findutils locate database data|2206
+>7	string	>\0		\b, format %s|2206
+>7	string	02		\b (frcode)|2207
 
 # Files produced by GNU gettext
 
 # gettext message catalogue
 0	search/1024	\nmsgid
->&0	search/1024	\nmsgstr	GNU gettext message catalogue text|2213
+>&0	search/1024	\nmsgstr	GNU gettext message catalogue text|2208
 !:strength +100
 !:mime text/x-po

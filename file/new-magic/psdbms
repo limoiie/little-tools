@@ -8,7 +8,7 @@
 # AppleWorks word processor
 0	belong&0xff00ffff	0x56000000
 # assume version starts with digit
->1	regex/s			=^[0-9]		ps database|3585
->>1	string	>\0	version %s|3585
+>1	regex/s			=^[0-9]		ps database|3575
+>>1	string	>\0	version %s|3575
 # kernel name
->>4	string	>\0	from kernel %s|3585
+>>4	string	>\0	from kernel %s|3575

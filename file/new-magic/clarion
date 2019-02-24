@@ -7,21 +7,21 @@
 
 # Database files
 # signature
-0	leshort	0x3343	Clarion Developer (v2 and above) data file|1214
+0	leshort	0x3343	Clarion Developer (v2 and above) data file|1212
 # attributes
->2	leshort	&0x0001	\b, locked|1214
->2	leshort	&0x0004	\b, encrypted|1214
->2	leshort	&0x0008	\b, memo file exists|1214
->2	leshort	&0x0010	\b, compressed|1214
->2	leshort	&0x0040	\b, read only|1214
+>2	leshort	&0x0001	\b, locked|1212
+>2	leshort	&0x0004	\b, encrypted|1212
+>2	leshort	&0x0008	\b, memo file exists|1212
+>2	leshort	&0x0010	\b, compressed|1212
+>2	leshort	&0x0040	\b, read only|1212
 # number of records
->5	lelong	x	\b, %d records|1214
+>5	lelong	x	\b, %d records|1212
 
 # Memo files
-0	leshort	0x334d	Clarion Developer (v2 and above) memo data|1215
+0	leshort	0x334d	Clarion Developer (v2 and above) memo data|1213
 
 # Key/Index files
 # No magic? :(
 
 # Help files
-0	leshort	0x49e0	Clarion Developer (v2 and above) help data|1216
+0	leshort	0x49e0	Clarion Developer (v2 and above) help data|1214

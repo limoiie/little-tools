@@ -6,33 +6,33 @@
 # updated by Daniel Quinlan (quinlan@yggdrasil.com)
 
 # troff input
-0	search/1	.\\"		troff or preprocessor input text|4292
+0	search/1	.\\"		troff or preprocessor input text|4282
 !:mime	text/troff
-0	search/1	'\\"		troff or preprocessor input text|4292
+0	search/1	'\\"		troff or preprocessor input text|4282
 !:mime	text/troff
-0	search/1	'.\\"		troff or preprocessor input text|4292
+0	search/1	'.\\"		troff or preprocessor input text|4282
 !:mime	text/troff
-0	search/1	\\"		troff or preprocessor input text|4292
+0	search/1	\\"		troff or preprocessor input text|4282
 !:mime	text/troff
-0	search/1	'''		troff or preprocessor input text|4292
+0	search/1	'''		troff or preprocessor input text|4282
 !:mime	text/troff
-0	regex/20l	\^\\.[A-Za-z0-9][A-Za-z0-9][\ \t]	troff or preprocessor input text|4292
+0	regex/20l	\^\\.[A-Za-z0-9][A-Za-z0-9][\ \t]	troff or preprocessor input text|4282
 !:mime	text/troff
-0	regex/20l	\^\\.[A-Za-z0-9][A-Za-z0-9]$	troff or preprocessor input text|4292
+0	regex/20l	\^\\.[A-Za-z0-9][A-Za-z0-9]$	troff or preprocessor input text|4282
 !:mime	text/troff
 
 # ditroff intermediate output text
-0	search/1	x\ T		ditroff output text|4293
->4	search/1	cat		for the C/A/T phototypesetter|4294
->4	search/1	ps		for PostScript|4295
->4	search/1	dvi		for DVI|4296
->4	search/1	ascii		for ASCII|4297
->4	search/1	lj4		for LaserJet 4|4298
->4	search/1	latin1		for ISO 8859-1 (Latin 1)|4299
->4	search/1	X75		for xditview at 75dpi|4300
->>7	search/1	-12		(12pt)|4301
->4	search/1	X100		for xditview at 100dpi|4302
->>8	search/1	-12		(12pt)|4303
+0	search/1	x\ T		ditroff output text|4283
+>4	search/1	cat		for the C/A/T phototypesetter|4284
+>4	search/1	ps		for PostScript|4285
+>4	search/1	dvi		for DVI|4286
+>4	search/1	ascii		for ASCII|4287
+>4	search/1	lj4		for LaserJet 4|4288
+>4	search/1	latin1		for ISO 8859-1 (Latin 1)|4289
+>4	search/1	X75		for xditview at 75dpi|4290
+>>7	search/1	-12		(12pt)|4291
+>4	search/1	X100		for xditview at 100dpi|4292
+>>8	search/1	-12		(12pt)|4293
 
 # output data formats
-0	string		\100\357	very old (C/A/T) troff output data|4304
+0	string		\100\357	very old (C/A/T) troff output data|4294

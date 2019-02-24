@@ -9,22 +9,22 @@
 # because it tries to uncompress it to figure out what's inside.
 
 # standard unix compress
-0	string		\037\235	compress'd data|1261
+0	string		\037\235	compress'd data|1259
 !:mime	application/x-compress
 !:apple	LZIVZIVU
->2	byte&0x80	>0		block compressed|1261
->2	byte&0x1f	x		%d bits|1261
+>2	byte&0x80	>0		block compressed|1259
+>2	byte&0x1f	x		%d bits|1259
 
 # gzip (GNU zip, not to be confused with Info-ZIP or PKWARE zip archiver)
 #   Edited by Chris Chittleborough <cchittleborough@yahoo.com.au>, March 2002
 #	* Original filename is only at offset 10 if "extra field" absent
 #	* Produce shorter output - notably, only report compression methods
 #         other than 8 ("deflate", the only method defined in RFC 1952).
-0       string          \037\213        gzip compressed data|1262
+0       string          \037\213        gzip compressed data|1260
 !:mime	application/x-gzip
 !:strength * 2
->2	byte		<8		\b, reserved method|1263
->2	byte		>8		\b, unknown method|1264
+>2	byte		<8		\b, reserved method|1261
+>2	byte		>8		\b, unknown method|1262
 >3	byte		&0x01		\b, ASCII
 >3	byte		&0x02		\b, has CRC
 >3	byte		&0x04		\b, extra field
@@ -52,58 +52,58 @@
 >-4	lelong		x		\b, original size %u
 
 # packed data, Huffman (minimum redundancy) codes on a byte-by-byte basis
-0	string		\037\036	packed data|1265
+0	string		\037\036	packed data|1263
 !:mime	application/octet-stream
->2	belong		>1		\b, %d characters originally|1265
->2	belong		=1		\b, %d character originally|1265
+>2	belong		>1		\b, %d characters originally|1263
+>2	belong		=1		\b, %d character originally|1263
 #
 # This magic number is byte-order-independent.
-0	short		0x1f1f		old packed data|1266
+0	short		0x1f1f		old packed data|1264
 !:mime	application/octet-stream
 
 # XXX - why *two* entries for "compacted data", one of which is
 # byte-order independent, and one of which is byte-order dependent?
 #
-0	short		0x1fff		compacted data|1267
+0	short		0x1fff		compacted data|1265
 !:mime	application/octet-stream
 # This string is valid for SunOS (BE) and a matching "short" is listed
 # in the Ultrix (LE) magic file.
-0	string		\377\037	compacted data|1267
+0	string		\377\037	compacted data|1265
 !:mime	application/octet-stream
-0	short		0145405		huf output|1268
+0	short		0145405		huf output|1266
 !:mime	application/octet-stream
 
 # bzip2
-0	string		BZh		bzip2 compressed data|1269
+0	string		BZh		bzip2 compressed data|1267
 !:mime	application/x-bzip2
->3	byte		>47		\b, block size = %c00k|1269
+>3	byte		>47		\b, block size = %c00k|1267
 
 # bzip	a block-sorting file compressor
 #	by Julian Seward <sewardj@cs.man.ac.uk> and others
-0	string		BZ0		bzip compressed data|1270
+0	string		BZ0		bzip compressed data|1268
 !:mime	application/x-bzip
->3	byte		>47		\b, block size = %c00k|1270
+>3	byte		>47		\b, block size = %c00k|1268
 
 # lzip
-0	string		LZIP		lzip compressed data|1271
+0	string		LZIP		lzip compressed data|1269
 !:mime application/x-lzip
->4	byte		x		\b, version: %d|1271
+>4	byte		x		\b, version: %d|1269
 
 # squeeze and crunch
 # Michael Haardt <michael@cantor.informatik.rwth-aachen.de>
-0	beshort		0x76FF		squeezed data,|1272
->4	string		x		original name %s|1272
-0	beshort		0x76FE		crunched data,|1273
->2	string		x		original name %s|1273
-0	beshort		0x76FD		LZH compressed data,|1274
->2	string		x		original name %s|1274
+0	beshort		0x76FF		squeezed data,|1270
+>4	string		x		original name %s|1270
+0	beshort		0x76FE		crunched data,|1271
+>2	string		x		original name %s|1271
+0	beshort		0x76FD		LZH compressed data,|1272
+>2	string		x		original name %s|1272
 
 # Freeze
-0	string		\037\237	frozen file 2.1|1275
-0	string		\037\236	frozen file 1.0 (or gzip 0.5)|1276
+0	string		\037\237	frozen file 2.1|1273
+0	string		\037\236	frozen file 1.0 (or gzip 0.5)|1274
 
 # SCO compress -H (LZH)
-0	string		\037\240	SCO compress -H (LZH) data|1277
+0	string		\037\240	SCO compress -H (LZH) data|1275
 
 # European GSM 06.10 is a provisional standard for full-rate speech
 # transcoding, prI-ETS 300 036, which uses RPE/LTP (residual pulse
@@ -121,95 +121,95 @@
 #>132	byte&0xF0	0xd0		GSM 06.10 compressed audio
 
 # lzop from <markus.oberhumer@jk.uni-linz.ac.at>
-0	string		\x89\x4c\x5a\x4f\x00\x0d\x0a\x1a\x0a	lzop compressed data|1278
+0	string		\x89\x4c\x5a\x4f\x00\x0d\x0a\x1a\x0a	lzop compressed data|1276
 >9	beshort		<0x0940
->>9	byte&0xf0	=0x00		- version 0.|1278
->>9	beshort&0x0fff	x		\b%03x,|1278
->>13	byte		1		LZO1X-1,|1278
->>13	byte		2		LZO1X-1(15),|1278
->>13	byte		3		LZO1X-999,|1278
+>>9	byte&0xf0	=0x00		- version 0.|1276
+>>9	beshort&0x0fff	x		\b%03x,|1276
+>>13	byte		1		LZO1X-1,|1276
+>>13	byte		2		LZO1X-1(15),|1276
+>>13	byte		3		LZO1X-999,|1276
 ## >>22	bedate		>0		last modified: %s,
->>14	byte		=0x00		os: MS-DOS|1278
->>14	byte		=0x01		os: Amiga|1278
->>14	byte		=0x02		os: VMS|1278
->>14	byte		=0x03		os: Unix|1278
->>14	byte		=0x05		os: Atari|1278
->>14	byte		=0x06		os: OS/2|1278
->>14	byte		=0x07		os: MacOS|1278
->>14	byte		=0x0A		os: Tops/20|1278
->>14	byte		=0x0B		os: WinNT|1278
->>14	byte		=0x0E		os: Win32|1278
+>>14	byte		=0x00		os: MS-DOS|1276
+>>14	byte		=0x01		os: Amiga|1276
+>>14	byte		=0x02		os: VMS|1276
+>>14	byte		=0x03		os: Unix|1276
+>>14	byte		=0x05		os: Atari|1276
+>>14	byte		=0x06		os: OS/2|1276
+>>14	byte		=0x07		os: MacOS|1276
+>>14	byte		=0x0A		os: Tops/20|1276
+>>14	byte		=0x0B		os: WinNT|1276
+>>14	byte		=0x0E		os: Win32|1276
 >9	beshort		>0x0939
->>9	byte&0xf0	=0x00		- version 0.|1278
->>9	byte&0xf0	=0x10		- version 1.|1278
->>9	byte&0xf0	=0x20		- version 2.|1278
->>9	beshort&0x0fff	x		\b%03x,|1278
->>15	byte		1		LZO1X-1,|1278
->>15	byte		2		LZO1X-1(15),|1278
->>15	byte		3		LZO1X-999,|1278
+>>9	byte&0xf0	=0x00		- version 0.|1276
+>>9	byte&0xf0	=0x10		- version 1.|1276
+>>9	byte&0xf0	=0x20		- version 2.|1276
+>>9	beshort&0x0fff	x		\b%03x,|1276
+>>15	byte		1		LZO1X-1,|1276
+>>15	byte		2		LZO1X-1(15),|1276
+>>15	byte		3		LZO1X-999,|1276
 ## >>25	bedate		>0		last modified: %s,
->>17	byte		=0x00		os: MS-DOS|1278
->>17	byte		=0x01		os: Amiga|1278
->>17	byte		=0x02		os: VMS|1278
->>17	byte		=0x03		os: Unix|1278
->>17	byte		=0x05		os: Atari|1278
->>17	byte		=0x06		os: OS/2|1278
->>17	byte		=0x07		os: MacOS|1278
->>17	byte		=0x0A		os: Tops/20|1278
->>17	byte		=0x0B		os: WinNT|1278
->>17	byte		=0x0E		os: Win32|1278
+>>17	byte		=0x00		os: MS-DOS|1276
+>>17	byte		=0x01		os: Amiga|1276
+>>17	byte		=0x02		os: VMS|1276
+>>17	byte		=0x03		os: Unix|1276
+>>17	byte		=0x05		os: Atari|1276
+>>17	byte		=0x06		os: OS/2|1276
+>>17	byte		=0x07		os: MacOS|1276
+>>17	byte		=0x0A		os: Tops/20|1276
+>>17	byte		=0x0B		os: WinNT|1276
+>>17	byte		=0x0E		os: Win32|1276
 
 # 4.3BSD-Quasijarus Strong Compression
 # http://minnie.tuhs.org/Quasijarus/compress.html
-0	string		\037\241	Quasijarus strong compressed data|1279
+0	string		\037\241	Quasijarus strong compressed data|1277
 
 # From: Cory Dikkers <cdikkers@swbell.net>
-0	string		XPKF		Amiga xpkf.library compressed data|1280
-0	string		PP11		Power Packer 1.1 compressed data|1281
-0	string		PP20		Power Packer 2.0 compressed data,|1282
->4	belong		0x09090909	fast compression|1283
->4	belong		0x090A0A0A	mediocre compression|1284
->4	belong		0x090A0B0B	good compression|1285
->4	belong		0x090A0C0C	very good compression|1286
->4	belong		0x090A0C0D	best compression|1287
+0	string		XPKF		Amiga xpkf.library compressed data|1278
+0	string		PP11		Power Packer 1.1 compressed data|1279
+0	string		PP20		Power Packer 2.0 compressed data,|1280
+>4	belong		0x09090909	fast compression|1281
+>4	belong		0x090A0A0A	mediocre compression|1282
+>4	belong		0x090A0B0B	good compression|1283
+>4	belong		0x090A0C0C	very good compression|1284
+>4	belong		0x090A0C0D	best compression|1285
 
 # 7-zip archiver, from Thomas Klausner (wiz@danbala.tuwien.ac.at)
 # http://www.7-zip.org or DOC/7zFormat.txt
 #
-0	string		7z\274\257\047\034	7-zip archive data,|1288
->6	byte		x			version %d|1288
->7	byte		x			\b.%d|1288
+0	string		7z\274\257\047\034	7-zip archive data,|1286
+>6	byte		x			version %d|1286
+>7	byte		x			\b.%d|1286
 !:mime	application/x-7z-compressed
 !:ext 7z/cb7
 
 # Type: LZMA
 0	lelong&0xffffff	=0x5d
->12	leshort		0xff			LZMA compressed data,|1289
+>12	leshort		0xff			LZMA compressed data,|1287
 !:mime	application/x-lzma
->>5	lequad		=0xffffffffffffffff	streamed|1290
->>5	lequad		!0xffffffffffffffff	non-streamed, size %lld|1291
->12	leshort		0			LZMA compressed data,|1289
->>5	lequad		=0xffffffffffffffff	streamed|1290
->>5	lequad		!0xffffffffffffffff	non-streamed, size %lld|1291
+>>5	lequad		=0xffffffffffffffff	streamed|1288
+>>5	lequad		!0xffffffffffffffff	non-streamed, size %lld|1289
+>12	leshort		0			LZMA compressed data,|1287
+>>5	lequad		=0xffffffffffffffff	streamed|1288
+>>5	lequad		!0xffffffffffffffff	non-streamed, size %lld|1289
 
 # http://tukaani.org/xz/xz-file-format.txt
-0	ustring		\xFD7zXZ\x00		XZ compressed data|1292
+0	ustring		\xFD7zXZ\x00		XZ compressed data|1290
 !:strength * 2
 !:mime	application/x-xz
 
 # https://github.com/ckolivas/lrzip/blob/master/doc/magic.header.txt
-0	string		LRZI			LRZIP compressed data|1293
->4	byte		x			- version %d|1293
->5	byte		x			\b.%d|1293
+0	string		LRZI			LRZIP compressed data|1291
+>4	byte		x			- version %d|1291
+>5	byte		x			\b.%d|1291
 !:mime	application/x-lrzip
 
 # http://fastcompression.blogspot.fi/2013/04/lz4-streaming-format-final.html
-0	lelong		0x184d2204	LZ4 compressed data (v1.4+)|1294
+0	lelong		0x184d2204	LZ4 compressed data (v1.4+)|1292
 !:mime	application/x-lz4
 # Added by osm0sis@xda-developers.com
-0 	lelong		0x184c2103	LZ4 compressed data (v1.0-v1.3)|1295
+0 	lelong		0x184c2103	LZ4 compressed data (v1.0-v1.3)|1293
 !:mime	application/x-lz4
-0	lelong		0x184c2102	LZ4 compressed data (v0.1-v0.9)|1296
+0	lelong		0x184c2102	LZ4 compressed data (v0.1-v0.9)|1294
 !:mime	application/x-lz4
 
 # Zstandard/LZ4 skippable frames
@@ -240,30 +240,30 @@
 
 # Zstandard compressed data
 # https://github.com/facebook/zstd/blob/dev/zstd_compression_format.md
-0     lelong       0xFD2FB522  Zstandard compressed data (v0.2)|1297
+0     lelong       0xFD2FB522  Zstandard compressed data (v0.2)|1295
 !:mime  application/x-zstd
-0     lelong       0xFD2FB523  Zstandard compressed data (v0.3)|1298
+0     lelong       0xFD2FB523  Zstandard compressed data (v0.3)|1296
 !:mime  application/x-zstd
-0     lelong       0xFD2FB524  Zstandard compressed data (v0.4)|1299
+0     lelong       0xFD2FB524  Zstandard compressed data (v0.4)|1297
 !:mime  application/x-zstd
-0     lelong       0xFD2FB525  Zstandard compressed data (v0.5)|1300
+0     lelong       0xFD2FB525  Zstandard compressed data (v0.5)|1298
 !:mime  application/x-zstd
-0     lelong       0xFD2FB526  Zstandard compressed data (v0.6)|1301
+0     lelong       0xFD2FB526  Zstandard compressed data (v0.6)|1299
 !:mime  application/x-zstd
-0     lelong       0xFD2FB527  Zstandard compressed data (v0.7)|1302
+0     lelong       0xFD2FB527  Zstandard compressed data (v0.7)|1300
 !:mime  application/x-zstd
 >4    use          zstd-dictionary-id
-0     lelong       0xFD2FB528  Zstandard compressed data (v0.8+)|1303
+0     lelong       0xFD2FB528  Zstandard compressed data (v0.8+)|1301
 !:mime  application/x-zstd
 >4    use          zstd-dictionary-id
 
 # https://github.com/facebook/zstd/blob/dev/zstd_compression_format.md
-0  lelong    0xEC30A437  Zstandard dictionary|1304
+0  lelong    0xEC30A437  Zstandard dictionary|1302
 !:mime  application/x-zstd-dictionary
->4 lelong    x           (ID %u)|1304
+>4 lelong    x           (ID %u)|1302
 
 # AFX compressed files (Wolfram Kleff)
-2	string		-afx-		AFX compressed file data|1305
+2	string		-afx-		AFX compressed file data|1303
 
 # Supplementary magic data for the file(1) command to support
 # rzip(1).  The format is described in magic(5).
@@ -271,57 +271,57 @@
 # Copyright (C) 2003 by Andrew Tridgell.  You may do whatever you want with
 # this file.
 #
-0	string		RZIP		rzip compressed data|731
->4	byte		x		- version %d|731
->5	byte		x		\b.%d|731
->6	belong		x		(%d bytes)|731
+0	string		RZIP		rzip compressed data|729
+>4	byte		x		- version %d|729
+>5	byte		x		\b.%d|729
+>6	belong		x		(%d bytes)|729
 
-0	string		ArC\x01		FreeArc archive <http://freearc.org>|1306
+0	string		ArC\x01		FreeArc archive <http://freearc.org>|1304
 
 # Type:	DACT compressed files
-0	long	0x444354C3	DACT compressed data|1307
->4	byte	>-1		(version %i.|1307
->5	byte	>-1		%i.|1307
->6	byte	>-1		%i)|1307
->7	long	>0		, original size: %i bytes|1307
->15	long	>30		, block size: %i bytes|1307
+0	long	0x444354C3	DACT compressed data|1305
+>4	byte	>-1		(version %i.|1305
+>5	byte	>-1		%i.|1305
+>6	byte	>-1		%i)|1305
+>7	long	>0		, original size: %i bytes|1305
+>15	long	>30		, block size: %i bytes|1305
 
 # Valve Pack (VPK) files
-0	lelong	0x55aa1234	Valve Pak file|1308
->0x4	lelong	x		\b, version %u|1308
->0x8	lelong	x		\b, %u entries|1308
+0	lelong	0x55aa1234	Valve Pak file|1306
+>0x4	lelong	x		\b, version %u|1306
+>0x8	lelong	x		\b, %u entries|1306
 
 # Snappy framing format
 # http://code.google.com/p/snappy/source/browse/trunk/framing_format.txt
-0	string	\377\006\0\0sNaPpY	snappy framed data|1309
+0	string	\377\006\0\0sNaPpY	snappy framed data|1307
 !:mime	application/x-snappy-framed
 
 # qpress, http://www.quicklz.com/
-0	string	qpress10	qpress compressed data|1310
+0	string	qpress10	qpress compressed data|1308
 !:mime	application/x-qpress
 
 # Zlib https://www.ietf.org/rfc/rfc6713.txt
 0	string/b	x
 >0	beshort%31	=0
 >>0	byte&0xf	=8
->>>0	byte&0x80 	=0	zlib compressed data|1311
+>>>0	byte&0x80 	=0	zlib compressed data|1309
 !:mime	application/zlib
 
 # BWC compression
 0	string		BWC
->3	byte		0	BWC compressed data|1312
+>3	byte		0	BWC compressed data|1310
 
 # UCL compression
-0	bequad		0x00e955434cff011a	UCL compressed data|1313
+0	bequad		0x00e955434cff011a	UCL compressed data|1311
 
 # Softlib archive
-0	string		SLIB	Softlib archive|1314
->4	leshort		x	\b, version %d|1314
->6	leshort		x	(contains %d files)|1314
+0	string		SLIB	Softlib archive|1312
+>4	leshort		x	\b, version %d|1312
+>6	leshort		x	(contains %d files)|1312
 
 # URL:  https://github.com/lzfse/lzfse/blob/master/src/lzfse_internal.h#L276
 # From: Eric Hall <eric.hall@darkart.com>
-0	string	bvx-	lzfse encoded, no compression|1315
-0	string	bvx1	lzfse compressed, uncompressed tables|1316
-0	string	bvx2	lzfse compressed, compressed tables|1317
-0	string	bvxn	lzfse encoded, lzvn compressed|1318
+0	string	bvx-	lzfse encoded, no compression|1313
+0	string	bvx1	lzfse compressed, uncompressed tables|1314
+0	string	bvx2	lzfse compressed, compressed tables|1315
+0	string	bvxn	lzfse encoded, lzvn compressed|1316

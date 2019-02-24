@@ -9,32 +9,32 @@
 #
 # both of which turn into "JPEG image data" here.
 #
-0	beshort		0xffd8		JPEG image data|2648
+0	beshort		0xffd8		JPEG image data|2640
 !:mime	image/jpeg
 !:apple	8BIMJPEG
 !:strength *3
 !:ext jpeg/jpg/jpe/jfif
->6	string		JFIF		\b, JFIF standard|2649
+>6	string		JFIF		\b, JFIF standard|2641
 # The following added by Erik Rossen <rossen@freesurf.ch> 1999-09-06
 # in a vain attempt to add image size reporting for JFIF.  Note that these
 # tests are not fool-proof since some perfectly valid JPEGs are currently
 # impossible to specify in magic(4) format.
 # First, a little JFIF version info:
->>11	byte		x		\b %d.|2649
->>12	byte		x		\b%02d|2649
+>>11	byte		x		\b %d.|2641
+>>12	byte		x		\b%02d|2641
 # Next, the resolution or aspect ratio of the image:
->>13	byte		0		\b, aspect ratio|2650
->>13	byte		1		\b, resolution (DPI)|2651
->>13	byte		2		\b, resolution (DPCM)|2652
+>>13	byte		0		\b, aspect ratio|2642
+>>13	byte		1		\b, resolution (DPI)|2643
+>>13	byte		2		\b, resolution (DPCM)|2644
 >>14	beshort		x		\b, density %dx
 >>16	beshort		x		\b%d
 >>4	beshort		x		\b, segment length %d
 # Next, show thumbnail info, if it exists:
 >>18	byte		!0		\b, thumbnail %dx
 >>>19	byte		x		\b%d
->6	string		Exif		\b, Exif standard: [|2653
+>6	string		Exif		\b, Exif standard: [|2645
 >>12	indirect/r	x
->>12	string		x		\b]|2653
+>>12	string		x		\b]|2645
 
 # Jump to the first segment
 >(4.S+4)	use		jpeg_segment
@@ -95,32 +95,32 @@
 #>>(2.S+2)	use			jpeg_segment
 
 # HSI is Handmade Software's proprietary JPEG encoding scheme
-0	string		hsi1		JPEG image data, HSI proprietary|2654
+0	string		hsi1		JPEG image data, HSI proprietary|2646
 
 # From: David Santinoli <david@santinoli.com>
-0	string		\x00\x00\x00\x0C\x6A\x50\x20\x20\x0D\x0A\x87\x0A	JPEG 2000|2655
+0	string		\x00\x00\x00\x0C\x6A\x50\x20\x20\x0D\x0A\x87\x0A	JPEG 2000|2647
 # From: Johan van der Knijff <johan.vanderknijff@kb.nl>
 # Added sub-entries for JP2, JPX, JPM and MJ2 formats; added mimetypes
 # https://github.com/bitsgalore/jp2kMagic
 #
 # Now read value of 'Brand' field, which yields a few possibilities:
->20	string		\x6a\x70\x32\x20	Part 1 (JP2)|2656
+>20	string		\x6a\x70\x32\x20	Part 1 (JP2)|2648
 !:mime	image/jp2
->20	string		\x6a\x70\x78\x20	Part 2 (JPX)|2657
+>20	string		\x6a\x70\x78\x20	Part 2 (JPX)|2649
 !:mime	image/jpx
->20	string		\x6a\x70\x6d\x20	Part 6 (JPM)|2658
+>20	string		\x6a\x70\x6d\x20	Part 6 (JPM)|2650
 !:mime	image/jpm
->20	string		\x6d\x6a\x70\x32	Part 3 (MJ2)|2659
+>20	string		\x6d\x6a\x70\x32	Part 3 (MJ2)|2651
 !:mime	video/mj2
 
 # Type: JPEG 2000 codesream
 # From: Mathieu Malaterre <mathieu.malaterre@gmail.com>
-0	belong		0xff4fff51						JPEG 2000 codestream|2660
+0	belong		0xff4fff51						JPEG 2000 codestream|2652
 45	beshort		0xff52
 
 # JPEG extended range
 0	string		\x49\x49\xbc
 >3	byte		1
->>4	lelong%2	0	JPEG-XR|2661
+>>4	lelong%2	0	JPEG-XR|2653
 !:mime	image/jxr
 !:ext	jxr

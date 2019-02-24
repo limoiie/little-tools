@@ -8,4 +8,4 @@
 # From: Markus Heidelberg <markus.heidelberg@web.de>
 0	belong&0xfffffff0	0
 >4	beshort			0x0A09
->>6	string			OSMHeader	OpenStreetMap Protocolbuffer Binary Format|3442
+>>6	string			OSMHeader	OpenStreetMap Protocolbuffer Binary Format|3433

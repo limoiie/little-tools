@@ -5,9 +5,9 @@
 # http://www.gnu.org/s/guile/
 # http://git.savannah.gnu.org/gitweb/?p=guile.git;f=libguile/_scm.h;hb=HEAD#l250
 
-0	string	GOOF----	Guile Object|2246
->8	string	LE		\b, little endian|2247
->8	string	BE		\b, big endian|2248
+0	string	GOOF----	Guile Object|2241
+>8	string	LE		\b, little endian|2242
+>8	string	BE		\b, big endian|2243
 >11	string	4		\b, 32bit
 >11	string	8		\b, 64bit
 >13	regex	.\..		\b, bytecode v%s

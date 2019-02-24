@@ -3,15 +3,15 @@
 # $File: revision,v 1.10 2017/10/19 16:40:37 christos Exp $
 # file(1) magic for revision control files
 # From Hendrik Scholz <hendrik@scholz.net>
-0	string/t	/1\ :pserver:	cvs password text file|3618
+0	string/t	/1\ :pserver:	cvs password text file|3608
 
 # Conary changesets
 # From: Jonathan Smith <smithj@rpath.com>
-0	belong	0xea3f81bb	Conary changeset data|3619
+0	belong	0xea3f81bb	Conary changeset data|3609
 
 # Type: Git bundles (git-bundle)
 # From: Josh Triplett <josh@freedesktop.org>
-0	string	#\ v2\ git\ bundle\n	Git bundle|3620
+0	string	#\ v2\ git\ bundle\n	Git bundle|3610
 
 # Type: Git pack
 # From: Adam Buchbinder <adam.buchbinder@gmail.com>
@@ -30,37 +30,37 @@
 # or SystemDevice::foobar
 >>9	search/13 ::
 # but in git binary
->>9	default	x	Git pack|3621
+>>9	default	x	Git pack|3611
 !:mime	application/x-git
 !:ext	pack
 # 4 GB limit implies unsigned integer
->>>4	ubelong	x		\b, version %u|3621
->>>8	ubelong	x		\b, %u objects|3621
+>>>4	ubelong	x		\b, version %u|3611
+>>>8	ubelong	x		\b, %u objects|3611
 
 # Type: Git pack index
 # From: Adam Buchbinder <adam.buchbinder@gmail.com>
-0	string	\377tOc		Git pack index|3622
->4	belong	=2		\b, version 2|3623
+0	string	\377tOc		Git pack index|3612
+>4	belong	=2		\b, version 2|3613
 
 # Type: Git index file
 # From: Frederic Briare <fbriere@fbriere.net>
-0	string	DIRC		Git index|3624
->4	belong	>0		\b, version %d|3624
->>8	belong	>0		\b, %d entries|3624
+0	string	DIRC		Git index|3614
+>4	belong	>0		\b, version %d|3614
+>>8	belong	>0		\b, %d entries|3614
 
 # Type:	Mercurial bundles
 # From:	Seo Sanghyeon <tinuviel@sparcs.kaist.ac.kr>
-0	string	HG10		Mercurial bundle,|3625
->4	string	UN		uncompressed|3626
->4	string	BZ		bzip2 compressed|3627
+0	string	HG10		Mercurial bundle,|3615
+>4	string	UN		uncompressed|3616
+>4	string	BZ		bzip2 compressed|3617
 
 # Type:	Subversion (SVN) dumps
 # From:	Uwe Zeisberger <zeisberg@informatik.uni-freiburg.de>
-0	string	SVN-fs-dump-format-version:	Subversion dumpfile|3628
->28	string	>\0				(version: %s)|3628
+0	string	SVN-fs-dump-format-version:	Subversion dumpfile|3618
+>28	string	>\0				(version: %s)|3618
 
 # Type:	Bazaar revision bundles and merge requests
 # URL:	http://www.bazaar-vcs.org/
 # From:	Jelmer Vernooij <jelmer@samba.org>
-0	string	#\ Bazaar\ revision\ bundle\ v Bazaar Bundle|3629
-0	string	#\ Bazaar\ merge\ directive\ format Bazaar merge directive|3630
+0	string	#\ Bazaar\ revision\ bundle\ v Bazaar Bundle|3619
+0	string	#\ Bazaar\ merge\ directive\ format Bazaar merge directive|3620

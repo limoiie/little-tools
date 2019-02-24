@@ -5,17 +5,17 @@
 # URL:  http://llvm.org/docs/BitCodeFormat.html
 # From: Al Stone <ahs3@fc.hp.com>
 
-0	string	llvm	LLVM byte-codes, uncompressed|2789
-0	string	llvc0	LLVM byte-codes, null compression|2790
-0	string	llvc1	LLVM byte-codes, gzip compression|2791
-0	string	llvc2	LLVM byte-codes, bzip2 compression|2792
+0	string	llvm	LLVM byte-codes, uncompressed|2781
+0	string	llvc0	LLVM byte-codes, null compression|2782
+0	string	llvc1	LLVM byte-codes, gzip compression|2783
+0	string	llvc2	LLVM byte-codes, bzip2 compression|2784
 
-0	lelong	0x0b17c0de	LLVM bitcode, wrapper|2793
+0	lelong	0x0b17c0de	LLVM bitcode, wrapper|2785
 # Are these Mach-O ABI values?  They appear to be.
->16	lelong	0x01000007	x86_64|2794
->16	lelong	0x00000007	i386|2795
->16	lelong	0x00000012	ppc|2796
->16	lelong	0x01000012	ppc64|2797
->16	lelong 	0x0000000c	arm|2798
+>16	lelong	0x01000007	x86_64|2786
+>16	lelong	0x00000007	i386|2787
+>16	lelong	0x00000012	ppc|2788
+>16	lelong	0x01000012	ppc64|2789
+>16	lelong 	0x0000000c	arm|2790
 
-0	string	BC\xc0\xde	LLVM IR bitcode|2799
+0	string	BC\xc0\xde	LLVM IR bitcode|2791

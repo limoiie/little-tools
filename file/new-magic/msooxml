@@ -13,11 +13,11 @@
 #   which can distinguish between the three types
 
 0		name		msooxml
->0		string		word/		Microsoft Word 2007+|3172
+>0		string		word/		Microsoft Word 2007+|3164
 !:mime application/vnd.openxmlformats-officedocument.wordprocessingml.document
->0		string		ppt/		Microsoft PowerPoint 2007+|3173
+>0		string		ppt/		Microsoft PowerPoint 2007+|3165
 !:mime application/vnd.openxmlformats-officedocument.presentationml.presentation
->0		string		xl/		Microsoft Excel 2007+|3174
+>0		string		xl/		Microsoft Excel 2007+|3166
 !:mime application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 # start by checking for ZIP local file header signature
@@ -41,5 +41,5 @@
 # OpenOffice/Libreoffice orders ZIP entry differently, so check the 4th file
 >>>>>&26	search/6000	PK\003\004
 >>>>>>&26	use		msooxml	
->>>>>>&26	default		x		Microsoft OOXML|3175
->>>>>&26	default		x		Microsoft OOXML|3175
+>>>>>>&26	default		x		Microsoft OOXML|3167
+>>>>>&26	default		x		Microsoft OOXML|3167

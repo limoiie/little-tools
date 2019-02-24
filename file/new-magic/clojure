@@ -3,28 +3,28 @@
 # URL:  https://clojure.org/
 # From: Jason Felice <jason.m.felice@gmail.com>
 
-0	string/w	#!\ /usr/bin/clj	Clojure script text executable|1233
+0	string/w	#!\ /usr/bin/clj	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/w	#!\ /usr/local/bin/clj	Clojure script text executable|1233
+0	string/w	#!\ /usr/local/bin/clj	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/w	#!\ /usr/bin/clojure	Clojure script text executable|1233
+0	string/w	#!\ /usr/bin/clojure	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/w	#!\ /usr/local/bin/clojure	Clojure script text executable|1233
+0	string/w	#!\ /usr/local/bin/clojure	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/W	#!/usr/bin/env\ clj	Clojure script text executable|1233
+0	string/W	#!/usr/bin/env\ clj	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/W	#!/usr/bin/env\ clojure	Clojure script text executable|1233
+0	string/W	#!/usr/bin/env\ clojure	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/W	#!\ /usr/bin/env\ clj	Clojure script text executable|1233
+0	string/W	#!\ /usr/bin/env\ clj	Clojure script text executable|1231
 !:mime	text/x-clojure
-0	string/W	#!\ /usr/bin/env\ clojure	Clojure script text executable|1233
-!:mime	text/x-clojure
-
-0	regex	\^\\\(ns[[:space:]]+[a-z]	Clojure module source text|1234
+0	string/W	#!\ /usr/bin/env\ clojure	Clojure script text executable|1231
 !:mime	text/x-clojure
 
-0	regex	\^\\\(ns[[:space:]]+\\\^\\{:	Clojure module source text|1234
+0	regex	\^\\\(ns[[:space:]]+[a-z]	Clojure module source text|1232
 !:mime	text/x-clojure
 
-0	regex	\^\\\(defn-?[[:space:]]	Clojure module source text|1234
+0	regex	\^\\\(ns[[:space:]]+\\\^\\{:	Clojure module source text|1232
+!:mime	text/x-clojure
+
+0	regex	\^\\\(defn-?[[:space:]]	Clojure module source text|1232
 !:mime	text/x-clojure

@@ -300,11 +300,11 @@
 >20	lelong		0		invalid version
 >20	lelong		1		version 1
 
-0	string		\177ELF		ELF|1620
+0	string		\177ELF		ELF|1618
 !:strength *2
->4	byte		0		invalid class|1621
->4	byte		1		32-bit|1622
->4	byte		2		64-bit|1623
+>4	byte		0		invalid class|1619
+>4	byte		1		32-bit|1620
+>4	byte		2		64-bit|1621
 >5	byte		0		invalid byte order
 >5	byte		1		LSB
 >>0	use		elf-le

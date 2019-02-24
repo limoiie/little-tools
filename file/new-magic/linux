@@ -13,78 +13,78 @@
 # >0	leshort		0413		demand-paged executable (ZMAGIC)
 # >0	leshort		0314		demand-paged executable (QMAGIC)
 #
-0	lelong		0x00640107	Linux/i386 impure executable (OMAGIC)|2691
->16	lelong		0		\b, stripped|2692
-0	lelong		0x00640108	Linux/i386 pure executable (NMAGIC)|2693
->16	lelong		0		\b, stripped|2694
-0	lelong		0x0064010b	Linux/i386 demand-paged executable (ZMAGIC)|2695
->16	lelong		0		\b, stripped|2696
-0	lelong		0x006400cc	Linux/i386 demand-paged executable (QMAGIC)|2697
->16	lelong		0		\b, stripped|2698
+0	lelong		0x00640107	Linux/i386 impure executable (OMAGIC)|2683
+>16	lelong		0		\b, stripped|2684
+0	lelong		0x00640108	Linux/i386 pure executable (NMAGIC)|2685
+>16	lelong		0		\b, stripped|2686
+0	lelong		0x0064010b	Linux/i386 demand-paged executable (ZMAGIC)|2687
+>16	lelong		0		\b, stripped|2688
+0	lelong		0x006400cc	Linux/i386 demand-paged executable (QMAGIC)|2689
+>16	lelong		0		\b, stripped|2690
 #
-0	string		\007\001\000	Linux/i386 object file|2699
->20	lelong		>0x1020		\b, DLL library|2700
+0	string		\007\001\000	Linux/i386 object file|2691
+>20	lelong		>0x1020		\b, DLL library|2692
 # Linux-8086 stuff:
-0	string		\01\03\020\04	Linux-8086 impure executable|2701
->28	long		!0		not stripped|2702
-0	string		\01\03\040\04	Linux-8086 executable|2703
->28	long		!0		not stripped|2704
+0	string		\01\03\020\04	Linux-8086 impure executable|2693
+>28	long		!0		not stripped|2694
+0	string		\01\03\040\04	Linux-8086 executable|2695
+>28	long		!0		not stripped|2696
 #
-0	string		\243\206\001\0	Linux-8086 object file|2705
+0	string		\243\206\001\0	Linux-8086 object file|2697
 #
-0	string		\01\03\020\20	Minix-386 impure executable|2706
->28	long		!0		not stripped|2707
-0	string		\01\03\040\20	Minix-386 executable|2708
->28	long		!0		not stripped|2709
-0	string		\01\03\04\20	Minix-386 NSYM/GNU executable|2710
->28	long		!0		not stripped|2711
+0	string		\01\03\020\20	Minix-386 impure executable|2698
+>28	long		!0		not stripped|2699
+0	string		\01\03\040\20	Minix-386 executable|2700
+>28	long		!0		not stripped|2701
+0	string		\01\03\04\20	Minix-386 NSYM/GNU executable|2702
+>28	long		!0		not stripped|2703
 # core dump file, from Bill Reynolds <bill@goshawk.lanl.gov>
-216	lelong		0421		Linux/i386 core file|2712
+216	lelong		0421		Linux/i386 core file|2704
 !:strength / 2
->220	string		>\0		of '%s'|2712
->200	lelong		>0		(signal %d)|2712
+>220	string		>\0		of '%s'|2704
+>200	lelong		>0		(signal %d)|2704
 #
 # LILO boot/chain loaders, from Daniel Quinlan <quinlan@yggdrasil.com>
 # this can be overridden by the DOS executable (COM) entry
-2	string		LILO		Linux/i386 LILO boot/chain loader|2713
+2	string		LILO		Linux/i386 LILO boot/chain loader|2705
 #
 # Linux make config build file, from Ole Aamot <oka@oka.no>
 # Updated by Ken Sharp
-28	string		make\ config		Linux make config build file (old)|2714
-49	search/70	Kernel\ Configuration	Linux make config build file|2715
+28	string		make\ config		Linux make config build file (old)|2706
+49	search/70	Kernel\ Configuration	Linux make config build file|2707
 
 #
 # PSF fonts, from H. Peter Anvin <hpa@yggdrasil.com>
 # Updated by Adam Buchbinder <adam.buchbinder@gmail.com>
 # See: http://www.win.tue.nl/~aeb/linux/kbd/font-formats-1.html
-0	leshort		0x0436		Linux/i386 PC Screen Font v1 data,|2716
->2	byte&0x01	0		256 characters,|2717
->2	byte&0x01	!0		512 characters,|2718
+0	leshort		0x0436		Linux/i386 PC Screen Font v1 data,|2708
+>2	byte&0x01	0		256 characters,|2709
+>2	byte&0x01	!0		512 characters,|2710
 >2	byte&0x02	0		no directory,
 >2	byte&0x02	!0		Unicode directory,
 >3	byte		>0		8x%d
-0	string		\x72\xb5\x4a\x86\x00\x00 Linux/i386 PC Screen Font v2 data,|2719
->16	lelong		x		%d characters,|2720
->12	lelong&0x01	0		no directory,|2721
->12	lelong&0x01	!0		Unicode directory,|2722
+0	string		\x72\xb5\x4a\x86\x00\x00 Linux/i386 PC Screen Font v2 data,|2711
+>16	lelong		x		%d characters,|2712
+>12	lelong&0x01	0		no directory,|2713
+>12	lelong&0x01	!0		Unicode directory,|2714
 >24	lelong		x		%d
 >28	lelong		x		\bx%d
 
 # Linux swap file, from Daniel Quinlan <quinlan@yggdrasil.com>
-4086	string		SWAP-SPACE	Linux/i386 swap file|2723
+4086	string		SWAP-SPACE	Linux/i386 swap file|2715
 # From: Jeff Bailey <jbailey@ubuntu.com>
 # Linux swap file with swsusp1 image, from Jeff Bailey <jbailey@ubuntu.com>
-4076	string		SWAPSPACE2S1SUSPEND	Linux/i386 swap file (new style) with SWSUSP1 image|2724
+4076	string		SWAPSPACE2S1SUSPEND	Linux/i386 swap file (new style) with SWSUSP1 image|2716
 # From: James Hunt <james.hunt@ubuntu.com>
-4076    string          SWAPSPACE2LINHIB0001    Linux/i386 swap file (new style) (compressed hibernate)|2725
+4076    string          SWAPSPACE2LINHIB0001    Linux/i386 swap file (new style) (compressed hibernate)|2717
 # according to man page of mkswap (8) March 1999
 # volume label and UUID Russell Coker
 # http://etbe.coker.com.au/2008/07/08/label-vs-uuid-vs-device/
-4086	string		SWAPSPACE2	Linux/i386 swap file (new style),|2726
->0x400	long		x		version %d (4K pages),|2726
->0x404	long		x		size %d pages,|2726
->1052	string		\0		no label,|2727
->1052	string		>\0		LABEL=%s,|2726
+4086	string		SWAPSPACE2	Linux/i386 swap file (new style),|2718
+>0x400	long		x		version %d (4K pages),|2718
+>0x404	long		x		size %d pages,|2718
+>1052	string		\0		no label,|2719
+>1052	string		>\0		LABEL=%s,|2718
 >0x40c	belong		x		UUID=%08x
 >0x410	beshort		x		\b-%04x
 >0x412	beshort		x		\b-%04x
@@ -93,128 +93,128 @@
 >0x41a	beshort		x		\b%04x
 # From Daniel Novotny <dnovotny@redhat.com>
 # swap file for PowerPC
-65526	string		SWAPSPACE2	Linux/ppc swap file|2728
->0x400	long		x		version %d,|2728
->0x404	long		x		size %d pages,|2728
->1052	string		\0		no label,|2729
->1052	string		>\0		LABEL=%s,|2728
+65526	string		SWAPSPACE2	Linux/ppc swap file|2720
+>0x400	long		x		version %d,|2720
+>0x404	long		x		size %d pages,|2720
+>1052	string		\0		no label,|2721
+>1052	string		>\0		LABEL=%s,|2720
 >0x40c	belong		x		UUID=%08x
 >0x410	beshort		x		\b-%04x
 >0x412	beshort		x		\b-%04x
 >0x414	beshort		x		\b-%04x
 >0x416	belong		x		\b-%08x
 >0x41a	beshort		x		\b%04x
-16374	string		SWAPSPACE2	Linux/ia64 swap file|2730
+16374	string		SWAPSPACE2	Linux/ia64 swap file|2722
 #
 # Linux kernel boot images, from Albert Cahalan <acahalan@cs.uml.edu>
 # and others such as Axel Kohlmeyer <akohlmey@rincewind.chemie.uni-ulm.de>
 # and Nicolas Lichtmaier <nick@debian.org>
 # All known start with: b8 c0 07 8e d8 b8 00 90 8e c0 b9 00 01 29 f6 29
 # Linux kernel boot images (i386 arch) (Wolfram Kleff)
-514	string		HdrS		Linux kernel|2731
+514	string		HdrS		Linux kernel|2723
 !:strength + 55
->510	leshort		0xAA55		x86 boot executable|2732
+>510	leshort		0xAA55		x86 boot executable|2724
 >>518	leshort		>0x1ff
->>>529	byte		0		zImage,|2732
->>>529	byte		1		bzImage,|2732
+>>>529	byte		0		zImage,|2724
+>>>529	byte		1		bzImage,|2724
 >>>526	lelong		>0
->>>>(526.s+0x200) string	>\0	version %s,|2732
->>498	leshort		1		RO-rootFS,|2732
->>498	leshort		0		RW-rootFS,|2732
->>508	leshort		>0		root_dev 0x%X,|2732
->>502	leshort		>0		swap_dev 0x%X,|2732
->>504	leshort		>0		RAMdisksize %u KB,|2732
->>506	leshort		0xFFFF		Normal VGA|2732
->>506	leshort		0xFFFE		Extended VGA|2732
->>506	leshort		0xFFFD		Prompt for Videomode|2732
->>506	leshort		>0		Video mode %d|2732
+>>>>(526.s+0x200) string	>\0	version %s,|2724
+>>498	leshort		1		RO-rootFS,|2724
+>>498	leshort		0		RW-rootFS,|2724
+>>508	leshort		>0		root_dev 0x%X,|2724
+>>502	leshort		>0		swap_dev 0x%X,|2724
+>>504	leshort		>0		RAMdisksize %u KB,|2724
+>>506	leshort		0xFFFF		Normal VGA|2724
+>>506	leshort		0xFFFE		Extended VGA|2724
+>>506	leshort		0xFFFD		Prompt for Videomode|2724
+>>506	leshort		>0		Video mode %d|2724
 # This also matches new kernels, which were caught above by "HdrS".
-0		belong	0xb8c0078e	Linux kernel|2731
->0x1e3		string	Loading		version 1.3.79 or older|2731
->0x1e9		string	Loading		from prehistoric times|2731
+0		belong	0xb8c0078e	Linux kernel|2723
+>0x1e3		string	Loading		version 1.3.79 or older|2723
+>0x1e9		string	Loading		from prehistoric times|2723
 
 # System.map files - Nicolas Lichtmaier <nick@debian.org>
-8	search/1	\ A\ _text	Linux kernel symbol map text|2733
+8	search/1	\ A\ _text	Linux kernel symbol map text|2725
 
 # LSM entries - Nicolas Lichtmaier <nick@debian.org>
-0	search/1	Begin3	Linux Software Map entry text|2734
-0	search/1	Begin4	Linux Software Map entry text (new format)|2735
+0	search/1	Begin3	Linux Software Map entry text|2726
+0	search/1	Begin4	Linux Software Map entry text (new format)|2727
 
 # From Matt Zimmerman, enhanced for v3 by Matthew Palmer
-0	belong	0x4f4f4f4d	User-mode Linux COW file|2736
->4	belong	<3		\b, version %d|2736
->>8	string	>\0		\b, backing file %s|2736
->4	belong	>2		\b, version %d|2736
->>32	string	>\0		\b, backing file %s|2736
+0	belong	0x4f4f4f4d	User-mode Linux COW file|2728
+>4	belong	<3		\b, version %d|2728
+>>8	string	>\0		\b, backing file %s|2728
+>4	belong	>2		\b, version %d|2728
+>>32	string	>\0		\b, backing file %s|2728
 
 ############################################################################
 # Linux kernel versions
 
-0		string		\xb8\xc0\x07\x8e\xd8\xb8\x00\x90	Linux|1748
->497		leshort		0		x86 boot sector|2737
->>514		belong		0x8e	of a kernel from the dawn of time!|2738
->>514		belong		0x908ed8b4	version 0.99-1.1.42|2739
->>514		belong		0x908ed8b8	for memtest86|2740
+0		string		\xb8\xc0\x07\x8e\xd8\xb8\x00\x90	Linux|1746
+>497		leshort		0		x86 boot sector|2729
+>>514		belong		0x8e	of a kernel from the dawn of time!|2730
+>>514		belong		0x908ed8b4	version 0.99-1.1.42|2731
+>>514		belong		0x908ed8b8	for memtest86|2732
 
->497		leshort		!0		x86 kernel|2741
->>504		leshort		>0		RAMdisksize=%u KB|2741
->>502		leshort		>0		swap=0x%X|2741
->>508		leshort		>0		root=0x%X|2741
->>>498		leshort		1		\b-ro|2741
->>>498		leshort		0		\b-rw|2741
->>506		leshort		0xFFFF		vga=normal|2741
->>506		leshort		0xFFFE		vga=extended|2741
->>506		leshort		0xFFFD		vga=ask|2741
->>506		leshort		>0		vga=%d|2741
->>514		belong		0x908ed881	version 1.1.43-1.1.45|2741
+>497		leshort		!0		x86 kernel|2733
+>>504		leshort		>0		RAMdisksize=%u KB|2733
+>>502		leshort		>0		swap=0x%X|2733
+>>508		leshort		>0		root=0x%X|2733
+>>>498		leshort		1		\b-ro|2733
+>>>498		leshort		0		\b-rw|2733
+>>506		leshort		0xFFFF		vga=normal|2733
+>>506		leshort		0xFFFE		vga=extended|2733
+>>506		leshort		0xFFFD		vga=ask|2733
+>>506		leshort		>0		vga=%d|2733
+>>514		belong		0x908ed881	version 1.1.43-1.1.45|2733
 >>514		belong		0x15b281cd
->>>0xa8e	belong		0x55AA5a5a	version 1.1.46-1.2.13,1.3.0|2741
->>>0xa99	belong		0x55AA5a5a	version 1.3.1,2|2741
->>>0xaa3	belong		0x55AA5a5a	version 1.3.3-1.3.30|2741
->>>0xaa6	belong		0x55AA5a5a	version 1.3.31-1.3.41|2741
->>>0xb2b	belong		0x55AA5a5a	version 1.3.42-1.3.45|2741
->>>0xaf7	belong		0x55AA5a5a	version 1.3.46-1.3.72|2741
+>>>0xa8e	belong		0x55AA5a5a	version 1.1.46-1.2.13,1.3.0|2733
+>>>0xa99	belong		0x55AA5a5a	version 1.3.1,2|2733
+>>>0xaa3	belong		0x55AA5a5a	version 1.3.3-1.3.30|2733
+>>>0xaa6	belong		0x55AA5a5a	version 1.3.31-1.3.41|2733
+>>>0xb2b	belong		0x55AA5a5a	version 1.3.42-1.3.45|2733
+>>>0xaf7	belong		0x55AA5a5a	version 1.3.46-1.3.72|2733
 >>514		string		HdrS
 >>>518		leshort		>0x1FF
->>>>529		byte		0		\b, zImage|2741
->>>>529		byte		1		\b, bzImage|2741
->>>>(526.s+0x200) string 	>\0		\b, version %s|2741
+>>>>529		byte		0		\b, zImage|2733
+>>>>529		byte		1		\b, bzImage|2733
+>>>>(526.s+0x200) string 	>\0		\b, version %s|2733
 
 # Linux boot sector thefts.
-0		belong		0xb8c0078e	Linux|1748
->0x1e6		belong		0x454c4b53	ELKS Kernel|2742
->0x1e6		belong		!0x454c4b53	style boot sector|2743
+0		belong		0xb8c0078e	Linux|1746
+>0x1e6		belong		0x454c4b53	ELKS Kernel|2734
+>0x1e6		belong		!0x454c4b53	style boot sector|2735
 
 ############################################################################
 # Linux S390 kernel image
 # Created by: Jan Kaluza <jkaluza@redhat.com>
-8 string \x02\x00\x00\x18\x60\x00\x00\x50\x02\x00\x00\x68\x60\x00\x00\x50\x40\x40\x40\x40\x40\x40\x40\x40 Linux S390|2744
+8 string \x02\x00\x00\x18\x60\x00\x00\x50\x02\x00\x00\x68\x60\x00\x00\x50\x40\x40\x40\x40\x40\x40\x40\x40 Linux S390|2736
 >0x00010000 search/b/4096 \x00\x0a\x00\x00\x8b\xad\xcc\xcc
 # 64bit
->>&0 string \xc1\x00\xef\xe3\xf0\x68\x00\x00 Z10 64bit kernel|2745
->>&0 string \xc1\x00\xef\xc3\x00\x00\x00\x00 Z9-109 64bit kernel|2746
->>&0 string \xc0\x00\x20\x00\x00\x00\x00\x00 Z990 64bit kernel|2747
->>&0 string \x00\x00\x00\x00\x00\x00\x00\x00 Z900 64bit kernel|2748
+>>&0 string \xc1\x00\xef\xe3\xf0\x68\x00\x00 Z10 64bit kernel|2737
+>>&0 string \xc1\x00\xef\xc3\x00\x00\x00\x00 Z9-109 64bit kernel|2738
+>>&0 string \xc0\x00\x20\x00\x00\x00\x00\x00 Z990 64bit kernel|2739
+>>&0 string \x00\x00\x00\x00\x00\x00\x00\x00 Z900 64bit kernel|2740
 # 32bit
->>&0 string \x81\x00\xc8\x80\x00\x00\x00\x00 Z10 32bit kernel|2749
+>>&0 string \x81\x00\xc8\x80\x00\x00\x00\x00 Z10 32bit kernel|2741
 >>&0 string \x81\x00\xc8\x80\x00\x00\x00\x00 Z9-109 32bit kernel
 >>&0 string \x80\x00\x20\x00\x00\x00\x00\x00 Z990 32bit kernel
 >>&0 string \x80\x00\x00\x00\x00\x00\x00\x00 Z900 32bit kernel
 
 # Linux ARM compressed kernel image
 # From: Kevin Cernekee <cernekee@gmail.com>
-36	lelong	0x016f2818	Linux kernel ARM boot executable zImage (little-endian)|2750
-36	belong	0x016f2818	Linux kernel ARM boot executable zImage (big-endian)|2751
+36	lelong	0x016f2818	Linux kernel ARM boot executable zImage (little-endian)|2742
+36	belong	0x016f2818	Linux kernel ARM boot executable zImage (big-endian)|2743
 
 ############################################################################
 # Linux 8086 executable
-0	lelong&0xFF0000FF 0xC30000E9	Linux-Dev86 executable, headerless|2752
+0	lelong&0xFF0000FF 0xC30000E9	Linux-Dev86 executable, headerless|2744
 >5	string		.
->>4	string		>\0		\b, libc version %s|2752
+>>4	string		>\0		\b, libc version %s|2744
 
-0	lelong&0xFF00FFFF 0x4000301	Linux-8086 executable|2703
->2	byte&0x01	!0		\b, unmapped zero page|2753
->2	byte&0x20	0		\b, impure|2754
+0	lelong&0xFF00FFFF 0x4000301	Linux-8086 executable|2695
+>2	byte&0x01	!0		\b, unmapped zero page|2745
+>2	byte&0x20	0		\b, impure|2746
 >2	byte&0x20	!0
 >>2	byte&0x10	!0		\b, A_EXEC
 >2	byte&0x02	!0		\b, A_PAL
@@ -234,22 +234,22 @@
 # SYSLINUX boot logo files (from 'ppmtolss16' sources)
 # http://www.syslinux.org/wiki/index.php/SYSLINUX#Display_graphic_from_filename:
 # file extension .lss .16
-0	lelong	=0x1413f33d		SYSLINUX' LSS16 image data|2755
+0	lelong	=0x1413f33d		SYSLINUX' LSS16 image data|2747
 # syslinux-4.05/mime/image/x-lss16.xml
 !:mime image/x-lss16
->4	leshort	x			\b, width %d|2755
->6	leshort	x			\b, height %d|2755
+>4	leshort	x			\b, width %d|2747
+>6	leshort	x			\b, height %d|2747
 
-0	string	OOOM			User-Mode-Linux's Copy-On-Write disk image|2756
->4	belong	x			version %d|2756
+0	string	OOOM			User-Mode-Linux's Copy-On-Write disk image|2748
+>4	belong	x			version %d|2748
 
 # SE Linux policy database
 # From: Mike Frysinger <vapier@gentoo.org>
-0	lelong	0xf97cff8c		SE Linux policy|1487
->16	lelong	x			v%d|1487
->20	lelong	1			MLS|1487
->24	lelong	x			%d symbols|1487
->28	lelong	x			%d ocons|1487
+0	lelong	0xf97cff8c		SE Linux policy|1485
+>16	lelong	x			v%d|1485
+>20	lelong	1			MLS|1485
+>24	lelong	x			%d symbols|1485
+>28	lelong	x			%d ocons|1485
 
 # Linux Logical Volume Manager (LVM)
 # Emmanuel VARAGNAT <emmanuel.varagnat@guzu.net>
@@ -259,11 +259,11 @@
 #
 # LVM1
 #
-0x0	string	HM\001		LVM1 (Linux Logical Volume Manager), version 1|2757
->0x12c	string	>\0		, System ID: %s|2757
+0x0	string	HM\001		LVM1 (Linux Logical Volume Manager), version 1|2749
+>0x12c	string	>\0		, System ID: %s|2749
 
-0x0	string	HM\002		LVM1 (Linux Logical Volume Manager), version 2|2758
->0x12c	string	>\0		, System ID: %s|2758
+0x0	string	HM\002		LVM1 (Linux Logical Volume Manager), version 2|2750
+>0x12c	string	>\0		, System ID: %s|2750
 
 #  LVM2
 #
@@ -272,93 +272,93 @@
 #
 # 0x200 seems to be the common case
 
-0x218           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2759
+0x218           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2751
 # read the offset to add to the start of the header, and the header
 # start in 0x200
 >&(&-12.l-0x21) byte    x
 # display UUID in LVM format + display all 32 bytes (instead of max string length: 31)
->>&0x0          string  >\x2f          \b, UUID: %.6s|2759
->>&0x6          string  >\x2f          \b-%.4s|2759
->>&0xa          string  >\x2f          \b-%.4s|2759
->>&0xe          string  >\x2f          \b-%.4s|2759
->>&0x12         string  >\x2f          \b-%.4s|2759
->>&0x16         string  >\x2f          \b-%.4s|2759
->>&0x1a         string  >\x2f          \b-%.6s|2759
->>&0x20         lequad  x              \b, size: %lld|2759
+>>&0x0          string  >\x2f          \b, UUID: %.6s|2751
+>>&0x6          string  >\x2f          \b-%.4s|2751
+>>&0xa          string  >\x2f          \b-%.4s|2751
+>>&0xe          string  >\x2f          \b-%.4s|2751
+>>&0x12         string  >\x2f          \b-%.4s|2751
+>>&0x16         string  >\x2f          \b-%.4s|2751
+>>&0x1a         string  >\x2f          \b-%.6s|2751
+>>&0x20         lequad  x              \b, size: %lld|2751
 
-0x018           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2759
+0x018           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2751
 >&(&-12.l-0x21) byte    x
 # display UUID in LVM format + display all 32 bytes (instead of max string length: 31)
->>&0x0          string  >\x2f          \b, UUID: %.6s|2759
->>&0x6          string  >\x2f          \b-%.4s|2759
->>&0xa          string  >\x2f          \b-%.4s|2759
->>&0xe          string  >\x2f          \b-%.4s|2759
->>&0x12         string  >\x2f          \b-%.4s|2759
->>&0x16         string  >\x2f          \b-%.4s|2759
->>&0x1a         string  >\x2f          \b-%.6s|2759
->>&0x20         lequad  x              \b, size: %lld|2759
+>>&0x0          string  >\x2f          \b, UUID: %.6s|2751
+>>&0x6          string  >\x2f          \b-%.4s|2751
+>>&0xa          string  >\x2f          \b-%.4s|2751
+>>&0xe          string  >\x2f          \b-%.4s|2751
+>>&0x12         string  >\x2f          \b-%.4s|2751
+>>&0x16         string  >\x2f          \b-%.4s|2751
+>>&0x1a         string  >\x2f          \b-%.6s|2751
+>>&0x20         lequad  x              \b, size: %lld|2751
 
-0x418           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2759
+0x418           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2751
 >&(&-12.l-0x21) byte    x
 # display UUID in LVM format + display all 32 bytes (instead of max string length: 31)
->>&0x0          string  >\x2f          \b, UUID: %.6s|2759
->>&0x6          string  >\x2f          \b-%.4s|2759
->>&0xa          string  >\x2f          \b-%.4s|2759
->>&0xe          string  >\x2f          \b-%.4s|2759
->>&0x12         string  >\x2f          \b-%.4s|2759
->>&0x16         string  >\x2f          \b-%.4s|2759
->>&0x1a         string  >\x2f          \b-%.6s|2759
->>&0x20         lequad  x              \b, size: %lld|2759
+>>&0x0          string  >\x2f          \b, UUID: %.6s|2751
+>>&0x6          string  >\x2f          \b-%.4s|2751
+>>&0xa          string  >\x2f          \b-%.4s|2751
+>>&0xe          string  >\x2f          \b-%.4s|2751
+>>&0x12         string  >\x2f          \b-%.4s|2751
+>>&0x16         string  >\x2f          \b-%.4s|2751
+>>&0x1a         string  >\x2f          \b-%.6s|2751
+>>&0x20         lequad  x              \b, size: %lld|2751
 
-0x618           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2759
+0x618           string  LVM2\ 001      LVM2 PV (Linux Logical Volume Manager)|2751
 >&(&-12.l-0x21) byte    x
 # display UUID in LVM format + display all 32 bytes (instead of max string length: 31)
->>&0x0          string  >\x2f          \b, UUID: %.6s|2759
->>&0x6          string  >\x2f          \b-%.4s|2759
->>&0xa          string  >\x2f          \b-%.4s|2759
->>&0xe          string  >\x2f          \b-%.4s|2759
->>&0x12         string  >\x2f          \b-%.4s|2759
->>&0x16         string  >\x2f          \b-%.4s|2759
->>&0x1a         string  >\x2f          \b-%.6s|2759
->>&0x20         lequad  x              \b, size: %lld|2759
+>>&0x0          string  >\x2f          \b, UUID: %.6s|2751
+>>&0x6          string  >\x2f          \b-%.4s|2751
+>>&0xa          string  >\x2f          \b-%.4s|2751
+>>&0xe          string  >\x2f          \b-%.4s|2751
+>>&0x12         string  >\x2f          \b-%.4s|2751
+>>&0x16         string  >\x2f          \b-%.4s|2751
+>>&0x1a         string  >\x2f          \b-%.6s|2751
+>>&0x20         lequad  x              \b, size: %lld|2751
 
 # LVM snapshot
 # from Jason Farrel
-0	string	SnAp	LVM Snapshot (CopyOnWrite store)|2760
->4	lelong	!0	- valid,|2761
->4	lelong	0	- invalid,|2762
+0	string	SnAp	LVM Snapshot (CopyOnWrite store)|2752
+>4	lelong	!0	- valid,|2753
+>4	lelong	0	- invalid,|2754
 >8	lelong	x	version %d,
 >12	lelong	x	chunk_size %d
 
 # SE Linux policy database
-0	lelong	0xf97cff8c		SE Linux policy|1487
->16	lelong	x			v%d|1487
->20	lelong	1			MLS|1487
->24	lelong	x			%d symbols|1487
->28	lelong	x			%d ocons|1487
+0	lelong	0xf97cff8c		SE Linux policy|1485
+>16	lelong	x			v%d|1485
+>20	lelong	1			MLS|1485
+>24	lelong	x			%d symbols|1485
+>28	lelong	x			%d ocons|1485
 
 # LUKS: Linux Unified Key Setup, On-Disk Format, http://luks.endorphin.org/spec
 # Anthon van der Neut (anthon@mnt.org)
-0	string	LUKS\xba\xbe	LUKS encrypted file,|2763
->6	beshort x		ver %d|2763
->8	string	x		[%s,|2763
->40	string	x		%s,|2763
->72	string	x		%s]|2763
->168	string	x		UUID: %s|2763
+0	string	LUKS\xba\xbe	LUKS encrypted file,|2755
+>6	beshort x		ver %d|2755
+>8	string	x		[%s,|2755
+>40	string	x		%s,|2755
+>72	string	x		%s]|2755
+>168	string	x		UUID: %s|2755
 
 
 # Summary: Xen saved domain file
 # Created by: Radek Vokal <rvokal@redhat.com>
-0	string		LinuxGuestRecord	Xen saved domain|2764
+0	string		LinuxGuestRecord	Xen saved domain|2756
 >20	search/256	(name
->>&1	string		x			(name %s)|2764
+>>&1	string		x			(name %s)|2756
 
 # Type: Xen, the virtual machine monitor
 # From: Radek Vokal <rvokal@redhat.com>
-0	string		LinuxGuestRecord	Xen saved domain|2764
+0	string		LinuxGuestRecord	Xen saved domain|2756
 #>2	regex		\(name\ [^)]*\)		%s
->20	search/256	(name			(name|2765
->>&1	string		x			%s...)|2765
+>20	search/256	(name			(name|2757
+>>&1	string		x			%s...)|2757
 
 # Systemd journald files
 # See http://www.freedesktop.org/wiki/Software/systemd/journal-files/.
@@ -374,24 +374,24 @@
 >>>>40		ubequad		>0
 >>>>>48		ubequad		>0
 >>>>>>56	ubequad		>0
->>>>>>>64	ubequad		>0	Journal file|2766
+>>>>>>>64	ubequad		>0	Journal file|2758
 !:mime application/octet-stream
 # provide more info
->>>>>>>>184	leqdate		0	empty|2766
->>>>>>>>16	ubyte		0	\b, offline|2766
->>>>>>>>16	ubyte		1	\b, online|2766
->>>>>>>>16	ubyte		2	\b, archived|2766
->>>>>>>>8	ulelong&1	1	\b, sealed|2766
->>>>>>>>12	ulelong&1	1	\b, compressed|2766
+>>>>>>>>184	leqdate		0	empty|2758
+>>>>>>>>16	ubyte		0	\b, offline|2758
+>>>>>>>>16	ubyte		1	\b, online|2758
+>>>>>>>>16	ubyte		2	\b, archived|2758
+>>>>>>>>8	ulelong&1	1	\b, sealed|2758
+>>>>>>>>12	ulelong&1	1	\b, compressed|2758
 
 # BCache backing and cache devices
 # From: Gabriel de Perthuis <g2p.code@gmail.com>
 0x1008		lequad		8
->0x1018		string		\xc6\x85\x73\xf6\x4e\x1a\x45\xca\x82\x65\xf5\x7f\x48\xba\x6d\x81	BCache|2767
->>0x1010	ulequad		0	cache device|2768
->>0x1010	ulequad		1	backing device|2769
->>0x1010	ulequad		3	cache device|2768
->>0x1010	ulequad		4	backing device|2769
+>0x1018		string		\xc6\x85\x73\xf6\x4e\x1a\x45\xca\x82\x65\xf5\x7f\x48\xba\x6d\x81	BCache|2759
+>>0x1010	ulequad		0	cache device|2760
+>>0x1010	ulequad		1	backing device|2761
+>>0x1010	ulequad		3	cache device|2760
+>>0x1010	ulequad		4	backing device|2761
 >>0x1048	string		>0	\b, label "%.32s"
 >>0x1028	ubelong		x	\b, uuid %08x
 >>0x102c	ubeshort	x	\b-%04x
@@ -414,18 +414,18 @@
 # structure and strings must be within blob
 >&(8.L)		byte		x
 >>&(12.L)	byte		x
->>>20		belong		>1	Device Tree Blob version %d|2770
->>>>4		belong		x	\b, size=%d|2770
+>>>20		belong		>1	Device Tree Blob version %d|2762
+>>>>4		belong		x	\b, size=%d|2762
 >>>>20		belong		>1
->>>>>28		belong		x	\b, boot CPU=%d|2770
+>>>>>28		belong		x	\b, boot CPU=%d|2762
 >>>>20		belong		>2
->>>>>32		belong		x	\b, string block size=%d|2770
+>>>>>32		belong		x	\b, string block size=%d|2762
 >>>>20		belong		>16
->>>>>36		belong		x	\b, DT structure block size=%d|2770
+>>>>>36		belong		x	\b, DT structure block size=%d|2762
 
 # glibc locale archive as defined in glibc locale/locarchive.h
-0		lelong		0xde020109	locale archive|2771
->24		lelong		x		%d strings|2771
+0		lelong		0xde020109	locale archive|2763
+>24		lelong		x		%d strings|2763
 
 # Linux Software RAID (mdadm)
 # Russell Coker <russell@coker.com.au>
@@ -438,12 +438,12 @@
 >72	lelong	x		level=%d
 >92	lelong	x		disks=%d
 
-4096	lelong	0xa92b4efc	Linux Software RAID|2772
->4100	lelong	x		version 1.2 (%d)|2772
+4096	lelong	0xa92b4efc	Linux Software RAID|2764
+>4100	lelong	x		version 1.2 (%d)|2764
 >4096	use	linuxraid
 
-0	lelong	0xa92b4efc	Linux Software RAID|2772
->4	lelong	x		version 1.1 (%d)|2772
+0	lelong	0xa92b4efc	Linux Software RAID|2764
+>4	lelong	x		version 1.1 (%d)|2764
 >0	use	linuxraid
 
 # Summary:     Database file for mlocate
@@ -457,32 +457,32 @@
 # Type: mlocate database file
 # URL:  https://fedorahosted.org/mlocate/
 # From: Wander Nauta <info@wandernauta.nl>
-0		string		\0mlocate	mlocate database|2773
->12		byte		x		\b, version %d|2773
->13		byte		1		\b, require visibility|2773
->16		string		x		\b, root %s|2773
+0		string		\0mlocate	mlocate database|2765
+>12		byte		x		\b, version %d|2765
+>13		byte		1		\b, require visibility|2765
+>16		string		x		\b, root %s|2765
 
 # Dump files for iproute2 tool. Generated by the "ip r|a save" command. URL:
 # https://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2
 # From: Pavel Emelyanov <xemul@parallels.com>
-0		lelong		0x45311224	iproute2 routes dump|2774
-0		lelong		0x47361222	iproute2 addresses dump|2775
+0		lelong		0x45311224	iproute2 routes dump|2766
+0		lelong		0x47361222	iproute2 addresses dump|2767
 
 # Image and service files for CRIU tool.
 # URL: http://criu.org
 # From: Pavel Emelyanov <xemul@parallels.com>
-0		lelong		0x54564319	CRIU image file v1.1|2776
-0		lelong		0x55105940	CRIU service file|2777
-0		lelong		0x58313116	CRIU inventory|2778
+0		lelong		0x54564319	CRIU image file v1.1|2768
+0		lelong		0x55105940	CRIU service file|2769
+0		lelong		0x58313116	CRIU inventory|2770
 
 # Kdump compressed dump files
 # http://sourceforge.net/p/makedumpfile/code/ci/master/tree/IMPLEMENTATION
 
-0		string		KDUMP          	Kdump compressed dump|2779
->8		long		x		v%d|2779
->12		string		>\0		\b, system %s|2779
->77		string		>\0		\b, node %s|2779
->142		string		>\0		\b, release %s|2779
->207		string		>\0		\b, version %s|2779
->272		string		>\0		\b, machine %s|2779
->337		string		>\0		\b, domain %s|2779
+0		string		KDUMP          	Kdump compressed dump|2771
+>8		long		x		v%d|2771
+>12		string		>\0		\b, system %s|2771
+>77		string		>\0		\b, node %s|2771
+>142		string		>\0		\b, release %s|2771
+>207		string		>\0		\b, version %s|2771
+>272		string		>\0		\b, machine %s|2771
+>337		string		>\0		\b, domain %s|2771

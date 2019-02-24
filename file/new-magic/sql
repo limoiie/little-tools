@@ -8,67 +8,67 @@
 # Elan Ruusamae <glen@delfi.ee>, added MariaDB signatures
 # from https://bazaar.launchpad.net/~maria-captains/maria/5.5/view/head:/support-files/magic
 #
-0	beshort			0xfe01		MySQL table definition file|3906
->2	byte			x		Version %d|3906
->3	byte			0		\b, type UNKNOWN|3907
->3	byte			1		\b, type DIAM_ISAM|3908
->3	byte			2		\b, type HASH|3909
->3	byte			3		\b, type MISAM|3910
->3	byte			4		\b, type PISAM|3911
->3	byte			5		\b, type RMS_ISAM|3912
->3	byte			6		\b, type HEAP|3913
->3	byte			7		\b, type ISAM|3914
->3	byte			8		\b, type MRG_ISAM|3915
->3	byte			9		\b, type MYISAM|3916
->3	byte			10		\b, type MRG_MYISAM|3917
->3	byte			11		\b, type BERKELEY_DB|3918
->3	byte			12		\b, type INNODB|3919
->3	byte			13		\b, type GEMINI|3920
->3	byte			14		\b, type NDBCLUSTER|3921
->3	byte			15		\b, type EXAMPLE_DB|3922
->3	byte			16		\b, type CSV_DB|3923
->3	byte			17		\b, type FEDERATED_DB|3924
->3	byte			18		\b, type BLACKHOLE_DB|3925
->3	byte			19		\b, type PARTITION_DB|3926
->3	byte			20		\b, type BINLOG|3927
->3	byte			21		\b, type SOLID|3928
->3	byte			22		\b, type PBXT|3929
->3	byte			23		\b, type TABLE_FUNCTION|3930
->3	byte			24		\b, type MEMCACHE|3931
->3	byte			25		\b, type FALCON|3932
->3	byte			26		\b, type MARIA|3933
->3	byte			27		\b, type PERFORMANCE_SCHEMA|3934
->3	byte			127		\b, type DEFAULT|3935
+0	beshort			0xfe01		MySQL table definition file|3896
+>2	byte			x		Version %d|3896
+>3	byte			0		\b, type UNKNOWN|3897
+>3	byte			1		\b, type DIAM_ISAM|3898
+>3	byte			2		\b, type HASH|3899
+>3	byte			3		\b, type MISAM|3900
+>3	byte			4		\b, type PISAM|3901
+>3	byte			5		\b, type RMS_ISAM|3902
+>3	byte			6		\b, type HEAP|3903
+>3	byte			7		\b, type ISAM|3904
+>3	byte			8		\b, type MRG_ISAM|3905
+>3	byte			9		\b, type MYISAM|3906
+>3	byte			10		\b, type MRG_MYISAM|3907
+>3	byte			11		\b, type BERKELEY_DB|3908
+>3	byte			12		\b, type INNODB|3909
+>3	byte			13		\b, type GEMINI|3910
+>3	byte			14		\b, type NDBCLUSTER|3911
+>3	byte			15		\b, type EXAMPLE_DB|3912
+>3	byte			16		\b, type CSV_DB|3913
+>3	byte			17		\b, type FEDERATED_DB|3914
+>3	byte			18		\b, type BLACKHOLE_DB|3915
+>3	byte			19		\b, type PARTITION_DB|3916
+>3	byte			20		\b, type BINLOG|3917
+>3	byte			21		\b, type SOLID|3918
+>3	byte			22		\b, type PBXT|3919
+>3	byte			23		\b, type TABLE_FUNCTION|3920
+>3	byte			24		\b, type MEMCACHE|3921
+>3	byte			25		\b, type FALCON|3922
+>3	byte			26		\b, type MARIA|3923
+>3	byte			27		\b, type PERFORMANCE_SCHEMA|3924
+>3	byte			127		\b, type DEFAULT|3925
 >0x0033	ulong			x		\b, MySQL version %d
-0	belong&0xffffff00	0xfefe0500	MySQL ISAM index file|3936
->3	byte			x		Version %d|3936
-0	belong&0xffffff00	0xfefe0600	MySQL ISAM compressed data file|3937
->3	byte			x		Version %d|3937
-0	belong&0xffffff00	0xfefe0700	MySQL MyISAM index file|3938
->3	byte			x		Version %d|3938
->14	beshort			x		\b, %d key parts|3938
->16	beshort			x		\b, %d unique key parts|3938
->18	byte			x		\b, %d keys|3938
->28	bequad			x		\b, %lld records|3938
->36	bequad			x		\b, %lld deleted records|3938
-0	belong&0xffffff00	0xfefe0800	MySQL MyISAM compressed data file|3939
->3	byte			x		Version %d|3939
-0	belong&0xffffff00	0xfefe0900	MySQL Maria index file|3940
->3	byte			x		Version %d|3940
-0	belong&0xffffff00	0xfefe0a00	MySQL Maria compressed data file|3941
->3	byte			x		Version %d|3941
+0	belong&0xffffff00	0xfefe0500	MySQL ISAM index file|3926
+>3	byte			x		Version %d|3926
+0	belong&0xffffff00	0xfefe0600	MySQL ISAM compressed data file|3927
+>3	byte			x		Version %d|3927
+0	belong&0xffffff00	0xfefe0700	MySQL MyISAM index file|3928
+>3	byte			x		Version %d|3928
+>14	beshort			x		\b, %d key parts|3928
+>16	beshort			x		\b, %d unique key parts|3928
+>18	byte			x		\b, %d keys|3928
+>28	bequad			x		\b, %lld records|3928
+>36	bequad			x		\b, %lld deleted records|3928
+0	belong&0xffffff00	0xfefe0800	MySQL MyISAM compressed data file|3929
+>3	byte			x		Version %d|3929
+0	belong&0xffffff00	0xfefe0900	MySQL Maria index file|3930
+>3	byte			x		Version %d|3930
+0	belong&0xffffff00	0xfefe0a00	MySQL Maria compressed data file|3931
+>3	byte			x		Version %d|3931
 0	belong&0xffffff00	0xfefe0c00
->4	string			MACF		MySQL Maria control file|3942
->>3	byte			x		Version %d|3942
-0	string			\376bin	MySQL replication log,|3943
->9	long			x		server id %d|3944
+>4	string			MACF		MySQL Maria control file|3932
+>>3	byte			x		Version %d|3932
+0	string			\376bin	MySQL replication log,|3933
+>9	long			x		server id %d|3934
 >8	byte			1
->>13	long			69		\b, MySQL V3.2.3|3945
->>>19	string			x		\b, server version %s|3945
->>13	long			75		\b, MySQL V4.0.2-V4.1|3946
->>>25	string			x		\b, server version %s|3946
->8	byte			15		MySQL V5+,|3947
->>25	string			x		server version %s|3947
+>>13	long			69		\b, MySQL V3.2.3|3935
+>>>19	string			x		\b, server version %s|3935
+>>13	long			75		\b, MySQL V4.0.2-V4.1|3936
+>>>25	string			x		\b, server version %s|3936
+>8	byte			15		MySQL V5+,|3937
+>>25	string			x		server version %s|3937
 >4	string			MARIALOG	MySQL Maria transaction log file
 >>3	byte			x		Version %d
 
@@ -77,9 +77,9 @@
 # From Ken Guest <ken@linux.ie>
 # As observed from iRivNavi.iDB and unencoded firmware
 #
-0   string		iRivDB	iRiver Database file|3948
->11  string	>\0	Version %s|3948
->39  string		iHP-100	[H Series]|3948
+0   string		iRivDB	iRiver Database file|3938
+>11  string	>\0	Version %s|3938
+>39  string		iHP-100	[H Series]|3938
 
 #------------------------------------------------------------------------------
 # SQLite database files
@@ -89,14 +89,14 @@
 # from other GDBM files.
 #
 # Version 2 used this format:
-0	string	**\ This\ file\ contains\ an\ SQLite  SQLite 2.x database|3949
+0	string	**\ This\ file\ contains\ an\ SQLite  SQLite 2.x database|3939
 
 # Version 3 of SQLite allows applications to embed their own "user version"
 # number in the database at offset 60.  Later, SQLite added an "application id"
 # at offset 68 that is preferred over "user version" for indicating the
 # associated application.
 #
-0   string  SQLite\ format\ 3	SQLite 3.x database|3950
+0   string  SQLite\ format\ 3	SQLite 3.x database|3940
 !:mime	application/x-sqlite3
 # seldom found extension sqlite3 like in SyncData.sqlite3
 # db
@@ -105,37 +105,37 @@
 # "TTCONTAINER" like in tracks.sqlite contentconsumer.sqlite contentproducerrepository.sqlite
 # and with string "ZV-zlib" in like extra.sqlite
 !:ext sqlite/sqlite3/db/dbe
->60 belong  =0x5f4d544e  (Monotone source repository)|3950
->68 belong  =0x0f055112  (Fossil checkout)|3950
->68 belong  =0x0f055113  (Fossil global configuration)|3950
->68 belong  =0x0f055111  (Fossil repository)|3950
->68 belong  =0x42654462  (Bentley Systems BeSQLite Database)|3950
->68 belong  =0x42654c6e  (Bentley Systems Localization File)|3950
->68 belong  =0x47504b47  (OGC GeoPackage file)|3950
+>60 belong  =0x5f4d544e  (Monotone source repository)|3940
+>68 belong  =0x0f055112  (Fossil checkout)|3940
+>68 belong  =0x0f055113  (Fossil global configuration)|3940
+>68 belong  =0x0f055111  (Fossil repository)|3940
+>68 belong  =0x42654462  (Bentley Systems BeSQLite Database)|3940
+>68 belong  =0x42654c6e  (Bentley Systems Localization File)|3940
+>68 belong  =0x47504b47  (OGC GeoPackage file)|3940
 >68 default x
->>68 belong  !0          \b, application id %u|3950
->>60 belong  !0          \b, user version %d|3950
->96 belong  x            \b, last written using SQLite version %d|3950
+>>68 belong  !0          \b, application id %u|3940
+>>60 belong  !0          \b, user version %d|3940
+>96 belong  x            \b, last written using SQLite version %d|3940
 
 
 # SQLite Write-Ahead Log from SQLite version >= 3.7.0
 # http://www.sqlite.org/fileformat.html#walformat
-0	belong&0xfffffffe	0x377f0682	SQLite Write-Ahead Log,|3951
+0	belong&0xfffffffe	0x377f0682	SQLite Write-Ahead Log,|3941
 !:ext sqlite-wal/db-wal
->4	belong	x	version %d|3951
+>4	belong	x	version %d|3941
 
 # SQLite Rollback Journal
 # http://www.sqlite.org/fileformat.html#rollbackjournal
-0	string	\xd9\xd5\x05\xf9\x20\xa1\x63\xd7	SQLite Rollback Journal|3952
+0	string	\xd9\xd5\x05\xf9\x20\xa1\x63\xd7	SQLite Rollback Journal|3942
 
 # Panasonic channel list database svl.bin or svl.db added by Joerg Jenderek
 # https://github.com/PredatH0r/ChanSort
-0	string		PSDB\0			Panasonic channel list DataBase|3953
+0	string		PSDB\0			Panasonic channel list DataBase|3943
 !:ext db/bin
 #!:mime	application/x-db-svl-panasonic
 >126	string		SQLite\ format\ 3
 #!:mime	application/x-panasonic-sqlite3
->>&-15	indirect	x			\b; contains|3953
+>>&-15	indirect	x			\b; contains|3943
 
 # H2 Database from http://www.h2database.com/
-0	string		--\ H2\ 0.5/B\ --\ \n	H2 Database file|3954
+0	string		--\ H2\ 0.5/B\ --\ \n	H2 Database file|3944

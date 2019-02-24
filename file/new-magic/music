@@ -5,13 +5,13 @@
 # BWW format used by Bagpipe Music Writer Gold by Robert MacNeil Musicworks
 # and Bagpipe Writer by Doug Wickstrom
 #
-0	string		Bagpipe		Bagpipe|3238
->8	string		Reader		Reader|3239
->>15	string		>\0		(version %.3s)|3239
->8	string		Music\ Writer	Music Writer|3240
+0	string		Bagpipe		Bagpipe|3229
+>8	string		Reader		Reader|3230
+>>15	string		>\0		(version %.3s)|3230
+>8	string		Music\ Writer	Music Writer|3231
 >>20	string		:
->>>21	string		>\0		(version %.3s)|3240
->>21	string		Gold		Gold|3240
+>>>21	string		>\0		(version %.3s)|3231
+>>21	string		Gold		Gold|3231
 >>>25	string		:
->>>>26	string		>\0		(version %.3s)|3240
+>>>>26	string		>\0		(version %.3s)|3231
 

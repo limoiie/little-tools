@@ -14,7 +14,7 @@
 # 5th character of terminal name list, but not Targa image pixel size (15 16 24 32)
 >16	ubyte		>32
 # namelist, if more than 1 separated by "|" like "st|stterm| simpleterm 0.4.1"
->>12	regex		\^[a-zA-Z0-9][a-zA-Z0-9.][^|]*	Compiled terminfo entry "%-s"|4091
+>>12	regex		\^[a-zA-Z0-9][a-zA-Z0-9.][^|]*	Compiled terminfo entry "%-s"|4081
 !:mime	application/x-terminfo
 # no extension
 #!:ext
@@ -27,7 +27,7 @@
 # imitate the legacy compiled-format, to get the entry-name printed
 >16	ubyte		>32
 # namelist, if more than 1 separated by "|" like "st|stterm| simpleterm 0. 4.1"
->>12	regex		\^[a-zA-Z0-9][a-zA-Z0-9.][^|]*	Compiled 32-bit terminfo entry "%-s"|4092
+>>12	regex		\^[a-zA-Z0-9][a-zA-Z0-9.][^|]*	Compiled 32-bit terminfo entry "%-s"|4082
 !:mime	application/x-terminfo2
 #
 # While the compiled terminfo uses little-endian format irregardless of
@@ -36,13 +36,13 @@
 #
 # AIX and HPUX use the SVr4 big-endian format
 # Solaris uses the SVr3 formats (sparc and x86 differ endian-ness)
-0	beshort		0433 		SVr2 curses screen image, big-endian|4093
-0	beshort		0434		SVr3 curses screen image, big-endian|4094
-0	beshort		0435		SVr4 curses screen image, big-endian|4095
+0	beshort		0433 		SVr2 curses screen image, big-endian|4083
+0	beshort		0434		SVr3 curses screen image, big-endian|4084
+0	beshort		0435		SVr4 curses screen image, big-endian|4085
 #
-0	leshort		0433		SVr2 curses screen image, little-endian|4096
-0	leshort		0434		SVr3 curses screen image, little-endian|4097
-0	leshort		0435		SVr4 curses screen image, little-endian|4098
+0	leshort		0433		SVr2 curses screen image, little-endian|4086
+0	leshort		0434		SVr3 curses screen image, little-endian|4087
+0	leshort		0435		SVr4 curses screen image, little-endian|4088
 #
 # Rather than SVr4, Solaris "xcurses" writes this header:
 0	regex		\^MAX=[0-9]+,[0-9]+$
@@ -52,11 +52,11 @@
 >4	regex		\^VTIME=[0-9]+$
 >5	regex		\^FLAGS=0x[[:xdigit:]]+$
 >6	regex		\^FG=[0-9],[0-9]+$
->7	regex		\^BG=[0-9]+,[0-9]+,	Solaris xcurses screen image|4099
+>7	regex		\^BG=[0-9]+,[0-9]+,	Solaris xcurses screen image|4089
 #
 # ncurses5 (and before) did not use a magic number, making screen dumps "data".
 # ncurses6 (2015) uses this format, ignoring byte-order
-0	string	\210\210\210\210ncurses	ncurses6 screen image|4100
+0	string	\210\210\210\210ncurses	ncurses6 screen image|4090
 #
 # PDCurses added this in 2005
-0	string		PDC\001		PDCurses screen image|4101
+0	string		PDC\001		PDCurses screen image|4091

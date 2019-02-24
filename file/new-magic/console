@@ -46,12 +46,12 @@
 >>12	byte&0x02	=0x2		[NTSC+PAL]
 
 # Standard iNES ROM header.
-0	string		NES\x1A		NES ROM image (iNES)|1319
+0	string		NES\x1A		NES ROM image (iNES)|1317
 !:mime	application/x-nes-rom
 >0	use		nes-rom-image-ines
 
 # Wii U Virtual Console iNES ROM header.
-0	belong		0x4E455300	NES ROM image (Wii U Virtual Console)|1320
+0	belong		0x4E455300	NES ROM image (Wii U Virtual Console)|1318
 !:mime	application/x-nes-rom
 >0	use		nes-rom-image-ines
 
@@ -64,7 +64,7 @@
 # so most of the data isn't easily parseable.
 #
 0	string	UNIF
->4	lelong	<16	NES ROM image (UNIF v%d format)|1321
+>4	lelong	<16	NES ROM image (UNIF v%d format)|1319
 !:mime	application/x-nes-rom
 
 #------------------------------------------------------------------------------
@@ -83,14 +83,14 @@
 
 # Headered version.
 0	string	FDS\x1A
->0x11	string	*NINTENDO-HVC*	Famicom Disk System disk image:|1322
+>0x11	string	*NINTENDO-HVC*	Famicom Disk System disk image:|1320
 !:mime	application/x-fds-disk
 >>0x10	use	nintendo-fds-disk-info-block
->4	byte	1	(%u side)|1322
->4	byte	!1	(%u sides)|1322
+>4	byte	1	(%u side)|1320
+>4	byte	!1	(%u sides)|1320
 
 # Unheadered version.
-1	string	*NINTENDO-HVC*	Famicom Disk System disk image:|1322
+1	string	*NINTENDO-HVC*	Famicom Disk System disk image:|1320
 !:mime	application/x-fds-disk
 >0	use	nintendo-fds-disk-info-block
 
@@ -99,29 +99,29 @@
 # Used by Nintendo 3DS NES Virtual Console games.
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 #
-0		string	TNES	NES ROM image (Nintendo 3DS Virtual Console)|1323
+0		string	TNES	NES ROM image (Nintendo 3DS Virtual Console)|1321
 !:mime		application/x-nes-rom
->4		byte	100	\b: FDS,|1323
+>4		byte	100	\b: FDS,|1321
 >>0x2010	use	nintendo-fds-disk-info-block
->4		byte	!100	\b: TNES mapper %u|1324
->>5	byte		x		\b, %ux8k PRG|1324
->>6	byte		x		\b, %ux8k CHR|1324
->>7	byte&0x08	=1		[WRAM]|1324
->>8	byte&0x09	=1		[H-mirror]|1324
->>8	byte&0x09	=2		[V-mirror]|1324
->>8	byte&0x02	=3		[VRAM]|1324
+>4		byte	!100	\b: TNES mapper %u|1322
+>>5	byte		x		\b, %ux8k PRG|1322
+>>6	byte		x		\b, %ux8k CHR|1322
+>>7	byte&0x08	=1		[WRAM]|1322
+>>8	byte&0x09	=1		[H-mirror]|1322
+>>8	byte&0x09	=2		[V-mirror]|1322
+>>8	byte&0x02	=3		[VRAM]|1322
 
 #------------------------------------------------------------------------------
 # gameboy: file(1) magic for the Nintendo (Color) Gameboy raw ROM format
 # Reference: http://gbdev.gg8.se/wiki/articles/The_Cartridge_Header
 #
-0x104		bequad		0xCEED6666CC0D000B	Game Boy ROM image|1325
+0x104		bequad		0xCEED6666CC0D000B	Game Boy ROM image|1323
 # TODO: application/x-gameboy-color-rom for GBC.
 !:mime		application/x-gameboy-rom
 >0x143		byte&0x80	0x80
->>0x134		string		>\0			\b: "%.15s"|1325
+>>0x134		string		>\0			\b: "%.15s"|1323
 >0x143		byte&0x80	!0x80
->>0x134		string		>\0			\b: "%.16s"|1325
+>>0x134		string		>\0			\b: "%.16s"|1323
 >0x14c		byte		x			(Rev.%02u)
 
 # Machine type. (SGB, CGB, SGB+CGB)
@@ -207,37 +207,37 @@
 
 # TODO: Check for 32X CD?
 # Sega Mega CD disc images: 2048-byte sectors.
-0	string	SEGADISCSYSTEM\ \ 	Sega Mega CD disc image|1326
+0	string	SEGADISCSYSTEM\ \ 	Sega Mega CD disc image|1324
 !:mime	application/x-sega-cd-rom
 >0	use	sega-mega-drive-header
->0	byte	x			\b, 2048-byte sectors|1326
-0	string	SEGABOOTDISC\ \ \ \ 	Sega Mega CD disc image|1326
+>0	byte	x			\b, 2048-byte sectors|1324
+0	string	SEGABOOTDISC\ \ \ \ 	Sega Mega CD disc image|1324
 !:mime	application/x-sega-cd-rom
 >0	use	sega-mega-drive-header
->0	byte	x			\b, 2048-byte sectors|1326
+>0	byte	x			\b, 2048-byte sectors|1324
 # Sega Mega CD disc images: 2352-byte sectors.
-0x10	string	SEGADISCSYSTEM\ \ 	Sega Mega CD disc image|1326
+0x10	string	SEGADISCSYSTEM\ \ 	Sega Mega CD disc image|1324
 !:mime	application/x-sega-cd-rom
 >0x10	use	sega-mega-drive-header
->0	byte	x			\b, 2352-byte sectors|1326
-0x10	string	SEGABOOTDISC\ \ \ \ 	Sega Mega CD disc image|1326
+>0	byte	x			\b, 2352-byte sectors|1324
+0x10	string	SEGABOOTDISC\ \ \ \ 	Sega Mega CD disc image|1324
 !:mime	application/x-sega-cd-rom
 >0x10	use	sega-mega-drive-header
->0	byte	x			\b, 2352-byte sectors|1326
+>0	byte	x			\b, 2352-byte sectors|1324
 
 # Sega Mega Drive, 32X, Pico, and Mega CD Boot ROM images.
 0x100		string	SEGA
->0x3C0		bequad	0x4D41525320434845	Sega 32X ROM image|1327
+>0x3C0		bequad	0x4D41525320434845	Sega 32X ROM image|1325
 !:mime		application/x-genesis-32x-rom
 >>0		use	sega-mega-drive-header
 >0x3C0		bequad	!0x4D41525320434845
->>0x105		belong	0x5049434F	Sega Pico ROM image|1328
+>>0x105		belong	0x5049434F	Sega Pico ROM image|1326
 !:mime		application/x-sega-pico-rom
 >>>0		use	sega-mega-drive-header
 >>0x105		belong	!0x5049434F
->>>0x180	beshort	0x4252		Sega Mega CD Boot ROM image|1329
+>>>0x180	beshort	0x4252		Sega Mega CD Boot ROM image|1327
 !:mime		application/x-genesis-rom
->>>0x180	beshort	!0x4252		Sega Mega Drive / Genesis ROM image|1330
+>>>0x180	beshort	!0x4252		Sega Mega Drive / Genesis ROM image|1328
 !:mime		application/x-genesis-rom
 >>>0		use	sega-mega-drive-header
 
@@ -254,13 +254,13 @@
 
 # "Sega Genesis" header.
 0x280	string EAGN
->8	beshort	0xAABB	Sega Mega Drive / Genesis ROM image (SMD format):|1331
+>8	beshort	0xAABB	Sega Mega Drive / Genesis ROM image (SMD format):|1329
 !:mime	application/x-genesis-rom
 >>0	use     sega-genesis-smd-header
 
 # "Sega Mega Drive" header.
 0x280	string EAMG
->8	beshort	0xAABB	Sega Mega Drive / Genesis ROM image (SMD format):|1331
+>8	beshort	0xAABB	Sega Mega Drive / Genesis ROM image (SMD format):|1329
 !:mime	application/x-genesis-rom
 >>0	use     sega-genesis-smd-header
 
@@ -276,17 +276,17 @@
 # The SMS boot ROM checks the header at three locations.
 0	name	sega-master-system-rom-header
 # Machine type.
->0x0F	byte&0xF0	0x30	Sega Master System|1332
+>0x0F	byte&0xF0	0x30	Sega Master System|1330
 !:mime	application/x-sms-rom
->0x0F	byte&0xF0	0x40	Sega Master System|1332
+>0x0F	byte&0xF0	0x40	Sega Master System|1330
 !:mime	application/x-sms-rom
->0x0F	byte&0xF0	0x50	Sega Game Gear|1333
+>0x0F	byte&0xF0	0x50	Sega Game Gear|1331
 !:mime	application/x-gamegear-rom
->0x0F	byte&0xF0	0x60	Sega Game Gear|1333
+>0x0F	byte&0xF0	0x60	Sega Game Gear|1331
 !:mime	application/x-gamegear-rom
->0x0F	byte&0xF0	0x70	Sega Game Gear|1333
+>0x0F	byte&0xF0	0x70	Sega Game Gear|1331
 !:mime	application/x-gamegear-rom
->0x0F	default		x	Sega Master System / Game Gear|1334
+>0x0F	default		x	Sega Master System / Game Gear|1332
 !:mime	application/x-sms-rom
 >0	byte		x	ROM image:
 # Product code.
@@ -346,15 +346,15 @@
 >>0x2A	byte	0	\b)
 
 # 2048-byte sector version.
-0	string	SEGA\ SEGASATURN\ 	Sega Saturn disc image|1335
+0	string	SEGA\ SEGASATURN\ 	Sega Saturn disc image|1333
 !:mime	application/x-saturn-rom
 >0	use	sega-saturn-disc-header
->0	byte	x			(2048-byte sectors)|1335
+>0	byte	x			(2048-byte sectors)|1333
 # 2352-byte sector version.
-0x10	string	SEGA\ SEGASATURN\ 	Sega Saturn disc image|1335
+0x10	string	SEGA\ SEGASATURN\ 	Sega Saturn disc image|1333
 !:mime	application/x-saturn-rom
 >0x10	use	sega-saturn-disc-header
->0	byte	x			(2352-byte sectors)|1335
+>0	byte	x			(2352-byte sectors)|1333
 
 #------------------------------------------------------------------------------
 # dreamcast: file(1) magic for the Sega Dreamcast disc image format.
@@ -372,52 +372,52 @@
 >>0x4A	byte	0	\b)
 
 # 2048-byte sector version.
-0	string	SEGA\ SEGAKATANA\ 	Sega Dreamcast disc image|1336
+0	string	SEGA\ SEGAKATANA\ 	Sega Dreamcast disc image|1334
 !:mime	application/x-dc-rom
 >0	use	sega-dreamcast-disc-header
->0	byte	x			(2048-byte sectors)|1336
+>0	byte	x			(2048-byte sectors)|1334
 # 2352-byte sector version.
-0x10	string	SEGA\ SEGAKATANA\ 	Sega Dreamcast disc image|1336
+0x10	string	SEGA\ SEGAKATANA\ 	Sega Dreamcast disc image|1334
 !:mime	application/x-dc-rom
 >0x10	use	sega-dreamcast-disc-header
->0	byte	x			(2352-byte sectors)|1336
+>0	byte	x			(2352-byte sectors)|1334
 
 #------------------------------------------------------------------------------
 # dreamcast:  file(1) uncertain magic for the Sega Dreamcast VMU image format
 #
-0 belong 0x21068028   Sega Dreamcast VMU game image|1337
-0 string LCDi         Dream Animator file|1338
+0 belong 0x21068028   Sega Dreamcast VMU game image|1335
+0 string LCDi         Dream Animator file|1336
 
 #------------------------------------------------------------------------------
 # z64: file(1) magic for the Z64 format N64 ROM dumps
 # Reference: http://forum.pj64-emu.com/showthread.php?t=2239
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 #
-0	bequad	0x803712400000000F	Nintendo 64 ROM image|1339
+0	bequad	0x803712400000000F	Nintendo 64 ROM image|1337
 !:mime	application/x-n64-rom
->0x20	string	>\0	\b: "%.20s"|1339
->0x3B	string	x	(%.4s|1339
->0x3F	byte	x	\b, Rev.%02u)|1339
+>0x20	string	>\0	\b: "%.20s"|1337
+>0x3B	string	x	(%.4s|1337
+>0x3F	byte	x	\b, Rev.%02u)|1337
 
 #------------------------------------------------------------------------------
 # v64: file(1) magic for the V64 format N64 ROM dumps
 # Same as z64 format, but with 16-bit byteswapping.
 #
-0	bequad	0x3780401200000F00	Nintendo 64 ROM image (V64)|1340
+0	bequad	0x3780401200000F00	Nintendo 64 ROM image (V64)|1338
 !:mime	application/x-n64-rom
 
 #------------------------------------------------------------------------------
 # n64-swap2: file(1) magic for the swap2 format N64 ROM dumps
 # Same as z64 format, but with swapped 16-bit words.
 #
-0	bequad	0x12408037000F0000	Nintendo 64 ROM image (wordswapped)|1341
+0	bequad	0x12408037000F0000	Nintendo 64 ROM image (wordswapped)|1339
 !:mime	application/x-n64-rom
 
 #------------------------------------------------------------------------------
 # n64-le32: file(1) magic for the 32-bit byteswapped format N64 ROM dumps
 # Same as z64 format, but with 32-bit byteswapping.
 #
-0	bequad	0x401237800F000000	Nintendo 64 ROM image (32-bit byteswapped)|1342
+0	bequad	0x401237800F000000	Nintendo 64 ROM image (32-bit byteswapped)|1340
 !:mime	application/x-n64-rom
 
 #------------------------------------------------------------------------------
@@ -427,11 +427,11 @@
 # Original version from: "Nelson A. de Oliveira" <naoliv@gmail.com>
 # Updated version from: David Korth <gerbilsoft@gerbilsoft.com>
 #
-4	bequad	0x24FFAE51699AA221	Game Boy Advance ROM image|1343
+4	bequad	0x24FFAE51699AA221	Game Boy Advance ROM image|1341
 !:mime	application/x-gba-rom
->0xA0	string	>\0	\b: "%.12s"|1343
->0xAC	string	x	(%.6s|1343
->0xBC	byte	x	\b, Rev.%02u)|1343
+>0xA0	string	>\0	\b: "%.12s"|1341
+>0xAC	string	x	(%.6s|1341
+>0xBC	byte	x	\b, Rev.%02u)|1341
 
 #------------------------------------------------------------------------------
 # nds: file(1) magic for the Nintendo DS(i) raw ROM format
@@ -440,28 +440,28 @@
 # Original version from: "Nelson A. de Oliveira" <naoliv@gmail.com>
 # Updated version from: David Korth <gerbilsoft@gerbilsoft.com>
 #
-0xC0	bequad	0x24FFAE51699AA221	Nintendo DS ROM image|1344
+0xC0	bequad	0x24FFAE51699AA221	Nintendo DS ROM image|1342
 !:mime	application/x-nintendo-ds-rom
->0x00	string	>\0		\b: "%.12s"|1344
->0x0C	string	x		(%.6s|1344
->0x1E	byte	x		\b, Rev.%02u)|1344
->0x12	byte	2		(DSi enhanced)|1344
->0x12	byte	3		(DSi only)|1344
+>0x00	string	>\0		\b: "%.12s"|1342
+>0x0C	string	x		(%.6s|1342
+>0x1E	byte	x		\b, Rev.%02u)|1342
+>0x12	byte	2		(DSi enhanced)|1342
+>0x12	byte	3		(DSi only)|1342
 # Secure Area check.
->0x20		lelong	<0x4000		(homebrew)|1344
+>0x20		lelong	<0x4000		(homebrew)|1342
 >0x20		lelong	>0x3FFF
->>0x4000	lequad	0x0000000000000000	(multiboot)|1344
+>>0x4000	lequad	0x0000000000000000	(multiboot)|1342
 >>0x4000	lequad	!0x0000000000000000
->>>0x4000	lequad	0xE7FFDEFFE7FFDEFF	(decrypted)|1344
+>>>0x4000	lequad	0xE7FFDEFFE7FFDEFF	(decrypted)|1342
 >>>0x4000	lequad	!0xE7FFDEFFE7FFDEFF
->>>>0x1000	lequad	0x0000000000000000	(encrypted)|1344
->>>>0x1000	lequad	!0x0000000000000000	(mask ROM)|1344
+>>>>0x1000	lequad	0x0000000000000000	(encrypted)|1342
+>>>>0x1000	lequad	!0x0000000000000000	(mask ROM)|1342
 
 #------------------------------------------------------------------------------
 # nds_passme: file(1) magic for Nintendo DS ROM images for GBA cartridge boot.
 # This is also used for loading .nds files using the MSET exploit on 3DS.
 # Reference: https://github.com/devkitPro/ndstool/blob/master/source/ndscreate.cpp
-0xC0	bequad	0xC8604FE201708FE2	Nintendo DS Slot-2 ROM image (PassMe)|1345
+0xC0	bequad	0xC8604FE201708FE2	Nintendo DS Slot-2 ROM image (PassMe)|1343
 !:mime	application/x-nintendo-ds-rom
 
 #------------------------------------------------------------------------------
@@ -471,12 +471,12 @@
 # - https://neogpc.googlecode.com/svn-history/r10/trunk/src/core/neogpc.cpp
 # - http://www.devrs.com/ngp/files/ngpctech.txt
 #
-0x0A	string	BY\ SNK\ CORPORATION	Neo Geo Pocket|1346
+0x0A	string	BY\ SNK\ CORPORATION	Neo Geo Pocket|1344
 !:mime	application/x-neo-geo-pocket-rom
->0x23	byte	0x10			Color|1346
->0	byte	x			ROM image|1346
->0x24	string	>\0			\b: "%.12s"|1346
->0x1F	byte	0xFF			(debug mode enabled)|1346
+>0x23	byte	0x10			Color|1344
+>0	byte	x			ROM image|1344
+>0x24	string	>\0			\b: "%.12s"|1344
+>0x1F	byte	0xFF			(debug mode enabled)|1344
 
 #------------------------------------------------------------------------------
 # msx: file(1) magic for MSX game cartridge dumps
@@ -485,51 +485,51 @@
 
 #------------------------------------------------------------------------------
 # Sony Playstation executables (Adam Sjoegren <asjo@diku.dk>) :
-0	string	PS-X\ EXE	Sony Playstation executable|1347
->16	lelong	x		PC=0x%08x,|1347
->20	lelong	!0		GP=0x%08x,|1347
->24	lelong	!0		.text=[0x%08x,|1347
->>28	lelong	x		\b0x%x],|1347
->32	lelong	!0		.data=[0x%08x,|1347
->>36	lelong	x		\b0x%x],|1347
->40	lelong	!0		.bss=[0x%08x,|1347
->>44	lelong	x		\b0x%x],|1347
->48	lelong	!0		Stack=0x%08x,|1347
->48	lelong	=0		No Stack!,|1347
->52	lelong	!0		StackSize=0x%x,|1347
+0	string	PS-X\ EXE	Sony Playstation executable|1345
+>16	lelong	x		PC=0x%08x,|1345
+>20	lelong	!0		GP=0x%08x,|1345
+>24	lelong	!0		.text=[0x%08x,|1345
+>>28	lelong	x		\b0x%x],|1345
+>32	lelong	!0		.data=[0x%08x,|1345
+>>36	lelong	x		\b0x%x],|1345
+>40	lelong	!0		.bss=[0x%08x,|1345
+>>44	lelong	x		\b0x%x],|1345
+>48	lelong	!0		Stack=0x%08x,|1345
+>48	lelong	=0		No Stack!,|1345
+>52	lelong	!0		StackSize=0x%x,|1345
 #>76	string	>\0		(%s)
 #  Area:
->113	string	x		(%s)|1347
+>113	string	x		(%s)|1345
 
 # CPE executables
-0	string	CPE		CPE executable|1348
->3	byte	x		(version %d)|1348
+0	string	CPE		CPE executable|1346
+>3	byte	x		(version %d)|1346
 
 #------------------------------------------------------------------------------
 # Microsoft Xbox executables .xbe (Esa Hyytia <ehyytia@cc.hut.fi>)
-0       string          XBEH            XBE, Microsoft Xbox executable|1349
+0       string          XBEH            XBE, Microsoft Xbox executable|1347
 # probabilistic checks whether signed or not
 >0x0004 ulelong =0x0
 >>&2    ulelong =0x0
->>>&2   ulelong =0x0  \b, not signed|1349
+>>>&2   ulelong =0x0  \b, not signed|1347
 >0x0004 ulelong >0
 >>&2    ulelong >0
->>>&2   ulelong >0    \b, signed|1349
+>>>&2   ulelong >0    \b, signed|1347
 # expect base address of 0x10000
 >0x0104               ulelong =0x10000
->>(0x0118-0x0FF60)    ulelong&0x80000007  0x80000007 \b, all regions|1349
+>>(0x0118-0x0FF60)    ulelong&0x80000007  0x80000007 \b, all regions|1347
 >>(0x0118-0x0FF60)    ulelong&0x80000007  !0x80000007
->>>(0x0118-0x0FF60)   ulelong >0           (regions:|1349
->>>>(0x0118-0x0FF60)  ulelong &0x00000001  NA|1349
->>>>(0x0118-0x0FF60)  ulelong &0x00000002  Japan|1349
->>>>(0x0118-0x0FF60)  ulelong &0x00000004  Rest_of_World|1349
->>>>(0x0118-0x0FF60)  ulelong &0x80000000  Manufacturer|1349
->>>(0x0118-0x0FF60)   ulelong >0           \b)|1349
+>>>(0x0118-0x0FF60)   ulelong >0           (regions:|1347
+>>>>(0x0118-0x0FF60)  ulelong &0x00000001  NA|1347
+>>>>(0x0118-0x0FF60)  ulelong &0x00000002  Japan|1347
+>>>>(0x0118-0x0FF60)  ulelong &0x00000004  Rest_of_World|1347
+>>>>(0x0118-0x0FF60)  ulelong &0x80000000  Manufacturer|1347
+>>>(0x0118-0x0FF60)   ulelong >0           \b)|1347
 
 # --------------------------------
 # Microsoft Xbox data file formats
-0       string          XIP0            XIP, Microsoft Xbox data|1350
-0       string          XTF0            XTF, Microsoft Xbox data|1351
+0       string          XIP0            XIP, Microsoft Xbox data|1348
+0       string          XTF0            XTF, Microsoft Xbox data|1349
 
 # Atari Lynx cartridge dump (EXE/BLL header)
 # From: "Stefan A. Haubenthal" <polluks@web.de>
@@ -537,16 +537,16 @@
 # Double-check that the image type matches too, 0x8008 conflicts with
 # 8 character OMF-86 object file headers.
 0	beshort		0x8008
->6	string		BS93		Lynx homebrew cartridge|1352
+>6	string		BS93		Lynx homebrew cartridge|1350
 !:mime	application/x-atari-lynx-rom
->>2	beshort		x		\b, RAM start $%04x|1352
->6	string		LYNX		Lynx cartridge|1353
+>>2	beshort		x		\b, RAM start $%04x|1350
+>6	string		LYNX		Lynx cartridge|1351
 !:mime	application/x-atari-lynx-rom
->>2	beshort		x		\b, RAM start $%04x|1353
+>>2	beshort		x		\b, RAM start $%04x|1351
 
 # Opera file system that is used on the 3DO console
 # From: Serge van den Boom <svdb@stack.nl>
-0	string		\x01ZZZZZ\x01	3DO "Opera" file system|1354
+0	string		\x01ZZZZZ\x01	3DO "Opera" file system|1352
 
 # From: Alex Myczko <alex@aiei.ch>
 # From: David Pflug <david@pflug.email>
@@ -554,45 +554,45 @@
 # GBS (Game Boy Sound) magic
 # ftp://ftp.modland.com/pub/documents/format_documentation/\
 # Gameboy%20Sound%20System%20(.gbs).txt
-0	string		GBS		Nintendo Gameboy Music/Audio Data|1355
+0	string		GBS		Nintendo Gameboy Music/Audio Data|1353
 #12	string		GameBoy\ Music\ Module	Nintendo Gameboy Music Module
->16	string		>\0	("%.32s" by|1355
->48	string		>\0	%.32s, copyright|1355
->80	string		>\0	%.32s),|1355
->3	byte		x	version %u,|1355
->4	byte		x	%u tracks|1355
+>16	string		>\0	("%.32s" by|1353
+>48	string		>\0	%.32s, copyright|1353
+>80	string		>\0	%.32s),|1353
+>3	byte		x	version %u,|1353
+>4	byte		x	%u tracks|1353
 
 # IPS Patch Files from: From: Thomas Klausner <tk@giga.or.at>
 # see http://zerosoft.zophar.net/ips.php
-0	string	PATCH			IPS patch file|1356
+0	string	PATCH			IPS patch file|1354
 
 # Playstations Patch Files from: From: Thomas Klausner <tk@giga.or.at>
-0	string	PPF30			Playstation Patch File version 3.0|1357
->5	byte	0			\b, PPF 1.0 patch|1358
->5	byte	1			\b, PPF 2.0 patch|1359
->5	byte	2			\b, PPF 3.0 patch|1360
->>56	byte	0			\b, Imagetype BIN (any)|1361
->>56	byte	1			\b, Imagetype GI (PrimoDVD)|1362
+0	string	PPF30			Playstation Patch File version 3.0|1355
+>5	byte	0			\b, PPF 1.0 patch|1356
+>5	byte	1			\b, PPF 2.0 patch|1357
+>5	byte	2			\b, PPF 3.0 patch|1358
+>>56	byte	0			\b, Imagetype BIN (any)|1359
+>>56	byte	1			\b, Imagetype GI (PrimoDVD)|1360
 >>57	byte	0			\b, Blockcheck disabled
 >>57	byte	1			\b, Blockcheck enabled
 >>58	byte	0			\b, Undo data not available
 >>58	byte	1			\b, Undo data available
 >6	string	x			\b, description: %s
 
-0	string	PPF20			Playstation Patch File version 2.0|1363
->5	byte	0			\b, PPF 1.0 patch|1364
->5	byte	1			\b, PPF 2.0 patch|1365
->>56	lelong	>0			\b, size of file to patch %d|1365
+0	string	PPF20			Playstation Patch File version 2.0|1361
+>5	byte	0			\b, PPF 1.0 patch|1362
+>5	byte	1			\b, PPF 2.0 patch|1363
+>>56	lelong	>0			\b, size of file to patch %d|1363
 >6	string	x			\b, description: %s
 
-0	string	PPF10			Playstation Patch File version 1.0|1366
->5	byte	0			\b, Simple Encoding|1366
->6	string	x			\b, description: %s|1366
+0	string	PPF10			Playstation Patch File version 1.0|1364
+>5	byte	0			\b, Simple Encoding|1364
+>6	string	x			\b, description: %s|1364
 
 # From: Daniel Dawson <ddawson@icehouse.net>
 # SNES9x .smv "movie" file format.
-0		string		SMV\x1A	SNES9x input recording|1367
->0x4		lelong		x	\b, version %d|1367
+0		string		SMV\x1A	SNES9x input recording|1365
+>0x4		lelong		x	\b, version %d|1365
 # version 4 is latest so far
 >0x4		lelong		<5
 >>0x8		ledate		x	\b, recorded at %s
@@ -645,8 +645,8 @@
 
 # Type: scummVM savegame files
 # From: Sven Hartge <debian@ds9.argh.org>
-0	string	SCVM	ScummVM savegame|1368
->12	string	>\0	"%s"|1368
+0	string	SCVM	ScummVM savegame|1366
+>12	string	>\0	"%s"|1366
 
 #------------------------------------------------------------------------------
 # Nintendo GameCube / Wii file formats.
@@ -669,7 +669,7 @@
 # Type: Nintendo GameCube disc image
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 # Reference: http://wiibrew.org/wiki/Wii_Disc
-0x1C	belong	0xC2339F3D	Nintendo GameCube disc image:|1369
+0x1C	belong	0xC2339F3D	Nintendo GameCube disc image:|1367
 !:mime	application/x-gamecube-rom
 >0	use	nintendo-gcn-disc-common
 
@@ -679,21 +679,21 @@
 # Reference: http://hitmen.c02.at/files/yagcd/yagcd/index.html#idx14.8
 0		belong	0xAE0F38A2
 >0x0C		belong	0x00100000
->>(8.L+0x1C)	belong	0xC2339F3D	Nintendo GameCube embedded disc image:|1370
+>>(8.L+0x1C)	belong	0xC2339F3D	Nintendo GameCube embedded disc image:|1368
 !:mime	application/x-gamecube-rom
 >>>(8.L)	use	nintendo-gcn-disc-common
 
 # Type: Nintendo Wii disc image
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 # Reference: http://wiibrew.org/wiki/Wii_Disc
-0x18	belong	0x5D1C9EA3	Nintendo Wii disc image:|1371
+0x18	belong	0x5D1C9EA3	Nintendo Wii disc image:|1369
 >0	use	nintendo-gcn-disc-common
 
 # Type: Nintendo Wii disc image (WBFS format)
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 # Reference: http://wiibrew.org/wiki/Wii_Disc
 0	string	WBFS
->0x218	belong	0x5D1C9EA3	Nintendo Wii disc image (WBFS format):|1372
+>0x218	belong	0x5D1C9EA3	Nintendo Wii disc image (WBFS format):|1370
 !:mime	application/x-wii-rom
 >>0x200	use	nintendo-gcn-disc-common
 
@@ -707,48 +707,48 @@
 # - None of the above: Compact ISO.
 >4		lelong	0x200000
 >>8		byte	1
->>>0x801C	belong	0xC2339F3D	Nintendo GameCube disc image (CISO format):|1373
+>>>0x801C	belong	0xC2339F3D	Nintendo GameCube disc image (CISO format):|1371
 !:mime	application/x-wii-rom
 >>>>0x8000	use	nintendo-gcn-disc-common
->>>0x8018	belong	0x5D1C9EA3	Nintendo Wii disc image (CISO format):|1373
+>>>0x8018	belong	0x5D1C9EA3	Nintendo Wii disc image (CISO format):|1371
 !:mime	application/x-wii-rom
 >>>>0x8000	use	nintendo-gcn-disc-common
 
 # Type: Nintendo GameCube/Wii disc image (GCZ format)
 # Due to zlib compression, we can't get the actual disc information.
 0	lelong	0xB10BC001
->4	lelong	0		Nintendo GameCube disc image (GCZ format)|1374
+>4	lelong	0		Nintendo GameCube disc image (GCZ format)|1372
 !:mime	application/x-gamecube-rom
->4	lelong	1		Nintendo Wii disc image (GCZ format)|1375
+>4	lelong	1		Nintendo Wii disc image (GCZ format)|1373
 !:mime	application/x-wii-rom
->4	default	x		Nintendo GameCube/Wii disc image (GCZ format)|1376
+>4	default	x		Nintendo GameCube/Wii disc image (GCZ format)|1374
 
 # Type: Nintendo GameCube/Wii disc image (WDF format)
 0		string	WII\001DISC
 >8		belong	1
 # WDFv1
->>0x54		belong	0xC2339F3D	Nintendo GameCube disc image (WDFv1 format):|1377
+>>0x54		belong	0xC2339F3D	Nintendo GameCube disc image (WDFv1 format):|1375
 !:mime	application/x-gamecube-rom
 >>>0x38		use	nintendo-gcn-disc-common
->>0x58		belong	0x5D1C9EA3	Nintendo Wii disc image (WDFv1 format):|1377
+>>0x58		belong	0x5D1C9EA3	Nintendo Wii disc image (WDFv1 format):|1375
 !:mime	application/x-wii-rom
 >>>0x38		use	nintendo-gcn-disc-common
 >8		belong	2
 # WDFv2
->>(12.L+0x1C)	belong	0xC2339F3D	Nintendo GameCube disc image (WDFv2 format):|1378
+>>(12.L+0x1C)	belong	0xC2339F3D	Nintendo GameCube disc image (WDFv2 format):|1376
 !:mime	application/x-gamecube-rom
 >>>(12.L)	use	nintendo-gcn-disc-common
->>(12.L+0x18)	belong	0x5D1C9EA3	Nintendo Wii disc image (WDFv2 format):|1378
+>>(12.L+0x18)	belong	0x5D1C9EA3	Nintendo Wii disc image (WDFv2 format):|1376
 !:mime	application/x-wii-rom
 >>>(12.L)	use	nintendo-gcn-disc-common
 
 # Type: Nintendo GameCube/Wii disc image (WIA format)
-0	string	WIA\001	Nintendo|1379
->0x48	belong	1	GameCube|1380
+0	string	WIA\001	Nintendo|1377
+>0x48	belong	1	GameCube|1378
 !:mime	application/x-gamecube-rom
->0x48	belong	2	Wii|1381
+>0x48	belong	2	Wii|1379
 !:mime	application/x-wii-rom
->0x48	default	x	GameCube/Wii|1382
+>0x48	default	x	GameCube/Wii|1380
 >0x48	belong	x	disc image (WIA format):
 >>0x58	use	nintendo-gcn-disc-common
 
@@ -758,9 +758,9 @@
 0		belong	0xFFFF0000
 >0x18		belong	0x00000000
 >>0x1C		belong	0x00000000
->>>0x8018	belong	0x5D1C9EA3	Nintendo Wii SDK disc image:|1383
+>>>0x8018	belong	0x5D1C9EA3	Nintendo Wii SDK disc image:|1381
 >>>>0x8000	use	nintendo-gcn-disc-common
->>>0x801C	belong	0xC2339F3D	Nintendo GameCube SDK disc image:|1383
+>>>0x801C	belong	0xC2339F3D	Nintendo GameCube SDK disc image:|1381
 >>>>0x8000	use	nintendo-gcn-disc-common
 
 #------------------------------------------------------------------------------
@@ -771,17 +771,17 @@
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 # Reference: https://www.3dbrew.org/wiki/NCSD
 0x100		string		NCSD
->0x118		lequad		0		Nintendo 3DS Game Card image|1384
+>0x118		lequad		0		Nintendo 3DS Game Card image|1382
 # NCCH header for partition 0. (game data)
->>0x1150	string		>\0	\b: "%.16s"|1384
->>0x312		byte		x	(Rev.%02u)|1384
->>0x118C	byte		2	(New3DS only)|1384
->>0x18D		byte		0		(inner device)|1384
->>0x18D		byte		1		(Card1)|1384
->>0x18D		byte		2		(Card2)|1384
->>0x18D		byte		3		(extended device)|1384
->0x118		bequad		0x0102020202000000	Nintendo 3DS eMMC dump (Old3DS)|1384
->0x118		bequad		0x0102020203000000	Nintendo 3DS eMMC dump (New3DS)|1384
+>>0x1150	string		>\0	\b: "%.16s"|1382
+>>0x312		byte		x	(Rev.%02u)|1382
+>>0x118C	byte		2	(New3DS only)|1382
+>>0x18D		byte		0		(inner device)|1382
+>>0x18D		byte		1		(Card1)|1382
+>>0x18D		byte		2		(Card2)|1382
+>>0x18D		byte		3		(extended device)|1382
+>0x118		bequad		0x0102020202000000	Nintendo 3DS eMMC dump (Old3DS)|1382
+>0x118		bequad		0x0102020203000000	Nintendo 3DS eMMC dump (New3DS)|1382
 
 # Nintendo 3DS version code.
 # Reference: https://www.3dbrew.org/wiki/Titles
@@ -833,9 +833,9 @@
 
 # Type: Nintendo 3DS "NCCH" container.
 # https://www.3dbrew.org/wiki/NCCH
-0x100		string	NCCH	Nintendo 3DS|1385
->0x18D		byte&2	0	File Archive (CFA)|1386
->0x18D		byte&2	2	Executable Image (CXI)|1387
+0x100		string	NCCH	Nintendo 3DS|1383
+>0x18D		byte&2	0	File Archive (CFA)|1384
+>0x18D		byte&2	2	Executable Image (CXI)|1385
 >0x150		string	>\0	\b: "%.16s"
 >0x18D		byte	0x05
 >>0x10E		leshort	x	(Old3DS System Update v
@@ -855,21 +855,21 @@
 # Type: Nintendo 3DS "SMDH" file. (application description)
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 # Reference: https://3dbrew.org/wiki/SMDH
-0		string		SMDH		Nintendo 3DS SMDH file|1388
+0		string		SMDH		Nintendo 3DS SMDH file|1386
 >0x208		leshort		!0
->>0x208		lestring16	x		\b: "%.128s"|1388
+>>0x208		lestring16	x		\b: "%.128s"|1386
 >>0x388		leshort		!0
 >>>0x388	lestring16	x		by %.128s
 >0x208		leshort		0
 >>0x008		leshort		!0
->>>0x008	lestring16	x		\b: "%.128s"|1388
+>>>0x008	lestring16	x		\b: "%.128s"|1386
 >>>0x188	leshort		!0
 >>>>0x188	lestring16	x		by %.128s
 
 # Type: Nintendo 3DS Homebrew Application.
 # From: David Korth <gerbilsoft@gerbilsoft.com>
 # Reference: https://3dbrew.org/wiki/3DSX_Format
-0	string	3DSX	Nintendo 3DS Homebrew Application (3DSX)|1389
+0	string	3DSX	Nintendo 3DS Homebrew Application (3DSX)|1387
 
 #------------------------------------------------------------------------------
 # a7800: file(1) magic for the Atari 7800 raw ROM format.
@@ -878,13 +878,13 @@
 
 0	byte	>0
 >0	byte	<3
->>1	string	ATARI7800	Atari 7800 ROM image|1390
+>>1	string	ATARI7800	Atari 7800 ROM image|1388
 !:mime	application/x-atari-7800-rom
->>>0x11	string	>\0	\b: "%.32s"|1390
+>>>0x11	string	>\0	\b: "%.32s"|1388
 # Display type.
->>>0x39	byte	0	(NTSC)|1390
->>>0x39	byte	1	(PAL)|1390
->>>0x36	byte&1	1	(POKEY)|1390
+>>>0x39	byte	0	(NTSC)|1388
+>>>0x39	byte	1	(PAL)|1388
+>>>0x36	byte&1	1	(POKEY)|1388
 
 #------------------------------------------------------------------------------
 # vectrex: file(1) magic for the GCE Vectrex raw ROM format.
@@ -895,8 +895,8 @@
 # The header is terminated with a 0, so that will
 # terminate the title as well.
 #
-0	string	g\ GCE	Vectrex ROM image|1391
->0x11	string	>\0	\b: "%.16s"|1391
+0	string	g\ GCE	Vectrex ROM image|1389
+>0x11	string	>\0	\b: "%.16s"|1389
 
 #------------------------------------------------------------------------------
 # amiibo: file(1) magic for Nintendo amiibo NFC dumps.
@@ -909,5 +909,5 @@
 >>>>0x020A	byte	0x0F
 >>>>>0x020C	bequad	0x000000045F000000
 >>>>>>0x5B	byte	0x02
->>>>>>>0x54	belong	x	Nintendo amiibo NFC dump - amiibo ID: %08X-|1392
->>>>>>>0x58	belong	x	\b%08X|1392
+>>>>>>>0x54	belong	x	Nintendo amiibo NFC dump - amiibo ID: %08X-|1390
+>>>>>>>0x58	belong	x	\b%08X|1390

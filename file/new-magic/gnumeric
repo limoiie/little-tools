@@ -4,5 +4,5 @@
 # gnumeric:  file(1) magic for Gnumeric spreadsheet
 # This entry is only semi-helpful, as Gnumeric compresses its files, so
 # they will ordinarily reported as "compressed", but at least -z helps
-39	string	=<gmr:Workbook	Gnumeric spreadsheet|2210
+39	string	=<gmr:Workbook	Gnumeric spreadsheet|2205
 !:mime	application/x-gnumeric

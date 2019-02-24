@@ -4,13 +4,13 @@
 # file(1) magic for uterus files
 # http://freecode.com/projects/uterus
 #
-0	string		UTE+	uterus file|4316
->4	string		v	\b, version|4316
->5	byte		x	%c|4316
->6	string		.	\b.|4316
->7	byte		x	\b%c|4316
->8	string		\<\>	\b, big-endian|4316
->>16	belong		>0	\b, slut size %u|4316
->8	string		\>\<	\b, litte-endian|4316
->>16	lelong		>0	\b, slut size %u|4316
->10	byte		&8	\b, compressed|4316
+0	string		UTE+	uterus file|4306
+>4	string		v	\b, version|4306
+>5	byte		x	%c|4306
+>6	string		.	\b.|4306
+>7	byte		x	\b%c|4306
+>8	string		\<\>	\b, big-endian|4306
+>>16	belong		>0	\b, slut size %u|4306
+>8	string		\>\<	\b, litte-endian|4306
+>>16	lelong		>0	\b, slut size %u|4306
+>10	byte		&8	\b, compressed|4306

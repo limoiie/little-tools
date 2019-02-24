@@ -39,171 +39,171 @@
 # like the old 177545 archives (0xff65 = 0177545).
 #
 #### Old Apollo stuff
-0	beshort		0627		Apollo m68k COFF executable|2256
->18	beshort		^040000		not stripped|2256
->22	beshort		>0		- version %d|2256
-0	beshort		0624		apollo a88k COFF executable|2257
->18	beshort		^040000		not stripped|2257
->22	beshort		>0		- version %d|2257
-0       long            01203604016     TML 0123 byte-order format|2258
-0       long            01702407010     TML 1032 byte-order format|2259
-0       long            01003405017     TML 2301 byte-order format|2260
-0       long            01602007412     TML 3210 byte-order format|2261
+0	beshort		0627		Apollo m68k COFF executable|2251
+>18	beshort		^040000		not stripped|2251
+>22	beshort		>0		- version %d|2251
+0	beshort		0624		apollo a88k COFF executable|2252
+>18	beshort		^040000		not stripped|2252
+>22	beshort		>0		- version %d|2252
+0       long            01203604016     TML 0123 byte-order format|2253
+0       long            01702407010     TML 1032 byte-order format|2254
+0       long            01003405017     TML 2301 byte-order format|2255
+0       long            01602007412     TML 3210 byte-order format|2256
 #### PA-RISC 1.1
-0	belong 		0x02100106	PA-RISC1.1 relocatable object|2262
-0	belong 		0x02100107	PA-RISC1.1 executable|2263
->168	belong		&0x00000004	dynamically linked|2263
->(144)	belong		0x054ef630	dynamically linked|2263
->96	belong		>0		- not stripped|2263
+0	belong 		0x02100106	PA-RISC1.1 relocatable object|2257
+0	belong 		0x02100107	PA-RISC1.1 executable|2258
+>168	belong		&0x00000004	dynamically linked|2258
+>(144)	belong		0x054ef630	dynamically linked|2258
+>96	belong		>0		- not stripped|2258
 
-0	belong 		0x02100108	PA-RISC1.1 shared executable|2264
->168	belong&0x4	0x4		dynamically linked|2264
->(144)	belong		0x054ef630	dynamically linked|2264
+0	belong 		0x02100108	PA-RISC1.1 shared executable|2259
+>168	belong&0x4	0x4		dynamically linked|2259
+>(144)	belong		0x054ef630	dynamically linked|2259
+>96	belong		>0		- not stripped|2259
+
+0	belong 		0x0210010b	PA-RISC1.1 demand-load executable|2260
+>168	belong&0x4	0x4		dynamically linked|2260
+>(144)	belong		0x054ef630	dynamically linked|2260
+>96	belong		>0		- not stripped|2260
+
+0	belong 		0x0210010e	PA-RISC1.1 shared library|2261
+>96	belong		>0		- not stripped|2262
+
+0	belong 		0x0210010d	PA-RISC1.1 dynamic load library|2263
 >96	belong		>0		- not stripped|2264
 
-0	belong 		0x0210010b	PA-RISC1.1 demand-load executable|2265
->168	belong&0x4	0x4		dynamically linked|2265
->(144)	belong		0x054ef630	dynamically linked|2265
->96	belong		>0		- not stripped|2265
+#### PA-RISC 2.0
+0	belong		0x02140106	PA-RISC2.0 relocatable object|2265
 
-0	belong 		0x0210010e	PA-RISC1.1 shared library|2266
+0       belong		0x02140107	PA-RISC2.0 executable|2266
+>168	belong		&0x00000004	dynamically linked|2266
+>(144)	belong		0x054ef630	dynamically linked|2266
+>96	belong		>0		- not stripped|2266
+
+0       belong		0x02140108	PA-RISC2.0 shared executable|2267
+>168	belong		&0x00000004	dynamically linked|2267
+>(144)	belong		0x054ef630	dynamically linked|2267
 >96	belong		>0		- not stripped|2267
 
-0	belong 		0x0210010d	PA-RISC1.1 dynamic load library|2268
->96	belong		>0		- not stripped|2269
+0       belong		0x0214010b	PA-RISC2.0 demand-load executable|2268
+>168	belong		&0x00000004	dynamically linked|2268
+>(144)	belong		0x054ef630	dynamically linked|2268
+>96	belong		>0		- not stripped|2268
 
-#### PA-RISC 2.0
-0	belong		0x02140106	PA-RISC2.0 relocatable object|2270
+0       belong		0x0214010e	PA-RISC2.0 shared library|2269
+>96	belong		>0		- not stripped|2270
 
-0       belong		0x02140107	PA-RISC2.0 executable|2271
->168	belong		&0x00000004	dynamically linked|2271
->(144)	belong		0x054ef630	dynamically linked|2271
->96	belong		>0		- not stripped|2271
-
-0       belong		0x02140108	PA-RISC2.0 shared executable|2272
->168	belong		&0x00000004	dynamically linked|2272
->(144)	belong		0x054ef630	dynamically linked|2272
+0       belong		0x0214010d	PA-RISC2.0 dynamic load library|2271
 >96	belong		>0		- not stripped|2272
 
-0       belong		0x0214010b	PA-RISC2.0 demand-load executable|2273
->168	belong		&0x00000004	dynamically linked|2273
->(144)	belong		0x054ef630	dynamically linked|2273
->96	belong		>0		- not stripped|2273
+#### 800
+0	belong 		0x020b0106	PA-RISC1.0 relocatable object|2273
 
-0       belong		0x0214010e	PA-RISC2.0 shared library|2274
+0	belong 		0x020b0107	PA-RISC1.0 executable|2274
+>168	belong&0x4	0x4		dynamically linked|2274
+>(144)	belong		0x054ef630	dynamically linked|2274
+>96	belong		>0		- not stripped|2274
+
+0	belong 		0x020b0108	PA-RISC1.0 shared executable|2275
+>168	belong&0x4	0x4		dynamically linked|2275
+>(144)	belong		0x054ef630	dynamically linked|2275
 >96	belong		>0		- not stripped|2275
 
-0       belong		0x0214010d	PA-RISC2.0 dynamic load library|2276
->96	belong		>0		- not stripped|2277
+0	belong 		0x020b010b	PA-RISC1.0 demand-load executable|2276
+>168	belong&0x4	0x4		dynamically linked|2276
+>(144)	belong		0x054ef630	dynamically linked|2276
+>96	belong		>0		- not stripped|2276
 
-#### 800
-0	belong 		0x020b0106	PA-RISC1.0 relocatable object|2278
+0	belong 		0x020b010e	PA-RISC1.0 shared library|2277
+>96	belong		>0		- not stripped|2278
 
-0	belong 		0x020b0107	PA-RISC1.0 executable|2279
->168	belong&0x4	0x4		dynamically linked|2279
->(144)	belong		0x054ef630	dynamically linked|2279
->96	belong		>0		- not stripped|2279
-
-0	belong 		0x020b0108	PA-RISC1.0 shared executable|2280
->168	belong&0x4	0x4		dynamically linked|2280
->(144)	belong		0x054ef630	dynamically linked|2280
+0	belong 		0x020b010d	PA-RISC1.0 dynamic load library|2279
 >96	belong		>0		- not stripped|2280
 
-0	belong 		0x020b010b	PA-RISC1.0 demand-load executable|2281
->168	belong&0x4	0x4		dynamically linked|2281
->(144)	belong		0x054ef630	dynamically linked|2281
->96	belong		>0		- not stripped|2281
-
-0	belong 		0x020b010e	PA-RISC1.0 shared library|2282
->96	belong		>0		- not stripped|2283
-
-0	belong 		0x020b010d	PA-RISC1.0 dynamic load library|2284
->96	belong		>0		- not stripped|2285
-
 #### 500
-0	long		0x02080106	HP s500 relocatable executable|2286
->16	long		>0		- version %d|2286
+0	long		0x02080106	HP s500 relocatable executable|2281
+>16	long		>0		- version %d|2281
 
-0	long		0x02080107	HP s500 executable|2287
->16	long		>0		- version %d|2287
+0	long		0x02080107	HP s500 executable|2282
+>16	long		>0		- version %d|2282
 
-0	long		0x02080108	HP s500 pure executable|2288
->16	long		>0		- version %d|2288
+0	long		0x02080108	HP s500 pure executable|2283
+>16	long		>0		- version %d|2283
 
 #### 200
-0	belong 		0x020c0108	HP s200 pure executable|2289
+0	belong 		0x020c0108	HP s200 pure executable|2284
+>4	beshort		>0		- version %d|2284
+>8	belong		&0x80000000	save fp regs|2284
+>8	belong		&0x40000000	dynamically linked|2284
+>8	belong		&0x20000000	debuggable|2284
+>36	belong		>0		not stripped|2284
+
+0	belong		0x020c0107	HP s200 executable|2285
+>4	beshort		>0		- version %d|2285
+>8	belong		&0x80000000	save fp regs|2285
+>8	belong		&0x40000000	dynamically linked|2285
+>8	belong		&0x20000000	debuggable|2285
+>36	belong		>0		not stripped|2285
+
+0	belong		0x020c010b	HP s200 demand-load executable|2286
+>4	beshort		>0		- version %d|2286
+>8	belong		&0x80000000	save fp regs|2286
+>8	belong		&0x40000000	dynamically linked|2286
+>8	belong		&0x20000000	debuggable|2286
+>36	belong		>0		not stripped|2286
+
+0	belong		0x020c0106	HP s200 relocatable executable|2287
+>4	beshort		>0		- version %d|2287
+>6	beshort		>0		- highwater %d|2287
+>8	belong		&0x80000000	save fp regs|2287
+>8	belong		&0x20000000	debuggable|2287
+>8	belong		&0x10000000	PIC|2287
+
+0	belong 		0x020a0108	HP s200 (2.x release) pure executable|2288
+>4	beshort		>0		- version %d|2288
+>36	belong		>0		not stripped|2288
+
+0	belong		0x020a0107	HP s200 (2.x release) executable|2289
 >4	beshort		>0		- version %d|2289
->8	belong		&0x80000000	save fp regs|2289
->8	belong		&0x40000000	dynamically linked|2289
->8	belong		&0x20000000	debuggable|2289
 >36	belong		>0		not stripped|2289
 
-0	belong		0x020c0107	HP s200 executable|2290
+0	belong		0x020c010e	HP s200 shared library|2290
 >4	beshort		>0		- version %d|2290
->8	belong		&0x80000000	save fp regs|2290
->8	belong		&0x40000000	dynamically linked|2290
->8	belong		&0x20000000	debuggable|2290
+>6	beshort		>0		- highwater %d|2290
 >36	belong		>0		not stripped|2290
 
-0	belong		0x020c010b	HP s200 demand-load executable|2291
+0	belong		0x020c010d	HP s200 dynamic load library|2291
 >4	beshort		>0		- version %d|2291
->8	belong		&0x80000000	save fp regs|2291
->8	belong		&0x40000000	dynamically linked|2291
->8	belong		&0x20000000	debuggable|2291
+>6	beshort		>0		- highwater %d|2291
 >36	belong		>0		not stripped|2291
 
-0	belong		0x020c0106	HP s200 relocatable executable|2292
->4	beshort		>0		- version %d|2292
->6	beshort		>0		- highwater %d|2292
->8	belong		&0x80000000	save fp regs|2292
->8	belong		&0x20000000	debuggable|2292
->8	belong		&0x10000000	PIC|2292
-
-0	belong 		0x020a0108	HP s200 (2.x release) pure executable|2293
->4	beshort		>0		- version %d|2293
->36	belong		>0		not stripped|2293
-
-0	belong		0x020a0107	HP s200 (2.x release) executable|2294
->4	beshort		>0		- version %d|2294
->36	belong		>0		not stripped|2294
-
-0	belong		0x020c010e	HP s200 shared library|2295
->4	beshort		>0		- version %d|2295
->6	beshort		>0		- highwater %d|2295
->36	belong		>0		not stripped|2295
-
-0	belong		0x020c010d	HP s200 dynamic load library|2296
->4	beshort		>0		- version %d|2296
->6	beshort		>0		- highwater %d|2296
->36	belong		>0		not stripped|2296
-
 #### MISC
-0	long		0x0000ff65	HP old archive|2297
-0	long		0x020aff65	HP s200 old archive|2298
-0	long		0x020cff65	HP s200 old archive|2298
-0	long		0x0208ff65	HP s500 old archive|2299
+0	long		0x0000ff65	HP old archive|2292
+0	long		0x020aff65	HP s200 old archive|2293
+0	long		0x020cff65	HP s200 old archive|2293
+0	long		0x0208ff65	HP s500 old archive|2294
 
-0	long		0x015821a6	HP core file|2300
+0	long		0x015821a6	HP core file|2295
 
-0	long		0x4da7eee8	HP-WINDOWS font|2301
->8	byte		>0		- version %d|2301
-0	string		Bitmapfile	HP Bitmapfile|2302
+0	long		0x4da7eee8	HP-WINDOWS font|2296
+>8	byte		>0		- version %d|2296
+0	string		Bitmapfile	HP Bitmapfile|2297
 
-0	string		IMGfile	CIS 	compimg HP Bitmapfile|2303
+0	string		IMGfile	CIS 	compimg HP Bitmapfile|2298
 # XXX - see "lif"
 #0	short		0x8000		lif file
-0	long		0x020c010c	compiled Lisp|2304
+0	long		0x020c010c	compiled Lisp|2299
 
-0	string		msgcat01	HP NLS message catalog,|2305
->8	long		>0		%d messages|2306
+0	string		msgcat01	HP NLS message catalog,|2300
+>8	long		>0		%d messages|2301
 
 # Summary: HP-48/49 calculator
 # Created by: phk@data.fls.dk
 # Modified by (1): AMAKAWA Shuhei <sa264@cam.ac.uk>
 # Modified by (2): Samuel Thibault <samuel.thibault@ens-lyon.org> (HP49 support)
-0	string		HPHP		HP|2307
->4	string		48		48 binary|2308
->4	string		49		49 binary|2309
+0	string		HPHP		HP|2302
+>4	string		48		48 binary|2303
+>4	string		49		49 binary|2304
 >7	byte		>64		- Rev %c
 >8	leshort		0x2911		(ADR)
 >8	leshort		0x2933		(REAL)
@@ -230,11 +230,11 @@
 >8	leshort		0x2e6d		(LNAME)
 >8	leshort		0x2e92		(XLIB)
 
-0	string		%%HP:		HP text|2310
->6	string		T(0)		- T(0)|2311
->6	string		T(1)		- T(1)|2312
->6	string		T(2)		- T(2)|2313
->6	string		T(3)		- T(3)|2314
+0	string		%%HP:		HP text|2305
+>6	string		T(0)		- T(0)|2306
+>6	string		T(1)		- T(1)|2307
+>6	string		T(2)		- T(2)|2308
+>6	string		T(3)		- T(3)|2309
 >10	string		A(D)		A(D)
 >10	string		A(R)		A(R)
 >10	string		A(G)		A(G)
@@ -245,12 +245,12 @@
 # Summary: HP-38/39 calculator
 # Created by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 0	string		HP3
->3	string		8		HP 38|2315
->>4	string		Bin		binary|2316
->>4	string		Asc		ASCII|2317
->3	string		9		HP 39|2318
->>4	string		Bin		binary|2319
->>4	string		Asc		ASCII|2320
+>3	string		8		HP 38|2310
+>>4	string		Bin		binary|2311
+>>4	string		Asc		ASCII|2312
+>3	string		9		HP 39|2313
+>>4	string		Bin		binary|2314
+>>4	string		Asc		ASCII|2315
 >7	string		A		(Directory List)
 >7	string		B		(Zaplet)
 >7	string		C		(Note)
@@ -264,14 +264,14 @@
 >7	string		K		(wildcard)
 
 # hpBSD magic numbers
-0	beshort		200		hp200 (68010) BSD|2321
->2	beshort		0407		impure binary|2322
->2	beshort		0410		read-only binary|2323
->2	beshort		0413		demand paged binary|2324
-0	beshort		300		hp300 (68020+68881) BSD|2325
->2	beshort		0407		impure binary|2326
->2	beshort		0410		read-only binary|2327
->2	beshort		0413		demand paged binary|2328
+0	beshort		200		hp200 (68010) BSD|2316
+>2	beshort		0407		impure binary|2317
+>2	beshort		0410		read-only binary|2318
+>2	beshort		0413		demand paged binary|2319
+0	beshort		300		hp300 (68020+68881) BSD|2320
+>2	beshort		0407		impure binary|2321
+>2	beshort		0410		read-only binary|2322
+>2	beshort		0413		demand paged binary|2323
 #
 # From David Gero <dgero@nortelnetworks.com>
 # HP-UX 10.20 core file format from /usr/include/sys/core.h
@@ -293,38 +293,38 @@
 >>>>>0xA0	belong	1
 >>>>>>0xAC	belong	4
 >>>>>>>0xB0	belong	1
->>>>>>>>0xB4	belong	4		core file|2329
->>>>>>>>>0x90	string	>\0		from '%s'|2329
->>>>>>>>>0xC4	belong	3		- received SIGQUIT|2329
->>>>>>>>>0xC4	belong	4		- received SIGILL|2329
->>>>>>>>>0xC4	belong	5		- received SIGTRAP|2329
->>>>>>>>>0xC4	belong	6		- received SIGABRT|2329
->>>>>>>>>0xC4	belong	7		- received SIGEMT|2329
->>>>>>>>>0xC4	belong	8		- received SIGFPE|2329
->>>>>>>>>0xC4	belong	10		- received SIGBUS|2329
->>>>>>>>>0xC4	belong	11		- received SIGSEGV|2329
->>>>>>>>>0xC4	belong	12		- received SIGSYS|2329
->>>>>>>>>0xC4	belong	33		- received SIGXCPU|2329
->>>>>>>>>0xC4	belong	34		- received SIGXFSZ|2329
+>>>>>>>>0xB4	belong	4		core file|1399
+>>>>>>>>>0x90	string	>\0		from '%s'|1399
+>>>>>>>>>0xC4	belong	3		- received SIGQUIT|1399
+>>>>>>>>>0xC4	belong	4		- received SIGILL|1399
+>>>>>>>>>0xC4	belong	5		- received SIGTRAP|1399
+>>>>>>>>>0xC4	belong	6		- received SIGABRT|1399
+>>>>>>>>>0xC4	belong	7		- received SIGEMT|1399
+>>>>>>>>>0xC4	belong	8		- received SIGFPE|1399
+>>>>>>>>>0xC4	belong	10		- received SIGBUS|1399
+>>>>>>>>>0xC4	belong	11		- received SIGSEGV|1399
+>>>>>>>>>0xC4	belong	12		- received SIGSYS|1399
+>>>>>>>>>0xC4	belong	33		- received SIGXCPU|1399
+>>>>>>>>>0xC4	belong	34		- received SIGXFSZ|1399
 # Order 2: KERNEL, FORMAT, EXEC, PROC
 >>>0x4C		belong	1
 >>>>0x58	belong	4
 >>>>>0x5C	belong	1
 >>>>>>0x60	belong	0x100
 >>>>>>>0x6C	belong	0x44
->>>>>>>>0xB4	belong	4		core file|2329
->>>>>>>>>0xA4	string	>\0		from '%s'|2329
->>>>>>>>>0xC4	belong	3		- received SIGQUIT|2329
->>>>>>>>>0xC4	belong	4		- received SIGILL|2329
->>>>>>>>>0xC4	belong	5		- received SIGTRAP|2329
->>>>>>>>>0xC4	belong	6		- received SIGABRT|2329
->>>>>>>>>0xC4	belong	7		- received SIGEMT|2329
->>>>>>>>>0xC4	belong	8		- received SIGFPE|2329
->>>>>>>>>0xC4	belong	10		- received SIGBUS|2329
->>>>>>>>>0xC4	belong	11		- received SIGSEGV|2329
->>>>>>>>>0xC4	belong	12		- received SIGSYS|2329
->>>>>>>>>0xC4	belong	33		- received SIGXCPU|2329
->>>>>>>>>0xC4	belong	34		- received SIGXFSZ|2329
+>>>>>>>>0xB4	belong	4		core file|1399
+>>>>>>>>>0xA4	string	>\0		from '%s'|1399
+>>>>>>>>>0xC4	belong	3		- received SIGQUIT|1399
+>>>>>>>>>0xC4	belong	4		- received SIGILL|1399
+>>>>>>>>>0xC4	belong	5		- received SIGTRAP|1399
+>>>>>>>>>0xC4	belong	6		- received SIGABRT|1399
+>>>>>>>>>0xC4	belong	7		- received SIGEMT|1399
+>>>>>>>>>0xC4	belong	8		- received SIGFPE|1399
+>>>>>>>>>0xC4	belong	10		- received SIGBUS|1399
+>>>>>>>>>0xC4	belong	11		- received SIGSEGV|1399
+>>>>>>>>>0xC4	belong	12		- received SIGSYS|1399
+>>>>>>>>>0xC4	belong	33		- received SIGXCPU|1399
+>>>>>>>>>0xC4	belong	34		- received SIGXFSZ|1399
 # Order 3: FORMAT, KERNEL, EXEC, PROC
 0x24		string	HP-UX
 >0		belong	1
@@ -334,19 +334,19 @@
 >>>>>0x20	belong	0x3C
 >>>>>>0x60	belong	0x100
 >>>>>>>0x6C	belong	0x44
->>>>>>>>0xB4	belong	4		core file|2329
->>>>>>>>>0xA4	string	>\0		from '%s'|2329
->>>>>>>>>0xC4	belong	3		- received SIGQUIT|2329
->>>>>>>>>0xC4	belong	4		- received SIGILL|2329
->>>>>>>>>0xC4	belong	5		- received SIGTRAP|2329
->>>>>>>>>0xC4	belong	6		- received SIGABRT|2329
->>>>>>>>>0xC4	belong	7		- received SIGEMT|2329
->>>>>>>>>0xC4	belong	8		- received SIGFPE|2329
->>>>>>>>>0xC4	belong	10		- received SIGBUS|2329
->>>>>>>>>0xC4	belong	11		- received SIGSEGV|2329
->>>>>>>>>0xC4	belong	12		- received SIGSYS|2329
->>>>>>>>>0xC4	belong	33		- received SIGXCPU|2329
->>>>>>>>>0xC4	belong	34		- received SIGXFSZ|2329
+>>>>>>>>0xB4	belong	4		core file|1399
+>>>>>>>>>0xA4	string	>\0		from '%s'|1399
+>>>>>>>>>0xC4	belong	3		- received SIGQUIT|1399
+>>>>>>>>>0xC4	belong	4		- received SIGILL|1399
+>>>>>>>>>0xC4	belong	5		- received SIGTRAP|1399
+>>>>>>>>>0xC4	belong	6		- received SIGABRT|1399
+>>>>>>>>>0xC4	belong	7		- received SIGEMT|1399
+>>>>>>>>>0xC4	belong	8		- received SIGFPE|1399
+>>>>>>>>>0xC4	belong	10		- received SIGBUS|1399
+>>>>>>>>>0xC4	belong	11		- received SIGSEGV|1399
+>>>>>>>>>0xC4	belong	12		- received SIGSYS|1399
+>>>>>>>>>0xC4	belong	33		- received SIGXCPU|1399
+>>>>>>>>>0xC4	belong	34		- received SIGXFSZ|1399
 # Order 4: EXEC, KERNEL, FORMAT, PROC
 0x64		string	HP-UX
 >0		belong	0x100
@@ -356,19 +356,19 @@
 >>>>>0xA0	belong	1
 >>>>>>0xAC	belong	4
 >>>>>>>0xB0	belong	1
->>>>>>>>0xB4	belong	4		core file|2329
->>>>>>>>>0x44	string	>\0		from '%s'|2329
->>>>>>>>>0xC4	belong	3		- received SIGQUIT|2329
->>>>>>>>>0xC4	belong	4		- received SIGILL|2329
->>>>>>>>>0xC4	belong	5		- received SIGTRAP|2329
->>>>>>>>>0xC4	belong	6		- received SIGABRT|2329
->>>>>>>>>0xC4	belong	7		- received SIGEMT|2329
->>>>>>>>>0xC4	belong	8		- received SIGFPE|2329
->>>>>>>>>0xC4	belong	10		- received SIGBUS|2329
->>>>>>>>>0xC4	belong	11		- received SIGSEGV|2329
->>>>>>>>>0xC4	belong	12		- received SIGSYS|2329
->>>>>>>>>0xC4	belong	33		- received SIGXCPU|2329
->>>>>>>>>0xC4	belong	34		- received SIGXFSZ|2329
+>>>>>>>>0xB4	belong	4		core file|1399
+>>>>>>>>>0x44	string	>\0		from '%s'|1399
+>>>>>>>>>0xC4	belong	3		- received SIGQUIT|1399
+>>>>>>>>>0xC4	belong	4		- received SIGILL|1399
+>>>>>>>>>0xC4	belong	5		- received SIGTRAP|1399
+>>>>>>>>>0xC4	belong	6		- received SIGABRT|1399
+>>>>>>>>>0xC4	belong	7		- received SIGEMT|1399
+>>>>>>>>>0xC4	belong	8		- received SIGFPE|1399
+>>>>>>>>>0xC4	belong	10		- received SIGBUS|1399
+>>>>>>>>>0xC4	belong	11		- received SIGSEGV|1399
+>>>>>>>>>0xC4	belong	12		- received SIGSYS|1399
+>>>>>>>>>0xC4	belong	33		- received SIGXCPU|1399
+>>>>>>>>>0xC4	belong	34		- received SIGXFSZ|1399
 # Order 5: FORMAT, EXEC, KERNEL, PROC
 0x78		string	HP-UX
 >0		belong	1
@@ -378,19 +378,19 @@
 >>>>>0x20	belong	0x44
 >>>>>>0x68	belong	2
 >>>>>>>0x74	belong	0x3C
->>>>>>>>0xB4	belong	4		core file|2329
->>>>>>>>>0x58	string	>\0		from '%s'|2329
->>>>>>>>>0xC4	belong	3		- received SIGQUIT|2329
->>>>>>>>>0xC4	belong	4		- received SIGILL|2329
->>>>>>>>>0xC4	belong	5		- received SIGTRAP|2329
->>>>>>>>>0xC4	belong	6		- received SIGABRT|2329
->>>>>>>>>0xC4	belong	7		- received SIGEMT|2329
->>>>>>>>>0xC4	belong	8		- received SIGFPE|2329
->>>>>>>>>0xC4	belong	10		- received SIGBUS|2329
->>>>>>>>>0xC4	belong	11		- received SIGSEGV|2329
->>>>>>>>>0xC4	belong	12		- received SIGSYS|2329
->>>>>>>>>0xC4	belong	33		- received SIGXCPU|2329
->>>>>>>>>0xC4	belong	34		- received SIGXFSZ|2329
+>>>>>>>>0xB4	belong	4		core file|1399
+>>>>>>>>>0x58	string	>\0		from '%s'|1399
+>>>>>>>>>0xC4	belong	3		- received SIGQUIT|1399
+>>>>>>>>>0xC4	belong	4		- received SIGILL|1399
+>>>>>>>>>0xC4	belong	5		- received SIGTRAP|1399
+>>>>>>>>>0xC4	belong	6		- received SIGABRT|1399
+>>>>>>>>>0xC4	belong	7		- received SIGEMT|1399
+>>>>>>>>>0xC4	belong	8		- received SIGFPE|1399
+>>>>>>>>>0xC4	belong	10		- received SIGBUS|1399
+>>>>>>>>>0xC4	belong	11		- received SIGSEGV|1399
+>>>>>>>>>0xC4	belong	12		- received SIGSYS|1399
+>>>>>>>>>0xC4	belong	33		- received SIGXCPU|1399
+>>>>>>>>>0xC4	belong	34		- received SIGXFSZ|1399
 # Order 6: EXEC, FORMAT, KERNEL, PROC
 >0		belong	0x100
 >>0xC		belong	0x44
@@ -399,18 +399,18 @@
 >>>>>0x64	belong	1
 >>>>>>0x68	belong	2
 >>>>>>>0x74	belong	0x2C
->>>>>>>>0xB4	belong	4		core file|2329
->>>>>>>>>0x44	string	>\0		from '%s'|2329
->>>>>>>>>0xC4	belong	3		- received SIGQUIT|2329
->>>>>>>>>0xC4	belong	4		- received SIGILL|2329
->>>>>>>>>0xC4	belong	5		- received SIGTRAP|2329
->>>>>>>>>0xC4	belong	6		- received SIGABRT|2329
->>>>>>>>>0xC4	belong	7		- received SIGEMT|2329
->>>>>>>>>0xC4	belong	8		- received SIGFPE|2329
->>>>>>>>>0xC4	belong	10		- received SIGBUS|2329
->>>>>>>>>0xC4	belong	11		- received SIGSEGV|2329
->>>>>>>>>0xC4	belong	12		- received SIGSYS|2329
->>>>>>>>>0xC4	belong	33		- received SIGXCPU|2329
->>>>>>>>>0xC4	belong	34		- received SIGXFSZ|2329
+>>>>>>>>0xB4	belong	4		core file|1399
+>>>>>>>>>0x44	string	>\0		from '%s'|1399
+>>>>>>>>>0xC4	belong	3		- received SIGQUIT|1399
+>>>>>>>>>0xC4	belong	4		- received SIGILL|1399
+>>>>>>>>>0xC4	belong	5		- received SIGTRAP|1399
+>>>>>>>>>0xC4	belong	6		- received SIGABRT|1399
+>>>>>>>>>0xC4	belong	7		- received SIGEMT|1399
+>>>>>>>>>0xC4	belong	8		- received SIGFPE|1399
+>>>>>>>>>0xC4	belong	10		- received SIGBUS|1399
+>>>>>>>>>0xC4	belong	11		- received SIGSEGV|1399
+>>>>>>>>>0xC4	belong	12		- received SIGSYS|1399
+>>>>>>>>>0xC4	belong	33		- received SIGXCPU|1399
+>>>>>>>>>0xC4	belong	34		- received SIGXFSZ|1399
 
 

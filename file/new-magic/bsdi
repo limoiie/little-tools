@@ -6,28 +6,28 @@
 # in other OSes; those are handled by entries in aout.
 #
 
-0	lelong		0314		386 compact demand paged pure executable|1094
->16	lelong		>0		not stripped|1094
->32	byte		0x6a		(uses shared libs)|1094
+0	lelong		0314		386 compact demand paged pure executable|1092
+>16	lelong		>0		not stripped|1092
+>32	byte		0x6a		(uses shared libs)|1092
 
 # same as in SunOS 4.x, except for static shared libraries
-0	belong&077777777	0600413		SPARC demand paged|1095
+0	belong&077777777	0600413		SPARC demand paged|1093
 >0	byte		&0x80
->>20	belong		<4096		shared library|1096
->>20	belong		=4096		dynamically linked executable|1097
->>20	belong		>4096		dynamically linked executable|1097
->0	byte		^0x80		executable|1098
+>>20	belong		<4096		shared library|1094
+>>20	belong		=4096		dynamically linked executable|1095
+>>20	belong		>4096		dynamically linked executable|1095
+>0	byte		^0x80		executable|1096
 >16	belong		>0		not stripped
 >36	belong		0xb4100001	(uses shared libs)
 
-0	belong&077777777	0600410		SPARC pure|1099
->0	byte		&0x80		dynamically linked executable|1100
->0	byte		^0x80		executable|1101
+0	belong&077777777	0600410		SPARC pure|1097
+>0	byte		&0x80		dynamically linked executable|1098
+>0	byte		^0x80		executable|1099
 >16	belong		>0		not stripped
 >36	belong		0xb4100001	(uses shared libs)
 
-0	belong&077777777	0600407		SPARC|1102
->0	byte		&0x80		dynamically linked executable|1103
->0	byte		^0x80		executable|1104
+0	belong&077777777	0600407		SPARC|1100
+>0	byte		&0x80		dynamically linked executable|1101
+>0	byte		^0x80		executable|1102
 >16	belong		>0		not stripped
 >36	belong		0xb4100001	(uses shared libs)

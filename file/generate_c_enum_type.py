@@ -4,6 +4,7 @@ from typing import Dict
 
 from file.init_logging import init_log
 from file.type_record import TypeDatabase
+from file.utils import convert_desc_to_var_name
 
 
 def main():
@@ -13,14 +14,19 @@ def main():
     logging.info('all info:')
 
     with open('file_type.h', 'w+') as file:
-        file.write('typedef enum {\n')
+        file.write('#ifndef FILE_TYPE_H\n')
+        file.write('#define FILE_TYPE_H\n')
+        file.write('\n')
+        file.write('enum file_type_e {\n')
+        file.write('\tBINARY_DATA = 0,\n')
+        file.write('\n')
 
         line_prefix = '\t'
         count = 1
         for type_id, record in all_records.items():
             var_name = convert_desc_to_var_name(record.type_desc)
-            file.write(line_prefix + '// category: %s\n' % record.file_name[len('./magic/'):])
-            file.write(line_prefix + '// description: %s\n' % record.type_desc)
+            file.write(line_prefix + '/* category: %s */\n' % record.file_name[len('./magic/'):])
+            file.write(line_prefix + '/* description: %s */\n' % record.type_desc)
             file.write(line_prefix + '%s = %d,\n' % (var_name, type_id))
             file.write('\n')
             # logging.info('i: %04d, id: %04d, desc: %s' % (count, type_id, type_desc))
@@ -28,8 +34,9 @@ def main():
             logging.info('')
             count += 1
 
-        file.write('} file_type_e;\n')
-
+        file.write('};\n')
+        file.write('\n')
+        file.write('#endif /* FILE_TYPE_H */\n')
     logging.info('exit')
 
 
@@ -49,50 +56,6 @@ def sort_by_id(all_types: dict):
     for type_id in sorted(all_types.keys()):
         sorted_all_types[type_id] = all_types[type_id]
     return sorted_all_types
-
-
-def convert_desc_to_var_name(desc: str):
-    desc = replace_format_tmpl_with_upper_type(desc)
-    desc = replace_non_alpha_non_digit_with_space(desc)
-    non_empty_sub_string = split_to_non_empty_sub_strings(desc)
-    candidate_name = '_'.join(non_empty_sub_string)
-    return insert_an_a_if_start_with_number(candidate_name)
-
-
-def replace_format_tmpl_with_upper_type(desc: str):
-    matched = re.search(r'(%-?[\d]*\.*[\d]*\w)', desc)
-    if matched:
-        tmpl = matched.group(1)
-        type_name = tmpl[-1].upper() * 2
-        desc = desc.replace(tmpl, type_name)
-    return desc
-
-
-def replace_non_alpha_non_digit_with_space(desc: str):
-    var_name = ''
-    for c in desc:
-        if c.isalpha():
-            var_name += c.upper()
-        elif c.isdigit():
-            var_name += c
-        else:
-            var_name += ' '
-    return var_name
-
-
-def split_to_non_empty_sub_strings(string: str):
-    sub_strings = string.split(' ')
-    non_empty_sub_strings = []
-    for string in sub_strings:
-        if string:
-            non_empty_sub_strings.append(string)
-    return non_empty_sub_strings
-
-
-def insert_an_a_if_start_with_number(string: str):
-    if string[0].isdigit():
-        return 'A_' + string
-    return string
 
 
 if __name__ == '__main__':

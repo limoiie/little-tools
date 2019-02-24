@@ -40,17 +40,17 @@
 
 # Cups Raster image format, Big Endian
 0	string		RaS
->3	string		t		Cups Raster version 1, Big Endian|1434
->3	string		2		Cups Raster version 2, Big Endian|1435
->3	string		3		Cups Raster version 3, Big Endian|1436
+>3	string		t		Cups Raster version 1, Big Endian|1432
+>3	string		2		Cups Raster version 2, Big Endian|1433
+>3	string		3		Cups Raster version 3, Big Endian|1434
 !:mime	application/vnd.cups-raster
 >0	use		\^cups-le
 
 
 # Cups Raster image format, Little Endian
 1	string		SaR
->0	string		t		Cups Raster version 1, Little Endian|1437
->0	string		2		Cups Raster version 2, Little Endian|1438
->0	string		3		Cups Raster version 3, Little Endian|1439
+>0	string		t		Cups Raster version 1, Little Endian|1435
+>0	string		2		Cups Raster version 2, Little Endian|1436
+>0	string		3		Cups Raster version 3, Little Endian|1437
 !:mime	application/vnd.cups-raster
 >0	use		cups-le

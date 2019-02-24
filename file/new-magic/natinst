@@ -9,16 +9,16 @@
 # Many formats still missing, we use, for the moment LabVIEW
 # We guess VXI format file. VISA, LabWindowsCVI, BridgeVIEW, etc, are missing
 #
-0       string          RSRC            National Instruments,|3243
+0       string          RSRC            National Instruments,|3234
 # Check if it's a LabVIEW File
->8      string          LV              LabVIEW File,|3244
+>8      string          LV              LabVIEW File,|3235
 # Check which kind of file it is
->>10    string          SB              Code Resource File, data|3245
->>10    string          IN              Virtual Instrument Program, data|3246
->>10    string          AR              VI Library, data|3247
+>>10    string          SB              Code Resource File, data|3236
+>>10    string          IN              Virtual Instrument Program, data|3237
+>>10    string          AR              VI Library, data|3238
 # This is for Menu Libraries
->8      string          LMNULBVW        Portable File Names, data|3248
+>8      string          LMNULBVW        Portable File Names, data|3239
 # This is for General Resources
->8      string          rsc             Resources File, data|3249
+>8      string          rsc             Resources File, data|3240
 # This is for VXI Package
-0       string          VMAP            National Instruments, VXI File, data|3250
+0       string          VMAP            National Instruments, VXI File, data|3241

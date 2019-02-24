@@ -3,21 +3,21 @@
 # URL:	http://doc.coker.com.au/computers/selinux-magic
 # From:	Russell Coker <russell@coker.com.au>
 
-0		lelong	0xf97cff8f	SE Linux modular policy|3734
->4		lelong	x		version %d,|3734
->8		lelong	x		%d sections,|3734
+0		lelong	0xf97cff8f	SE Linux modular policy|3724
+>4		lelong	x		version %d,|3724
+>8		lelong	x		%d sections,|3724
 >>(12.l)	lelong	0xf97cff8d
->>>(12.l+27)	lelong	x		mod version %d,|3734
->>>(12.l+31)	lelong	0		Not MLS,|3734
->>>(12.l+31)	lelong	1		MLS,|3734
+>>>(12.l+27)	lelong	x		mod version %d,|3724
+>>>(12.l+31)	lelong	0		Not MLS,|3724
+>>>(12.l+31)	lelong	1		MLS,|3724
 >>>(12.l+23)	lelong	2
->>>>(12.l+47)	string	>\0		module name %s|3734
->>>(12.l+23)	lelong	1		base|3734
+>>>>(12.l+47)	string	>\0		module name %s|3724
+>>>(12.l+23)	lelong	1		base|3724
 
-1	string	policy_module(	SE Linux policy module source|3735
-2	string	policy_module(	SE Linux policy module source|3735
+1	string	policy_module(	SE Linux policy module source|3725
+2	string	policy_module(	SE Linux policy module source|3725
 
-0	string	##\ <summary>	SE Linux policy interface source|3736
+0	string	##\ <summary>	SE Linux policy interface source|3726
 
 #0	search	gen_context(	SE Linux policy file contexts
 

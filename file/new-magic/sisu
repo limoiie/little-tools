@@ -2,17 +2,17 @@
 # URL:  http://www.sisudoc.org/
 # From: Ralph Amissah <ralph.amissah@gmail.com>
 
-0	regex	\^%?[\ \t]*SiSU[\ \t]+insert	SiSU text insert|3825
->5	regex	[0-9.]+				%s|3825
+0	regex	\^%?[\ \t]*SiSU[\ \t]+insert	SiSU text insert|3815
+>5	regex	[0-9.]+				%s|3815
 
-0	regex	\^%[\ \t]+SiSU[\ \t]+master	SiSU text master|3826
->5	regex	[0-9.]+				%s|3826
+0	regex	\^%[\ \t]+SiSU[\ \t]+master	SiSU text master|3816
+>5	regex	[0-9.]+				%s|3816
 
-0	regex	\^%?[\ \t]*SiSU[\ \t]+text	SiSU text|3827
->5	regex	[0-9.]+				%s|3827
+0	regex	\^%?[\ \t]*SiSU[\ \t]+text	SiSU text|3817
+>5	regex	[0-9.]+				%s|3817
 
-0	regex	\^%?[\ \t]*SiSU[\ \t][0-9.]+	SiSU text|3827
->5	regex	[0-9.]+				%s|3827
+0	regex	\^%?[\ \t]*SiSU[\ \t][0-9.]+	SiSU text|3817
+>5	regex	[0-9.]+				%s|3817
 
-0	regex	\^%*[\ \t]*sisu-[0-9.]+		SiSU text|3827
->5	regex	[0-9.]+				%s|3827
+0	regex	\^%*[\ \t]*sisu-[0-9.]+		SiSU text|3817
+>5	regex	[0-9.]+				%s|3817

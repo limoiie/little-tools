@@ -13,17 +13,17 @@
 #>2	search/4096	!\r		Lisp/Scheme program text
 #>2	search/4096	\r		Windows INF file
 
-0	search/4096	(setq\ 			Lisp/Scheme program text|2780
+0	search/4096	(setq\ 			Lisp/Scheme program text|2772
 !:mime	text/x-lisp
-0	search/4096	(defvar\ 		Lisp/Scheme program text|2780
+0	search/4096	(defvar\ 		Lisp/Scheme program text|2772
 !:mime	text/x-lisp
-0	search/4096	(defparam\ 		Lisp/Scheme program text|2780
+0	search/4096	(defparam\ 		Lisp/Scheme program text|2772
 !:mime	text/x-lisp
-0	search/4096	(defun\  		Lisp/Scheme program text|2780
+0	search/4096	(defun\  		Lisp/Scheme program text|2772
 !:mime	text/x-lisp
-0	search/4096	(autoload\ 		Lisp/Scheme program text|2780
+0	search/4096	(autoload\ 		Lisp/Scheme program text|2772
 !:mime	text/x-lisp
-0	search/4096	(custom-set-variables\ 	Lisp/Scheme program text|2780
+0	search/4096	(custom-set-variables\ 	Lisp/Scheme program text|2772
 !:mime	text/x-lisp
 
 # URL: https://en.wikipedia.org/wiki/Emacs_Lisp
@@ -34,14 +34,14 @@
 # look for emacs lisp keywords
 # GRR: split regex because it is too long or get error like
 # lisp, 36: Warning: cannot get string from `^(defun|defvar|defconst|defmacro|setq|fset|put|provide|require|'
->&0	regex	\^(defun|defvar|defconst|defmacro|setq|fset)	Emacs v18 byte-compiled Lisp data|2781
+>&0	regex	\^(defun|defvar|defconst|defmacro|setq|fset)	Emacs v18 byte-compiled Lisp data|2773
 !:mime	application/x-elc
 # https://searchcode.com/codesearch/view/2173420/
 # not really pure text
 !:apple	EMAxTEXT
 !:ext elc
 # remaining regex
->&0	regex	\^(put|provide|require|random)	Emacs v18 byte-compiled Lisp data|2781
+>&0	regex	\^(put|provide|require|random)	Emacs v18 byte-compiled Lisp data|2773
 !:mime	application/x-elc
 !:apple	EMAxTEXT
 !:ext elc
@@ -53,7 +53,7 @@
 # Update: Joerg Jenderek
 0	string	;ELC
 # version\0\0\0
->4	byte	>18			Emacs/XEmacs v%d byte-compiled Lisp data|2782
+>4	byte	>18			Emacs/XEmacs v%d byte-compiled Lisp data|2774
 # why less than 32 ? does not make sense to me. GNU Emacs version is 24.5 at April 2015
 #>4	byte    <32			Emacs/XEmacs v%d byte-compiled Lisp data
 !:mime	application/x-elc
@@ -61,15 +61,15 @@
 !:ext elc
 
 # Files produced by CLISP Common Lisp From: Bruno Haible <haible@ilog.fr>
-0	string	(SYSTEM::VERSION\040'	CLISP byte-compiled Lisp program (pre 2004-03-27)|2783
-0	string	(|SYSTEM|::|VERSION|\040'	CLISP byte-compiled Lisp program text|2784
+0	string	(SYSTEM::VERSION\040'	CLISP byte-compiled Lisp program (pre 2004-03-27)|2775
+0	string	(|SYSTEM|::|VERSION|\040'	CLISP byte-compiled Lisp program text|2776
 
-0	long	0x70768BD2		CLISP memory image data|2785
-0	long	0xD28B7670		CLISP memory image data, other endian|2786
+0	long	0x70768BD2		CLISP memory image data|2777
+0	long	0xD28B7670		CLISP memory image data, other endian|2778
 
 #.com and .bin for MIT scheme
-0	string	\372\372\372\372	MIT scheme (library?)|2787
+0	string	\372\372\372\372	MIT scheme (library?)|2779
 
 # From: David Allouche <david@allouche.net>
-0	search/1	\<TeXmacs|	TeXmacs document text|2788
+0	search/1	\<TeXmacs|	TeXmacs document text|2780
 !:mime	text/texmacs

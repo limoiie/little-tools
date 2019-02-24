@@ -7,6 +7,6 @@
 # https://en.wikipedia.org/wiki/Extended_Display_Identification_Data
 0	string		\x00\xFF\xFF\xFF\xFF\xFF\xFF\x00
 >19	byte		x
->>18	byte		x	EDID data, version %u.|2249
->>19	byte		x	\b%u|2249
+>>18	byte		x	EDID data, version %u.|2244
+>>19	byte		x	\b%u|2244
 #>>17	ubyte+1990	<255	\b, manufactured %u

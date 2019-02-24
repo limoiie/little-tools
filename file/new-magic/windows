@@ -17,11 +17,11 @@
 # Summary: Outlook Express DBX file
 # Extension: .dbx
 # Created by: Christophe Monniez
-0	string	\xCF\xAD\x12\xFE	MS Outlook Express DBX file|4433
->4	byte	=0xC5			\b, message database|4434
->4	byte	=0xC6			\b, folder database|4435
->4	byte	=0xC7			\b, account information|4436
->4	byte	=0x30			\b, offline database|4437
+0	string	\xCF\xAD\x12\xFE	MS Outlook Express DBX file|4423
+>4	byte	=0xC5			\b, message database|4424
+>4	byte	=0xC6			\b, folder database|4425
+>4	byte	=0xC7			\b, account information|4426
+>4	byte	=0x30			\b, offline database|4427
 
 
 # Summary: Windows crash dump
@@ -30,17 +30,17 @@
 # Reference (1): http://computer.forensikblog.de/en/2008/02/64bit_magic.html
 # Modified by (1): Abel Cheung (Avoid match with first 4 bytes only)
 0	string		PAGE
->4	string		DUMP		MS Windows 32bit crash dump|4438
->>0x05c	byte            0		\b, no PAE|4439
->>0x05c	byte            1		\b, PAE|4440
+>4	string		DUMP		MS Windows 32bit crash dump|4428
+>>0x05c	byte            0		\b, no PAE|4429
+>>0x05c	byte            1		\b, PAE|4430
 >>0xf88	lelong		1		\b, full dump
 >>0xf88	lelong		2		\b, kernel dump
 >>0xf88	lelong		3		\b, small dump
 >>0x068	lelong		x		\b, %d pages
->4	string		DU64		MS Windows 64bit crash dump|4441
->>0xf98	lelong		1		\b, full dump|4442
->>0xf98	lelong		2		\b, kernel dump|4443
->>0xf98	lelong		3		\b, small dump|4444
+>4	string		DU64		MS Windows 64bit crash dump|4431
+>>0xf98	lelong		1		\b, full dump|4432
+>>0xf98	lelong		2		\b, kernel dump|4433
+>>0xf98	lelong		3		\b, small dump|4434
 >>0x090	lequad		x		\b, %lld pages
 
 
@@ -48,11 +48,11 @@
 # Extension: .evtx
 # Created by: Andreas Schuster (http://computer.forensikblog.de/)
 # Reference (1): http://computer.forensikblog.de/en/2007/05/some_magic.html
-0	string		ElfFile\0	MS Windows Vista Event Log|4445
->0x2a	leshort		x		\b, %d chunks|4445
->>0x10	lelong		x		\b (no. %d in use)|4445
->0x18	lelong		>1		\b, next record no. %d|4445
->0x18	lelong		=1		\b, empty|4446
+0	string		ElfFile\0	MS Windows Vista Event Log|4435
+>0x2a	leshort		x		\b, %d chunks|4435
+>>0x10	lelong		x		\b (no. %d in use)|4435
+>0x18	lelong		>1		\b, next record no. %d|4435
+>0x18	lelong		=1		\b, empty|4436
 >0x78	lelong		&1		\b, DIRTY
 >0x78	lelong		&2		\b, FULL
 
@@ -63,7 +63,7 @@
 # Note:		in directories	%ProgramData%\Microsoft\Windows\WER\{ReportArchive,ReportQueue}
 #				%LOCALAPPDATA%\Microsoft\Windows\WER\{ReportArchive,ReportQueue}
 0	lestring16	Version=	
->22	lestring16	EventType	Windows Error Report|4447
+>22	lestring16	EventType	Windows Error Report|4437
 !:mime	text/plain
 # Report.wer
 !:ext	wer
@@ -71,7 +71,7 @@
 # Summary: Windows 3.1 group files
 # Extension: .grp
 # Created by: unknown
-0	string		\120\115\103\103	MS Windows 3.1 group files|4448
+0	string		\120\115\103\103	MS Windows 3.1 group files|4438
 
 
 # Summary: Old format help files
@@ -107,14 +107,14 @@
 0	lelong		0x00035f3f
 # ./windows (version 5.25) labeled the entry as "MS Windows 3.x help file"
 # file header magic 0x293B at DirectoryStart+9
->(4.l+9)	uleshort	0x293B		MS|4449
+>(4.l+9)	uleshort	0x293B		MS|4439
 # look for @VERSION	bmf.. like IBMAVW.ANN
->>0xD4		string	=\x62\x6D\x66\x01\x00	Windows help annotation|4450
+>>0xD4		string	=\x62\x6D\x66\x01\x00	Windows help annotation|4440
 !:mime	application/x-winhelp
 !:ext	ann
 >>0xD4		string	!\x62\x6D\x66\x01\x00
 # "GID Help index" by TrID
->>>(4.l+0x65)	string	=|Pete			Windows help Global Index|4451
+>>>(4.l+0x65)	string	=|Pete			Windows help Global Index|4441
 !:mime	application/x-winhelp
 !:ext	gid
 # HeLP Bookmark or
@@ -146,13 +146,13 @@
 # GCC.HLP is detected after 7 iterations
 >>>>>>>>>>>>>>>>>&0	use 		help-ver-date
 # this only happens if bigger hlp file is detected after used search iterations
->>>>>>>>>>>>>>>>>&4	leshort		!1		Windows y.z help|4449
+>>>>>>>>>>>>>>>>>&4	leshort		!1		Windows y.z help|4439
 !:mime	application/winhelp
 !:ext	hlp
 # repeat search again or following default line does not work
 >>>>16			search/0x49AF/s	\x6c\x03
 # remaining files should be HeLP Bookmark WinHlp32.BMK (XP 32-bit) or WinHlp32 (Windows 8.1 64-bit)
->>>>16	default				x	Windows help Bookmark|4449
+>>>>16	default				x	Windows help Bookmark|4439
 !:mime	application/x-winhelp
 !:ext	bmk
 ## FirstFreeBlock normally FFFFFFFFh 10h for *ANN
@@ -207,22 +207,22 @@
 # skip space at beginning
 >0     string		\040
 # name without extension and greater character or name with hlp extension
->>1	regex/c		\^([^\xd>]*|.*\.hlp)	MS Windows help file Content, based "%s"|4452
+>>1	regex/c		\^([^\xd>]*|.*\.hlp)	MS Windows help file Content, based "%s"|4442
 !:mime	text/plain
 !:apple	????TEXT
 !:ext	cnt
 #
 # Windows creates an full text search from hlp file, if the user clicks the "Find" tab and enables keyword indexing
-0	string		tfMR			MS Windows help Full Text Search index|4453
+0	string		tfMR			MS Windows help Full Text Search index|4443
 !:mime application/x-winhelp-fts
 !:ext	fts
->16	string		>\0			for "%s"|4453
+>16	string		>\0			for "%s"|4443
 
 # Summary: Hyper terminal
 # Extension: .ht
 # Created by: unknown
 0	string		HyperTerminal\040
->15	string		1.0\ --\ HyperTerminal\ data\ file	MS Windows HyperTerminal profile|4454
+>15	string		1.0\ --\ HyperTerminal\ data\ file	MS Windows HyperTerminal profile|4444
 
 # http://ithreats.files.wordpress.com/2009/05/\040
 # lnk_the_windows_shortcut_file_format.pdf
@@ -230,15 +230,15 @@
 # Extension: .lnk
 # Created by: unknown
 # 'L' + GUUID
-0	string		\114\0\0\0\001\024\002\0\0\0\0\0\300\0\0\0\0\0\0\106	MS Windows shortcut|4455
->20	lelong&1	1	\b, Item id list present|4456
->20	lelong&2	2	\b, Points to a file or directory|4457
->20	lelong&4	4	\b, Has Description string|4458
->20	lelong&8	8	\b, Has Relative path|4459
->20	lelong&16	16	\b, Has Working directory|4460
->20	lelong&32	32	\b, Has command line arguments|4461
->20	lelong&64	64	\b, Icon|4462
->>56	lelong		x	\b number=%d|4462
+0	string		\114\0\0\0\001\024\002\0\0\0\0\0\300\0\0\0\0\0\0\106	MS Windows shortcut|4445
+>20	lelong&1	1	\b, Item id list present|4446
+>20	lelong&2	2	\b, Points to a file or directory|4447
+>20	lelong&4	4	\b, Has Description string|4448
+>20	lelong&8	8	\b, Has Relative path|4449
+>20	lelong&16	16	\b, Has Working directory|4450
+>20	lelong&32	32	\b, Has command line arguments|4451
+>20	lelong&64	64	\b, Icon|4452
+>>56	lelong		x	\b number=%d|4452
 >24	lelong&1	1	\b, Read-Only
 >24	lelong&2	2	\b, Hidden
 >24	lelong&4	4	\b, System
@@ -276,28 +276,28 @@
 
 # Summary: Outlook Personal Folders
 # Created by: unknown
-0	lelong		0x4E444221	Microsoft Outlook email folder|4463
->10	leshort		0x0e		(<=2002)|4464
->10	leshort		0x17		(>=2003)|4465
+0	lelong		0x4E444221	Microsoft Outlook email folder|4453
+>10	leshort		0x0e		(<=2002)|4454
+>10	leshort		0x17		(>=2003)|4455
 
 
 # Summary: Windows help cache
 # Created by: unknown
-0	string		\164\146\115\122\012\000\000\000\001\000\000\000	MS Windows help cache|4466
+0	string		\164\146\115\122\012\000\000\000\001\000\000\000	MS Windows help cache|4456
 
 
 # Summary: IE cache file
 # Created by: Christophe Monniez
-0	string	Client\ UrlCache\ MMF 	Internet Explorer cache file|4467
->20	string	>\0			version %s|4467
+0	string	Client\ UrlCache\ MMF 	Internet Explorer cache file|4457
+>20	string	>\0			version %s|4457
 
 
 # Summary: Registry files
 # Created by: unknown
 # Modified by (1): Joerg Jenderek
-0	string		regf		MS Windows registry file, NT/2000 or above|4468
-0	string		CREG		MS Windows 95/98/ME registry file|4469
-0	string		SHCC3		MS Windows 3.1 registry file|4470
+0	string		regf		MS Windows registry file, NT/2000 or above|4458
+0	string		CREG		MS Windows 95/98/ME registry file|4459
+0	string		SHCC3		MS Windows 3.1 registry file|4460
 
 
 # Summary: Windows Registry text
@@ -309,19 +309,19 @@
 0	string		REGEDIT
 # skip ASCII text like "REGEDITor.txt" but match
 # L1WMAP.REG with only 1 CRNL or org.gnome.gnumeric.reg with 2 NL
->7	search/3	\n			Windows Registry text|4471
+>7	search/3	\n			Windows Registry text|4461
 !:mime	text/x-ms-regedit
 !:ext	reg
 #		Windows 9X variant
->>0	string		REGEDIT4		(Win95 or above)|4472
+>>0	string		REGEDIT4		(Win95 or above)|4462
 #		Windows 2K ANSI variant
 0	string		Windows\ Registry\ Editor\ 
->&0	string		Version\ 5.00\r\n\r\n	Windows Registry text (Win2K or above)|4473
+>&0	string		Version\ 5.00\r\n\r\n	Windows Registry text (Win2K or above)|4463
 !:mime	text/x-ms-regedit
 !:ext	reg
 #		Windows 2K UTF-16 variant
 2	lestring16	Windows\ Registry\ Editor\ 
->0x32	lestring16	Version\ 5.00\r\n\r\n	Windows Registry little-endian text (Win2K or above)|4474
+>0x32	lestring16	Version\ 5.00\r\n\r\n	Windows Registry little-endian text (Win2K or above)|4464
 # relative offset not working
 #>&0	lestring16	Version\ 5.00\r\n\r\n	Windows Registry little-endian text (Win2K or above)
 !:mime	text/x-ms-regedit
@@ -331,9 +331,9 @@
 # Reference: https://www.winehq.org/pipermail/wine-cvs/2005-October/018763.html
 # Note:	WINE use text based registry (system.reg,user.reg,userdef.reg)
 #	instead binary hiv structure like Windows
-0	string	WINE\ REGISTRY\ Version\ 	WINE registry text|4475
+0	string	WINE\ REGISTRY\ Version\ 	WINE registry text|4465
 # version 2
->&0	string	x				\b, version %s|4475
+>&0	string	x				\b, version %s|4465
 !:mime	text/x-wine-extension-reg
 !:ext	reg
 
@@ -363,66 +363,66 @@
 # but sometimes total commander directory tree file "treeinfo.wc" with lines like
 # [AUTORUN]
 # [boot]
->>>&0	string		=]\r\n[					Total commander directory treeinfo.wc|4476
+>>>&0	string		=]\r\n[					Total commander directory treeinfo.wc|4466
 !:mime text/plain
 !:ext	wc
 # From: Pal Tamas <folti@balabit.hu>
 # Autorun File
->>>&0	string		!]\r\n[					Microsoft Windows Autorun file|4477
+>>>&0	string		!]\r\n[					Microsoft Windows Autorun file|4467
 !:mime application/x-setupscript
 !:ext	inf
 # http://msdn.microsoft.com/en-us/library/windows/hardware/ff549520(v=vs.85).aspx
 # version strings ASCII coded case-independent for Windows setup information script file
->>&0	regex/c		\^(version|strings)]				Windows setup INFormation|4478
+>>&0	regex/c		\^(version|strings)]				Windows setup INFormation|4468
 !:mime	application/x-setupscript
 #!:mime application/x-wine-extension-inf
 !:ext	inf
 # NETCRC.INF OEMCPL.INF
->>&0	regex/c		\^(WinsockCRCList|OEMCPL)]			Windows setup INFormation|4478
+>>&0	regex/c		\^(WinsockCRCList|OEMCPL)]			Windows setup INFormation|4468
 !:mime	application/x-setupscript
 !:ext	inf
 # http://www.winfaq.de/faq_html/Content/tip2500/onlinefaq.php?h=tip2653.htm
 # http://msdn.microsoft.com/en-us/library/windows/desktop/cc144102.aspx
 # .ShellClassInfo DeleteOnCopy LocalizedFileNames ASCII coded case-independent
->>&0	regex/c	\^(\.ShellClassInfo|DeleteOnCopy|LocalizedFileNames)]	Windows desktop.ini|4479
+>>&0	regex/c	\^(\.ShellClassInfo|DeleteOnCopy|LocalizedFileNames)]	Windows desktop.ini|4469
 !:mime application/x-wine-extension-ini
 #!:mime text/plain
 # http://support.microsoft.com/kb/84709/
->>&0	regex/c		\^(don't\ load)]				Windows CONTROL.INI|4480
+>>&0	regex/c		\^(don't\ load)]				Windows CONTROL.INI|4470
 !:mime application/x-wine-extension-ini
 !:ext	ini
->>&0	regex/c		\^(ndishlp\\$|protman\\$|NETBEUI\\$)]		Windows PROTOCOL.INI|4481
+>>&0	regex/c		\^(ndishlp\\$|protman\\$|NETBEUI\\$)]		Windows PROTOCOL.INI|4471
 !:mime application/x-wine-extension-ini
 !:ext	ini
 # http://technet.microsoft.com/en-us/library/cc722567.aspx
 # http://www.winfaq.de/faq_html/Content/tip0000/onlinefaq.php?h=tip0137.htm
->>&0	regex/c		\^(windows|Compatibility|embedding)]		Windows WIN.INI|4482
+>>&0	regex/c		\^(windows|Compatibility|embedding)]		Windows WIN.INI|4472
 !:mime application/x-wine-extension-ini
 !:ext	ini
 # http://en.wikipedia.org/wiki/SYSTEM.INI
->>&0	regex/c		\^(boot|386enh|drivers)]			Windows SYSTEM.INI|4483
+>>&0	regex/c		\^(boot|386enh|drivers)]			Windows SYSTEM.INI|4473
 !:mime application/x-wine-extension-ini
 !:ext	ini
 # http://www.mdgx.com/newtip6.htm
->>&0	regex/c		\^(SafeList)]					Windows IOS.INI|4484
+>>&0	regex/c		\^(SafeList)]					Windows IOS.INI|4474
 !:mime application/x-wine-extension-ini
 !:ext	ini
 # http://en.wikipedia.org/wiki/NTLDR	Windows Boot Loader information
->>&0	regex/c		\^(boot\x20loader)]				Windows boot.ini|4485
+>>&0	regex/c		\^(boot\x20loader)]				Windows boot.ini|4475
 !:mime application/x-wine-extension-ini
 !:ext	ini
 # http://en.wikipedia.org/wiki/CONFIG.SYS
->>&0	regex/c		\^(menu)]					MS-DOS CONFIG.SYS|4486
+>>&0	regex/c		\^(menu)]					MS-DOS CONFIG.SYS|4476
 # @CONFIG.UI configuration file of previous DOS version saved by Caldera OPENDOS INSTALL.EXE
 # CONFIG.PSS saved version of file CONFIG.SYS created by %WINDIR%\SYTEM\MSCONFIG.EXE
 # CONFIG.TSH renamed file CONFIG.SYS.BAT by %WINDIR%\SYTEM\MSCONFIG.EXE
 # dos and w40 used in dual booting scene
 !:ext	sys/dos/w40
 # http://support.microsoft.com/kb/118579/
->>&0	regex/c		\^(Paths)]\r\n					MS-DOS MSDOS.SYS|4487
+>>&0	regex/c		\^(Paths)]\r\n					MS-DOS MSDOS.SYS|4477
 !:ext	sys/dos
 # http://chmspec.nongnu.org/latest/INI.html#HHP
->>&0	regex/c		\^(options)]\r\n				Microsoft HTML Help Project|4488
+>>&0	regex/c		\^(options)]\r\n				Microsoft HTML Help Project|4478
 !:mime text/plain
 !:ext	hhp
 # unknown keyword after opening bracket
@@ -431,7 +431,7 @@
 # look for left bracket of second section
 >>>&0	search/8192			[
 # version Strings FileIdentification
->>>>&0	string/c			version				Windows setup INFormation|4478
+>>>>&0	string/c			version				Windows setup INFormation|4468
 !:mime application/x-setupscript
 !:ext	inf
 # http://en.wikipedia.org/wiki/Initialization_file	Windows Initialization File or other
@@ -439,7 +439,7 @@
 >>>>>&0	ubyte				x
 # characters, digits, underscore and white space followed by right bracket
 # terminated by CR implies section line to skip BOOTLOG.TXT DETLOG.TXT
->>>>>>&-1	regex			\^([A-Za-z0-9_\(\)\ ]+)\]\r	Generic INItialization configuration [%-.40s|4489
+>>>>>>&-1	regex			\^([A-Za-z0-9_\(\)\ ]+)\]\r	Generic INItialization configuration [%-.40s|4479
 # NETDEF.INF multiarc.ini 
 #!:mime	application/x-setupscript
 !:mime	application/x-wine-extension-ini
@@ -450,20 +450,20 @@
 # look for left bracket in section line
 >2	search/8192		[
 # keyword without 1st letter which is maybe up-/down-case
->>&3	lestring16		ersion]			Windows setup INFormation|4478
+>>&3	lestring16		ersion]			Windows setup INFormation|4468
 !:mime	application/x-setupscript
 !:ext	inf
->>&3	lestring16		trings]			Windows setup INFormation|4478
+>>&3	lestring16		trings]			Windows setup INFormation|4468
 !:mime	application/x-setupscript
 !:ext	inf
->>&3	lestring16		ourceDisksNames]	Windows setup INFormation|4478
+>>&3	lestring16		ourceDisksNames]	Windows setup INFormation|4468
 !:mime	application/x-setupscript
 !:ext	inf
 # netnwcli.inf start with ;---[ NetNWCli.INX ]
 >>&3	default			x
 # look for NL followed by left bracket
 >>>&0	search/8192		\x0A\x00\x5b
->>>>&3	lestring16		ersion]			Windows setup INFormation|4478
+>>>>&3	lestring16		ersion]			Windows setup INFormation|4468
 !:mime	application/x-setupscript
 !:ext	inf
 
@@ -478,18 +478,18 @@
 >>68		ulelong		>0x57
 # test for zero high byte of InfValueBlockSize, followed by WinDirPath like
 # C:\WINDOWS (ASCII 0x433a5c.. , unicode 0x43003a005c..) or X:\MININT
->>>(68.l-1)	ubelong&0xffE0C519	=0x00400018	Windows Precompiled iNF|4490
+>>>(68.l-1)	ubelong&0xffE0C519	=0x00400018	Windows Precompiled iNF|4480
 !:mime	application/x-pnf
 # currently only found Major Version=1 and Minor Version=1
 #>>>>0		uleshort	=0x0101
 #>>>>>1		ubyte		x		\b, version %u
 #>>>>>0		ubyte		x		\b.%u
 >>>>0		uleshort	!0x0101
->>>>>1		ubyte		x		\b, version %u|4490
->>>>>0		ubyte		x		\b.%u|4490
+>>>>>1		ubyte		x		\b, version %u|4480
+>>>>>0		ubyte		x		\b.%u|4480
 # 1 ,2 (windows 98 SE)
 #>>>>2		uleshort	=2		\b, InfStyle %u
->>>>2		uleshort	!2		\b, InfStyle %u|4490
+>>>>2		uleshort	!2		\b, InfStyle %u|4480
 #	PNF_FLAG_IS_UNICODE		0x00000001
 #	PNF_FLAG_HAS_STRINGS		0x00000002
 #	PNF_FLAG_SRCPATH_IS_URL		0x00000004
@@ -499,8 +499,8 @@
 #	??				0x00000100
 #	??				0x01000000
 #	??				0x02000000
->>>>4	ulelong&0x00000001	0x00000001	\b, unicoded|4490
->>>>4	ulelong&0x00000020	0x00000020	\b, digitally signed|4490
+>>>>4	ulelong&0x00000001	0x00000001	\b, unicoded|4480
+>>>>4	ulelong&0x00000020	0x00000020	\b, digitally signed|4480
 #>>>>8		ulelong		x		\b, InfSubstValueListOffset 0x%x
 # many 0, 1 lmouusb.PNF, 2 linkfx10.PNF , f webfdr16.PNF
 #>>>>12		uleshort	x		\b, InfSubstValueCount 0x%x
@@ -509,12 +509,12 @@
 # only found values lower 0x0000ffff
 #>>>>16		ulelong		x		\b, InfVersionDataSize 0x%x
 # only found positive values lower 0x00ffFFff for InfVersionDataOffset
->>>>20		ulelong		x		\b, at 0x%x|4490
+>>>>20		ulelong		x		\b, at 0x%x|4480
 >>>>4	ulelong&0x00000001	=0x00000001
 # case independent: CatalogFile Class DriverVer layoutfile LayoutFile SetupClass signature Signature
->>>>>(20.l)	lestring16	x		"%s"|4490
+>>>>>(20.l)	lestring16	x		"%s"|4480
 >>>>4	ulelong&0x00000001	!0x00000001
->>>>>(20.l)	string		x		"%s"|4490
+>>>>>(20.l)	string		x		"%s"|4480
 # FILETIME is number of 100-nanosecond intervals since 1 January 1601
 #>>>>24		ulequad		x		\b, InfVersionLastWriteTime %16.16llx
 # only found values lower 0x00ffFFff
@@ -535,38 +535,38 @@
 # normally unicoded C:\Windows
 #>>>>>>>(68.l)	lestring16	x		\b, WinDirPath "%s"
 >>>>>>(68.l)	ubequad		!0x43003a005c005700
->>>>>>>(68.l)	lestring16	x		\b, WinDirPath "%s"|4490
+>>>>>>>(68.l)	lestring16	x		\b, WinDirPath "%s"|4480
 >>>>>4	ulelong&0x00000001	!0x00000001
 # normally ASCII C:\WINDOWS
 #>>>>>>(68.l)	string		=C:\\WINDOWS	\b, WinDirPath "%s"
->>>>>>(68.l)	string		!C:\\WINDOWS	\b, WinDirPath "%s"|4490
+>>>>>>(68.l)	string		!C:\\WINDOWS	\b, WinDirPath "%s"|4480
 # found OsLoaderPathOffset values often 0 , once 70h corelist.PNF, once 68h ASCII machine.PNF
 #>>>>72		ulelong		>0		\b, at 0x%x
->>>>72		ulelong		>0		\b,|4490
+>>>>72		ulelong		>0		\b,|4480
 >>>>>4	ulelong&0x00000001	=0x00000001
->>>>>>(72.l)	lestring16	x		OsLoaderPath "%s"|4490
+>>>>>>(72.l)	lestring16	x		OsLoaderPath "%s"|4480
 >>>>>4	ulelong&0x00000001	!0x00000001
 # seldom C:\ instead empty
->>>>>>(72.l)	string		x		OsLoaderPath "%s"|4490
+>>>>>>(72.l)	string		x		OsLoaderPath "%s"|4480
 # 1fdh
 #>>>>76		uleshort	x		\b, StringTableHashBucketCount 0x%x
->>>>78		uleshort	!0x407		\b, LanguageId %x|4490
+>>>>78		uleshort	!0x407		\b, LanguageId %x|4480
 # only 407h found
 #>>>>78		uleshort	=0x407		\b, LanguageId %x
 # InfSourcePathOffset often 0
 #>>>>80		ulelong		>0		\b, at 0x%x
->>>>80		ulelong		>0		\b,|4490
+>>>>80		ulelong		>0		\b,|4480
 >>>>>4	ulelong&0x00000001	=0x00000001
->>>>>>(80.l)	lestring16	x		SourcePath "%s"|4490
+>>>>>>(80.l)	lestring16	x		SourcePath "%s"|4480
 >>>>>4	ulelong&0x00000001	!0x00000001
->>>>>>(80.l)	string		>\0		SourcePath "%s"|4490
+>>>>>>(80.l)	string		>\0		SourcePath "%s"|4480
 # OriginalInfNameOffset often 0
 #>>>>84		ulelong		>0		\b, at 0x%x
->>>>84		ulelong		>0		\b,|4490
+>>>>84		ulelong		>0		\b,|4480
 >>>>>4	ulelong&0x00000001	=0x00000001
->>>>>>(84.l)	lestring16	x		InfName "%s"|4490
+>>>>>>(84.l)	lestring16	x		InfName "%s"|4480
 >>>>>4	ulelong&0x00000001	!0x00000001
->>>>>>(84.l)	string		>\0		InfName "%s"|4490
+>>>>>>(84.l)	string		>\0		InfName "%s"|4480
 
 # Summary: backup file created with utility like NTBACKUP.EXE shipped with Windows NT/2K/XP/2003
 # Extension: .bkf
@@ -582,18 +582,18 @@
 # Control Block ID is zero
 >>>36	ulelong			0
 # BIT4-BIT15, BIT18-BIT31 of block attributes are unused
->>>>4	ulelong&0xFFfcFFe0	0		Windows NTbackup archive|4491
+>>>>4	ulelong&0xFFfcFFe0	0		Windows NTbackup archive|4481
 #!:mime application/x-ntbackup
 !:ext bkf
 # OS ID
->>>>>10	ubyte			1		\b NetWare|4492
->>>>>10	ubyte			13		\b NetWare SMS|4493
->>>>>10	ubyte			14		\b NT|4494
->>>>>10	ubyte			24		\b 3|4495
->>>>>10	ubyte			25		\b OS/2|4496
->>>>>10	ubyte			26		\b 95|4497
->>>>>10	ubyte			27		\b Macintosh|4498
->>>>>10	ubyte			28		\b UNIX|4499
+>>>>>10	ubyte			1		\b NetWare|4482
+>>>>>10	ubyte			13		\b NetWare SMS|4483
+>>>>>10	ubyte			14		\b NT|4484
+>>>>>10	ubyte			24		\b 3|4485
+>>>>>10	ubyte			25		\b OS/2|4486
+>>>>>10	ubyte			26		\b 95|4487
+>>>>>10	ubyte			27		\b Macintosh|4488
+>>>>>10	ubyte			28		\b UNIX|4489
 # OS Version (2)
 #>>>>>11	ubyte			x		OS V=%x
 # MTF_CONTINUATION	Media Sequence Number > 1
@@ -671,14 +671,14 @@
 # Reference: http://www.cryer.co.uk/file-types/p/pal.htm
 # Created by: Joerg Jenderek
 # Note: there exist other color palette formats also with .pal extension
-0	string	JASC-PAL\r\n	PaintShop Pro color palette|4500
+0	string	JASC-PAL\r\n	PaintShop Pro color palette|4490
 #!:mime	text/plain
 # PspPalette extension is used by newer (probably 8) PaintShopPro versions
 !:ext	pal/PspPalette
 # 2nd line contains palette file version. For example "0100"
->10	string	!0100		\b, version %.4s|4500
+>10	string	!0100		\b, version %.4s|4490
 # third line contains the number of colours: 16 256 ...
->16	string	x		\b, %.3s colors|4500
+>16	string	x		\b, %.3s colors|4490
 
 # URL: http://en.wikipedia.org/wiki/Innosetup
 # Reference: https://github.com/jrsoftware/issrc/blob/master/Projects/Undo.pas
@@ -686,44 +686,44 @@
 # Note:	created by like "InnoSetup self-extracting archive" inside ./msdos
 # TrID labeles the entry as "Inno Setup Uninstall Log"
 #	TUninstallLogID
-0	string	Inno\ Setup\ Uninstall\ Log\ (b)	InnoSetup Log|4501
+0	string	Inno\ Setup\ Uninstall\ Log\ (b)	InnoSetup Log|4491
 !:mime	application/x-innosetup
 # unins000.dat, unins001.dat, ...
 !:ext	dat
 # " 64-bit" variant
->0x1c	string		>\0				\b%.7s|4501
+>0x1c	string		>\0				\b%.7s|4491
 # AppName[0x80] like "Minimal SYStem", ClamWin Free Antivirus , ...
->0xc0	string		x				%s|4501
+>0xc0	string		x				%s|4491
 # AppId[0x80] is simliar to AppName or
 # GUID like {4BB0DCDC-BC24-49EC-8937-72956C33A470} start with left brace
 >0x40	ubyte		0x7b
->>0x40	string		x				%-.38s|4501
+>>0x40	string		x				%-.38s|4491
 # do not know how this log version correlates to program version
->0x140	ulelong		x				\b, version 0x%x|4501
+>0x140	ulelong		x				\b, version 0x%x|4491
 # NumRecs
 #>0x144	ulelong		x				\b, 0x%4.4x records
 # EndOffset means files size
->0x148	ulelong		x				\b, %u bytes|4501
+>0x148	ulelong		x				\b, %u bytes|4491
 # Flags 5 25h 35h
 #>0x14c	ulelong		x				\b, flags %8.8x
 # Reserved: array[0..26] of Longint
 # the non Unicode HighestSupportedVersion may never become greater than or equal to 1000
 >0x140	ulelong		<1000
 # hostname
->>0x1d6	pstring		x				\b, %s|4501
+>>0x1d6	pstring		x				\b, %s|4491
 # user name
->>>&0	pstring		x				\b\%s|4501
+>>>&0	pstring		x				\b\%s|4491
 # directory like C:\Program Files (x86)\GnuWin32
->>>>&0	pstring		x				\b, "%s"|4501
+>>>>&0	pstring		x				\b, "%s"|4491
 # version 1000 or higher implies unicode
 >0x140	ulelong		>999
 # hostname
->>0x1db	lestring16	x				\b, %-.9s|4501
+>>0x1db	lestring16	x				\b, %-.9s|4491
 # utf string variant with prepending fe??ffFFff
 >>0x1db	search/43	\xFF\xFF\xFF			
 # user name
->>>&0	lestring16	x				\b\%-.9s|4501
+>>>&0	lestring16	x				\b\%-.9s|4491
 >>>&0	search/43	\xFF\xFF\xFF			
 # directory like C:\Program Files\GIMP 2
->>>>&0	lestring16	x				\b, %-.42s|4501
+>>>>&0	lestring16	x				\b, %-.42s|4491
 

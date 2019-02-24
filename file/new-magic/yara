@@ -7,11 +7,11 @@
 
 0	string	YARA
 >4	lelong	>2047
->8	byte	<20	YARA 3.x compiled rule set|4668
+>8	byte	<20	YARA 3.x compiled rule set|4658
 # version
 >>8	clear	x
->>8	byte	6	created with version 3.3.0|4669
->>8	byte	8	created with version 3.4.0|4670
->>8	byte	11	created with version 3.5.0|4671
+>>8	byte	6	created with version 3.3.0|4659
+>>8	byte	8	created with version 3.4.0|4660
+>>8	byte	11	created with version 3.5.0|4661
 >>8	default	x
->>>8	byte	x	development version 0x%02x|4668
+>>>8	byte	x	development version 0x%02x|4658

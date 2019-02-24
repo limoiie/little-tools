@@ -4,42 +4,42 @@
 #
 # RPM: file(1) magic for Red Hat Packages   Erik Troan (ewt@redhat.com)
 #
-0	belong		0xedabeedb	RPM|3675
+0	belong		0xedabeedb	RPM|3665
 !:mime	application/x-rpm
->4	byte		x		v%d|3675
->5	byte		x		\b.%d|3675
->6	beshort		1		src|3676
->6	beshort		0		bin|3677
->>8	beshort		1		i386/x86_64|3678
->>8	beshort		2		Alpha/Sparc64|3679
->>8	beshort		3		Sparc|3680
->>8	beshort		4		MIPS|3681
->>8	beshort		5		PowerPC|3682
->>8	beshort		6		68000|3683
->>8	beshort		7		SGI|3684
->>8	beshort		8		RS6000|3685
->>8	beshort		9		IA64|3686
->>8	beshort		10		Sparc64|3687
->>8	beshort		11		MIPSel|3688
->>8	beshort		12		ARM|3689
->>8	beshort		13		MiNT|3690
->>8	beshort		14		S/390|3691
->>8	beshort		15		S/390x|3692
->>8	beshort		16		PowerPC64|3693
->>8	beshort		17		SuperH|3694
->>8	beshort		18		Xtensa|3695
->>8	beshort		255		noarch|3696
+>4	byte		x		v%d|3665
+>5	byte		x		\b.%d|3665
+>6	beshort		1		src|3666
+>6	beshort		0		bin|3667
+>>8	beshort		1		i386/x86_64|3668
+>>8	beshort		2		Alpha/Sparc64|3669
+>>8	beshort		3		Sparc|3670
+>>8	beshort		4		MIPS|3671
+>>8	beshort		5		PowerPC|3672
+>>8	beshort		6		68000|3673
+>>8	beshort		7		SGI|3674
+>>8	beshort		8		RS6000|3675
+>>8	beshort		9		IA64|3676
+>>8	beshort		10		Sparc64|3677
+>>8	beshort		11		MIPSel|3678
+>>8	beshort		12		ARM|3679
+>>8	beshort		13		MiNT|3680
+>>8	beshort		14		S/390|3681
+>>8	beshort		15		S/390x|3682
+>>8	beshort		16		PowerPC64|3683
+>>8	beshort		17		SuperH|3684
+>>8	beshort		18		Xtensa|3685
+>>8	beshort		255		noarch|3686
 
 #delta RPM    Daniel Novotny (dnovotny@redhat.com)
-0	string		drpm		Delta RPM|3697
+0	string		drpm		Delta RPM|3687
 !:mime  application/x-rpm
->12	string 	x	%s|3697
->>8	beshort		11		MIPSel|3697
->>8	beshort		12		ARM|3697
->>8	beshort		13		MiNT|3697
->>8	beshort		14		S/390|3697
->>8	beshort		15		S/390x|3697
->>8	beshort		16		PowerPC64|3697
->>8	beshort		17		SuperH|3697
->>8	beshort		18		Xtensa|3697
->>10	string		x		%s|3697
+>12	string 	x	%s|3687
+>>8	beshort		11		MIPSel|3687
+>>8	beshort		12		ARM|3687
+>>8	beshort		13		MiNT|3687
+>>8	beshort		14		S/390|3687
+>>8	beshort		15		S/390x|3687
+>>8	beshort		16		PowerPC64|3687
+>>8	beshort		17		SuperH|3687
+>>8	beshort		18		Xtensa|3687
+>>10	string		x		%s|3687

@@ -4,49 +4,49 @@
 #
 # Unfortunately, saved netnews also has From line added in some news software.
 #0	string		From 		mail text
-0	string/t		Relay-Version: 	old news text|2839
+0	string/t		Relay-Version: 	old news text|2831
 !:mime	message/rfc822
-0	string/t		#!\ rnews	batched news text|2840
+0	string/t		#!\ rnews	batched news text|2832
 !:mime	message/rfc822
-0	string/t		N#!\ rnews	mailed, batched news text|2841
+0	string/t		N#!\ rnews	mailed, batched news text|2833
 !:mime	message/rfc822
-0	string/t		Forward\ to 	mail forwarding text|2842
+0	string/t		Forward\ to 	mail forwarding text|2834
 !:mime	message/rfc822
-0	string/t		Pipe\ to 	mail piping text|2843
+0	string/t		Pipe\ to 	mail piping text|2835
 !:mime	message/rfc822
-0	string/tc		delivered-to:	SMTP mail text|2844
+0	string/tc		delivered-to:	SMTP mail text|2836
 !:mime	message/rfc822
-0	string/tc		return-path:	SMTP mail text|2844
+0	string/tc		return-path:	SMTP mail text|2836
 !:mime	message/rfc822
-0	string/t		Path:		news text|2845
+0	string/t		Path:		news text|2837
 !:mime	message/news
-0	string/t		Xref:		news text|2845
+0	string/t		Xref:		news text|2837
 !:mime	message/news
-0	string/t		From:		news or mail text|2846
+0	string/t		From:		news or mail text|2838
 !:mime	message/rfc822
-0	string/t		Article 	saved news text|2847
+0	string/t		Article 	saved news text|2839
 !:mime	message/news
-0	string/t		BABYL		Emacs RMAIL text|2848
-0	string/t		Received:	RFC 822 mail text|2849
+0	string/t		BABYL		Emacs RMAIL text|2840
+0	string/t		Received:	RFC 822 mail text|2841
 !:mime	message/rfc822
-0	string/t		MIME-Version:	MIME entity text|2850
+0	string/t		MIME-Version:	MIME entity text|2842
 #0	string/t		Content-	MIME entity text
 
 # TNEF files...
-0	lelong		0x223E9F78	Transport Neutral Encapsulation Format|2851
+0	lelong		0x223E9F78	Transport Neutral Encapsulation Format|2843
 !:mime	application/vnd.ms-tnef
 
 # From: Kevin Sullivan <ksulliva@psc.edu>
-0	string		*mbx*		MBX mail folder|2852
+0	string		*mbx*		MBX mail folder|2844
 
 # From: Simon Matter <simon.matter@invoca.ch>
-0	string		\241\002\213\015skiplist\ file\0\0\0	Cyrus skiplist DB|2853
-0	string		\241\002\213\015twoskip\ file\0\0\0\0	Cyrus twoskip DB|2854
+0	string		\241\002\213\015skiplist\ file\0\0\0	Cyrus skiplist DB|2845
+0	string		\241\002\213\015twoskip\ file\0\0\0\0	Cyrus twoskip DB|2846
 
 # JAM(mbp) Fidonet message area databases
 # JHR file
-0	string	JAM\0			JAM message area header file|2855
->12	leshort >0			(%d messages)|2856
+0	string	JAM\0			JAM message area header file|2847
+>12	leshort >0			(%d messages)|2848
 
 # Squish Fidonet message area databases
 # SQD file (requires at least one message in the area)
@@ -62,7 +62,7 @@
 # From: Philipp Hahn <hahn@univention.de>
 
 # Compiled Cyrus sieve script
-0       string CyrSBytecode     Cyrus sieve bytecode data,|2857
->12     belong =1       version 1, big-endian|2857
->12     lelong =1       version 1, little-endian|2857
->12     belong x        version %d, network-endian|2857
+0       string CyrSBytecode     Cyrus sieve bytecode data,|2849
+>12     belong =1       version 1, big-endian|2849
+>12     lelong =1       version 1, little-endian|2849
+>12     belong x        version %d, network-endian|2849

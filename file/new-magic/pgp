@@ -21,35 +21,35 @@
 #>>(1.S+3)	ubyte	>0x7F		TYPE OK,
 >>(1.S+3)	ubyte	>0x7F
 # old versions 2,3 implies Pretty Good Privacy
->>>3		ubyte		<4		PGP key public ring (v%u)|3504
+>>>3		ubyte		<4		PGP key public ring (v%u)|3495
 !:mime		application/pgp-keys
 !:ext		pgp/ASD
->>>>4		beldate		x		created %s|3504
+>>>>4		beldate		x		created %s|3495
 # days that this key is valid. If this number is zero, then it does not expire
->>>>8		ubeshort	>0		\b, %u days valid|3504
->>>>8		ubeshort	=0		\b, not expire|3504
+>>>>8		ubeshort	>0		\b, %u days valid|3495
+>>>>8		ubeshort	=0		\b, not expire|3495
 # display key algorithm 1~RSA (Encrypt or Sign)
 >>>>10		use		key_algo
 # Multiprecision Integers (MPI) size
->>>>11		ubeshort	x		%u bits|3504
+>>>>11		ubeshort	x		%u bits|3495
 # MPI
->>>>13		ubequad		x		MPI=0x%16.16llx...|3504
+>>>>13		ubequad		x		MPI=0x%16.16llx...|3495
 # new version implies Pretty Good Privacy (PGP) >= 5.0 or Gnu Privacy Guard (GPG)
->>>3		ubyte		>3		PGP/GPG key public ring (v%u)|3504
+>>>3		ubyte		>3		PGP/GPG key public ring (v%u)|3495
 !:mime		application/pgp-keys
 !:ext		pgp/gpg/pkr/asd
->>>>4		beldate		x		created %s|3504
+>>>>4		beldate		x		created %s|3495
 # display key algorithm 17~DSA
 >>>>8		use		key_algo
 # Multiprecision Integers (MPI) size
->>>>9		ubeshort	x		%u bits|3504
->>>>11		ubequad		x		MPI=0x%16.16llx...|3504
+>>>>9		ubeshort	x		%u bits|3495
+>>>>11		ubequad		x		MPI=0x%16.16llx...|3495
 
-0       beshort         0x9501                  PGP key security ring|3505
+0       beshort         0x9501                  PGP key security ring|3496
 !:mime	application/x-pgp-keyring
-0       beshort         0x9500                  PGP key security ring|3505
+0       beshort         0x9500                  PGP key security ring|3496
 !:mime	application/x-pgp-keyring
-0	beshort		0xa600			PGP encrypted data|3506
+0	beshort		0xa600			PGP encrypted data|3497
 #!:mime	application/pgp-encrypted
 #0	string		-----BEGIN\040PGP	text/PGP armored data
 !:mime	text/PGP # encoding: armored data
@@ -58,15 +58,15 @@
 #>15	string	SIGNED\040MESSAGE-	signed message
 #>15	string	PGP\040SIGNATURE-	signature
 
-2	string	---BEGIN\040PGP\040PUBLIC\040KEY\040BLOCK-	PGP public key block|3507
+2	string	---BEGIN\040PGP\040PUBLIC\040KEY\040BLOCK-	PGP public key block|3498
 !:mime	application/pgp-keys
 >10	search/100	\n\n
 >>&0	use		pgp
-0	string	-----BEGIN\040PGP\040MESSAGE-		PGP message|3508
+0	string	-----BEGIN\040PGP\040MESSAGE-		PGP message|3499
 !:mime	application/pgp
 >10	search/100	\n\n
 >>&0	use		pgp
-0	string	-----BEGIN\040PGP\040SIGNATURE-		PGP signature|3509
+0	string	-----BEGIN\040PGP\040SIGNATURE-		PGP signature|3500
 !:mime	application/pgp-signature
 >10	search/100	\n\n
 >>&0	use		pgp
@@ -126,11 +126,11 @@
 
 # 1024b RSA encrypted data
 
-0	string	\x84\x8c\x03		PGP RSA encrypted session key -|3510
->3	lelong	x			keyid: %X|3510
->7	lelong	x			%X|3510
->11	byte	0x01			RSA (Encrypt or Sign) 1024b|3511
->11	byte	0x02			RSA Encrypt-Only 1024b|3512
+0	string	\x84\x8c\x03		PGP RSA encrypted session key -|3501
+>3	lelong	x			keyid: %X|3501
+>7	lelong	x			%X|3501
+>11	byte	0x01			RSA (Encrypt or Sign) 1024b|3502
+>11	byte	0x02			RSA Encrypt-Only 1024b|3503
 >12	string	\x04\x00
 >12	string	\x03\xff
 >12	string	\x03\xfe
@@ -143,11 +143,11 @@
 
 # 2048b RSA encrypted data
 
-0	string	\x85\x01\x0c\x03	PGP RSA encrypted session key -|3510
->4	lelong	x			keyid: %X|3510
->8	lelong	x			%X|3510
->12	byte	0x01			RSA (Encrypt or Sign) 2048b|3513
->12	byte	0x02			RSA Encrypt-Only 2048b|3514
+0	string	\x85\x01\x0c\x03	PGP RSA encrypted session key -|3501
+>4	lelong	x			keyid: %X|3501
+>8	lelong	x			%X|3501
+>12	byte	0x01			RSA (Encrypt or Sign) 2048b|3504
+>12	byte	0x02			RSA Encrypt-Only 2048b|3505
 >13	string	\x08\x00
 >13	string	\x07\xff
 >13	string	\x07\xfe
@@ -160,11 +160,11 @@
 
 # 3072b RSA encrypted data
 
-0	string	\x85\x01\x8c\x03	PGP RSA encrypted session key -|3510
->4	lelong	x			keyid: %X|3510
->8	lelong	x			%X|3510
->12	byte	0x01			RSA (Encrypt or Sign) 3072b|3515
->12	byte	0x02			RSA Encrypt-Only 3072b|3516
+0	string	\x85\x01\x8c\x03	PGP RSA encrypted session key -|3501
+>4	lelong	x			keyid: %X|3501
+>8	lelong	x			%X|3501
+>12	byte	0x01			RSA (Encrypt or Sign) 3072b|3506
+>12	byte	0x02			RSA Encrypt-Only 3072b|3507
 >13	string	\x0c\x00
 >13	string	\x0b\xff
 >13	string	\x0b\xfe
@@ -177,11 +177,11 @@
 
 # 3072b RSA encrypted data
 
-0	string	\x85\x02\x0c\x03	PGP RSA encrypted session key -|3510
->4	lelong	x			keyid: %X|3510
->8	lelong	x			%X|3510
->12	byte	0x01			RSA (Encrypt or Sign) 4096b|3517
->12	byte	0x02			RSA Encrypt-Only 4096b|3518
+0	string	\x85\x02\x0c\x03	PGP RSA encrypted session key -|3501
+>4	lelong	x			keyid: %X|3501
+>8	lelong	x			%X|3501
+>12	byte	0x01			RSA (Encrypt or Sign) 4096b|3508
+>12	byte	0x02			RSA Encrypt-Only 4096b|3509
 >13	string	\x10\x00
 >13	string	\x0f\xff
 >13	string	\x0f\xfe
@@ -194,11 +194,11 @@
 
 # 4096b RSA encrypted data
 
-0	string	\x85\x04\x0c\x03	PGP RSA encrypted session key -|3510
->4	lelong	x			keyid: %X|3510
->8	lelong	x			%X|3510
->12	byte	0x01			RSA (Encrypt or Sign) 8129b|3519
->12	byte	0x02			RSA Encrypt-Only 8129b|3520
+0	string	\x85\x04\x0c\x03	PGP RSA encrypted session key -|3501
+>4	lelong	x			keyid: %X|3501
+>8	lelong	x			%X|3501
+>12	byte	0x01			RSA (Encrypt or Sign) 8129b|3510
+>12	byte	0x02			RSA Encrypt-Only 8129b|3511
 >13	string	\x20\x00
 >13	string	\x1f\xff
 >13	string	\x1f\xfe
@@ -252,7 +252,7 @@
 
 # pgp symmetric encrypted data
 
-0	byte	0x8c			PGP symmetric key encrypted data -|3521
+0	byte	0x8c			PGP symmetric key encrypted data -|3512
 >1	byte	0x0d
 >1	byte	0x0c
 >2	byte	0x04
@@ -517,9 +517,9 @@
 
 # PGP RSA (e=65537) secret (sub-)key header
 
-0	byte	0x95			PGP Secret Key -|3522
+0	byte	0x95			PGP Secret Key -|3513
 >1	use	pgpkey
-0	byte	0x97			PGP Secret Sub-key -|3523
+0	byte	0x97			PGP Secret Sub-key -|3514
 >1	use	pgpkey
 0	byte	0x9d
 # Update: Joerg Jenderek
@@ -532,17 +532,17 @@
 # skip Dragon.SHR DEMO.INIT by looking for positive version
 >>3	ubyte		>0
 # skip BUISSON.13 GUITAR1 by looking for low version number
->>>3	ubyte		<5		PGP Secret Sub-key|3524
+>>>3	ubyte		<5		PGP Secret Sub-key|3514
 # sub-key are normally part of secret key. So it does not occur as standalone file
 #!:ext	bin
 # version 2,3~old 4~new . Comment following line for version 5.28 look
->>>>3	ubyte		x		(v%d)|3524
->>>>3	ubyte		x		-|3524
+>>>>3	ubyte		x		(v%d)|3514
+>>>>3	ubyte		x		-|3514
 # old versions 2 or 3 but no real example found
 >>>>3	ubyte		<4
 # 2 byte for key bits in version 5.28 look
->>>>>11		ubeshort	x	%db|3524
->>>>>4		beldate		x	created on %s -|3524
+>>>>>11		ubeshort	x	%db|3514
+>>>>>4		beldate		x	created on %s -|3514
 # old versions use 2 additional bytes after time stamp
 #>>>>>8		ubeshort	x	0x%x
 # display key algorithm 1~RSA Encrypt|Sign - 21~Diffie-Hellman
@@ -552,8 +552,8 @@
 >>>>>>&5	use		keyend
 # new version
 >>>>3	ubyte		>3
->>>>>9		ubeshort	x	%db|3524
->>>>>4		beldate		x	created on %s -|3524
+>>>>>9		ubeshort	x	%db|3514
+>>>>>4		beldate		x	created on %s -|3514
 # display key algorithm
 >>>>>8		use		key_algo
 >>>>>(9.S/8)	ubequad		x

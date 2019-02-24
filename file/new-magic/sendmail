@@ -17,15 +17,15 @@
 # by older sendmail. til version 8.6 support for frozen configuration files is removed
 # valid version numbers look like "7.14.4" and should be similar to output of commands
 # "sendmail -d0 -bt < /dev/null |grep -i Version" or "egrep '^DZ' /etc/sendmail.cf"
->16	regex/s	=^[0-78][0-9.]{4}	Sendmail frozen configuration|3737
+>16	regex/s	=^[0-78][0-9.]{4}	Sendmail frozen configuration|3727
 # normally only /etc/sendmail.fc or /var/adm/sendmail/sendmail.fc
 !:ext fc
->>16	string	>\0			- version %s|3737
+>>16	string	>\0			- version %s|3727
 0	short	0x271c
 # look for valid version number
->16	regex/s	=^[0-78][0-9.]{4}	Sendmail frozen configuration|3737
+>16	regex/s	=^[0-78][0-9.]{4}	Sendmail frozen configuration|3727
 !:ext fc
->>16	string	>\0			- version %s|3737
+>>16	string	>\0			- version %s|3727
 
 #------------------------------------------------------------------------------
 # sendmail:  file(1) magic for sendmail m4(1) files
@@ -33,5 +33,5 @@
 # From Hendrik Scholz <hendrik@scholz.net>
 # i.e. files in /usr/share/sendmail/cf/
 #
-0   string  divert(-1)\n    sendmail m4 text file|3738
+0   string  divert(-1)\n    sendmail m4 text file|3728
 

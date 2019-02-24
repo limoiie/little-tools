@@ -7,43 +7,43 @@
 # Michael R. Wayne  ***  TMC & Associates  ***  INTERNET: wayne@ford-vax.arpa
 # uucp: {philabs | pyramid} !fmsrl7!wayne   OR   wayne@fmsrl7.UUCP
 #
-0	beshort		000610	Tower/XP rel 2 object|3251
->12	   belong		>0	not stripped|3251
->20	   beshort		0407	executable|3251
->20	   beshort		0410	pure executable|3251
->22	   beshort		>0	- version %d|3251
-0	beshort		000615	Tower/XP rel 2 object|3251
->12	   belong		>0	not stripped|3251
->20	   beshort		0407	executable|3251
->20	   beshort		0410	pure executable|3251
->22	   beshort		>0	- version %d|3251
-0	beshort		000620	Tower/XP rel 3 object|3252
->12	   belong		>0	not stripped|3252
->20	   beshort		0407	executable|3252
->20	   beshort		0410	pure executable|3252
->22	   beshort		>0	- version %d|3252
-0	beshort		000625	Tower/XP rel 3 object|3252
->12	   belong		>0	not stripped|3252
->20	   beshort		0407	executable|3252
->20	   beshort		0410	pure executable|3252
->22	   beshort		>0	- version %d|3252
-0	beshort		000630	Tower32/600/400 68020 object|3253
->12	   belong		>0	not stripped|3253
->20	   beshort		0407	executable|3253
->20	   beshort		0410	pure executable|3253
->22	   beshort		>0	- version %d|3253
-0	beshort		000640	Tower32/800 68020|3254
->18	   beshort		&020000	w/68881 object|3254
->18	   beshort		&040000	compatible object|3254
->18	   beshort		&060000	object|3254
->20	   beshort		0407	executable|3254
->20	   beshort		0413	pure executable|3254
->12	   belong		>0	not stripped|3254
->22	   beshort		>0	- version %d|3254
-0	beshort		000645	Tower32/800 68010|3255
->18	   beshort		&040000	compatible object|3255
->18	   beshort		&060000 object|3255
->20	   beshort		0407	executable|3255
->20	   beshort		0413	pure executable|3255
->12	   belong		>0	not stripped|3255
->22	   beshort		>0	- version %d|3255
+0	beshort		000610	Tower/XP rel 2 object|3242
+>12	   belong		>0	not stripped|3242
+>20	   beshort		0407	executable|3242
+>20	   beshort		0410	pure executable|3242
+>22	   beshort		>0	- version %d|3242
+0	beshort		000615	Tower/XP rel 2 object|3242
+>12	   belong		>0	not stripped|3242
+>20	   beshort		0407	executable|3242
+>20	   beshort		0410	pure executable|3242
+>22	   beshort		>0	- version %d|3242
+0	beshort		000620	Tower/XP rel 3 object|3243
+>12	   belong		>0	not stripped|3243
+>20	   beshort		0407	executable|3243
+>20	   beshort		0410	pure executable|3243
+>22	   beshort		>0	- version %d|3243
+0	beshort		000625	Tower/XP rel 3 object|3243
+>12	   belong		>0	not stripped|3243
+>20	   beshort		0407	executable|3243
+>20	   beshort		0410	pure executable|3243
+>22	   beshort		>0	- version %d|3243
+0	beshort		000630	Tower32/600/400 68020 object|3244
+>12	   belong		>0	not stripped|3244
+>20	   beshort		0407	executable|3244
+>20	   beshort		0410	pure executable|3244
+>22	   beshort		>0	- version %d|3244
+0	beshort		000640	Tower32/800 68020|3245
+>18	   beshort		&020000	w/68881 object|3245
+>18	   beshort		&040000	compatible object|3245
+>18	   beshort		&060000	object|3245
+>20	   beshort		0407	executable|3245
+>20	   beshort		0413	pure executable|3245
+>12	   belong		>0	not stripped|3245
+>22	   beshort		>0	- version %d|3245
+0	beshort		000645	Tower32/800 68010|3246
+>18	   beshort		&040000	compatible object|3246
+>18	   beshort		&060000 object|3246
+>20	   beshort		0407	executable|3246
+>20	   beshort		0413	pure executable|3246
+>12	   belong		>0	not stripped|3246
+>22	   beshort		>0	- version %d|3246

@@ -5,49 +5,49 @@
 #
 
 # PostScript, updated by Daniel Quinlan (quinlan@yggdrasil.com)
-0	string		%!		PostScript document text|3542
+0	string		%!		PostScript document text|3532
 !:mime	application/postscript
 !:apple	ASPSTEXT
->2	string		PS-Adobe-	conforming|3543
->>11	string		>\0		DSC level %.3s|3543
->>>15	string		EPS		\b, type %s|3543
->>>15	string		Query		\b, type %s|3543
->>>15	string		ExitServer	\b, type %s|3543
+>2	string		PS-Adobe-	conforming|3533
+>>11	string		>\0		DSC level %.3s|3533
+>>>15	string		EPS		\b, type %s|3533
+>>>15	string		Query		\b, type %s|3533
+>>>15	string		ExitServer	\b, type %s|3533
 >>>15   search/1000		%%LanguageLevel:\040
->>>>&0	string		>\0		\b, Level %s|3543
+>>>>&0	string		>\0		\b, Level %s|3533
 # Some PCs have the annoying habit of adding a ^D as a document separator
-0	string		\004%!		PostScript document text|3542
+0	string		\004%!		PostScript document text|3532
 !:mime	application/postscript
 !:apple	ASPSTEXT
->3	string		PS-Adobe-	conforming|3543
->>12	string		>\0		DSC level %.3s|3543
->>>16	string		EPS		\b, type %s|3543
->>>16	string		Query		\b, type %s|3543
->>>16	string		ExitServer	\b, type %s|3543
+>3	string		PS-Adobe-	conforming|3533
+>>12	string		>\0		DSC level %.3s|3533
+>>>16	string		EPS		\b, type %s|3533
+>>>16	string		Query		\b, type %s|3533
+>>>16	string		ExitServer	\b, type %s|3533
 >>>16   search/1000		%%LanguageLevel:\040
->>>>&0	string		>\0		\b, Level %s|3543
-0	string		\033%-12345X%!PS	PostScript document|3544
+>>>>&0	string		>\0		\b, Level %s|3533
+0	string		\033%-12345X%!PS	PostScript document|3534
 
 # DOS EPS Binary File Header
 # From: Ed Sznyter <ews@Black.Market.NET>
-0       belong          0xC5D0D3C6      DOS EPS Binary File|3128
->4      long            >0              Postscript starts at byte %d|3129
->>8     long            >0              length %d|3129
->>>12   long            >0              Metafile starts at byte %d|3129
->>>>16  long            >0              length %d|3129
->>>20   long            >0              TIFF starts at byte %d|3129
->>>>24  long            >0              length %d|3129
+0       belong          0xC5D0D3C6      DOS EPS Binary File|3120
+>4      long            >0              Postscript starts at byte %d|3121
+>>8     long            >0              length %d|3121
+>>>12   long            >0              Metafile starts at byte %d|3121
+>>>>16  long            >0              length %d|3121
+>>>20   long            >0              TIFF starts at byte %d|3121
+>>>>24  long            >0              length %d|3121
 
 # Summary: Adobe's PostScript Printer Description File
 # Extension: .ppd
 # Reference: http://partners.adobe.com/public/developer/en/ps/5003.PPD_Spec_v4.3.pdf, Section 3.8
 # Submitted by: Yves Arrouye <arrouye@marin.fdn.fr>
 #
-0	string		*PPD-Adobe:\x20	PPD file|3545
->&0	string		x		\b, version %s|3545
+0	string		*PPD-Adobe:\x20	PPD file|3535
+>&0	string		x		\b, version %s|3535
 
 # HP Printer Job Language
-0	string		\033%-12345X@PJL	HP Printer Job Language data|3546
+0	string		\033%-12345X@PJL	HP Printer Job Language data|3536
 # HP Printer Job Language
 # The header found on Win95 HP plot files is the "Silliest Thing possible"
 # (TM)
@@ -56,17 +56,17 @@
 # For example the LaserJet 5L driver puts the "PJL ENTER LANGUAGE" in line 10
 # From: Uwe Bonnes <bon@elektron.ikp.physik.th-darmstadt.de>
 #
-0	string		\033%-12345X@PJL	HP Printer Job Language data|3546
->&0	string		>\0			%s|3546
->>&0	string		>\0			%s|3546
->>>&0	string		>\0			%s|3546
->>>>&0	string		>\0			%s|3546
+0	string		\033%-12345X@PJL	HP Printer Job Language data|3536
+>&0	string		>\0			%s|3536
+>>&0	string		>\0			%s|3536
+>>>&0	string		>\0			%s|3536
+>>>>&0	string		>\0			%s|3536
 #>15	string		\ ENTER\ LANGUAGE\ =
 #>31	string		PostScript		PostScript
 
 # From: Stefan Thurner <thurners@nicsys.de>
 0	string		\033%-12345X@PJL
->&0	search/10000	%!			PJL encapsulated PostScript document text|3547
+>&0	search/10000	%!			PJL encapsulated PostScript document text|3537
 
 # Rick Richardson <rickrich@gmail.com>
 
@@ -75,60 +75,60 @@
 # For Konica Minolta Printers - LAVAFLOW
 # For Samsung Printers - QPDL
 # For HP Printers - ZJS stands for Zenographics ZJStream
-0	string		\033%-12345X@PJL	HP Printer Job Language data|3546
->0	search/10000	@PJL\ ENTER\ LANGUAGE=HBPL	- HBPL|3548
->0	search/10000	@PJL\ ENTER\ LANGUAGE=HIPERC	- Oki Data HIPERC|3549
->0	search/10000	@PJL\ ENTER\ LANGUAGE=LAVAFLOW	- Konica Minolta LAVAFLOW|3550
->0	search/10000	@PJL\ ENTER\ LANGUAGE=QPDL	- Samsung QPDL|3551
->0	search/10000	@PJL\ ENTER\ LANGUAGE\ =\ QPDL	- Samsung QPDL|3551
->0	search/10000	@PJL\ ENTER\ LANGUAGE=ZJS	- HP ZJS|3552
+0	string		\033%-12345X@PJL	HP Printer Job Language data|3536
+>0	search/10000	@PJL\ ENTER\ LANGUAGE=HBPL	- HBPL|3538
+>0	search/10000	@PJL\ ENTER\ LANGUAGE=HIPERC	- Oki Data HIPERC|3539
+>0	search/10000	@PJL\ ENTER\ LANGUAGE=LAVAFLOW	- Konica Minolta LAVAFLOW|3540
+>0	search/10000	@PJL\ ENTER\ LANGUAGE=QPDL	- Samsung QPDL|3541
+>0	search/10000	@PJL\ ENTER\ LANGUAGE\ =\ QPDL	- Samsung QPDL|3541
+>0	search/10000	@PJL\ ENTER\ LANGUAGE=ZJS	- HP ZJS|3542
 
 
 # HP Printer Control Language, Daniel Quinlan (quinlan@yggdrasil.com)
-0	string		\033E\033	HP PCL printer data|3553
->3	string		\&l0A		- default page size|3554
->3	string		\&l1A		- US executive page size|3555
->3	string		\&l2A		- US letter page size|3556
->3	string		\&l3A		- US legal page size|3557
->3	string		\&l26A		- A4 page size|3558
->3	string		\&l80A		- Monarch envelope size|3559
->3	string		\&l81A		- No. 10 envelope size|3560
->3	string		\&l90A		- Intl. DL envelope size|3561
->3	string		\&l91A		- Intl. C5 envelope size|3562
->3	string		\&l100A		- Intl. B5 envelope size|3563
->3	string		\&l-81A		- No. 10 envelope size (landscape)|3564
->3	string		\&l-90A		- Intl. DL envelope size (landscape)|3565
+0	string		\033E\033	HP PCL printer data|3543
+>3	string		\&l0A		- default page size|3544
+>3	string		\&l1A		- US executive page size|3545
+>3	string		\&l2A		- US letter page size|3546
+>3	string		\&l3A		- US legal page size|3547
+>3	string		\&l26A		- A4 page size|3548
+>3	string		\&l80A		- Monarch envelope size|3549
+>3	string		\&l81A		- No. 10 envelope size|3550
+>3	string		\&l90A		- Intl. DL envelope size|3551
+>3	string		\&l91A		- Intl. C5 envelope size|3552
+>3	string		\&l100A		- Intl. B5 envelope size|3553
+>3	string		\&l-81A		- No. 10 envelope size (landscape)|3554
+>3	string		\&l-90A		- Intl. DL envelope size (landscape)|3555
 
 # IMAGEN printer-ready files:
-0	string	@document(		Imagen printer|3566
+0	string	@document(		Imagen printer|3556
 # this only works if "language xxx" is first item in Imagen header.
->10	string	language\ impress	(imPRESS data)|3567
->10	string	language\ daisy		(daisywheel text)|3568
->10	string	language\ diablo	(daisywheel text)|3568
->10	string	language\ printer	(line printer emulation)|3569
->10	string	language\ tektronix	(Tektronix 4014 emulation)|3570
+>10	string	language\ impress	(imPRESS data)|3557
+>10	string	language\ daisy		(daisywheel text)|3558
+>10	string	language\ diablo	(daisywheel text)|3558
+>10	string	language\ printer	(line printer emulation)|3559
+>10	string	language\ tektronix	(Tektronix 4014 emulation)|3560
 # Add any other languages that your Imagen uses - remember
 # to keep the word `text' if the file is human-readable.
 # [GRR 950115:  missing "postscript" or "ultrascript" (whatever it was called)]
 #
 # Now magic for IMAGEN font files...
-0	string		Rast		RST-format raster font data|3571
->45	string		>0		face %s|3572
+0	string		Rast		RST-format raster font data|3561
+>45	string		>0		face %s|3562
 # From Jukka Ukkonen
-0	string		\033[K\002\0\0\017\033(a\001\0\001\033(g	Canon Bubble Jet BJC formatted data|3573
+0	string		\033[K\002\0\0\017\033(a\001\0\001\033(g	Canon Bubble Jet BJC formatted data|3563
 
 # From <mike@flyn.org>
 # These are the /etc/magic entries to decode data sent to an Epson printer.
-0       string          \x1B\x40\x1B\x28\x52\x08\x00\x00REMOTE1P        Epson Stylus Color 460 data|3574
+0       string          \x1B\x40\x1B\x28\x52\x08\x00\x00REMOTE1P        Epson Stylus Color 460 data|3564
 
 
 #------------------------------------------------------------------------------
 # zenographics:  file(1) magic for Zenographics ZjStream printer data
 # Rick Richardson <rickrich@gmail.com>
 0	string		JZJZ
->0x12	string		ZZ		Zenographics ZjStream printer data (big-endian)|3575
+>0x12	string		ZZ		Zenographics ZjStream printer data (big-endian)|3565
 0	string		ZJZJ
->0x12	string		ZZ		Zenographics ZjStream printer data (little-endian)|3576
+>0x12	string		ZZ		Zenographics ZjStream printer data (little-endian)|3566
 
 
 #------------------------------------------------------------------------------
@@ -136,15 +136,15 @@
 # Rick Richardson <rickrich@gmail.com>
 0       string          OAK
 >0x07	byte		0
->0x0b	byte		0	Oak Technologies printer stream|3577
+>0x0b	byte		0	Oak Technologies printer stream|3567
 
 # This would otherwise be recognized as PostScript - nick@debian.org
-0	string		%!VMF 		SunClock's Vector Map Format data|3578
+0	string		%!VMF 		SunClock's Vector Map Format data|3568
 
 #------------------------------------------------------------------------------
 # HP LaserJet 1000 series downloadable firmware file
-0	string	\xbe\xefABCDEFGH	HP LaserJet 1000 series downloadable firmware|3579
+0	string	\xbe\xefABCDEFGH	HP LaserJet 1000 series downloadable firmware|3569
 
 # From: Paolo <oopla@users.sf.net>
 # Epson ESC/Page, ESC/PageColor
-0	string	\x1b\x01@EJL	Epson ESC/Page language printer data|3580
+0	string	\x1b\x01@EJL	Epson ESC/Page language printer data|3570

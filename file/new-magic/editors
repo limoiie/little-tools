@@ -3,15 +3,15 @@
 # $File: editors,v 1.11 2017/03/17 21:35:28 christos Exp $
 # T602 editor documents
 # by David Necas <yeti@physics.muni.cz>
-0	string	@CT\ 	T602 document data,|1604
->4	string	0	Kamenicky|1605
->4	string	1	CP 852|1606
->4	string	2	KOI8-CS|1607
->4	string	>2	unknown encoding|1608
+0	string	@CT\ 	T602 document data,|1602
+>4	string	0	Kamenicky|1603
+>4	string	1	CP 852|1604
+>4	string	2	KOI8-CS|1605
+>4	string	>2	unknown encoding|1606
 
 # Vi IMproved Encrypted file
 # by David Necas <yeti@physics.muni.cz>
-0	string	VimCrypt~	Vim encrypted file data|1609
+0	string	VimCrypt~	Vim encrypted file data|1607
 
 0	name	vimnanoswap
 >67	byte	0
@@ -25,15 +25,15 @@
 
 # Vi IMproved Swap file
 # by Sven Wegener <swegener@gentoo.org>
-0	string  b0VIM\ 		Vim swap file|1610
->&0	string  >\0		\b, version %s|1610
+0	string  b0VIM\ 		Vim swap file|1608
+>&0	string  >\0		\b, version %s|1608
 >0	use	vimnanoswap
 
 
 # Lock/swap file for several editors, at least
 # Vi IMproved and nano
-0	string	b0nano		Nano swap file|1611
+0	string	b0nano		Nano swap file|1609
 >0	use	vimnanoswap
 
 # kate (K Advanced Text Editor)
-0	string	\x00\x00\x00\x12Kate\ Swap\ File\ 2.0\x00	Kate swap file|1612
+0	string	\x00\x00\x00\x12Kate\ Swap\ File\ 2.0\x00	Kate swap file|1610

@@ -23,17 +23,17 @@
 >>10	ubyte	<2
 >>>11	ubyte	<2
 >>>>12	ubyte	<4
->>>>>17	lefloat	>0.0001	DIY-Thermocam raw data|2913
+>>>>>17	lefloat	>0.0001	DIY-Thermocam raw data|2905
 
 # V2 and Leption 3.x:
 38408	ubyte	<19
 >38400	use	diy-thermocam-checker
->>38400	default x	(Lepton 3.x),|2914
+>>38400	default x	(Lepton 3.x),|2906
 >>>38400	use	diy-thermocam-parser
 
 # V1 or Lepton 2.x
 9608	ubyte	<19
 >9600	use	diy-thermocam-checker
->>9600	default	x	(Lepton 2.x),|2915
+>>9600	default	x	(Lepton 2.x),|2907
 >>>9600	use	diy-thermocam-parser
 

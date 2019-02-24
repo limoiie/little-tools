@@ -6,15 +6,15 @@
 # Type: OpenSSL certificates/key files
 # From: Nicolas Collignon <tsointsoin@gmail.com>
 
-0	string	-----BEGIN\040CERTIFICATE-----	PEM certificate|3961
-0	string	-----BEGIN\040CERTIFICATE\040REQ	PEM certificate request|3962
-0	string	-----BEGIN\040RSA\040PRIVATE	PEM RSA private key|3963
-0	string	-----BEGIN\040DSA\040PRIVATE	PEM DSA private key|3964
-0	string	-----BEGIN\040EC\040PRIVATE	PEM EC private key|3965
-0	string	-----BEGIN\040ECDSA\040PRIVATE	PEM ECDSA private key|3966
+0	string	-----BEGIN\040CERTIFICATE-----	PEM certificate|3951
+0	string	-----BEGIN\040CERTIFICATE\040REQ	PEM certificate request|3952
+0	string	-----BEGIN\040RSA\040PRIVATE	PEM RSA private key|3953
+0	string	-----BEGIN\040DSA\040PRIVATE	PEM DSA private key|3954
+0	string	-----BEGIN\040EC\040PRIVATE	PEM EC private key|3955
+0	string	-----BEGIN\040ECDSA\040PRIVATE	PEM ECDSA private key|3956
 
 # From Luc Gommans
 # OpenSSL enc file (recognized by a magic string preceding the password's salt)
-0	string	Salted__	openssl enc'd data with salted password|3967
+0	string	Salted__	openssl enc'd data with salted password|3957
 # Using the -a or -base64 option, OpenSSL will base64-encode the data.
-0	string U2FsdGVkX1	openssl enc'd data with salted password, base64 encoded|3968
+0	string U2FsdGVkX1	openssl enc'd data with salted password, base64 encoded|3958

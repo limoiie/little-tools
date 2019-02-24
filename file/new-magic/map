@@ -6,25 +6,25 @@
 #
 
 # Garmin .FIT files http://pub.ks-and-ks.ne.jp/cycling/edge500_fit.shtml
-8	string	.FIT		FIT Map data|2861
+8	string	.FIT		FIT Map data|2853
 >15	byte	0
->>35	belong	x		\b, unit id %d|2861
->>39	lelong	x		\b, serial %u|2861
+>>35	belong	x		\b, unit id %d|2853
+>>39	lelong	x		\b, serial %u|2853
 # http://pub.ks-and-ks.ne.jp/cycling/edge500_fit.shtml
 # 20 years after unix epoch
 # TZ=GMT date -d '1989-12-31 0:00' +%s
->>43	leldate+631065600	x	\b, %s|2861
+>>43	leldate+631065600	x	\b, %s|2853
 
->>47	leshort x		\b, manufacturer %d|2861
->>47	leshort	1		\b (garmin)|2861
->>49	leshort x		\b, product %d|2861
->>53	byte	x		\b, type %d|2861
->>53	byte	1		\b (Device)|2861
->>53	byte	2		\b (Settings)|2861
->>53	byte	3		\b (Sports/Cycling)|2861
->>53	byte	4		\b (Activity)|2861
->>53	byte	8		\b (Elevations)|2861
->>53	byte	10		\b (Totals)|2861
+>>47	leshort x		\b, manufacturer %d|2853
+>>47	leshort	1		\b (garmin)|2853
+>>49	leshort x		\b, product %d|2853
+>>53	byte	x		\b, type %d|2853
+>>53	byte	1		\b (Device)|2853
+>>53	byte	2		\b (Settings)|2853
+>>53	byte	3		\b (Sports/Cycling)|2853
+>>53	byte	4		\b (Activity)|2853
+>>53	byte	8		\b (Elevations)|2853
+>>53	byte	10		\b (Totals)|2853
 
 # Summary: Garmin map
 # From:	Joerg Jenderek
@@ -37,91 +37,91 @@
 >0x13	string		=IMG\0
 >>0	use		garmin-map
 0	name				garmin-map
->0	ubyte		x		Garmin|2862
+>0	ubyte		x		Garmin|2854
 !:mime	application/x-garmin-map
 # If non-zero, every byte of the entire .img file is to be XORed with this value
->0	ubyte		!0		\b, 0x%x XORed|2862
+>0	ubyte		!0		\b, 0x%x XORed|2854
 # goto block before FAT
 >(0x40.b*512)	ubyte	x
 # 1st fat name "DLLINFO TXT" only found for vpm
->>&512 		string	=DLLINFO\ TXT 	map (Voice Processing)|2862
+>>&512 		string	=DLLINFO\ TXT 	map (Voice Processing)|2854
 # there exist 2 other Garmin VPM formats; see ./audio
 !:ext	vpm
 # Deutsch__Yannick_D4481-00_0210.vpm
 #>>>512	search/0x0116da60/s	RIFF	\b; with
 # determine type voice type by ./riff
 #>>>>&0	indirect	x	\b
->>&512 		string	!DLLINFO\ TXT 	map|2862
+>>&512 		string	!DLLINFO\ TXT 	map|2854
 !:ext	img
 # 9 zeros
->1 	ubelong		!0 		\b, zeroes 0x%x|2862
+>1 	ubelong		!0 		\b, zeroes 0x%x|2854
 # Map's version major
->8	ubyte		x		v%u|2862
+>8	ubyte		x		v%u|2854
 # Map's version minor
->9	ubyte		x		\b.%.2u|2862
+>9	ubyte		x		\b.%.2u|2854
 # Map description[20], 0x20 padded
->0x49	string		x		%.20s|2862
+>0x49	string		x		%.20s|2854
 # Map name, continued (0x20 padded, \0 terminated)
->0x65	string		>\ 		\b%.31s|2862
+>0x65	string		>\ 		\b%.31s|2854
 # Update year (+1900 for val >= 0x63, +2000 for val <= 0x62)
->0xB	ubyte		x		\b, updated|2862
+>0xB	ubyte		x		\b, updated|2854
 >>0xB	ubyte		>0x62
->>>0xB	ubyte-100	x		20%.2u|2862
+>>>0xB	ubyte-100	x		20%.2u|2854
 >>0xB	ubyte		<0x63
->>>0xB	ubyte		x		20%.2u|2862
+>>>0xB	ubyte		x		20%.2u|2854
 # Update month (0-11)
->0xA	ubyte		x		\b-%.2u|2862
+>0xA	ubyte		x		\b-%.2u|2854
 # All zeroes
->0xc 	uleshort	!0 		\b, zeroes 0x%x|2862
+>0xc 	uleshort	!0 		\b, zeroes 0x%x|2854
 # Mapsource flag, 1 - file created by Mapsource, 0 - Garmin map visible in Basecamp and Homeport 
 #>0xE	ubyte		!0		\b, Mapsource flag 0x%x
->0xE	ubyte		1		\b, Mapsource|2862
+>0xE	ubyte		1		\b, Mapsource|2854
 # Checksum, sum of all bytes modulo 256 should be 0
 #>0xF	ubyte		x		\b, Checksum 0x%x
 # Signature: DSKIMG 0x00 or DSDIMG 0x00 for demo map 
->0x10	string		!DSKIMG		\b, signature "%.7s"|2862
+>0x10	string		!DSKIMG		\b, signature "%.7s"|2854
 # Creation year
->0x39 	uleshort	x 		\b, created %u|2862
+>0x39 	uleshort	x 		\b, created %u|2854
 # Creation month (0-11)
->0x3b	ubyte		x		\b-%.2u|2862
+>0x3b	ubyte		x		\b-%.2u|2854
 # Creation day (1-31)
->0x3c	ubyte		x		\b-%.2u|2862
+>0x3c	ubyte		x		\b-%.2u|2854
 # Creation hour (0-23)
->0x3d	ubyte		x		%u|2862
+>0x3d	ubyte		x		%u|2854
 # Creation minute (0-59)
->0x3e	ubyte		x		\b:%.2u|2862
+>0x3e	ubyte		x		\b:%.2u|2854
 # Creation second (0-59)
->0x3f	ubyte		x		\b:%.2u|2862
+>0x3f	ubyte		x		\b:%.2u|2854
 # Map file identifier like GARMIN\0
->0x41	string		!GARMIN		\b, id "%.7s"|2862
+>0x41	string		!GARMIN		\b, id "%.7s"|2854
 # Block size exponent, E1; appears to always be 0x09; minimum block size 512 bytes
->0x61	ubyte		!0x09		\b, E1=%u|2862
+>0x61	ubyte		!0x09		\b, E1=%u|2854
 # Block size exponent, E2 ; file blocksize=2**(E1+E2)
->>0x62	ubyte		x		\b, E2=%u|2862
->0x61	ubyte		=0x09		\b, blocksize|2862
->>0x62	ubyte		0		512|2862
->>0x62	ubyte		1		1024|2862
->>0x62	ubyte		2		2048|2862
->>0x62	ubyte		3		4096|2862
->>0x62	ubyte		4		8192|2862
->>0x62	ubyte		5		16384|2862
+>>0x62	ubyte		x		\b, E2=%u|2854
+>0x61	ubyte		=0x09		\b, blocksize|2854
+>>0x62	ubyte		0		512|2854
+>>0x62	ubyte		1		1024|2854
+>>0x62	ubyte		2		2048|2854
+>>0x62	ubyte		3		4096|2854
+>>0x62	ubyte		4		8192|2854
+>>0x62	ubyte		5		16384|2854
 >>0x62	default		x
->>>0x62	ubyte		x		E2=%u|2862
+>>>0x62	ubyte		x		E2=%u|2854
 # MBR signature
->0x1FE	leshort		!0xAA55		\b, invalid MBR|2862
+>0x1FE	leshort		!0xAA55		\b, invalid MBR|2854
 # 512 zeros
->0x200 	uquad		!0		\b, zeroes 0x%llx|2862
+>0x200 	uquad		!0		\b, zeroes 0x%llx|2854
 # First sub-file offset (absolute); sometimes NO/UNKNOWN sub file!
->0x40C	ulelong		>0		\b, at 0x%x|2862
+>0x40C	ulelong		>0		\b, at 0x%x|2854
 # sub-file Header length
 #>>(0x40C.l)	uleshort	x	\b, header len 0x%x
->>(0x40C.l)	uleshort	x	%u bytes|2862
+>>(0x40C.l)	uleshort	x	%u bytes|2854
 # sub-file Type[10] like "GARMIN RGN" "GARMIN TRE", "GARMIN TYP", etc.
 >>(0x40C.l+2)	ubyte	>0x1F
 >>>(0x40C.l+2)	ubyte	<0xFF
->>>>(0x40C.l+2)	string	x		"%.10s"|2862
+>>>>(0x40C.l+2)	string	x		"%.10s"|2854
 # 0x00 for most maps, 0x80 for locked maps (City Nav, City Select, etc.) 
->>>>(0x40C.l+13)	ubyte	>0		\b, locked 0x%x|2862
+>>>>(0x40C.l+13)	ubyte	>0		\b, locked 0x%x|2854
 # Block sequence numbers like 0000 0100 0200 ... FFFF
 # >0x420	ubequad		>0	\b, seq. 0x%16.16llx
 # >>0x428	ubequad		>0	\b%16.16llx
@@ -158,7 +158,7 @@
 # ... xth FAT block
 #
 # 314 zeros but not in vpm and also gmaptz.img
->0x84 	uquad		!0		\b, at 0x84 0x%llx|2862
+>0x84 	uquad		!0		\b, at 0x84 0x%llx|2854
 # display FileAllocationTable block entry in garmin map
 0	name				garmin-fat
 >0	ubyte		x		\b;
@@ -183,10 +183,10 @@
 0	byte	0x20
 >1	leshort	0x0007
 >>0x76	byte	0x20
->>>0x77	leshort	0x0075		TomTom activity file, v7|2863
->>>>8	leldate	x		(%s,|2863
->>>>3	byte    x		device firmware %d.|2863
->>>>4	byte	x		\b%d.|2863
->>>>5	byte	x		\b%d,|2863
->>>>6	leshort	x		product ID %04d)|2863
+>>>0x77	leshort	0x0075		TomTom activity file, v7|2855
+>>>>8	leldate	x		(%s,|2855
+>>>>3	byte    x		device firmware %d.|2855
+>>>>4	byte	x		\b%d.|2855
+>>>>5	byte	x		\b%d,|2855
+>>>>6	leshort	x		product ID %04d)|2855
 
